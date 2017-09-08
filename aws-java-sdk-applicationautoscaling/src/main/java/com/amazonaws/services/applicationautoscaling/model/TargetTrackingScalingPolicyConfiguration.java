@@ -71,7 +71,14 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </p>
      */
     private Integer scaleInCooldown;
-
+    /**
+     * <p>
+     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
+     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
+     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
+     * <code>false</code>.
+     * </p>
+     */
     private Boolean disableScaleIn;
 
     /**
@@ -347,7 +354,18 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     }
 
     /**
+     * <p>
+     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
+     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
+     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param disableScaleIn
+     *        Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
+     *        scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
+     *        Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
+     *        resource. The default value is <code>false</code>.
      */
 
     public void setDisableScaleIn(Boolean disableScaleIn) {
@@ -355,7 +373,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
+     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
+     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
+     *         scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
+     *         Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
+     *         resource. The default value is <code>false</code>.
      */
 
     public Boolean getDisableScaleIn() {
@@ -363,7 +391,18 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     }
 
     /**
+     * <p>
+     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
+     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
+     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
      * @param disableScaleIn
+     *        Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
+     *        scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
+     *        Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
+     *        resource. The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,7 +412,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
+     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
+     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
+     *         scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
+     *         Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
+     *         resource. The default value is <code>false</code>.
      */
 
     public Boolean isDisableScaleIn() {

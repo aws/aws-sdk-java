@@ -39,7 +39,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<RuleCondition> conditions;
     /**
      * <p>
-     * The actions.
+     * The actions. The target group must use the HTTP or HTTPS protocol.
      * </p>
      */
     private java.util.List<Action> actions;
@@ -156,10 +156,10 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions.
+     * The actions. The target group must use the HTTP or HTTPS protocol.
      * </p>
      * 
-     * @return The actions.
+     * @return The actions. The target group must use the HTTP or HTTPS protocol.
      */
 
     public java.util.List<Action> getActions() {
@@ -168,11 +168,11 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions.
+     * The actions. The target group must use the HTTP or HTTPS protocol.
      * </p>
      * 
      * @param actions
-     *        The actions.
+     *        The actions. The target group must use the HTTP or HTTPS protocol.
      */
 
     public void setActions(java.util.Collection<Action> actions) {
@@ -186,7 +186,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions.
+     * The actions. The target group must use the HTTP or HTTPS protocol.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,7 +195,7 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param actions
-     *        The actions.
+     *        The actions. The target group must use the HTTP or HTTPS protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +211,11 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions.
+     * The actions. The target group must use the HTTP or HTTPS protocol.
      * </p>
      * 
      * @param actions
-     *        The actions.
+     *        The actions. The target group must use the HTTP or HTTPS protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

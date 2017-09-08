@@ -33,7 +33,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String listenerArn;
     /**
      * <p>
-     * A condition. Each condition specifies a field name and a single value.
+     * The conditions. Each condition specifies a field name and a single value.
      * </p>
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
@@ -151,7 +151,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition specifies a field name and a single value.
+     * The conditions. Each condition specifies a field name and a single value.
      * </p>
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
@@ -213,7 +213,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * 
-     * @return A condition. Each condition specifies a field name and a single value.</p>
+     * @return The conditions. Each condition specifies a field name and a single value.</p>
      *         <p>
      *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
@@ -280,7 +280,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition specifies a field name and a single value.
+     * The conditions. Each condition specifies a field name and a single value.
      * </p>
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
@@ -343,7 +343,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * 
      * @param conditions
-     *        A condition. Each condition specifies a field name and a single value.</p>
+     *        The conditions. Each condition specifies a field name and a single value.</p>
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
@@ -415,7 +415,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition specifies a field name and a single value.
+     * The conditions. Each condition specifies a field name and a single value.
      * </p>
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
@@ -483,7 +483,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param conditions
-     *        A condition. Each condition specifies a field name and a single value.</p>
+     *        The conditions. Each condition specifies a field name and a single value.</p>
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
@@ -557,7 +557,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A condition. Each condition specifies a field name and a single value.
+     * The conditions. Each condition specifies a field name and a single value.
      * </p>
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
@@ -620,7 +620,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * 
      * @param conditions
-     *        A condition. Each condition specifies a field name and a single value.</p>
+     *        The conditions. Each condition specifies a field name and a single value.</p>
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain

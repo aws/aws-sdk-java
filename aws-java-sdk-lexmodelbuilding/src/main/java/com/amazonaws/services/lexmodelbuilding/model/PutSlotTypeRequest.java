@@ -79,13 +79,14 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String checksum;
     /**
      * <p>
-     * Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of the
-     * following values:
+     * Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
@@ -96,8 +97,7 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     * <code>ORIGINAL_VALUE</code>.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      */
     private String valueSelectionStrategy;
@@ -472,13 +472,14 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of the
-     * following values:
+     * Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
@@ -489,17 +490,17 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     * <code>ORIGINAL_VALUE</code>.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @param valueSelectionStrategy
-     *        Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of
-     *        the following values:</p>
+     *        Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be
+     *        set to one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *        slot value.
      *        </p>
      *        </li>
      *        <li>
@@ -510,8 +511,7 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     *        <code>ORIGINAL_VALUE</code>.
+     *        If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @see SlotValueSelectionStrategy
      */
 
@@ -521,13 +521,14 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of the
-     * following values:
+     * Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
@@ -538,16 +539,16 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     * <code>ORIGINAL_VALUE</code>.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
-     * @return Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of
-     *         the following values:</p>
+     * @return Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be
+     *         set to one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     *         <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *         slot value.
      *         </p>
      *         </li>
      *         <li>
@@ -558,8 +559,7 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     *         <code>ORIGINAL_VALUE</code>.
+     *         If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @see SlotValueSelectionStrategy
      */
 
@@ -569,13 +569,14 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of the
-     * following values:
+     * Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
@@ -586,17 +587,17 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     * <code>ORIGINAL_VALUE</code>.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @param valueSelectionStrategy
-     *        Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of
-     *        the following values:</p>
+     *        Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be
+     *        set to one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *        slot value.
      *        </p>
      *        </li>
      *        <li>
@@ -607,8 +608,7 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     *        <code>ORIGINAL_VALUE</code>.
+     *        If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SlotValueSelectionStrategy
      */
@@ -620,13 +620,14 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of the
-     * following values:
+     * Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to
+     * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     * <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot
+     * value.
      * </p>
      * </li>
      * <li>
@@ -637,17 +638,17 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     * <code>ORIGINAL_VALUE</code>.
+     * If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * </p>
      * 
      * @param valueSelectionStrategy
-     *        Determines the strategy that Amazon Lex uses to return slot type values. The field can be set to one of
-     *        the following values:</p>
+     *        Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be
+     *        set to one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user.
+     *        <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the
+     *        slot value.
      *        </p>
      *        </li>
      *        <li>
@@ -658,8 +659,7 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify the <code>valueSelectionStrategy</code> is not provided, the default is
-     *        <code>ORIGINAL_VALUE</code>.
+     *        If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SlotValueSelectionStrategy
      */

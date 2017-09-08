@@ -1693,6 +1693,63 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Exports the contents of a Amazon Lex resource in a specified format.
+     * </p>
+     * 
+     * @param getExportRequest
+     * @return Result of the GetExport operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.GetExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetExportResult getExport(GetExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExport(request);
+    }
+
+    @SdkInternalApi
+    final GetExportResult executeGetExport(GetExportRequest getExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExportRequest> request = null;
+        Response<GetExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExportResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about an intent. In addition to the intent name, you must specify the intent version.
      * </p>
      * <p>

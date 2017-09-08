@@ -1080,6 +1080,37 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Exports the contents of a Amazon Lex resource in a specified format.
+     * </p>
+     * 
+     * @param getExportRequest
+     * @return A Java Future containing the result of the GetExport operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.GetExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest getExportRequest);
+
+    /**
+     * <p>
+     * Exports the contents of a Amazon Lex resource in a specified format.
+     * </p>
+     * 
+     * @param getExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExport operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.GetExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest getExportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about an intent. In addition to the intent name, you must specify the intent version.
      * </p>
      * <p>

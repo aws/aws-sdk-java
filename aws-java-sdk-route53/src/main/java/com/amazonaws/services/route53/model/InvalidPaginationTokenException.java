@@ -15,7 +15,9 @@ package com.amazonaws.services.route53.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The value that you specified to get the second or subsequent page of results is invalid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidPaginationTokenException extends com.amazonaws.services.route53.model.AmazonRoute53Exception {

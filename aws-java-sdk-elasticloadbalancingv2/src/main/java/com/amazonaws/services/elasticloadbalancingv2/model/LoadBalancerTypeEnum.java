@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LoadBalancerTypeEnum {
 
-    Application("application");
+    Application("application"),
+    Network("network");
 
     private String value;
 

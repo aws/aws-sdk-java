@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Another user submitted a request to update the object at the same time that you did. Retry the request.
+ * Another user submitted a request to create, update, or delete the object at the same time that you did. Retry the
+ * request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

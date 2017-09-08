@@ -405,6 +405,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateQueryLoggingConfigResult> createQueryLoggingConfigAsync(CreateQueryLoggingConfigRequest request) {
+
+        return createQueryLoggingConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQueryLoggingConfigResult> createQueryLoggingConfigAsync(final CreateQueryLoggingConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateQueryLoggingConfigRequest, CreateQueryLoggingConfigResult> asyncHandler) {
+        final CreateQueryLoggingConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateQueryLoggingConfigResult>() {
+            @Override
+            public CreateQueryLoggingConfigResult call() throws Exception {
+                CreateQueryLoggingConfigResult result = null;
+
+                try {
+                    result = executeCreateQueryLoggingConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReusableDelegationSetResult> createReusableDelegationSetAsync(CreateReusableDelegationSetRequest request) {
 
         return createReusableDelegationSetAsync(request, null);
@@ -622,6 +655,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
 
                 try {
                     result = executeDeleteHostedZone(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueryLoggingConfigResult> deleteQueryLoggingConfigAsync(DeleteQueryLoggingConfigRequest request) {
+
+        return deleteQueryLoggingConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueryLoggingConfigResult> deleteQueryLoggingConfigAsync(final DeleteQueryLoggingConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteQueryLoggingConfigRequest, DeleteQueryLoggingConfigResult> asyncHandler) {
+        final DeleteQueryLoggingConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteQueryLoggingConfigResult>() {
+            @Override
+            public DeleteQueryLoggingConfigResult call() throws Exception {
+                DeleteQueryLoggingConfigResult result = null;
+
+                try {
+                    result = executeDeleteQueryLoggingConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1197,6 +1263,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetQueryLoggingConfigResult> getQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request) {
+
+        return getQueryLoggingConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryLoggingConfigResult> getQueryLoggingConfigAsync(final GetQueryLoggingConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetQueryLoggingConfigRequest, GetQueryLoggingConfigResult> asyncHandler) {
+        final GetQueryLoggingConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetQueryLoggingConfigResult>() {
+            @Override
+            public GetQueryLoggingConfigResult call() throws Exception {
+                GetQueryLoggingConfigResult result = null;
+
+                try {
+                    result = executeGetQueryLoggingConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest request) {
 
         return getReusableDelegationSetAsync(request, null);
@@ -1575,6 +1674,39 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements Ama
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult> asyncHandler) {
 
         return listHostedZonesByNameAsync(new ListHostedZonesByNameRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQueryLoggingConfigsResult> listQueryLoggingConfigsAsync(ListQueryLoggingConfigsRequest request) {
+
+        return listQueryLoggingConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQueryLoggingConfigsResult> listQueryLoggingConfigsAsync(final ListQueryLoggingConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListQueryLoggingConfigsRequest, ListQueryLoggingConfigsResult> asyncHandler) {
+        final ListQueryLoggingConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListQueryLoggingConfigsResult>() {
+            @Override
+            public ListQueryLoggingConfigsResult call() throws Exception {
+                ListQueryLoggingConfigsResult result = null;
+
+                try {
+                    result = executeListQueryLoggingConfigs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

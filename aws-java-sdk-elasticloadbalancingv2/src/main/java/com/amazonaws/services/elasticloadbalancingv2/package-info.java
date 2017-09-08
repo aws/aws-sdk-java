@@ -23,17 +23,23 @@
  * targets.
  * </p>
  * <p>
- * Elastic Load Balancing supports two types of load balancers: Classic Load Balancers and Application Load Balancers. A
- * Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or the
- * application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer makes routing
- * and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can route
- * requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC). For
- * more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load
- * Balancing User Guide</a>.
+ * Elastic Load Balancing supports the following types of load balancers: Application Load Balancers, Network Load
+ * Balancers, and Classic Load Balancers.
  * </p>
  * <p>
- * This reference covers the 2015-12-01 API, which supports Application Load Balancers. The 2012-06-01 API supports
- * Classic Load Balancers.
+ * An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A
+ * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP). Both Application Load
+ * Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
+ * instance in your virtual private cloud (VPC).
+ * </p>
+ * <p>
+ * A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or the
+ * application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. For more information, see the <a
+ * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
+ * </p>
+ * <p>
+ * This reference covers the 2015-12-01 API, which supports Application Load Balancers and Network Load Balancers. The
+ * 2012-06-01 API supports Classic Load Balancers.
  * </p>
  * <p>
  * To get started, complete the following tasks:
@@ -41,7 +47,7 @@
  * <ol>
  * <li>
  * <p>
- * Create an Application Load Balancer using <a>CreateLoadBalancer</a>.
+ * Create a load balancer using <a>CreateLoadBalancer</a>.
  * </p>
  * </li>
  * <li>
@@ -59,14 +65,9 @@
  * Create one or more listeners for your load balancer using <a>CreateListener</a>.
  * </p>
  * </li>
- * <li>
- * <p>
- * (Optional) Create one or more rules for content routing based on URL using <a>CreateRule</a>.
- * </p>
- * </li>
  * </ol>
  * <p>
- * To delete an Application Load Balancer and its related resources, complete the following tasks:
+ * To delete a load balancer and its related resources, complete the following tasks:
  * </p>
  * <ol>
  * <li>

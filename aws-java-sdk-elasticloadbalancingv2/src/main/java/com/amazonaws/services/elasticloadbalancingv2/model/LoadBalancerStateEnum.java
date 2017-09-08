@@ -22,6 +22,7 @@ public enum LoadBalancerStateEnum {
 
     Active("active"),
     Provisioning("provisioning"),
+    Active_impaired("active_impaired"),
     Failed("failed");
 
     private String value;

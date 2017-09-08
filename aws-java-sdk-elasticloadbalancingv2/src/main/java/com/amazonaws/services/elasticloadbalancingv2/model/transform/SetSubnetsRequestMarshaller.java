@@ -63,6 +63,30 @@ public class SetSubnetsRequestMarshaller implements Marshaller<Request<SetSubnet
             }
         }
 
+        java.util.List<SubnetMapping> subnetMappingsList = setSubnetsRequest.getSubnetMappings();
+
+        if (subnetMappingsList != null) {
+            if (subnetMappingsList.isEmpty()) {
+                request.addParameter("SubnetMappings", "");
+            } else {
+                int subnetMappingsListIndex = 1;
+
+                for (SubnetMapping subnetMappingsListValue : subnetMappingsList) {
+
+                    if (subnetMappingsListValue.getSubnetId() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
+                                StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
+                    }
+
+                    if (subnetMappingsListValue.getAllocationId() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
+                                StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
+                    }
+                    subnetMappingsListIndex++;
+                }
+            }
+        }
+
         return request;
     }
 

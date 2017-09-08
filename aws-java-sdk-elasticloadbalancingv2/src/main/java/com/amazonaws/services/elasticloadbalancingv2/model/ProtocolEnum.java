@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ProtocolEnum {
 
     HTTP("HTTP"),
-    HTTPS("HTTPS");
+    HTTPS("HTTPS"),
+    TCP("TCP");
 
     private String value;
 

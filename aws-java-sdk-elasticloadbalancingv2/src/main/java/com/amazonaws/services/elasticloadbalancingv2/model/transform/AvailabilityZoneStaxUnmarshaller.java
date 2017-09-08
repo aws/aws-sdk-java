@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -52,6 +54,17 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     availabilityZone.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LoadBalancerAddresses", targetDepth)) {
+                    availabilityZone.withLoadBalancerAddresses(new ArrayList<LoadBalancerAddress>());
+                    continue;
+                }
+
+                if (context.testExpression("LoadBalancerAddresses/member", targetDepth)) {
+                    availabilityZone.withLoadBalancerAddresses(LoadBalancerAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return availabilityZone;

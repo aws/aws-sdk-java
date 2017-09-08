@@ -829,6 +829,28 @@ public interface AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Exports the contents of a Amazon Lex resource in a specified format.
+     * </p>
+     * 
+     * @param getExportRequest
+     * @return Result of the GetExport operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.GetExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetExportResult getExport(GetExportRequest getExportRequest);
+
+    /**
+     * <p>
      * Returns information about an intent. In addition to the intent name, you must specify the intent version.
      * </p>
      * <p>

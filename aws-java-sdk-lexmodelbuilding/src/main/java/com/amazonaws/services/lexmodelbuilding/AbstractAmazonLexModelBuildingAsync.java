@@ -314,6 +314,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest request) {
+
+        return getExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntentResult> getIntentAsync(GetIntentRequest request) {
 
         return getIntentAsync(request, null);

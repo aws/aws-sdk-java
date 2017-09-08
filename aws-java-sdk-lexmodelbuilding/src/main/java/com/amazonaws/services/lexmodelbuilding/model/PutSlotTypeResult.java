@@ -68,7 +68,7 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String checksum;
     /**
      * <p>
-     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see
      * <a>PutSlotType</a>.
      * </p>
      */
@@ -392,13 +392,13 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see
      * <a>PutSlotType</a>.
      * </p>
      * 
      * @param valueSelectionStrategy
-     *        The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
-     *        <a>PutSlotType</a>.
+     *        The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more
+     *        information, see <a>PutSlotType</a>.
      * @see SlotValueSelectionStrategy
      */
 
@@ -408,12 +408,12 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see
      * <a>PutSlotType</a>.
      * </p>
      * 
-     * @return The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
-     *         <a>PutSlotType</a>.
+     * @return The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more
+     *         information, see <a>PutSlotType</a>.
      * @see SlotValueSelectionStrategy
      */
 
@@ -423,13 +423,13 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see
      * <a>PutSlotType</a>.
      * </p>
      * 
      * @param valueSelectionStrategy
-     *        The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
-     *        <a>PutSlotType</a>.
+     *        The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more
+     *        information, see <a>PutSlotType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SlotValueSelectionStrategy
      */
@@ -441,13 +441,13 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see
      * <a>PutSlotType</a>.
      * </p>
      * 
      * @param valueSelectionStrategy
-     *        The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
-     *        <a>PutSlotType</a>.
+     *        The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more
+     *        information, see <a>PutSlotType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SlotValueSelectionStrategy
      */

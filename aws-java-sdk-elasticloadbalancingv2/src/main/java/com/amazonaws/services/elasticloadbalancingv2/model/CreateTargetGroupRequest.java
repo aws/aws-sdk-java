@@ -37,7 +37,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The protocol to use for routing traffic to the targets.
+     * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      */
     private String protocol;
@@ -56,53 +57,60 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String vpcId;
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
+     * Balancers, the default is TCP.
      * </p>
      */
     private String healthCheckProtocol;
     /**
      * <p>
      * The port the load balancer uses when performing health checks on targets. The default is
-     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
+     * <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer.
      * </p>
      */
     private String healthCheckPort;
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks. The default is /.
+     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
+     * /.
      * </p>
      */
     private String healthCheckPath;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
-     * seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * The default is 30 seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
-     * is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. For
+     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
-     * default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
+     * Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      * </p>
      */
     private Integer healthyThresholdCount;
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. For Application
+     * Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as the healthy
+     * threshold count.
      * </p>
      */
     private Integer unhealthyThresholdCount;
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      */
     private Matcher matcher;
@@ -184,11 +192,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use for routing traffic to the targets.
+     * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use for routing traffic to the targets.
+     *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @see ProtocolEnum
      */
 
@@ -198,10 +208,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use for routing traffic to the targets.
+     * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
-     * @return The protocol to use for routing traffic to the targets.
+     * @return The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
+     *         protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @see ProtocolEnum
      */
 
@@ -211,11 +223,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use for routing traffic to the targets.
+     * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use for routing traffic to the targets.
+     *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -227,11 +241,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use for routing traffic to the targets.
+     * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use for routing traffic to the targets.
+     *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @see ProtocolEnum
      */
 
@@ -241,11 +257,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use for routing traffic to the targets.
+     * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use for routing traffic to the targets.
+     *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -343,12 +361,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
+     * Balancers, the default is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
-     *        protocol.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
+     *        HTTP. For Network Load Balancers, the default is TCP.
      * @see ProtocolEnum
      */
 
@@ -358,11 +379,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
+     * Balancers, the default is TCP.
      * </p>
      * 
-     * @return The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
-     *         protocol.
+     * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *         supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
+     *         HTTP. For Network Load Balancers, the default is TCP.
      * @see ProtocolEnum
      */
 
@@ -372,12 +396,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
+     * Balancers, the default is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
-     *        protocol.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
+     *        HTTP. For Network Load Balancers, the default is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -389,12 +416,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
+     * Balancers, the default is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
-     *        protocol.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
+     *        HTTP. For Network Load Balancers, the default is TCP.
      * @see ProtocolEnum
      */
 
@@ -404,12 +434,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The default is the HTTP protocol.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
+     * Balancers, the default is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The default is the HTTP
-     *        protocol.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
+     *        HTTP. For Network Load Balancers, the default is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -422,13 +455,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The port the load balancer uses when performing health checks on targets. The default is
-     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
+     * <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer.
      * </p>
      * 
      * @param healthCheckPort
      *        The port the load balancer uses when performing health checks on targets. The default is
-     *        <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load
-     *        balancer.
+     *        <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer.
      */
 
     public void setHealthCheckPort(String healthCheckPort) {
@@ -438,11 +470,11 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The port the load balancer uses when performing health checks on targets. The default is
-     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
+     * <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer.
      * </p>
      * 
      * @return The port the load balancer uses when performing health checks on targets. The default is
-     *         <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load
+     *         <code>traffic-port</code>, which is the port on which each target receives traffic from the load
      *         balancer.
      */
 
@@ -453,13 +485,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The port the load balancer uses when performing health checks on targets. The default is
-     * <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load balancer.
+     * <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer.
      * </p>
      * 
      * @param healthCheckPort
      *        The port the load balancer uses when performing health checks on targets. The default is
-     *        <code>traffic-port</code>, which indicates the port on which each target receives traffic from the load
-     *        balancer.
+     *        <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +501,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks. The default is /.
+     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
+     * /.
      * </p>
      * 
      * @param healthCheckPath
-     *        The ping path that is the destination on the targets for health checks. The default is /.
+     *        [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The
+     *        default is /.
      */
 
     public void setHealthCheckPath(String healthCheckPath) {
@@ -483,10 +516,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks. The default is /.
+     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
+     * /.
      * </p>
      * 
-     * @return The ping path that is the destination on the targets for health checks. The default is /.
+     * @return [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The
+     *         default is /.
      */
 
     public String getHealthCheckPath() {
@@ -495,11 +530,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ping path that is the destination on the targets for health checks. The default is /.
+     * [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is
+     * /.
      * </p>
      * 
      * @param healthCheckPath
-     *        The ping path that is the destination on the targets for health checks. The default is /.
+     *        [HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The
+     *        default is /.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,13 +547,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
-     * seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * The default is 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. The default is
-     *        30 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
+     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
+     *        30 seconds. The default is 30 seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -525,12 +564,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
-     * seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * The default is 30 seconds.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks of an individual target. The default is
-     *         30 seconds.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target. For
+     *         Application Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported
+     *         values are 10 or 30 seconds. The default is 30 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -539,13 +580,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. The default is 30
-     * seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * The default is 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. The default is
-     *        30 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
+     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
+     *        30 seconds. The default is 30 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,13 +599,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
-     * is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. For
+     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response from a target means a failed health check. The
-     *        default is 5 seconds.
+     *        The amount of time, in seconds, during which no response from a target means a failed health check. For
+     *        Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     *        Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      */
 
     public void setHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
@@ -571,12 +616,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
-     * is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. For
+     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which no response from a target means a failed health check. The
-     *         default is 5 seconds.
+     * @return The amount of time, in seconds, during which no response from a target means a failed health check. For
+     *         Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     *         Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      */
 
     public Integer getHealthCheckTimeoutSeconds() {
@@ -585,13 +632,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. The default
-     * is 5 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. For
+     * Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     * Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response from a target means a failed health check. The
-     *        default is 5 seconds.
+     *        The amount of time, in seconds, during which no response from a target means a failed health check. For
+     *        Application Load Balancers, the range is 2 to 60 seconds and the default is 5 seconds. For Network Load
+     *        Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,13 +651,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
-     * default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
+     * Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      * </p>
      * 
      * @param healthyThresholdCount
      *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
-     *        The default is 5.
+     *        For Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      */
 
     public void setHealthyThresholdCount(Integer healthyThresholdCount) {
@@ -617,12 +666,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
-     * default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
+     * Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      * </p>
      * 
      * @return The number of consecutive health checks successes required before considering an unhealthy target
-     *         healthy. The default is 5.
+     *         healthy. For Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      */
 
     public Integer getHealthyThresholdCount() {
@@ -631,13 +680,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. The
-     * default is 5.
+     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
+     * Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      * </p>
      * 
      * @param healthyThresholdCount
      *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
-     *        The default is 5.
+     *        For Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -648,12 +697,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. For Application
+     * Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as the healthy
+     * threshold count.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering a target unhealthy. The
-     *        default is 2.
+     *        The number of consecutive health check failures required before considering a target unhealthy. For
+     *        Application Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as
+     *        the healthy threshold count.
      */
 
     public void setUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
@@ -662,11 +714,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. For Application
+     * Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as the healthy
+     * threshold count.
      * </p>
      * 
-     * @return The number of consecutive health check failures required before considering a target unhealthy. The
-     *         default is 2.
+     * @return The number of consecutive health check failures required before considering a target unhealthy. For
+     *         Application Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as
+     *         the healthy threshold count.
      */
 
     public Integer getUnhealthyThresholdCount() {
@@ -675,12 +730,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. The default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. For Application
+     * Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as the healthy
+     * threshold count.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering a target unhealthy. The
-     *        default is 2.
+     *        The number of consecutive health check failures required before considering a target unhealthy. For
+     *        Application Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as
+     *        the healthy threshold count.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -691,11 +749,11 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -704,10 +762,10 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
-     * @return The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      */
 
     public Matcher getMatcher() {
@@ -716,11 +774,11 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from a target. The default is 200.
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

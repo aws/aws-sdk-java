@@ -63,6 +63,30 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
+        java.util.List<SubnetMapping> subnetMappingsList = createLoadBalancerRequest.getSubnetMappings();
+
+        if (subnetMappingsList != null) {
+            if (subnetMappingsList.isEmpty()) {
+                request.addParameter("SubnetMappings", "");
+            } else {
+                int subnetMappingsListIndex = 1;
+
+                for (SubnetMapping subnetMappingsListValue : subnetMappingsList) {
+
+                    if (subnetMappingsListValue.getSubnetId() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
+                                StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
+                    }
+
+                    if (subnetMappingsListValue.getAllocationId() != null) {
+                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
+                                StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
+                    }
+                    subnetMappingsListIndex++;
+                }
+            }
+        }
+
         java.util.List<String> securityGroupsList = createLoadBalancerRequest.getSecurityGroups();
 
         if (securityGroupsList != null) {
@@ -104,6 +128,10 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
                     tagsListIndex++;
                 }
             }
+        }
+
+        if (createLoadBalancerRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createLoadBalancerRequest.getType()));
         }
 
         if (createLoadBalancerRequest.getIpAddressType() != null) {

@@ -791,6 +791,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest request) {
+
+        return getExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResult> getExportAsync(final GetExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler) {
+        final GetExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExportResult>() {
+            @Override
+            public GetExportResult call() throws Exception {
+                GetExportResult result = null;
+
+                try {
+                    result = executeGetExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntentResult> getIntentAsync(GetIntentRequest request) {
 
         return getIntentAsync(request, null);

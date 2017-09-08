@@ -96,6 +96,11 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
@@ -258,6 +263,11 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
@@ -332,6 +342,11 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <p>
      *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
      *        Availability Zone that is not enabled for its load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
      *        </p>
      *        </li>
      *        <li>
@@ -421,6 +436,11 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
@@ -495,6 +515,11 @@ public class TargetHealth implements Serializable, Cloneable {
      *         <p>
      *         <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
      *         Availability Zone that is not enabled for its load balancer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
      *         </p>
      *         </li>
      *         <li>
@@ -584,6 +609,11 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
@@ -658,6 +688,11 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <p>
      *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
      *        Availability Zone that is not enabled for its load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
      *        </p>
      *        </li>
      *        <li>
@@ -749,6 +784,11 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
@@ -823,6 +863,11 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <p>
      *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
      *        Availability Zone that is not enabled for its load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
      *        </p>
      *        </li>
      *        <li>
@@ -912,6 +957,11 @@ public class TargetHealth implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
      * </p>
      * </li>
@@ -986,6 +1036,11 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <p>
      *        <code>Target.NotInUse</code> - The target group is not used by any load balancer or the target is in an
      *        Availability Zone that is not enabled for its load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load balancer.
      *        </p>
      *        </li>
      *        <li>

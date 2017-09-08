@@ -33,7 +33,8 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String loadBalancerArn;
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
+     * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      */
     private String protocol;
@@ -45,20 +46,21 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer port;
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default is the
+     * current predefined security policy.
      * </p>
      */
     private String sslPolicy;
     /**
      * <p>
-     * The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     * [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * </p>
      */
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The default action for the listener.
+     * The default action for the listener. For Application Load Balancers, the protocol of the specified target group
+     * must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      */
     private java.util.List<Action> defaultActions;
@@ -105,11 +107,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
+     * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
+     *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @see ProtocolEnum
      */
 
@@ -119,10 +123,12 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
+     * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
-     * @return The protocol for connections from clients to the load balancer.
+     * @return The protocol for connections from clients to the load balancer. For Application Load Balancers, the
+     *         supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @see ProtocolEnum
      */
 
@@ -132,11 +138,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
+     * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
+     *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -148,11 +156,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
+     * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
+     *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @see ProtocolEnum
      */
 
@@ -162,11 +172,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
+     * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
+     *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -218,13 +230,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default is the
+     * current predefined security policy.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are supported. The default is the current
-     *        predefined security policy.
+     *        [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default
+     *        is the current predefined security policy.
      */
 
     public void setSslPolicy(String sslPolicy) {
@@ -233,12 +245,12 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default is the
+     * current predefined security policy.
      * </p>
      * 
-     * @return The security policy that defines which ciphers and protocols are supported. The default is the current
-     *         predefined security policy.
+     * @return [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default
+     *         is the current predefined security policy.
      */
 
     public String getSslPolicy() {
@@ -247,13 +259,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The security policy that defines which ciphers and protocols are supported. The default is the current predefined
-     * security policy.
+     * [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default is the
+     * current predefined security policy.
      * </p>
      * 
      * @param sslPolicy
-     *        The security policy that defines which ciphers and protocols are supported. The default is the current
-     *        predefined security policy.
+     *        [HTTPS listeners] The security policy that defines which ciphers and protocols are supported. The default
+     *        is the current predefined security policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,10 +276,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     * [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * </p>
      * 
-     * @return The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     * @return [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -276,11 +288,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     * [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     *        [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -294,7 +306,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     * [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -303,7 +315,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     *        [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +331,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     * [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide exactly one certificate if the protocol is HTTPS.
+     *        [HTTPS listeners] The SSL server certificate. You must provide exactly one certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,10 +346,13 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default action for the listener.
+     * The default action for the listener. For Application Load Balancers, the protocol of the specified target group
+     * must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * 
-     * @return The default action for the listener.
+     * @return The default action for the listener. For Application Load Balancers, the protocol of the specified target
+     *         group must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must
+     *         be TCP.
      */
 
     public java.util.List<Action> getDefaultActions() {
@@ -346,11 +361,14 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default action for the listener.
+     * The default action for the listener. For Application Load Balancers, the protocol of the specified target group
+     * must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * 
      * @param defaultActions
-     *        The default action for the listener.
+     *        The default action for the listener. For Application Load Balancers, the protocol of the specified target
+     *        group must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must
+     *        be TCP.
      */
 
     public void setDefaultActions(java.util.Collection<Action> defaultActions) {
@@ -364,7 +382,8 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default action for the listener.
+     * The default action for the listener. For Application Load Balancers, the protocol of the specified target group
+     * must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -373,7 +392,9 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param defaultActions
-     *        The default action for the listener.
+     *        The default action for the listener. For Application Load Balancers, the protocol of the specified target
+     *        group must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must
+     *        be TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +410,14 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default action for the listener.
+     * The default action for the listener. For Application Load Balancers, the protocol of the specified target group
+     * must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * 
      * @param defaultActions
-     *        The default action for the listener.
+     *        The default action for the listener. For Application Load Balancers, the protocol of the specified target
+     *        group must be HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must
+     *        be TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

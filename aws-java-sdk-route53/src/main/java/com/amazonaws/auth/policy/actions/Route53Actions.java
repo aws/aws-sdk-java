@@ -35,6 +35,8 @@ public enum Route53Actions implements Action {
     CreateHealthCheck("route53:CreateHealthCheck"),
     /** Action for the CreateHostedZone operation. */
     CreateHostedZone("route53:CreateHostedZone"),
+    /** Action for the CreateQueryLoggingConfig operation. */
+    CreateQueryLoggingConfig("route53:CreateQueryLoggingConfig"),
     /** Action for the CreateReusableDelegationSet operation. */
     CreateReusableDelegationSet("route53:CreateReusableDelegationSet"),
     /** Action for the CreateTrafficPolicy operation. */
@@ -49,6 +51,8 @@ public enum Route53Actions implements Action {
     DeleteHealthCheck("route53:DeleteHealthCheck"),
     /** Action for the DeleteHostedZone operation. */
     DeleteHostedZone("route53:DeleteHostedZone"),
+    /** Action for the DeleteQueryLoggingConfig operation. */
+    DeleteQueryLoggingConfig("route53:DeleteQueryLoggingConfig"),
     /** Action for the DeleteReusableDelegationSet operation. */
     DeleteReusableDelegationSet("route53:DeleteReusableDelegationSet"),
     /** Action for the DeleteTrafficPolicy operation. */
@@ -77,6 +81,8 @@ public enum Route53Actions implements Action {
     GetHostedZone("route53:GetHostedZone"),
     /** Action for the GetHostedZoneCount operation. */
     GetHostedZoneCount("route53:GetHostedZoneCount"),
+    /** Action for the GetQueryLoggingConfig operation. */
+    GetQueryLoggingConfig("route53:GetQueryLoggingConfig"),
     /** Action for the GetReusableDelegationSet operation. */
     GetReusableDelegationSet("route53:GetReusableDelegationSet"),
     /** Action for the GetTrafficPolicy operation. */
@@ -93,6 +99,8 @@ public enum Route53Actions implements Action {
     ListHostedZones("route53:ListHostedZones"),
     /** Action for the ListHostedZonesByName operation. */
     ListHostedZonesByName("route53:ListHostedZonesByName"),
+    /** Action for the ListQueryLoggingConfigs operation. */
+    ListQueryLoggingConfigs("route53:ListQueryLoggingConfigs"),
     /** Action for the ListResourceRecordSets operation. */
     ListResourceRecordSets("route53:ListResourceRecordSets"),
     /** Action for the ListReusableDelegationSets operation. */

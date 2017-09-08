@@ -64,6 +64,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public CreateQueryLoggingConfigResult createQueryLoggingConfig(CreateQueryLoggingConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +100,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
 
     @Override
     public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteQueryLoggingConfigResult deleteQueryLoggingConfig(DeleteQueryLoggingConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,6 +199,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public GetQueryLoggingConfigResult getQueryLoggingConfig(GetQueryLoggingConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -251,6 +266,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     @Override
     public ListHostedZonesByNameResult listHostedZonesByName() {
         return listHostedZonesByName(new ListHostedZonesByNameRequest());
+    }
+
+    @Override
+    public ListQueryLoggingConfigsResult listQueryLoggingConfigs(ListQueryLoggingConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

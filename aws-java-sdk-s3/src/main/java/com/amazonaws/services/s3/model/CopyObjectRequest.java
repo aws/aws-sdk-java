@@ -14,15 +14,14 @@
  */
 package com.amazonaws.services.s3.model;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.Constants;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -151,6 +150,8 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     private boolean isRequesterPays;
 
     private ObjectTagging newObjectTagging;
+
+    private String metadataDirective;
 
     /**
      * <p>
@@ -1204,5 +1205,42 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     public CopyObjectRequest withNewObjectTagging(ObjectTagging newObjectTagging) {
         setNewObjectTagging(newObjectTagging);
         return this;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     */
+    public String getMetadataDirective() {
+        return metadataDirective;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     *
+     * @param metadataDirective New value for the metadata directive.
+     */
+    public void setMetadataDirective(String metadataDirective) {
+        this.metadataDirective = metadataDirective;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     *
+     * @param metadataDirective New value for the metadata directive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    public CopyObjectRequest withMetadataDirective(String metadataDirective) {
+        setMetadataDirective(metadataDirective);
+        return this;
+    }
+
+    /**
+     * Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.
+     *
+     * @param metadataDirective New value for the metadata directive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    public CopyObjectRequest withMetadataDirective(MetadataDirective metadataDirective) {
+        return withMetadataDirective(metadataDirective == null ? null : metadataDirective.toString());
     }
 }

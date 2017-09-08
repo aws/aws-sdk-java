@@ -138,6 +138,11 @@ public class AbstractAmazonLexModelBuilding implements AmazonLexModelBuilding {
     }
 
     @Override
+    public GetExportResult getExport(GetExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIntentResult getIntent(GetIntentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

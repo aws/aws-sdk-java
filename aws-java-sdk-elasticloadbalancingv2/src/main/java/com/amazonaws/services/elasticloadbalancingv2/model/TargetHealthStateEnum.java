@@ -24,7 +24,8 @@ public enum TargetHealthStateEnum {
     Healthy("healthy"),
     Unhealthy("unhealthy"),
     Unused("unused"),
-    Draining("draining");
+    Draining("draining"),
+    Unavailable("unavailable");
 
     private String value;
 

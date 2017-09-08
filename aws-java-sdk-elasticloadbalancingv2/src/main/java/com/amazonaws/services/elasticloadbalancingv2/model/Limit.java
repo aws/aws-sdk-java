@@ -43,6 +43,16 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * listeners-per-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * network-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * rules-per-application-load-balancer
      * </p>
      * </li>
@@ -83,6 +93,16 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * listeners-per-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * network-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * rules-per-application-load-balancer
      * </p>
      * </li>
@@ -109,6 +129,16 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        listeners-per-application-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        listeners-per-network-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        network-load-balancers
      *        </p>
      *        </li>
      *        <li>
@@ -149,6 +179,16 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * listeners-per-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * network-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * rules-per-application-load-balancer
      * </p>
      * </li>
@@ -174,6 +214,16 @@ public class Limit implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         listeners-per-application-load-balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         listeners-per-network-load-balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         network-load-balancers
      *         </p>
      *         </li>
      *         <li>
@@ -214,6 +264,16 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * listeners-per-network-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * network-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * rules-per-application-load-balancer
      * </p>
      * </li>
@@ -240,6 +300,16 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        listeners-per-application-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        listeners-per-network-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        network-load-balancers
      *        </p>
      *        </li>
      *        <li>

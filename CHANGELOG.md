@@ -1,3 +1,28 @@
+# __1.11.191__ __2017-09-07__
+## __Amazon EC2__
+  - ### Features
+    - With Tagging support, you can add Key and Value metadata to search, filter and organize your NAT Gateways according to your organization's needs.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex provides the ability to export your Amazon Lex chatbot definition as a JSON file that can be added to the target platform. The JSON configuration file contains the structure of your Amazon Lex chatbot, including the intent schema with utterances, slots, prompts and slot-types.
+
+## __Amazon Route 53__
+  - ### Features
+    - You can configure Amazon Route 53 to log information about the DNS queries that Amazon Route 53 receives for your domains and subdomains. When you configure query logging, Amazon Route 53 starts to send logs to CloudWatch Logs. You can use various tools, including the AWS console, to access the query logs.
+
+## __Amazon S3__
+  - ### Features
+    - The metadata directive can now be explicitly specified for CopyObjectRequest. See https://github.com/aws/aws-sdk-java/issues/1283
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for application-autoscaling
+
+## __Elastic Load Balancing__
+  - ### Features
+    - The feature enables the new Network Load Balancer that is optimized to handle volatile traffic patterns while using a single static IP address per Availability Zone. Network Load Balancer operates at the connection level (Layer 4), routing connections to Amazon EC2 instances and containers, within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.
+
 # __1.11.190__ __2017-09-06__
 ## __AWS Budgets__
   - ### Features

@@ -3754,8 +3754,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         populateRequesterPaysHeader(request, copyObjectRequest.isRequesterPays());
 
         ObjectMetadata newObjectMetadata = copyObjectRequest.getNewObjectMetadata();
-        if (newObjectMetadata != null) {
+        if (copyObjectRequest.getMetadataDirective() != null) {
+            request.addHeader(Headers.METADATA_DIRECTIVE, copyObjectRequest.getMetadataDirective());
+        } else if (newObjectMetadata != null) {
             request.addHeader(Headers.METADATA_DIRECTIVE, "REPLACE");
+        }
+        if (newObjectMetadata != null) {
             populateRequestMetadata(request, newObjectMetadata);
         }
 

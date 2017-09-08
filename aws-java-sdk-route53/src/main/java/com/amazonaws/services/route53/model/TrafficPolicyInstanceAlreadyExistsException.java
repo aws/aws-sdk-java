@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Traffic policy instance with given Id already exists.
+ * There is already a traffic policy instance with the specified ID.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

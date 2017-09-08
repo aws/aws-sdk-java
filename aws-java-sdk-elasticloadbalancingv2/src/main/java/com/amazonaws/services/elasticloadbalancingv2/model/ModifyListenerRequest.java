@@ -39,7 +39,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer port;
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP and HTTPS
+     * and Network Load Balancers support TCP.
      * </p>
      */
     private String protocol;
@@ -59,7 +60,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The default actions.
+     * The default action. For Application Load Balancers, the protocol of the specified target group must be HTTP or
+     * HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      */
     private java.util.List<Action> defaultActions;
@@ -146,11 +148,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP and HTTPS
+     * and Network Load Balancers support TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP
+     *        and HTTPS and Network Load Balancers support TCP.
      * @see ProtocolEnum
      */
 
@@ -160,10 +164,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP and HTTPS
+     * and Network Load Balancers support TCP.
      * </p>
      * 
-     * @return The protocol for connections from clients to the load balancer.
+     * @return The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP
+     *         and HTTPS and Network Load Balancers support TCP.
      * @see ProtocolEnum
      */
 
@@ -173,11 +179,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP and HTTPS
+     * and Network Load Balancers support TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP
+     *        and HTTPS and Network Load Balancers support TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -189,11 +197,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP and HTTPS
+     * and Network Load Balancers support TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP
+     *        and HTTPS and Network Load Balancers support TCP.
      * @see ProtocolEnum
      */
 
@@ -203,11 +213,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The protocol for connections from clients to the load balancer.
+     * The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP and HTTPS
+     * and Network Load Balancers support TCP.
      * </p>
      * 
      * @param protocol
-     *        The protocol for connections from clients to the load balancer.
+     *        The protocol for connections from clients to the load balancer. Application Load Balancers support HTTP
+     *        and HTTPS and Network Load Balancers support TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -344,10 +356,12 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions.
+     * The default action. For Application Load Balancers, the protocol of the specified target group must be HTTP or
+     * HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * 
-     * @return The default actions.
+     * @return The default action. For Application Load Balancers, the protocol of the specified target group must be
+     *         HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      */
 
     public java.util.List<Action> getDefaultActions() {
@@ -356,11 +370,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions.
+     * The default action. For Application Load Balancers, the protocol of the specified target group must be HTTP or
+     * HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * 
      * @param defaultActions
-     *        The default actions.
+     *        The default action. For Application Load Balancers, the protocol of the specified target group must be
+     *        HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      */
 
     public void setDefaultActions(java.util.Collection<Action> defaultActions) {
@@ -374,7 +390,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions.
+     * The default action. For Application Load Balancers, the protocol of the specified target group must be HTTP or
+     * HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -383,7 +400,8 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param defaultActions
-     *        The default actions.
+     *        The default action. For Application Load Balancers, the protocol of the specified target group must be
+     *        HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,11 +417,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default actions.
+     * The default action. For Application Load Balancers, the protocol of the specified target group must be HTTP or
+     * HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * </p>
      * 
      * @param defaultActions
-     *        The default actions.
+     *        The default action. For Application Load Balancers, the protocol of the specified target group must be
+     *        HTTP or HTTPS. For Network Load Balancers, the protocol of the specified target group must be TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

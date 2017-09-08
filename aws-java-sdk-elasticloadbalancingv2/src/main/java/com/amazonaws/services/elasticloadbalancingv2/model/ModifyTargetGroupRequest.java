@@ -33,31 +33,33 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String targetGroupArn;
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP.
      * </p>
      */
     private String healthCheckProtocol;
     /**
      * <p>
-     * The port to use to connect with the target.
+     * The port the load balancer uses when performing health checks on targets.
      * </p>
      */
     private String healthCheckPort;
     /**
      * <p>
-     * The ping path that is the destination for the health check request.
+     * [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      * </p>
      */
     private String healthCheckPath;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check.
+     * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
@@ -69,13 +71,14 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer healthyThresholdCount;
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy. For Network
+     * Load Balancers, this value must be the same as the healthy threshold count.
      * </p>
      */
     private Integer unhealthyThresholdCount;
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      */
     private Matcher matcher;
@@ -122,11 +125,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP.
      * @see ProtocolEnum
      */
 
@@ -136,10 +141,12 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP.
      * </p>
      * 
-     * @return The protocol to use to connect with the target.
+     * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *         supported only if the protocol of the target group is TCP.
      * @see ProtocolEnum
      */
 
@@ -149,11 +156,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -165,11 +174,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP.
      * @see ProtocolEnum
      */
 
@@ -179,11 +190,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol to use to connect with the target.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
+     * if the protocol of the target group is TCP.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol to use to connect with the target.
+     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
+     *        supported only if the protocol of the target group is TCP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -195,11 +208,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The port to use to connect with the target.
+     * The port the load balancer uses when performing health checks on targets.
      * </p>
      * 
      * @param healthCheckPort
-     *        The port to use to connect with the target.
+     *        The port the load balancer uses when performing health checks on targets.
      */
 
     public void setHealthCheckPort(String healthCheckPort) {
@@ -208,10 +221,10 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The port to use to connect with the target.
+     * The port the load balancer uses when performing health checks on targets.
      * </p>
      * 
-     * @return The port to use to connect with the target.
+     * @return The port the load balancer uses when performing health checks on targets.
      */
 
     public String getHealthCheckPort() {
@@ -220,11 +233,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The port to use to connect with the target.
+     * The port the load balancer uses when performing health checks on targets.
      * </p>
      * 
      * @param healthCheckPort
-     *        The port to use to connect with the target.
+     *        The port the load balancer uses when performing health checks on targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +248,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ping path that is the destination for the health check request.
+     * [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      * </p>
      * 
      * @param healthCheckPath
-     *        The ping path that is the destination for the health check request.
+     *        [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      */
 
     public void setHealthCheckPath(String healthCheckPath) {
@@ -248,10 +261,10 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ping path that is the destination for the health check request.
+     * [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      * </p>
      * 
-     * @return The ping path that is the destination for the health check request.
+     * @return [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      */
 
     public String getHealthCheckPath() {
@@ -260,11 +273,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ping path that is the destination for the health check request.
+     * [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      * </p>
      * 
      * @param healthCheckPath
-     *        The ping path that is the destination for the health check request.
+     *        [HTTP/HTTPS health checks] The ping path that is the destination for the health check request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,11 +288,14 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
+     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
+     *        30 seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -288,10 +304,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks of an individual target.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target. For
+     *         Application Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported
+     *         values are 10 or 30 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -300,11 +319,14 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target.
+     * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
+     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
+     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
+     *        30 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,11 +337,12 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check.
+     * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response means a failed health check.
+     *        [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health
+     *        check.
      */
 
     public void setHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
@@ -328,10 +351,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check.
+     * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which no response means a failed health check.
+     * @return [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health
+     *         check.
      */
 
     public Integer getHealthCheckTimeoutSeconds() {
@@ -340,11 +364,12 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response means a failed health check.
+     * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response means a failed health check.
+     *        [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health
+     *        check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,11 +421,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy. For Network
+     * Load Balancers, this value must be the same as the healthy threshold count.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering the target unhealthy.
+     *        The number of consecutive health check failures required before considering the target unhealthy. For
+     *        Network Load Balancers, this value must be the same as the healthy threshold count.
      */
 
     public void setUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
@@ -409,10 +436,12 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy. For Network
+     * Load Balancers, this value must be the same as the healthy threshold count.
      * </p>
      * 
-     * @return The number of consecutive health check failures required before considering the target unhealthy.
+     * @return The number of consecutive health check failures required before considering the target unhealthy. For
+     *         Network Load Balancers, this value must be the same as the healthy threshold count.
      */
 
     public Integer getUnhealthyThresholdCount() {
@@ -421,11 +450,13 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy.
+     * The number of consecutive health check failures required before considering the target unhealthy. For Network
+     * Load Balancers, this value must be the same as the healthy threshold count.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering the target unhealthy.
+     *        The number of consecutive health check failures required before considering the target unhealthy. For
+     *        Network Load Balancers, this value must be the same as the healthy threshold count.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,11 +467,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from a target.
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -449,10 +480,10 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
-     * @return The HTTP codes to use when checking for a successful response from a target.
+     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      */
 
     public Matcher getMatcher() {
@@ -461,11 +492,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
      * 
      * @param matcher
-     *        The HTTP codes to use when checking for a successful response from a target.
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
