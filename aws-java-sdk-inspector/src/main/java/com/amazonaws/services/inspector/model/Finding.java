@@ -321,6 +321,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * @see AssetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("assetType")
     public String getAssetType() {
         return this.assetType;
     }
@@ -351,6 +352,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * @see AssetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAssetType(AssetType assetType) {
         withAssetType(assetType);
     }
@@ -594,6 +596,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * @see Severity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("severity")
     public String getSeverity() {
         return this.severity;
     }
@@ -624,6 +627,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * @see Severity
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSeverity(Severity severity) {
         withSeverity(severity);
     }

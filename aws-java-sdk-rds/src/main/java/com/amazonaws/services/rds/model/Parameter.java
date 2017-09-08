@@ -496,6 +496,7 @@ public class Parameter implements Serializable, Cloneable {
      * @see ApplyMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("applyMethod")
     public String getApplyMethod() {
         return this.applyMethod;
     }
@@ -526,6 +527,7 @@ public class Parameter implements Serializable, Cloneable {
      * @see ApplyMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setApplyMethod(ApplyMethod applyMethod) {
         withApplyMethod(applyMethod);
     }

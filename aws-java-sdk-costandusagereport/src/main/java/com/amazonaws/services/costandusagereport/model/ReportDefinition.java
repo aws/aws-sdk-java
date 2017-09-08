@@ -85,6 +85,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see TimeUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
     public String getTimeUnit() {
         return this.timeUnit;
     }
@@ -105,6 +106,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see TimeUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeUnit(TimeUnit timeUnit) {
         withTimeUnit(timeUnit);
     }
@@ -134,6 +136,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see ReportFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("format")
     public String getFormat() {
         return this.format;
     }
@@ -154,6 +157,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see ReportFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFormat(ReportFormat format) {
         withFormat(format);
     }
@@ -183,6 +187,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see CompressionFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("compression")
     public String getCompression() {
         return this.compression;
     }
@@ -203,6 +208,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see CompressionFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCompression(CompressionFormat compression) {
         withCompression(compression);
     }
@@ -359,6 +365,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see AWSRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("s3Region")
     public String getS3Region() {
         return this.s3Region;
     }
@@ -379,6 +386,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * @see AWSRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setS3Region(AWSRegion s3Region) {
         withS3Region(s3Region);
     }

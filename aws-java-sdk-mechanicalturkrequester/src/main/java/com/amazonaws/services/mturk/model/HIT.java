@@ -561,6 +561,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      * @see HITStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("hITStatus")
     public String getHITStatus() {
         return this.hITStatus;
     }
@@ -595,6 +596,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      * @see HITStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHITStatus(HITStatus hITStatus) {
         withHITStatus(hITStatus);
     }
@@ -974,6 +976,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      * @see HITReviewStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("hITReviewStatus")
     public String getHITReviewStatus() {
         return this.hITReviewStatus;
     }
@@ -1008,6 +1011,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      * @see HITReviewStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHITReviewStatus(HITReviewStatus hITReviewStatus) {
         withHITReviewStatus(hITReviewStatus);
     }

@@ -212,6 +212,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * @see RequestCancelExternalWorkflowExecutionFailedCause
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -272,6 +273,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      * @see RequestCancelExternalWorkflowExecutionFailedCause
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(RequestCancelExternalWorkflowExecutionFailedCause cause) {
         withCause(cause);
     }

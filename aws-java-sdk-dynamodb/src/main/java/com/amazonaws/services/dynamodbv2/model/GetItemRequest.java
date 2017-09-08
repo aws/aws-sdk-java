@@ -497,6 +497,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see ReturnConsumedCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("returnConsumedCapacity")
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -517,6 +518,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see ReturnConsumedCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         withReturnConsumedCapacity(returnConsumedCapacity);
     }

@@ -501,6 +501,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * @see HandshakeState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -673,6 +674,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * @see HandshakeState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(HandshakeState state) {
         withState(state);
     }
@@ -873,6 +875,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * @see ActionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -903,6 +906,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * @see ActionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(ActionType action) {
         withAction(action);
     }

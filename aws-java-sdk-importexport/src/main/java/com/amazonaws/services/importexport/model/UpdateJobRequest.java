@@ -99,6 +99,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see JobType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     public String getJobType() {
         return this.jobType;
     }
@@ -119,6 +120,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see JobType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobType(JobType jobType) {
         withJobType(jobType);
     }

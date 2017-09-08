@@ -179,6 +179,7 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
      * @see TriggerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -238,6 +239,7 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
      * @see TriggerState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

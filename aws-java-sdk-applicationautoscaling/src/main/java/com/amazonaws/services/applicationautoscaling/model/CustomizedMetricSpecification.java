@@ -233,6 +233,7 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
      * @see MetricStatistic
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("statistic")
     public String getStatistic() {
         return this.statistic;
     }
@@ -263,6 +264,7 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
      * @see MetricStatistic
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatistic(MetricStatistic statistic) {
         withStatistic(statistic);
     }

@@ -1008,6 +1008,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see MaintenanceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceStatus")
     public String getMaintenanceStatus() {
         return this.maintenanceStatus;
     }
@@ -1038,6 +1039,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see MaintenanceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMaintenanceStatus(MaintenanceStatus maintenanceStatus) {
         withMaintenanceStatus(maintenanceStatus);
     }
@@ -1283,6 +1285,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see ServerStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -1317,6 +1320,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see ServerStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ServerStatus status) {
         withStatus(status);
     }

@@ -215,6 +215,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -245,6 +246,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ExecutionStatus status) {
         withStatus(status);
     }

@@ -155,6 +155,7 @@ public class AccessDeniedException extends com.amazonaws.services.inspector.mode
      * @see AccessDeniedErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInspectorErrorCode(AccessDeniedErrorCode inspectorErrorCode) {
         withInspectorErrorCode(inspectorErrorCode);
     }

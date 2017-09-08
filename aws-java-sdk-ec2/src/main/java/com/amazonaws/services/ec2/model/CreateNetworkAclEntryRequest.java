@@ -442,6 +442,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      * @see RuleAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
     public String getRuleAction() {
         return this.ruleAction;
     }
@@ -472,6 +473,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      * @see RuleAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRuleAction(RuleAction ruleAction) {
         withRuleAction(ruleAction);
     }

@@ -155,6 +155,7 @@ public class InvalidInputException extends com.amazonaws.services.inspector.mode
      * @see InvalidInputErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInspectorErrorCode(InvalidInputErrorCode inspectorErrorCode) {
         withInspectorErrorCode(inspectorErrorCode);
     }

@@ -62,6 +62,7 @@ public class SubnetCidrBlockState implements Serializable, Cloneable {
      * @see SubnetCidrBlockStateCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -92,6 +93,7 @@ public class SubnetCidrBlockState implements Serializable, Cloneable {
      * @see SubnetCidrBlockStateCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(SubnetCidrBlockStateCode state) {
         withState(state);
     }

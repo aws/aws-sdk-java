@@ -119,6 +119,7 @@ public class Statement implements Serializable, Cloneable {
      * @see PolicySourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourcePolicyType")
     public String getSourcePolicyType() {
         return this.sourcePolicyType;
     }
@@ -149,6 +150,7 @@ public class Statement implements Serializable, Cloneable {
      * @see PolicySourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSourcePolicyType(PolicySourceType sourcePolicyType) {
         withSourcePolicyType(sourcePolicyType);
     }

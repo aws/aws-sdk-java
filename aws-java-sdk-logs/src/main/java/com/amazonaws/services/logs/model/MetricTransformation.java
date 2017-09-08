@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Indicates how to transform ingested log events into metric data in a CloudWatch metric.
+ * Indicates how to transform ingested log events in to metric data in a CloudWatch metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricTransformation" target="_top">AWS API

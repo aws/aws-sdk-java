@@ -120,6 +120,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see CACertificateStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("newStatus")
     public String getNewStatus() {
         return this.newStatus;
     }
@@ -160,6 +161,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see CACertificateStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNewStatus(CACertificateStatus newStatus) {
         withNewStatus(newStatus);
     }
@@ -208,6 +210,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see AutoRegistrationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("newAutoRegistrationStatus")
     public String getNewAutoRegistrationStatus() {
         return this.newAutoRegistrationStatus;
     }
@@ -238,6 +241,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see AutoRegistrationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNewAutoRegistrationStatus(AutoRegistrationStatus newAutoRegistrationStatus) {
         withNewAutoRegistrationStatus(newAutoRegistrationStatus);
     }

@@ -71,6 +71,7 @@ public class StopAction implements Serializable, Cloneable {
      * @see StopScope
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scope")
     public String getScope() {
         return this.scope;
     }
@@ -101,6 +102,7 @@ public class StopAction implements Serializable, Cloneable {
      * @see StopScope
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScope(StopScope scope) {
         withScope(scope);
     }

@@ -404,6 +404,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceType")
     public String getInterfaceType() {
         return this.interfaceType;
     }
@@ -434,6 +435,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInterfaceType(NetworkInterfaceType interfaceType) {
         withInterfaceType(interfaceType);
     }
@@ -973,6 +975,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -1003,6 +1006,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(NetworkInterfaceStatus status) {
         withStatus(status);
     }

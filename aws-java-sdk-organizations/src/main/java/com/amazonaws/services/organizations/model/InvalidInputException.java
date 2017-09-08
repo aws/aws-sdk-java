@@ -160,6 +160,7 @@ public class InvalidInputException extends com.amazonaws.services.organizations.
      * @see InvalidInputExceptionReason
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReason(InvalidInputExceptionReason reason) {
         withReason(reason);
     }

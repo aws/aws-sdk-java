@@ -320,6 +320,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * @see MigrationTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
     public String getMigrationType() {
         return this.migrationType;
     }
@@ -360,6 +361,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * @see MigrationTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMigrationType(MigrationTypeValue migrationType) {
         withMigrationType(migrationType);
     }

@@ -156,6 +156,9 @@
 
     ${getterDoc}
     ${deprecated}
+    <#if member.enumType?has_content && shape.type != "Exception">
+    @com.fasterxml.jackson.annotation.JsonProperty("${variableName}")
+    </#if>
     <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public ${getter.returnType} ${getterMethodName}() {
         return this.${variableName};
@@ -188,6 +191,7 @@
     <#if member.enumType?has_content && member.shouldEmitLegacyEnumSetter>
     ${setterDoc}
     ${deprecated}
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void ${setterMethodName}(${member.enumType} ${setter.variableName}) {
         ${fluentSetterMethodName}(${setter.variableName});
     }

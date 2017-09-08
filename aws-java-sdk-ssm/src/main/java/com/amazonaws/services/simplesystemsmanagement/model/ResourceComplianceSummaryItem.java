@@ -220,6 +220,7 @@ public class ResourceComplianceSummaryItem implements Serializable, Cloneable, S
      * @see ComplianceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -279,6 +280,7 @@ public class ResourceComplianceSummaryItem implements Serializable, Cloneable, S
      * @see ComplianceSeverity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("overallSeverity")
     public String getOverallSeverity() {
         return this.overallSeverity;
     }

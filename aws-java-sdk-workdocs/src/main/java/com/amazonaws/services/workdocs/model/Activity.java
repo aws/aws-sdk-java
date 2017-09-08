@@ -101,6 +101,7 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
      * @see ActivityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -131,6 +132,7 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
      * @see ActivityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ActivityType type) {
         withType(type);
     }

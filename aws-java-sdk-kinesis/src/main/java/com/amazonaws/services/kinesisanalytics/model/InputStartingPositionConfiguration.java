@@ -153,6 +153,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * @see InputStartingPosition
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("inputStartingPosition")
     public String getInputStartingPosition() {
         return this.inputStartingPosition;
     }
@@ -259,6 +260,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * @see InputStartingPosition
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInputStartingPosition(InputStartingPosition inputStartingPosition) {
         withInputStartingPosition(inputStartingPosition);
     }

@@ -64,6 +64,7 @@ public class EnvironmentLanguage implements Serializable, Cloneable, StructuredP
      * @see LanguageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("language")
     public String getLanguage() {
         return this.language;
     }
@@ -94,6 +95,7 @@ public class EnvironmentLanguage implements Serializable, Cloneable, StructuredP
      * @see LanguageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLanguage(LanguageType language) {
         withLanguage(language);
     }

@@ -143,6 +143,7 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * @see DeploymentReadyAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("actionOnTimeout")
     public String getActionOnTimeout() {
         return this.actionOnTimeout;
     }
@@ -235,6 +236,7 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * @see DeploymentReadyAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionOnTimeout(DeploymentReadyAction actionOnTimeout) {
         withActionOnTimeout(actionOnTimeout);
     }

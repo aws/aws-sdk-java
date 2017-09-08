@@ -45,6 +45,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * @see LogicalOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("logicalOperator")
     public String getLogicalOperator() {
         return this.logicalOperator;
     }
@@ -111,6 +112,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * @see JobRunState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

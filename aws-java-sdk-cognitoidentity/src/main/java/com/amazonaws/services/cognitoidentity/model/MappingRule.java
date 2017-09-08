@@ -118,6 +118,7 @@ public class MappingRule implements Serializable, Cloneable, StructuredPojo {
      * @see MappingRuleMatchType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("matchType")
     public String getMatchType() {
         return this.matchType;
     }
@@ -150,6 +151,7 @@ public class MappingRule implements Serializable, Cloneable, StructuredPojo {
      * @see MappingRuleMatchType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMatchType(MappingRuleMatchType matchType) {
         withMatchType(matchType);
     }

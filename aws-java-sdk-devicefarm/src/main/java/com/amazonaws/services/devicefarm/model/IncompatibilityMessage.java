@@ -277,6 +277,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * @see DeviceAttribute
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -445,6 +446,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * @see DeviceAttribute
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(DeviceAttribute type) {
         withType(type);
     }

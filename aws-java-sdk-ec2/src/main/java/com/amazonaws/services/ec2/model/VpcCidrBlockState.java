@@ -62,6 +62,7 @@ public class VpcCidrBlockState implements Serializable, Cloneable {
      * @see VpcCidrBlockStateCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -92,6 +93,7 @@ public class VpcCidrBlockState implements Serializable, Cloneable {
      * @see VpcCidrBlockStateCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(VpcCidrBlockStateCode state) {
         withState(state);
     }

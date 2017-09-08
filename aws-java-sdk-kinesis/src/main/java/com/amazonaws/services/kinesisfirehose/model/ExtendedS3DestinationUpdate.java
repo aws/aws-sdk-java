@@ -300,6 +300,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * @see CompressionFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("compressionFormat")
     public String getCompressionFormat() {
         return this.compressionFormat;
     }
@@ -330,6 +331,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * @see CompressionFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCompressionFormat(CompressionFormat compressionFormat) {
         withCompressionFormat(compressionFormat);
     }
@@ -493,6 +495,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * @see S3BackupMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("s3BackupMode")
     public String getS3BackupMode() {
         return this.s3BackupMode;
     }
@@ -523,6 +526,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * @see S3BackupMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setS3BackupMode(S3BackupMode s3BackupMode) {
         withS3BackupMode(s3BackupMode);
     }

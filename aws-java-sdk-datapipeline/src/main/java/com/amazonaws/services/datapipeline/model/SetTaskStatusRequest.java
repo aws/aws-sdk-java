@@ -136,6 +136,7 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see TaskStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
     public String getTaskStatus() {
         return this.taskStatus;
     }
@@ -170,6 +171,7 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see TaskStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTaskStatus(TaskStatus taskStatus) {
         withTaskStatus(taskStatus);
     }

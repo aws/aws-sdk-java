@@ -101,6 +101,7 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
      * @see InstanceAccessProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -131,6 +132,7 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
      * @see InstanceAccessProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(InstanceAccessProtocol protocol) {
         withProtocol(protocol);
     }

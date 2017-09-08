@@ -76,6 +76,7 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see IdentityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("identityType")
     public String getIdentityType() {
         return this.identityType;
     }
@@ -110,6 +111,7 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see IdentityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIdentityType(IdentityType identityType) {
         withIdentityType(identityType);
     }

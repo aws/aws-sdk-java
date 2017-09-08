@@ -79,6 +79,7 @@ public class ConfigurationTag implements Serializable, Cloneable, StructuredPojo
      * @see ConfigurationItemType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("configurationType")
     public String getConfigurationType() {
         return this.configurationType;
     }
@@ -109,6 +110,7 @@ public class ConfigurationTag implements Serializable, Cloneable, StructuredPojo
      * @see ConfigurationItemType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConfigurationType(ConfigurationItemType configurationType) {
         withConfigurationType(configurationType);
     }

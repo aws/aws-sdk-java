@@ -110,6 +110,7 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
      * @see ImageFailureCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("failureCode")
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -140,6 +141,7 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
      * @see ImageFailureCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailureCode(ImageFailureCode failureCode) {
         withFailureCode(failureCode);
     }

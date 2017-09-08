@@ -61,6 +61,7 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
      * @see GenderType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("value")
     public String getValue() {
         return this.value;
     }
@@ -91,6 +92,7 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
      * @see GenderType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setValue(GenderType value) {
         withValue(value);
     }

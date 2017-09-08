@@ -69,6 +69,7 @@ public class InstanceFleetStateChangeReason implements Serializable, Cloneable, 
      * @see InstanceFleetStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -99,6 +100,7 @@ public class InstanceFleetStateChangeReason implements Serializable, Cloneable, 
      * @see InstanceFleetStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(InstanceFleetStateChangeReasonCode code) {
         withCode(code);
     }

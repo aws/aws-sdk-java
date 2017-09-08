@@ -525,6 +525,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * @see GameSessionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -559,6 +560,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * @see GameSessionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(GameSessionStatus status) {
         withStatus(status);
     }
@@ -798,6 +800,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * @see PlayerSessionCreationPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("playerSessionCreationPolicy")
     public String getPlayerSessionCreationPolicy() {
         return this.playerSessionCreationPolicy;
     }
@@ -828,6 +831,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * @see PlayerSessionCreationPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         withPlayerSessionCreationPolicy(playerSessionCreationPolicy);
     }

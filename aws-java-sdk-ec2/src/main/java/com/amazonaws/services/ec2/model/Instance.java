@@ -418,6 +418,7 @@ public class Instance implements Serializable, Cloneable {
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -448,6 +449,7 @@ public class Instance implements Serializable, Cloneable {
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }
@@ -691,6 +693,7 @@ public class Instance implements Serializable, Cloneable {
      * @see PlatformValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -721,6 +724,7 @@ public class Instance implements Serializable, Cloneable {
      * @see PlatformValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(PlatformValues platform) {
         withPlatform(platform);
     }
@@ -1245,6 +1249,7 @@ public class Instance implements Serializable, Cloneable {
      * @see ArchitectureValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     public String getArchitecture() {
         return this.architecture;
     }
@@ -1275,6 +1280,7 @@ public class Instance implements Serializable, Cloneable {
      * @see ArchitectureValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setArchitecture(ArchitectureValues architecture) {
         withArchitecture(architecture);
     }
@@ -1555,6 +1561,7 @@ public class Instance implements Serializable, Cloneable {
      * @see HypervisorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("hypervisor")
     public String getHypervisor() {
         return this.hypervisor;
     }
@@ -1585,6 +1592,7 @@ public class Instance implements Serializable, Cloneable {
      * @see HypervisorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHypervisor(HypervisorType hypervisor) {
         withHypervisor(hypervisor);
     }
@@ -1668,6 +1676,7 @@ public class Instance implements Serializable, Cloneable {
      * @see InstanceLifecycleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceLifecycle")
     public String getInstanceLifecycle() {
         return this.instanceLifecycle;
     }
@@ -1698,6 +1707,7 @@ public class Instance implements Serializable, Cloneable {
      * @see InstanceLifecycleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
         withInstanceLifecycle(instanceLifecycle);
     }
@@ -1927,6 +1937,7 @@ public class Instance implements Serializable, Cloneable {
      * @see DeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rootDeviceType")
     public String getRootDeviceType() {
         return this.rootDeviceType;
     }
@@ -1957,6 +1968,7 @@ public class Instance implements Serializable, Cloneable {
      * @see DeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRootDeviceType(DeviceType rootDeviceType) {
         withRootDeviceType(rootDeviceType);
     }
@@ -2358,6 +2370,7 @@ public class Instance implements Serializable, Cloneable {
      * @see VirtualizationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualizationType")
     public String getVirtualizationType() {
         return this.virtualizationType;
     }
@@ -2388,6 +2401,7 @@ public class Instance implements Serializable, Cloneable {
      * @see VirtualizationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         withVirtualizationType(virtualizationType);
     }

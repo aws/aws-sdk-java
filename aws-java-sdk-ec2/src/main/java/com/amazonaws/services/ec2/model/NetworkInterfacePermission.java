@@ -246,6 +246,7 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
      * @see InterfacePermissionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("permission")
     public String getPermission() {
         return this.permission;
     }
@@ -276,6 +277,7 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
      * @see InterfacePermissionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPermission(InterfacePermissionType permission) {
         withPermission(permission);
     }

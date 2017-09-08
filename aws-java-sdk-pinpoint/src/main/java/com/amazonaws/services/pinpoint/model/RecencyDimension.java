@@ -58,6 +58,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      * @see Duration
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("duration")
     public String getDuration() {
         return this.duration;
     }
@@ -88,6 +89,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      * @see Duration
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDuration(Duration duration) {
         withDuration(duration);
     }
@@ -135,6 +137,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      * @see RecencyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recencyType")
     public String getRecencyType() {
         return this.recencyType;
     }
@@ -169,6 +172,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      * @see RecencyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRecencyType(RecencyType recencyType) {
         withRecencyType(recencyType);
     }

@@ -139,6 +139,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @see PolicyEvaluationDecisionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("evalResourceDecision")
     public String getEvalResourceDecision() {
         return this.evalResourceDecision;
     }
@@ -173,6 +174,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @see PolicyEvaluationDecisionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvalResourceDecision(PolicyEvaluationDecisionType evalResourceDecision) {
         withEvalResourceDecision(evalResourceDecision);
     }

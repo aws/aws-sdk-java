@@ -161,6 +161,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * @see PlacementStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("strategy")
     public String getStrategy() {
         return this.strategy;
     }
@@ -191,6 +192,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * @see PlacementStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStrategy(PlacementStrategy strategy) {
         withStrategy(strategy);
     }

@@ -59,6 +59,7 @@ public class InitializeClusterResult extends com.amazonaws.AmazonWebServiceResul
      * @see ClusterState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

@@ -492,6 +492,7 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("result")
     public String getResult() {
         return this.result;
     }
@@ -680,6 +681,7 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResult(ExecutionResult result) {
         withResult(result);
     }

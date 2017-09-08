@@ -64,6 +64,7 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
      * @see TimeToLiveStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("timeToLiveStatus")
     public String getTimeToLiveStatus() {
         return this.timeToLiveStatus;
     }
@@ -94,6 +95,7 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
      * @see TimeToLiveStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeToLiveStatus(TimeToLiveStatus timeToLiveStatus) {
         withTimeToLiveStatus(timeToLiveStatus);
     }

@@ -250,6 +250,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      * @see Runtime
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("runtime")
     public String getRuntime() {
         return this.runtime;
     }
@@ -280,6 +281,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      * @see Runtime
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRuntime(Runtime runtime) {
         withRuntime(runtime);
     }

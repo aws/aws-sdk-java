@@ -2551,6 +2551,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see InsufficientDataHealthStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("insufficientDataHealthStatus")
     public String getInsufficientDataHealthStatus() {
         return this.insufficientDataHealthStatus;
     }
@@ -2659,6 +2660,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see InsufficientDataHealthStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
         withInsufficientDataHealthStatus(insufficientDataHealthStatus);
     }

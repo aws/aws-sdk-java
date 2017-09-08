@@ -250,6 +250,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * @see PatchComplianceDataState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -280,6 +281,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * @see PatchComplianceDataState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(PatchComplianceDataState state) {
         withState(state);
     }

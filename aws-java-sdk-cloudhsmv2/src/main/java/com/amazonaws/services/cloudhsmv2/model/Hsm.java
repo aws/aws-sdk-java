@@ -340,6 +340,7 @@ public class Hsm implements Serializable, Cloneable, StructuredPojo {
      * @see HsmState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

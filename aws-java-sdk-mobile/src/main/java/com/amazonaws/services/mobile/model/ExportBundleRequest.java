@@ -151,6 +151,7 @@ public class ExportBundleRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see Platform
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }

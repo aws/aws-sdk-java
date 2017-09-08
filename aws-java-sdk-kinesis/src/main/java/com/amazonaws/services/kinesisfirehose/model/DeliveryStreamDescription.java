@@ -207,6 +207,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * @see DeliveryStreamStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deliveryStreamStatus")
     public String getDeliveryStreamStatus() {
         return this.deliveryStreamStatus;
     }
@@ -237,6 +238,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * @see DeliveryStreamStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeliveryStreamStatus(DeliveryStreamStatus deliveryStreamStatus) {
         withDeliveryStreamStatus(deliveryStreamStatus);
     }
@@ -326,6 +328,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * @see DeliveryStreamType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deliveryStreamType")
     public String getDeliveryStreamType() {
         return this.deliveryStreamType;
     }
@@ -402,6 +405,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * @see DeliveryStreamType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeliveryStreamType(DeliveryStreamType deliveryStreamType) {
         withDeliveryStreamType(deliveryStreamType);
     }

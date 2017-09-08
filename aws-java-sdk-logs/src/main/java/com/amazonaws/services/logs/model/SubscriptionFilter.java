@@ -58,7 +58,7 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
     private String distribution;
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC.
      * </p>
      */
@@ -267,6 +267,7 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      * @see Distribution
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     public String getDistribution() {
         return this.distribution;
     }
@@ -299,6 +300,7 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      * @see Distribution
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDistribution(Distribution distribution) {
         withDistribution(distribution);
     }
@@ -322,12 +324,12 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970
+     *        The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970
      *        00:00:00 UTC.
      */
 
@@ -337,11 +339,11 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC.
      * </p>
      * 
-     * @return The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970
+     * @return The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970
      *         00:00:00 UTC.
      */
 
@@ -351,12 +353,12 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      * UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970
+     *        The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970
      *        00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

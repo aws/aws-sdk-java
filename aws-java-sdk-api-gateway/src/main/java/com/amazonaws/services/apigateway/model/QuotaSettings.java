@@ -147,6 +147,7 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
      * @see QuotaPeriodType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("period")
     public String getPeriod() {
         return this.period;
     }
@@ -177,6 +178,7 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
      * @see QuotaPeriodType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPeriod(QuotaPeriodType period) {
         withPeriod(period);
     }

@@ -189,6 +189,7 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
      * @see ChannelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("channelType")
     public String getChannelType() {
         return this.channelType;
     }
@@ -223,6 +224,7 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
      * @see ChannelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChannelType(ChannelType channelType) {
         withChannelType(channelType);
     }

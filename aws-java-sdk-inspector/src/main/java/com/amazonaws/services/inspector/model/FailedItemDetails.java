@@ -64,6 +64,7 @@ public class FailedItemDetails implements Serializable, Cloneable, StructuredPoj
      * @see FailedItemErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("failureCode")
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -94,6 +95,7 @@ public class FailedItemDetails implements Serializable, Cloneable, StructuredPoj
      * @see FailedItemErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailureCode(FailedItemErrorCode failureCode) {
         withFailureCode(failureCode);
     }

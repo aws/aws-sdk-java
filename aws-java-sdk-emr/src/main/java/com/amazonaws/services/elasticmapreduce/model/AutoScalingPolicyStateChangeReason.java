@@ -74,6 +74,7 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -112,6 +113,7 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      * @see AutoScalingPolicyStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(AutoScalingPolicyStateChangeReasonCode code) {
         withCode(code);
     }

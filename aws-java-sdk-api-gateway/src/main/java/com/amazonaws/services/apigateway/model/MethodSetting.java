@@ -653,6 +653,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("unauthorizedCacheControlHeaderStrategy")
     public String getUnauthorizedCacheControlHeaderStrategy() {
         return this.unauthorizedCacheControlHeaderStrategy;
     }
@@ -695,6 +696,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      * @see UnauthorizedCacheControlHeaderStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
         withUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
     }

@@ -149,6 +149,7 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operation")
     public String getOperation() {
         return this.operation;
     }
@@ -179,6 +180,7 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperation(OperationType operation) {
         withOperation(operation);
     }

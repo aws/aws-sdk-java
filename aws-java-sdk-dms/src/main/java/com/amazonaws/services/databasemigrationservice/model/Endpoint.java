@@ -210,6 +210,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationEndpointTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointType")
     public String getEndpointType() {
         return this.endpointType;
     }
@@ -240,6 +241,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationEndpointTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
         withEndpointType(endpointType);
     }
@@ -726,6 +728,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * @see DmsSslModeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
     public String getSslMode() {
         return this.sslMode;
     }
@@ -778,6 +781,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * @see DmsSslModeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSslMode(DmsSslModeValue sslMode) {
         withSslMode(sslMode);
     }

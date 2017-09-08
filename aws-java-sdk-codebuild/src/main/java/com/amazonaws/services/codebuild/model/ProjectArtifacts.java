@@ -311,6 +311,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactsType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -407,6 +408,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactsType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ArtifactsType type) {
         withType(type);
     }
@@ -977,6 +979,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactNamespace
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("namespaceType")
     public String getNamespaceType() {
         return this.namespaceType;
     }
@@ -1157,6 +1160,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactNamespace
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNamespaceType(ArtifactNamespace namespaceType) {
         withNamespaceType(namespaceType);
     }
@@ -1588,6 +1592,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactPackaging
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("packaging")
     public String getPackaging() {
         return this.packaging;
     }
@@ -1744,6 +1749,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * @see ArtifactPackaging
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPackaging(ArtifactPackaging packaging) {
         withPackaging(packaging);
     }

@@ -467,6 +467,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see UserStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("userStatus")
     public String getUserStatus() {
         return this.userStatus;
     }
@@ -603,6 +604,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see UserStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUserStatus(UserStatusType userStatus) {
         withUserStatus(userStatus);
     }

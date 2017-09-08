@@ -86,6 +86,7 @@ public class ResourceInUseException extends com.amazonaws.services.lexmodelbuild
      * @see ReferenceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReferenceType(ReferenceType referenceType) {
         withReferenceType(referenceType);
     }

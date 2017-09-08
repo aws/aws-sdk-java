@@ -31,7 +31,7 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long timestamp;
@@ -44,11 +44,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param timestamp
-     *        The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setTimestamp(Long timestamp) {
@@ -57,10 +57,10 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * @return The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getTimestamp() {
@@ -69,11 +69,11 @@ public class InputLogEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param timestamp
-     *        The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The time the event occurred, expressed as the number of milliseconds fter Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

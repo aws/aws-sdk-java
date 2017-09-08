@@ -155,6 +155,7 @@ public class NoSuchEntityException extends com.amazonaws.services.inspector.mode
      * @see NoSuchEntityErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInspectorErrorCode(NoSuchEntityErrorCode inspectorErrorCode) {
         withInspectorErrorCode(inspectorErrorCode);
     }

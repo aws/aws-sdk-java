@@ -122,6 +122,7 @@ public class Event implements Serializable, Cloneable {
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     public String getSourceType() {
         return this.sourceType;
     }
@@ -152,6 +153,7 @@ public class Event implements Serializable, Cloneable {
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSourceType(SourceType sourceType) {
         withSourceType(sourceType);
     }

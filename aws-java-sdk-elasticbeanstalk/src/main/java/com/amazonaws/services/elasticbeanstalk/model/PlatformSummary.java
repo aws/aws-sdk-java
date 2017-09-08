@@ -178,6 +178,7 @@ public class PlatformSummary implements Serializable, Cloneable {
      * @see PlatformStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platformStatus")
     public String getPlatformStatus() {
         return this.platformStatus;
     }
@@ -208,6 +209,7 @@ public class PlatformSummary implements Serializable, Cloneable {
      * @see PlatformStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatformStatus(PlatformStatus platformStatus) {
         withPlatformStatus(platformStatus);
     }

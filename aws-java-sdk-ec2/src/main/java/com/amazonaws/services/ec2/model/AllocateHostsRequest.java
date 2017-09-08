@@ -102,6 +102,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * @see AutoPlacement
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autoPlacement")
     public String getAutoPlacement() {
         return this.autoPlacement;
     }
@@ -146,6 +147,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * @see AutoPlacement
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         withAutoPlacement(autoPlacement);
     }

@@ -190,6 +190,7 @@ public class Vpc implements Serializable, Cloneable {
      * @see VpcState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -220,6 +221,7 @@ public class Vpc implements Serializable, Cloneable {
      * @see VpcState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(VpcState state) {
         withState(state);
     }
@@ -303,6 +305,7 @@ public class Vpc implements Serializable, Cloneable {
      * @see Tenancy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceTenancy")
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -333,6 +336,7 @@ public class Vpc implements Serializable, Cloneable {
      * @see Tenancy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         withInstanceTenancy(instanceTenancy);
     }

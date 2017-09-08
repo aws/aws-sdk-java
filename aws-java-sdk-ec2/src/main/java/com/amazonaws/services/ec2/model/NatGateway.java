@@ -853,6 +853,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @see NatGatewayState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -999,6 +1000,7 @@ public class NatGateway implements Serializable, Cloneable {
      * @see NatGatewayState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(NatGatewayState state) {
         withState(state);
     }

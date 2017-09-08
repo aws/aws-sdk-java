@@ -432,6 +432,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyUsageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keyUsage")
     public String getKeyUsage() {
         return this.keyUsage;
     }
@@ -470,6 +471,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyUsageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeyUsage(KeyUsageType keyUsage) {
         withKeyUsage(keyUsage);
     }
@@ -535,6 +537,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keyState")
     public String getKeyState() {
         return this.keyState;
     }
@@ -583,6 +586,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeyState(KeyState keyState) {
         withKeyState(keyState);
     }
@@ -747,6 +751,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see OriginType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("origin")
     public String getOrigin() {
         return this.origin;
     }
@@ -785,6 +790,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see OriginType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrigin(OriginType origin) {
         withOrigin(origin);
     }
@@ -836,6 +842,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see ExpirationModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("expirationModel")
     public String getExpirationModel() {
         return this.expirationModel;
     }
@@ -870,6 +877,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see ExpirationModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExpirationModel(ExpirationModelType expirationModel) {
         withExpirationModel(expirationModel);
     }
@@ -925,6 +933,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyManagerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keyManager")
     public String getKeyManager() {
         return this.keyManager;
     }
@@ -965,6 +974,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see KeyManagerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeyManager(KeyManagerType keyManager) {
         withKeyManager(keyManager);
     }

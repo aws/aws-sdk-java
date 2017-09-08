@@ -337,6 +337,7 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
      * @see ComplianceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -400,6 +401,7 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
      * @see ComplianceSeverity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("severity")
     public String getSeverity() {
         return this.severity;
     }

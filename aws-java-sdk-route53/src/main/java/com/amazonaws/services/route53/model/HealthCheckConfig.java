@@ -1141,6 +1141,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @see HealthCheckType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1445,6 +1446,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @see HealthCheckType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(HealthCheckType type) {
         withType(type);
     }
@@ -3312,6 +3314,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @see InsufficientDataHealthStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("insufficientDataHealthStatus")
     public String getInsufficientDataHealthStatus() {
         return this.insufficientDataHealthStatus;
     }
@@ -3420,6 +3423,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @see InsufficientDataHealthStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
         withInsufficientDataHealthStatus(insufficientDataHealthStatus);
     }

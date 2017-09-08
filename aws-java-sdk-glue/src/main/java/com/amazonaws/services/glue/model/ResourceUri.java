@@ -64,6 +64,7 @@ public class ResourceUri implements Serializable, Cloneable, StructuredPojo {
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }

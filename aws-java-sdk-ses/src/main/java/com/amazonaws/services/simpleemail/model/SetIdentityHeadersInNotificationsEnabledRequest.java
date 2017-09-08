@@ -126,6 +126,7 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      * @see NotificationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationType")
     public String getNotificationType() {
         return this.notificationType;
     }
@@ -156,6 +157,7 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      * @see NotificationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         withNotificationType(notificationType);
     }

@@ -282,6 +282,7 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("filter")
     public String getFilter() {
         return this.filter;
     }
@@ -312,6 +313,7 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFilter(PolicyType filter) {
         withFilter(filter);
     }

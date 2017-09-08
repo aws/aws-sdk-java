@@ -909,6 +909,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("eventCode")
     public String getEventCode() {
         return this.eventCode;
     }
@@ -1531,6 +1532,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEventCode(EventCode eventCode) {
         withEventCode(eventCode);
     }

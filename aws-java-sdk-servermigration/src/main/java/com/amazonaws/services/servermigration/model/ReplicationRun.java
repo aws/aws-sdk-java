@@ -82,6 +82,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationRunState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -102,6 +103,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationRunState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ReplicationRunState state) {
         withState(state);
     }
@@ -131,6 +133,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationRunType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -151,6 +154,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationRunType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ReplicationRunType type) {
         withType(type);
     }

@@ -104,6 +104,7 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see AddressFamily
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("addressFamily")
     public String getAddressFamily() {
         return this.addressFamily;
     }
@@ -124,6 +125,7 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see AddressFamily
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         withAddressFamily(addressFamily);
     }

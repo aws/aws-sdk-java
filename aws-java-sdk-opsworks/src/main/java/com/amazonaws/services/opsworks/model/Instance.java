@@ -480,6 +480,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see Architecture
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     public String getArchitecture() {
         return this.architecture;
     }
@@ -510,6 +511,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see Architecture
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setArchitecture(Architecture architecture) {
         withArchitecture(architecture);
     }
@@ -579,6 +581,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see AutoScalingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autoScalingType")
     public String getAutoScalingType() {
         return this.autoScalingType;
     }
@@ -609,6 +612,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see AutoScalingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         withAutoScalingType(autoScalingType);
     }
@@ -1839,6 +1843,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see RootDeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rootDeviceType")
     public String getRootDeviceType() {
         return this.rootDeviceType;
     }
@@ -1877,6 +1882,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see RootDeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
         withRootDeviceType(rootDeviceType);
     }
@@ -2776,6 +2782,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see VirtualizationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualizationType")
     public String getVirtualizationType() {
         return this.virtualizationType;
     }
@@ -2806,6 +2813,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see VirtualizationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVirtualizationType(VirtualizationType virtualizationType) {
         withVirtualizationType(virtualizationType);
     }

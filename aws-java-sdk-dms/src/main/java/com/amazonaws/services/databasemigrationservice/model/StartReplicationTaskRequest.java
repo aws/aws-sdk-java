@@ -108,6 +108,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * @see StartReplicationTaskTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("startReplicationTaskType")
     public String getStartReplicationTaskType() {
         return this.startReplicationTaskType;
     }
@@ -138,6 +139,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * @see StartReplicationTaskTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStartReplicationTaskType(StartReplicationTaskTypeValue startReplicationTaskType) {
         withStartReplicationTaskType(startReplicationTaskType);
     }

@@ -251,6 +251,7 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ConsistencyLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("consistencyLevel")
     public String getConsistencyLevel() {
         return this.consistencyLevel;
     }
@@ -285,6 +286,7 @@ public class ListObjectParentsRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ConsistencyLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
         withConsistencyLevel(consistencyLevel);
     }

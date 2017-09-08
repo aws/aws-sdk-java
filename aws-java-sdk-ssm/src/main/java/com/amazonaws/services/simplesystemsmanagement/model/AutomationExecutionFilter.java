@@ -65,6 +65,7 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
      * @see AutomationExecutionFilterKey
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -95,6 +96,7 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
      * @see AutomationExecutionFilterKey
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(AutomationExecutionFilterKey key) {
         withKey(key);
     }

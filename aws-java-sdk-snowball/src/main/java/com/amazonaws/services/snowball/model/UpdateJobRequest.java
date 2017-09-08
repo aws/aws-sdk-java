@@ -329,6 +329,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ShippingOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("shippingOption")
     public String getShippingOption() {
         return this.shippingOption;
     }
@@ -359,6 +360,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ShippingOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         withShippingOption(shippingOption);
     }
@@ -446,6 +448,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("snowballCapacityPreference")
     public String getSnowballCapacityPreference() {
         return this.snowballCapacityPreference;
     }
@@ -480,6 +483,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
         withSnowballCapacityPreference(snowballCapacityPreference);
     }

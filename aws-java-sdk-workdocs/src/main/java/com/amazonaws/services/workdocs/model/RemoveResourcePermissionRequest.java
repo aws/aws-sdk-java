@@ -200,6 +200,7 @@ public class RemoveResourcePermissionRequest extends com.amazonaws.AmazonWebServ
      * @see PrincipalType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("principalType")
     public String getPrincipalType() {
         return this.principalType;
     }
@@ -230,6 +231,7 @@ public class RemoveResourcePermissionRequest extends com.amazonaws.AmazonWebServ
      * @see PrincipalType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPrincipalType(PrincipalType principalType) {
         withPrincipalType(principalType);
     }

@@ -206,6 +206,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see PingStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("pingStatus")
     public String getPingStatus() {
         return this.pingStatus;
     }
@@ -236,6 +237,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see PingStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPingStatus(PingStatus pingStatus) {
         withPingStatus(pingStatus);
     }
@@ -411,6 +413,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see PlatformType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     public String getPlatformType() {
         return this.platformType;
     }
@@ -441,6 +444,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see PlatformType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatformType(PlatformType platformType) {
         withPlatformType(platformType);
     }
@@ -684,6 +688,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -714,6 +719,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }

@@ -273,6 +273,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @see NetworkMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkMode")
     public String getNetworkMode() {
         return this.networkMode;
     }
@@ -357,6 +358,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * @see NetworkMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNetworkMode(NetworkMode networkMode) {
         withNetworkMode(networkMode);
     }

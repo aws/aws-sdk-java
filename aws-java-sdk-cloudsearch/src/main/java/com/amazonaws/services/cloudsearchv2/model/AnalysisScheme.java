@@ -72,6 +72,7 @@ public class AnalysisScheme implements Serializable, Cloneable {
      * @see AnalysisSchemeLanguage
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("analysisSchemeLanguage")
     public String getAnalysisSchemeLanguage() {
         return this.analysisSchemeLanguage;
     }
@@ -92,6 +93,7 @@ public class AnalysisScheme implements Serializable, Cloneable {
      * @see AnalysisSchemeLanguage
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAnalysisSchemeLanguage(AnalysisSchemeLanguage analysisSchemeLanguage) {
         withAnalysisSchemeLanguage(analysisSchemeLanguage);
     }

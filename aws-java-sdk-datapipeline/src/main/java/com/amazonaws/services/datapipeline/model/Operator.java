@@ -228,6 +228,7 @@ public class Operator implements Serializable, Cloneable, StructuredPojo {
      * @see OperatorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -390,6 +391,7 @@ public class Operator implements Serializable, Cloneable, StructuredPojo {
      * @see OperatorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(OperatorType type) {
         withType(type);
     }

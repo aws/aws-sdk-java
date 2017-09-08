@@ -63,6 +63,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * @see AutoPlacement
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autoPlacement")
     public String getAutoPlacement() {
         return this.autoPlacement;
     }
@@ -93,6 +94,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * @see AutoPlacement
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         withAutoPlacement(autoPlacement);
     }

@@ -314,6 +314,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      * @see InstanceAccessProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -344,6 +345,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      * @see InstanceAccessProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(InstanceAccessProtocol protocol) {
         withProtocol(protocol);
     }

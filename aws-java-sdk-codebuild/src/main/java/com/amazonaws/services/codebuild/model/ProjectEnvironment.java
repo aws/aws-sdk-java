@@ -108,6 +108,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * @see EnvironmentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -138,6 +139,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * @see EnvironmentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(EnvironmentType type) {
         withType(type);
     }
@@ -287,6 +289,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * @see ComputeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("computeType")
     public String getComputeType() {
         return this.computeType;
     }
@@ -383,6 +386,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * @see ComputeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComputeType(ComputeType computeType) {
         withComputeType(computeType);
     }

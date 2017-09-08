@@ -327,6 +327,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see ProductViewSortBy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     public String getSortBy() {
         return this.sortBy;
     }
@@ -357,6 +358,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see ProductViewSortBy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortBy(ProductViewSortBy sortBy) {
         withSortBy(sortBy);
     }
@@ -400,6 +402,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -430,6 +433,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }
@@ -562,6 +566,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see ProductSource
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("productSource")
     public String getProductSource() {
         return this.productSource;
     }
@@ -592,6 +597,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      * @see ProductSource
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductSource(ProductSource productSource) {
         withProductSource(productSource);
     }

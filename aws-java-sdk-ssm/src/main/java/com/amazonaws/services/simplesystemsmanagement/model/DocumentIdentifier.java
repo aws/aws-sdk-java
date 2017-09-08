@@ -309,6 +309,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * @see DocumentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     public String getDocumentType() {
         return this.documentType;
     }
@@ -339,6 +340,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * @see DocumentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         withDocumentType(documentType);
     }

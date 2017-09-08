@@ -152,6 +152,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RegistrationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("registrationStatus")
     public String getRegistrationStatus() {
         return this.registrationStatus;
     }
@@ -182,6 +183,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RegistrationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
         withRegistrationStatus(registrationStatus);
     }

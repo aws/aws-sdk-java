@@ -264,6 +264,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -294,6 +295,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }
@@ -337,6 +339,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("productDescription")
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -367,6 +370,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         withProductDescription(productDescription);
     }
@@ -500,6 +504,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -534,6 +539,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         withCurrencyCode(currencyCode);
     }
@@ -579,6 +585,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see Tenancy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceTenancy")
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -609,6 +616,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see Tenancy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         withInstanceTenancy(instanceTenancy);
     }
@@ -717,6 +725,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see OfferingClassType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("offeringClass")
     public String getOfferingClass() {
         return this.offeringClass;
     }
@@ -751,6 +760,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see OfferingClassType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOfferingClass(OfferingClassType offeringClass) {
         withOfferingClass(offeringClass);
     }
@@ -796,6 +806,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see OfferingTypeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("offeringType")
     public String getOfferingType() {
         return this.offeringType;
     }
@@ -826,6 +837,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see OfferingTypeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOfferingType(OfferingTypeValues offeringType) {
         withOfferingType(offeringType);
     }
@@ -1015,6 +1027,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see Scope
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scope")
     public String getScope() {
         return this.scope;
     }
@@ -1045,6 +1058,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      * @see Scope
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScope(Scope scope) {
         withScope(scope);
     }

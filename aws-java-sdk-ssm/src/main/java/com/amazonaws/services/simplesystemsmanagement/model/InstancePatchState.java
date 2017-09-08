@@ -641,6 +641,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * @see PatchOperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operation")
     public String getOperation() {
         return this.operation;
     }
@@ -675,6 +676,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * @see PatchOperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperation(PatchOperationType operation) {
         withOperation(operation);
     }

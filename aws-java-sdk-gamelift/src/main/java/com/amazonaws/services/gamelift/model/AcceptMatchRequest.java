@@ -191,6 +191,7 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see AcceptanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("acceptanceType")
     public String getAcceptanceType() {
         return this.acceptanceType;
     }

@@ -149,6 +149,7 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * @see SupportDataSetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSetType")
     public String getDataSetType() {
         return this.dataSetType;
     }
@@ -229,6 +230,7 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      * @see SupportDataSetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDataSetType(SupportDataSetType dataSetType) {
         withDataSetType(dataSetType);
     }

@@ -562,6 +562,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see DesiredStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("desiredStatus")
     public String getDesiredStatus() {
         return this.desiredStatus;
     }
@@ -632,6 +633,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see DesiredStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDesiredStatus(DesiredStatus desiredStatus) {
         withDesiredStatus(desiredStatus);
     }

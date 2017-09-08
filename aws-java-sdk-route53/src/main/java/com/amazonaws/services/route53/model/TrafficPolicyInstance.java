@@ -625,6 +625,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trafficPolicyType")
     public String getTrafficPolicyType() {
         return this.trafficPolicyType;
     }
@@ -659,6 +660,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrafficPolicyType(RRType trafficPolicyType) {
         withTrafficPolicyType(trafficPolicyType);
     }

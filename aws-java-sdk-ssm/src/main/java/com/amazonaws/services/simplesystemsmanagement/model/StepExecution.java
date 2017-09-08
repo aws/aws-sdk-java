@@ -297,6 +297,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * @see AutomationExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stepStatus")
     public String getStepStatus() {
         return this.stepStatus;
     }
@@ -331,6 +332,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * @see AutomationExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStepStatus(AutomationExecutionStatus stepStatus) {
         withStepStatus(stepStatus);
     }

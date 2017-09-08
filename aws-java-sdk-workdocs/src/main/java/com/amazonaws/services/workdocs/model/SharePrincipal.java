@@ -110,6 +110,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      * @see PrincipalType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -140,6 +141,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      * @see PrincipalType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PrincipalType type) {
         withType(type);
     }
@@ -183,6 +185,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("role")
     public String getRole() {
         return this.role;
     }
@@ -213,6 +216,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRole(RoleType role) {
         withRole(role);
     }

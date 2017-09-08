@@ -251,6 +251,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * @see ServiceNamespace
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
     public String getServiceNamespace() {
         return this.serviceNamespace;
     }
@@ -289,6 +290,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * @see ServiceNamespace
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         withServiceNamespace(serviceNamespace);
     }
@@ -784,6 +786,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * @see ScalableDimension
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scalableDimension")
     public String getScalableDimension() {
         return this.scalableDimension;
     }
@@ -990,6 +993,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * @see ScalableDimension
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         withScalableDimension(scalableDimension);
     }
@@ -1281,6 +1285,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * @see ScalingActivityStatusCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -1311,6 +1316,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * @see ScalingActivityStatusCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusCode(ScalingActivityStatusCode statusCode) {
         withStatusCode(statusCode);
     }

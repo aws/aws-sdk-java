@@ -64,6 +64,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -94,6 +95,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(RuleType type) {
         withType(type);
     }

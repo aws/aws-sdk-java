@@ -257,6 +257,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventTypeCategory
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("eventTypeCategory")
     public String getEventTypeCategory() {
         return this.eventTypeCategory;
     }
@@ -287,6 +288,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventTypeCategory
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEventTypeCategory(EventTypeCategory eventTypeCategory) {
         withEventTypeCategory(eventTypeCategory);
     }
@@ -534,6 +536,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventStatusCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -568,6 +571,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * @see EventStatusCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusCode(EventStatusCode statusCode) {
         withStatusCode(statusCode);
     }

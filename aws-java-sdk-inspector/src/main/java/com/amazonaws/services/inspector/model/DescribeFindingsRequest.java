@@ -136,6 +136,7 @@ public class DescribeFindingsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see Locale
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -170,6 +171,7 @@ public class DescribeFindingsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see Locale
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(Locale locale) {
         withLocale(locale);
     }

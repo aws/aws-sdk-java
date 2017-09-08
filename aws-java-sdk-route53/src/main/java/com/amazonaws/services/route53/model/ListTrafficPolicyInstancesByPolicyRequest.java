@@ -460,6 +460,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trafficPolicyInstanceTypeMarker")
     public String getTrafficPolicyInstanceTypeMarker() {
         return this.trafficPolicyInstanceTypeMarker;
     }
@@ -532,6 +533,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
         withTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
     }

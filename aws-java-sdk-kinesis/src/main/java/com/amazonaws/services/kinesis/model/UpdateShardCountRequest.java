@@ -147,6 +147,7 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scalingType")
     public String getScalingType() {
         return this.scalingType;
     }
@@ -177,6 +178,7 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalingType(ScalingType scalingType) {
         withScalingType(scalingType);
     }

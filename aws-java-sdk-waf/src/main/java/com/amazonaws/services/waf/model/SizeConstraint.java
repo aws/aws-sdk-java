@@ -855,6 +855,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @see TextTransformation
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("textTransformation")
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -1447,6 +1448,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @see TextTransformation
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTextTransformation(TextTransformation textTransformation) {
         withTextTransformation(textTransformation);
     }
@@ -1868,6 +1870,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1994,6 +1997,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }

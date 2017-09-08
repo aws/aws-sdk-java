@@ -148,6 +148,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * @see CurrencyCodeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -186,6 +187,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * @see CurrencyCodeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         withCurrencyCode(currencyCode);
     }

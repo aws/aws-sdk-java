@@ -45,7 +45,10 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private com.amazonaws.internal.SdkInternalList<InputLogEvent> logEvents;
     /**
      * <p>
-     * The sequence token.
+     * The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a
+     * newly created log stream does not require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
+     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      * </p>
      */
     private String sequenceToken;
@@ -229,11 +232,17 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The sequence token.
+     * The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a
+     * newly created log stream does not require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
+     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      * </p>
      * 
      * @param sequenceToken
-     *        The sequence token.
+     *        The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in
+     *        a newly created log stream does not require a sequence token. You can also get the sequence token using
+     *        <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using
+     *        the same value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      */
 
     public void setSequenceToken(String sequenceToken) {
@@ -242,10 +251,17 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The sequence token.
+     * The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a
+     * newly created log stream does not require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
+     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      * </p>
      * 
-     * @return The sequence token.
+     * @return The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload
+     *         in a newly created log stream does not require a sequence token. You can also get the sequence token
+     *         using <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period
+     *         using the same value for <code>sequenceToken</code>, both calls may be successful, or one may be
+     *         rejected.
      */
 
     public String getSequenceToken() {
@@ -254,11 +270,17 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The sequence token.
+     * The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a
+     * newly created log stream does not require a sequence token. You can also get the sequence token using
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
+     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      * </p>
      * 
      * @param sequenceToken
-     *        The sequence token.
+     *        The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in
+     *        a newly created log stream does not require a sequence token. You can also get the sequence token using
+     *        <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using
+     *        the same value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

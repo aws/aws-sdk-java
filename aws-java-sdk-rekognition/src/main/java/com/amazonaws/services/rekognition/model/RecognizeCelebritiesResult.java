@@ -262,6 +262,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * @see OrientationCorrection
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("orientationCorrection")
     public String getOrientationCorrection() {
         return this.orientationCorrection;
     }
@@ -334,6 +335,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * @see OrientationCorrection
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
         withOrientationCorrection(orientationCorrection);
     }

@@ -149,6 +149,7 @@ public class TargetHealth implements Serializable, Cloneable {
      * @see TargetHealthStateEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -179,6 +180,7 @@ public class TargetHealth implements Serializable, Cloneable {
      * @see TargetHealthStateEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(TargetHealthStateEnum state) {
         withState(state);
     }
@@ -541,6 +543,7 @@ public class TargetHealth implements Serializable, Cloneable {
      * @see TargetHealthReasonEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
     public String getReason() {
         return this.reason;
     }
@@ -889,6 +892,7 @@ public class TargetHealth implements Serializable, Cloneable {
      * @see TargetHealthReasonEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReason(TargetHealthReasonEnum reason) {
         withReason(reason);
     }

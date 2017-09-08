@@ -133,6 +133,7 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
      * @see NotificationTransport
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("transport")
     public String getTransport() {
         return this.transport;
     }
@@ -163,6 +164,7 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
      * @see NotificationTransport
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTransport(NotificationTransport transport) {
         withTransport(transport);
     }

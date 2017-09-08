@@ -160,6 +160,7 @@ public class RefreshSchemasStatus implements Serializable, Cloneable, Structured
      * @see RefreshSchemasStatusTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -190,6 +191,7 @@ public class RefreshSchemasStatus implements Serializable, Cloneable, Structured
      * @see RefreshSchemasStatusTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(RefreshSchemasStatusTypeValue status) {
         withStatus(status);
     }

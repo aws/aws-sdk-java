@@ -189,6 +189,7 @@ public class ListStackSetsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see StackSetStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -219,6 +220,7 @@ public class ListStackSetsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see StackSetStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StackSetStatus status) {
         withStatus(status);
     }

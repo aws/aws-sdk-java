@@ -110,6 +110,7 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
      * @see InspectorEvent
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("event")
     public String getEvent() {
         return this.event;
     }
@@ -140,6 +141,7 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
      * @see InspectorEvent
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvent(InspectorEvent event) {
         withEvent(event);
     }

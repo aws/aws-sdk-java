@@ -166,6 +166,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RoutingStrategyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("routingStrategyType")
     public String getRoutingStrategyType() {
         return this.routingStrategyType;
     }
@@ -266,6 +267,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RoutingStrategyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRoutingStrategyType(RoutingStrategyType routingStrategyType) {
         withRoutingStrategyType(routingStrategyType);
     }

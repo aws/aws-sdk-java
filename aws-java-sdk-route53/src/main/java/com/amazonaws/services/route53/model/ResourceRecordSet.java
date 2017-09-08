@@ -1438,6 +1438,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1722,6 +1723,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(RRType type) {
         withType(type);
     }
@@ -2408,6 +2410,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see ResourceRecordSetRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
     public String getRegion() {
         return this.region;
     }
@@ -2598,6 +2601,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see ResourceRecordSetRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRegion(ResourceRecordSetRegion region) {
         withRegion(region);
     }
@@ -3232,6 +3236,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see ResourceRecordSetFailover
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("failover")
     public String getFailover() {
         return this.failover;
     }
@@ -3510,6 +3515,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @see ResourceRecordSetFailover
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailover(ResourceRecordSetFailover failover) {
         withFailover(failover);
     }

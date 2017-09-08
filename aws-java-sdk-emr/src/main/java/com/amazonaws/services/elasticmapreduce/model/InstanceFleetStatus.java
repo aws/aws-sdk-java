@@ -76,6 +76,7 @@ public class InstanceFleetStatus implements Serializable, Cloneable, StructuredP
      * @see InstanceFleetState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -106,6 +107,7 @@ public class InstanceFleetStatus implements Serializable, Cloneable, StructuredP
      * @see InstanceFleetState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(InstanceFleetState state) {
         withState(state);
     }

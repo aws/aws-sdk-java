@@ -77,6 +77,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -107,6 +108,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }

@@ -152,6 +152,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     public String getSourceType() {
         return this.sourceType;
     }
@@ -228,6 +229,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSourceType(SourceType sourceType) {
         withSourceType(sourceType);
     }
@@ -340,6 +342,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      * @see SourceRepository
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceRepository")
     public String getSourceRepository() {
         return this.sourceRepository;
     }
@@ -416,6 +419,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      * @see SourceRepository
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSourceRepository(SourceRepository sourceRepository) {
         withSourceRepository(sourceRepository);
     }

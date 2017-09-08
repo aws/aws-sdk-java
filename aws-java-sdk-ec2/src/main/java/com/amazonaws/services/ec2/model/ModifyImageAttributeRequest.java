@@ -289,6 +289,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     public String getOperationType() {
         return this.operationType;
     }
@@ -319,6 +320,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperationType(OperationType operationType) {
         withOperationType(operationType);
     }

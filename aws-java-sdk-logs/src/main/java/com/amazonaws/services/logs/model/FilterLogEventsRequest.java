@@ -39,15 +39,15 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<String> logStreamNames;
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp prior to this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a time stamp before this time are not returned.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * time stamp later than this time are not returned.
      * </p>
      */
     private Long endTime;
@@ -72,7 +72,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group interleaved in a single response. If the value is false all the matched log
+     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
@@ -194,13 +194,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp prior to this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a time stamp before this time are not returned.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp prior to this time are not returned.
+     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        Events with a time stamp before this time are not returned.
      */
 
     public void setStartTime(Long startTime) {
@@ -209,12 +209,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp prior to this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a time stamp before this time are not returned.
      * </p>
      * 
-     * @return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
-     *         Events with a timestamp prior to this time are not returned.
+     * @return The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *         Events with a time stamp before this time are not returned.
      */
 
     public Long getStartTime() {
@@ -223,13 +223,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp prior to this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
+     * a time stamp before this time are not returned.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp prior to this time are not returned.
+     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        Events with a time stamp before this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,13 +240,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * time stamp later than this time are not returned.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp later than this time are not returned.
+     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
+     *        with a time stamp later than this time are not returned.
      */
 
     public void setEndTime(Long endTime) {
@@ -255,12 +255,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * time stamp later than this time are not returned.
      * </p>
      * 
-     * @return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
-     *         with a timestamp later than this time are not returned.
+     * @return The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
+     *         with a time stamp later than this time are not returned.
      */
 
     public Long getEndTime() {
@@ -269,13 +269,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
+     * time stamp later than this time are not returned.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp later than this time are not returned.
+     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
+     *        with a time stamp later than this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,16 +407,16 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group interleaved in a single response. If the value is false all the matched log
+     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
      * 
      * @param interleaved
      *        If the value is true, the operation makes a best effort to provide responses that contain events from
-     *        multiple log streams within the log group interleaved in a single response. If the value is false all the
-     *        matched log events in the first log stream are searched first, then those in the next log stream, and so
-     *        on. The default is false.
+     *        multiple log streams within the log group, interleaved in a single response. If the value is false, all
+     *        the matched log events in the first log stream are searched first, then those in the next log stream, and
+     *        so on. The default is false.
      */
 
     public void setInterleaved(Boolean interleaved) {
@@ -426,15 +426,15 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group interleaved in a single response. If the value is false all the matched log
+     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
      * 
      * @return If the value is true, the operation makes a best effort to provide responses that contain events from
-     *         multiple log streams within the log group interleaved in a single response. If the value is false all the
-     *         matched log events in the first log stream are searched first, then those in the next log stream, and so
-     *         on. The default is false.
+     *         multiple log streams within the log group, interleaved in a single response. If the value is false, all
+     *         the matched log events in the first log stream are searched first, then those in the next log stream, and
+     *         so on. The default is false.
      */
 
     public Boolean getInterleaved() {
@@ -444,16 +444,16 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group interleaved in a single response. If the value is false all the matched log
+     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
      * 
      * @param interleaved
      *        If the value is true, the operation makes a best effort to provide responses that contain events from
-     *        multiple log streams within the log group interleaved in a single response. If the value is false all the
-     *        matched log events in the first log stream are searched first, then those in the next log stream, and so
-     *        on. The default is false.
+     *        multiple log streams within the log group, interleaved in a single response. If the value is false, all
+     *        the matched log events in the first log stream are searched first, then those in the next log stream, and
+     *        so on. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,15 +465,15 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group interleaved in a single response. If the value is false all the matched log
+     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
      * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
      * false.
      * </p>
      * 
      * @return If the value is true, the operation makes a best effort to provide responses that contain events from
-     *         multiple log streams within the log group interleaved in a single response. If the value is false all the
-     *         matched log events in the first log stream are searched first, then those in the next log stream, and so
-     *         on. The default is false.
+     *         multiple log streams within the log group, interleaved in a single response. If the value is false, all
+     *         the matched log events in the first log stream are searched first, then those in the next log stream, and
+     *         so on. The default is false.
      */
 
     public Boolean isInterleaved() {

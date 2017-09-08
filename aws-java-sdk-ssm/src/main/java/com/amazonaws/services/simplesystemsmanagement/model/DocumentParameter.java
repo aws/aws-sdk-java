@@ -118,6 +118,7 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
      * @see DocumentParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -148,6 +149,7 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
      * @see DocumentParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(DocumentParameterType type) {
         withType(type);
     }

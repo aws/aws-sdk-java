@@ -183,6 +183,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * @see ConnectionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionState")
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -203,6 +204,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * @see ConnectionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConnectionState(ConnectionState connectionState) {
         withConnectionState(connectionState);
     }

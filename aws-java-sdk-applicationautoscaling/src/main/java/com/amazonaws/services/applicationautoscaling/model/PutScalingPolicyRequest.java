@@ -236,6 +236,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ServiceNamespace
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
     public String getServiceNamespace() {
         return this.serviceNamespace;
     }
@@ -274,6 +275,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ServiceNamespace
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         withServiceNamespace(serviceNamespace);
     }
@@ -769,6 +771,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalableDimension
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scalableDimension")
     public String getScalableDimension() {
         return this.scalableDimension;
     }
@@ -975,6 +978,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalableDimension
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         withScalableDimension(scalableDimension);
     }
@@ -1124,6 +1128,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     public String getPolicyType() {
         return this.policyType;
     }
@@ -1172,6 +1177,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPolicyType(PolicyType policyType) {
         withPolicyType(policyType);
     }

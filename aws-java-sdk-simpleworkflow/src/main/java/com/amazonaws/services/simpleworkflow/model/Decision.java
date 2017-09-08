@@ -418,6 +418,7 @@ public class Decision implements Serializable, Cloneable, StructuredPojo {
      * @see DecisionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("decisionType")
     public String getDecisionType() {
         return this.decisionType;
     }
@@ -448,6 +449,7 @@ public class Decision implements Serializable, Cloneable, StructuredPojo {
      * @see DecisionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDecisionType(DecisionType decisionType) {
         withDecisionType(decisionType);
     }

@@ -267,6 +267,7 @@ public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
      * @see AssessmentRunState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -297,6 +298,7 @@ public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
      * @see AssessmentRunState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(AssessmentRunState state) {
         withState(state);
     }

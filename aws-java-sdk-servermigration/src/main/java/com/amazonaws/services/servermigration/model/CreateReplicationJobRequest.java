@@ -129,6 +129,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * @see LicenseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     public String getLicenseType() {
         return this.licenseType;
     }
@@ -149,6 +150,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * @see LicenseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLicenseType(LicenseType licenseType) {
         withLicenseType(licenseType);
     }

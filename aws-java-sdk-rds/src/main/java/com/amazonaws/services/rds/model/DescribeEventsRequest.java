@@ -414,6 +414,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     public String getSourceType() {
         return this.sourceType;
     }
@@ -444,6 +445,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSourceType(SourceType sourceType) {
         withSourceType(sourceType);
     }

@@ -175,6 +175,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see OrientationCorrection
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("orientationCorrection")
     public String getOrientationCorrection() {
         return this.orientationCorrection;
     }
@@ -245,6 +246,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see OrientationCorrection
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
         withOrientationCorrection(orientationCorrection);
     }

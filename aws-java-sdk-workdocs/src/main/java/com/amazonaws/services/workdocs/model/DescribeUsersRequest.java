@@ -277,6 +277,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see UserFilterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("include")
     public String getInclude() {
         return this.include;
     }
@@ -307,6 +308,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see UserFilterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInclude(UserFilterType include) {
         withInclude(include);
     }
@@ -350,6 +352,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see OrderType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("order")
     public String getOrder() {
         return this.order;
     }
@@ -380,6 +383,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see OrderType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrder(OrderType order) {
         withOrder(order);
     }
@@ -423,6 +427,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see UserSortType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sort")
     public String getSort() {
         return this.sort;
     }
@@ -453,6 +458,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see UserSortType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSort(UserSortType sort) {
         withSort(sort);
     }

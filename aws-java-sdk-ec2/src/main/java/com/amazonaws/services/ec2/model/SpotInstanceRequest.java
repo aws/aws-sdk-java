@@ -547,6 +547,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("productDescription")
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -577,6 +578,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         withProductDescription(productDescription);
     }
@@ -712,6 +714,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see SpotInstanceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -754,6 +757,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see SpotInstanceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(SpotInstanceState state) {
         withState(state);
     }
@@ -916,6 +920,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see SpotInstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -946,6 +951,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * @see SpotInstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SpotInstanceType type) {
         withType(type);
     }

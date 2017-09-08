@@ -136,6 +136,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see PolicyScopeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("scope")
     public String getScope() {
         return this.scope;
     }
@@ -196,6 +197,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see PolicyScopeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScope(PolicyScopeType scope) {
         withScope(scope);
     }

@@ -1532,6 +1532,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see OnFailure
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("onFailure")
     public String getOnFailure() {
         return this.onFailure;
     }
@@ -1578,6 +1579,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see OnFailure
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOnFailure(OnFailure onFailure) {
         withOnFailure(onFailure);
     }

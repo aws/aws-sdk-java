@@ -121,6 +121,7 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * @see GreenFleetProvisioningAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -201,6 +202,7 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      * @see GreenFleetProvisioningAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(GreenFleetProvisioningAction action) {
         withAction(action);
     }

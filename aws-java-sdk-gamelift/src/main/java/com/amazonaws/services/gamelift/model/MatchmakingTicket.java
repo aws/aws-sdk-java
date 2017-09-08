@@ -449,6 +449,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * @see MatchmakingConfigurationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

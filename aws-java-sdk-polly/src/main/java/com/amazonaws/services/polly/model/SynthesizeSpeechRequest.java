@@ -198,6 +198,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see OutputFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
     public String getOutputFormat() {
         return this.outputFormat;
     }
@@ -232,6 +233,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see OutputFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOutputFormat(OutputFormat outputFormat) {
         withOutputFormat(outputFormat);
     }
@@ -504,6 +506,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see TextType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("textType")
     public String getTextType() {
         return this.textType;
     }
@@ -538,6 +541,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see TextType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTextType(TextType textType) {
         withTextType(textType);
     }
@@ -587,6 +591,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see VoiceId
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("voiceId")
     public String getVoiceId() {
         return this.voiceId;
     }
@@ -621,6 +626,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      * @see VoiceId
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVoiceId(VoiceId voiceId) {
         withVoiceId(voiceId);
     }

@@ -184,6 +184,7 @@ public class ConstraintViolationException extends com.amazonaws.services.organiz
      * @see ConstraintViolationExceptionReason
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReason(ConstraintViolationExceptionReason reason) {
         withReason(reason);
     }

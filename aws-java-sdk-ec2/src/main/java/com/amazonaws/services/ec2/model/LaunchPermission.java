@@ -62,6 +62,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      * @see PermissionGroup
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("group")
     public String getGroup() {
         return this.group;
     }
@@ -92,6 +93,7 @@ public class LaunchPermission implements Serializable, Cloneable {
      * @see PermissionGroup
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setGroup(PermissionGroup group) {
         withGroup(group);
     }

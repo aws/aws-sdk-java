@@ -323,6 +323,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @see InstanceStateName
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -353,6 +354,7 @@ public class InstanceState implements Serializable, Cloneable {
      * @see InstanceStateName
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(InstanceStateName name) {
         withName(name);
     }

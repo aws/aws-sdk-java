@@ -130,6 +130,7 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * @see InterconnectState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("interconnectState")
     public String getInterconnectState() {
         return this.interconnectState;
     }
@@ -150,6 +151,7 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * @see InterconnectState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInterconnectState(InterconnectState interconnectState) {
         withInterconnectState(interconnectState);
     }

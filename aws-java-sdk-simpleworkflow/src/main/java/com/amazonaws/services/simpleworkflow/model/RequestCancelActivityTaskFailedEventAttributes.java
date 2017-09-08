@@ -150,6 +150,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      * @see RequestCancelActivityTaskFailedCause
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -210,6 +211,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      * @see RequestCancelActivityTaskFailedCause
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(RequestCancelActivityTaskFailedCause cause) {
         withCause(cause);
     }

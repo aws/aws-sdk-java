@@ -231,6 +231,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * @see RequiredAttributeBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("requiredBehavior")
     public String getRequiredBehavior() {
         return this.requiredBehavior;
     }
@@ -261,6 +262,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * @see RequiredAttributeBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
         withRequiredBehavior(requiredBehavior);
     }

@@ -231,6 +231,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trustType")
     public String getTrustType() {
         return this.trustType;
     }
@@ -261,6 +262,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrustType(TrustType trustType) {
         withTrustType(trustType);
     }
@@ -304,6 +306,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustDirection
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trustDirection")
     public String getTrustDirection() {
         return this.trustDirection;
     }
@@ -334,6 +337,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustDirection
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrustDirection(TrustDirection trustDirection) {
         withTrustDirection(trustDirection);
     }
@@ -377,6 +381,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trustState")
     public String getTrustState() {
         return this.trustState;
     }
@@ -407,6 +412,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      * @see TrustState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrustState(TrustState trustState) {
         withTrustState(trustState);
     }

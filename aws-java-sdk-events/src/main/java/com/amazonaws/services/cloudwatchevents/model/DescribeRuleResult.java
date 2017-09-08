@@ -263,6 +263,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see RuleState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -293,6 +294,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see RuleState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(RuleState state) {
         withState(state);
     }

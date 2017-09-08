@@ -167,6 +167,7 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
      * @see EventTypeCategory
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
     public String getCategory() {
         return this.category;
     }
@@ -201,6 +202,7 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
      * @see EventTypeCategory
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCategory(EventTypeCategory category) {
         withCategory(category);
     }

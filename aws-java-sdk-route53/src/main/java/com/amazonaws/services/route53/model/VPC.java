@@ -57,6 +57,7 @@ public class VPC implements Serializable, Cloneable {
      * @see VPCRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("vPCRegion")
     public String getVPCRegion() {
         return this.vPCRegion;
     }
@@ -87,6 +88,7 @@ public class VPC implements Serializable, Cloneable {
      * @see VPCRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVPCRegion(VPCRegion vPCRegion) {
         withVPCRegion(vPCRegion);
     }

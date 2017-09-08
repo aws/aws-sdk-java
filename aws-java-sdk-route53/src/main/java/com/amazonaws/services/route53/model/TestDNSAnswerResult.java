@@ -170,6 +170,7 @@ public class TestDNSAnswerResult extends com.amazonaws.AmazonWebServiceResult<co
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recordType")
     public String getRecordType() {
         return this.recordType;
     }
@@ -200,6 +201,7 @@ public class TestDNSAnswerResult extends com.amazonaws.AmazonWebServiceResult<co
      * @see RRType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRecordType(RRType recordType) {
         withRecordType(recordType);
     }

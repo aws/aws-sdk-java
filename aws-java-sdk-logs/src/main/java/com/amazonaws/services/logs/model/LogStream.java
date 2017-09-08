@@ -36,27 +36,27 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     private String logStreamName;
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long firstEventTimestamp;
     /**
      * <p>
      * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
      * </p>
      */
     private Long lastEventTimestamp;
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long lastIngestionTime;
@@ -121,11 +121,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -134,10 +134,10 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * @return The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getCreationTime() {
@@ -146,11 +146,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param firstEventTimestamp
-     *        The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setFirstEventTimestamp(Long firstEventTimestamp) {
@@ -174,10 +174,10 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * @return The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getFirstEventTimestamp() {
@@ -186,11 +186,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param firstEventTimestamp
-     *        The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,13 +202,13 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
      * </p>
      * 
      * @param lastEventTimestamp
      *        the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *        the number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
+     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
      *        consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
      *        rare situations.
      */
@@ -220,12 +220,12 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
      * </p>
      * 
      * @return the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *         the number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
+     *         the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
      *         consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
      *         rare situations.
      */
@@ -237,13 +237,13 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
+     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
      * typically updates in less than an hour from ingestion, but may take longer in some rare situations.
      * </p>
      * 
      * @param lastEventTimestamp
      *        the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *        the number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
+     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual
      *        consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some
      *        rare situations.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -256,11 +256,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param lastIngestionTime
-     *        The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setLastIngestionTime(Long lastIngestionTime) {
@@ -269,10 +269,10 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * @return The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getLastIngestionTime() {
@@ -281,11 +281,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param lastIngestionTime
-     *        The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

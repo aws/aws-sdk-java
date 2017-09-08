@@ -205,6 +205,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see EvaluationFilterVariable
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("filterVariable")
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -283,6 +284,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see EvaluationFilterVariable
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFilterVariable(EvaluationFilterVariable filterVariable) {
         withFilterVariable(filterVariable);
     }
@@ -830,6 +832,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -886,6 +889,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }

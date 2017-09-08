@@ -524,6 +524,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * @see WorkspaceDirectoryType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("directoryType")
     public String getDirectoryType() {
         return this.directoryType;
     }
@@ -554,6 +555,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * @see WorkspaceDirectoryType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDirectoryType(WorkspaceDirectoryType directoryType) {
         withDirectoryType(directoryType);
     }
@@ -637,6 +639,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * @see WorkspaceDirectoryState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -667,6 +670,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * @see WorkspaceDirectoryState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(WorkspaceDirectoryState state) {
         withState(state);
     }

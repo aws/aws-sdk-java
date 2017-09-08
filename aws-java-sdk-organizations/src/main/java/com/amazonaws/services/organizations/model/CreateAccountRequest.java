@@ -390,6 +390,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see IAMUserAccessToBilling
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("iamUserAccessToBilling")
     public String getIamUserAccessToBilling() {
         return this.iamUserAccessToBilling;
     }
@@ -454,6 +455,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see IAMUserAccessToBilling
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIamUserAccessToBilling(IAMUserAccessToBilling iamUserAccessToBilling) {
         withIamUserAccessToBilling(iamUserAccessToBilling);
     }

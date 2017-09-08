@@ -972,6 +972,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @see AZMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("aZMode")
     public String getAZMode() {
         return this.aZMode;
     }
@@ -1032,6 +1033,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @see AZMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAZMode(AZMode aZMode) {
         withAZMode(aZMode);
     }

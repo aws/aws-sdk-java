@@ -163,6 +163,7 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Platform
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -193,6 +194,7 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Platform
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(Platform platform) {
         withPlatform(platform);
     }

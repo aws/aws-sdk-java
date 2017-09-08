@@ -657,6 +657,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see StateValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stateValue")
     public String getStateValue() {
         return this.stateValue;
     }
@@ -687,6 +688,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see StateValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStateValue(StateValue stateValue) {
         withStateValue(stateValue);
     }
@@ -934,6 +936,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see Statistic
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("statistic")
     public String getStatistic() {
         return this.statistic;
     }
@@ -968,6 +971,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see Statistic
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatistic(Statistic statistic) {
         withStatistic(statistic);
     }
@@ -1166,6 +1170,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see StandardUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -1196,6 +1201,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see StandardUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(StandardUnit unit) {
         withUnit(unit);
     }
@@ -1323,6 +1329,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see ComparisonOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1357,6 +1364,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * @see ComparisonOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }

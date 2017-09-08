@@ -247,6 +247,7 @@ public class UsageRecordResult implements Serializable, Cloneable, StructuredPoj
      * @see UsageRecordResultStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -355,6 +356,7 @@ public class UsageRecordResult implements Serializable, Cloneable, StructuredPoj
      * @see UsageRecordResultStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(UsageRecordResultStatus status) {
         withStatus(status);
     }

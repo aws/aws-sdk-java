@@ -383,6 +383,7 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see CacheClusterStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cacheClusterStatus")
     public String getCacheClusterStatus() {
         return this.cacheClusterStatus;
     }
@@ -413,6 +414,7 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see CacheClusterStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
         withCacheClusterStatus(cacheClusterStatus);
     }

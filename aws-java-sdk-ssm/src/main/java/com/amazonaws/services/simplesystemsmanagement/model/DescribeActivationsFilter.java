@@ -64,6 +64,7 @@ public class DescribeActivationsFilter implements Serializable, Cloneable, Struc
      * @see DescribeActivationsFilterKeys
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("filterKey")
     public String getFilterKey() {
         return this.filterKey;
     }
@@ -94,6 +95,7 @@ public class DescribeActivationsFilter implements Serializable, Cloneable, Struc
      * @see DescribeActivationsFilterKeys
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFilterKey(DescribeActivationsFilterKeys filterKey) {
         withFilterKey(filterKey);
     }

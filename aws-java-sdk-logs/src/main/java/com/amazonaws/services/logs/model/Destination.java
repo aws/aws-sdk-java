@@ -36,7 +36,7 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String destinationName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      */
@@ -61,7 +61,7 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long creationTime;
@@ -108,12 +108,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example,
+     *        The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
      *        a Kinesis stream).
      */
 
@@ -123,12 +123,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for
-     *         example, a Kinesis stream).
+     * @return The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
+     *         a Kinesis stream).
      */
 
     public String getTargetArn() {
@@ -137,12 +137,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example, a
+     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
      * Kinesis stream).
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the physical target where the log events will be delivered (for example,
+     *        The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
      *        a Kinesis stream).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -277,11 +277,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *        UTC.
      */
 
@@ -291,10 +291,10 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * @return The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *         UTC.
      */
 
@@ -304,11 +304,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -210,6 +210,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * @see IntegrationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -252,6 +253,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * @see IntegrationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(IntegrationType type) {
         withType(type);
     }
@@ -883,6 +885,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * @see ContentHandlingStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("contentHandling")
     public String getContentHandling() {
         return this.contentHandling;
     }
@@ -987,6 +990,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * @see ContentHandlingStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         withContentHandling(contentHandling);
     }

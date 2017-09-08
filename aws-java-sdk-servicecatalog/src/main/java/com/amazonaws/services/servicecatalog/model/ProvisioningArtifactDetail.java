@@ -235,6 +235,7 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * @see ProvisioningArtifactType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -291,6 +292,7 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * @see ProvisioningArtifactType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ProvisioningArtifactType type) {
         withType(type);
     }

@@ -95,6 +95,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @see ActivityStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("activityStatus")
     public String getActivityStatus() {
         return this.activityStatus;
     }
@@ -137,6 +138,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @see ActivityStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActivityStatus(ActivityStatus activityStatus) {
         withActivityStatus(activityStatus);
     }
@@ -306,6 +308,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @see BatchState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("spotFleetRequestState")
     public String getSpotFleetRequestState() {
         return this.spotFleetRequestState;
     }
@@ -336,6 +339,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      * @see BatchState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSpotFleetRequestState(BatchState spotFleetRequestState) {
         withSpotFleetRequestState(spotFleetRequestState);
     }

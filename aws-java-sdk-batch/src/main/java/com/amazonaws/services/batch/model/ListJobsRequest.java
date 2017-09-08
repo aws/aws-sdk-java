@@ -127,6 +127,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * @see JobStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStatus")
     public String getJobStatus() {
         return this.jobStatus;
     }
@@ -157,6 +158,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * @see JobStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobStatus(JobStatus jobStatus) {
         withJobStatus(jobStatus);
     }

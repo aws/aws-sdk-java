@@ -123,6 +123,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("statusFilter")
     public String getStatusFilter() {
         return this.statusFilter;
     }
@@ -153,6 +154,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusFilter(ExecutionStatus statusFilter) {
         withStatusFilter(statusFilter);
     }

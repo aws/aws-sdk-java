@@ -180,6 +180,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      * @see MaintenanceWindowExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -210,6 +211,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      * @see MaintenanceWindowExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(MaintenanceWindowExecutionStatus status) {
         withStatus(status);
     }
@@ -413,6 +415,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      * @see MaintenanceWindowTaskType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     public String getTaskType() {
         return this.taskType;
     }
@@ -443,6 +446,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      * @see MaintenanceWindowTaskType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTaskType(MaintenanceWindowTaskType taskType) {
         withTaskType(taskType);
     }

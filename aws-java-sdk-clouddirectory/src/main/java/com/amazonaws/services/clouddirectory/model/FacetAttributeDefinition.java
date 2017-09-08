@@ -78,6 +78,7 @@ public class FacetAttributeDefinition implements Serializable, Cloneable, Struct
      * @see FacetAttributeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -108,6 +109,7 @@ public class FacetAttributeDefinition implements Serializable, Cloneable, Struct
      * @see FacetAttributeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(FacetAttributeType type) {
         withType(type);
     }

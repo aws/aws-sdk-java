@@ -391,6 +391,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see AuthFlowType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("authFlow")
     public String getAuthFlow() {
         return this.authFlow;
     }
@@ -581,6 +582,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see AuthFlowType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAuthFlow(AuthFlowType authFlow) {
         withAuthFlow(authFlow);
     }

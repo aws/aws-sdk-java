@@ -193,6 +193,7 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
      * @see OperatingSystem
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -223,6 +224,7 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
      * @see OperatingSystem
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }
@@ -419,6 +421,7 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
      * @see PatchComplianceLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("approvedPatchesComplianceLevel")
     public String getApprovedPatchesComplianceLevel() {
         return this.approvedPatchesComplianceLevel;
     }
@@ -449,6 +452,7 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
      * @see PatchComplianceLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
         withApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
     }

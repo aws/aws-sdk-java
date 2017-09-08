@@ -338,6 +338,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @see InstanceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -494,6 +495,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @see InstanceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(InstanceStatus status) {
         withStatus(status);
     }
@@ -759,6 +761,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -835,6 +838,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }

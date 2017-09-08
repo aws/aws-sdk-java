@@ -107,6 +107,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * @see Frequency
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("frequency")
     public String getFrequency() {
         return this.frequency;
     }
@@ -141,6 +142,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * @see Frequency
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFrequency(Frequency frequency) {
         withFrequency(frequency);
     }

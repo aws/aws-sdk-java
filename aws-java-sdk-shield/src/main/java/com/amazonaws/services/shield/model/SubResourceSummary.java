@@ -76,6 +76,7 @@ public class SubResourceSummary implements Serializable, Cloneable, StructuredPo
      * @see SubResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -106,6 +107,7 @@ public class SubResourceSummary implements Serializable, Cloneable, StructuredPo
      * @see SubResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SubResourceType type) {
         withType(type);
     }

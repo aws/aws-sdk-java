@@ -88,6 +88,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      * @see RoleMappingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -126,6 +127,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      * @see RoleMappingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(RoleMappingType type) {
         withType(type);
     }
@@ -193,6 +195,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      * @see AmbiguousRoleResolutionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("ambiguousRoleResolution")
     public String getAmbiguousRoleResolution() {
         return this.ambiguousRoleResolution;
     }
@@ -243,6 +246,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      * @see AmbiguousRoleResolutionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAmbiguousRoleResolution(AmbiguousRoleResolutionType ambiguousRoleResolution) {
         withAmbiguousRoleResolution(ambiguousRoleResolution);
     }

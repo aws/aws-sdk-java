@@ -45,7 +45,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
     private String filterPattern;
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricTransformation> metricTransformations;
@@ -68,7 +68,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param filterPattern
      *        A filter pattern for extracting metric data out of ingested log events.
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      */
     public PutMetricFilterRequest(String logGroupName, String filterName, String filterPattern, java.util.List<MetricTransformation> metricTransformations) {
         setLogGroupName(logGroupName);
@@ -199,10 +199,10 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * 
-     * @return A collection of information needed to define how metric data gets emitted.
+     * @return A collection of information that defines how metric data gets emitted.
      */
 
     public java.util.List<MetricTransformation> getMetricTransformations() {
@@ -214,11 +214,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * 
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      */
 
     public void setMetricTransformations(java.util.Collection<MetricTransformation> metricTransformations) {
@@ -232,7 +232,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +241,7 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +257,11 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A collection of information needed to define how metric data gets emitted.
+     * A collection of information that defines how metric data gets emitted.
      * </p>
      * 
      * @param metricTransformations
-     *        A collection of information needed to define how metric data gets emitted.
+     *        A collection of information that defines how metric data gets emitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -112,6 +112,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      * @see ConnectorStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -132,6 +133,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      * @see ConnectorStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ConnectorStatus status) {
         withStatus(status);
     }
@@ -262,6 +264,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      * @see VmManagerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("vmManagerType")
     public String getVmManagerType() {
         return this.vmManagerType;
     }
@@ -282,6 +285,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      * @see VmManagerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVmManagerType(VmManagerType vmManagerType) {
         withVmManagerType(vmManagerType);
     }

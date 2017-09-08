@@ -289,6 +289,7 @@ public class GetBotChannelAssociationResult extends com.amazonaws.AmazonWebServi
      * @see ChannelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -319,6 +320,7 @@ public class GetBotChannelAssociationResult extends com.amazonaws.AmazonWebServi
      * @see ChannelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ChannelType type) {
         withType(type);
     }

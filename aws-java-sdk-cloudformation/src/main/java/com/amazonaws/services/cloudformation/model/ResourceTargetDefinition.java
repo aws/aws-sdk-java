@@ -80,6 +80,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * @see ResourceAttribute
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -114,6 +115,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * @see ResourceAttribute
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(ResourceAttribute attribute) {
         withAttribute(attribute);
     }
@@ -225,6 +227,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * @see RequiresRecreation
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("requiresRecreation")
     public String getRequiresRecreation() {
         return this.requiresRecreation;
     }
@@ -275,6 +278,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * @see RequiresRecreation
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRequiresRecreation(RequiresRecreation requiresRecreation) {
         withRequiresRecreation(requiresRecreation);
     }

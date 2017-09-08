@@ -332,6 +332,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * @see StreamStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("streamStatus")
     public String getStreamStatus() {
         return this.streamStatus;
     }
@@ -464,6 +465,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * @see StreamStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStreamStatus(StreamStatus streamStatus) {
         withStreamStatus(streamStatus);
     }
@@ -885,6 +887,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * @see EncryptionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionType")
     public String getEncryptionType() {
         return this.encryptionType;
     }
@@ -963,6 +966,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * @see EncryptionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncryptionType(EncryptionType encryptionType) {
         withEncryptionType(encryptionType);
     }

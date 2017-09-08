@@ -62,6 +62,7 @@ public class VpcAttachment implements Serializable, Cloneable {
      * @see AttachmentStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -92,6 +93,7 @@ public class VpcAttachment implements Serializable, Cloneable {
      * @see AttachmentStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(AttachmentStatus state) {
         withState(state);
     }

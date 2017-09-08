@@ -467,6 +467,7 @@ public class Volume implements Serializable, Cloneable {
      * @see VolumeState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -497,6 +498,7 @@ public class Volume implements Serializable, Cloneable {
      * @see VolumeState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(VolumeState state) {
         withState(state);
     }
@@ -772,6 +774,7 @@ public class Volume implements Serializable, Cloneable {
      * @see VolumeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -810,6 +813,7 @@ public class Volume implements Serializable, Cloneable {
      * @see VolumeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         withVolumeType(volumeType);
     }

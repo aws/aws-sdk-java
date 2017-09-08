@@ -101,6 +101,7 @@ public class MoveAddressToVpcResult extends com.amazonaws.AmazonWebServiceResult
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -131,6 +132,7 @@ public class MoveAddressToVpcResult extends com.amazonaws.AmazonWebServiceResult
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }

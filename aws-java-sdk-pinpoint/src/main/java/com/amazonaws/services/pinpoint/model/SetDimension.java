@@ -57,6 +57,7 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
      * @see DimensionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dimensionType")
     public String getDimensionType() {
         return this.dimensionType;
     }
@@ -87,6 +88,7 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
      * @see DimensionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDimensionType(DimensionType dimensionType) {
         withDimensionType(dimensionType);
     }

@@ -213,6 +213,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -243,6 +244,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ParameterType type) {
         withType(type);
     }

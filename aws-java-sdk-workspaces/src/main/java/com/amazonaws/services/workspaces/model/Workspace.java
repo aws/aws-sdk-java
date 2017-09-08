@@ -292,6 +292,7 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * @see WorkspaceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -322,6 +323,7 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * @see WorkspaceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(WorkspaceState state) {
         withState(state);
     }

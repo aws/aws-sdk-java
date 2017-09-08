@@ -116,6 +116,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * @see LayerAvailability
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("layerAvailability")
     public String getLayerAvailability() {
         return this.layerAvailability;
     }
@@ -146,6 +147,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * @see LayerAvailability
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLayerAvailability(LayerAvailability layerAvailability) {
         withLayerAvailability(layerAvailability);
     }

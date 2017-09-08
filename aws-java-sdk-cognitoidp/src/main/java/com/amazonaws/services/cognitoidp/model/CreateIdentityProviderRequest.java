@@ -165,6 +165,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * @see IdentityProviderTypeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("providerType")
     public String getProviderType() {
         return this.providerType;
     }
@@ -195,6 +196,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      * @see IdentityProviderTypeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProviderType(IdentityProviderTypeType providerType) {
         withProviderType(providerType);
     }

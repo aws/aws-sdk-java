@@ -194,6 +194,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @see EventType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("eventType")
     public String getEventType() {
         return this.eventType;
     }
@@ -292,6 +293,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      * @see EventType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEventType(EventType eventType) {
         withEventType(eventType);
     }

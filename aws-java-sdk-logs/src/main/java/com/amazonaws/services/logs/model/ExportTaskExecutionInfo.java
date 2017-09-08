@@ -30,24 +30,24 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long completionTime;
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *        UTC.
      */
 
@@ -57,10 +57,10 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     * @return The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *         UTC.
      */
 
@@ -70,11 +70,11 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -86,11 +86,11 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param completionTime
-     *        The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *        UTC.
      */
 
@@ -100,10 +100,10 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970
+     * @return The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970
      *         00:00:00 UTC.
      */
 
@@ -113,11 +113,11 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param completionTime
-     *        The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
      *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

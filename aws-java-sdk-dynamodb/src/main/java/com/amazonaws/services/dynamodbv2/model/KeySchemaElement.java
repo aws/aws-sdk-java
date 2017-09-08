@@ -314,6 +314,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * @see KeyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keyType")
     public String getKeyType() {
         return this.keyType;
     }
@@ -438,6 +439,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      * @see KeyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeyType(KeyType keyType) {
         withKeyType(keyType);
     }

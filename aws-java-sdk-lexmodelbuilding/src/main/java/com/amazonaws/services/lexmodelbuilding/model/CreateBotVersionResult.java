@@ -408,6 +408,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -450,6 +451,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }
@@ -788,6 +790,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * @see Locale
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -818,6 +821,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * @see Locale
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(Locale locale) {
         withLocale(locale);
     }

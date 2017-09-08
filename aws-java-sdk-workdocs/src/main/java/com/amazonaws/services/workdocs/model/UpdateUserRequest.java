@@ -264,6 +264,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see UserType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -294,6 +295,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see UserType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(UserType type) {
         withType(type);
     }
@@ -417,6 +419,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see LocaleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -447,6 +450,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see LocaleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(LocaleType locale) {
         withLocale(locale);
     }

@@ -334,6 +334,7 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
      * @see MetricUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -364,6 +365,7 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
      * @see MetricUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(MetricUnit unit) {
         withUnit(unit);
     }

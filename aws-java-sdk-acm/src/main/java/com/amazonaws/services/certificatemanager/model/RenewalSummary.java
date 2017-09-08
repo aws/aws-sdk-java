@@ -74,6 +74,7 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
      * @see RenewalStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("renewalStatus")
     public String getRenewalStatus() {
         return this.renewalStatus;
     }
@@ -108,6 +109,7 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
      * @see RenewalStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRenewalStatus(RenewalStatus renewalStatus) {
         withRenewalStatus(renewalStatus);
     }

@@ -131,6 +131,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see BackupPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
     public String getBackupPolicy() {
         return this.backupPolicy;
     }
@@ -506,6 +507,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see ClusterState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

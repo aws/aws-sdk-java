@@ -286,6 +286,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
      * @see MaintenanceWindowTaskType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     public String getTaskType() {
         return this.taskType;
     }
@@ -389,6 +390,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
      * @see MaintenanceWindowExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

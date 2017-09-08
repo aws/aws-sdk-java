@@ -116,6 +116,7 @@ public class AssociationStatus implements Serializable, Cloneable, StructuredPoj
      * @see AssociationStatusName
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -146,6 +147,7 @@ public class AssociationStatus implements Serializable, Cloneable, StructuredPoj
      * @see AssociationStatusName
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(AssociationStatusName name) {
         withName(name);
     }

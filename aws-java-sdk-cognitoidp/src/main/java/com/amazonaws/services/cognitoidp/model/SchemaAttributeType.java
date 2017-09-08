@@ -135,6 +135,7 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * @see AttributeDataType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("attributeDataType")
     public String getAttributeDataType() {
         return this.attributeDataType;
     }
@@ -165,6 +166,7 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * @see AttributeDataType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttributeDataType(AttributeDataType attributeDataType) {
         withAttributeDataType(attributeDataType);
     }

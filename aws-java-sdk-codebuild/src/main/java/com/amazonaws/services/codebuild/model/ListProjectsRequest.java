@@ -193,6 +193,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ProjectSortByType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     public String getSortBy() {
         return this.sortBy;
     }
@@ -309,6 +310,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ProjectSortByType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortBy(ProjectSortByType sortBy) {
         withSortBy(sortBy);
     }
@@ -453,6 +455,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see SortOrderType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -541,6 +544,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see SortOrderType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrderType sortOrder) {
         withSortOrder(sortOrder);
     }

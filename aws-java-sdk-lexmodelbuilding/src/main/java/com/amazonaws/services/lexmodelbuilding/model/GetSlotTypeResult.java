@@ -417,6 +417,7 @@ public class GetSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see SlotValueSelectionStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("valueSelectionStrategy")
     public String getValueSelectionStrategy() {
         return this.valueSelectionStrategy;
     }

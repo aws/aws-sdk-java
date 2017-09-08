@@ -448,6 +448,7 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * @see CommandInvocationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -478,6 +479,7 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * @see CommandInvocationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CommandInvocationStatus status) {
         withStatus(status);
     }

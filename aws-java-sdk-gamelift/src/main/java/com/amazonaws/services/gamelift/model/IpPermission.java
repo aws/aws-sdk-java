@@ -219,6 +219,7 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
      * @see IpProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -249,6 +250,7 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
      * @see IpProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(IpProtocol protocol) {
         withProtocol(protocol);
     }

@@ -64,6 +64,7 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
      * @see ProcessorParameterName
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
     public String getParameterName() {
         return this.parameterName;
     }
@@ -94,6 +95,7 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
      * @see ProcessorParameterName
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setParameterName(ProcessorParameterName parameterName) {
         withParameterName(parameterName);
     }

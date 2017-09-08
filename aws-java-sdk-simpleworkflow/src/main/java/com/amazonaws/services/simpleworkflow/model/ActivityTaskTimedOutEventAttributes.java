@@ -80,6 +80,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable, Clonea
      * @see ActivityTaskTimeoutType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("timeoutType")
     public String getTimeoutType() {
         return this.timeoutType;
     }
@@ -110,6 +111,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable, Clonea
      * @see ActivityTaskTimeoutType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeoutType(ActivityTaskTimeoutType timeoutType) {
         withTimeoutType(timeoutType);
     }

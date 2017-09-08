@@ -147,6 +147,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see DocumentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     public String getDocumentType() {
         return this.documentType;
     }
@@ -177,6 +178,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see DocumentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         withDocumentType(documentType);
     }

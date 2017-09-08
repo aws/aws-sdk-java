@@ -104,6 +104,7 @@ public class RecurringCharge implements Serializable, Cloneable, StructuredPojo 
      * @see RecurringChargeFrequency
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("frequency")
     public String getFrequency() {
         return this.frequency;
     }
@@ -134,6 +135,7 @@ public class RecurringCharge implements Serializable, Cloneable, StructuredPojo 
      * @see RecurringChargeFrequency
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFrequency(RecurringChargeFrequency frequency) {
         withFrequency(frequency);
     }

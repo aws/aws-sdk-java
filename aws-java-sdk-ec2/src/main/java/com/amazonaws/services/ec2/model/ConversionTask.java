@@ -259,6 +259,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @see ConversionTaskState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -289,6 +290,7 @@ public class ConversionTask implements Serializable, Cloneable {
      * @see ConversionTaskState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ConversionTaskState state) {
         withState(state);
     }

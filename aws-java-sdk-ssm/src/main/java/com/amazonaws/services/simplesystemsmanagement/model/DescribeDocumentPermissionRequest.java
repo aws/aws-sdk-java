@@ -101,6 +101,7 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
      * @see DocumentPermissionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("permissionType")
     public String getPermissionType() {
         return this.permissionType;
     }
@@ -131,6 +132,7 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
      * @see DocumentPermissionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPermissionType(DocumentPermissionType permissionType) {
         withPermissionType(permissionType);
     }

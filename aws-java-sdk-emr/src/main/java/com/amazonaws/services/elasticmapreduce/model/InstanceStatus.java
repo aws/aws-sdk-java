@@ -70,6 +70,7 @@ public class InstanceStatus implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -100,6 +101,7 @@ public class InstanceStatus implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(InstanceState state) {
         withState(state);
     }

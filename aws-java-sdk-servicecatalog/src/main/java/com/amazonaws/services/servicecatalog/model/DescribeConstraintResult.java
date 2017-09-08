@@ -145,6 +145,7 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -175,6 +176,7 @@ public class DescribeConstraintResult extends com.amazonaws.AmazonWebServiceResu
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }

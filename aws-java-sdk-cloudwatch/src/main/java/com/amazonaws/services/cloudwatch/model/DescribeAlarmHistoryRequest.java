@@ -125,6 +125,7 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
      * @see HistoryItemType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("historyItemType")
     public String getHistoryItemType() {
         return this.historyItemType;
     }
@@ -155,6 +156,7 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
      * @see HistoryItemType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHistoryItemType(HistoryItemType historyItemType) {
         withHistoryItemType(historyItemType);
     }

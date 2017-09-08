@@ -328,6 +328,7 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ShippingOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("shippingOption")
     public String getShippingOption() {
         return this.shippingOption;
     }
@@ -358,6 +359,7 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ShippingOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         withShippingOption(shippingOption);
     }

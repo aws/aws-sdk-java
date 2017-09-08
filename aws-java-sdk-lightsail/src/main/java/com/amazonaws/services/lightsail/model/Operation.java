@@ -204,6 +204,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -234,6 +235,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }
@@ -449,6 +451,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     public String getOperationType() {
         return this.operationType;
     }
@@ -479,6 +482,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperationType(OperationType operationType) {
         withOperationType(operationType);
     }
@@ -522,6 +526,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see OperationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -552,6 +557,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * @see OperationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(OperationStatus status) {
         withStatus(status);
     }

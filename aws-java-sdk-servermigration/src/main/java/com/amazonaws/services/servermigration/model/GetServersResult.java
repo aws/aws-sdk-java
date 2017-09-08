@@ -71,6 +71,7 @@ public class GetServersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see ServerCatalogStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("serverCatalogStatus")
     public String getServerCatalogStatus() {
         return this.serverCatalogStatus;
     }
@@ -91,6 +92,7 @@ public class GetServersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see ServerCatalogStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServerCatalogStatus(ServerCatalogStatus serverCatalogStatus) {
         withServerCatalogStatus(serverCatalogStatus);
     }

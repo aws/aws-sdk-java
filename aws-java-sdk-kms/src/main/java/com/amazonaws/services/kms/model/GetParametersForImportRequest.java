@@ -231,6 +231,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * @see AlgorithmSpec
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("wrappingAlgorithm")
     public String getWrappingAlgorithm() {
         return this.wrappingAlgorithm;
     }
@@ -273,6 +274,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * @see AlgorithmSpec
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setWrappingAlgorithm(AlgorithmSpec wrappingAlgorithm) {
         withWrappingAlgorithm(wrappingAlgorithm);
     }
@@ -324,6 +326,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * @see WrappingKeySpec
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("wrappingKeySpec")
     public String getWrappingKeySpec() {
         return this.wrappingKeySpec;
     }
@@ -356,6 +359,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * @see WrappingKeySpec
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setWrappingKeySpec(WrappingKeySpec wrappingKeySpec) {
         withWrappingKeySpec(wrappingKeySpec);
     }

@@ -62,6 +62,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * @see VpcPeeringConnectionStateReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -92,6 +93,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      * @see VpcPeeringConnectionStateReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(VpcPeeringConnectionStateReasonCode code) {
         withCode(code);
     }

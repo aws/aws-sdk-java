@@ -2703,6 +2703,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see RootDeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultRootDeviceType")
     public String getDefaultRootDeviceType() {
         return this.defaultRootDeviceType;
     }
@@ -2745,6 +2746,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see RootDeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         withDefaultRootDeviceType(defaultRootDeviceType);
     }

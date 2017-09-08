@@ -64,6 +64,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * @see InspectorEvent
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("event")
     public String getEvent() {
         return this.event;
     }
@@ -94,6 +95,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      * @see InspectorEvent
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvent(InspectorEvent event) {
         withEvent(event);
     }

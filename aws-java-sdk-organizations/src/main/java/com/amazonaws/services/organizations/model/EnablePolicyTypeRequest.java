@@ -133,6 +133,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     public String getPolicyType() {
         return this.policyType;
     }
@@ -163,6 +164,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPolicyType(PolicyType policyType) {
         withPolicyType(policyType);
     }

@@ -248,6 +248,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * @see LastResourceDataSyncStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lastStatus")
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -278,6 +279,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      * @see LastResourceDataSyncStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLastStatus(LastResourceDataSyncStatus lastStatus) {
         withLastStatus(lastStatus);
     }

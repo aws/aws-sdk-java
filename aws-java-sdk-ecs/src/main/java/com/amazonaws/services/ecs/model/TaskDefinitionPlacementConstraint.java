@@ -78,6 +78,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * @see TaskDefinitionPlacementConstraintType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -116,6 +117,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * @see TaskDefinitionPlacementConstraintType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(TaskDefinitionPlacementConstraintType type) {
         withType(type);
     }

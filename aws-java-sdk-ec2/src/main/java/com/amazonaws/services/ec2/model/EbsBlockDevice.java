@@ -489,6 +489,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @see VolumeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -533,6 +534,7 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * @see VolumeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         withVolumeType(volumeType);
     }

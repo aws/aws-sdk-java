@@ -544,6 +544,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see EntityStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -604,6 +605,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see EntityStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(EntityStatus status) {
         withStatus(status);
     }
@@ -1173,6 +1175,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see MLModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("mLModelType")
     public String getMLModelType() {
         return this.mLModelType;
     }
@@ -1225,6 +1228,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see MLModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMLModelType(MLModelType mLModelType) {
         withMLModelType(mLModelType);
     }

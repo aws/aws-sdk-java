@@ -219,6 +219,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * @see GatewayResponseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("responseType")
     public String getResponseType() {
         return this.responseType;
     }
@@ -337,6 +338,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * @see GatewayResponseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResponseType(GatewayResponseType responseType) {
         withResponseType(responseType);
     }

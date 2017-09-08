@@ -246,6 +246,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @see ExportTaskState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -276,6 +277,7 @@ public class ExportTask implements Serializable, Cloneable {
      * @see ExportTaskState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ExportTaskState state) {
         withState(state);
     }

@@ -437,6 +437,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @see ListingStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -467,6 +468,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * @see ListingStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ListingStatus status) {
         withStatus(status);
     }

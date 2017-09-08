@@ -302,6 +302,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     public String getExecutionStatus() {
         return this.executionStatus;
     }
@@ -332,6 +333,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         withExecutionStatus(executionStatus);
     }
@@ -511,6 +513,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      * @see CloseStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("closeStatus")
     public String getCloseStatus() {
         return this.closeStatus;
     }
@@ -677,6 +680,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      * @see CloseStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCloseStatus(CloseStatus closeStatus) {
         withCloseStatus(closeStatus);
     }

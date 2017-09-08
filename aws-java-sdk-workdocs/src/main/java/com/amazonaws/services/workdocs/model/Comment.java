@@ -349,6 +349,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      * @see CommentStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -379,6 +380,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      * @see CommentStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CommentStatusType status) {
         withStatus(status);
     }
@@ -430,6 +432,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      * @see CommentVisibilityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("visibility")
     public String getVisibility() {
         return this.visibility;
     }
@@ -468,6 +471,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      * @see CommentVisibilityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVisibility(CommentVisibilityType visibility) {
         withVisibility(visibility);
     }

@@ -288,6 +288,7 @@ public class VerificationMessageTemplateType implements Serializable, Cloneable,
      * @see DefaultEmailOptionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultEmailOption")
     public String getDefaultEmailOption() {
         return this.defaultEmailOption;
     }

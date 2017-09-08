@@ -71,6 +71,7 @@ public class TooManyRequestsException extends com.amazonaws.services.athena.mode
      * @see ThrottleReason
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReason(ThrottleReason reason) {
         withReason(reason);
     }

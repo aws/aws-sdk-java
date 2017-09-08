@@ -236,6 +236,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see MLModelFilterVariable
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("filterVariable")
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -338,6 +339,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see MLModelFilterVariable
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFilterVariable(MLModelFilterVariable filterVariable) {
         withFilterVariable(filterVariable);
     }
@@ -895,6 +897,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -951,6 +954,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }

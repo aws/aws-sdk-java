@@ -128,6 +128,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * @see RevisionLocationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("revisionType")
     public String getRevisionType() {
         return this.revisionType;
     }
@@ -204,6 +205,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * @see RevisionLocationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRevisionType(RevisionLocationType revisionType) {
         withRevisionType(revisionType);
     }

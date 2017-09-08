@@ -71,6 +71,7 @@ public class XssMatchSetUpdate implements Serializable, Cloneable, StructuredPoj
      * @see ChangeAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -105,6 +106,7 @@ public class XssMatchSetUpdate implements Serializable, Cloneable, StructuredPoj
      * @see ChangeAction
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(ChangeAction action) {
         withAction(action);
     }

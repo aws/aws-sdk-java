@@ -846,6 +846,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see ProcessBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("processBehavior")
     public String getProcessBehavior() {
         return this.processBehavior;
     }
@@ -892,6 +893,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see ProcessBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProcessBehavior(ProcessBehavior processBehavior) {
         withProcessBehavior(processBehavior);
     }
@@ -957,6 +959,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see Locale
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -1001,6 +1004,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see Locale
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(Locale locale) {
         withLocale(locale);
     }

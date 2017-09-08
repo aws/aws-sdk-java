@@ -280,6 +280,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * @see ProtectionPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("newGameSessionProtectionPolicy")
     public String getNewGameSessionProtectionPolicy() {
         return this.newGameSessionProtectionPolicy;
     }
@@ -366,6 +367,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * @see ProtectionPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }

@@ -89,6 +89,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable, Struct
      * @see DeliveryStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lastStatus")
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -119,6 +120,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable, Struct
      * @see DeliveryStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLastStatus(DeliveryStatus lastStatus) {
         withLastStatus(lastStatus);
     }

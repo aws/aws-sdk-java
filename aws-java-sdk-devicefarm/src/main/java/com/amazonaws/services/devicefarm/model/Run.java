@@ -712,6 +712,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see TestType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1044,6 +1045,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see TestType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(TestType type) {
         withType(type);
     }
@@ -1296,6 +1298,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -1384,6 +1387,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(DevicePlatform platform) {
         withPlatform(platform);
     }
@@ -1694,6 +1698,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -1922,6 +1927,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ExecutionStatus status) {
         withStatus(status);
     }
@@ -2222,6 +2228,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("result")
     public String getResult() {
         return this.result;
     }
@@ -2410,6 +2417,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResult(ExecutionResult result) {
         withResult(result);
     }
@@ -2776,6 +2784,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("billingMethod")
     public String getBillingMethod() {
         return this.billingMethod;
     }
@@ -2810,6 +2819,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBillingMethod(BillingMethod billingMethod) {
         withBillingMethod(billingMethod);
     }

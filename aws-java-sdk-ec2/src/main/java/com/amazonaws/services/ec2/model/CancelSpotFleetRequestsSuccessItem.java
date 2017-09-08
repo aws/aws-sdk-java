@@ -68,6 +68,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * @see BatchState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("currentSpotFleetRequestState")
     public String getCurrentSpotFleetRequestState() {
         return this.currentSpotFleetRequestState;
     }
@@ -98,6 +99,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * @see BatchState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrentSpotFleetRequestState(BatchState currentSpotFleetRequestState) {
         withCurrentSpotFleetRequestState(currentSpotFleetRequestState);
     }
@@ -141,6 +143,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * @see BatchState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("previousSpotFleetRequestState")
     public String getPreviousSpotFleetRequestState() {
         return this.previousSpotFleetRequestState;
     }
@@ -171,6 +174,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * @see BatchState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPreviousSpotFleetRequestState(BatchState previousSpotFleetRequestState) {
         withPreviousSpotFleetRequestState(previousSpotFleetRequestState);
     }

@@ -150,6 +150,7 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
      * @see ActionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -180,6 +181,7 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
      * @see ActionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ActionStatus status) {
         withStatus(status);
     }

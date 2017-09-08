@@ -503,6 +503,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see DocumentHashType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("documentHashType")
     public String getDocumentHashType() {
         return this.documentHashType;
     }
@@ -549,6 +550,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see DocumentHashType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDocumentHashType(DocumentHashType documentHashType) {
         withDocumentHashType(documentHashType);
     }

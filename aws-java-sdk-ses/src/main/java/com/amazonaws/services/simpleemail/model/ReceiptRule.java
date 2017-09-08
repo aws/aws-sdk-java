@@ -318,6 +318,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @see TlsPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsPolicy")
     public String getTlsPolicy() {
         return this.tlsPolicy;
     }
@@ -356,6 +357,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      * @see TlsPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTlsPolicy(TlsPolicy tlsPolicy) {
         withTlsPolicy(tlsPolicy);
     }

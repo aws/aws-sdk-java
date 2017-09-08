@@ -193,6 +193,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * @see TableRestoreStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -237,6 +238,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      * @see TableRestoreStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(TableRestoreStatusType status) {
         withStatus(status);
     }

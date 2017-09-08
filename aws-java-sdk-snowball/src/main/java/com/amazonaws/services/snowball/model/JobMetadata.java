@@ -211,6 +211,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see JobState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobState")
     public String getJobState() {
         return this.jobState;
     }
@@ -241,6 +242,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see JobState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobState(JobState jobState) {
         withJobState(jobState);
     }
@@ -284,6 +286,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see JobType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     public String getJobType() {
         return this.jobType;
     }
@@ -314,6 +317,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see JobType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobType(JobType jobType) {
         withJobType(jobType);
     }
@@ -357,6 +361,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("snowballType")
     public String getSnowballType() {
         return this.snowballType;
     }
@@ -387,6 +392,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         withSnowballType(snowballType);
     }
@@ -747,6 +753,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("snowballCapacityPreference")
     public String getSnowballCapacityPreference() {
         return this.snowballCapacityPreference;
     }
@@ -781,6 +788,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
         withSnowballCapacityPreference(snowballCapacityPreference);
     }

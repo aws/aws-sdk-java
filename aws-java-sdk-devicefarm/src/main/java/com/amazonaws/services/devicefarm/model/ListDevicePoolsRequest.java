@@ -184,6 +184,7 @@ public class ListDevicePoolsRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DevicePoolType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -272,6 +273,7 @@ public class ListDevicePoolsRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DevicePoolType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(DevicePoolType type) {
         withType(type);
     }

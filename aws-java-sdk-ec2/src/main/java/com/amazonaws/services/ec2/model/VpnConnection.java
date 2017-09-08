@@ -211,6 +211,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @see VpnState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -241,6 +242,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @see VpnState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(VpnState state) {
         withState(state);
     }
@@ -284,6 +286,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @see GatewayType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -314,6 +317,7 @@ public class VpnConnection implements Serializable, Cloneable {
      * @see GatewayType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(GatewayType type) {
         withType(type);
     }

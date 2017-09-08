@@ -167,6 +167,7 @@ public class Instance implements Serializable, Cloneable {
      * @see LifecycleState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     public String getLifecycleState() {
         return this.lifecycleState;
     }
@@ -197,6 +198,7 @@ public class Instance implements Serializable, Cloneable {
      * @see LifecycleState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLifecycleState(LifecycleState lifecycleState) {
         withLifecycleState(lifecycleState);
     }

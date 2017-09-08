@@ -64,6 +64,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * @see CommandFilterKey
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -94,6 +95,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      * @see CommandFilterKey
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(CommandFilterKey key) {
         withKey(key);
     }

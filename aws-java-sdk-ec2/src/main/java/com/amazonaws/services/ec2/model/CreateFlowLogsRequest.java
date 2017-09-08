@@ -320,6 +320,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @see FlowLogsResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -350,6 +351,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @see FlowLogsResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(FlowLogsResourceType resourceType) {
         withResourceType(resourceType);
     }
@@ -393,6 +395,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @see TrafficType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trafficType")
     public String getTrafficType() {
         return this.trafficType;
     }
@@ -423,6 +426,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @see TrafficType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrafficType(TrafficType trafficType) {
         withTrafficType(trafficType);
     }

@@ -104,6 +104,7 @@ public class FacetAttributeUpdate implements Serializable, Cloneable, Structured
      * @see UpdateActionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -134,6 +135,7 @@ public class FacetAttributeUpdate implements Serializable, Cloneable, Structured
      * @see UpdateActionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(UpdateActionType action) {
         withAction(action);
     }

@@ -279,6 +279,7 @@ public class BuildConfiguration implements Serializable, Cloneable {
      * @see ComputeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("computeType")
     public String getComputeType() {
         return this.computeType;
     }
@@ -375,6 +376,7 @@ public class BuildConfiguration implements Serializable, Cloneable {
      * @see ComputeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComputeType(ComputeType computeType) {
         withComputeType(computeType);
     }

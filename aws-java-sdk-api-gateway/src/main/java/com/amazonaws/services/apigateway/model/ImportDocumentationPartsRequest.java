@@ -125,6 +125,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * @see PutMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("mode")
     public String getMode() {
         return this.mode;
     }
@@ -163,6 +164,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      * @see PutMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMode(PutMode mode) {
         withMode(mode);
     }

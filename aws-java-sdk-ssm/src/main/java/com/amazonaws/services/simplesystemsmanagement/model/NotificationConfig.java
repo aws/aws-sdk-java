@@ -256,6 +256,7 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
      * @see NotificationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationType")
     public String getNotificationType() {
         return this.notificationType;
     }
@@ -290,6 +291,7 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
      * @see NotificationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         withNotificationType(notificationType);
     }

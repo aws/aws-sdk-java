@@ -191,6 +191,7 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
      * @see InstancePatchStateOperatorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -221,6 +222,7 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
      * @see InstancePatchStateOperatorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(InstancePatchStateOperatorType type) {
         withType(type);
     }

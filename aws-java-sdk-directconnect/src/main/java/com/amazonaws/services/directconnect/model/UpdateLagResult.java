@@ -312,6 +312,7 @@ public class UpdateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see LagState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lagState")
     public String getLagState() {
         return this.lagState;
     }
@@ -332,6 +333,7 @@ public class UpdateLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see LagState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLagState(LagState lagState) {
         withLagState(lagState);
     }

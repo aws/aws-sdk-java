@@ -262,6 +262,7 @@ public class Address implements Serializable, Cloneable {
      * @see DomainType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("domain")
     public String getDomain() {
         return this.domain;
     }
@@ -296,6 +297,7 @@ public class Address implements Serializable, Cloneable {
      * @see DomainType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDomain(DomainType domain) {
         withDomain(domain);
     }

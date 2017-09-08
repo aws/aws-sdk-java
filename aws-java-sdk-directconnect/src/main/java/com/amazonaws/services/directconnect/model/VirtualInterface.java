@@ -385,6 +385,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
      * @see AddressFamily
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("addressFamily")
     public String getAddressFamily() {
         return this.addressFamily;
     }
@@ -405,6 +406,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
      * @see AddressFamily
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         withAddressFamily(addressFamily);
     }
@@ -434,6 +436,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
      * @see VirtualInterfaceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualInterfaceState")
     public String getVirtualInterfaceState() {
         return this.virtualInterfaceState;
     }
@@ -454,6 +457,7 @@ public class VirtualInterface implements Serializable, Cloneable, StructuredPojo
      * @see VirtualInterfaceState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         withVirtualInterfaceState(virtualInterfaceState);
     }

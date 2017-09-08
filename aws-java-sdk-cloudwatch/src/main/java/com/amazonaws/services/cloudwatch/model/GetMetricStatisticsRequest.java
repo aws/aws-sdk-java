@@ -1104,6 +1104,7 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see StandardUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -1138,6 +1139,7 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see StandardUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(StandardUnit unit) {
         withUnit(unit);
     }

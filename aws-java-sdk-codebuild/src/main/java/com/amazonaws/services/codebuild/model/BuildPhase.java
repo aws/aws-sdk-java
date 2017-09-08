@@ -378,6 +378,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * @see BuildPhaseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("phaseType")
     public String getPhaseType() {
         return this.phaseType;
     }
@@ -614,6 +615,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * @see BuildPhaseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPhaseType(BuildPhaseType phaseType) {
         withPhaseType(phaseType);
     }
@@ -886,6 +888,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("phaseStatus")
     public String getPhaseStatus() {
         return this.phaseStatus;
     }
@@ -1042,6 +1045,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPhaseStatus(StatusType phaseStatus) {
         withPhaseStatus(phaseStatus);
     }

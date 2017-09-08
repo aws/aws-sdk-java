@@ -171,6 +171,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see TaskDefinitionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -217,6 +218,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see TaskDefinitionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(TaskDefinitionStatus status) {
         withStatus(status);
     }
@@ -284,6 +286,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sort")
     public String getSort() {
         return this.sort;
     }
@@ -330,6 +333,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSort(SortOrder sort) {
         withSort(sort);
     }

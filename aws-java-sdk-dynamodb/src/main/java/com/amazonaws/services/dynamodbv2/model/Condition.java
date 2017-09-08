@@ -1169,6 +1169,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1913,6 +1914,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }

@@ -150,6 +150,7 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * @see NetworkProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -180,6 +181,7 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      * @see NetworkProtocol
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(NetworkProtocol protocol) {
         withProtocol(protocol);
     }

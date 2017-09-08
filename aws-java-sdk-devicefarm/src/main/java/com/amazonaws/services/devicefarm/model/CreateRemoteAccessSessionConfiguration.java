@@ -58,6 +58,7 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("billingMethod")
     public String getBillingMethod() {
         return this.billingMethod;
     }
@@ -88,6 +89,7 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBillingMethod(BillingMethod billingMethod) {
         withBillingMethod(billingMethod);
     }

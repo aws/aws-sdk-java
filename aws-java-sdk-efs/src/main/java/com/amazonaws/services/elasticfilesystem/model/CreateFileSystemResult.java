@@ -291,6 +291,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * @see LifeCycleState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
     public String getLifeCycleState() {
         return this.lifeCycleState;
     }
@@ -321,6 +322,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * @see LifeCycleState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         withLifeCycleState(lifeCycleState);
     }
@@ -532,6 +534,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * @see PerformanceMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("performanceMode")
     public String getPerformanceMode() {
         return this.performanceMode;
     }
@@ -562,6 +565,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * @see PerformanceMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPerformanceMode(PerformanceMode performanceMode) {
         withPerformanceMode(performanceMode);
     }

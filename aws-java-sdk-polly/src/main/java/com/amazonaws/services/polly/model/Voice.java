@@ -83,6 +83,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see Gender
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("gender")
     public String getGender() {
         return this.gender;
     }
@@ -113,6 +114,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see Gender
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setGender(Gender gender) {
         withGender(gender);
     }
@@ -160,6 +162,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see VoiceId
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
     public String getId() {
         return this.id;
     }
@@ -194,6 +197,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see VoiceId
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setId(VoiceId id) {
         withId(id);
     }
@@ -239,6 +243,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see LanguageCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     public String getLanguageCode() {
         return this.languageCode;
     }
@@ -269,6 +274,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      * @see LanguageCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLanguageCode(LanguageCode languageCode) {
         withLanguageCode(languageCode);
     }

@@ -161,6 +161,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      * @see SubscriptionProtocolType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -191,6 +192,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      * @see SubscriptionProtocolType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(SubscriptionProtocolType protocol) {
         withProtocol(protocol);
     }
@@ -234,6 +236,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      * @see SubscriptionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
     public String getSubscriptionType() {
         return this.subscriptionType;
     }
@@ -264,6 +267,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      * @see SubscriptionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         withSubscriptionType(subscriptionType);
     }

@@ -269,6 +269,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -409,6 +410,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * @see SourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SourceType type) {
         withType(type);
     }

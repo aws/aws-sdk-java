@@ -473,6 +473,7 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * @see ConfigurationDeploymentStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentStatus")
     public String getDeploymentStatus() {
         return this.deploymentStatus;
     }
@@ -601,6 +602,7 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      * @see ConfigurationDeploymentStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
         withDeploymentStatus(deploymentStatus);
     }

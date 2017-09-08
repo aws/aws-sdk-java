@@ -147,6 +147,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see TargetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
     public String getTargetType() {
         return this.targetType;
     }
@@ -177,6 +178,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see TargetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetType(TargetType targetType) {
         withTargetType(targetType);
     }

@@ -60,6 +60,7 @@ public class DestinationSchema implements Serializable, Cloneable, StructuredPoj
      * @see RecordFormatType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recordFormatType")
     public String getRecordFormatType() {
         return this.recordFormatType;
     }
@@ -90,6 +91,7 @@ public class DestinationSchema implements Serializable, Cloneable, StructuredPoj
      * @see RecordFormatType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRecordFormatType(RecordFormatType recordFormatType) {
         withRecordFormatType(recordFormatType);
     }

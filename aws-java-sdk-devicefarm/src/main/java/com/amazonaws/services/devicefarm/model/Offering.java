@@ -162,6 +162,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      * @see OfferingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -192,6 +193,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      * @see OfferingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(OfferingType type) {
         withType(type);
     }
@@ -235,6 +237,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -265,6 +268,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(DevicePlatform platform) {
         withPlatform(platform);
     }

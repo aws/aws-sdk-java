@@ -277,6 +277,7 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceFleetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceFleetType")
     public String getInstanceFleetType() {
         return this.instanceFleetType;
     }
@@ -307,6 +308,7 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceFleetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceFleetType(InstanceFleetType instanceFleetType) {
         withInstanceFleetType(instanceFleetType);
     }

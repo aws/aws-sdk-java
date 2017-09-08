@@ -128,6 +128,7 @@ public class HandshakeConstraintViolationException extends com.amazonaws.service
      * @see HandshakeConstraintViolationExceptionReason
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReason(HandshakeConstraintViolationExceptionReason reason) {
         withReason(reason);
     }

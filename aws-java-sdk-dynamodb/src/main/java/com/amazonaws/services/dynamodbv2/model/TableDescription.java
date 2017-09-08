@@ -1126,6 +1126,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * @see TableStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("tableStatus")
     public String getTableStatus() {
         return this.tableStatus;
     }
@@ -1242,6 +1243,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * @see TableStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTableStatus(TableStatus tableStatus) {
         withTableStatus(tableStatus);
     }

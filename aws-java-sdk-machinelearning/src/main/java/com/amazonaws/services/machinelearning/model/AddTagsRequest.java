@@ -184,6 +184,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see TaggableResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -214,6 +215,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see TaggableResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(TaggableResourceType resourceType) {
         withResourceType(resourceType);
     }

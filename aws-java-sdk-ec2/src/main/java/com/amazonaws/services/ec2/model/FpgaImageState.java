@@ -170,6 +170,7 @@ public class FpgaImageState implements Serializable, Cloneable {
      * @see FpgaImageStateCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -286,6 +287,7 @@ public class FpgaImageState implements Serializable, Cloneable {
      * @see FpgaImageStateCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(FpgaImageStateCode code) {
         withCode(code);
     }

@@ -64,6 +64,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable, Struc
      * @see InstanceStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -94,6 +95,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable, Struc
      * @see InstanceStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(InstanceStateChangeReasonCode code) {
         withCode(code);
     }

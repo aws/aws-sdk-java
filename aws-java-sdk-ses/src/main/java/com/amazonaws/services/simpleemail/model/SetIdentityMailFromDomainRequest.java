@@ -220,6 +220,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * @see BehaviorOnMXFailure
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("behaviorOnMXFailure")
     public String getBehaviorOnMXFailure() {
         return this.behaviorOnMXFailure;
     }
@@ -276,6 +277,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      * @see BehaviorOnMXFailure
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
         withBehaviorOnMXFailure(behaviorOnMXFailure);
     }

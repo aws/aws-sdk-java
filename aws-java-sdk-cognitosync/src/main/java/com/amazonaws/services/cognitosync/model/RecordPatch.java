@@ -56,6 +56,7 @@ public class RecordPatch implements Serializable, Cloneable, StructuredPojo {
      * @see Operation
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("op")
     public String getOp() {
         return this.op;
     }
@@ -82,6 +83,7 @@ public class RecordPatch implements Serializable, Cloneable, StructuredPojo {
      * @see Operation
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOp(Operation op) {
         withOp(op);
     }

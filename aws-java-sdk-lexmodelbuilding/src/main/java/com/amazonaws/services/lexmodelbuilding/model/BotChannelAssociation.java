@@ -328,6 +328,7 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
      * @see ChannelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -362,6 +363,7 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
      * @see ChannelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ChannelType type) {
         withType(type);
     }

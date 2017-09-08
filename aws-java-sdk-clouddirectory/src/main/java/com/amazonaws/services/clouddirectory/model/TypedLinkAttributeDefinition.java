@@ -128,6 +128,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      * @see FacetAttributeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -158,6 +159,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      * @see FacetAttributeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(FacetAttributeType type) {
         withType(type);
     }
@@ -354,6 +356,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      * @see RequiredAttributeBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("requiredBehavior")
     public String getRequiredBehavior() {
         return this.requiredBehavior;
     }
@@ -384,6 +387,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      * @see RequiredAttributeBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
         withRequiredBehavior(requiredBehavior);
     }

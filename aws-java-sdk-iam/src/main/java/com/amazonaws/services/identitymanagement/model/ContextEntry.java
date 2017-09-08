@@ -203,6 +203,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * @see ContextKeyTypeEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("contextKeyType")
     public String getContextKeyType() {
         return this.contextKeyType;
     }
@@ -233,6 +234,7 @@ public class ContextEntry implements Serializable, Cloneable {
      * @see ContextKeyTypeEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContextKeyType(ContextKeyTypeEnum contextKeyType) {
         withContextKeyType(contextKeyType);
     }

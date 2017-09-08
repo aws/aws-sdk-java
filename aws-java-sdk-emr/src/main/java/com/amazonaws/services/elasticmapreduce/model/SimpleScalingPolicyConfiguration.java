@@ -118,6 +118,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * @see AdjustmentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("adjustmentType")
     public String getAdjustmentType() {
         return this.adjustmentType;
     }
@@ -182,6 +183,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      * @see AdjustmentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAdjustmentType(AdjustmentType adjustmentType) {
         withAdjustmentType(adjustmentType);
     }

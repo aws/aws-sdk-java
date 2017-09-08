@@ -282,6 +282,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Runtime
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("runtime")
     public String getRuntime() {
         return this.runtime;
     }
@@ -368,6 +369,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Runtime
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRuntime(Runtime runtime) {
         withRuntime(runtime);
     }

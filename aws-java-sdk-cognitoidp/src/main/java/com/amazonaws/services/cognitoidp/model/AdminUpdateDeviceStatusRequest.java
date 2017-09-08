@@ -196,6 +196,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      * @see DeviceRememberedStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deviceRememberedStatus")
     public String getDeviceRememberedStatus() {
         return this.deviceRememberedStatus;
     }
@@ -226,6 +227,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      * @see DeviceRememberedStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
         withDeviceRememberedStatus(deviceRememberedStatus);
     }

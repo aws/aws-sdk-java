@@ -130,6 +130,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * @see ImageAttributeName
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -178,6 +179,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * @see ImageAttributeName
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(ImageAttributeName attribute) {
         withAttribute(attribute);
     }

@@ -274,6 +274,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * @see PrincipalType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("principalType")
     public String getPrincipalType() {
         return this.principalType;
     }
@@ -304,6 +305,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * @see PrincipalType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPrincipalType(PrincipalType principalType) {
         withPrincipalType(principalType);
     }

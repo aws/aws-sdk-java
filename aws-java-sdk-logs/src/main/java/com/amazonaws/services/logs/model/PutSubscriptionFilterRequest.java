@@ -34,9 +34,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
-     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
-     * group. To find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      */
     private String filterName;
@@ -63,8 +62,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -134,15 +133,14 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
-     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
-     * group. To find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
      *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
-     *        name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second
-     *        filter with a log group. To find the name of the filter currently associated with a log group, use
+     *        name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
+     *        with a log group. To find the name of the filter currently associated with a log group, use
      *        <a>DescribeSubscriptionFilters</a>.
      */
 
@@ -153,14 +151,13 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
-     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
-     * group. To find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @return A name for the subscription filter. If you are updating an existing filter, you must specify the correct
-     *         name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second
-     *         filter with a log group. To find the name of the filter currently associated with a log group, use
+     *         name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
+     *         with a log group. To find the name of the filter currently associated with a log group, use
      *         <a>DescribeSubscriptionFilters</a>.
      */
 
@@ -171,15 +168,14 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
-     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
-     * group. To find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.
+     * <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter with a log group.
+     * To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
      *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
-     *        name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second
-     *        filter with a log group. To find the name of the filter currently associated with a log group, use
+     *        name in <code>filterName</code>. Otherwise, the call fails because you cannot associate a second filter
+     *        with a log group. To find the name of the filter currently associated with a log group, use
      *        <a>DescribeSubscriptionFilters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -246,8 +242,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -275,7 +271,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for
+     *        An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
      *        same-account delivery.
      *        </p>
      *        </li>
@@ -308,8 +304,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -336,7 +332,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for
+     *         An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
      *         same-account delivery.
      *         </p>
      *         </li>
@@ -369,8 +365,8 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -398,7 +394,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for
+     *        An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for
      *        same-account delivery.
      *        </p>
      *        </li>
@@ -497,6 +493,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * @see Distribution
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     public String getDistribution() {
         return this.distribution;
     }
@@ -533,6 +530,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * @see Distribution
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDistribution(Distribution distribution) {
         withDistribution(distribution);
     }

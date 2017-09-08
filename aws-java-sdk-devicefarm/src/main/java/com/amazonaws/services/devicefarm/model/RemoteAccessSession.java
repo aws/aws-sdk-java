@@ -517,6 +517,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -733,6 +734,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see ExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ExecutionStatus status) {
         withStatus(status);
     }
@@ -1015,6 +1017,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see ExecutionResult
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("result")
     public String getResult() {
         return this.result;
     }
@@ -1191,6 +1194,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see ExecutionResult
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResult(ExecutionResult result) {
         withResult(result);
     }
@@ -1479,6 +1483,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("billingMethod")
     public String getBillingMethod() {
         return this.billingMethod;
     }
@@ -1521,6 +1526,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBillingMethod(BillingMethod billingMethod) {
         withBillingMethod(billingMethod);
     }

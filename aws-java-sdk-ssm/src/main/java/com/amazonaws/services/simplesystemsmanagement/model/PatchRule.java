@@ -116,6 +116,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * @see PatchComplianceLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("complianceLevel")
     public String getComplianceLevel() {
         return this.complianceLevel;
     }
@@ -150,6 +151,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * @see PatchComplianceLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComplianceLevel(PatchComplianceLevel complianceLevel) {
         withComplianceLevel(complianceLevel);
     }

@@ -503,6 +503,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -533,6 +534,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(DeploymentStatus status) {
         withStatus(status);
     }
@@ -903,6 +905,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentCreator
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("creator")
     public String getCreator() {
         return this.creator;
     }
@@ -999,6 +1002,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentCreator
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCreator(DeploymentCreator creator) {
         withCreator(creator);
     }
@@ -1669,6 +1673,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see FileExistsBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("fileExistsBehavior")
     public String getFileExistsBehavior() {
         return this.fileExistsBehavior;
     }
@@ -1773,6 +1778,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see FileExistsBehavior
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
         withFileExistsBehavior(fileExistsBehavior);
     }

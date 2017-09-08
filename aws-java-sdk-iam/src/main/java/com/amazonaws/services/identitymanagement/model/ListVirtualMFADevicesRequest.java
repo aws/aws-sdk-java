@@ -87,6 +87,7 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
      * @see AssignmentStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("assignmentStatus")
     public String getAssignmentStatus() {
         return this.assignmentStatus;
     }
@@ -125,6 +126,7 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
      * @see AssignmentStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAssignmentStatus(AssignmentStatusType assignmentStatus) {
         withAssignmentStatus(assignmentStatus);
     }

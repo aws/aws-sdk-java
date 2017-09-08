@@ -85,6 +85,7 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
      * @see MessageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     public String getMessageType() {
         return this.messageType;
     }
@@ -111,6 +112,7 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
      * @see MessageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMessageType(MessageType messageType) {
         withMessageType(messageType);
     }

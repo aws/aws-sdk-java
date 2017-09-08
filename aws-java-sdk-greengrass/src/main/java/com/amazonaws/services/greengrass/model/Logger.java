@@ -56,6 +56,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      * @see LoggerComponent
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("component")
     public String getComponent() {
         return this.component;
     }
@@ -82,6 +83,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      * @see LoggerComponent
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComponent(LoggerComponent component) {
         withComponent(component);
     }
@@ -153,6 +155,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      * @see LoggerLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("level")
     public String getLevel() {
         return this.level;
     }
@@ -179,6 +182,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      * @see LoggerLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLevel(LoggerLevel level) {
         withLevel(level);
     }
@@ -250,6 +254,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      * @see LoggerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -276,6 +281,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      * @see LoggerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(LoggerType type) {
         withType(type);
     }

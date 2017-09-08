@@ -668,6 +668,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * @see SpotInstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -708,6 +709,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * @see SpotInstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SpotInstanceType type) {
         withType(type);
     }

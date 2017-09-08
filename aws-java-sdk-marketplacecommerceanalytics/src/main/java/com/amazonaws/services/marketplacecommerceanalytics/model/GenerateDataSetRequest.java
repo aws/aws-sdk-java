@@ -782,6 +782,7 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DataSetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSetType")
     public String getDataSetType() {
         return this.dataSetType;
     }
@@ -1366,6 +1367,7 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DataSetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDataSetType(DataSetType dataSetType) {
         withDataSetType(dataSetType);
     }

@@ -241,6 +241,7 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
      * @see NetworkProfileType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -271,6 +272,7 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
      * @see NetworkProfileType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(NetworkProfileType type) {
         withType(type);
     }

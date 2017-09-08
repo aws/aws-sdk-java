@@ -222,6 +222,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TrustDirection
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trustDirection")
     public String getTrustDirection() {
         return this.trustDirection;
     }
@@ -252,6 +253,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TrustDirection
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrustDirection(TrustDirection trustDirection) {
         withTrustDirection(trustDirection);
     }
@@ -295,6 +297,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TrustType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("trustType")
     public String getTrustType() {
         return this.trustType;
     }
@@ -325,6 +328,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TrustType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrustType(TrustType trustType) {
         withTrustType(trustType);
     }

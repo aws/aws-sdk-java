@@ -164,6 +164,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
      * @see InstanceFleetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceFleetType")
     public String getInstanceFleetType() {
         return this.instanceFleetType;
     }
@@ -194,6 +195,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
      * @see InstanceFleetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceFleetType(InstanceFleetType instanceFleetType) {
         withInstanceFleetType(instanceFleetType);
     }

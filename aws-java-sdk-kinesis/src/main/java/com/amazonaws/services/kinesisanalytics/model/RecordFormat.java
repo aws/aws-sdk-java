@@ -61,6 +61,7 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
      * @see RecordFormatType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("recordFormatType")
     public String getRecordFormatType() {
         return this.recordFormatType;
     }
@@ -91,6 +92,7 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
      * @see RecordFormatType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRecordFormatType(RecordFormatType recordFormatType) {
         withRecordFormatType(recordFormatType);
     }

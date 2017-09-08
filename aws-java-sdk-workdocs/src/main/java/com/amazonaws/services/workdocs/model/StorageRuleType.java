@@ -104,6 +104,7 @@ public class StorageRuleType implements Serializable, Cloneable, StructuredPojo 
      * @see StorageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("storageType")
     public String getStorageType() {
         return this.storageType;
     }
@@ -134,6 +135,7 @@ public class StorageRuleType implements Serializable, Cloneable, StructuredPojo 
      * @see StorageType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStorageType(StorageType storageType) {
         withStorageType(storageType);
     }

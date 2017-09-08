@@ -160,6 +160,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @see HistoryItemType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("historyItemType")
     public String getHistoryItemType() {
         return this.historyItemType;
     }
@@ -190,6 +191,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @see HistoryItemType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHistoryItemType(HistoryItemType historyItemType) {
         withHistoryItemType(historyItemType);
     }

@@ -104,6 +104,7 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * @see StageExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -134,6 +135,7 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * @see StageExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StageExecutionStatus status) {
         withStatus(status);
     }

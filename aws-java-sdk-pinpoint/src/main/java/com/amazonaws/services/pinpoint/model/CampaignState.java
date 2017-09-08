@@ -57,6 +57,7 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
      * @see CampaignStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("campaignStatus")
     public String getCampaignStatus() {
         return this.campaignStatus;
     }
@@ -91,6 +92,7 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
      * @see CampaignStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCampaignStatus(CampaignStatus campaignStatus) {
         withCampaignStatus(campaignStatus);
     }

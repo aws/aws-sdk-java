@@ -64,6 +64,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable, Struct
      * @see ClusterStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -94,6 +95,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable, Struct
      * @see ClusterStateChangeReasonCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(ClusterStateChangeReasonCode code) {
         withCode(code);
     }

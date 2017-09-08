@@ -106,6 +106,7 @@ public class Host implements Serializable, Cloneable {
      * @see AutoPlacement
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autoPlacement")
     public String getAutoPlacement() {
         return this.autoPlacement;
     }
@@ -136,6 +137,7 @@ public class Host implements Serializable, Cloneable {
      * @see AutoPlacement
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoPlacement(AutoPlacement autoPlacement) {
         withAutoPlacement(autoPlacement);
     }
@@ -510,6 +512,7 @@ public class Host implements Serializable, Cloneable {
      * @see AllocationState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -540,6 +543,7 @@ public class Host implements Serializable, Cloneable {
      * @see AllocationState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(AllocationState state) {
         withState(state);
     }

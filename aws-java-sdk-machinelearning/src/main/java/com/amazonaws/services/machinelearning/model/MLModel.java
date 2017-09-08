@@ -507,6 +507,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -571,6 +572,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(EntityStatus status) {
         withStatus(status);
     }
@@ -1133,6 +1135,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see Algorithm
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     public String getAlgorithm() {
         return this.algorithm;
     }
@@ -1177,6 +1180,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see Algorithm
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAlgorithm(Algorithm algorithm) {
         withAlgorithm(algorithm);
     }
@@ -1259,6 +1263,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see MLModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("mLModelType")
     public String getMLModelType() {
         return this.mLModelType;
     }
@@ -1321,6 +1326,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * @see MLModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMLModelType(MLModelType mLModelType) {
         withMLModelType(mLModelType);
     }

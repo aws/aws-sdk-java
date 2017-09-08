@@ -31,9 +31,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, Amazon
- * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the Amazon
- * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon EC2 instances, AWS
+ * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch
+ * console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -41,24 +41,24 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch Logs to monitor applications and
- * systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application
- * logs and send you a notification whenever the rate of errors exceeds a threshold you specify. CloudWatch Logs uses
- * your log data for monitoring; so, no code changes are required. For example, you can monitor application logs for
- * specific literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a
- * particular position in log data (such as "404" status codes in an Apache access log). When the term you are searching
- * for is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that you specify.
+ * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs to monitor applications and systems
+ * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and
+ * send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your
+ * log data for monitoring; so, no code changes are required. For example, you can monitor application logs for specific
+ * literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a particular
+ * position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is
+ * found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch and receive notifications
- * of particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
+ * <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch and receive notifications of
+ * particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
+ * <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
  * the log retention setting so that any log events older than this setting are automatically deleted. The CloudWatch
  * Logs agent makes it easy to quickly send both rotated and non-rotated log data off of a host and into the log
  * service. You can then access the raw log data when you need it.
@@ -541,6 +541,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request) {
 
         return deleteRetentionPolicyAsync(request, null);
@@ -818,6 +851,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeResourcePoliciesResult> describeResourcePoliciesAsync(DescribeResourcePoliciesRequest request) {
+
+        return describeResourcePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePoliciesResult> describeResourcePoliciesAsync(final DescribeResourcePoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeResourcePoliciesRequest, DescribeResourcePoliciesResult> asyncHandler) {
+        final DescribeResourcePoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeResourcePoliciesResult>() {
+            @Override
+            public DescribeResourcePoliciesResult call() throws Exception {
+                DescribeResourcePoliciesResult result = null;
+
+                try {
+                    result = executeDescribeResourcePolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSubscriptionFiltersResult> describeSubscriptionFiltersAsync(DescribeSubscriptionFiltersRequest request) {
 
         return describeSubscriptionFiltersAsync(request, null);
@@ -1066,6 +1132,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executePutMetricFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(final PutResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+        final PutResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourcePolicyResult>() {
+            @Override
+            public PutResourcePolicyResult call() throws Exception {
+                PutResourcePolicyResult result = null;
+
+                try {
+                    result = executePutResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

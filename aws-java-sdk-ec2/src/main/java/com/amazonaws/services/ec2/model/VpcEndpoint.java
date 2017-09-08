@@ -285,6 +285,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @see State
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -315,6 +316,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * @see State
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(State state) {
         withState(state);
     }

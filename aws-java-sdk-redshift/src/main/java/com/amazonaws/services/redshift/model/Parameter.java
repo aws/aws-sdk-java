@@ -365,6 +365,7 @@ public class Parameter implements Serializable, Cloneable {
      * @see ParameterApplyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("applyType")
     public String getApplyType() {
         return this.applyType;
     }
@@ -411,6 +412,7 @@ public class Parameter implements Serializable, Cloneable {
      * @see ParameterApplyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setApplyType(ParameterApplyType applyType) {
         withApplyType(applyType);
     }

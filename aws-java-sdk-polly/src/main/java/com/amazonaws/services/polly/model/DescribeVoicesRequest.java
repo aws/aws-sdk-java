@@ -69,6 +69,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see LanguageCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     public String getLanguageCode() {
         return this.languageCode;
     }
@@ -105,6 +106,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see LanguageCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLanguageCode(LanguageCode languageCode) {
         withLanguageCode(languageCode);
     }

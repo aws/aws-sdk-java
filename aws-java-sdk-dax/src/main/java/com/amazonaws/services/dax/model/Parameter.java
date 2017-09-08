@@ -153,6 +153,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see ParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("parameterType")
     public String getParameterType() {
         return this.parameterType;
     }
@@ -183,6 +184,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see ParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setParameterType(ParameterType parameterType) {
         withParameterType(parameterType);
     }
@@ -496,6 +498,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see IsModifiable
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("isModifiable")
     public String getIsModifiable() {
         return this.isModifiable;
     }
@@ -526,6 +529,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see IsModifiable
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIsModifiable(IsModifiable isModifiable) {
         withIsModifiable(isModifiable);
     }
@@ -575,6 +579,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see ChangeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("changeType")
     public String getChangeType() {
         return this.changeType;
     }
@@ -611,6 +616,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see ChangeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChangeType(ChangeType changeType) {
         withChangeType(changeType);
     }

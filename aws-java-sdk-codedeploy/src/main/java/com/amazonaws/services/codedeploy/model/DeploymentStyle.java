@@ -65,6 +65,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      * @see DeploymentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     public String getDeploymentType() {
         return this.deploymentType;
     }
@@ -95,6 +96,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      * @see DeploymentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeploymentType(DeploymentType deploymentType) {
         withDeploymentType(deploymentType);
     }
@@ -138,6 +140,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      * @see DeploymentOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentOption")
     public String getDeploymentOption() {
         return this.deploymentOption;
     }
@@ -168,6 +171,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      * @see DeploymentOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeploymentOption(DeploymentOption deploymentOption) {
         withDeploymentOption(deploymentOption);
     }

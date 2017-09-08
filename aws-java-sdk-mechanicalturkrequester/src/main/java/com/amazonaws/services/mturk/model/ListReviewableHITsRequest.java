@@ -120,6 +120,7 @@ public class ListReviewableHITsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see ReviewableHITStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -150,6 +151,7 @@ public class ListReviewableHITsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see ReviewableHITStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ReviewableHITStatus status) {
         withStatus(status);
     }

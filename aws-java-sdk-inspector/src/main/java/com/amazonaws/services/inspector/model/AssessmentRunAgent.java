@@ -175,6 +175,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      * @see AgentHealth
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentHealth")
     public String getAgentHealth() {
         return this.agentHealth;
     }
@@ -205,6 +206,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      * @see AgentHealth
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAgentHealth(AgentHealth agentHealth) {
         withAgentHealth(agentHealth);
     }
@@ -248,6 +250,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      * @see AgentHealthCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentHealthCode")
     public String getAgentHealthCode() {
         return this.agentHealthCode;
     }
@@ -278,6 +281,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      * @see AgentHealthCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAgentHealthCode(AgentHealthCode agentHealthCode) {
         withAgentHealthCode(agentHealthCode);
     }

@@ -293,6 +293,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @see MaintenanceWindowTaskType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -323,6 +324,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @see MaintenanceWindowTaskType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(MaintenanceWindowTaskType type) {
         withType(type);
     }
@@ -611,6 +613,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @see MaintenanceWindowExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -641,6 +644,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @see MaintenanceWindowExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(MaintenanceWindowExecutionStatus status) {
         withStatus(status);
     }

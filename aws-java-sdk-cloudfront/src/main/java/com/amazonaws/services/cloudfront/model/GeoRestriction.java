@@ -248,6 +248,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * @see GeoRestrictionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("restrictionType")
     public String getRestrictionType() {
         return this.restrictionType;
     }
@@ -356,6 +357,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * @see GeoRestrictionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRestrictionType(GeoRestrictionType restrictionType) {
         withRestrictionType(restrictionType);
     }

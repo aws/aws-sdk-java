@@ -249,6 +249,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      * @see SessionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -279,6 +280,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      * @see SessionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(SessionState state) {
         withState(state);
     }
@@ -326,6 +328,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      * @see AuthenticationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     public String getAuthenticationType() {
         return this.authenticationType;
     }
@@ -360,6 +363,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      * @see AuthenticationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAuthenticationType(AuthenticationType authenticationType) {
         withAuthenticationType(authenticationType);
     }

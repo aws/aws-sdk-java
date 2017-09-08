@@ -126,6 +126,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * @see OperationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -156,6 +157,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * @see OperationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(OperationStatus status) {
         withStatus(status);
     }
@@ -279,6 +281,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -309,6 +312,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(OperationType type) {
         withType(type);
     }

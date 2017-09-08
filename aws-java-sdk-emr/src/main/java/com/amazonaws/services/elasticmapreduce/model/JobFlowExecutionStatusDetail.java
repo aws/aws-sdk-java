@@ -123,6 +123,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable, St
      * @see JobFlowExecutionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -153,6 +154,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable, St
      * @see JobFlowExecutionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(JobFlowExecutionState state) {
         withState(state);
     }

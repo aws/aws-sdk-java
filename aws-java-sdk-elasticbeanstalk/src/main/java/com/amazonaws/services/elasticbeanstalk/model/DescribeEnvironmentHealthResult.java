@@ -191,6 +191,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
      * @see EnvironmentHealth
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -225,6 +226,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
      * @see EnvironmentHealth
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(EnvironmentHealth status) {
         withStatus(status);
     }

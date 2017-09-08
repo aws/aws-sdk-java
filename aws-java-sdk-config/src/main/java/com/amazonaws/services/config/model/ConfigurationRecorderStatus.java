@@ -272,6 +272,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
      * @see RecorderStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("lastStatus")
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -302,6 +303,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
      * @see RecorderStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLastStatus(RecorderStatus lastStatus) {
         withLastStatus(lastStatus);
     }

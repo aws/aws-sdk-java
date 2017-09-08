@@ -64,6 +64,7 @@ public class FleetError implements Serializable, Cloneable, StructuredPojo {
      * @see FleetErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -94,6 +95,7 @@ public class FleetError implements Serializable, Cloneable, StructuredPojo {
      * @see FleetErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setErrorCode(FleetErrorCode errorCode) {
         withErrorCode(errorCode);
     }

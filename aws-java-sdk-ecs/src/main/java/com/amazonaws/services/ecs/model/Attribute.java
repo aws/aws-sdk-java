@@ -178,6 +178,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * @see TargetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
     public String getTargetType() {
         return this.targetType;
     }
@@ -212,6 +213,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * @see TargetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetType(TargetType targetType) {
         withTargetType(targetType);
     }

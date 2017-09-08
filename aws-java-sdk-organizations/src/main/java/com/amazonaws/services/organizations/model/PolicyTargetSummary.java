@@ -411,6 +411,7 @@ public class PolicyTargetSummary implements Serializable, Cloneable, StructuredP
      * @see TargetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -441,6 +442,7 @@ public class PolicyTargetSummary implements Serializable, Cloneable, StructuredP
      * @see TargetType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(TargetType type) {
         withType(type);
     }

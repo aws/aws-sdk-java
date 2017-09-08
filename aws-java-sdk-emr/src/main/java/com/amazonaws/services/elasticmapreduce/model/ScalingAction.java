@@ -65,6 +65,7 @@ public class ScalingAction implements Serializable, Cloneable, StructuredPojo {
      * @see MarketType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("market")
     public String getMarket() {
         return this.market;
     }
@@ -95,6 +96,7 @@ public class ScalingAction implements Serializable, Cloneable, StructuredPojo {
      * @see MarketType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMarket(MarketType market) {
         withMarket(market);
     }

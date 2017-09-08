@@ -135,6 +135,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @see SummaryStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -165,6 +166,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      * @see SummaryStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(SummaryStatus status) {
         withStatus(status);
     }

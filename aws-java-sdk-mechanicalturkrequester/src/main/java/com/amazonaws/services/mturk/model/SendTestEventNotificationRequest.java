@@ -118,6 +118,7 @@ public class SendTestEventNotificationRequest extends com.amazonaws.AmazonWebSer
      * @see EventType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("testEventType")
     public String getTestEventType() {
         return this.testEventType;
     }
@@ -156,6 +157,7 @@ public class SendTestEventNotificationRequest extends com.amazonaws.AmazonWebSer
      * @see EventType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTestEventType(EventType testEventType) {
         withTestEventType(testEventType);
     }

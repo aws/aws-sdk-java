@@ -178,6 +178,7 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RegistrationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -262,6 +263,7 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RegistrationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(RegistrationStatus status) {
         withStatus(status);
     }

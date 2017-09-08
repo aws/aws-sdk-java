@@ -103,6 +103,7 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
      * @see Action
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }

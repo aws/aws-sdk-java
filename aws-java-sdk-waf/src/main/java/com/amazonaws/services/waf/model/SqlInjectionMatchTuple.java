@@ -785,6 +785,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable, Structur
      * @see TextTransformation
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("textTransformation")
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -1359,6 +1360,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable, Structur
      * @see TextTransformation
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTextTransformation(TextTransformation textTransformation) {
         withTextTransformation(textTransformation);
     }

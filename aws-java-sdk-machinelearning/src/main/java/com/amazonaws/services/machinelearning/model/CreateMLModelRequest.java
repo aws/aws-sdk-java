@@ -267,6 +267,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see MLModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("mLModelType")
     public String getMLModelType() {
         return this.mLModelType;
     }
@@ -333,6 +334,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see MLModelType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMLModelType(MLModelType mLModelType) {
         withMLModelType(mLModelType);
     }

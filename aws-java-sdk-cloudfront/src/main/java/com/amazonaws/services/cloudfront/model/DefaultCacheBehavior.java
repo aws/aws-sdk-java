@@ -571,6 +571,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * @see ViewerProtocolPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("viewerProtocolPolicy")
     public String getViewerProtocolPolicy() {
         return this.viewerProtocolPolicy;
     }
@@ -753,6 +754,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      * @see ViewerProtocolPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
         withViewerProtocolPolicy(viewerProtocolPolicy);
     }

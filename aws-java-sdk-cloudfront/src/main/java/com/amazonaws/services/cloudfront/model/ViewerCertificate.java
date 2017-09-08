@@ -591,6 +591,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see SSLSupportMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sSLSupportMethod")
     public String getSSLSupportMethod() {
         return this.sSLSupportMethod;
     }
@@ -819,6 +820,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see SSLSupportMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
         withSSLSupportMethod(sSLSupportMethod);
     }
@@ -1037,6 +1039,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see MinimumProtocolVersion
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumProtocolVersion")
     public String getMinimumProtocolVersion() {
         return this.minimumProtocolVersion;
     }
@@ -1143,6 +1146,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see MinimumProtocolVersion
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMinimumProtocolVersion(MinimumProtocolVersion minimumProtocolVersion) {
         withMinimumProtocolVersion(minimumProtocolVersion);
     }
@@ -2068,6 +2072,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see CertificateSource
      */
     @Deprecated
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateSource")
     public String getCertificateSource() {
         return this.certificateSource;
     }
@@ -2110,6 +2115,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * @see CertificateSource
      */
     @Deprecated
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCertificateSource(CertificateSource certificateSource) {
         withCertificateSource(certificateSource);
     }

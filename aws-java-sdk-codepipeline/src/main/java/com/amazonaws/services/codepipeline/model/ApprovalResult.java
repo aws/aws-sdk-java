@@ -104,6 +104,7 @@ public class ApprovalResult implements Serializable, Cloneable, StructuredPojo {
      * @see ApprovalStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -134,6 +135,7 @@ public class ApprovalResult implements Serializable, Cloneable, StructuredPojo {
      * @see ApprovalStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ApprovalStatus status) {
         withStatus(status);
     }

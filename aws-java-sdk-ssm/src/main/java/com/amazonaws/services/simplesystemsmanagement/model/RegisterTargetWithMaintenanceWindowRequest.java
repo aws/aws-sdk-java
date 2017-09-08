@@ -134,6 +134,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * @see MaintenanceWindowResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -164,6 +165,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * @see MaintenanceWindowResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(MaintenanceWindowResourceType resourceType) {
         withResourceType(resourceType);
     }

@@ -72,6 +72,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * @see LoadBalancerStateEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -110,6 +111,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * @see LoadBalancerStateEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(LoadBalancerStateEnum code) {
         withCode(code);
     }

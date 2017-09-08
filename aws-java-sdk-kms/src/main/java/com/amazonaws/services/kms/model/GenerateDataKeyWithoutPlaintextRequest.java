@@ -406,6 +406,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * @see DataKeySpec
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("keySpec")
     public String getKeySpec() {
         return this.keySpec;
     }
@@ -440,6 +441,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * @see DataKeySpec
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeySpec(DataKeySpec keySpec) {
         withKeySpec(keySpec);
     }

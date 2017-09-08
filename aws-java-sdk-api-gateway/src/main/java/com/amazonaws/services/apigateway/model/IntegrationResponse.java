@@ -469,6 +469,7 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @see ContentHandlingStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("contentHandling")
     public String getContentHandling() {
         return this.contentHandling;
     }
@@ -569,6 +570,7 @@ public class IntegrationResponse implements Serializable, Cloneable, StructuredP
      * @see ContentHandlingStrategy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         withContentHandling(contentHandling);
     }

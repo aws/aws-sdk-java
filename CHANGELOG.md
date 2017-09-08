@@ -1,3 +1,8 @@
+# __1.11.192__ __2017-09-08__
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Adds support for the PutResourcePolicy, DescribeResourcePolicy and DeleteResourcePolicy APIs.
+
 # __1.11.191__ __2017-09-07__
 ## __Amazon EC2__
   - ### Features

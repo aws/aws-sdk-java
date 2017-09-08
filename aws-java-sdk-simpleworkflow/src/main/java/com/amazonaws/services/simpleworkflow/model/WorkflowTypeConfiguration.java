@@ -562,6 +562,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable, Struc
      * @see ChildPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultChildPolicy")
     public String getDefaultChildPolicy() {
         return this.defaultChildPolicy;
     }
@@ -690,6 +691,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable, Struc
      * @see ChildPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
         withDefaultChildPolicy(defaultChildPolicy);
     }

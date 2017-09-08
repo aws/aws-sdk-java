@@ -140,6 +140,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * @see LogDriver
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("logDriver")
     public String getLogDriver() {
         return this.logDriver;
     }
@@ -228,6 +229,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * @see LogDriver
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLogDriver(LogDriver logDriver) {
         withLogDriver(logDriver);
     }

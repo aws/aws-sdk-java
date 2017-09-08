@@ -315,6 +315,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @see PipelineExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -435,6 +436,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * @see PipelineExecutionStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(PipelineExecutionStatus status) {
         withStatus(status);
     }

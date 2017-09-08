@@ -241,6 +241,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     public String getEventName() {
         return this.eventName;
     }
@@ -337,6 +338,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * @see OperationType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEventName(OperationType eventName) {
         withEventName(eventName);
     }

@@ -64,6 +64,7 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
      * @see StorageConnectorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectorType")
     public String getConnectorType() {
         return this.connectorType;
     }
@@ -94,6 +95,7 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
      * @see StorageConnectorType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConnectorType(StorageConnectorType connectorType) {
         withConnectorType(connectorType);
     }

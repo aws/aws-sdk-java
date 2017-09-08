@@ -294,6 +294,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * @see ConfigurationItemStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("configurationItemStatus")
     public String getConfigurationItemStatus() {
         return this.configurationItemStatus;
     }
@@ -324,6 +325,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * @see ConfigurationItemStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConfigurationItemStatus(ConfigurationItemStatus configurationItemStatus) {
         withConfigurationItemStatus(configurationItemStatus);
     }
@@ -508,6 +510,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -538,6 +541,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }

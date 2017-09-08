@@ -185,6 +185,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * @see ConnectionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionState")
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -205,6 +206,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * @see ConnectionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConnectionState(ConnectionState connectionState) {
         withConnectionState(connectionState);
     }

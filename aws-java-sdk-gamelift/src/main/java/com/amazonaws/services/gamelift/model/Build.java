@@ -368,6 +368,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see BuildStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -484,6 +485,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see BuildStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(BuildStatus status) {
         withStatus(status);
     }
@@ -620,6 +622,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -654,6 +657,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }

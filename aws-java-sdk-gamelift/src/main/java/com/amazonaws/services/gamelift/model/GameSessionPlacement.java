@@ -391,6 +391,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * @see GameSessionPlacementState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -515,6 +516,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * @see GameSessionPlacementState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(GameSessionPlacementState status) {
         withStatus(status);
     }

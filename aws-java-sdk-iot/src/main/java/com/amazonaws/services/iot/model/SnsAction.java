@@ -169,6 +169,7 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * @see MessageFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     public String getMessageFormat() {
         return this.messageFormat;
     }
@@ -217,6 +218,7 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * @see MessageFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMessageFormat(MessageFormat messageFormat) {
         withMessageFormat(messageFormat);
     }

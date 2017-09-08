@@ -198,6 +198,7 @@ public class ConditionalForwarder implements Serializable, Cloneable, Structured
      * @see ReplicationScope
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationScope")
     public String getReplicationScope() {
         return this.replicationScope;
     }
@@ -232,6 +233,7 @@ public class ConditionalForwarder implements Serializable, Cloneable, Structured
      * @see ReplicationScope
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReplicationScope(ReplicationScope replicationScope) {
         withReplicationScope(replicationScope);
     }

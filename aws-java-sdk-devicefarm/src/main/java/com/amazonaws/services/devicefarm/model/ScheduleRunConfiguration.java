@@ -376,6 +376,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("billingMethod")
     public String getBillingMethod() {
         return this.billingMethod;
     }
@@ -410,6 +411,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * @see BillingMethod
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBillingMethod(BillingMethod billingMethod) {
         withBillingMethod(billingMethod);
     }

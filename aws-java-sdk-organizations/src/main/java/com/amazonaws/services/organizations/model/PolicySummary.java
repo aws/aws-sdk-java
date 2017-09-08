@@ -332,6 +332,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -362,6 +363,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PolicyType type) {
         withType(type);
     }

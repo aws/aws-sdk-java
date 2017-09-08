@@ -169,6 +169,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * @see TaskDefinitionFamilyStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -221,6 +222,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * @see TaskDefinitionFamilyStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(TaskDefinitionFamilyStatus status) {
         withStatus(status);
     }

@@ -167,6 +167,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * @see SnapshotType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -197,6 +198,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * @see SnapshotType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SnapshotType type) {
         withType(type);
     }
@@ -280,6 +282,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * @see SnapshotStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -310,6 +313,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * @see SnapshotStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(SnapshotStatus status) {
         withStatus(status);
     }

@@ -854,6 +854,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -892,6 +893,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }
@@ -1104,6 +1106,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see OfferingClassType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("offeringClass")
     public String getOfferingClass() {
         return this.offeringClass;
     }
@@ -1134,6 +1137,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see OfferingClassType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOfferingClass(OfferingClassType offeringClass) {
         withOfferingClass(offeringClass);
     }
@@ -1181,6 +1185,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see RIProductDescription
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("productDescription")
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -1215,6 +1220,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see RIProductDescription
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         withProductDescription(productDescription);
     }
@@ -1367,6 +1373,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see Tenancy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceTenancy")
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -1431,6 +1438,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see Tenancy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         withInstanceTenancy(instanceTenancy);
     }
@@ -1602,6 +1610,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see OfferingTypeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("offeringType")
     public String getOfferingType() {
         return this.offeringType;
     }
@@ -1636,6 +1645,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @see OfferingTypeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOfferingType(OfferingTypeValues offeringType) {
         withOfferingType(offeringType);
     }

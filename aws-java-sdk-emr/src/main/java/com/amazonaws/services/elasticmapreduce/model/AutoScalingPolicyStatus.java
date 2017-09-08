@@ -64,6 +64,7 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
      * @see AutoScalingPolicyState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -94,6 +95,7 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
      * @see AutoScalingPolicyState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(AutoScalingPolicyState state) {
         withState(state);
     }

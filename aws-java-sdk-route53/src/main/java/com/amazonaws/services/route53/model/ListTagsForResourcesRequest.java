@@ -122,6 +122,7 @@ public class ListTagsForResourcesRequest extends com.amazonaws.AmazonWebServiceR
      * @see TagResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -198,6 +199,7 @@ public class ListTagsForResourcesRequest extends com.amazonaws.AmazonWebServiceR
      * @see TagResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(TagResourceType resourceType) {
         withResourceType(resourceType);
     }

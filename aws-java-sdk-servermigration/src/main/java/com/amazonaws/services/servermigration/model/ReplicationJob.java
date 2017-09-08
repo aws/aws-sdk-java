@@ -120,6 +120,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see ServerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("serverType")
     public String getServerType() {
         return this.serverType;
     }
@@ -140,6 +141,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see ServerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServerType(ServerType serverType) {
         withServerType(serverType);
     }
@@ -273,6 +275,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see LicenseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     public String getLicenseType() {
         return this.licenseType;
     }
@@ -293,6 +296,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see LicenseType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLicenseType(LicenseType licenseType) {
         withLicenseType(licenseType);
     }
@@ -374,6 +378,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationJobState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -394,6 +399,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * @see ReplicationJobState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ReplicationJobState state) {
         withState(state);
     }

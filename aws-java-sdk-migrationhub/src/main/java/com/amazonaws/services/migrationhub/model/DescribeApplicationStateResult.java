@@ -59,6 +59,7 @@ public class DescribeApplicationStateResult extends com.amazonaws.AmazonWebServi
      * @see ApplicationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationStatus")
     public String getApplicationStatus() {
         return this.applicationStatus;
     }

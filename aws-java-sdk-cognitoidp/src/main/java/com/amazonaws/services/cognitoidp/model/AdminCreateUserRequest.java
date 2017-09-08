@@ -1007,6 +1007,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * @see MessageActionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("messageAction")
     public String getMessageAction() {
         return this.messageAction;
     }
@@ -1045,6 +1046,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * @see MessageActionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMessageAction(MessageActionType messageAction) {
         withMessageAction(messageAction);
     }

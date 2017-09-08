@@ -767,6 +767,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * @see AgentUpdateStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("agentUpdateStatus")
     public String getAgentUpdateStatus() {
         return this.agentUpdateStatus;
     }
@@ -801,6 +802,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * @see AgentUpdateStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
         withAgentUpdateStatus(agentUpdateStatus);
     }

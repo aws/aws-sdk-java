@@ -237,6 +237,7 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see ObjectType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     public String getObjectType() {
         return this.objectType;
     }
@@ -269,6 +270,7 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see ObjectType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setObjectType(ObjectType objectType) {
         withObjectType(objectType);
     }

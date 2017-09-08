@@ -254,6 +254,7 @@ public class AttributeDefinition implements Serializable, Cloneable, StructuredP
      * @see ScalarAttributeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     public String getAttributeType() {
         return this.attributeType;
     }
@@ -350,6 +351,7 @@ public class AttributeDefinition implements Serializable, Cloneable, StructuredP
      * @see ScalarAttributeType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttributeType(ScalarAttributeType attributeType) {
         withAttributeType(attributeType);
     }

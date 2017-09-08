@@ -189,6 +189,7 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
      * @see DocumentHashType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("documentHashType")
     public String getDocumentHashType() {
         return this.documentHashType;
     }

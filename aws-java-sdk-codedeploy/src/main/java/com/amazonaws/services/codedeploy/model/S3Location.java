@@ -251,6 +251,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * @see BundleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("bundleType")
     public String getBundleType() {
         return this.bundleType;
     }
@@ -347,6 +348,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * @see BundleType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBundleType(BundleType bundleType) {
         withBundleType(bundleType);
     }

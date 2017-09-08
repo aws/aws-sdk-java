@@ -102,6 +102,7 @@ public class Loa implements Serializable, Cloneable, StructuredPojo {
      * @see LoaContentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("loaContentType")
     public String getLoaContentType() {
         return this.loaContentType;
     }
@@ -122,6 +123,7 @@ public class Loa implements Serializable, Cloneable, StructuredPojo {
      * @see LoaContentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLoaContentType(LoaContentType loaContentType) {
         withLoaContentType(loaContentType);
     }

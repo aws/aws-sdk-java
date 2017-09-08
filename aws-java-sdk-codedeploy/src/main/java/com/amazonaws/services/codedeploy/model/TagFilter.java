@@ -233,6 +233,7 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * @see TagFilterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -329,6 +330,7 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      * @see TagFilterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(TagFilterType type) {
         withType(type);
     }

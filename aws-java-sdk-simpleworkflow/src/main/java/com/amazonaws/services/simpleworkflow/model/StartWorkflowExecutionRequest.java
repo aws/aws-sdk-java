@@ -1086,6 +1086,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * @see ChildPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("childPolicy")
     public String getChildPolicy() {
         return this.childPolicy;
     }
@@ -1242,6 +1243,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * @see ChildPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChildPolicy(ChildPolicy childPolicy) {
         withChildPolicy(childPolicy);
     }

@@ -60,6 +60,7 @@ public class CloseStatusFilter implements Serializable, Cloneable, StructuredPoj
      * @see CloseStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -92,6 +93,7 @@ public class CloseStatusFilter implements Serializable, Cloneable, StructuredPoj
      * @see CloseStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CloseStatus status) {
         withStatus(status);
     }

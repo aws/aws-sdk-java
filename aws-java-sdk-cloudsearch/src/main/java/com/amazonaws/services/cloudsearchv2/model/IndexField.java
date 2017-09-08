@@ -193,6 +193,7 @@ public class IndexField implements Serializable, Cloneable {
      * @see IndexFieldType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("indexFieldType")
     public String getIndexFieldType() {
         return this.indexFieldType;
     }
@@ -213,6 +214,7 @@ public class IndexField implements Serializable, Cloneable {
      * @see IndexFieldType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIndexFieldType(IndexFieldType indexFieldType) {
         withIndexFieldType(indexFieldType);
     }

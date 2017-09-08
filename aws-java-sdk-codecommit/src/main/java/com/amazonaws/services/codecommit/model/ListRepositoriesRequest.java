@@ -124,6 +124,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      * @see SortByEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     public String getSortBy() {
         return this.sortBy;
     }
@@ -154,6 +155,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      * @see SortByEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortBy(SortByEnum sortBy) {
         withSortBy(sortBy);
     }
@@ -197,6 +199,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      * @see OrderEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("order")
     public String getOrder() {
         return this.order;
     }
@@ -227,6 +230,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      * @see OrderEnum
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrder(OrderEnum order) {
         withOrder(order);
     }

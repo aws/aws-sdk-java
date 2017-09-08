@@ -295,6 +295,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectorySize
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("size")
     public String getSize() {
         return this.size;
     }
@@ -325,6 +326,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectorySize
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSize(DirectorySize size) {
         withSize(size);
     }
@@ -603,6 +605,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectoryStage
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("stage")
     public String getStage() {
         return this.stage;
     }
@@ -633,6 +636,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectoryStage
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStage(DirectoryStage stage) {
         withStage(stage);
     }
@@ -756,6 +760,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectoryType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -786,6 +791,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see DirectoryType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(DirectoryType type) {
         withType(type);
     }
@@ -964,6 +970,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see RadiusStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("radiusStatus")
     public String getRadiusStatus() {
         return this.radiusStatus;
     }
@@ -994,6 +1001,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * @see RadiusStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRadiusStatus(RadiusStatus radiusStatus) {
         withRadiusStatus(radiusStatus);
     }

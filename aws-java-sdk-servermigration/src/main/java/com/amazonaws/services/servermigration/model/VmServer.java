@@ -127,6 +127,7 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
      * @see VmManagerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("vmManagerType")
     public String getVmManagerType() {
         return this.vmManagerType;
     }
@@ -147,6 +148,7 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
      * @see VmManagerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVmManagerType(VmManagerType vmManagerType) {
         withVmManagerType(vmManagerType);
     }

@@ -184,6 +184,7 @@ public class DisassociateConnectionFromLagResult extends com.amazonaws.AmazonWeb
      * @see ConnectionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionState")
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -204,6 +205,7 @@ public class DisassociateConnectionFromLagResult extends com.amazonaws.AmazonWeb
      * @see ConnectionState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConnectionState(ConnectionState connectionState) {
         withConnectionState(connectionState);
     }

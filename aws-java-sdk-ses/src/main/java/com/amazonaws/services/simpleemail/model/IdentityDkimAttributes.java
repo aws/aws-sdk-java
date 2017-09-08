@@ -138,6 +138,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @see VerificationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dkimVerificationStatus")
     public String getDkimVerificationStatus() {
         return this.dkimVerificationStatus;
     }
@@ -172,6 +173,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @see VerificationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDkimVerificationStatus(VerificationStatus dkimVerificationStatus) {
         withDkimVerificationStatus(dkimVerificationStatus);
     }

@@ -46,15 +46,15 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     private String logStreamNamePrefix;
     /**
      * <p>
-     * The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp earlier than this time are not exported.
+     * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp earlier than this time are not exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
-     * The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp later than this time are not exported.
+     * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp later than this time are not exported.
      * </p>
      */
     private Long to;
@@ -200,13 +200,13 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp earlier than this time are not exported.
+     * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp earlier than this time are not exported.
      * </p>
      * 
      * @param from
-     *        The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970
-     *        00:00:00 UTC. Events with a timestamp earlier than this time are not exported.
+     *        The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
+     *        00:00:00 UTC. Events with a time stamp earlier than this time are not exported.
      */
 
     public void setFrom(Long from) {
@@ -215,12 +215,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp earlier than this time are not exported.
+     * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp earlier than this time are not exported.
      * </p>
      * 
-     * @return The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970
-     *         00:00:00 UTC. Events with a timestamp earlier than this time are not exported.
+     * @return The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
+     *         00:00:00 UTC. Events with a time stamp earlier than this time are not exported.
      */
 
     public Long getFrom() {
@@ -229,13 +229,13 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp earlier than this time are not exported.
+     * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp earlier than this time are not exported.
      * </p>
      * 
      * @param from
-     *        The start time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970
-     *        00:00:00 UTC. Events with a timestamp earlier than this time are not exported.
+     *        The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
+     *        00:00:00 UTC. Events with a time stamp earlier than this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,13 +246,13 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp later than this time are not exported.
+     * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp later than this time are not exported.
      * </p>
      * 
      * @param to
-     *        The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970
-     *        00:00:00 UTC. Events with a timestamp later than this time are not exported.
+     *        The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
+     *        00:00:00 UTC. Events with a time stamp later than this time are not exported.
      */
 
     public void setTo(Long to) {
@@ -261,12 +261,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp later than this time are not exported.
+     * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp later than this time are not exported.
      * </p>
      * 
-     * @return The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970
-     *         00:00:00 UTC. Events with a timestamp later than this time are not exported.
+     * @return The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
+     *         00:00:00 UTC. Events with a time stamp later than this time are not exported.
      */
 
     public Long getTo() {
@@ -275,13 +275,13 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-     * UTC. Events with a timestamp later than this time are not exported.
+     * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
+     * UTC. Events with a time stamp later than this time are not exported.
      * </p>
      * 
      * @param to
-     *        The end time of the range for the request, expressed as the number of milliseconds since Jan 1, 1970
-     *        00:00:00 UTC. Events with a timestamp later than this time are not exported.
+     *        The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
+     *        00:00:00 UTC. Events with a time stamp later than this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -153,6 +153,7 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -212,6 +213,7 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ExportType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exportType")
     public String getExportType() {
         return this.exportType;
     }

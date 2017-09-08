@@ -715,6 +715,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see FleetStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -887,6 +888,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see FleetStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(FleetStatus status) {
         withStatus(status);
     }
@@ -1310,6 +1312,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see ProtectionPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("newGameSessionProtectionPolicy")
     public String getNewGameSessionProtectionPolicy() {
         return this.newGameSessionProtectionPolicy;
     }
@@ -1390,6 +1393,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see ProtectionPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }
@@ -1462,6 +1466,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see OperatingSystem
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -1496,6 +1501,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * @see OperatingSystem
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }

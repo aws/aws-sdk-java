@@ -65,6 +65,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -95,6 +96,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      * @see PolicyType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PolicyType type) {
         withType(type);
     }
@@ -144,6 +146,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      * @see PolicyTypeStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -180,6 +183,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      * @see PolicyTypeStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(PolicyTypeStatus status) {
         withStatus(status);
     }

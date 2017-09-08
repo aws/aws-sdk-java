@@ -156,6 +156,7 @@ public class InvalidCrossAccountRoleException extends com.amazonaws.services.ins
      * @see InvalidCrossAccountRoleErrorCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInspectorErrorCode(InvalidCrossAccountRoleErrorCode inspectorErrorCode) {
         withInspectorErrorCode(inspectorErrorCode);
     }

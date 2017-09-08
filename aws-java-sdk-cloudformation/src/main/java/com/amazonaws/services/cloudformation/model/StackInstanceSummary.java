@@ -410,6 +410,7 @@ public class StackInstanceSummary implements Serializable, Cloneable {
      * @see StackInstanceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -570,6 +571,7 @@ public class StackInstanceSummary implements Serializable, Cloneable {
      * @see StackInstanceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StackInstanceStatus status) {
         withStatus(status);
     }

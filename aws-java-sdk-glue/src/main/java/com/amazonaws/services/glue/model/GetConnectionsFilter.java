@@ -143,6 +143,7 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
      * @see ConnectionType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
     public String getConnectionType() {
         return this.connectionType;
     }

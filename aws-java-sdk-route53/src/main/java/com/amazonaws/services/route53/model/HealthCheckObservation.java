@@ -70,6 +70,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @see HealthCheckRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
     public String getRegion() {
         return this.region;
     }
@@ -100,6 +101,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      * @see HealthCheckRegion
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRegion(HealthCheckRegion region) {
         withRegion(region);
     }

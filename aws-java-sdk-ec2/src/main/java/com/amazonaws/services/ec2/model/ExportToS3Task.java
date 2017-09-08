@@ -80,6 +80,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @see ContainerFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("containerFormat")
     public String getContainerFormat() {
         return this.containerFormat;
     }
@@ -114,6 +115,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @see ContainerFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContainerFormat(ContainerFormat containerFormat) {
         withContainerFormat(containerFormat);
     }
@@ -159,6 +161,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @see DiskImageFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("diskImageFormat")
     public String getDiskImageFormat() {
         return this.diskImageFormat;
     }
@@ -189,6 +192,7 @@ public class ExportToS3Task implements Serializable, Cloneable {
      * @see DiskImageFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDiskImageFormat(DiskImageFormat diskImageFormat) {
         withDiskImageFormat(diskImageFormat);
     }

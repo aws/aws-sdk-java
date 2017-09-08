@@ -177,6 +177,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * @see Statistic
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("statistic")
     public String getStatistic() {
         return this.statistic;
     }
@@ -211,6 +212,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * @see Statistic
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatistic(Statistic statistic) {
         withStatistic(statistic);
     }
@@ -417,6 +419,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * @see StandardUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -447,6 +450,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      * @see StandardUnit
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(StandardUnit unit) {
         withUnit(unit);
     }

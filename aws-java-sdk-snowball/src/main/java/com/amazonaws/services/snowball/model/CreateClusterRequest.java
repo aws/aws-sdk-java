@@ -145,6 +145,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see JobType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     public String getJobType() {
         return this.jobType;
     }
@@ -177,6 +178,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see JobType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobType(JobType jobType) {
         withJobType(jobType);
     }
@@ -464,6 +466,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see SnowballType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("snowballType")
     public String getSnowballType() {
         return this.snowballType;
     }
@@ -498,6 +501,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see SnowballType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         withSnowballType(snowballType);
     }
@@ -649,6 +653,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ShippingOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("shippingOption")
     public String getShippingOption() {
         return this.shippingOption;
     }
@@ -785,6 +790,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ShippingOption
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         withShippingOption(shippingOption);
     }

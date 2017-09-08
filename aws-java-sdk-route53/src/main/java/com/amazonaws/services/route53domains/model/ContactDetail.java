@@ -236,6 +236,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * @see ContactType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("contactType")
     public String getContactType() {
         return this.contactType;
     }
@@ -274,6 +275,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * @see ContactType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContactType(ContactType contactType) {
         withContactType(contactType);
     }
@@ -521,6 +523,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * @see CountryCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     public String getCountryCode() {
         return this.countryCode;
     }
@@ -551,6 +554,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      * @see CountryCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCountryCode(CountryCode countryCode) {
         withCountryCode(countryCode);
     }

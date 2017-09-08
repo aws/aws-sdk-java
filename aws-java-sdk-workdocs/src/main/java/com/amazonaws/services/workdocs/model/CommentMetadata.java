@@ -171,6 +171,7 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
      * @see CommentStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("commentStatus")
     public String getCommentStatus() {
         return this.commentStatus;
     }
@@ -191,6 +192,7 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
      * @see CommentStatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCommentStatus(CommentStatusType commentStatus) {
         withCommentStatus(commentStatus);
     }

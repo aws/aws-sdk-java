@@ -150,6 +150,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @see ApplicationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationStatus")
     public String getApplicationStatus() {
         return this.applicationStatus;
     }
@@ -180,6 +181,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @see ApplicationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
         withApplicationStatus(applicationStatus);
     }

@@ -321,6 +321,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
      * @see SegmentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("segmentType")
     public String getSegmentType() {
         return this.segmentType;
     }
@@ -363,6 +364,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
      * @see SegmentType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSegmentType(SegmentType segmentType) {
         withSegmentType(segmentType);
     }

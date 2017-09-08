@@ -78,6 +78,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @see EventCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -108,6 +109,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * @see EventCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(EventCode code) {
         withCode(code);
     }

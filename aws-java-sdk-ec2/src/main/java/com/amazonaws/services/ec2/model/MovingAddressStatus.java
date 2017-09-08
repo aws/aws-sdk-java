@@ -67,6 +67,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      * @see MoveStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("moveStatus")
     public String getMoveStatus() {
         return this.moveStatus;
     }
@@ -101,6 +102,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      * @see MoveStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMoveStatus(MoveStatus moveStatus) {
         withMoveStatus(moveStatus);
     }

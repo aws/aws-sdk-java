@@ -203,6 +203,7 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * @see StageRetryMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("retryMode")
     public String getRetryMode() {
         return this.retryMode;
     }
@@ -233,6 +234,7 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * @see StageRetryMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRetryMode(StageRetryMode retryMode) {
         withRetryMode(retryMode);
     }

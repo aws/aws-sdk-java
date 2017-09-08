@@ -86,6 +86,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      * @see WorkflowExecutionTimeoutType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("timeoutType")
     public String getTimeoutType() {
         return this.timeoutType;
     }
@@ -116,6 +117,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      * @see WorkflowExecutionTimeoutType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
         withTimeoutType(timeoutType);
     }
@@ -245,6 +247,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      * @see ChildPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("childPolicy")
     public String getChildPolicy() {
         return this.childPolicy;
     }
@@ -361,6 +364,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      * @see ChildPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChildPolicy(ChildPolicy childPolicy) {
         withChildPolicy(childPolicy);
     }

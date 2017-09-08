@@ -296,6 +296,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see ImageState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -330,6 +331,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see ImageState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ImageState state) {
         withState(state);
     }
@@ -375,6 +377,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see VisibilityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("visibility")
     public String getVisibility() {
         return this.visibility;
     }
@@ -405,6 +408,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see VisibilityType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVisibility(VisibilityType visibility) {
         withVisibility(visibility);
     }
@@ -500,6 +504,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see PlatformType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -530,6 +535,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * @see PlatformType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(PlatformType platform) {
         withPlatform(platform);
     }

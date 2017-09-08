@@ -69,6 +69,7 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
      * @see UlimitName
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -99,6 +100,7 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
      * @see UlimitName
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(UlimitName name) {
         withName(name);
     }

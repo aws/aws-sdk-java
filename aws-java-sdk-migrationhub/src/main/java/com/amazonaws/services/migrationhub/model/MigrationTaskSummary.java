@@ -172,6 +172,7 @@ public class MigrationTaskSummary implements Serializable, Cloneable, Structured
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

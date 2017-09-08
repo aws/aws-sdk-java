@@ -206,6 +206,7 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see CertificateStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -236,6 +237,7 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * @see CertificateStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CertificateStatus status) {
         withStatus(status);
     }

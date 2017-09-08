@@ -352,6 +352,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * @see ProvisionedProductStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -450,6 +451,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * @see ProvisionedProductStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ProvisionedProductStatus status) {
         withStatus(status);
     }

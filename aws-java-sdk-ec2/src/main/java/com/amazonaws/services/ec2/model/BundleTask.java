@@ -298,6 +298,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @see BundleTaskState
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -328,6 +329,7 @@ public class BundleTask implements Serializable, Cloneable {
      * @see BundleTaskState
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(BundleTaskState state) {
         withState(state);
     }

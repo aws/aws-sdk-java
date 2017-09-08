@@ -126,6 +126,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
      * @see DocumentationPartType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -156,6 +157,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
      * @see DocumentationPartType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(DocumentationPartType type) {
         withType(type);
     }

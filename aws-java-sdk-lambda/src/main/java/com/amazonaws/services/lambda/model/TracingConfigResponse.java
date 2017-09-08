@@ -58,6 +58,7 @@ public class TracingConfigResponse implements Serializable, Cloneable, Structure
      * @see TracingMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("mode")
     public String getMode() {
         return this.mode;
     }
@@ -88,6 +89,7 @@ public class TracingConfigResponse implements Serializable, Cloneable, Structure
      * @see TracingMode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMode(TracingMode mode) {
         withMode(mode);
     }

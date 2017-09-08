@@ -49,9 +49,9 @@ import com.amazonaws.services.logs.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, Amazon
- * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the Amazon
- * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon EC2 instances, AWS
+ * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch
+ * console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -59,24 +59,24 @@ import com.amazonaws.services.logs.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use CloudWatch Logs to monitor applications and
- * systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application
- * logs and send you a notification whenever the rate of errors exceeds a threshold you specify. CloudWatch Logs uses
- * your log data for monitoring; so, no code changes are required. For example, you can monitor application logs for
- * specific literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a
- * particular position in log data (such as "404" status codes in an Apache access log). When the term you are searching
- * for is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that you specify.
+ * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs to monitor applications and systems
+ * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and
+ * send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your
+ * log data for monitoring; so, no code changes are required. For example, you can monitor application logs for specific
+ * literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a particular
+ * position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is
+ * found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in Amazon CloudWatch and receive notifications
- * of particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
+ * <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch and receive notifications of
+ * particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
+ * <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
  * the log retention setting so that any log events older than this setting are automatically deleted. The CloudWatch
  * Logs agent makes it easy to quickly send both rotated and non-rotated log data off of a host and into the log
  * service. You can then access the raw log data when you need it.
@@ -385,8 +385,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
-     * data for each export task, you can specify a prefix that will be used as the Amazon S3 key prefix for all
-     * exported objects.
+     * data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported
+     * objects.
      * </p>
      * 
      * @param createExportTaskRequest
@@ -834,6 +834,61 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
+     * Deletes a resource policy from this account. This revokes the access of the identities in that policy to put log
+     * events to this account.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified retention policy.
      * </p>
      * <p>
@@ -1234,6 +1289,60 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
+     * Lists the resource policies in this account.
+     * </p>
+     * 
+     * @param describeResourcePoliciesRequest
+     * @return Result of the DescribeResourcePolicies operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.DescribeResourcePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeResourcePoliciesResult describeResourcePolicies(DescribeResourcePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeResourcePolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeResourcePoliciesResult executeDescribeResourcePolicies(DescribeResourcePoliciesRequest describeResourcePoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeResourcePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeResourcePoliciesRequest> request = null;
+        Response<DescribeResourcePoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeResourcePoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeResourcePoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeResourcePoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeResourcePoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the subscription filters for the specified log group. You can list all the subscription filters or filter
      * the results by prefix. The results are ASCII-sorted by filter name.
      * </p>
@@ -1295,7 +1404,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * filter pattern, a time range, and the name of the log stream.
      * </p>
      * <p>
-     * By default, this operation returns as many log events as can fit in 1MB (up to 10,000 log events), or all the
+     * By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events), or all the
      * events found within the time range that you specify. If the results include a token, then there are more log
      * events available, and you can get additional results by specifying the token in a subsequent call.
      * </p>
@@ -1354,9 +1463,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Lists log events from the specified log stream. You can list all the log events or filter using a time range.
      * </p>
      * <p>
-     * By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log
-     * events). If the results include tokens, there are more log events available. You can get additional log events by
-     * specifying one of the tokens in a subsequent call.
+     * By default, this operation returns as many log events as can fit in a response size of 1 MB (up to 10,000 log
+     * events). You can get additional log events by specifying one of the tokens in a subsequent call.
      * </p>
      * 
      * @param getLogEventsRequest
@@ -1465,13 +1573,13 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Creates or updates a destination. A destination encapsulates a physical resource (such as a Kinesis stream) and
-     * enables you to subscribe to a real-time stream of log events of a different account, ingested using
-     * <a>PutLogEvents</a>. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the
-     * same account as the destination.
+     * Creates or updates a destination. A destination encapsulates a physical resource (such as an Amazon Kinesis
+     * stream) and enables you to subscribe to a real-time stream of log events for a different account, ingested using
+     * <a>PutLogEvents</a>. Currently, the only supported physical resource is a Kinesis stream belonging to the same
+     * account as the destination.
      * </p>
      * <p>
-     * A destination controls what is written to its Amazon Kinesis stream through an access policy. By default,
+     * Through an access policy, a destination controls what is written to its Kinesis stream. By default,
      * <code>PutDestination</code> does not set any access policy with the destination, which means a cross-account user
      * cannot call <a>PutSubscriptionFilter</a> against this destination. To enable this, the destination owner must
      * call <a>PutDestinationPolicy</a> after <code>PutDestination</code>.
@@ -1589,7 +1697,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <p>
      * You must include the sequence token obtained from the response of the previous call. An upload in a newly created
      * log stream does not require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>.
+     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
+     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
      * </p>
      * <p>
      * The batch of events must satisfy the following constraints:
@@ -1613,8 +1722,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their timestamp (the time the event occurred,
-     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC).
+     * The log events in the batch must be in chronological ordered by their time stamp (the time the event occurred,
+     * expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC).
      * </p>
      * </li>
      * <li>
@@ -1746,8 +1855,63 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Sets the retention of the specified log group. A retention policy allows you to configure the number of days you
-     * want to retain log events in the specified log group.
+     * Creates or updates a resource policy allowing other AWS services to put log events to this account, such as
+     * Amazon Route 53. An account can have up to 50 resource policies per region.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws LimitExceededException
+     *         You have reached the maximum number of resources that can be created.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the retention of the specified log group. A retention policy allows you to configure the number of days for
+     * which to retain log events in the specified log group.
      * </p>
      * 
      * @param putRetentionPolicyRequest
@@ -1820,8 +1984,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose stream that belongs to the same account as the subscription filter, for same-account
-     * delivery.
+     * An Amazon Kinesis Firehose delivery stream that belongs to the same account as the subscription filter, for
+     * same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -1832,7 +1996,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </ul>
      * <p>
      * There can only be one subscription filter associated with a log group. If you are updating an existing filter,
-     * you must specify the correct name in <code>filterName</code>. Otherwise, the call will fail because you cannot
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the call fails because you cannot
      * associate a second filter with a log group.
      * </p>
      * 

@@ -330,6 +330,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * @see PatchComplianceLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("approvedPatchesComplianceLevel")
     public String getApprovedPatchesComplianceLevel() {
         return this.approvedPatchesComplianceLevel;
     }
@@ -360,6 +361,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * @see PatchComplianceLevel
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
         withApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
     }

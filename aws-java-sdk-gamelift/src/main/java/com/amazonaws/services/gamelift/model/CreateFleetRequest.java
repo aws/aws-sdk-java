@@ -529,6 +529,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see EC2InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("eC2InstanceType")
     public String getEC2InstanceType() {
         return this.eC2InstanceType;
     }
@@ -571,6 +572,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see EC2InstanceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         withEC2InstanceType(eC2InstanceType);
     }
@@ -772,6 +774,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see ProtectionPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("newGameSessionProtectionPolicy")
     public String getNewGameSessionProtectionPolicy() {
         return this.newGameSessionProtectionPolicy;
     }
@@ -864,6 +867,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see ProtectionPolicy
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
         withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }

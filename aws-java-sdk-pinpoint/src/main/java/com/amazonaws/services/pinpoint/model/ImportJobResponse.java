@@ -386,6 +386,7 @@ public class ImportJobResponse implements Serializable, Cloneable, StructuredPoj
      * @see JobStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStatus")
     public String getJobStatus() {
         return this.jobStatus;
     }
@@ -424,6 +425,7 @@ public class ImportJobResponse implements Serializable, Cloneable, StructuredPoj
      * @see JobStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobStatus(JobStatus jobStatus) {
         withJobStatus(jobStatus);
     }

@@ -227,6 +227,7 @@ public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceR
      * @see BulkPublishStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("bulkPublishStatus")
     public String getBulkPublishStatus() {
         return this.bulkPublishStatus;
     }
@@ -301,6 +302,7 @@ public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceR
      * @see BulkPublishStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
         withBulkPublishStatus(bulkPublishStatus);
     }

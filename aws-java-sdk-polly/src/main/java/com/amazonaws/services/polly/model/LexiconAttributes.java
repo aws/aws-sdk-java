@@ -134,6 +134,7 @@ public class LexiconAttributes implements Serializable, Cloneable, StructuredPoj
      * @see LanguageCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     public String getLanguageCode() {
         return this.languageCode;
     }
@@ -168,6 +169,7 @@ public class LexiconAttributes implements Serializable, Cloneable, StructuredPoj
      * @see LanguageCode
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLanguageCode(LanguageCode languageCode) {
         withLanguageCode(languageCode);
     }

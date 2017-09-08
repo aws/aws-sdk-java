@@ -71,6 +71,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * @see Status
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

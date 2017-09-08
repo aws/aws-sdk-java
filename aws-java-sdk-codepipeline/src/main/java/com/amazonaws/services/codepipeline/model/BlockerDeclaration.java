@@ -104,6 +104,7 @@ public class BlockerDeclaration implements Serializable, Cloneable, StructuredPo
      * @see BlockerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -134,6 +135,7 @@ public class BlockerDeclaration implements Serializable, Cloneable, StructuredPo
      * @see BlockerType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(BlockerType type) {
         withType(type);
     }

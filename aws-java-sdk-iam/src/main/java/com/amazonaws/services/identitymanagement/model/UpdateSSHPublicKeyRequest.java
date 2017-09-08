@@ -209,6 +209,7 @@ public class UpdateSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * @see StatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -243,6 +244,7 @@ public class UpdateSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * @see StatusType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StatusType status) {
         withStatus(status);
     }

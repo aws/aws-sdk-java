@@ -74,6 +74,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -108,6 +109,7 @@ public class PriceScheduleSpecification implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         withCurrencyCode(currencyCode);
     }

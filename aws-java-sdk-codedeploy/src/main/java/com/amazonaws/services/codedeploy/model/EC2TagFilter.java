@@ -233,6 +233,7 @@ public class EC2TagFilter implements Serializable, Cloneable, StructuredPojo {
      * @see EC2TagFilterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -329,6 +330,7 @@ public class EC2TagFilter implements Serializable, Cloneable, StructuredPojo {
      * @see EC2TagFilterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(EC2TagFilterType type) {
         withType(type);
     }

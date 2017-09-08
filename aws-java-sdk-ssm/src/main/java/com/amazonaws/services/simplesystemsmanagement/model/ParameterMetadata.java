@@ -137,6 +137,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      * @see ParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -167,6 +168,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      * @see ParameterType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ParameterType type) {
         withType(type);
     }

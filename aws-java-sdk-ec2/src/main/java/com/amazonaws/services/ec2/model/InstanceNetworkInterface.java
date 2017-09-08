@@ -731,6 +731,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -761,6 +762,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * @see NetworkInterfaceStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(NetworkInterfaceStatus status) {
         withStatus(status);
     }

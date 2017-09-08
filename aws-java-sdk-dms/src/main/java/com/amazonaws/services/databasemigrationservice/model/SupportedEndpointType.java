@@ -167,6 +167,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * @see ReplicationEndpointTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointType")
     public String getEndpointType() {
         return this.endpointType;
     }
@@ -197,6 +198,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * @see ReplicationEndpointTypeValue
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
         withEndpointType(endpointType);
     }

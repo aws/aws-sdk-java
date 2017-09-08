@@ -222,6 +222,7 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * @see DimensionValueSource
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dimensionValueSource")
     public String getDimensionValueSource() {
         return this.dimensionValueSource;
     }
@@ -264,6 +265,7 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      * @see DimensionValueSource
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDimensionValueSource(DimensionValueSource dimensionValueSource) {
         withDimensionValueSource(dimensionValueSource);
     }

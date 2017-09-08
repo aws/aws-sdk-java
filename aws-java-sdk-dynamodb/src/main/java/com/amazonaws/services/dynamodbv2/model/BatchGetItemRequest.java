@@ -1290,6 +1290,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ReturnConsumedCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("returnConsumedCapacity")
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -1310,6 +1311,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ReturnConsumedCapacity
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         withReturnConsumedCapacity(returnConsumedCapacity);
     }

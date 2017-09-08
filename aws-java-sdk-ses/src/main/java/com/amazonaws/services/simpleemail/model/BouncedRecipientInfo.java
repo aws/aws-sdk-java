@@ -188,6 +188,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @see BounceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("bounceType")
     public String getBounceType() {
         return this.bounceType;
     }
@@ -218,6 +219,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      * @see BounceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBounceType(BounceType bounceType) {
         withBounceType(bounceType);
     }

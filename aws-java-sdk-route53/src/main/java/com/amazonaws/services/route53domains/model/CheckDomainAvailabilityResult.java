@@ -387,6 +387,7 @@ public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServic
      * @see DomainAvailability
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("availability")
     public String getAvailability() {
         return this.availability;
     }
@@ -681,6 +682,7 @@ public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServic
      * @see DomainAvailability
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAvailability(DomainAvailability availability) {
         withAvailability(availability);
     }

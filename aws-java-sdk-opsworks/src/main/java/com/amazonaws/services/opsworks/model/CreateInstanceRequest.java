@@ -451,6 +451,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see AutoScalingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("autoScalingType")
     public String getAutoScalingType() {
         return this.autoScalingType;
     }
@@ -481,6 +482,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see AutoScalingType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         withAutoScalingType(autoScalingType);
     }
@@ -1186,6 +1188,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Architecture
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     public String getArchitecture() {
         return this.architecture;
     }
@@ -1226,6 +1229,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Architecture
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setArchitecture(Architecture architecture) {
         withArchitecture(architecture);
     }
@@ -1282,6 +1286,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see RootDeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rootDeviceType")
     public String getRootDeviceType() {
         return this.rootDeviceType;
     }
@@ -1320,6 +1325,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see RootDeviceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
         withRootDeviceType(rootDeviceType);
     }

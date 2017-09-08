@@ -305,6 +305,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable, StructuredP
      * @see CompressionFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("compressionFormat")
     public String getCompressionFormat() {
         return this.compressionFormat;
     }
@@ -353,6 +354,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable, StructuredP
      * @see CompressionFormat
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCompressionFormat(CompressionFormat compressionFormat) {
         withCompressionFormat(compressionFormat);
     }

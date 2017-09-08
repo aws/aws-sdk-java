@@ -113,6 +113,7 @@ public class ListWorkersWithQualificationTypeRequest extends com.amazonaws.Amazo
      * @see QualificationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -143,6 +144,7 @@ public class ListWorkersWithQualificationTypeRequest extends com.amazonaws.Amazo
      * @see QualificationStatus
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(QualificationStatus status) {
         withStatus(status);
     }

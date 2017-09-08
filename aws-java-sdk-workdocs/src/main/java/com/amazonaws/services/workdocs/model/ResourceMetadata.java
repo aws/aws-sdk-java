@@ -94,6 +94,7 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -124,6 +125,7 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
      * @see ResourceType
      */
 
+    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ResourceType type) {
         withType(type);
     }
