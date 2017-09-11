@@ -108,6 +108,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setRemoteAccessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("remoteDebugEnabled", targetDepth)) {
+                    context.nextToken();
+                    device.setRemoteDebugEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("fleetType", targetDepth)) {
                     context.nextToken();
                     device.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));

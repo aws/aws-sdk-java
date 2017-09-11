@@ -112,6 +112,18 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                     context.nextToken();
                     run.setNetworkProfile(NetworkProfileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("parsingResultUrl", targetDepth)) {
+                    context.nextToken();
+                    run.setParsingResultUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resultCode", targetDepth)) {
+                    context.nextToken();
+                    run.setResultCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("customerArtifactPaths", targetDepth)) {
+                    context.nextToken();
+                    run.setCustomerArtifactPaths(CustomerArtifactPathsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

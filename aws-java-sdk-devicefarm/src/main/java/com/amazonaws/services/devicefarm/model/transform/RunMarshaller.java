@@ -59,6 +59,12 @@ public class RunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceMinutes").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkProfile").build();
+    private static final MarshallingInfo<String> PARSINGRESULTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parsingResultUrl").build();
+    private static final MarshallingInfo<String> RESULTCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resultCode").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMERARTIFACTPATHS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerArtifactPaths").build();
 
     private static final RunMarshaller instance = new RunMarshaller();
 
@@ -92,6 +98,9 @@ public class RunMarshaller {
             protocolMarshaller.marshall(run.getBillingMethod(), BILLINGMETHOD_BINDING);
             protocolMarshaller.marshall(run.getDeviceMinutes(), DEVICEMINUTES_BINDING);
             protocolMarshaller.marshall(run.getNetworkProfile(), NETWORKPROFILE_BINDING);
+            protocolMarshaller.marshall(run.getParsingResultUrl(), PARSINGRESULTURL_BINDING);
+            protocolMarshaller.marshall(run.getResultCode(), RESULTCODE_BINDING);
+            protocolMarshaller.marshall(run.getCustomerArtifactPaths(), CUSTOMERARTIFACTPATHS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

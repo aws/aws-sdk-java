@@ -45,12 +45,20 @@ public class RemoteAccessSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopped").build();
     private static final MarshallingInfo<StructuredPojo> DEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("device").build();
+    private static final MarshallingInfo<Boolean> REMOTEDEBUGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteDebugEnabled").build();
+    private static final MarshallingInfo<String> HOSTADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostAddress").build();
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("clientId").build();
     private static final MarshallingInfo<String> BILLINGMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("billingMethod").build();
     private static final MarshallingInfo<StructuredPojo> DEVICEMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceMinutes").build();
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("endpoint").build();
+    private static final MarshallingInfo<String> DEVICEUDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceUdid").build();
 
     private static final RemoteAccessSessionMarshaller instance = new RemoteAccessSessionMarshaller();
 
@@ -77,9 +85,13 @@ public class RemoteAccessSessionMarshaller {
             protocolMarshaller.marshall(remoteAccessSession.getStarted(), STARTED_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getStopped(), STOPPED_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getDevice(), DEVICE_BINDING);
+            protocolMarshaller.marshall(remoteAccessSession.getRemoteDebugEnabled(), REMOTEDEBUGENABLED_BINDING);
+            protocolMarshaller.marshall(remoteAccessSession.getHostAddress(), HOSTADDRESS_BINDING);
+            protocolMarshaller.marshall(remoteAccessSession.getClientId(), CLIENTID_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getBillingMethod(), BILLINGMETHOD_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getDeviceMinutes(), DEVICEMINUTES_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getEndpoint(), ENDPOINT_BINDING);
+            protocolMarshaller.marshall(remoteAccessSession.getDeviceUdid(), DEVICEUDID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an app on a set of devices with a specific test and configuration.
+ * Represents a test run on a set of devices with a given app package, test parameters, etc.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run" target="_top">AWS API
@@ -306,6 +306,26 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkProfile networkProfile;
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     */
+    private String parsingResultUrl;
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     */
+    private String resultCode;
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     */
+    private CustomerArtifactPaths customerArtifactPaths;
 
     /**
      * <p>
@@ -2923,6 +2943,178 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     * 
+     * @param parsingResultUrl
+     *        Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the
+     *        test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     */
+
+    public void setParsingResultUrl(String parsingResultUrl) {
+        this.parsingResultUrl = parsingResultUrl;
+    }
+
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     * 
+     * @return Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If
+     *         the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
+     *         to.
+     */
+
+    public String getParsingResultUrl() {
+        return this.parsingResultUrl;
+    }
+
+    /**
+     * <p>
+     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
+     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * </p>
+     * 
+     * @param parsingResultUrl
+     *        Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the
+     *        test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withParsingResultUrl(String parsingResultUrl) {
+        setParsingResultUrl(parsingResultUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @see ExecutionResultCode
+     */
+
+    public void setResultCode(String resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @return Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *         <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @see ExecutionResultCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resultCode")
+    public String getResultCode() {
+        return this.resultCode;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionResultCode
+     */
+
+    public Run withResultCode(String resultCode) {
+        setResultCode(resultCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @see ExecutionResultCode
+     */
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public void setResultCode(ExecutionResultCode resultCode) {
+        withResultCode(resultCode);
+    }
+
+    /**
+     * <p>
+     * Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     * <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * </p>
+     * 
+     * @param resultCode
+     *        Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>.
+     *        <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExecutionResultCode
+     */
+
+    public Run withResultCode(ExecutionResultCode resultCode) {
+        this.resultCode = resultCode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     * 
+     * @param customerArtifactPaths
+     *        Output <code>CustomerArtifactPaths</code> object for the test run.
+     */
+
+    public void setCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
+        this.customerArtifactPaths = customerArtifactPaths;
+    }
+
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     * 
+     * @return Output <code>CustomerArtifactPaths</code> object for the test run.
+     */
+
+    public CustomerArtifactPaths getCustomerArtifactPaths() {
+        return this.customerArtifactPaths;
+    }
+
+    /**
+     * <p>
+     * Output <code>CustomerArtifactPaths</code> object for the test run.
+     * </p>
+     * 
+     * @param customerArtifactPaths
+     *        Output <code>CustomerArtifactPaths</code> object for the test run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
+        setCustomerArtifactPaths(customerArtifactPaths);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2964,7 +3156,13 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         if (getDeviceMinutes() != null)
             sb.append("DeviceMinutes: ").append(getDeviceMinutes()).append(",");
         if (getNetworkProfile() != null)
-            sb.append("NetworkProfile: ").append(getNetworkProfile());
+            sb.append("NetworkProfile: ").append(getNetworkProfile()).append(",");
+        if (getParsingResultUrl() != null)
+            sb.append("ParsingResultUrl: ").append(getParsingResultUrl()).append(",");
+        if (getResultCode() != null)
+            sb.append("ResultCode: ").append(getResultCode()).append(",");
+        if (getCustomerArtifactPaths() != null)
+            sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths());
         sb.append("}");
         return sb.toString();
     }
@@ -3043,6 +3241,18 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkProfile() != null && other.getNetworkProfile().equals(this.getNetworkProfile()) == false)
             return false;
+        if (other.getParsingResultUrl() == null ^ this.getParsingResultUrl() == null)
+            return false;
+        if (other.getParsingResultUrl() != null && other.getParsingResultUrl().equals(this.getParsingResultUrl()) == false)
+            return false;
+        if (other.getResultCode() == null ^ this.getResultCode() == null)
+            return false;
+        if (other.getResultCode() != null && other.getResultCode().equals(this.getResultCode()) == false)
+            return false;
+        if (other.getCustomerArtifactPaths() == null ^ this.getCustomerArtifactPaths() == null)
+            return false;
+        if (other.getCustomerArtifactPaths() != null && other.getCustomerArtifactPaths().equals(this.getCustomerArtifactPaths()) == false)
+            return false;
         return true;
     }
 
@@ -3067,6 +3277,9 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBillingMethod() == null) ? 0 : getBillingMethod().hashCode());
         hashCode = prime * hashCode + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes().hashCode());
         hashCode = prime * hashCode + ((getNetworkProfile() == null) ? 0 : getNetworkProfile().hashCode());
+        hashCode = prime * hashCode + ((getParsingResultUrl() == null) ? 0 : getParsingResultUrl().hashCode());
+        hashCode = prime * hashCode + ((getResultCode() == null) ? 0 : getResultCode().hashCode());
+        hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
         return hashCode;
     }
 

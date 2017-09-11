@@ -84,6 +84,18 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                     context.nextToken();
                     remoteAccessSession.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("remoteDebugEnabled", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setRemoteDebugEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("hostAddress", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setHostAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("clientId", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setClientId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("billingMethod", targetDepth)) {
                     context.nextToken();
                     remoteAccessSession.setBillingMethod(context.getUnmarshaller(String.class).unmarshall(context));
@@ -95,6 +107,10 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                 if (context.testExpression("endpoint", targetDepth)) {
                     context.nextToken();
                     remoteAccessSession.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("deviceUdid", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setDeviceUdid(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

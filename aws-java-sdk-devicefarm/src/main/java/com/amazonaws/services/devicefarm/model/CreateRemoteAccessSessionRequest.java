@@ -42,10 +42,31 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     private String deviceArn;
     /**
      * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String sshPublicKey;
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     */
+    private Boolean remoteDebugEnabled;
+    /**
+     * <p>
      * The name of the remote access session that you wish to create.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * </p>
+     */
+    private String clientId;
     /**
      * <p>
      * The configuration information for the remote access session request.
@@ -135,6 +156,111 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param sshPublicKey
+     *        The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
+     *        remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     *        <code>true</code>.
+     */
+
+    public void setSshPublicKey(String sshPublicKey) {
+        this.sshPublicKey = sshPublicKey;
+    }
+
+    /**
+     * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
+     *         remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     *         <code>true</code>.
+     */
+
+    public String getSshPublicKey() {
+        return this.sshPublicKey;
+    }
+
+    /**
+     * <p>
+     * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
+     * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param sshPublicKey
+     *        The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your
+     *        remote debugging session. This is only required if <code>remoteDebugEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withSshPublicKey(String sshPublicKey) {
+        setSshPublicKey(sshPublicKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *        session.
+     */
+
+    public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        this.remoteDebugEnabled = remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *         session.
+     */
+
+    public Boolean getRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *        session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        setRemoteDebugEnabled(remoteDebugEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if you want to access devices remotely for debugging in your remote access
+     *         session.
+     */
+
+    public Boolean isRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
      * The name of the remote access session that you wish to create.
      * </p>
      * 
@@ -170,6 +296,58 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     public CreateRemoteAccessSessionRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * </p>
+     * 
+     * @param clientId
+     *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
+     *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
+     *        required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     */
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * </p>
+     * 
+     * @return Unique identifier for the client. If you want access to multiple devices on the same client, you should
+     *         pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
+     *         required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     */
+
+    public String getClientId() {
+        return this.clientId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
+     * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * </p>
+     * 
+     * @param clientId
+     *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
+     *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
+     *        required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withClientId(String clientId) {
+        setClientId(clientId);
         return this;
     }
 
@@ -228,8 +406,14 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             sb.append("ProjectArn: ").append(getProjectArn()).append(",");
         if (getDeviceArn() != null)
             sb.append("DeviceArn: ").append(getDeviceArn()).append(",");
+        if (getSshPublicKey() != null)
+            sb.append("SshPublicKey: ").append(getSshPublicKey()).append(",");
+        if (getRemoteDebugEnabled() != null)
+            sb.append("RemoteDebugEnabled: ").append(getRemoteDebugEnabled()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getClientId() != null)
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
@@ -254,9 +438,21 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDeviceArn() != null && other.getDeviceArn().equals(this.getDeviceArn()) == false)
             return false;
+        if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null)
+            return false;
+        if (other.getSshPublicKey() != null && other.getSshPublicKey().equals(this.getSshPublicKey()) == false)
+            return false;
+        if (other.getRemoteDebugEnabled() == null ^ this.getRemoteDebugEnabled() == null)
+            return false;
+        if (other.getRemoteDebugEnabled() != null && other.getRemoteDebugEnabled().equals(this.getRemoteDebugEnabled()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getClientId() == null ^ this.getClientId() == null)
+            return false;
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
@@ -272,7 +468,10 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
+        hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }

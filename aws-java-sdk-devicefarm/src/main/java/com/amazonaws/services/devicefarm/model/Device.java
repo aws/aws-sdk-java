@@ -150,6 +150,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private Boolean remoteAccessEnabled;
     /**
      * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     */
+    private Boolean remoteDebugEnabled;
+    /**
+     * <p>
      * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
      * </p>
      */
@@ -1135,6 +1141,58 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     */
+
+    public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        this.remoteDebugEnabled = remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     */
+
+    public Boolean getRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @param remoteDebugEnabled
+     *        This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withRemoteDebugEnabled(Boolean remoteDebugEnabled) {
+        setRemoteDebugEnabled(remoteDebugEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     * </p>
+     * 
+     * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.
+     */
+
+    public Boolean isRemoteDebugEnabled() {
+        return this.remoteDebugEnabled;
+    }
+
+    /**
+     * <p>
      * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
      * </p>
      * 
@@ -1254,6 +1312,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             sb.append("Radio: ").append(getRadio()).append(",");
         if (getRemoteAccessEnabled() != null)
             sb.append("RemoteAccessEnabled: ").append(getRemoteAccessEnabled()).append(",");
+        if (getRemoteDebugEnabled() != null)
+            sb.append("RemoteDebugEnabled: ").append(getRemoteDebugEnabled()).append(",");
         if (getFleetType() != null)
             sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getFleetName() != null)
@@ -1332,6 +1392,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRemoteAccessEnabled() != null && other.getRemoteAccessEnabled().equals(this.getRemoteAccessEnabled()) == false)
             return false;
+        if (other.getRemoteDebugEnabled() == null ^ this.getRemoteDebugEnabled() == null)
+            return false;
+        if (other.getRemoteDebugEnabled() != null && other.getRemoteDebugEnabled().equals(this.getRemoteDebugEnabled()) == false)
+            return false;
         if (other.getFleetType() == null ^ this.getFleetType() == null)
             return false;
         if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
@@ -1363,6 +1427,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCarrier() == null) ? 0 : getCarrier().hashCode());
         hashCode = prime * hashCode + ((getRadio() == null) ? 0 : getRadio().hashCode());
         hashCode = prime * hashCode + ((getRemoteAccessEnabled() == null) ? 0 : getRemoteAccessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
         return hashCode;

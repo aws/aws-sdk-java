@@ -57,6 +57,8 @@ public class DeviceMarshaller {
             .marshallLocationName("radio").build();
     private static final MarshallingInfo<Boolean> REMOTEACCESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteAccessEnabled").build();
+    private static final MarshallingInfo<Boolean> REMOTEDEBUGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteDebugEnabled").build();
     private static final MarshallingInfo<String> FLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fleetType").build();
     private static final MarshallingInfo<String> FLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -93,6 +95,7 @@ public class DeviceMarshaller {
             protocolMarshaller.marshall(device.getCarrier(), CARRIER_BINDING);
             protocolMarshaller.marshall(device.getRadio(), RADIO_BINDING);
             protocolMarshaller.marshall(device.getRemoteAccessEnabled(), REMOTEACCESSENABLED_BINDING);
+            protocolMarshaller.marshall(device.getRemoteDebugEnabled(), REMOTEDEBUGENABLED_BINDING);
             protocolMarshaller.marshall(device.getFleetType(), FLEETTYPE_BINDING);
             protocolMarshaller.marshall(device.getFleetName(), FLEETNAME_BINDING);
         } catch (Exception e) {
