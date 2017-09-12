@@ -33,6 +33,7 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.google.appengine.api.urlfetch.HTTPRequest;
 
 import software.amazon.ion.IonStruct;
 import software.amazon.ion.IonSystem;
@@ -46,7 +47,7 @@ public class SdkStructuredIonFactoryTest {
     private static final String ERROR_MESSAGE = "foo";
 
     private static final String NO_SERVICE_NAME = null;
-    private static final HttpRequestBase NO_HTTP_REQUEST = null;
+    private static final HTTPRequest NO_HTTP_REQUEST = null;
     private static final String NO_CUSTOM_ERROR_CODE_FIELD_NAME = null;
 
     private static IonSystem system;

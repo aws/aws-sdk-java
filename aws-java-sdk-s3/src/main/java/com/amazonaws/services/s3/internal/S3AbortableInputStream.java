@@ -19,6 +19,8 @@ import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
+import com.google.appengine.api.urlfetch.HTTPRequest;
+
 import java.io.IOException;
 import java.io.InputStream;
 import org.apache.commons.logging.Log;
@@ -35,13 +37,13 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
 
     private static final Log LOG = LogFactory.getLog(S3AbortableInputStream.class);
 
-    private final HttpRequestBase httpRequest;
+    private final HTTPRequest httpRequest;
     private final long contentLength;
     private long bytesRead;
     private long markedBytes;
     private boolean eofReached = false;
 
-    public S3AbortableInputStream(InputStream in, HttpRequestBase httpRequest, long contentLength) {
+    public S3AbortableInputStream(InputStream in, HTTPRequest httpRequest, long contentLength) {
         super(in);
         this.httpRequest = httpRequest;
         this.contentLength = contentLength;
@@ -68,7 +70,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     public void abort() {
         super.abort();
         if (httpRequest != null) {
-            httpRequest.abort();
+//            httpRequest.abort();
         }
         IOUtils.closeQuietly(in, null);
     }
@@ -166,7 +168,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
                     "may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input " +
                     "stream after use.");
             if (httpRequest != null) {
-                httpRequest.abort();
+//                httpRequest.abort();
             }
             IOUtils.closeQuietly(in, null);
         }

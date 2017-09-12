@@ -276,6 +276,8 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
+import com.google.appengine.api.urlfetch.HTTPRequest;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -1389,7 +1391,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             s3Object.setBucketName(getObjectRequest.getBucketName());
             s3Object.setKey(getObjectRequest.getKey());
             InputStream is = s3Object.getObjectContent();
-            HttpRequestBase httpRequest = s3Object.getObjectContent().getHttpRequest();
+            HTTPRequest httpRequest = s3Object.getObjectContent().getHttpRequest();
             // Hold a reference to this client while the InputStream is still
             // around - otherwise a finalizer in the HttpClient may reset the
             // underlying TCP connection out from under us.

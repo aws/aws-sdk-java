@@ -16,6 +16,7 @@ package com.amazonaws.http;
 
 import com.amazonaws.Request;
 import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
+import com.google.appengine.api.urlfetch.HTTPRequest;
 
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.protocol.HttpContext;
@@ -32,7 +33,7 @@ import java.util.TreeMap;
 public class HttpResponse {
 
     private final Request<?> request;
-    private final HttpRequestBase httpRequest;
+    private final HTTPRequest httpRequest;
 
     private String statusText;
     private int statusCode;
@@ -49,11 +50,11 @@ public class HttpResponse {
      *            The underlying http request that generated this response.
      * @throws IOException
      */
-    public HttpResponse(Request<?> request, HttpRequestBase httpRequest) {
+    public HttpResponse(Request<?> request, HTTPRequest httpRequest) {
         this(request, httpRequest, null);
     }
 
-    public HttpResponse(Request<?> request, HttpRequestBase httpRequest, HttpContext context) {
+    public HttpResponse(Request<?> request, HTTPRequest httpRequest, HttpContext context) {
         this.request = request;
         this.httpRequest = httpRequest;
         this.context = context;
@@ -73,7 +74,7 @@ public class HttpResponse {
      *
      * @return The original http request associated with this response.
      */
-    public HttpRequestBase getHttpRequest() {
+    public HTTPRequest getHttpRequest() {
         return httpRequest;
     }
 

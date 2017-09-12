@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.amazonaws</groupId>
+    <groupId>com.mimsoftware</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
     <version>1.11.177-SNAPSHOT</version>
   </parent>
-  <groupId>com.amazonaws</groupId>
+  <groupId>com.mimsoftware</groupId>
   <artifactId>aws-java-sdk-greengrass</artifactId>
   <name>AWS Java SDK for AWS Greengrass</name>
   <description>The AWS Java SDK for AWS Greengrass module holds the client classes that are used for communicating with AWS Greengrass Service</description>
@@ -17,20 +17,20 @@
   <dependencies>
     <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-test-utils</artifactId>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <optional>false</optional>
         <scope>test</scope>
         <version>${awsjavasdk.version}</version>
     </dependency>
     <dependency>
         <artifactId>jmespath-java</artifactId>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <optional>false</optional>
     </dependency>
 </dependencies>
@@ -71,7 +71,7 @@
             <configuration>
               <oldVersion>
                 <dependency>
-                  <groupId>com.amazonaws</groupId>
+                  <groupId>com.mimsoftware</groupId>
                   <artifactId>aws-java-sdk-greengrass</artifactId>
                   <version>RELEASE</version>
                 </dependency>

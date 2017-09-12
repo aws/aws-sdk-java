@@ -23,6 +23,8 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DnsResolver;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.util.ValidationUtils;
+import com.google.appengine.api.urlfetch.FetchOptions;
+
 import java.util.List;
 
 /**
@@ -167,6 +169,10 @@ public class HttpClientSettings {
 
     public boolean isUseExpectContinue() {
         return config.isUseExpectContinue();
+    }
+    
+    public FetchOptions getUrlFetchOptions() {
+    	return config.getUrlFetchOptions();
     }
 
     public boolean isProxyEnabled() {

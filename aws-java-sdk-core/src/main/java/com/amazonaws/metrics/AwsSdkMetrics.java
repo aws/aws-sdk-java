@@ -210,6 +210,11 @@ public enum AwsSdkMetrics {
      * </pre>
      */
     public static final String HOST_METRIC_NAME = "hostMetricName";
+    
+    /**
+     * Used to prevent the mbean being exported during static init (via {@link #registerMetricAdminMBean}.
+     */
+    public static final String DISABLE_MBEAN_EXPORT_SYSTEM_PROPERTY_KEY = "com.amazonaws.metrics.disableMbean";
 
     private static final String DEFAULT_METRIC_COLLECTOR_FACTORY =
         "com.amazonaws.metrics.internal.cloudwatch.DefaultMetricCollectorFactory";
@@ -385,27 +390,31 @@ public enum AwsSdkMetrics {
      * @return true if the registeration succeeded; false otherwise.
      */
     public static boolean registerMetricAdminMBean() {
-        SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
-        synchronized(AwsSdkMetrics.class) {
-            if (registeredAdminMbeanName != null)
-                return false;   // already registered
-            boolean registered = registry.registerMetricAdminMBean(MBEAN_OBJECT_NAME);
-            if (registered) {
-                registeredAdminMbeanName = MBEAN_OBJECT_NAME;
-            } else {
-                String mbeanName = MBEAN_OBJECT_NAME;
-                int count = 0;
-                while (registry.isMBeanRegistered(mbeanName)) {
-                    mbeanName = MBEAN_OBJECT_NAME + "/" + ++count;
-                }
-                registered = registry.registerMetricAdminMBean(mbeanName);
-                if (registered)
-                    registeredAdminMbeanName = mbeanName;
-            }
-            if (registered)
-                log.debug("Admin mbean registered under " + registeredAdminMbeanName);
-            return registered;
-        }
+    	if (System.getProperty(DISABLE_MBEAN_EXPORT_SYSTEM_PROPERTY_KEY) != null) {
+    		return false;
+    	} else {
+    		SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
+    		synchronized(AwsSdkMetrics.class) {
+    			if (registeredAdminMbeanName != null)
+    				return false;   // already registered
+    			boolean registered = registry.registerMetricAdminMBean(MBEAN_OBJECT_NAME);
+    			if (registered) {
+    				registeredAdminMbeanName = MBEAN_OBJECT_NAME;
+    			} else {
+    				String mbeanName = MBEAN_OBJECT_NAME;
+    				int count = 0;
+    				while (registry.isMBeanRegistered(mbeanName)) {
+    					mbeanName = MBEAN_OBJECT_NAME + "/" + ++count;
+    				}
+    				registered = registry.registerMetricAdminMBean(mbeanName);
+    				if (registered)
+    					registeredAdminMbeanName = mbeanName;
+    			}
+    			if (registered)
+    				log.debug("Admin mbean registered under " + registeredAdminMbeanName);
+    			return registered;
+    		}
+    	}
     }
 
     /**

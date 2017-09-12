@@ -3,11 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <artifactId>aws-java-sdk-pom</artifactId>
         <version>1.11.177-SNAPSHOT</version>
     </parent>
-    <groupId>com.amazonaws</groupId>
+    <groupId>com.mimsoftware</groupId>
     <artifactId>aws-java-sdk-bundle</artifactId>
     <packaging>jar</packaging>
 
@@ -22,7 +22,7 @@
     <dependencies>
     <dependency>
         <artifactId>aws-java-sdk</artifactId>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <optional>false</optional>
         <version>1.11.177-SNAPSHOT</version>
     </dependency>

@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.amazonaws</groupId>
+    <groupId>com.mimsoftware</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
     <version>1.11.177-SNAPSHOT</version>
   </parent>
-  <groupId>com.amazonaws</groupId>
+  <groupId>com.mimsoftware</groupId>
   <artifactId>aws-java-sdk-models</artifactId>
   <packaging>jar</packaging>
 

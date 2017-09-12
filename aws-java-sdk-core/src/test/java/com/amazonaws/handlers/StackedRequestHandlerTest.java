@@ -59,7 +59,7 @@ public class StackedRequestHandlerTest {
             MockitoAnnotations.initMocks(this);
             stackedRequestHandler = new StackedRequestHandler(new ArrayList<RequestHandler2>());
 
-            response = new Response<String>("Dummy response", new HttpResponse(request, new HttpGet()));
+//            response = new Response<String>("Dummy response", new HttpResponse(request, new HttpGet())); XXXGAE
         }
 
         @Test
@@ -111,7 +111,7 @@ public class StackedRequestHandlerTest {
             MockitoAnnotations.initMocks(this);
             stackedRequestHandler = new StackedRequestHandler(only);
 
-            response = new Response<String>("Dummy response", new HttpResponse(request, new HttpGet()));
+//            response = new Response<String>("Dummy response", new HttpResponse(request, new HttpGet())); XXXGAE
         }
 
         @Test
@@ -178,7 +178,7 @@ public class StackedRequestHandlerTest {
             MockitoAnnotations.initMocks(this);
             stackedRequestHandler = new StackedRequestHandler(first, second, third);
 
-            response = new Response<String>("Dummy response", new HttpResponse(request, new HttpGet()));
+//            response = new Response<String>("Dummy response", new HttpResponse(request, new HttpGet())); XXXGAE
         }
 
         @Test

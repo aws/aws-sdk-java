@@ -20,6 +20,8 @@ import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.util.VersionInfoUtils;
+import com.google.appengine.api.urlfetch.FetchOptions;
+
 import java.net.InetAddress;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -322,6 +324,8 @@ public class ClientConfiguration {
      * Can be used to specify custom specific Apache HTTP client configurations.
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
+    
+    private FetchOptions urlFetchOptions;
 
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
@@ -367,6 +371,7 @@ public class ClientConfiguration {
         this.headers.clear();
         this.headers.putAll(other.headers);
         this.maxConsecutiveRetriesBeforeThrottling = other.maxConsecutiveRetriesBeforeThrottling;
+        this.urlFetchOptions = other.urlFetchOptions;
     }
 
     /**
@@ -2110,5 +2115,23 @@ public class ClientConfiguration {
      */
     public Map<String, String> getHeaders() {
         return Collections.unmodifiableMap(headers);
+    }
+    
+    /**
+     * Sets the FetchOptions.Builder to use with all requests made by this client.
+     * @param urlFetchOptionsBuilder
+     * @return
+     */
+    public ClientConfiguration withUrlFetchOptions(FetchOptions urlFetchOptions) {
+    	seturlFetchOptions(urlFetchOptions);
+    	return this;
+    }
+    
+    public void seturlFetchOptions(FetchOptions urlFetchOptions) {
+    	this.urlFetchOptions = urlFetchOptions;
+    }
+    
+    public FetchOptions getUrlFetchOptions() {
+    	return urlFetchOptions;
     }
 }

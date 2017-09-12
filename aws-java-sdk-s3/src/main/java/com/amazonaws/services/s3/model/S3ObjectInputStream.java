@@ -20,6 +20,8 @@ import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.MetricFilterInputStream;
 import com.amazonaws.services.s3.metrics.S3ServiceMetric;
 import com.amazonaws.util.IOUtils;
+import com.google.appengine.api.urlfetch.HTTPRequest;
+
 import java.io.IOException;
 import java.io.InputStream;
 import org.apache.http.client.HttpClient;
@@ -34,20 +36,20 @@ import org.apache.http.conn.EofSensorInputStream;
  */
 public class S3ObjectInputStream extends SdkFilterInputStream {
 
-    private final HttpRequestBase httpRequest;
+    private final HTTPRequest urlFetchHttpRequest;
 
-    public S3ObjectInputStream(InputStream in, HttpRequestBase httpRequest) {
-        this(in, httpRequest, wrapWithByteCounting(in));
+    public S3ObjectInputStream(InputStream in, HTTPRequest urlFetchHttpRequest) {
+        this(in, urlFetchHttpRequest, wrapWithByteCounting(in));
     }
 
     public S3ObjectInputStream(
             InputStream in,
-            HttpRequestBase httpRequest,
+            HTTPRequest urlFetchHttpRequest,
             boolean collectMetrics) {
         super(collectMetrics
                       ? new MetricFilterInputStream(S3ServiceMetric.S3DownloadThroughput, in)
                       : in);
-        this.httpRequest = httpRequest;
+        this.urlFetchHttpRequest = urlFetchHttpRequest;
     }
 
     /**
@@ -87,9 +89,9 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     public void abort() {
         super.abort();
 
-        if (httpRequest != null) {
-            httpRequest.abort();
-        }
+//        if (httpRequest != null) {
+//            httpRequest.abort();
+//        }
 
         // The default abort() implementation calls abort on the wrapped stream
         // if it's an SdkFilterInputStream; otherwise we'll need to close the
@@ -102,8 +104,8 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
     /**
      * Returns the http request from which this input stream is derived.
      */
-    public HttpRequestBase getHttpRequest() {
-        return httpRequest;
+    public HTTPRequest getHttpRequest() {
+        return urlFetchHttpRequest;
     }
 
     /**

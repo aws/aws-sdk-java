@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-	<groupId>com.amazonaws</groupId>
+	<groupId>com.mimsoftware</groupId>
 	<artifactId>aws-java-sdk-pom</artifactId>
 	<version>1.11.177-SNAPSHOT</version>
     </parent>
-    <groupId>com.amazonaws</groupId>
+    <groupId>com.mimsoftware</groupId>
     <artifactId>aws-java-sdk-opensdk</artifactId>
     <name>AWS SDK for Java - OpenSdk Runtime</name>
     <description>A generic runtime built on the AWS SDK for Java</description>
@@ -20,7 +20,7 @@
     <dependencies>
 	<dependency>
 	    <artifactId>aws-java-sdk-core</artifactId>
-	    <groupId>com.amazonaws</groupId>
+	    <groupId>com.mimsoftware</groupId>
 	    <optional>false</optional>
 	   <version>1.11.177-SNAPSHOT</version>
 	</dependency>

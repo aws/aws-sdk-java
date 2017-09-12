@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.amazonaws</groupId>
+    <groupId>com.mimsoftware</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
     <version>1.11.177-SNAPSHOT</version>
   </parent>
-  <groupId>com.amazonaws</groupId>
+  <groupId>com.mimsoftware</groupId>
   <artifactId>aws-java-sdk-code-generator</artifactId>
   <name>AWS SDK for Java - Code Generator</name>
   <description>The AWS SDK for Java - Code Generator module holds the classes and templates required to generate the AWS Java SDK clients for AWS services.</description>
@@ -20,7 +20,7 @@
   <dependencies>
     <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
     </dependency>
@@ -44,7 +44,7 @@
     </dependency>
     <dependency>
         <artifactId>jmespath-java</artifactId>
-        <groupId>com.amazonaws</groupId>
+        <groupId>com.mimsoftware</groupId>
         <optional>false</optional>
     </dependency>
     <dependency>
@@ -91,7 +91,7 @@
             <configuration>
               <oldVersion>
                 <dependency>
-                  <groupId>com.amazonaws</groupId>
+                  <groupId>com.mimsoftware</groupId>
                   <artifactId>aws-java-sdk-code-generator</artifactId>
                   <version>RELEASE</version>
                 </dependency>

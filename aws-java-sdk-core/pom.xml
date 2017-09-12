@@ -3,16 +3,21 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.amazonaws</groupId>
+    <groupId>com.mimsoftware</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
     <version>1.11.177-SNAPSHOT</version>
   </parent>
-  <groupId>com.amazonaws</groupId>
+  <groupId>com.mimsoftware</groupId>
   <artifactId>aws-java-sdk-core</artifactId>
   <name>AWS SDK for Java - Core</name>
   <description>The AWS SDK for Java - Core module holds the classes that are used by the individual service clients to interact with Amazon Web Services. Users need to depend on aws-java-sdk artifact for accessing individual client classes.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
   <dependencies>
+    <dependency>
+      <groupId>com.google.appengine</groupId>
+      <artifactId>appengine-api-1.0-sdk</artifactId>
+      <version>1.9.52</version>
+    </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
@@ -118,6 +123,12 @@
             <maxmemory>1024m</maxmemory>
         </configuration>
       </plugin>
+	  <!-- GAE plugin for pulling in URLFetch -->
+      <plugin>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>1.9.52</version>
+</plugin>
     </plugins>
   </build>
 </project>
