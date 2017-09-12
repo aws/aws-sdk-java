@@ -55,7 +55,7 @@ public class DescribeHostReservationOfferingsResultStaxUnmarshaller implements U
                     continue;
                 }
 
-                if (context.testExpression("offeringSet/member", targetDepth)) {
+                if (context.testExpression("offeringSet/item", targetDepth)) {
                     describeHostReservationOfferingsResult.withOfferingSet(HostOfferingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

@@ -1,3 +1,8 @@
+# __1.11.194__ __2017-09-12__
+## __Amazon EC2__
+  - ### Features
+    - Fixed bug in EC2 clients preventing HostOfferingSet from being set
+
 # __1.11.193__ __2017-09-11__
 ## __AWS Device Farm__
   - ### Features
