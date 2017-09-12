@@ -904,6 +904,17 @@ public class AmazonHttpClient {
         awsRequestMetrics.addPropertyWith(Field.AWSRequestID, ase.getRequestId())
                 .addPropertyWith(Field.AWSErrorCode, ase.getErrorCode())
                 .addPropertyWith(Field.StatusCode, ase.getStatusCode());
+
+        /*
+         * Checking for clock skew error again because we don't want to set the global time offset
+         * for every service exception.
+         */
+        if (RetryUtils.isClockSkewError(ase)) {
+            int clockSkew = parseClockSkewOffset(execOneParams.apacheResponse, ase);
+            SDKGlobalTime.setGlobalTimeOffset(timeOffset = clockSkew);
+            request.setTimeOffset(timeOffset); // adjust time offset for the retry
+        }
+
         // Check whether we should internally retry the auth error
         execOneParams.authRetryParam = null;
         AuthErrorRetryStrategy authRetry = execContext.getAuthErrorRetryStrategy();
@@ -925,15 +936,7 @@ public class AmazonHttpClient {
         }
         // Cache the retryable exception
         execOneParams.retriedException = ase;
-        /*
-         * Checking for clock skew error again because we don't want to set the global time offset
-         * for every service exception.
-         */
-        if (RetryUtils.isClockSkewError(ase)) {
-            int clockSkew = parseClockSkewOffset(execOneParams.apacheResponse, ase);
-            SDKGlobalTime.setGlobalTimeOffset(timeOffset = clockSkew);
-            request.setTimeOffset(timeOffset); // adjust time offset for the retry
-        }
+
         return null; // => retry
     }
 
