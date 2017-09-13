@@ -1,3 +1,20 @@
+# __1.11.195__ __2017-09-13__
+## __AWS Batch__
+  - ### Features
+    - Documentation updates for batch
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Exposes ConcurrentModificationException as one of the valid exceptions for PutPermission and RemovePermission operation.
+
+## __Amazon EC2__
+  - ### Features
+    - You are now able to create and launch EC2 x1e.32xlarge instance, a new EC2 instance in the X1 family, in us-east-1, us-west-2, eu-west-1, and ap-northeast-1. x1e.32xlarge offers 128 vCPUs, 3,904 GiB of DDR4 instance memory, high memory bandwidth, large L3 caches, and leading reliability capabilities to boost the performance and reliability of in-memory applications.
+
+## __Auto Scaling__
+  - ### Features
+    - Customers can create Life Cycle Hooks at the time of creating Auto Scaling Groups through the CreateAutoScalingGroup API
+
 # __1.11.194__ __2017-09-12__
 ## __Amazon EC2__
   - ### Features

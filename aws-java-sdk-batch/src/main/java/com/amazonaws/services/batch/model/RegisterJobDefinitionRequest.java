@@ -27,7 +27,8 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      */
     private String jobDefinitionName;
@@ -62,11 +63,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the job definition to register.
+     *        The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
+     *        and underscores are allowed.
      */
 
     public void setJobDefinitionName(String jobDefinitionName) {
@@ -75,10 +78,12 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
-     * @return The name of the job definition to register.
+     * @return The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers,
+     *         hyphens, and underscores are allowed.
      */
 
     public String getJobDefinitionName() {
@@ -87,11 +92,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job definition to register.
+     * The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param jobDefinitionName
-     *        The name of the job definition to register.
+     *        The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
+     *        and underscores are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

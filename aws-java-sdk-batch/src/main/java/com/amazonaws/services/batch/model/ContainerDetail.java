@@ -126,7 +126,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String taskArn;
-
+    /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     */
     private String logStreamName;
 
     /**
@@ -958,7 +964,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
      * @param logStreamName
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
+     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        <code>RUNNING</code> status.
      */
 
     public void setLogStreamName(String logStreamName) {
@@ -966,7 +981,15 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
+     * @return The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch
+     *         jobs is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach
+     *         the <code>RUNNING</code> status.
      */
 
     public String getLogStreamName() {
@@ -974,7 +997,16 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs is
+     * <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     * <code>RUNNING</code> status.
+     * </p>
+     * 
      * @param logStreamName
+     *        The name of the CloudWatch Logs log stream associated with the container. The log group for AWS Batch jobs
+     *        is <code>/aws/batch/job</code>. Each container attempt receives a log stream name when they reach the
+     *        <code>RUNNING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

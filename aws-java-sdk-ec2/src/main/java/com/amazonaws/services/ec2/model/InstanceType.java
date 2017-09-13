@@ -59,6 +59,7 @@ public enum InstanceType {
     R416xlarge("r4.16xlarge"),
     X116xlarge("x1.16xlarge"),
     X132xlarge("x1.32xlarge"),
+    X1e32xlarge("x1e.32xlarge"),
     I2Xlarge("i2.xlarge"),
     I22xlarge("i2.2xlarge"),
     I24xlarge("i2.4xlarge"),

@@ -27,10 +27,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job. A name must be 1 to 128 characters in length.
-     * </p>
-     * <p>
-     * Pattern: ^[a-zA-Z0-9_]+$
+     * The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed.
      * </p>
      */
     private String jobName;
@@ -43,7 +41,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String jobQueue;
     /**
      * <p>
-     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * </p>
      */
     private java.util.List<JobDependency> dependsOn;
@@ -82,16 +80,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job. A name must be 1 to 128 characters in length.
-     * </p>
-     * <p>
-     * Pattern: ^[a-zA-Z0-9_]+$
+     * The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed.
      * </p>
      * 
      * @param jobName
-     *        The name of the job. A name must be 1 to 128 characters in length.</p>
-     *        <p>
-     *        Pattern: ^[a-zA-Z0-9_]+$
+     *        The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and
+     *        lowercase), numbers, hyphens, and underscores are allowed.
      */
 
     public void setJobName(String jobName) {
@@ -100,15 +95,12 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job. A name must be 1 to 128 characters in length.
-     * </p>
-     * <p>
-     * Pattern: ^[a-zA-Z0-9_]+$
+     * The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed.
      * </p>
      * 
-     * @return The name of the job. A name must be 1 to 128 characters in length.</p>
-     *         <p>
-     *         Pattern: ^[a-zA-Z0-9_]+$
+     * @return The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and
+     *         lowercase), numbers, hyphens, and underscores are allowed.
      */
 
     public String getJobName() {
@@ -117,16 +109,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job. A name must be 1 to 128 characters in length.
-     * </p>
-     * <p>
-     * Pattern: ^[a-zA-Z0-9_]+$
+     * The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed.
      * </p>
      * 
      * @param jobName
-     *        The name of the job. A name must be 1 to 128 characters in length.</p>
-     *        <p>
-     *        Pattern: ^[a-zA-Z0-9_]+$
+     *        The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and
+     *        lowercase), numbers, hyphens, and underscores are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,10 +172,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * </p>
      * 
-     * @return A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * @return A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      */
 
     public java.util.List<JobDependency> getDependsOn() {
@@ -195,11 +184,11 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      */
 
     public void setDependsOn(java.util.Collection<JobDependency> dependsOn) {
@@ -213,7 +202,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -222,7 +211,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param dependsOn
-     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,11 +227,11 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     * A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 100 jobs.
+     *        A list of job IDs on which this job depends. A job can depend upon a maximum of 20 jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

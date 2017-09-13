@@ -75,7 +75,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      * </p>
      */
     private Integer vcpus;
@@ -86,7 +86,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.
      * </p>
      */
     private Integer memory;
@@ -434,7 +435,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      * </p>
      * 
      * @param vcpus
@@ -443,7 +444,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares.
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      */
 
     public void setVcpus(Integer vcpus) {
@@ -457,7 +458,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      * </p>
      * 
      * @return The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a
@@ -465,7 +466,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
      *         the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares.
+     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      */
 
     public Integer getVcpus() {
@@ -479,7 +480,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
-     * vCPU is equivalent to 1,024 CPU shares.
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      * </p>
      * 
      * @param vcpus
@@ -488,7 +489,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares.
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least 1 vCPU.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,7 +505,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.
      * </p>
      * 
      * @param memory
@@ -514,6 +516,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        You must specify at least 4 MiB of memory for a job.
      */
 
     public void setMemory(Integer memory) {
@@ -527,7 +530,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.
      * </p>
      * 
      * @return The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
@@ -536,7 +540,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
      *         the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>. You must specify at least 4 MiB of memory for a job.
      */
 
     public Integer getMemory() {
@@ -550,7 +554,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.
      * </p>
      * 
      * @param memory
@@ -560,6 +565,7 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        You must specify at least 4 MiB of memory for a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

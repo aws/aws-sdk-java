@@ -84,7 +84,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private String ec2KeyPair;
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
+     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
+     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String instanceRole;
@@ -597,11 +601,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
+     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
+     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
+     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     *        <code>ecsInstanceRole</code> or
+     *        <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information,
+     *        see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setInstanceRole(String instanceRole) {
@@ -610,10 +623,19 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
+     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
+     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
+     *         the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     *         <code>ecsInstanceRole</code> or
+     *         <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information,
+     *         see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
+     *         Instance Role</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public String getInstanceRole() {
@@ -622,11 +644,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
+     * short name or full Amazon Resource Name (ARN) of an instance profile. For example, <code>ecsInstanceRole</code>
+     * or <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information, see
+     * <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance role applied to Amazon EC2 instances in a compute environment.
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
+     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     *        <code>ecsInstanceRole</code> or
+     *        <code>arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</code>. For more information,
+     *        see <a href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance
+     *        Role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

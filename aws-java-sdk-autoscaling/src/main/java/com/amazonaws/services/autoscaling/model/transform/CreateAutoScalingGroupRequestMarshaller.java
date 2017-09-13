@@ -141,6 +141,51 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     StringUtils.fromBoolean(createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
         }
 
+        com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification> lifecycleHookSpecificationListList = (com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>) createAutoScalingGroupRequest
+                .getLifecycleHookSpecificationList();
+        if (!lifecycleHookSpecificationListList.isEmpty() || !lifecycleHookSpecificationListList.isAutoConstruct()) {
+            int lifecycleHookSpecificationListListIndex = 1;
+
+            for (LifecycleHookSpecification lifecycleHookSpecificationListListValue : lifecycleHookSpecificationListList) {
+
+                if (lifecycleHookSpecificationListListValue.getLifecycleHookName() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".LifecycleHookName",
+                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getLifecycleHookName()));
+                }
+
+                if (lifecycleHookSpecificationListListValue.getLifecycleTransition() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".LifecycleTransition",
+                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getLifecycleTransition()));
+                }
+
+                if (lifecycleHookSpecificationListListValue.getNotificationMetadata() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".NotificationMetadata",
+                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getNotificationMetadata()));
+                }
+
+                if (lifecycleHookSpecificationListListValue.getHeartbeatTimeout() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".HeartbeatTimeout",
+                            StringUtils.fromInteger(lifecycleHookSpecificationListListValue.getHeartbeatTimeout()));
+                }
+
+                if (lifecycleHookSpecificationListListValue.getDefaultResult() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".DefaultResult",
+                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getDefaultResult()));
+                }
+
+                if (lifecycleHookSpecificationListListValue.getNotificationTargetARN() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".NotificationTargetARN",
+                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getNotificationTargetARN()));
+                }
+
+                if (lifecycleHookSpecificationListListValue.getRoleARN() != null) {
+                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".RoleARN",
+                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getRoleARN()));
+                }
+                lifecycleHookSpecificationListListIndex++;
+            }
+        }
+
         com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest.getTags();
         if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
             int tagsListIndex = 1;

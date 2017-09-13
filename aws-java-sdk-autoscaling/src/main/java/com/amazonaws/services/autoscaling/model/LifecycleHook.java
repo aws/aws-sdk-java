@@ -17,25 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action when an instance launches or
- * terminates. When you have a lifecycle hook in place, the Auto Scaling group will either:
+ * Describes a lifecycle hook, which tells Auto Scaling that you want to perform an action whenever it launches
+ * instances or whenever it terminates instances.
  * </p>
- * <ul>
- * <li>
  * <p>
- * Pause the instance after it launches, but before it is put into service
- * </p>
- * </li>
- * <li>
- * <p>
- * Pause the instance as it terminates, but before it is fully terminated
- * </p>
- * </li>
- * </ul>
- * <p>
- * For more information, see <a
- * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
- * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+ * For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
+ * Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook" target="_top">AWS API
@@ -65,47 +52,9 @@ public class LifecycleHook implements Serializable, Cloneable {
     private String lifecycleTransition;
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
-     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
-     * message sent to the target includes the following:
+     * The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition state for
+     * the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Lifecycle action token
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * User account ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Name of the Auto Scaling group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle hook name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EC2 instance ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle transition
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Notification metadata
-     * </p>
-     * </li>
-     * </ul>
      */
     private String notificationTargetARN;
     /**
@@ -122,9 +71,9 @@ public class LifecycleHook implements Serializable, Cloneable {
     private String notificationMetadata;
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
-     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
-     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times
+     * out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      */
     private Integer heartbeatTimeout;
@@ -273,88 +222,13 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
-     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
-     * message sent to the target includes the following:
+     * The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition state for
+     * the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Lifecycle action token
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * User account ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Name of the Auto Scaling group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle hook name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EC2 instance ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle transition
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Notification metadata
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the
-     *        transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The
-     *        notification message sent to the target includes the following:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Lifecycle action token
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        User account ID
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Name of the Auto Scaling group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lifecycle hook name
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EC2 instance ID
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lifecycle transition
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Notification metadata
-     *        </p>
-     *        </li>
+     *        The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition state
+     *        for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      */
 
     public void setNotificationTargetARN(String notificationTargetARN) {
@@ -363,87 +237,12 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
-     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
-     * message sent to the target includes the following:
+     * The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition state for
+     * the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Lifecycle action token
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * User account ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Name of the Auto Scaling group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle hook name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EC2 instance ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle transition
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Notification metadata
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the
-     *         transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The
-     *         notification message sent to the target includes the following:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Lifecycle action token
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         User account ID
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Name of the Auto Scaling group
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Lifecycle hook name
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EC2 instance ID
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Lifecycle transition
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Notification metadata
-     *         </p>
-     *         </li>
+     * @return The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition
+     *         state for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      */
 
     public String getNotificationTargetARN() {
@@ -452,88 +251,13 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the transition
-     * state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The notification
-     * message sent to the target includes the following:
+     * The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition state for
+     * the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Lifecycle action token
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * User account ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Name of the Auto Scaling group
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle hook name
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EC2 instance ID
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lifecycle transition
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Notification metadata
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param notificationTargetARN
-     *        The ARN of the notification target that Auto Scaling uses to notify you when an instance is in the
-     *        transition state for the lifecycle hook. This ARN target can be either an SQS queue or an SNS topic. The
-     *        notification message sent to the target includes the following:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Lifecycle action token
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        User account ID
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Name of the Auto Scaling group
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lifecycle hook name
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EC2 instance ID
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lifecycle transition
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Notification metadata
-     *        </p>
-     *        </li>
+     *        The ARN of the target that Auto Scaling sends notifications to when an instance is in the transition state
+     *        for the lifecycle hook. The notification target can be either an SQS queue or an SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,15 +354,15 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
-     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
-     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times
+     * out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
-     *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600
-     *        seconds (1 hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can
-     *        prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook
+     *        times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by
+     *        calling <a>RecordLifecycleActionHeartbeat</a>.
      */
 
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
@@ -647,14 +371,14 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
-     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
-     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times
+     * out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
-     * @return The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600
-     *         seconds (1 hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can
-     *         prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * @return The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook
+     *         times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out
+     *         by calling <a>RecordLifecycleActionHeartbeat</a>.
      */
 
     public Integer getHeartbeatTimeout() {
@@ -663,15 +387,15 @@ public class LifecycleHook implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600 seconds (1
-     * hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can prevent the lifecycle
-     * hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times
+     * out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
-     *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. The default is 3600
-     *        seconds (1 hour). When the lifecycle hook times out, Auto Scaling performs the default action. You can
-     *        prevent the lifecycle hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     *        The maximum time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook
+     *        times out, Auto Scaling performs the default action. You can prevent the lifecycle hook from timing out by
+     *        calling <a>RecordLifecycleActionHeartbeat</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

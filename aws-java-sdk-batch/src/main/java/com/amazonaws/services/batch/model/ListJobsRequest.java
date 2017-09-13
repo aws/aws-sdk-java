@@ -33,7 +33,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String jobQueue;
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue.
+     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * <code>RUNNING</code> jobs are returned.
      * </p>
      */
     private String jobStatus;
@@ -106,11 +107,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue.
+     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue.
+     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        <code>RUNNING</code> jobs are returned.
      * @see JobStatus
      */
 
@@ -120,10 +123,12 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue.
+     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
-     * @return The job status with which to filter jobs in the specified queue.
+     * @return The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *         <code>RUNNING</code> jobs are returned.
      * @see JobStatus
      */
 
@@ -134,11 +139,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue.
+     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue.
+     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        <code>RUNNING</code> jobs are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -150,11 +157,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue.
+     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue.
+     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        <code>RUNNING</code> jobs are returned.
      * @see JobStatus
      */
 
@@ -165,11 +174,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The job status with which to filter jobs in the specified queue.
+     * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     * <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param jobStatus
-     *        The job status with which to filter jobs in the specified queue.
+     *        The job status with which to filter jobs in the specified queue. If you do not specify a status, only
+     *        <code>RUNNING</code> jobs are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */

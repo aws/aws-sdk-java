@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for CreateAutoScalingGroup.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup" target="_top">AWS
  *      API Documentation</a>
@@ -72,7 +69,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      */
     private Integer desiredCapacity;
@@ -179,6 +177,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean newInstancesProtectedFromScaleIn;
+    /**
+     * <p>
+     * One or more lifecycle hooks.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification> lifecycleHookSpecificationList;
     /**
      * <p>
      * One or more tags.
@@ -460,12 +464,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      * 
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group. This number must be greater than or equal
-     *        to the minimum size of the group and less than or equal to the maximum size of the group.
+     *        to the minimum size of the group and less than or equal to the maximum size of the group. If you do not
+     *        specify a desired capacity, the default is the minimum size of the group.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -475,11 +481,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      * 
      * @return The number of EC2 instances that should be running in the group. This number must be greater than or
-     *         equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     *         equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do
+     *         not specify a desired capacity, the default is the minimum size of the group.
      */
 
     public Integer getDesiredCapacity() {
@@ -489,12 +497,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      * 
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group. This number must be greater than or equal
-     *        to the minimum size of the group and less than or equal to the maximum size of the group.
+     *        to the minimum size of the group and less than or equal to the maximum size of the group. If you do not
+     *        specify a desired capacity, the default is the minimum size of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1323,6 +1333,79 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * One or more lifecycle hooks.
+     * </p>
+     * 
+     * @return One or more lifecycle hooks.
+     */
+
+    public java.util.List<LifecycleHookSpecification> getLifecycleHookSpecificationList() {
+        if (lifecycleHookSpecificationList == null) {
+            lifecycleHookSpecificationList = new com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>();
+        }
+        return lifecycleHookSpecificationList;
+    }
+
+    /**
+     * <p>
+     * One or more lifecycle hooks.
+     * </p>
+     * 
+     * @param lifecycleHookSpecificationList
+     *        One or more lifecycle hooks.
+     */
+
+    public void setLifecycleHookSpecificationList(java.util.Collection<LifecycleHookSpecification> lifecycleHookSpecificationList) {
+        if (lifecycleHookSpecificationList == null) {
+            this.lifecycleHookSpecificationList = null;
+            return;
+        }
+
+        this.lifecycleHookSpecificationList = new com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>(lifecycleHookSpecificationList);
+    }
+
+    /**
+     * <p>
+     * One or more lifecycle hooks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLifecycleHookSpecificationList(java.util.Collection)} or
+     * {@link #withLifecycleHookSpecificationList(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param lifecycleHookSpecificationList
+     *        One or more lifecycle hooks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withLifecycleHookSpecificationList(LifecycleHookSpecification... lifecycleHookSpecificationList) {
+        if (this.lifecycleHookSpecificationList == null) {
+            setLifecycleHookSpecificationList(new com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>(lifecycleHookSpecificationList.length));
+        }
+        for (LifecycleHookSpecification ele : lifecycleHookSpecificationList) {
+            this.lifecycleHookSpecificationList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more lifecycle hooks.
+     * </p>
+     * 
+     * @param lifecycleHookSpecificationList
+     *        One or more lifecycle hooks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withLifecycleHookSpecificationList(java.util.Collection<LifecycleHookSpecification> lifecycleHookSpecificationList) {
+        setLifecycleHookSpecificationList(lifecycleHookSpecificationList);
+        return this;
+    }
+
+    /**
+     * <p>
      * One or more tags.
      * </p>
      * <p>
@@ -1473,6 +1556,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("TerminationPolicies: ").append(getTerminationPolicies()).append(",");
         if (getNewInstancesProtectedFromScaleIn() != null)
             sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn()).append(",");
+        if (getLifecycleHookSpecificationList() != null)
+            sb.append("LifecycleHookSpecificationList: ").append(getLifecycleHookSpecificationList()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1554,6 +1639,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getNewInstancesProtectedFromScaleIn() != null
                 && other.getNewInstancesProtectedFromScaleIn().equals(this.getNewInstancesProtectedFromScaleIn()) == false)
             return false;
+        if (other.getLifecycleHookSpecificationList() == null ^ this.getLifecycleHookSpecificationList() == null)
+            return false;
+        if (other.getLifecycleHookSpecificationList() != null
+                && other.getLifecycleHookSpecificationList().equals(this.getLifecycleHookSpecificationList()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1582,6 +1672,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode());
         hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode());
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleHookSpecificationList() == null) ? 0 : getLifecycleHookSpecificationList().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

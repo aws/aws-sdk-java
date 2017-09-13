@@ -34,8 +34,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
     private String policyARN;
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy type is
-     * anything other than <code>TargetTrackingScaling</code>.
+     * The CloudWatch alarms created for the target tracking policy.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Alarm> alarms;
@@ -82,12 +81,10 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy type is
-     * anything other than <code>TargetTrackingScaling</code>.
+     * The CloudWatch alarms created for the target tracking policy.
      * </p>
      * 
-     * @return The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy
-     *         type is anything other than <code>TargetTrackingScaling</code>.
+     * @return The CloudWatch alarms created for the target tracking policy.
      */
 
     public java.util.List<Alarm> getAlarms() {
@@ -99,13 +96,11 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy type is
-     * anything other than <code>TargetTrackingScaling</code>.
+     * The CloudWatch alarms created for the target tracking policy.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy
-     *        type is anything other than <code>TargetTrackingScaling</code>.
+     *        The CloudWatch alarms created for the target tracking policy.
      */
 
     public void setAlarms(java.util.Collection<Alarm> alarms) {
@@ -119,8 +114,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy type is
-     * anything other than <code>TargetTrackingScaling</code>.
+     * The CloudWatch alarms created for the target tracking policy.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,8 +123,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy
-     *        type is anything other than <code>TargetTrackingScaling</code>.
+     *        The CloudWatch alarms created for the target tracking policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,13 +139,11 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy type is
-     * anything other than <code>TargetTrackingScaling</code>.
+     * The CloudWatch alarms created for the target tracking policy.
      * </p>
      * 
      * @param alarms
-     *        The CloudWatch alarms created for the target tracking policy. This parameter will be empty if the policy
-     *        type is anything other than <code>TargetTrackingScaling</code>.
+     *        The CloudWatch alarms created for the target tracking policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for PutScalingPolicy.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy" target="_top">AWS API
  *      Documentation</a>
@@ -135,7 +132,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer estimatedInstanceWarmup;
     /**
      * <p>
-     * The configuration of a target tracking policy.
+     * A target tracking policy.
      * </p>
      * <p>
      * This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported otherwise.
@@ -848,14 +845,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration of a target tracking policy.
+     * A target tracking policy.
      * </p>
      * <p>
      * This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported otherwise.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        The configuration of a target tracking policy.</p>
+     *        A target tracking policy.</p>
      *        <p>
      *        This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported
      *        otherwise.
@@ -867,13 +864,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration of a target tracking policy.
+     * A target tracking policy.
      * </p>
      * <p>
      * This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported otherwise.
      * </p>
      * 
-     * @return The configuration of a target tracking policy.</p>
+     * @return A target tracking policy.</p>
      *         <p>
      *         This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported
      *         otherwise.
@@ -885,14 +882,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration of a target tracking policy.
+     * A target tracking policy.
      * </p>
      * <p>
      * This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported otherwise.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        The configuration of a target tracking policy.</p>
+     *        A target tracking policy.</p>
      *        <p>
      *        This parameter is required if the policy type is <code>TargetTrackingScaling</code> and not supported
      *        otherwise.
