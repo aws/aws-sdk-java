@@ -406,6 +406,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CopyProductResult> copyProductAsync(CopyProductRequest request) {
+
+        return copyProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyProductResult> copyProductAsync(final CopyProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopyProductRequest, CopyProductResult> asyncHandler) {
+        final CopyProductRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CopyProductResult>() {
+            @Override
+            public CopyProductResult call() throws Exception {
+                CopyProductResult result = null;
+
+                try {
+                    result = executeCopyProduct(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest request) {
 
         return createConstraintAsync(request, null);
@@ -786,6 +819,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeDescribeConstraint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCopyProductStatusResult> describeCopyProductStatusAsync(DescribeCopyProductStatusRequest request) {
+
+        return describeCopyProductStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCopyProductStatusResult> describeCopyProductStatusAsync(final DescribeCopyProductStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCopyProductStatusRequest, DescribeCopyProductStatusResult> asyncHandler) {
+        final DescribeCopyProductStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCopyProductStatusResult>() {
+            @Override
+            public DescribeCopyProductStatusResult call() throws Exception {
+                DescribeCopyProductStatusResult result = null;
+
+                try {
+                    result = executeDescribeCopyProductStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

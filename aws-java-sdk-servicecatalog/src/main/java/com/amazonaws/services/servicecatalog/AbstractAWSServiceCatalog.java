@@ -58,6 +58,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public CopyProductResult copyProduct(CopyProductRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConstraintResult createConstraint(CreateConstraintRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +119,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     @Override
     public DescribeConstraintResult describeConstraint(DescribeConstraintRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCopyProductStatusResult describeCopyProductStatus(DescribeCopyProductStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

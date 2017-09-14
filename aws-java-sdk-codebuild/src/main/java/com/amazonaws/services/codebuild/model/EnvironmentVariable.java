@@ -47,6 +47,24 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </important>
      */
     private String value;
+    /**
+     * <p>
+     * The type of environment variable. Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String type;
 
     /**
      * <p>
@@ -165,6 +183,162 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The type of environment variable. Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param type
+     *        The type of environment variable. Valid values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
+     *        Store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     *        </p>
+     *        </li>
+     * @see EnvironmentVariableType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of environment variable. Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of environment variable. Valid values include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
+     *         Store.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     *         </p>
+     *         </li>
+     * @see EnvironmentVariableType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of environment variable. Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param type
+     *        The type of environment variable. Valid values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
+     *        Store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnvironmentVariableType
+     */
+
+    public EnvironmentVariable withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of environment variable. Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param type
+     *        The type of environment variable. Valid values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2 Systems Manager Parameter
+     *        Store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAINTEXT</code>: An environment variable in plaintext format.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnvironmentVariableType
+     */
+
+    public EnvironmentVariable withType(EnvironmentVariableType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -178,7 +352,9 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -201,6 +377,10 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -211,6 +391,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

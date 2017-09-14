@@ -37,7 +37,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      * </p>
      * <p>
-     * <code>--target id=123456789012,type=ACCOUNT</code>
+     * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
      * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -45,7 +45,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target id=bill@example.com,type=EMAIL</code>
+     * <code>--target Id=bill@example.com,Type=EMAIL</code>
      * </p>
      */
     private HandshakeParty target;
@@ -68,7 +68,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      * </p>
      * <p>
-     * <code>--target id=123456789012,type=ACCOUNT</code>
+     * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
      * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -76,7 +76,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target id=bill@example.com,type=EMAIL</code>
+     * <code>--target Id=bill@example.com,Type=EMAIL</code>
      * </p>
      * 
      * @param target
@@ -89,7 +89,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      *        </p>
      *        <p>
-     *        <code>--target id=123456789012,type=ACCOUNT</code>
+     *        <code>--target Id=123456789012,Type=ACCOUNT</code>
      *        </p>
      *        <p>
      *        If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -97,7 +97,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        is associated with the account.
      *        </p>
      *        <p>
-     *        <code>--target id=bill@example.com,type=EMAIL</code>
+     *        <code>--target Id=bill@example.com,Type=EMAIL</code>
      */
 
     public void setTarget(HandshakeParty target) {
@@ -116,7 +116,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      * </p>
      * <p>
-     * <code>--target id=123456789012,type=ACCOUNT</code>
+     * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
      * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -124,7 +124,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target id=bill@example.com,type=EMAIL</code>
+     * <code>--target Id=bill@example.com,Type=EMAIL</code>
      * </p>
      * 
      * @return The identifier (ID) of the AWS account that you want to invite to join your organization. This is a JSON
@@ -136,7 +136,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *         If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      *         </p>
      *         <p>
-     *         <code>--target id=123456789012,type=ACCOUNT</code>
+     *         <code>--target Id=123456789012,Type=ACCOUNT</code>
      *         </p>
      *         <p>
      *         If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -144,7 +144,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *         that is associated with the account.
      *         </p>
      *         <p>
-     *         <code>--target id=bill@example.com,type=EMAIL</code>
+     *         <code>--target Id=bill@example.com,Type=EMAIL</code>
      */
 
     public HandshakeParty getTarget() {
@@ -163,7 +163,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      * </p>
      * <p>
-     * <code>--target id=123456789012,type=ACCOUNT</code>
+     * <code>--target Id=123456789012,Type=ACCOUNT</code>
      * </p>
      * <p>
      * If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -171,7 +171,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      * associated with the account.
      * </p>
      * <p>
-     * <code>--target id=bill@example.com,type=EMAIL</code>
+     * <code>--target Id=bill@example.com,Type=EMAIL</code>
      * </p>
      * 
      * @param target
@@ -184,7 +184,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        If you use the AWS CLI, you can submit this as a single string, similar to the following example:
      *        </p>
      *        <p>
-     *        <code>--target id=123456789012,type=ACCOUNT</code>
+     *        <code>--target Id=123456789012,Type=ACCOUNT</code>
      *        </p>
      *        <p>
      *        If you specify <code>"Type": "ACCOUNT"</code>, then you must provide the AWS account ID number as the
@@ -192,7 +192,7 @@ public class InviteAccountToOrganizationRequest extends com.amazonaws.AmazonWebS
      *        is associated with the account.
      *        </p>
      *        <p>
-     *        <code>--target id=bill@example.com,type=EMAIL</code>
+     *        <code>--target Id=bill@example.com,Type=EMAIL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

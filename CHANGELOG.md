@@ -1,3 +1,16 @@
+# __1.11.196__ __2017-09-14__
+## __AWS CodeBuild__
+  - ### Features
+    - Supporting Parameter Store in environment variables for AWS CodeBuild
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for AWS Organizations
+
+## __AWS Service Catalog__
+  - ### Features
+    - This release of Service Catalog adds API support to copy products.
+
 # __1.11.195__ __2017-09-13__
 ## __AWS Batch__
   - ### Features

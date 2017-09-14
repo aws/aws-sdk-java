@@ -195,6 +195,53 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Copies the specified source product to the specified target product or a new product.
+     * </p>
+     * <p>
+     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * another region.
+     * </p>
+     * <p>
+     * This operation is performed asynchronously. To track the progress of the operation, use
+     * <a>DescribeCopyProductStatus</a>.
+     * </p>
+     * 
+     * @param copyProductRequest
+     * @return A Java Future containing the result of the CopyProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsync.CopyProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyProductResult> copyProductAsync(CopyProductRequest copyProductRequest);
+
+    /**
+     * <p>
+     * Copies the specified source product to the specified target product or a new product.
+     * </p>
+     * <p>
+     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * another region.
+     * </p>
+     * <p>
+     * This operation is performed asynchronously. To track the progress of the operation, use
+     * <a>DescribeCopyProductStatus</a>.
+     * </p>
+     * 
+     * @param copyProductRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.CopyProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyProductResult> copyProductAsync(CopyProductRequest copyProductRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyProductRequest, CopyProductResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
@@ -324,9 +371,6 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
      * </p>
-     * <p>
-     * See the bottom of this topic for an example JSON request.
-     * </p>
      * 
      * @param createProvisioningArtifactRequest
      * @return A Java Future containing the result of the CreateProvisioningArtifact operation returned by the service.
@@ -341,9 +385,6 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
-     * </p>
-     * <p>
-     * See the bottom of this topic for an example JSON request.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -586,6 +627,39 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<DescribeConstraintResult> describeConstraintAsync(DescribeConstraintRequest describeConstraintRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeConstraintRequest, DescribeConstraintResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the status of the specified copy product operation.
+     * </p>
+     * 
+     * @param describeCopyProductStatusRequest
+     * @return A Java Future containing the result of the DescribeCopyProductStatus operation returned by the service.
+     * @sample AWSServiceCatalogAsync.DescribeCopyProductStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCopyProductStatusResult> describeCopyProductStatusAsync(
+            DescribeCopyProductStatusRequest describeCopyProductStatusRequest);
+
+    /**
+     * <p>
+     * Describes the status of the specified copy product operation.
+     * </p>
+     * 
+     * @param describeCopyProductStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCopyProductStatus operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.DescribeCopyProductStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCopyProductStatusResult> describeCopyProductStatusAsync(
+            DescribeCopyProductStatusRequest describeCopyProductStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCopyProductStatusRequest, DescribeCopyProductStatusResult> asyncHandler);
 
     /**
      * <p>

@@ -82,6 +82,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<CopyProductResult> copyProductAsync(CopyProductRequest request) {
+
+        return copyProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyProductResult> copyProductAsync(CopyProductRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyProductRequest, CopyProductResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest request) {
 
         return createConstraintAsync(request, null);
@@ -233,6 +246,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<DescribeConstraintResult> describeConstraintAsync(DescribeConstraintRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeConstraintRequest, DescribeConstraintResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCopyProductStatusResult> describeCopyProductStatusAsync(DescribeCopyProductStatusRequest request) {
+
+        return describeCopyProductStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCopyProductStatusResult> describeCopyProductStatusAsync(DescribeCopyProductStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCopyProductStatusRequest, DescribeCopyProductStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -540,6 +540,66 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Copies the specified source product to the specified target product or a new product.
+     * </p>
+     * <p>
+     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * another region.
+     * </p>
+     * <p>
+     * This operation is performed asynchronously. To track the progress of the operation, use
+     * <a>DescribeCopyProductStatus</a>.
+     * </p>
+     * 
+     * @param copyProductRequest
+     * @return Result of the CopyProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.CopyProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CopyProductResult copyProduct(CopyProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyProduct(request);
+    }
+
+    @SdkInternalApi
+    final CopyProductResult executeCopyProduct(CopyProductRequest copyProductRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyProductRequest> request = null;
+        Response<CopyProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CopyProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
@@ -769,9 +829,6 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * <p>
      * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
-     * </p>
-     * <p>
-     * See the bottom of this topic for an example JSON request.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -1204,6 +1261,58 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeConstraintResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeConstraintResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the status of the specified copy product operation.
+     * </p>
+     * 
+     * @param describeCopyProductStatusRequest
+     * @return Result of the DescribeCopyProductStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeCopyProductStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeCopyProductStatusResult describeCopyProductStatus(DescribeCopyProductStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCopyProductStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCopyProductStatusResult executeDescribeCopyProductStatus(DescribeCopyProductStatusRequest describeCopyProductStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCopyProductStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCopyProductStatusRequest> request = null;
+        Response<DescribeCopyProductStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCopyProductStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeCopyProductStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCopyProductStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeCopyProductStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

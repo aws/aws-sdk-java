@@ -208,6 +208,31 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Copies the specified source product to the specified target product or a new product.
+     * </p>
+     * <p>
+     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * another region.
+     * </p>
+     * <p>
+     * This operation is performed asynchronously. To track the progress of the operation, use
+     * <a>DescribeCopyProductStatus</a>.
+     * </p>
+     * 
+     * @param copyProductRequest
+     * @return Result of the CopyProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.CopyProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CopyProduct" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CopyProductResult copyProduct(CopyProductRequest copyProductRequest);
+
+    /**
+     * <p>
      * Creates a new constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
@@ -297,9 +322,6 @@ public interface AWSServiceCatalog {
      * <p>
      * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
-     * </p>
-     * <p>
-     * See the bottom of this topic for an example JSON request.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -457,6 +479,21 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeConstraintResult describeConstraint(DescribeConstraintRequest describeConstraintRequest);
+
+    /**
+     * <p>
+     * Describes the status of the specified copy product operation.
+     * </p>
+     * 
+     * @param describeCopyProductStatusRequest
+     * @return Result of the DescribeCopyProductStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeCopyProductStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeCopyProductStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeCopyProductStatusResult describeCopyProductStatus(DescribeCopyProductStatusRequest describeCopyProductStatusRequest);
 
     /**
      * <p>

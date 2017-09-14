@@ -16,8 +16,10 @@ package com.amazonaws.services.s3.transfer;
 
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.client.builder.ExecutorFactory;
 import com.amazonaws.internal.SdkFunction;
+import com.amazonaws.regions.DefaultAwsRegionProviderChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.transfer.internal.TransferManagerUtils;
@@ -27,6 +29,9 @@ import java.util.concurrent.ExecutorService;
 /**
  * Fluent builder for {@link TransferManager}. Use of the builder is preferred over constructors in
  * the TransferManager class.
+ *
+ * Note that if no {@link AmazonS3} is provided via {@link #withS3Client(AmazonS3)}} or {@link #setS3Client(AmazonS3)}
+ * a default client will be created using {@link DefaultAwsRegionProviderChain} and {@link DefaultAWSCredentialsProviderChain}.
  **/
 @NotThreadSafe
 public final class TransferManagerBuilder {
@@ -89,7 +94,9 @@ public final class TransferManagerBuilder {
     }
 
     /**
-     * Sets the low level client used to make the service calls to Amazon S3.
+     * Sets the low level client used to make the service calls to Amazon S3. If no
+     * client is specified, a default client will be created using {@link DefaultAwsRegionProviderChain}
+     * and {@link DefaultAWSCredentialsProviderChain}.
      *
      * @param s3Client Client implementation to use
      */
@@ -98,7 +105,9 @@ public final class TransferManagerBuilder {
     }
 
     /**
-     * Sets the low level client used to make the service calls to Amazon S3.
+     * Sets the low level client used to make the service calls to Amazon S3. If no
+     * client is specified, a default client will be created using {@link DefaultAwsRegionProviderChain}
+     * and {@link DefaultAWSCredentialsProviderChain}.
      *
      * @param s3Client Client implementation to use
      * @return This object for method chaining.

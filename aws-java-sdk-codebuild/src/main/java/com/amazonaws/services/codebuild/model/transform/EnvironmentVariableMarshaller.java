@@ -31,6 +31,8 @@ public class EnvironmentVariableMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("value").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final EnvironmentVariableMarshaller instance = new EnvironmentVariableMarshaller();
 
@@ -50,6 +52,7 @@ public class EnvironmentVariableMarshaller {
         try {
             protocolMarshaller.marshall(environmentVariable.getName(), NAME_BINDING);
             protocolMarshaller.marshall(environmentVariable.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(environmentVariable.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

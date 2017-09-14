@@ -28,7 +28,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The email address of the owner to assign to the new member account. This email address must not already be
-     * associated with another AWS account.
+     * associated with another AWS account. You must use a valid email address to complete account creation. You cannot
+     * access the root user of the account or remove an account that was created with an invalid email address.
      * </p>
      */
     private String email;
@@ -84,12 +85,15 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The email address of the owner to assign to the new member account. This email address must not already be
-     * associated with another AWS account.
+     * associated with another AWS account. You must use a valid email address to complete account creation. You cannot
+     * access the root user of the account or remove an account that was created with an invalid email address.
      * </p>
      * 
      * @param email
      *        The email address of the owner to assign to the new member account. This email address must not already be
-     *        associated with another AWS account.
+     *        associated with another AWS account. You must use a valid email address to complete account creation. You
+     *        cannot access the root user of the account or remove an account that was created with an invalid email
+     *        address.
      */
 
     public void setEmail(String email) {
@@ -99,11 +103,14 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The email address of the owner to assign to the new member account. This email address must not already be
-     * associated with another AWS account.
+     * associated with another AWS account. You must use a valid email address to complete account creation. You cannot
+     * access the root user of the account or remove an account that was created with an invalid email address.
      * </p>
      * 
      * @return The email address of the owner to assign to the new member account. This email address must not already
-     *         be associated with another AWS account.
+     *         be associated with another AWS account. You must use a valid email address to complete account creation.
+     *         You cannot access the root user of the account or remove an account that was created with an invalid
+     *         email address.
      */
 
     public String getEmail() {
@@ -113,12 +120,15 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The email address of the owner to assign to the new member account. This email address must not already be
-     * associated with another AWS account.
+     * associated with another AWS account. You must use a valid email address to complete account creation. You cannot
+     * access the root user of the account or remove an account that was created with an invalid email address.
      * </p>
      * 
      * @param email
      *        The email address of the owner to assign to the new member account. This email address must not already be
-     *        associated with another AWS account.
+     *        associated with another AWS account. You must use a valid email address to complete account creation. You
+     *        cannot access the root user of the account or remove an account that was created with an invalid email
+     *        address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
