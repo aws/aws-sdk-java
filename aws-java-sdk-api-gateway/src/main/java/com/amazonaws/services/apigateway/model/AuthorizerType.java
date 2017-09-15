@@ -16,14 +16,16 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The authorizer type. the current value is <code>TOKEN</code> for a Lambda function or <code>COGNITO_USER_POOLS</code>
- * for an Amazon Cognito Your User Pool.
+ * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+ * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request
+ * parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AuthorizerType {
 
     TOKEN("TOKEN"),
+    REQUEST("REQUEST"),
     COGNITO_USER_POOLS("COGNITO_USER_POOLS");
 
     private String value;

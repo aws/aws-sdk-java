@@ -33,7 +33,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String restApiId;
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be alphanumeric.
      * </p>
      */
     private String name;
@@ -99,11 +99,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be alphanumeric.
      * </p>
      * 
      * @param name
-     *        The name of the model.
+     *        The name of the model. Must be alphanumeric.
      */
 
     public void setName(String name) {
@@ -112,10 +112,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be alphanumeric.
      * </p>
      * 
-     * @return The name of the model.
+     * @return The name of the model. Must be alphanumeric.
      */
 
     public String getName() {
@@ -124,11 +124,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be alphanumeric.
      * </p>
      * 
      * @param name
-     *        The name of the model.
+     *        The name of the model. Must be alphanumeric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

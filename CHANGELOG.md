@@ -1,3 +1,8 @@
+# __1.11.197__ __2017-09-15__
+## __Amazon API Gateway__
+  - ### Features
+    - Add a new enum "REQUEST" to '--type <value>' field in the current create-authorizer API, and make "identitySource" optional.
+
 # __1.11.196__ __2017-09-14__
 ## __AWS CodeBuild__
   - ### Features

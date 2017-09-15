@@ -15,7 +15,9 @@ package com.amazonaws.services.apigateway.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The requested resource is not found. Make sure that the request URI is correct.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotFoundException extends com.amazonaws.services.apigateway.model.AmazonApiGatewayException {

@@ -15,7 +15,9 @@ package com.amazonaws.services.apigateway.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request configuration has conflicts. For details, see the accompanying error message.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.apigateway.model.AmazonApiGatewayException {

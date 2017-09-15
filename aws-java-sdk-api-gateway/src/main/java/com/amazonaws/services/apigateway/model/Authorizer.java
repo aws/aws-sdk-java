@@ -43,68 +43,83 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda function or
-     * <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
+     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined. For
-     * authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN of this
-     * format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is
+     * of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a
+     * <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * </p>
      */
     private java.util.List<String> providerARNs;
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
      * </p>
      */
     private String authType;
     /**
      * <p>
-     * [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> authorizers, this
-     * must be a well-formed Lambda function URI, for example,
+     * Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code>
+     * authorizers, this must be a well-formed Lambda function URI, for example,
      * <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      * . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where
      * <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the
      * remaining substring in the URI should be treated as the path to the resource, including the initial
      * <code>/</code>. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      * </p>
      */
     private String authorizerUri;
     /**
      * <p>
-     * Specifies the credentials required for the authorizer, if any. Two options are available. To specify an IAM role
-     * for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
+     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     * permissions on the Lambda function, specify null.
      * </p>
      */
     private String authorizerCredentials;
     /**
      * <p>
-     * [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this value is
-     * a mapping expression with the same syntax as integration parameter mappings. The only valid source for tokens is
-     * 'header', so the expression should match 'method.request.header.[headerName]'. The value of the header
-     * '[headerName]' will be interpreted as the incoming token. For <code>COGNITO_USER_POOLS</code> authorizers, this
-     * property is used.
+     * The identity source for which authorization is requested.
+     * <ul>
+     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
+     * the custom header holding the authorization token submitted by the client. For example, if the token header name
+     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
+     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
+     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
+     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
+     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
+     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
+     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
+     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
+     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     * </ul>
      * </p>
      */
     private String identitySource;
     /**
      * <p>
-     * A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should be a
-     * regular expression. The incoming token from the client is matched against this expression, and will proceed if
-     * the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
+     * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
+     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
+     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
+     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * <code>REQUEST</code> authorizer.
      * </p>
      */
     private String identityValidationExpression;
     /**
      * <p>
-     * The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer responses.
-     * If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     * The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is
+     * greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300.
+     * The maximum value is 3600, or 1 hour.
      * </p>
      */
     private Integer authorizerResultTtlInSeconds;
@@ -191,13 +206,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda function or
-     * <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
+     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda
-     *        function or <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
+     *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @see AuthorizerType
      */
 
@@ -207,12 +224,14 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda function or
-     * <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
+     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
-     * @return [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda
-     *         function or <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * @return [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *         authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
+     *         incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @see AuthorizerType
      */
 
@@ -223,13 +242,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda function or
-     * <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
+     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda
-     *        function or <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
+     *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthorizerType
      */
@@ -241,13 +262,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda function or
-     * <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
+     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda
-     *        function or <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
+     *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @see AuthorizerType
      */
 
@@ -258,13 +281,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda function or
-     * <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming
+     * request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * </p>
      * 
      * @param type
-     *        [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code> for a Lambda
-     *        function or <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user pool.
+     *        [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
+     *        authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using
+     *        incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthorizerType
      */
@@ -276,14 +301,14 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined. For
-     * authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN of this
-     * format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is
+     * of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a
+     * <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * </p>
      * 
-     * @return A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined.
-     *         For authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN
-     *         of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * @return A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each
+     *         element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>
+     *         . For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      */
 
     public java.util.List<String> getProviderARNs() {
@@ -292,15 +317,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined. For
-     * authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN of this
-     * format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is
+     * of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a
+     * <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * </p>
      * 
      * @param providerARNs
-     *        A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined.
-     *        For authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN
-     *        of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     *        A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each
+     *        element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     *        For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      */
 
     public void setProviderARNs(java.util.Collection<String> providerARNs) {
@@ -314,9 +339,9 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined. For
-     * authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN of this
-     * format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is
+     * of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a
+     * <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -325,9 +350,9 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param providerARNs
-     *        A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined.
-     *        For authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN
-     *        of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     *        A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each
+     *        element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     *        For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,15 +368,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined. For
-     * authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN of this
-     * format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     * A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is
+     * of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a
+     * <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * </p>
      * 
      * @param providerARNs
-     *        A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer, this is not defined.
-     *        For authorizers of the <code>COGNITO_USER_POOLS</code> type, each element corresponds to a user pool ARN
-     *        of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     *        A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each
+     *        element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+     *        For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,11 +387,11 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
      * </p>
      * 
      * @param authType
-     *        Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     *        Optional customer-defined field, used in Swagger imports and exports without functional impact.
      */
 
     public void setAuthType(String authType) {
@@ -375,10 +400,10 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
      * </p>
      * 
-     * @return Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     * @return Optional customer-defined field, used in Swagger imports and exports without functional impact.
      */
 
     public String getAuthType() {
@@ -387,11 +412,11 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     * Optional customer-defined field, used in Swagger imports and exports without functional impact.
      * </p>
      * 
      * @param authType
-     *        Optional customer-defined field, used in Swagger imports/exports. Has no functional impact.
+     *        Optional customer-defined field, used in Swagger imports and exports without functional impact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,25 +427,25 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> authorizers, this
-     * must be a well-formed Lambda function URI, for example,
+     * Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code>
+     * authorizers, this must be a well-formed Lambda function URI, for example,
      * <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      * . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where
      * <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the
      * remaining substring in the URI should be treated as the path to the resource, including the initial
      * <code>/</code>. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      * </p>
      * 
      * @param authorizerUri
-     *        [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code>
-     *        authorizers, this must be a well-formed Lambda function URI, for example,
+     *        Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or
+     *        <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example,
      *        <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      *        . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>,
      *        where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code>
      *        indicates that the remaining substring in the URI should be treated as the path to the resource, including
      *        the initial <code>/</code>. For Lambda functions, this is usually of the form
-     *        /2015-03-31/functions/[FunctionARN]/invocations.
+     *        <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      */
 
     public void setAuthorizerUri(String authorizerUri) {
@@ -429,24 +454,24 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> authorizers, this
-     * must be a well-formed Lambda function URI, for example,
+     * Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code>
+     * authorizers, this must be a well-formed Lambda function URI, for example,
      * <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      * . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where
      * <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the
      * remaining substring in the URI should be treated as the path to the resource, including the initial
      * <code>/</code>. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      * </p>
      * 
-     * @return [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code>
-     *         authorizers, this must be a well-formed Lambda function URI, for example,
+     * @return Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or
+     *         <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example,
      *         <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      *         . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>,
      *         where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code>
      *         indicates that the remaining substring in the URI should be treated as the path to the resource,
      *         including the initial <code>/</code>. For Lambda functions, this is usually of the form
-     *         /2015-03-31/functions/[FunctionARN]/invocations.
+     *         <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      */
 
     public String getAuthorizerUri() {
@@ -455,25 +480,25 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> authorizers, this
-     * must be a well-formed Lambda function URI, for example,
+     * Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code>
+     * authorizers, this must be a well-formed Lambda function URI, for example,
      * <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      * . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where
      * <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the
      * remaining substring in the URI should be treated as the path to the resource, including the initial
      * <code>/</code>. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      * </p>
      * 
      * @param authorizerUri
-     *        [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code>
-     *        authorizers, this must be a well-formed Lambda function URI, for example,
+     *        Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or
+     *        <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example,
      *        <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>
      *        . In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>,
      *        where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code>
      *        indicates that the remaining substring in the URI should be treated as the path to the resource, including
      *        the initial <code>/</code>. For Lambda functions, this is usually of the form
-     *        /2015-03-31/functions/[FunctionARN]/invocations.
+     *        <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,14 +509,14 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the credentials required for the authorizer, if any. Two options are available. To specify an IAM role
-     * for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
+     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     * permissions on the Lambda function, specify null.
      * </p>
      * 
      * @param authorizerCredentials
-     *        Specifies the credentials required for the authorizer, if any. Two options are available. To specify an
-     *        IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
+     *        Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To
+     *        specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
      *        resource-based permissions on the Lambda function, specify null.
      */
 
@@ -501,13 +526,13 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the credentials required for the authorizer, if any. Two options are available. To specify an IAM role
-     * for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
+     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     * permissions on the Lambda function, specify null.
      * </p>
      * 
-     * @return Specifies the credentials required for the authorizer, if any. Two options are available. To specify an
-     *         IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
+     * @return Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To
+     *         specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
      *         resource-based permissions on the Lambda function, specify null.
      */
 
@@ -517,14 +542,14 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the credentials required for the authorizer, if any. Two options are available. To specify an IAM role
-     * for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
+     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     * permissions on the Lambda function, specify null.
      * </p>
      * 
      * @param authorizerCredentials
-     *        Specifies the credentials required for the authorizer, if any. Two options are available. To specify an
-     *        IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
+     *        Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To
+     *        specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
      *        resource-based permissions on the Lambda function, specify null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -536,19 +561,43 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this value is
-     * a mapping expression with the same syntax as integration parameter mappings. The only valid source for tokens is
-     * 'header', so the expression should match 'method.request.header.[headerName]'. The value of the header
-     * '[headerName]' will be interpreted as the incoming token. For <code>COGNITO_USER_POOLS</code> authorizers, this
-     * property is used.
+     * The identity source for which authorization is requested.
+     * <ul>
+     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
+     * the custom header holding the authorization token submitted by the client. For example, if the token header name
+     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
+     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
+     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
+     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
+     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
+     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
+     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
+     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
+     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     * </ul>
      * </p>
      * 
      * @param identitySource
-     *        [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this
-     *        value is a mapping expression with the same syntax as integration parameter mappings. The only valid
-     *        source for tokens is 'header', so the expression should match 'method.request.header.[headerName]'. The
-     *        value of the header '[headerName]' will be interpreted as the incoming token. For
-     *        <code>COGNITO_USER_POOLS</code> authorizers, this property is used.
+     *        The identity source for which authorization is requested.
+     *        <ul>
+     *        <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping
+     *        expression for the custom header holding the authorization token submitted by the client. For example, if
+     *        the token header name is <code>Auth</code>, the header mapping expression is
+     *        <code>method.request.header.Auth</code>.</li>
+     *        <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
+     *        value is a comma-separated string of one or more mapping expressions of the specified request parameters.
+     *        For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
+     *        identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.
+     *        These parameters will be used to derive the authorization caching key and to perform runtime validation of
+     *        the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are
+     *        present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda
+     *        function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
+     *        value is a string of comma-separated mapping expressions of the specified request parameters. When the
+     *        authorization caching is not enabled, this property is optional.</li>
+     *        <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     *        </ul>
      */
 
     public void setIdentitySource(String identitySource) {
@@ -557,18 +606,42 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this value is
-     * a mapping expression with the same syntax as integration parameter mappings. The only valid source for tokens is
-     * 'header', so the expression should match 'method.request.header.[headerName]'. The value of the header
-     * '[headerName]' will be interpreted as the incoming token. For <code>COGNITO_USER_POOLS</code> authorizers, this
-     * property is used.
+     * The identity source for which authorization is requested.
+     * <ul>
+     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
+     * the custom header holding the authorization token submitted by the client. For example, if the token header name
+     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
+     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
+     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
+     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
+     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
+     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
+     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
+     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
+     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     * </ul>
      * </p>
      * 
-     * @return [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this
-     *         value is a mapping expression with the same syntax as integration parameter mappings. The only valid
-     *         source for tokens is 'header', so the expression should match 'method.request.header.[headerName]'. The
-     *         value of the header '[headerName]' will be interpreted as the incoming token. For
-     *         <code>COGNITO_USER_POOLS</code> authorizers, this property is used.
+     * @return The identity source for which authorization is requested.
+     *         <ul>
+     *         <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping
+     *         expression for the custom header holding the authorization token submitted by the client. For example, if
+     *         the token header name is <code>Auth</code>, the header mapping expression is
+     *         <code>method.request.header.Auth</code>.</li>
+     *         <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
+     *         value is a comma-separated string of one or more mapping expressions of the specified request parameters.
+     *         For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
+     *         identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.
+     *         These parameters will be used to derive the authorization caching key and to perform runtime validation
+     *         of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are
+     *         present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda
+     *         function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The
+     *         valid value is a string of comma-separated mapping expressions of the specified request parameters. When
+     *         the authorization caching is not enabled, this property is optional.</li>
+     *         <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     *         </ul>
      */
 
     public String getIdentitySource() {
@@ -577,19 +650,43 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this value is
-     * a mapping expression with the same syntax as integration parameter mappings. The only valid source for tokens is
-     * 'header', so the expression should match 'method.request.header.[headerName]'. The value of the header
-     * '[headerName]' will be interpreted as the incoming token. For <code>COGNITO_USER_POOLS</code> authorizers, this
-     * property is used.
+     * The identity source for which authorization is requested.
+     * <ul>
+     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
+     * the custom header holding the authorization token submitted by the client. For example, if the token header name
+     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
+     * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
+     * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
+     * value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used
+     * to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer
+     * by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this
+     * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
+     * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
+     * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     * </ul>
      * </p>
      * 
      * @param identitySource
-     *        [Required] The source of the identity in an incoming request. For a <code>TOKEN</code> authorizer, this
-     *        value is a mapping expression with the same syntax as integration parameter mappings. The only valid
-     *        source for tokens is 'header', so the expression should match 'method.request.header.[headerName]'. The
-     *        value of the header '[headerName]' will be interpreted as the incoming token. For
-     *        <code>COGNITO_USER_POOLS</code> authorizers, this property is used.
+     *        The identity source for which authorization is requested.
+     *        <ul>
+     *        <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping
+     *        expression for the custom header holding the authorization token submitted by the client. For example, if
+     *        the token header name is <code>Auth</code>, the header mapping expression is
+     *        <code>method.request.header.Auth</code>.</li>
+     *        <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
+     *        value is a comma-separated string of one or more mapping expressions of the specified request parameters.
+     *        For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
+     *        identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.
+     *        These parameters will be used to derive the authorization caching key and to perform runtime validation of
+     *        the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are
+     *        present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda
+     *        function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
+     *        value is a string of comma-separated mapping expressions of the specified request parameters. When the
+     *        authorization caching is not enabled, this property is optional.</li>
+     *        <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,15 +697,19 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should be a
-     * regular expression. The incoming token from the client is matched against this expression, and will proceed if
-     * the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
+     * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
+     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
+     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
+     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @param identityValidationExpression
-     *        A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should
-     *        be a regular expression. The incoming token from the client is matched against this expression, and will
-     *        proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
+     *        A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is
+     *        a regular expression. Amazon API Gateway will match the incoming token from the client against the
+     *        specified regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise,
+     *        it will return a 401 Unauthorized response without calling the Lambda function. The validation expression
+     *        does not apply to the <code>REQUEST</code> authorizer.
      */
 
     public void setIdentityValidationExpression(String identityValidationExpression) {
@@ -617,15 +718,18 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should be a
-     * regular expression. The incoming token from the client is matched against this expression, and will proceed if
-     * the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
+     * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
+     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
+     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
+     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * <code>REQUEST</code> authorizer.
      * </p>
      * 
-     * @return A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should
-     *         be a regular expression. The incoming token from the client is matched against this expression, and will
-     *         proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized
-     *         response.
+     * @return A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value
+     *         is a regular expression. Amazon API Gateway will match the incoming token from the client against the
+     *         specified regular expression. It will invoke the authorizer's Lambda function there is a match.
+     *         Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation
+     *         expression does not apply to the <code>REQUEST</code> authorizer.
      */
 
     public String getIdentityValidationExpression() {
@@ -634,15 +738,19 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should be a
-     * regular expression. The incoming token from the client is matched against this expression, and will proceed if
-     * the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
+     * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
+     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
+     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
+     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @param identityValidationExpression
-     *        A validation expression for the incoming identity. For <code>TOKEN</code> authorizers, this value should
-     *        be a regular expression. The incoming token from the client is matched against this expression, and will
-     *        proceed if the token matches. If the token doesn't match, the client receives a 401 Unauthorized response.
+     *        A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is
+     *        a regular expression. Amazon API Gateway will match the incoming token from the client against the
+     *        specified regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise,
+     *        it will return a 401 Unauthorized response without calling the Lambda function. The validation expression
+     *        does not apply to the <code>REQUEST</code> authorizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -653,13 +761,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer responses.
-     * If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     * The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is
+     * greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300.
+     * The maximum value is 3600, or 1 hour.
      * </p>
      * 
      * @param authorizerResultTtlInSeconds
-     *        The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer
-     *        responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     *        The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it
+     *        is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default
+     *        value is 300. The maximum value is 3600, or 1 hour.
      */
 
     public void setAuthorizerResultTtlInSeconds(Integer authorizerResultTtlInSeconds) {
@@ -668,12 +778,14 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer responses.
-     * If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     * The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is
+     * greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300.
+     * The maximum value is 3600, or 1 hour.
      * </p>
      * 
-     * @return The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer
-     *         responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     * @return The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it
+     *         is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default
+     *         value is 300. The maximum value is 3600, or 1 hour.
      */
 
     public Integer getAuthorizerResultTtlInSeconds() {
@@ -682,13 +794,15 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer responses.
-     * If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     * The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is
+     * greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300.
+     * The maximum value is 3600, or 1 hour.
      * </p>
      * 
      * @param authorizerResultTtlInSeconds
-     *        The TTL in seconds of cached authorizer results. If greater than 0, API Gateway will cache authorizer
-     *        responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+     *        The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it
+     *        is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default
+     *        value is 300. The maximum value is 3600, or 1 hour.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,7 +15,10 @@ package com.amazonaws.services.apigateway.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The submitted request is not valid, for example, the input is incomplete or incorrect. See the accompanying error
+ * message for details.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BadRequestException extends com.amazonaws.services.apigateway.model.AmazonApiGatewayException {

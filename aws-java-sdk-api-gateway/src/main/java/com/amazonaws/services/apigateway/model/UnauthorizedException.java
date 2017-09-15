@@ -15,7 +15,9 @@ package com.amazonaws.services.apigateway.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The request is denied because the caller has insufficient permissions.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnauthorizedException extends com.amazonaws.services.apigateway.model.AmazonApiGatewayException {

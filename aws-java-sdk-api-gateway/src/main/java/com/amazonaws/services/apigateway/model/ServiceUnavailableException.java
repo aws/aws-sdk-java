@@ -15,7 +15,10 @@ package com.amazonaws.services.apigateway.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The requested service is not available. For details see the accompanying error message. Retry after the specified
+ * time period.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceUnavailableException extends com.amazonaws.services.apigateway.model.AmazonApiGatewayException {

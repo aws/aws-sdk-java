@@ -46,7 +46,7 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be an alphanumeric string.
      * </p>
      */
     private String name;
@@ -115,11 +115,11 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be an alphanumeric string.
      * </p>
      * 
      * @param name
-     *        The name of the model.
+     *        The name of the model. Must be an alphanumeric string.
      */
 
     public void setName(String name) {
@@ -128,10 +128,10 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be an alphanumeric string.
      * </p>
      * 
-     * @return The name of the model.
+     * @return The name of the model. Must be an alphanumeric string.
      */
 
     public String getName() {
@@ -140,11 +140,11 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the model.
+     * The name of the model. Must be an alphanumeric string.
      * </p>
      * 
      * @param name
-     *        The name of the model.
+     *        The name of the model. Must be an alphanumeric string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
