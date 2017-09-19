@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 public class ConfigurationSetDoesNotExistException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     */
     private String configurationSetName;
 
     /**
@@ -36,7 +41,12 @@ public class ConfigurationSetDoesNotExistException extends com.amazonaws.service
     }
 
     /**
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     * 
      * @param configurationSetName
+     *        Indicates that the configuration set does not exist.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -44,7 +54,11 @@ public class ConfigurationSetDoesNotExistException extends com.amazonaws.service
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     * 
+     * @return Indicates that the configuration set does not exist.
      */
 
     public String getConfigurationSetName() {
@@ -52,7 +66,12 @@ public class ConfigurationSetDoesNotExistException extends com.amazonaws.service
     }
 
     /**
+     * <p>
+     * Indicates that the configuration set does not exist.
+     * </p>
+     * 
      * @param configurationSetName
+     *        Indicates that the configuration set does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

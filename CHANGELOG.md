@@ -1,3 +1,16 @@
+# __1.11.198__ __2017-09-18__
+## __AWS Identity and Access Management (IAM)__
+  - ### Features
+    - A new API, DeleteServiceLinkedRole, submits a service-linked role deletion request and returns a DeletionTaskId, which you can use to check the status of the deletion.
+
+## __Amazon EC2__
+  - ### Features
+    - Amazon EC2 now lets you opt for Spot instances to be stopped in the event of an interruption instead of being terminated.  Your Spot request can be fulfilled again by restarting instances from a previously stopped state, subject to availability of capacity at or below your preferred price.  When you submit a persistent Spot request, you can choose from "terminate" or "stop" as the instance interruption behavior.  Choosing "stop" will shutdown your Spot instances so you can continue from this stopped state later on.  This feature is only available for instances with Amazon EBS volume as their root device.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Amazon Simple Email Service (Amazon SES) now lets you customize the domains used for tracking open and click events. Previously, open and click tracking links referred to destinations hosted on domains operated by Amazon SES. With this feature, you can use your own branded domains for capturing open and click events.
+
 # __1.11.197__ __2017-09-15__
 ## __Amazon API Gateway__
   - ### Features

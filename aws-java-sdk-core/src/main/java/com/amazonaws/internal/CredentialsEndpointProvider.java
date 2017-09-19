@@ -17,6 +17,8 @@ package com.amazonaws.internal;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
@@ -51,5 +53,12 @@ public abstract class CredentialsEndpointProvider {
      */
     public CredentialsEndpointRetryPolicy getRetryPolicy() {
         return CredentialsEndpointRetryPolicy.NO_RETRY;
+    }
+
+    /**
+     * Allows passing additional headers to the request
+     */
+    public Map<String, String> getHeaders() {
+        return new HashMap<String, String>();
     }
 }

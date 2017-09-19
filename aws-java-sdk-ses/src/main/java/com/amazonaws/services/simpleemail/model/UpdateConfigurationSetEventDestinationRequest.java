@@ -33,7 +33,7 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set that contains the event destination that you want to update.
      * </p>
      */
     private String configurationSetName;
@@ -46,11 +46,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set that contains the event destination that you want to update.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to update.
+     *        The name of the configuration set that contains the event destination that you want to update.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -59,10 +59,10 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set that contains the event destination that you want to update.
      * </p>
      * 
-     * @return The name of the configuration set that you want to update.
+     * @return The name of the configuration set that contains the event destination that you want to update.
      */
 
     public String getConfigurationSetName() {
@@ -71,11 +71,11 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set that contains the event destination that you want to update.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to update.
+     *        The name of the configuration set that contains the event destination that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

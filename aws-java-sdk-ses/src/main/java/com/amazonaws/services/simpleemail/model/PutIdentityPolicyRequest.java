@@ -33,7 +33,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identity to which the policy will apply. You can specify an identity by using its name or by using its Amazon
+     * The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
@@ -66,7 +66,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identity to which the policy will apply. You can specify an identity by using its name or by using its Amazon
+     * The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
@@ -75,7 +75,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param identity
-     *        The identity to which the policy will apply. You can specify an identity by using its name or by using its
+     *        The identity that the policy will apply to. You can specify an identity by using its name or by using its
      *        Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      *        <p>
@@ -88,7 +88,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identity to which the policy will apply. You can specify an identity by using its name or by using its Amazon
+     * The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
@@ -96,8 +96,8 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * To successfully call this API, you must own the identity.
      * </p>
      * 
-     * @return The identity to which the policy will apply. You can specify an identity by using its name or by using
-     *         its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * @return The identity that the policy will apply to. You can specify an identity by using its name or by using its
+     *         Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      *         <p>
      *         To successfully call this API, you must own the identity.
@@ -109,7 +109,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identity to which the policy will apply. You can specify an identity by using its name or by using its Amazon
+     * The identity that the policy will apply to. You can specify an identity by using its name or by using its Amazon
      * Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
@@ -118,7 +118,7 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param identity
-     *        The identity to which the policy will apply. You can specify an identity by using its name or by using its
+     *        The identity that the policy will apply to. You can specify an identity by using its name or by using its
      *        Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
      *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      *        <p>

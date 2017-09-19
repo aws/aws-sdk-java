@@ -1579,6 +1579,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request) {
+
+        return deleteServiceLinkedRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(final DeleteServiceLinkedRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResult> asyncHandler) {
+        final DeleteServiceLinkedRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteServiceLinkedRoleResult>() {
+            @Override
+            public DeleteServiceLinkedRoleResult call() throws Exception {
+                DeleteServiceLinkedRoleResult result = null;
+
+                try {
+                    result = executeDeleteServiceLinkedRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
             DeleteServiceSpecificCredentialRequest request) {
 
@@ -2642,6 +2675,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeGetServerCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLinkedRoleDeletionStatusResult> getServiceLinkedRoleDeletionStatusAsync(
+            GetServiceLinkedRoleDeletionStatusRequest request) {
+
+        return getServiceLinkedRoleDeletionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLinkedRoleDeletionStatusResult> getServiceLinkedRoleDeletionStatusAsync(
+            final GetServiceLinkedRoleDeletionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceLinkedRoleDeletionStatusRequest, GetServiceLinkedRoleDeletionStatusResult> asyncHandler) {
+        final GetServiceLinkedRoleDeletionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceLinkedRoleDeletionStatusResult>() {
+            @Override
+            public GetServiceLinkedRoleDeletionStatusResult call() throws Exception {
+                GetServiceLinkedRoleDeletionStatusResult result = null;
+
+                try {
+                    result = executeGetServiceLinkedRoleDeletionStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

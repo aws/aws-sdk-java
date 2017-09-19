@@ -47,7 +47,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then you must
      * use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following
      * form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * </p>
      */
     private String source;
@@ -72,7 +72,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private com.amazonaws.internal.SdkInternalList<String> replyToAddresses;
     /**
      * <p>
-     * The email address to which bounces and complaints are to be forwarded when feedback forwarding is enabled. If the
+     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
      * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
      * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
@@ -162,7 +162,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then
      *        you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax
      *        uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *        href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *        href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * @param destination
      *        The destination for this email, composed of To:, CC:, and BCC: fields.
      * @param message
@@ -192,7 +192,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then you must
      * use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following
      * form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * </p>
      * 
      * @param source
@@ -212,7 +212,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then
      *        you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax
      *        uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *        href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *        href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
 
     public void setSource(String source) {
@@ -237,7 +237,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then you must
      * use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following
      * form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * </p>
      * 
      * @return The email address that is sending the email. This email address must be either individually verified with
@@ -256,7 +256,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then
      *         you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax
      *         uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *         href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *         href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      */
 
     public String getSource() {
@@ -281,7 +281,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then you must
      * use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following
      * form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     * href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * </p>
      * 
      * @param source
@@ -301,7 +301,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        In all cases, the email address must be 7-bit ASCII. If the text must contain any other characters, then
      *        you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax
      *        uses the following form: <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
-     *        href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+     *        href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,7 +473,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address to which bounces and complaints are to be forwarded when feedback forwarding is enabled. If the
+     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
      * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
      * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
@@ -481,8 +481,8 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param returnPath
-     *        The email address to which bounces and complaints are to be forwarded when feedback forwarding is enabled.
-     *        If the message cannot be delivered to the recipient, then an error message will be returned from the
+     *        The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If
+     *        the message cannot be delivered to the recipient, then an error message will be returned from the
      *        recipient's ISP; this message will then be forwarded to the email address specified by the
      *        <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email
      *        address must be either individually verified with Amazon SES, or from a domain that has been verified with
@@ -495,16 +495,16 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address to which bounces and complaints are to be forwarded when feedback forwarding is enabled. If the
+     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
      * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
      * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
      * with Amazon SES, or from a domain that has been verified with Amazon SES.
      * </p>
      * 
-     * @return The email address to which bounces and complaints are to be forwarded when feedback forwarding is
-     *         enabled. If the message cannot be delivered to the recipient, then an error message will be returned from
-     *         the recipient's ISP; this message will then be forwarded to the email address specified by the
+     * @return The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
+     *         If the message cannot be delivered to the recipient, then an error message will be returned from the
+     *         recipient's ISP; this message will then be forwarded to the email address specified by the
      *         <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email
      *         address must be either individually verified with Amazon SES, or from a domain that has been verified
      *         with Amazon SES.
@@ -516,7 +516,7 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The email address to which bounces and complaints are to be forwarded when feedback forwarding is enabled. If the
+     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
      * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
      * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
@@ -524,8 +524,8 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param returnPath
-     *        The email address to which bounces and complaints are to be forwarded when feedback forwarding is enabled.
-     *        If the message cannot be delivered to the recipient, then an error message will be returned from the
+     *        The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If
+     *        the message cannot be delivered to the recipient, then an error message will be returned from the
      *        recipient's ISP; this message will then be forwarded to the email address specified by the
      *        <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email
      *        address must be either individually verified with Amazon SES, or from a domain that has been verified with

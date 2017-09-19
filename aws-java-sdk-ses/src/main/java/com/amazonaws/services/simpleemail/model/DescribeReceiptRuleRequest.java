@@ -33,7 +33,7 @@ public class DescribeReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the receipt rule set to which the receipt rule belongs.
+     * The name of the receipt rule set that the receipt rule belongs to.
      * </p>
      */
     private String ruleSetName;
@@ -46,11 +46,11 @@ public class DescribeReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the receipt rule set to which the receipt rule belongs.
+     * The name of the receipt rule set that the receipt rule belongs to.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the receipt rule set to which the receipt rule belongs.
+     *        The name of the receipt rule set that the receipt rule belongs to.
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -59,10 +59,10 @@ public class DescribeReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the receipt rule set to which the receipt rule belongs.
+     * The name of the receipt rule set that the receipt rule belongs to.
      * </p>
      * 
-     * @return The name of the receipt rule set to which the receipt rule belongs.
+     * @return The name of the receipt rule set that the receipt rule belongs to.
      */
 
     public String getRuleSetName() {
@@ -71,11 +71,11 @@ public class DescribeReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the receipt rule set to which the receipt rule belongs.
+     * The name of the receipt rule set that the receipt rule belongs to.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the receipt rule set to which the receipt rule belongs.
+     *        The name of the receipt rule set that the receipt rule belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

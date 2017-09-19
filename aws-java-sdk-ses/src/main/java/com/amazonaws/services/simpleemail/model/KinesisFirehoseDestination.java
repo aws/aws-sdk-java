@@ -21,9 +21,9 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to
- * publish email sending events. For information about using configuration sets, see the <a
+ * publish email sending events. For information about using configuration sets, see the <i> <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * Guide</a>.</i>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/KinesisFirehoseDestination" target="_top">AWS
@@ -41,7 +41,7 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable {
     private String iAMRoleARN;
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     * The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      * </p>
      */
     private String deliveryStreamARN;
@@ -94,11 +94,11 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     * The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      * </p>
      * 
      * @param deliveryStreamARN
-     *        The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     *        The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      */
 
     public void setDeliveryStreamARN(String deliveryStreamARN) {
@@ -107,10 +107,10 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     * The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      * </p>
      * 
-     * @return The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     * @return The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      */
 
     public String getDeliveryStreamARN() {
@@ -119,11 +119,11 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     * The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      * </p>
      * 
      * @param deliveryStreamARN
-     *        The ARN of the Amazon Kinesis Firehose stream to which to publish email sending events.
+     *        The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

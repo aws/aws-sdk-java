@@ -32,15 +32,15 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in
- * conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer
- * Guide</a>.
+ * This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple Email Service</a> (Amazon SES).
+ * This documentation is intended to be used in conjunction with the <i> <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
  * </p>
  * <note>
  * <p>
  * For a list of Amazon SES endpoints to use in service requests, see <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the Amazon SES
- * Developer Guide.
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <i> <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
  * </p>
  * </note>
  */
@@ -356,6 +356,41 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConfigurationSetTrackingOptionsResult> createConfigurationSetTrackingOptionsAsync(
+            CreateConfigurationSetTrackingOptionsRequest request) {
+
+        return createConfigurationSetTrackingOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfigurationSetTrackingOptionsResult> createConfigurationSetTrackingOptionsAsync(
+            final CreateConfigurationSetTrackingOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetTrackingOptionsRequest, CreateConfigurationSetTrackingOptionsResult> asyncHandler) {
+        final CreateConfigurationSetTrackingOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConfigurationSetTrackingOptionsResult>() {
+            @Override
+            public CreateConfigurationSetTrackingOptionsResult call() throws Exception {
+                CreateConfigurationSetTrackingOptionsResult result = null;
+
+                try {
+                    result = executeCreateConfigurationSetTrackingOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReceiptFilterResult> createReceiptFilterAsync(CreateReceiptFilterRequest request) {
 
         return createReceiptFilterAsync(request, null);
@@ -507,6 +542,41 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
 
                 try {
                     result = executeDeleteConfigurationSetEventDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationSetTrackingOptionsResult> deleteConfigurationSetTrackingOptionsAsync(
+            DeleteConfigurationSetTrackingOptionsRequest request) {
+
+        return deleteConfigurationSetTrackingOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationSetTrackingOptionsResult> deleteConfigurationSetTrackingOptionsAsync(
+            final DeleteConfigurationSetTrackingOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetTrackingOptionsRequest, DeleteConfigurationSetTrackingOptionsResult> asyncHandler) {
+        final DeleteConfigurationSetTrackingOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConfigurationSetTrackingOptionsResult>() {
+            @Override
+            public DeleteConfigurationSetTrackingOptionsResult call() throws Exception {
+                DeleteConfigurationSetTrackingOptionsResult result = null;
+
+                try {
+                    result = executeDeleteConfigurationSetTrackingOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1799,6 +1869,41 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
 
                 try {
                     result = executeUpdateConfigurationSetEventDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationSetTrackingOptionsResult> updateConfigurationSetTrackingOptionsAsync(
+            UpdateConfigurationSetTrackingOptionsRequest request) {
+
+        return updateConfigurationSetTrackingOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationSetTrackingOptionsResult> updateConfigurationSetTrackingOptionsAsync(
+            final UpdateConfigurationSetTrackingOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetTrackingOptionsRequest, UpdateConfigurationSetTrackingOptionsResult> asyncHandler) {
+        final UpdateConfigurationSetTrackingOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConfigurationSetTrackingOptionsResult>() {
+            @Override
+            public UpdateConfigurationSetTrackingOptionsResult call() throws Exception {
+                UpdateConfigurationSetTrackingOptionsResult result = null;
+
+                try {
+                    result = executeUpdateConfigurationSetTrackingOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -43,7 +43,7 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: =,.@-+
      * </p>
      */
     private String policyName;
@@ -83,7 +83,7 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: =,.@-+
      * @param policyDocument
      *        The policy document.
      *        </p>
@@ -174,7 +174,7 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: =,.@-+
      * </p>
      * 
      * @param policyName
@@ -182,7 +182,7 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: =,.@-+
      */
 
     public void setPolicyName(String policyName) {
@@ -196,14 +196,14 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: =,.@-+
      * </p>
      * 
      * @return The name of the policy document.</p>
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         any of the following characters: =,.@-+
      */
 
     public String getPolicyName() {
@@ -217,7 +217,7 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: =,.@-+
      * </p>
      * 
      * @param policyName
@@ -225,7 +225,7 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: =,.@-+
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

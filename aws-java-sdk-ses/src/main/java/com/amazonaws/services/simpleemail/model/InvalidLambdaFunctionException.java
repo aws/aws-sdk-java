@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 public class InvalidLambdaFunctionException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicates that the ARN of the function was not found.
+     * </p>
+     */
     private String functionArn;
 
     /**
@@ -39,7 +44,12 @@ public class InvalidLambdaFunctionException extends com.amazonaws.services.simpl
     }
 
     /**
+     * <p>
+     * Indicates that the ARN of the function was not found.
+     * </p>
+     * 
      * @param functionArn
+     *        Indicates that the ARN of the function was not found.
      */
 
     public void setFunctionArn(String functionArn) {
@@ -47,7 +57,11 @@ public class InvalidLambdaFunctionException extends com.amazonaws.services.simpl
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that the ARN of the function was not found.
+     * </p>
+     * 
+     * @return Indicates that the ARN of the function was not found.
      */
 
     public String getFunctionArn() {
@@ -55,7 +69,12 @@ public class InvalidLambdaFunctionException extends com.amazonaws.services.simpl
     }
 
     /**
+     * <p>
+     * Indicates that the ARN of the function was not found.
+     * </p>
+     * 
      * @param functionArn
+     *        Indicates that the ARN of the function was not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

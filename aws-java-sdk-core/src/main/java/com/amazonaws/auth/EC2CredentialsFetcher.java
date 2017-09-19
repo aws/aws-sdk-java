@@ -71,10 +71,10 @@ class EC2CredentialsFetcher {
     protected volatile Date lastInstanceProfileCheck;
 
     /** Used to load the endpoint where the credentials are stored. */
-    private final CredentialsEndpointProvider credentailsEndpointProvider;
+    private final CredentialsEndpointProvider credentialsEndpointProvider;
 
-    public EC2CredentialsFetcher(CredentialsEndpointProvider credentailsEndpointProvider) {
-        this.credentailsEndpointProvider = credentailsEndpointProvider;
+    public EC2CredentialsFetcher(CredentialsEndpointProvider credentialsEndpointProvider) {
+        this.credentialsEndpointProvider = credentialsEndpointProvider;
     }
 
     public AWSCredentials getCredentials() {
@@ -118,7 +118,10 @@ class EC2CredentialsFetcher {
         try {
             lastInstanceProfileCheck = new Date();
 
-            String credentialsResponse = EC2CredentialsUtils.getInstance().readResource(credentailsEndpointProvider.getCredentialsEndpoint(), credentailsEndpointProvider.getRetryPolicy());
+            String credentialsResponse = EC2CredentialsUtils.getInstance().readResource(
+                credentialsEndpointProvider.getCredentialsEndpoint(),
+                credentialsEndpointProvider.getRetryPolicy(),
+                credentialsEndpointProvider.getHeaders());
 
             node = Jackson.jsonNodeOf(credentialsResponse);
             accessKey = node.get(ACCESS_KEY_ID);

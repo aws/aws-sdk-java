@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 public class RuleDoesNotExistException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicates that the named receipt rule does not exist.
+     * </p>
+     */
     private String name;
 
     /**
@@ -36,7 +41,12 @@ public class RuleDoesNotExistException extends com.amazonaws.services.simpleemai
     }
 
     /**
+     * <p>
+     * Indicates that the named receipt rule does not exist.
+     * </p>
+     * 
      * @param name
+     *        Indicates that the named receipt rule does not exist.
      */
 
     public void setName(String name) {
@@ -44,7 +54,11 @@ public class RuleDoesNotExistException extends com.amazonaws.services.simpleemai
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that the named receipt rule does not exist.
+     * </p>
+     * 
+     * @return Indicates that the named receipt rule does not exist.
      */
 
     public String getName() {
@@ -52,7 +66,12 @@ public class RuleDoesNotExistException extends com.amazonaws.services.simpleemai
     }
 
     /**
+     * <p>
+     * Indicates that the named receipt rule does not exist.
+     * </p>
+     * 
      * @param name
+     *        Indicates that the named receipt rule does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

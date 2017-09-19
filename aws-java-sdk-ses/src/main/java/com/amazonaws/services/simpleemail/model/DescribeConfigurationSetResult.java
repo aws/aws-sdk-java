@@ -41,6 +41,12 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EventDestination> eventDestinations;
+    /**
+     * <p>
+     * The name of the custom open and click tracking domain associated with the configuration set.
+     * </p>
+     */
+    private TrackingOptions trackingOptions;
 
     /**
      * <p>
@@ -156,6 +162,46 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name of the custom open and click tracking domain associated with the configuration set.
+     * </p>
+     * 
+     * @param trackingOptions
+     *        The name of the custom open and click tracking domain associated with the configuration set.
+     */
+
+    public void setTrackingOptions(TrackingOptions trackingOptions) {
+        this.trackingOptions = trackingOptions;
+    }
+
+    /**
+     * <p>
+     * The name of the custom open and click tracking domain associated with the configuration set.
+     * </p>
+     * 
+     * @return The name of the custom open and click tracking domain associated with the configuration set.
+     */
+
+    public TrackingOptions getTrackingOptions() {
+        return this.trackingOptions;
+    }
+
+    /**
+     * <p>
+     * The name of the custom open and click tracking domain associated with the configuration set.
+     * </p>
+     * 
+     * @param trackingOptions
+     *        The name of the custom open and click tracking domain associated with the configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationSetResult withTrackingOptions(TrackingOptions trackingOptions) {
+        setTrackingOptions(trackingOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -169,7 +215,9 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
         if (getConfigurationSet() != null)
             sb.append("ConfigurationSet: ").append(getConfigurationSet()).append(",");
         if (getEventDestinations() != null)
-            sb.append("EventDestinations: ").append(getEventDestinations());
+            sb.append("EventDestinations: ").append(getEventDestinations()).append(",");
+        if (getTrackingOptions() != null)
+            sb.append("TrackingOptions: ").append(getTrackingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -192,6 +240,10 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getEventDestinations() != null && other.getEventDestinations().equals(this.getEventDestinations()) == false)
             return false;
+        if (other.getTrackingOptions() == null ^ this.getTrackingOptions() == null)
+            return false;
+        if (other.getTrackingOptions() != null && other.getTrackingOptions().equals(this.getTrackingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +254,7 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getConfigurationSet() == null) ? 0 : getConfigurationSet().hashCode());
         hashCode = prime * hashCode + ((getEventDestinations() == null) ? 0 : getEventDestinations().hashCode());
+        hashCode = prime * hashCode + ((getTrackingOptions() == null) ? 0 : getTrackingOptions().hashCode());
         return hashCode;
     }
 

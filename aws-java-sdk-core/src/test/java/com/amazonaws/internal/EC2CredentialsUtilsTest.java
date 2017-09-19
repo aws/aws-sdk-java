@@ -22,10 +22,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -152,14 +156,15 @@ public class EC2CredentialsUtilsTest {
      * the request is not retried.
      */
     @Test
+    @SuppressWarnings("unchecked")
     public void readResouceWithDefaultRetryPolicy_DoesNotRetry_ForIoException() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(endpoint)).thenThrow(new IOException());
+        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class))).thenThrow(new IOException());
 
         try {
             new EC2CredentialsUtils(mockConnection).readResource(endpoint);
             fail("Expected an IOexception");
         } catch (IOException exception) {
-            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(endpoint);
+            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(eq(endpoint), any(Map.class));
         }
     }
 
@@ -169,14 +174,15 @@ public class EC2CredentialsUtilsTest {
      * returned by getMaxRetries method of the custom retry policy.
      */
     @Test
+    @SuppressWarnings("unchecked")
     public void readResouceWithCustomRetryPolicy_DoesRetry_ForIoException() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(endpoint)).thenThrow(new IOException());
+        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class))).thenThrow(new IOException());
 
         try {
-            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy);
+            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy, null);
             fail("Expected an IOexception");
         } catch (IOException exception) {
-             Mockito.verify(mockConnection, Mockito.times(CustomRetryPolicy.MAX_RETRIES + 1)).connectToEndpoint(endpoint);
+             Mockito.verify(mockConnection, Mockito.times(CustomRetryPolicy.MAX_RETRIES + 1)).connectToEndpoint(eq(endpoint), any(Map.class));
         }
     }
 
@@ -186,15 +192,16 @@ public class EC2CredentialsUtilsTest {
      * then the request is not retried.
      */
     @Test
+    @SuppressWarnings("unchecked")
     public void readResouceWithCustomRetryPolicy_DoesNotRetry_ForNonIoException() throws IOException {
         generateStub(500, "Non Json error body");
-        Mockito.when(mockConnection.connectToEndpoint(endpoint)).thenCallRealMethod();
+        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class))).thenCallRealMethod();
 
         try {
-            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy);
+            new EC2CredentialsUtils(mockConnection).readResource(endpoint, customRetryPolicy, new HashMap<String, String>());
             fail("Expected an AmazonServiceException");
         } catch (AmazonServiceException ase) {
-            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(endpoint);
+            Mockito.verify(mockConnection, Mockito.times(1)).connectToEndpoint(eq(endpoint), any(Map.class));
         }
     }
 

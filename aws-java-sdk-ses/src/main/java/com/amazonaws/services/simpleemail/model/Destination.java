@@ -23,7 +23,7 @@ import javax.annotation.Generated;
  * By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use MIME
  * encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
  * <code>=?charset?encoding?encoded-text?=</code>. For more information, see <a
- * href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+ * href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/Destination" target="_top">AWS API

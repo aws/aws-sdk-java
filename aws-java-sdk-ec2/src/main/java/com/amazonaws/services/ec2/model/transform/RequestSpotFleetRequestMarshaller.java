@@ -452,6 +452,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                 request.addParameter("SpotFleetRequestConfig.ReplaceUnhealthyInstances",
                         StringUtils.fromBoolean(spotFleetRequestConfig.getReplaceUnhealthyInstances()));
             }
+
+            if (spotFleetRequestConfig.getInstanceInterruptionBehavior() != null) {
+                request.addParameter("SpotFleetRequestConfig.InstanceInterruptionBehavior",
+                        StringUtils.fromString(spotFleetRequestConfig.getInstanceInterruptionBehavior()));
+            }
         }
 
         return request;

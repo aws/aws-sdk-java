@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -74,7 +76,7 @@ public final class EC2CredentialsUtils {
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint) throws IOException {
-        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY);
+        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, new HashMap<String, String>());
     }
 
     /**
@@ -97,13 +99,13 @@ public final class EC2CredentialsUtils {
      * @throws SdkClientException
      *             If the requested service is not found.
      */
-    public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy) throws IOException {
+    public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) throws IOException {
         int retriesAttempted = 0;
         InputStream inputStream = null;
 
         while (true) {
             try {
-                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint);
+                HttpURLConnection connection = connectionUtils.connectToEndpoint(endpoint, headers);
 
                 int statusCode = connection.getResponseCode();
 

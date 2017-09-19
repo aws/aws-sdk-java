@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 public class InvalidSnsTopicException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicates that the topic does not exist.
+     * </p>
+     */
     private String topic;
 
     /**
@@ -39,7 +44,12 @@ public class InvalidSnsTopicException extends com.amazonaws.services.simpleemail
     }
 
     /**
+     * <p>
+     * Indicates that the topic does not exist.
+     * </p>
+     * 
      * @param topic
+     *        Indicates that the topic does not exist.
      */
 
     public void setTopic(String topic) {
@@ -47,7 +57,11 @@ public class InvalidSnsTopicException extends com.amazonaws.services.simpleemail
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates that the topic does not exist.
+     * </p>
+     * 
+     * @return Indicates that the topic does not exist.
      */
 
     public String getTopic() {
@@ -55,7 +69,12 @@ public class InvalidSnsTopicException extends com.amazonaws.services.simpleemail
     }
 
     /**
+     * <p>
+     * Indicates that the topic does not exist.
+     * </p>
+     * 
      * @param topic
+     *        Indicates that the topic does not exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

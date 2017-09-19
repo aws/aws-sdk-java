@@ -33,7 +33,7 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      */
     private String ruleSetName;
@@ -54,11 +54,11 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the rule set to which to add the rule.
+     *        The name of the rule set that the receipt rule will be added to.
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -67,10 +67,10 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      * 
-     * @return The name of the rule set to which to add the rule.
+     * @return The name of the rule set that the receipt rule will be added to.
      */
 
     public String getRuleSetName() {
@@ -79,11 +79,11 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the rule set to which to add the rule.
+     * The name of the rule set that the receipt rule will be added to.
      * </p>
      * 
      * @param ruleSetName
-     *        The name of the rule set to which to add the rule.
+     *        The name of the rule set that the receipt rule will be added to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -332,6 +332,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new InvalidInputExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CredentialReportNotPresentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnrecognizedPublicKeyEncodingExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PolicyNotAttachableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MalformedCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.identitymanagement.model.AmazonIdentityManagementException.class));
 
@@ -564,6 +565,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachGroupPolicy
@@ -639,6 +643,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
      *         service-linked role. You must request the change through that service.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachRolePolicy
@@ -706,6 +713,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachUserPolicy
@@ -2847,6 +2857,79 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Submits a service-linked role deletion request and returns a <code>DeletionTaskId</code>, which you can use to
+     * check the status of the deletion. Before you call this operation, confirm that the role has no active sessions
+     * and that any resources used by the role in the linked service are deleted. If you call this operation more than
+     * once for the same service-linked role and an earlier deletion task is not complete, then the
+     * <code>DeletionTaskId</code> of the earlier request is returned.
+     * </p>
+     * <p>
+     * If you submit a deletion request for a service-linked role whose linked service is still accessing a resource,
+     * then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns
+     * the reason for the failure, including the resources that must be deleted. To delete the service-linked role, you
+     * must first remove those resources from the linked service and then submit the deletion request again. Resources
+     * are specific to the service that is linked to the role. For more information about removing resources from a
+     * service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a> for your service.
+     * </p>
+     * <p>
+     * For more information about service-linked roles, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * >Roles Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param deleteServiceLinkedRoleRequest
+     * @return Result of the DeleteServiceLinkedRole operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error message describes the limit exceeded.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.DeleteServiceLinkedRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServiceLinkedRole(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServiceLinkedRoleResult executeDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteServiceLinkedRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteServiceLinkedRoleRequest> request = null;
+        Response<DeleteServiceLinkedRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteServiceLinkedRoleRequestMarshaller().marshall(super.beforeMarshalling(deleteServiceLinkedRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<DeleteServiceLinkedRoleResult>(
+                    new DeleteServiceLinkedRoleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified service-specific credential.
      * </p>
      * 
@@ -4642,6 +4725,66 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetServerCertificateResult> responseHandler = new StaxResponseHandler<GetServerCertificateResult>(
                     new GetServerCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the status of your service-linked role deletion. After you use the <a>DeleteServiceLinkedRole</a> API
+     * operation to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in
+     * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this
+     * operation returns the reason that it failed.
+     * </p>
+     * 
+     * @param getServiceLinkedRoleDeletionStatusRequest
+     * @return Result of the GetServiceLinkedRoleDeletionStatus operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.GetServiceLinkedRoleDeletionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetServiceLinkedRoleDeletionStatusResult getServiceLinkedRoleDeletionStatus(GetServiceLinkedRoleDeletionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServiceLinkedRoleDeletionStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetServiceLinkedRoleDeletionStatusResult executeGetServiceLinkedRoleDeletionStatus(
+            GetServiceLinkedRoleDeletionStatusRequest getServiceLinkedRoleDeletionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getServiceLinkedRoleDeletionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetServiceLinkedRoleDeletionStatusRequest> request = null;
+        Response<GetServiceLinkedRoleDeletionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetServiceLinkedRoleDeletionStatusRequestMarshaller()
+                        .marshall(super.beforeMarshalling(getServiceLinkedRoleDeletionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetServiceLinkedRoleDeletionStatusResult> responseHandler = new StaxResponseHandler<GetServiceLinkedRoleDeletionStatusResult>(
+                    new GetServiceLinkedRoleDeletionStatusResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6987,7 +7130,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyEvaluationException
-     *         The request failed because a provided policy could not be successfully evaluated. An additional detail
+     *         The request failed because a provided policy could not be successfully evaluated. An additional detailed
      *         message indicates the source of the failure.
      * @sample AmazonIdentityManagement.SimulateCustomPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy" target="_top">AWS API
@@ -7072,7 +7215,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyEvaluationException
-     *         The request failed because a provided policy could not be successfully evaluated. An additional detail
+     *         The request failed because a provided policy could not be successfully evaluated. An additional detailed
      *         message indicates the source of the failure.
      * @sample AmazonIdentityManagement.SimulatePrincipalPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy" target="_top">AWS

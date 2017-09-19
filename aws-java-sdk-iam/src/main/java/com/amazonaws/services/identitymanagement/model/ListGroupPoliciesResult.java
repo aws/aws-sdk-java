@@ -30,6 +30,11 @@ public class ListGroupPoliciesResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of policy names.
      * </p>
+     * <p>
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-+
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
     /**
@@ -54,8 +59,17 @@ public class ListGroupPoliciesResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of policy names.
      * </p>
+     * <p>
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-+
+     * </p>
      * 
-     * @return A list of policy names.
+     * @return A list of policy names.</p>
+     *         <p>
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *         any of the following characters: =,.@-+
      */
 
     public java.util.List<String> getPolicyNames() {
@@ -69,9 +83,18 @@ public class ListGroupPoliciesResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of policy names.
      * </p>
+     * <p>
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-+
+     * </p>
      * 
      * @param policyNames
-     *        A list of policy names.
+     *        A list of policy names.</p>
+     *        <p>
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-+
      */
 
     public void setPolicyNames(java.util.Collection<String> policyNames) {
@@ -88,13 +111,22 @@ public class ListGroupPoliciesResult extends com.amazonaws.AmazonWebServiceResul
      * A list of policy names.
      * </p>
      * <p>
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-+
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPolicyNames(java.util.Collection)} or {@link #withPolicyNames(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param policyNames
-     *        A list of policy names.
+     *        A list of policy names.</p>
+     *        <p>
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-+
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,9 +144,18 @@ public class ListGroupPoliciesResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of policy names.
      * </p>
+     * <p>
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-+
+     * </p>
      * 
      * @param policyNames
-     *        A list of policy names.
+     *        A list of policy names.</p>
+     *        <p>
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
+     *        any of the following characters: =,.@-+
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

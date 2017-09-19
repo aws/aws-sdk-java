@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request failed because a provided policy could not be successfully evaluated. An additional detail message
+ * The request failed because a provided policy could not be successfully evaluated. An additional detailed message
  * indicates the source of the failure.
  * </p>
  */

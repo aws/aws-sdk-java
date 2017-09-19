@@ -350,6 +350,10 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             request.addParameter("ValidUntil", StringUtils.fromDate(requestSpotInstancesRequest.getValidUntil()));
         }
 
+        if (requestSpotInstancesRequest.getInstanceInterruptionBehavior() != null) {
+            request.addParameter("InstanceInterruptionBehavior", StringUtils.fromString(requestSpotInstancesRequest.getInstanceInterruptionBehavior()));
+        }
+
         return request;
     }
 

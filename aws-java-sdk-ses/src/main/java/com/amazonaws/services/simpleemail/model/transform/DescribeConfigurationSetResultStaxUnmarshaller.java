@@ -60,6 +60,10 @@ public class DescribeConfigurationSetResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("TrackingOptions", targetDepth)) {
+                    describeConfigurationSetResult.setTrackingOptions(TrackingOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeConfigurationSetResult;

@@ -16,7 +16,9 @@ package com.amazonaws.internal;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.Proxy;
 import java.net.URI;
+import java.util.Map;
 
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -36,12 +38,17 @@ public class ConnectionUtils {
         return instance;
     }
 
-    public HttpURLConnection connectToEndpoint(URI endpoint) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) endpoint.toURL().openConnection();
+    public HttpURLConnection connectToEndpoint(URI endpoint, Map<String, String> headers) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) endpoint.toURL().openConnection(Proxy.NO_PROXY);
         connection.setConnectTimeout(1000 * 2);
         connection.setReadTimeout(1000 * 5);
         connection.setRequestMethod("GET");
         connection.setDoOutput(true);
+
+        for (Map.Entry<String, String> header : headers.entrySet()) {
+            connection.addRequestProperty(header.getKey(), header.getValue());
+        }
+
         // TODO should we autoredirect 3xx
         // connection.setInstanceFollowRedirects(false);
         connection.connect();

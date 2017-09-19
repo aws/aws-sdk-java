@@ -99,6 +99,8 @@ public enum IdentityManagementActions implements Action {
     DeleteSSHPublicKey("iam:DeleteSSHPublicKey"),
     /** Action for the DeleteServerCertificate operation. */
     DeleteServerCertificate("iam:DeleteServerCertificate"),
+    /** Action for the DeleteServiceLinkedRole operation. */
+    DeleteServiceLinkedRole("iam:DeleteServiceLinkedRole"),
     /** Action for the DeleteServiceSpecificCredential operation. */
     DeleteServiceSpecificCredential("iam:DeleteServiceSpecificCredential"),
     /** Action for the DeleteSigningCertificate operation. */
@@ -157,6 +159,8 @@ public enum IdentityManagementActions implements Action {
     GetSSHPublicKey("iam:GetSSHPublicKey"),
     /** Action for the GetServerCertificate operation. */
     GetServerCertificate("iam:GetServerCertificate"),
+    /** Action for the GetServiceLinkedRoleDeletionStatus operation. */
+    GetServiceLinkedRoleDeletionStatus("iam:GetServiceLinkedRoleDeletionStatus"),
     /** Action for the GetUser operation. */
     GetUser("iam:GetUser"),
     /** Action for the GetUserPolicy operation. */

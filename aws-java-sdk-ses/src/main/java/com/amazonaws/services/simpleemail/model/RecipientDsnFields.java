@@ -33,7 +33,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address to which the message was ultimately delivered. This corresponds to the
+     * The email address that the message was ultimately delivered to. This corresponds to the
      * <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      * <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the
@@ -92,7 +92,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address to which the message was ultimately delivered. This corresponds to the
+     * The email address that the message was ultimately delivered to. This corresponds to the
      * <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      * <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the
@@ -106,7 +106,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * </note>
      * 
      * @param finalRecipient
-     *        The email address to which the message was ultimately delivered. This corresponds to the
+     *        The email address that the message was ultimately delivered to. This corresponds to the
      *        <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      *        <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      *        <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of
@@ -123,7 +123,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address to which the message was ultimately delivered. This corresponds to the
+     * The email address that the message was ultimately delivered to. This corresponds to the
      * <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      * <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the
@@ -136,7 +136,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return The email address to which the message was ultimately delivered. This corresponds to the
+     * @return The email address that the message was ultimately delivered to. This corresponds to the
      *         <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      *         <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      *         <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of
@@ -153,7 +153,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The email address to which the message was ultimately delivered. This corresponds to the
+     * The email address that the message was ultimately delivered to. This corresponds to the
      * <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      * <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      * <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of the
@@ -167,7 +167,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * </note>
      * 
      * @param finalRecipient
-     *        The email address to which the message was ultimately delivered. This corresponds to the
+     *        The email address that the message was ultimately delivered to. This corresponds to the
      *        <code>Final-Recipient</code> in the DSN. If not specified, <code>FinalRecipient</code> will be set to the
      *        <code>Recipient</code> specified in the <code>BouncedRecipientInfo</code> structure. Either
      *        <code>FinalRecipient</code> or the recipient in <code>BouncedRecipientInfo</code> must be a recipient of

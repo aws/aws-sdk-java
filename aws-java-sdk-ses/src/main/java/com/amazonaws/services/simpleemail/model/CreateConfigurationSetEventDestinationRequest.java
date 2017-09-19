@@ -34,25 +34,24 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      */
     private EventDestination eventDestination;
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set to which to apply the event destination.
+     *        The name of the configuration set that the event destination should be associated with.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -61,10 +60,10 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      * 
-     * @return The name of the configuration set to which to apply the event destination.
+     * @return The name of the configuration set that the event destination should be associated with.
      */
 
     public String getConfigurationSetName() {
@@ -73,11 +72,11 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * The name of the configuration set to which to apply the event destination.
+     * The name of the configuration set that the event destination should be associated with.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set to which to apply the event destination.
+     *        The name of the configuration set that the event destination should be associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +87,11 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      * 
      * @param eventDestination
-     *        An object that describes the AWS service to which Amazon SES will publish the email sending events
-     *        associated with the specified configuration set.
+     *        An object that describes the AWS service that email sending event information will be published to.
      */
 
     public void setEventDestination(EventDestination eventDestination) {
@@ -103,12 +100,10 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      * 
-     * @return An object that describes the AWS service to which Amazon SES will publish the email sending events
-     *         associated with the specified configuration set.
+     * @return An object that describes the AWS service that email sending event information will be published to.
      */
 
     public EventDestination getEventDestination() {
@@ -117,13 +112,11 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
 
     /**
      * <p>
-     * An object that describes the AWS service to which Amazon SES will publish the email sending events associated
-     * with the specified configuration set.
+     * An object that describes the AWS service that email sending event information will be published to.
      * </p>
      * 
      * @param eventDestination
-     *        An object that describes the AWS service to which Amazon SES will publish the email sending events
-     *        associated with the specified configuration set.
+     *        An object that describes the AWS service that email sending event information will be published to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

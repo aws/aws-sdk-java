@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 public class InvalidS3ConfigurationException extends com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     */
     private String bucket;
 
     /**
@@ -39,7 +44,12 @@ public class InvalidS3ConfigurationException extends com.amazonaws.services.simp
     }
 
     /**
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     * 
      * @param bucket
+     *        Indicated that the S3 Bucket was not found.
      */
 
     public void setBucket(String bucket) {
@@ -47,7 +57,11 @@ public class InvalidS3ConfigurationException extends com.amazonaws.services.simp
     }
 
     /**
-     * @return
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     * 
+     * @return Indicated that the S3 Bucket was not found.
      */
 
     public String getBucket() {
@@ -55,7 +69,12 @@ public class InvalidS3ConfigurationException extends com.amazonaws.services.simp
     }
 
     /**
+     * <p>
+     * Indicated that the S3 Bucket was not found.
+     * </p>
+     * 
      * @param bucket
+     *        Indicated that the S3 Bucket was not found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

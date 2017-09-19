@@ -54,6 +54,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public CreateConfigurationSetTrackingOptionsResult createConfigurationSetTrackingOptions(CreateConfigurationSetTrackingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -75,6 +80,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConfigurationSetTrackingOptionsResult deleteConfigurationSetTrackingOptions(DeleteConfigurationSetTrackingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -275,6 +285,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConfigurationSetTrackingOptionsResult updateConfigurationSetTrackingOptions(UpdateConfigurationSetTrackingOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1964,6 +1964,71 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Submits a service-linked role deletion request and returns a <code>DeletionTaskId</code>, which you can use to
+     * check the status of the deletion. Before you call this operation, confirm that the role has no active sessions
+     * and that any resources used by the role in the linked service are deleted. If you call this operation more than
+     * once for the same service-linked role and an earlier deletion task is not complete, then the
+     * <code>DeletionTaskId</code> of the earlier request is returned.
+     * </p>
+     * <p>
+     * If you submit a deletion request for a service-linked role whose linked service is still accessing a resource,
+     * then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns
+     * the reason for the failure, including the resources that must be deleted. To delete the service-linked role, you
+     * must first remove those resources from the linked service and then submit the deletion request again. Resources
+     * are specific to the service that is linked to the role. For more information about removing resources from a
+     * service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a> for your service.
+     * </p>
+     * <p>
+     * For more information about service-linked roles, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * >Roles Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param deleteServiceLinkedRoleRequest
+     * @return A Java Future containing the result of the DeleteServiceLinkedRole operation returned by the service.
+     * @sample AmazonIdentityManagementAsync.DeleteServiceLinkedRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest);
+
+    /**
+     * <p>
+     * Submits a service-linked role deletion request and returns a <code>DeletionTaskId</code>, which you can use to
+     * check the status of the deletion. Before you call this operation, confirm that the role has no active sessions
+     * and that any resources used by the role in the linked service are deleted. If you call this operation more than
+     * once for the same service-linked role and an earlier deletion task is not complete, then the
+     * <code>DeletionTaskId</code> of the earlier request is returned.
+     * </p>
+     * <p>
+     * If you submit a deletion request for a service-linked role whose linked service is still accessing a resource,
+     * then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns
+     * the reason for the failure, including the resources that must be deleted. To delete the service-linked role, you
+     * must first remove those resources from the linked service and then submit the deletion request again. Resources
+     * are specific to the service that is linked to the role. For more information about removing resources from a
+     * service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a> for your service.
+     * </p>
+     * <p>
+     * For more information about service-linked roles, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * >Roles Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param deleteServiceLinkedRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteServiceLinkedRole operation returned by the service.
+     * @sample AmazonIdentityManagementAsyncHandler.DeleteServiceLinkedRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceLinkedRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified service-specific credential.
      * </p>
      * 
@@ -3346,6 +3411,47 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      */
     java.util.concurrent.Future<GetServerCertificateResult> getServerCertificateAsync(GetServerCertificateRequest getServerCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<GetServerCertificateRequest, GetServerCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the status of your service-linked role deletion. After you use the <a>DeleteServiceLinkedRole</a> API
+     * operation to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in
+     * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this
+     * operation returns the reason that it failed.
+     * </p>
+     * 
+     * @param getServiceLinkedRoleDeletionStatusRequest
+     * @return A Java Future containing the result of the GetServiceLinkedRoleDeletionStatus operation returned by the
+     *         service.
+     * @sample AmazonIdentityManagementAsync.GetServiceLinkedRoleDeletionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceLinkedRoleDeletionStatusResult> getServiceLinkedRoleDeletionStatusAsync(
+            GetServiceLinkedRoleDeletionStatusRequest getServiceLinkedRoleDeletionStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the status of your service-linked role deletion. After you use the <a>DeleteServiceLinkedRole</a> API
+     * operation to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in
+     * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this
+     * operation returns the reason that it failed.
+     * </p>
+     * 
+     * @param getServiceLinkedRoleDeletionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetServiceLinkedRoleDeletionStatus operation returned by the
+     *         service.
+     * @sample AmazonIdentityManagementAsyncHandler.GetServiceLinkedRoleDeletionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLinkedRoleDeletionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetServiceLinkedRoleDeletionStatusResult> getServiceLinkedRoleDeletionStatusAsync(
+            GetServiceLinkedRoleDeletionStatusRequest getServiceLinkedRoleDeletionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetServiceLinkedRoleDeletionStatusRequest, GetServiceLinkedRoleDeletionStatusResult> asyncHandler);
 
     /**
      * <p>

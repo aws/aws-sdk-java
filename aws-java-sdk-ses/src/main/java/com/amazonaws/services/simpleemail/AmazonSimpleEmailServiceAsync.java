@@ -27,15 +27,15 @@ import com.amazonaws.services.simpleemail.model.*;
  * <p>
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
- * This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to be used in
- * conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer
- * Guide</a>.
+ * This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple Email Service</a> (Amazon SES).
+ * This documentation is intended to be used in conjunction with the <i> <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
  * </p>
  * <note>
  * <p>
  * For a list of Amazon SES endpoints to use in service requests, see <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the Amazon SES
- * Developer Guide.
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <i> <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
  * </p>
  * </note>
  */
@@ -48,12 +48,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * receipt rule set and are completely independent of the source rule set.
      * </p>
      * <p>
-     * For information about setting up rule sets, see the <a
+     * For information about setting up rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param cloneReceiptRuleSetRequest
@@ -74,12 +74,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * receipt rule set and are completely independent of the source rule set.
      * </p>
      * <p>
-     * For information about setting up rule sets, see the <a
+     * For information about setting up rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param cloneReceiptRuleSetRequest
@@ -105,11 +105,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * <p>
      * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
+     * see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createConfigurationSetRequest
@@ -130,11 +130,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * <p>
      * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
+     * see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createConfigurationSetRequest
@@ -166,12 +166,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
-     * configuration set. For information about using configuration sets, see the <a
+     * configuration set. For information about using configuration sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createConfigurationSetEventDestinationRequest
@@ -202,12 +202,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
-     * configuration set. For information about using configuration sets, see the <a
+     * configuration set. For information about using configuration sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createConfigurationSetEventDestinationRequest
@@ -233,15 +233,68 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Creates an association between a configuration set and a custom domain for open and click event tracking.
+     * </p>
+     * <p>
+     * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
+     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
+     * SES-operated domain. For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * </p>
+     * 
+     * @param createConfigurationSetTrackingOptionsRequest
+     *        Represents a request to create an open and click tracking option object in a configuration set.
+     * @return A Java Future containing the result of the CreateConfigurationSetTrackingOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsync.CreateConfigurationSetTrackingOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConfigurationSetTrackingOptionsResult> createConfigurationSetTrackingOptionsAsync(
+            CreateConfigurationSetTrackingOptionsRequest createConfigurationSetTrackingOptionsRequest);
+
+    /**
+     * <p>
+     * Creates an association between a configuration set and a custom domain for open and click event tracking.
+     * </p>
+     * <p>
+     * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
+     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
+     * SES-operated domain. For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * </p>
+     * 
+     * @param createConfigurationSetTrackingOptionsRequest
+     *        Represents a request to create an open and click tracking option object in a configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConfigurationSetTrackingOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.CreateConfigurationSetTrackingOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConfigurationSetTrackingOptionsResult> createConfigurationSetTrackingOptionsAsync(
+            CreateConfigurationSetTrackingOptionsRequest createConfigurationSetTrackingOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConfigurationSetTrackingOptionsRequest, CreateConfigurationSetTrackingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new IP address filter.
      * </p>
      * <p>
-     * For information about setting up IP address filters, see the <a
+     * For information about setting up IP address filters, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createReceiptFilterRequest
@@ -261,12 +314,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Creates a new IP address filter.
      * </p>
      * <p>
-     * For information about setting up IP address filters, see the <a
+     * For information about setting up IP address filters, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createReceiptFilterRequest
@@ -291,12 +344,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Creates a receipt rule.
      * </p>
      * <p>
-     * For information about setting up receipt rules, see the <a
+     * For information about setting up receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createReceiptRuleRequest
@@ -316,12 +369,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Creates a receipt rule.
      * </p>
      * <p>
-     * For information about setting up receipt rules, see the <a
+     * For information about setting up receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createReceiptRuleRequest
@@ -346,12 +399,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Creates an empty receipt rule set.
      * </p>
      * <p>
-     * For information about setting up receipt rule sets, see the <a
+     * For information about setting up receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createReceiptRuleSetRequest
@@ -371,12 +424,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Creates an empty receipt rule set.
      * </p>
      * <p>
-     * For information about setting up receipt rule sets, see the <a
+     * For information about setting up receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param createReceiptRuleSetRequest
@@ -398,15 +451,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes a configuration set.
+     * Deletes a configuration set. Configuration sets enable you to publish email sending events. For information about
+     * using configuration sets, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteConfigurationSetRequest
@@ -423,15 +474,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes a configuration set.
+     * Deletes a configuration set. Configuration sets enable you to publish email sending events. For information about
+     * using configuration sets, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteConfigurationSetRequest
@@ -453,16 +502,14 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes a configuration set event destination.
-     * </p>
-     * <p>
-     * Configuration set event destinations are associated with configuration sets, which enable you to publish email
-     * sending events. For information about using configuration sets, see the <a
+     * Deletes a configuration set event destination. Configuration set event destinations are associated with
+     * configuration sets, which enable you to publish email sending events. For information about using configuration
+     * sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteConfigurationSetEventDestinationRequest
@@ -482,16 +529,14 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes a configuration set event destination.
-     * </p>
-     * <p>
-     * Configuration set event destinations are associated with configuration sets, which enable you to publish email
-     * sending events. For information about using configuration sets, see the <a
+     * Deletes a configuration set event destination. Configuration set event destinations are associated with
+     * configuration sets, which enable you to publish email sending events. For information about using configuration
+     * sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteConfigurationSetEventDestinationRequest
@@ -516,10 +561,75 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Deletes an association between a configuration set and a custom domain for open and click event tracking.
+     * </p>
+     * <p>
+     * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
+     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
+     * SES-operated domain. For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * </p>
+     * <note>
+     * <p>
+     * Deleting this kind of association will result in emails sent using the specified configuration set to capture
+     * open and click events using the standard, Amazon SES-operated domains.
+     * </p>
+     * </note>
+     * 
+     * @param deleteConfigurationSetTrackingOptionsRequest
+     *        Represents a request to delete open and click tracking options in a configuration set.
+     * @return A Java Future containing the result of the DeleteConfigurationSetTrackingOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsync.DeleteConfigurationSetTrackingOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConfigurationSetTrackingOptionsResult> deleteConfigurationSetTrackingOptionsAsync(
+            DeleteConfigurationSetTrackingOptionsRequest deleteConfigurationSetTrackingOptionsRequest);
+
+    /**
+     * <p>
+     * Deletes an association between a configuration set and a custom domain for open and click event tracking.
+     * </p>
+     * <p>
+     * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
+     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
+     * SES-operated domain. For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * </p>
+     * <note>
+     * <p>
+     * Deleting this kind of association will result in emails sent using the specified configuration set to capture
+     * open and click events using the standard, Amazon SES-operated domains.
+     * </p>
+     * </note>
+     * 
+     * @param deleteConfigurationSetTrackingOptionsRequest
+     *        Represents a request to delete open and click tracking options in a configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConfigurationSetTrackingOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.DeleteConfigurationSetTrackingOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConfigurationSetTrackingOptionsResult> deleteConfigurationSetTrackingOptionsAsync(
+            DeleteConfigurationSetTrackingOptionsRequest deleteConfigurationSetTrackingOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetTrackingOptionsRequest, DeleteConfigurationSetTrackingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified identity (an email address or a domain) from the list of verified identities.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteIdentityRequest
@@ -536,7 +646,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified identity (an email address or a domain) from the list of verified identities.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteIdentityRequest
@@ -565,12 +675,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
@@ -597,12 +707,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
@@ -627,12 +737,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified IP address filter.
      * </p>
      * <p>
-     * For information about managing IP address filters, see the <a
+     * For information about managing IP address filters, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteReceiptFilterRequest
@@ -652,12 +762,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified IP address filter.
      * </p>
      * <p>
-     * For information about managing IP address filters, see the <a
+     * For information about managing IP address filters, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteReceiptFilterRequest
@@ -682,12 +792,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified receipt rule.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <a
+     * For information about managing receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteReceiptRuleRequest
@@ -707,12 +817,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Deletes the specified receipt rule.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <a
+     * For information about managing receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteReceiptRuleRequest
@@ -742,12 +852,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteReceiptRuleSetRequest
@@ -772,12 +882,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param deleteReceiptRuleSetRequest
@@ -799,16 +909,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes the specified email address from the list of verified addresses.
-     * </p>
-     * <important>
-     * <p>
-     * The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-     * DeleteIdentity action is now preferred.
-     * </p>
-     * </important>
-     * <p>
-     * This action is throttled at one request per second.
+     * Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses and domains.
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
@@ -824,16 +925,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Deletes the specified email address from the list of verified addresses.
-     * </p>
-     * <important>
-     * <p>
-     * The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-     * DeleteIdentity action is now preferred.
-     * </p>
-     * </important>
-     * <p>
-     * This action is throttled at one request per second.
+     * Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses and domains.
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
@@ -857,12 +949,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns the metadata and receipt rules for the receipt rule set that is currently active.
      * </p>
      * <p>
-     * For information about setting up receipt rule sets, see the <a
+     * For information about setting up receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeActiveReceiptRuleSetRequest
@@ -884,12 +976,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns the metadata and receipt rules for the receipt rule set that is currently active.
      * </p>
      * <p>
-     * For information about setting up receipt rule sets, see the <a
+     * For information about setting up receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeActiveReceiptRuleSetRequest
@@ -913,15 +1005,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the details of the specified configuration set.
+     * Returns the details of the specified configuration set. For information about using configuration sets, see the
+     * <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeConfigurationSetRequest
@@ -938,15 +1027,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the details of the specified configuration set.
+     * Returns the details of the specified configuration set. For information about using configuration sets, see the
+     * <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeConfigurationSetRequest
@@ -971,12 +1057,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns the details of the specified receipt rule.
      * </p>
      * <p>
-     * For information about setting up receipt rules, see the <a
+     * For information about setting up receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeReceiptRuleRequest
@@ -996,12 +1082,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns the details of the specified receipt rule.
      * </p>
      * <p>
-     * For information about setting up receipt rules, see the <a
+     * For information about setting up receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeReceiptRuleRequest
@@ -1026,12 +1112,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns the details of the specified receipt rule set.
      * </p>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeReceiptRuleSetRequest
@@ -1051,12 +1137,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Returns the details of the specified receipt rule set.
      * </p>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param describeReceiptRuleSetRequest
@@ -1078,12 +1164,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also
+     * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also
      * returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified
      * that these tokens have been published.
      * </p>
      * <p>
-     * This action takes a list of identities as input and returns the following information for each:
+     * This operation takes a list of identities as input and returns the following information for each:
      * </p>
      * <ul>
      * <li>
@@ -1105,13 +1191,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </li>
      * </ul>
      * <p>
-     * This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a
-     * time.
+     * This operation is throttled at one request per second and can only get DKIM attributes for up to 100 identities
+     * at a time.
      * </p>
      * <p>
-     * For more information about creating DNS records using DKIM tokens, go to the <a
+     * For more information about creating DNS records using DKIM tokens, go to the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
@@ -1130,12 +1216,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also
+     * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also
      * returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified
      * that these tokens have been published.
      * </p>
      * <p>
-     * This action takes a list of identities as input and returns the following information for each:
+     * This operation takes a list of identities as input and returns the following information for each:
      * </p>
      * <ul>
      * <li>
@@ -1157,13 +1243,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </li>
      * </ul>
      * <p>
-     * This action is throttled at one request per second and can only get DKIM attributes for up to 100 identities at a
-     * time.
+     * This operation is throttled at one request per second and can only get DKIM attributes for up to 100 identities
+     * at a time.
      * </p>
      * <p>
-     * For more information about creating DNS records using DKIM tokens, go to the <a
+     * For more information about creating DNS records using DKIM tokens, go to the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
@@ -1187,10 +1273,10 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains).
+     * Returns the custom MAIL FROM attributes for a list of identities (email addresses : domains).
      * </p>
      * <p>
-     * This action is throttled at one request per second and can only get custom MAIL FROM attributes for up to 100
+     * This operation is throttled at one request per second and can only get custom MAIL FROM attributes for up to 100
      * identities at a time.
      * </p>
      * 
@@ -1209,10 +1295,10 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the custom MAIL FROM attributes for a list of identities (email addresses and/or domains).
+     * Returns the custom MAIL FROM attributes for a list of identities (email addresses : domains).
      * </p>
      * <p>
-     * This action is throttled at one request per second and can only get custom MAIL FROM attributes for up to 100
+     * This operation is throttled at one request per second and can only get custom MAIL FROM attributes for up to 100
      * identities at a time.
      * </p>
      * 
@@ -1240,12 +1326,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * notification attributes.
      * </p>
      * <p>
-     * This action is throttled at one request per second and can only get notification attributes for up to 100
+     * This operation is throttled at one request per second and can only get notification attributes for up to 100
      * identities at a time.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about using notifications with Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param getIdentityNotificationAttributesRequest
@@ -1268,12 +1355,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * notification attributes.
      * </p>
      * <p>
-     * This action is throttled at one request per second and can only get notification attributes for up to 100
+     * This operation is throttled at one request per second and can only get notification attributes for up to 100
      * identities at a time.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about using notifications with Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param getIdentityNotificationAttributesRequest
@@ -1308,12 +1396,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param getIdentityPoliciesRequest
@@ -1342,12 +1430,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param getIdentityPoliciesRequest
@@ -1388,7 +1476,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * verification process from the beginning.
      * </p>
      * <p>
-     * This action is throttled at one request per second and can only get verification attributes for up to 100
+     * This operation is throttled at one request per second and can only get verification attributes for up to 100
      * identities at a time.
      * </p>
      * 
@@ -1427,7 +1515,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * verification process from the beginning.
      * </p>
      * <p>
-     * This action is throttled at one request per second and can only get verification attributes for up to 100
+     * This operation is throttled at one request per second and can only get verification attributes for up to 100
      * identities at a time.
      * </p>
      * 
@@ -1453,10 +1541,10 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the user's current sending limits.
+     * Provides the sending limits for the Amazon SES account.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param getSendQuotaRequest
@@ -1469,10 +1557,10 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the user's current sending limits.
+     * Provides the sending limits for the Amazon SES account.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param getSendQuotaRequest
@@ -1504,14 +1592,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of
-     * sending activity.
+     * Provides sending statistics for the Amazon SES account. The result is a list of data points, representing the
+     * last two weeks of sending activity. Each data point in the list contains statistics for a 15-minute period of
+     * time.
      * </p>
      * <p>
-     * Each data point in the list contains statistics for a 15-minute interval.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param getSendStatisticsRequest
@@ -1524,14 +1610,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of
-     * sending activity.
+     * Provides sending statistics for the Amazon SES account. The result is a list of data points, representing the
+     * last two weeks of sending activity. Each data point in the list contains statistics for a 15-minute period of
+     * time.
      * </p>
      * <p>
-     * Each data point in the list contains statistics for a 15-minute interval.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param getSendStatisticsRequest
@@ -1564,15 +1648,17 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Lists the configuration sets associated with your AWS account.
+     * Provides a list of the configuration sets associated with your Amazon SES account. For information about using
+     * configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
+     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
-     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second and can return up to 50 configuration sets at a time.
+     * You can execute this operation no more than once per second. This operation will return up to 50 configuration
+     * sets each time it is run. If your Amazon SES account has more than 50 configuration sets, this operation will
+     * also return a NextToken element. You can then execute the <code>ListConfigurationSets</code> operation again,
+     * passing the <code>NextToken</code> parameter and the value of the NextToken element to retrieve additional
+     * results.
      * </p>
      * 
      * @param listConfigurationSetsRequest
@@ -1589,15 +1675,17 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Lists the configuration sets associated with your AWS account.
+     * Provides a list of the configuration sets associated with your Amazon SES account. For information about using
+     * configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
+     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
-     * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second and can return up to 50 configuration sets at a time.
+     * You can execute this operation no more than once per second. This operation will return up to 50 configuration
+     * sets each time it is run. If your Amazon SES account has more than 50 configuration sets, this operation will
+     * also return a NextToken element. You can then execute the <code>ListConfigurationSets</code> operation again,
+     * passing the <code>NextToken</code> parameter and the value of the NextToken element to retrieve additional
+     * results.
      * </p>
      * 
      * @param listConfigurationSetsRequest
@@ -1623,7 +1711,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * verification status.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listIdentitiesRequest
@@ -1642,7 +1730,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * verification status.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listIdentitiesRequest
@@ -1688,12 +1776,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listIdentityPoliciesRequest
@@ -1722,12 +1810,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listIdentityPoliciesRequest
@@ -1753,12 +1841,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Lists the IP address filters associated with your AWS account.
      * </p>
      * <p>
-     * For information about managing IP address filters, see the <a
+     * For information about managing IP address filters, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listReceiptFiltersRequest
@@ -1778,12 +1866,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Lists the IP address filters associated with your AWS account.
      * </p>
      * <p>
-     * For information about managing IP address filters, see the <a
+     * For information about managing IP address filters, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
-     * Developer Guide</a>.
+     * Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listReceiptFiltersRequest
@@ -1810,12 +1898,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <code>ListReceiptRuleSets</code> to retrieve the additional entries.
      * </p>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listReceiptRuleSetsRequest
@@ -1837,12 +1925,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <code>ListReceiptRuleSets</code> to retrieve the additional entries.
      * </p>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param listReceiptRuleSetsRequest
@@ -1864,16 +1952,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns a list containing all of the email addresses that have been verified.
-     * </p>
-     * <important>
-     * <p>
-     * The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The
-     * ListIdentities action is now preferred.
-     * </p>
-     * </important>
-     * <p>
-     * This action is throttled at one request per second.
+     * Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses and domains associated with
+     * your account.
      * </p>
      * 
      * @param listVerifiedEmailAddressesRequest
@@ -1887,16 +1967,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Returns a list containing all of the email addresses that have been verified.
-     * </p>
-     * <important>
-     * <p>
-     * The ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The
-     * ListIdentities action is now preferred.
-     * </p>
-     * </important>
-     * <p>
-     * This action is throttled at one request per second.
+     * Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses and domains associated with
+     * your account.
      * </p>
      * 
      * @param listVerifiedEmailAddressesRequest
@@ -1939,12 +2011,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param putIdentityPolicyRequest
@@ -1971,12 +2043,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <a
+     * identities. For information about using sending authorization, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param putIdentityPolicyRequest
@@ -2008,12 +2080,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param reorderReceiptRuleSetRequest
@@ -2039,12 +2111,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param reorderReceiptRuleSetRequest
@@ -2075,11 +2147,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about receiving email through Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.
+     * For information about receiving email through Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param sendBounceRequest
@@ -2102,11 +2175,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about receiving email through Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.
+     * For information about receiving email through Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param sendBounceRequest
@@ -2125,49 +2199,54 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Composes an email message based on input data, and then immediately queues the message for sending.
-     * </p>
-     * <p>
-     * There are several important points to know about <code>SendEmail</code>:
+     * Composes an email message and immediately queues it for sending. In order to send email using the
+     * <code>SendEmail</code> operation, your message must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can only send email from verified email addresses and domains; otherwise, you will get an
-     * "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify
-     * every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more
-     * information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * The message must be sent from a verified email address or domain. If you attempt to send email using a
+     * non-verified address or domain, the operation will result in an "Email address not verified" error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.
+     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
+     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You must provide at least one recipient email address. The recipient address can be a To: address, a CC: address,
-     * or a BCC: address. If any email address you provide is invalid, Amazon SES rejects the entire email.
+     * The total size of the message, including attachments, must be smaller than 10 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC:
-     * email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
-     * recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+     * The message must include at least one recipient email address. The recipient address can be a To: address, a CC:
+     * address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format
+     * <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even if the message
+     * contains other recipients that are valid.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your
-     * sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending
-     * quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-     * SES Developer Guide</a>.
+     * The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an
+     * email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call
+     * the <code>SendEmail</code> operation several times to send the message to each group.
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * For every message that you send, the total number of recipients (including each recipient in the To:, CC: and
+     * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
+     * quota</i>). For more information about sending quotas in Amazon SES, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param sendEmailRequest
      *        Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
@@ -2182,49 +2261,54 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Composes an email message based on input data, and then immediately queues the message for sending.
-     * </p>
-     * <p>
-     * There are several important points to know about <code>SendEmail</code>:
+     * Composes an email message and immediately queues it for sending. In order to send email using the
+     * <code>SendEmail</code> operation, your message must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can only send email from verified email addresses and domains; otherwise, you will get an
-     * "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify
-     * every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more
-     * information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * The message must be sent from a verified email address or domain. If you attempt to send email using a
+     * non-verified address or domain, the operation will result in an "Email address not verified" error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.
+     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
+     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You must provide at least one recipient email address. The recipient address can be a To: address, a CC: address,
-     * or a BCC: address. If any email address you provide is invalid, Amazon SES rejects the entire email.
+     * The total size of the message, including attachments, must be smaller than 10 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC:
-     * email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
-     * recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+     * The message must include at least one recipient email address. The recipient address can be a To: address, a CC:
+     * address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format
+     * <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even if the message
+     * contains other recipients that are valid.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your
-     * sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending
-     * quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-     * SES Developer Guide</a>.
+     * The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an
+     * email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call
+     * the <code>SendEmail</code> operation several times to send the message to each group.
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * For every message that you send, the total number of recipients (including each recipient in the To:, CC: and
+     * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
+     * quota</i>). For more information about sending quotas in Amazon SES, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param sendEmailRequest
      *        Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
@@ -2244,66 +2328,75 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is
-     * useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards;
-     * otherwise, the message cannot be sent.
+     * Composes an email message and immediately queues it for sending. When calling this operation, you may specify the
+     * message headers as well as the content. The <code>SendRawEmail</code> operation is particularly useful for
+     * sending multipart MIME emails (such as those that contain both a plain-text and an HTML version).
      * </p>
      * <p>
-     * There are several important points to know about <code>SendRawEmail</code>:
+     * In order to send email using the <code>SendRawEmail</code> operation, your message must meet the following
+     * requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can only send email from verified email addresses and domains; otherwise, you will get an
-     * "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify
-     * every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more
-     * information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * The message must be sent from a verified email address or domain. If you attempt to send email using a
+     * non-verified address or domain, the operation will result in an "Email address not verified" error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.
+     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
+     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You must provide at least one recipient email address. The recipient address can be a To: address, a CC: address,
-     * or a BCC: address. If any email address you provide is invalid, Amazon SES rejects the entire email.
+     * The total size of the message, including attachments, must be smaller than 10 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC:
-     * email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
-     * recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+     * The message must include at least one recipient email address. The recipient address can be a To: address, a CC:
+     * address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format
+     * <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even if the message
+     * contains other recipients that are valid.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group
-     * list counts towards the 50-recipient limit.
+     * The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an
+     * email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call
+     * the <code>SendRawEmail</code> operation several times to send the message to each group.
      * </p>
      * </li>
-     * <li>
+     * </ul>
+     * <important>
      * <p>
-     * Amazon SES overrides any Message-ID and Date headers you provide.
+     * For every message that you send, the total number of recipients (including each recipient in the To:, CC: and
+     * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
+     * quota</i>). For more information about sending quotas in Amazon SES, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
-     * </li>
+     * </important>
+     * <p>
+     * Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code> operation:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your
-     * sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending
-     * quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-     * SES Developer Guide</a>.
+     * Although you can customize the message headers when using the <code>SendRawEmail</code> operation, Amazon SES
+     * will automatically apply its own <code>Message-ID</code> and <code>Date</code> headers; if you passed these
+     * headers when creating the message, they will be overwritten by the values that Amazon SES provides.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you
-     * to specify the cross-account identity for the email's "Source," "From," and "Return-Path" parameters in one of
-     * two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
+     * to specify the cross-account identity for the email's Source, From, and Return-Path parameters in one of two
+     * ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
      * <code>ReturnPathArn</code> to the API, or you can include the following X-headers in the header of your raw
      * email:
      * </p>
@@ -2326,18 +2419,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * <important>
      * <p>
-     * Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the
-     * email.
+     * Do not include these X-headers in the DKIM signature; Amazon SES will remove them before sending the email.
      * </p>
      * </important>
      * <p>
-     * For the most common sending authorization use case, we recommend that you specify the
-     * <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code> or
-     * <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding X-headers.) If you only specify
-     * the <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address and the "Return Path" address
-     * to the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     * Developer Guide</a>.
+     * For most common sending authorization scenarios, we recommend that you specify the <code>SourceIdentityArn</code>
+     * parameter and not the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters. If you only
+     * specify the <code>SourceIdentityArn</code> parameter, Amazon SES will set the From and Return Path addresses to
+     * the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see
+     * the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
+     * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2355,66 +2446,75 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Sends an email message, with header and content specified by the client. The <code>SendRawEmail</code> action is
-     * useful for sending multipart MIME emails. The raw text of the message must comply with Internet email standards;
-     * otherwise, the message cannot be sent.
+     * Composes an email message and immediately queues it for sending. When calling this operation, you may specify the
+     * message headers as well as the content. The <code>SendRawEmail</code> operation is particularly useful for
+     * sending multipart MIME emails (such as those that contain both a plain-text and an HTML version).
      * </p>
      * <p>
-     * There are several important points to know about <code>SendRawEmail</code>:
+     * In order to send email using the <code>SendRawEmail</code> operation, your message must meet the following
+     * requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can only send email from verified email addresses and domains; otherwise, you will get an
-     * "Email address not verified" error. If your account is still in the Amazon SES sandbox, you must also verify
-     * every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more
-     * information, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * The message must be sent from a verified email address or domain. If you attempt to send email using a
+     * non-verified address or domain, the operation will result in an "Email address not verified" error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.
+     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
+     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You must provide at least one recipient email address. The recipient address can be a To: address, a CC: address,
-     * or a BCC: address. If any email address you provide is invalid, Amazon SES rejects the entire email.
+     * The total size of the message, including attachments, must be smaller than 10 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC:
-     * email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
-     * recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
+     * The message must include at least one recipient email address. The recipient address can be a To: address, a CC:
+     * address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format
+     * <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even if the message
+     * contains other recipients that are valid.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The To:, CC:, and BCC: headers in the raw message can contain a group list. Note that each recipient in a group
-     * list counts towards the 50-recipient limit.
+     * The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an
+     * email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call
+     * the <code>SendRawEmail</code> operation several times to send the message to each group.
      * </p>
      * </li>
-     * <li>
+     * </ul>
+     * <important>
      * <p>
-     * Amazon SES overrides any Message-ID and Date headers you provide.
+     * For every message that you send, the total number of recipients (including each recipient in the To:, CC: and
+     * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
+     * quota</i>). For more information about sending quotas in Amazon SES, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
-     * </li>
+     * </important>
+     * <p>
+     * Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code> operation:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your
-     * sending quota - the maximum number of emails you can send in a 24-hour period. For information about your sending
-     * quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-     * SES Developer Guide</a>.
+     * Although you can customize the message headers when using the <code>SendRawEmail</code> operation, Amazon SES
+     * will automatically apply its own <code>Message-ID</code> and <code>Date</code> headers; if you passed these
+     * headers when creating the message, they will be overwritten by the values that Amazon SES provides.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code> enables you
-     * to specify the cross-account identity for the email's "Source," "From," and "Return-Path" parameters in one of
-     * two ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
+     * to specify the cross-account identity for the email's Source, From, and Return-Path parameters in one of two
+     * ways: you can pass optional parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
      * <code>ReturnPathArn</code> to the API, or you can include the following X-headers in the header of your raw
      * email:
      * </p>
@@ -2437,18 +2537,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * <important>
      * <p>
-     * Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the
-     * email.
+     * Do not include these X-headers in the DKIM signature; Amazon SES will remove them before sending the email.
      * </p>
      * </important>
      * <p>
-     * For the most common sending authorization use case, we recommend that you specify the
-     * <code>SourceIdentityArn</code> and do not specify either the <code>FromIdentityArn</code> or
-     * <code>ReturnPathIdentityArn</code>. (The same note applies to the corresponding X-headers.) If you only specify
-     * the <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address and the "Return Path" address
-     * to the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization,
-     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     * Developer Guide</a>.
+     * For most common sending authorization scenarios, we recommend that you specify the <code>SourceIdentityArn</code>
+     * parameter and not the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters. If you only
+     * specify the <code>SourceIdentityArn</code> parameter, Amazon SES will set the From and Return Path addresses to
+     * the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see
+     * the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
+     * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2480,12 +2578,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param setActiveReceiptRuleSetRequest
@@ -2511,12 +2609,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <a
+     * For information about managing receipt rule sets, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.
+     * >Amazon SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param setActiveReceiptRuleSetRequest
@@ -2543,8 +2641,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <ul>
      * <li>
      * <p>
-     * If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will
-     * DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).
+     * If Easy DKIM signing is enabled for a domain name identity (such as <code>example.com</code>), then Amazon SES
+     * will DKIM-sign all email sent by addresses under that domain name (for example, <code>user@example.com</code>).
      * </p>
      * </li>
      * <li>
@@ -2555,16 +2653,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </li>
      * </ul>
      * <p>
-     * For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the
-     * corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the
-     * <code>VerifyDomainDkim</code> action.
+     * For email addresses (for example, <code>user@example.com</code>), you can only enable Easy DKIM signing if the
+     * corresponding domain (in this case, <code>example.com</code>) has been set up for Easy DKIM using the AWS Console
+     * or the <code>VerifyDomainDkim</code> operation.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about Easy DKIM signing, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * For more information about Easy DKIM signing, go to the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
@@ -2585,8 +2683,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <ul>
      * <li>
      * <p>
-     * If Easy DKIM signing is enabled for a domain name identity (e.g., <code>example.com</code>), then Amazon SES will
-     * DKIM-sign all email sent by addresses under that domain name (e.g., <code>user@example.com</code>).
+     * If Easy DKIM signing is enabled for a domain name identity (such as <code>example.com</code>), then Amazon SES
+     * will DKIM-sign all email sent by addresses under that domain name (for example, <code>user@example.com</code>).
      * </p>
      * </li>
      * <li>
@@ -2597,16 +2695,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </li>
      * </ul>
      * <p>
-     * For email addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM signing if the
-     * corresponding domain (e.g., <code>example.com</code>) has been set up for Easy DKIM using the AWS Console or the
-     * <code>VerifyDomainDkim</code> action.
+     * For email addresses (for example, <code>user@example.com</code>), you can only enable Easy DKIM signing if the
+     * corresponding domain (in this case, <code>example.com</code>) has been set up for Easy DKIM using the AWS Console
+     * or the <code>VerifyDomainDkim</code> operation.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about Easy DKIM signing, go to the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
+     * For more information about Easy DKIM signing, go to the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
@@ -2638,11 +2736,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about using notifications with Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityFeedbackForwardingEnabledRequest
@@ -2672,11 +2771,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about using notifications with Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityFeedbackForwardingEnabledRequest
@@ -2704,11 +2804,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about using notifications with Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityHeadersInNotificationsEnabledRequest
@@ -2731,11 +2832,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about using notifications with Amazon SES, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityHeadersInNotificationsEnabledRequest
@@ -2765,12 +2867,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * To send emails using the specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
      * settings. If you want your emails to pass Sender Policy Framework (SPF) checks, you must also add or update an
-     * SPF record. For more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer Guide</a>.
+     * SPF record. For more information, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * </important>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param setIdentityMailFromDomainRequest
@@ -2793,12 +2896,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * <p>
      * To send emails using the specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
      * settings. If you want your emails to pass Sender Policy Framework (SPF) checks, you must also add or update an
-     * SPF record. For more information, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer Guide</a>.
+     * SPF record. For more information, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * </important>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param setIdentityMailFromDomainRequest
@@ -2831,11 +2935,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about feedback notification, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
@@ -2866,11 +2971,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
+     * For more information about feedback notification, see the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
+     * Guide</a>.</i>
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
@@ -2898,12 +3004,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Sets the position of the specified receipt rule in the receipt rule set.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <a
+     * For information about managing receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param setReceiptRulePositionRequest
@@ -2923,12 +3029,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Sets the position of the specified receipt rule in the receipt rule set.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <a
+     * For information about managing receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param setReceiptRulePositionRequest
@@ -2950,7 +3056,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Updates the event destination of a configuration set.
+     * Updates the event destination of a configuration set. Event destinations are associated with configuration sets,
+     * which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+     * Notification Service (Amazon SNS). For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
+     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2959,14 +3069,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * Event destinations are associated with configuration sets, which enable you to publish email sending events to
-     * Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information
-     * about using configuration sets, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param updateConfigurationSetEventDestinationRequest
@@ -2985,7 +3088,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Updates the event destination of a configuration set.
+     * Updates the event destination of a configuration set. Event destinations are associated with configuration sets,
+     * which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
+     * Notification Service (Amazon SNS). For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
+     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2994,14 +3101,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * </note>
      * <p>
-     * Event destinations are associated with configuration sets, which enable you to publish email sending events to
-     * Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information
-     * about using configuration sets, see the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.
-     * </p>
-     * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param updateConfigurationSetEventDestinationRequest
@@ -3025,15 +3125,68 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Modifies an association between a configuration set and a custom domain for open and click event tracking.
+     * </p>
+     * <p>
+     * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
+     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
+     * SES-operated domain. For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * </p>
+     * 
+     * @param updateConfigurationSetTrackingOptionsRequest
+     *        Represents a request to update the tracking options for a configuration set.
+     * @return A Java Future containing the result of the UpdateConfigurationSetTrackingOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsync.UpdateConfigurationSetTrackingOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetTrackingOptionsResult> updateConfigurationSetTrackingOptionsAsync(
+            UpdateConfigurationSetTrackingOptionsRequest updateConfigurationSetTrackingOptionsRequest);
+
+    /**
+     * <p>
+     * Modifies an association between a configuration set and a custom domain for open and click event tracking.
+     * </p>
+     * <p>
+     * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
+     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
+     * SES-operated domain. For information about using configuration sets, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
+     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * </p>
+     * 
+     * @param updateConfigurationSetTrackingOptionsRequest
+     *        Represents a request to update the tracking options for a configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConfigurationSetTrackingOptions operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.UpdateConfigurationSetTrackingOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetTrackingOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetTrackingOptionsResult> updateConfigurationSetTrackingOptionsAsync(
+            UpdateConfigurationSetTrackingOptionsRequest updateConfigurationSetTrackingOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetTrackingOptionsRequest, UpdateConfigurationSetTrackingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a receipt rule.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <a
+     * For information about managing receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param updateReceiptRuleRequest
@@ -3053,12 +3206,12 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * Updates a receipt rule.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <a
+     * For information about managing receipt rules, see the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.
+     * SES Developer Guide</a>.</i>
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param updateReceiptRuleRequest
@@ -3087,15 +3240,15 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * originating from that domain.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.
+     * To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> operation.
      * </p>
      * <p>
-     * For more information about creating DNS records using DKIM tokens, go to the <a
+     * For more information about creating DNS records using DKIM tokens, go to the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * 
      * @param verifyDomainDkimRequest
@@ -3118,15 +3271,15 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * originating from that domain.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> action.
+     * To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> operation.
      * </p>
      * <p>
-     * For more information about creating DNS records using DKIM tokens, go to the <a
+     * For more information about creating DNS records using DKIM tokens, go to the <i> <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-     * Guide</a>.
+     * Guide</a>.</i>
      * </p>
      * 
      * @param verifyDomainDkimRequest
@@ -3147,10 +3300,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Verifies a domain.
+     * Adds a domain to the list of identities for your Amazon SES account and attempts to verify it. For more
+     * information about verifying domains, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param verifyDomainIdentityRequest
@@ -3168,10 +3324,13 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Verifies a domain.
+     * Adds a domain to the list of identities for your Amazon SES account and attempts to verify it. For more
+     * information about verifying domains, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param verifyDomainIdentityRequest
@@ -3194,16 +3353,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Verifies an email address. This action causes a confirmation email message to be sent to the specified address.
-     * </p>
-     * <important>
-     * <p>
-     * The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-     * VerifyEmailIdentity action is now preferred.
-     * </p>
-     * </important>
-     * <p>
-     * This action is throttled at one request per second.
+     * Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email address.
      * </p>
      * 
      * @param verifyEmailAddressRequest
@@ -3220,16 +3370,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Verifies an email address. This action causes a confirmation email message to be sent to the specified address.
-     * </p>
-     * <important>
-     * <p>
-     * The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-     * VerifyEmailIdentity action is now preferred.
-     * </p>
-     * </important>
-     * <p>
-     * This action is throttled at one request per second.
+     * Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email address.
      * </p>
      * 
      * @param verifyEmailAddressRequest
@@ -3251,10 +3392,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Verifies an email address. This action causes a confirmation email message to be sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. This
+     * operation causes a confirmation email message to be sent to the specified address.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param verifyEmailIdentityRequest
@@ -3271,10 +3413,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Verifies an email address. This action causes a confirmation email message to be sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. This
+     * operation causes a confirmation email message to be sent to the specified address.
      * </p>
      * <p>
-     * This action is throttled at one request per second.
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param verifyEmailIdentityRequest
