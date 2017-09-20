@@ -1,3 +1,8 @@
+# __1.11.199__ __2017-09-19__
+## __Amazon EC2__
+  - ### Features
+    - Fixed bug in EC2 clients preventing ElasticGpuSet from being set.
+
 # __1.11.198__ __2017-09-18__
 ## __AWS Identity and Access Management (IAM)__
   - ### Features

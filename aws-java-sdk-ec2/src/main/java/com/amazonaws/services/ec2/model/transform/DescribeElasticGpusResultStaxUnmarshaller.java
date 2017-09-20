@@ -50,7 +50,7 @@ public class DescribeElasticGpusResultStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
-                if (context.testExpression("elasticGpuSet/member", targetDepth)) {
+                if (context.testExpression("elasticGpuSet/item", targetDepth)) {
                     describeElasticGpusResult.withElasticGpuSet(ElasticGpusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
