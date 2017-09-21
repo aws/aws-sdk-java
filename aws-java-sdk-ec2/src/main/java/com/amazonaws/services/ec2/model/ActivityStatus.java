@@ -42,6 +42,9 @@ public enum ActivityStatus {
      * @param value
      *        real value
      * @return ActivityStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ActivityStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -40,6 +40,9 @@ public enum InstanceAccessProtocol {
      * @param value
      *        real value
      * @return InstanceAccessProtocol corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static InstanceAccessProtocol fromValue(String value) {
         if (value == null || "".equals(value)) {

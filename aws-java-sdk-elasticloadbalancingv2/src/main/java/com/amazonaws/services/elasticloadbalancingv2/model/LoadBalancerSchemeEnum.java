@@ -40,6 +40,9 @@ public enum LoadBalancerSchemeEnum {
      * @param value
      *        real value
      * @return LoadBalancerSchemeEnum corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static LoadBalancerSchemeEnum fromValue(String value) {
         if (value == null || "".equals(value)) {

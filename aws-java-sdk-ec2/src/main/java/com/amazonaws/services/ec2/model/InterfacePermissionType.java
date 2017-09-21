@@ -40,6 +40,9 @@ public enum InterfacePermissionType {
      * @param value
      *        real value
      * @return InterfacePermissionType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static InterfacePermissionType fromValue(String value) {
         if (value == null || "".equals(value)) {

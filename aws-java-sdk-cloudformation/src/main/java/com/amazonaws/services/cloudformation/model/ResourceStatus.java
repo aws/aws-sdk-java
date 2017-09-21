@@ -48,6 +48,9 @@ public enum ResourceStatus {
      * @param value
      *        real value
      * @return ResourceStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ResourceStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

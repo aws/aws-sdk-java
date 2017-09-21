@@ -54,6 +54,9 @@ public enum UploadType {
      * @param value
      *        real value
      * @return UploadType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static UploadType fromValue(String value) {
         if (value == null || "".equals(value)) {

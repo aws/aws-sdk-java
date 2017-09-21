@@ -40,6 +40,9 @@ public enum LayerAvailability {
      * @param value
      *        real value
      * @return LayerAvailability corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static LayerAvailability fromValue(String value) {
         if (value == null || "".equals(value)) {

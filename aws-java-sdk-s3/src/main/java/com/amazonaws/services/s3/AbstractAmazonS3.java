@@ -189,6 +189,12 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public boolean doesBucketExistV2(String bucketName)
+            throws SdkClientException, AmazonServiceException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public HeadBucketResult headBucket(HeadBucketRequest headBucketRequest)
             throws SdkClientException, AmazonServiceException {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");

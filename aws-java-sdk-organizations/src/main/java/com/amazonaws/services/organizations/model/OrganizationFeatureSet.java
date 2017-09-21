@@ -40,6 +40,9 @@ public enum OrganizationFeatureSet {
      * @param value
      *        real value
      * @return OrganizationFeatureSet corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static OrganizationFeatureSet fromValue(String value) {
         if (value == null || "".equals(value)) {

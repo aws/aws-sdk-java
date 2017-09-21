@@ -41,6 +41,9 @@ public enum RequiresRecreation {
      * @param value
      *        real value
      * @return RequiresRecreation corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static RequiresRecreation fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -40,6 +40,9 @@ public enum StopStatus {
      * @param value
      *        real value
      * @return StopStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static StopStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

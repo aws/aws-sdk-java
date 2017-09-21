@@ -45,6 +45,9 @@ public enum ImageAttributeName {
      * @param value
      *        real value
      * @return ImageAttributeName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ImageAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {

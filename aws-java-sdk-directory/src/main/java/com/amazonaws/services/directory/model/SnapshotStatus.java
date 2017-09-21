@@ -41,6 +41,9 @@ public enum SnapshotStatus {
      * @param value
      *        real value
      * @return SnapshotStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SnapshotStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

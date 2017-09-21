@@ -43,6 +43,9 @@ public enum StackSetOperationStatus {
      * @param value
      *        real value
      * @return StackSetOperationStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static StackSetOperationStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

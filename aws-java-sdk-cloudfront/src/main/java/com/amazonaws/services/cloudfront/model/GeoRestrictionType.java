@@ -41,6 +41,9 @@ public enum GeoRestrictionType {
      * @param value
      *        real value
      * @return GeoRestrictionType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static GeoRestrictionType fromValue(String value) {
         if (value == null || "".equals(value)) {

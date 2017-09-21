@@ -105,6 +105,12 @@ public class FpgaImage implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Indicates whether the AFI is public.
+     * </p>
+     */
+    private Boolean publicValue;
 
     /**
      * <p>
@@ -699,6 +705,58 @@ public class FpgaImage implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the AFI is public.
+     * </p>
+     * 
+     * @param publicValue
+     *        Indicates whether the AFI is public.
+     */
+
+    public void setPublic(Boolean publicValue) {
+        this.publicValue = publicValue;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the AFI is public.
+     * </p>
+     * 
+     * @return Indicates whether the AFI is public.
+     */
+
+    public Boolean getPublic() {
+        return this.publicValue;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the AFI is public.
+     * </p>
+     * 
+     * @param publicValue
+     *        Indicates whether the AFI is public.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FpgaImage withPublic(Boolean publicValue) {
+        setPublic(publicValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the AFI is public.
+     * </p>
+     * 
+     * @return Indicates whether the AFI is public.
+     */
+
+    public Boolean isPublic() {
+        return this.publicValue;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -734,7 +792,9 @@ public class FpgaImage implements Serializable, Cloneable {
         if (getProductCodes() != null)
             sb.append("ProductCodes: ").append(getProductCodes()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPublic() != null)
+            sb.append("Public: ").append(getPublic());
         sb.append("}");
         return sb.toString();
     }
@@ -801,6 +861,10 @@ public class FpgaImage implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPublic() == null ^ this.getPublic() == null)
+            return false;
+        if (other.getPublic() != null && other.getPublic().equals(this.getPublic()) == false)
+            return false;
         return true;
     }
 
@@ -822,6 +886,7 @@ public class FpgaImage implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOwnerAlias() == null) ? 0 : getOwnerAlias().hashCode());
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPublic() == null) ? 0 : getPublic().hashCode());
         return hashCode;
     }
 

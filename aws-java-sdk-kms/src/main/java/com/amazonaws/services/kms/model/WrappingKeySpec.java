@@ -39,6 +39,9 @@ public enum WrappingKeySpec {
      * @param value
      *        real value
      * @return WrappingKeySpec corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static WrappingKeySpec fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -49,6 +49,9 @@ public enum ScheduleActivityTaskFailedCause {
      * @param value
      *        real value
      * @return ScheduleActivityTaskFailedCause corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ScheduleActivityTaskFailedCause fromValue(String value) {
         if (value == null || "".equals(value)) {

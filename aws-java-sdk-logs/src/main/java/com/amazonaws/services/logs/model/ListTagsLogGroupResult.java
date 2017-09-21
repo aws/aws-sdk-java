@@ -25,17 +25,17 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      * 
-     * @return The tags.
+     * @return The tags for the log group.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -47,11 +47,11 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        The tags for the log group.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -60,11 +60,11 @@ public class ListTagsLogGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The tags.
+     * The tags for the log group.
      * </p>
      * 
      * @param tags
-     *        The tags.
+     *        The tags for the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

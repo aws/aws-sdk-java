@@ -40,6 +40,9 @@ public enum SortByEnum {
      * @param value
      *        real value
      * @return SortByEnum corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SortByEnum fromValue(String value) {
         if (value == null || "".equals(value)) {

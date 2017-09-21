@@ -55,6 +55,9 @@ public enum StackStatus {
      * @param value
      *        real value
      * @return StackStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static StackStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

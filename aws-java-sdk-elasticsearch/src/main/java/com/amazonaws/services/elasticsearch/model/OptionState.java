@@ -47,6 +47,9 @@ public enum OptionState {
      * @param value
      *        real value
      * @return OptionState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static OptionState fromValue(String value) {
         if (value == null || "".equals(value)) {

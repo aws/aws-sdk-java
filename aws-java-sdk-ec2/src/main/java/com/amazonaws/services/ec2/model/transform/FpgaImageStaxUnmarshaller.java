@@ -120,6 +120,10 @@ public class FpgaImageStaxUnmarshaller implements Unmarshaller<FpgaImage, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("public", targetDepth)) {
+                    fpgaImage.setPublic(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return fpgaImage;

@@ -41,6 +41,9 @@ public enum MetricAggregationType {
      * @param value
      *        real value
      * @return MetricAggregationType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MetricAggregationType fromValue(String value) {
         if (value == null || "".equals(value)) {

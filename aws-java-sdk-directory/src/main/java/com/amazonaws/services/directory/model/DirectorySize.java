@@ -40,6 +40,9 @@ public enum DirectorySize {
      * @param value
      *        real value
      * @return DirectorySize corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DirectorySize fromValue(String value) {
         if (value == null || "".equals(value)) {

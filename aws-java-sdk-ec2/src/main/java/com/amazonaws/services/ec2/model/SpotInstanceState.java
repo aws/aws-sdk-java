@@ -43,6 +43,9 @@ public enum SpotInstanceState {
      * @param value
      *        real value
      * @return SpotInstanceState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SpotInstanceState fromValue(String value) {
         if (value == null || "".equals(value)) {

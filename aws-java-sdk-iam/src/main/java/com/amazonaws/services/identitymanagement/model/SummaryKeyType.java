@@ -63,6 +63,9 @@ public enum SummaryKeyType {
      * @param value
      *        real value
      * @return SummaryKeyType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SummaryKeyType fromValue(String value) {
         if (value == null || "".equals(value)) {

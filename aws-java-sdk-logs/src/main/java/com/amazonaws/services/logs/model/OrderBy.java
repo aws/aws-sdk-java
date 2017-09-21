@@ -40,6 +40,9 @@ public enum OrderBy {
      * @param value
      *        real value
      * @return OrderBy corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static OrderBy fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -40,6 +40,9 @@ public enum ReviewableHITStatus {
      * @param value
      *        real value
      * @return ReviewableHITStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReviewableHITStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

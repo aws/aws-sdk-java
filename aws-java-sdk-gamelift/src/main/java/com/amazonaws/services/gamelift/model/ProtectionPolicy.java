@@ -40,6 +40,9 @@ public enum ProtectionPolicy {
      * @param value
      *        real value
      * @return ProtectionPolicy corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ProtectionPolicy fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -131,6 +131,49 @@
     "xmlProtocol" : false
   },
   "operations" : {
+    "AssociateKmsKey" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<AssociateKmsKeyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<AssociateKmsKeyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<AssociateKmsKeyRequest, AssociateKmsKeyResult>",
+      "asyncReturnType" : "AssociateKmsKeyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Associates the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log group.</p> <p>Associating an AWS KMS CMK with a log group overrides any existing associations between the log group and a CMK. After a CMK is associated with a log group, all newly ingested data for the log group is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>Note that it can take up to 5 minutes for this operation to take effect.</p> <p>If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you will receive an <code>InvalidParameterException</code> error. </p>",
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>A parameter is specified incorrectly.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OperationAbortedException",
+        "documentation" : "<p>Multiple requests to update the same resource were in conflict.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service cannot complete the request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "AssociateKmsKeyRequest",
+        "variableName" : "associateKmsKeyRequest",
+        "variableType" : "AssociateKmsKeyRequest",
+        "documentation" : "",
+        "simpleType" : "AssociateKmsKeyRequest",
+        "variableSetterType" : "AssociateKmsKeyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "associateKmsKey",
+      "operationName" : "AssociateKmsKey",
+      "returnType" : {
+        "returnType" : "AssociateKmsKeyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "AssociateKmsKeyResult"
+    },
     "CancelExportTask" : {
       "asyncCallableType" : "java.util.concurrent.Callable<CancelExportTaskResult>",
       "asyncFutureType" : "java.util.concurrent.Future<CancelExportTaskResult>",
@@ -232,7 +275,7 @@
       "asyncReturnType" : "CreateLogGroupResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a log group with the specified name.</p> <p>You can create up to 5000 log groups per account.</p> <p>You must use the following guidelines when naming a log group:</p> <ul> <li> <p>Log group names must be unique within a region for an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512 characters long.</p> </li> <li> <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p> </li> </ul>",
+      "documentation" : "<p>Creates a log group with the specified name.</p> <p>You can create up to 5000 log groups per account.</p> <p>You must use the following guidelines when naming a log group:</p> <ul> <li> <p>Log group names must be unique within a region for an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512 characters long.</p> </li> <li> <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK) with the log group, ingested data is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you will receive an <code>InvalidParameterException</code> error. </p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is specified incorrectly.</p>",
@@ -763,7 +806,7 @@
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the specified metric filters. You can list all the metric filters or filter the results by log name, prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.</p>",
+      "documentation" : "<p>Lists the specified metric filters. You can list all the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is specified incorrectly.</p>",
@@ -869,6 +912,49 @@
       },
       "syncReturnType" : "DescribeSubscriptionFiltersResult"
     },
+    "DisassociateKmsKey" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DisassociateKmsKeyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DisassociateKmsKeyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DisassociateKmsKeyRequest, DisassociateKmsKeyResult>",
+      "asyncReturnType" : "DisassociateKmsKeyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Disassociates the associated AWS Key Management Service (AWS KMS) customer master key (CMK) from the specified log group.</p> <p>After the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires permissions for the CMK whenever the encrypted data is requested.</p> <p>Note that it can take up to 5 minutes for this operation to take effect.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>A parameter is specified incorrectly.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OperationAbortedException",
+        "documentation" : "<p>Multiple requests to update the same resource were in conflict.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service cannot complete the request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "DisassociateKmsKeyRequest",
+        "variableName" : "disassociateKmsKeyRequest",
+        "variableType" : "DisassociateKmsKeyRequest",
+        "documentation" : "",
+        "simpleType" : "DisassociateKmsKeyRequest",
+        "variableSetterType" : "DisassociateKmsKeyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "disassociateKmsKey",
+      "operationName" : "DisassociateKmsKey",
+      "returnType" : {
+        "returnType" : "DisassociateKmsKeyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DisassociateKmsKeyResult"
+    },
     "FilterLogEvents" : {
       "asyncCallableType" : "java.util.concurrent.Callable<FilterLogEventsResult>",
       "asyncFutureType" : "java.util.concurrent.Future<FilterLogEventsResult>",
@@ -915,7 +1001,7 @@
       "asyncReturnType" : "GetLogEventsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists log events from the specified log stream. You can list all the log events or filter using a time range.</p> <p>By default, this operation returns as many log events as can fit in a response size of 1 MB (up to 10,000 log events). You can get additional log events by specifying one of the tokens in a subsequent call.</p>",
+      "documentation" : "<p>Lists log events from the specified log stream. You can list all the log events or filter using a time range.</p> <p>By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log events). You can get additional log events by specifying one of the tokens in a subsequent call.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is specified incorrectly.</p>",
@@ -954,7 +1040,7 @@
       "asyncReturnType" : "ListTagsLogGroupResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the tags for the specified log group.</p> <p>To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p>",
+      "documentation" : "<p>Lists the tags for the specified log group.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource does not exist.</p>",
@@ -1386,6 +1472,343 @@
     }
   },
   "shapes" : {
+    "AssociateKmsKeyRequest" : {
+      "c2jName" : "AssociateKmsKeyRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "AssociateKmsKey",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Logs_20140328.AssociateKmsKey",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "logGroupName",
+        "c2jShape" : "LogGroupName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the log group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLogGroupName",
+        "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+        "getterMethodName" : "getLogGroupName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "logGroupName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "logGroupName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "LogGroupName",
+        "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+        "setterMethodName" : "setLogGroupName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the log group.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "kmsKeyId",
+        "c2jShape" : "KmsKeyId",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withKmsKeyId",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+        "getterMethodName" : "getKmsKeyId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "kmsKeyId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "kmsKeyId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "KmsKeyId",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+        "setterMethodName" : "setKmsKeyId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyId",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "KmsKeyId" : {
+          "c2jName" : "kmsKeyId",
+          "c2jShape" : "KmsKeyId",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withKmsKeyId",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+          "getterMethodName" : "getKmsKeyId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "kmsKeyId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "kmsKeyId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "KmsKeyId",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+          "setterMethodName" : "setKmsKeyId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyId",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "LogGroupName" : {
+          "c2jName" : "logGroupName",
+          "c2jShape" : "LogGroupName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLogGroupName",
+          "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+          "getterMethodName" : "getLogGroupName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "logGroupName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "logGroupName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "LogGroupName",
+          "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+          "setterMethodName" : "setLogGroupName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the log group.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "logGroupName", "kmsKeyId" ],
+      "shapeName" : "AssociateKmsKeyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "AssociateKmsKeyRequest",
+        "variableName" : "associateKmsKeyRequest",
+        "variableType" : "AssociateKmsKeyRequest",
+        "documentation" : null,
+        "simpleType" : "AssociateKmsKeyRequest",
+        "variableSetterType" : "AssociateKmsKeyRequest"
+      },
+      "wrapper" : false
+    },
+    "AssociateKmsKeyResult" : {
+      "c2jName" : "AssociateKmsKeyResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "AssociateKmsKeyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "AssociateKmsKeyResult",
+        "variableName" : "associateKmsKeyResult",
+        "variableType" : "AssociateKmsKeyResult",
+        "documentation" : null,
+        "simpleType" : "AssociateKmsKeyResult",
+        "variableSetterType" : "AssociateKmsKeyResult"
+      },
+      "wrapper" : false
+    },
     "CancelExportTaskRequest" : {
       "c2jName" : "CancelExportTaskRequest",
       "customization" : {
@@ -2784,6 +3207,69 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "kmsKeyId",
+        "c2jShape" : "KmsKeyId",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withKmsKeyId",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+        "getterMethodName" : "getKmsKeyId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "kmsKeyId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "kmsKeyId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "KmsKeyId",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+        "setterMethodName" : "setKmsKeyId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyId",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "tags",
         "c2jShape" : "Tags",
         "deprecated" : false,
@@ -2926,6 +3412,70 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "KmsKeyId" : {
+          "c2jName" : "kmsKeyId",
+          "c2jShape" : "KmsKeyId",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withKmsKeyId",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+          "getterMethodName" : "getKmsKeyId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "kmsKeyId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "kmsKeyId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "KmsKeyId",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.*/",
+          "setterMethodName" : "setKmsKeyId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyId",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms\">Amazon Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "LogGroupName" : {
           "c2jName" : "logGroupName",
           "c2jShape" : "LogGroupName",
@@ -9829,11 +10379,11 @@
         "c2jName" : "metricName",
         "c2jShape" : "MetricName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the CloudWatch metric.</p>",
+        "documentation" : "",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@param metricName The name of the CloudWatch metric.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**\n@param metricName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMetricName",
-        "getterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@return The name of the CloudWatch metric.*/",
+        "getterDocumentation" : "/**\n@return */",
         "getterMethodName" : "getMetricName",
         "getterModel" : {
           "returnType" : "String",
@@ -9865,7 +10415,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "MetricName",
-        "setterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@param metricName The name of the CloudWatch metric.*/",
+        "setterDocumentation" : "/**\n@param metricName */",
         "setterMethodName" : "setMetricName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -9878,12 +10428,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@param metricName The name of the CloudWatch metric.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**\n@param metricName \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "metricName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the CloudWatch metric.</p>",
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10149,11 +10699,11 @@
           "c2jName" : "metricName",
           "c2jShape" : "MetricName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the CloudWatch metric.</p>",
+          "documentation" : "",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@param metricName The name of the CloudWatch metric.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**\n@param metricName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMetricName",
-          "getterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@return The name of the CloudWatch metric.*/",
+          "getterDocumentation" : "/**\n@return */",
           "getterMethodName" : "getMetricName",
           "getterModel" : {
             "returnType" : "String",
@@ -10185,7 +10735,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "MetricName",
-          "setterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@param metricName The name of the CloudWatch metric.*/",
+          "setterDocumentation" : "/**\n@param metricName */",
           "setterMethodName" : "setMetricName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -10198,12 +10748,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the CloudWatch metric.</p>\n@param metricName The name of the CloudWatch metric.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**\n@param metricName \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "metricName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the CloudWatch metric.</p>",
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -13357,6 +13907,216 @@
       },
       "wrapper" : false
     },
+    "DisassociateKmsKeyRequest" : {
+      "c2jName" : "DisassociateKmsKeyRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DisassociateKmsKey",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Logs_20140328.DisassociateKmsKey",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "logGroupName",
+        "c2jShape" : "LogGroupName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the log group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLogGroupName",
+        "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+        "getterMethodName" : "getLogGroupName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "logGroupName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "logGroupName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "LogGroupName",
+        "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+        "setterMethodName" : "setLogGroupName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the log group.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "LogGroupName" : {
+          "c2jName" : "logGroupName",
+          "c2jShape" : "LogGroupName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLogGroupName",
+          "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+          "getterMethodName" : "getLogGroupName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "logGroupName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "logGroupName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "LogGroupName",
+          "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+          "setterMethodName" : "setLogGroupName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the log group.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "logGroupName" ],
+      "shapeName" : "DisassociateKmsKeyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DisassociateKmsKeyRequest",
+        "variableName" : "disassociateKmsKeyRequest",
+        "variableType" : "DisassociateKmsKeyRequest",
+        "documentation" : null,
+        "simpleType" : "DisassociateKmsKeyRequest",
+        "variableSetterType" : "DisassociateKmsKeyRequest"
+      },
+      "wrapper" : false
+    },
+    "DisassociateKmsKeyResult" : {
+      "c2jName" : "DisassociateKmsKeyResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DisassociateKmsKeyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DisassociateKmsKeyResult",
+        "variableName" : "disassociateKmsKeyResult",
+        "variableType" : "DisassociateKmsKeyResult",
+        "documentation" : null,
+        "simpleType" : "DisassociateKmsKeyResult",
+        "variableSetterType" : "DisassociateKmsKeyResult"
+      },
+      "wrapper" : false
+    },
     "Distribution" : {
       "c2jName" : "Distribution",
       "customization" : {
@@ -13366,7 +14126,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>",
       "enums" : [ {
         "name" : "Random",
         "value" : "Random"
@@ -20122,11 +20882,11 @@
         "c2jName" : "tags",
         "c2jShape" : "Tags",
         "deprecated" : false,
-        "documentation" : "<p>The tags.</p>",
+        "documentation" : "<p>The tags for the log group.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The tags for the log group.</p>\n@param tags The tags for the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTags",
-        "getterDocumentation" : "/**<p>The tags.</p>\n@return The tags.*/",
+        "getterDocumentation" : "/**<p>The tags for the log group.</p>\n@return The tags for the log group.*/",
         "getterMethodName" : "getTags",
         "getterModel" : {
           "returnType" : "java.util.Map<String,String>",
@@ -20236,7 +20996,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "Tags",
-        "setterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.*/",
+        "setterDocumentation" : "/**<p>The tags for the log group.</p>\n@param tags The tags for the log group.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
@@ -20249,12 +21009,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tags for the log group.</p>\n@param tags The tags for the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
           "variableName" : "tags",
           "variableType" : "java.util.Map<String,String>",
-          "documentation" : "<p>The tags.</p>",
+          "documentation" : "<p>The tags for the log group.</p>",
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
@@ -20265,11 +21025,11 @@
           "c2jName" : "tags",
           "c2jShape" : "Tags",
           "deprecated" : false,
-          "documentation" : "<p>The tags.</p>",
+          "documentation" : "<p>The tags for the log group.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The tags for the log group.</p>\n@param tags The tags for the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTags",
-          "getterDocumentation" : "/**<p>The tags.</p>\n@return The tags.*/",
+          "getterDocumentation" : "/**<p>The tags for the log group.</p>\n@return The tags for the log group.*/",
           "getterMethodName" : "getTags",
           "getterModel" : {
             "returnType" : "java.util.Map<String,String>",
@@ -20379,7 +21139,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "Tags",
-          "setterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.*/",
+          "setterDocumentation" : "/**<p>The tags for the log group.</p>\n@param tags The tags for the log group.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
@@ -20392,12 +21152,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tags for the log group.</p>\n@param tags The tags for the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
             "variableName" : "tags",
             "variableType" : "java.util.Map<String,String>",
-            "documentation" : "<p>The tags.</p>",
+            "documentation" : "<p>The tags for the log group.</p>",
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
@@ -20819,6 +21579,69 @@
           "variableSetterType" : "Long"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "kmsKeyId",
+        "c2jShape" : "KmsKeyId",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withKmsKeyId",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.*/",
+        "getterMethodName" : "getKmsKeyId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "kmsKeyId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "kmsKeyId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "KmsKeyId",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.*/",
+        "setterMethodName" : "setKmsKeyId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "kmsKeyId",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Arn" : {
@@ -20946,6 +21769,70 @@
             "documentation" : "<p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "KmsKeyId" : {
+          "c2jName" : "kmsKeyId",
+          "c2jShape" : "KmsKeyId",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withKmsKeyId",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.*/",
+          "getterMethodName" : "getKmsKeyId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "kmsKeyId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "kmsKeyId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "KmsKeyId",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.*/",
+          "setterMethodName" : "setKmsKeyId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>\n@param kmsKeyId The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "kmsKeyId",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -28563,11 +29450,11 @@
         "c2jName" : "distribution",
         "c2jShape" : "Distribution",
         "deprecated" : false,
-        "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+        "documentation" : "<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>",
         "enumType" : "Distribution",
-        "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@param distribution The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
         "fluentSetterMethodName" : "withDistribution",
-        "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+        "getterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@return The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
         "getterMethodName" : "getDistribution",
         "getterModel" : {
           "returnType" : "String",
@@ -28599,7 +29486,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Distribution",
-        "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+        "setterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@param distribution The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
         "setterMethodName" : "setDistribution",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -28612,12 +29499,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@param distribution The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "distribution",
           "variableType" : "String",
-          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+          "documentation" : "<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -28692,11 +29579,11 @@
           "c2jName" : "distribution",
           "c2jShape" : "Distribution",
           "deprecated" : false,
-          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+          "documentation" : "<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>",
           "enumType" : "Distribution",
-          "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@param distribution The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
           "fluentSetterMethodName" : "withDistribution",
-          "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+          "getterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@return The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
           "getterMethodName" : "getDistribution",
           "getterModel" : {
             "returnType" : "String",
@@ -28728,7 +29615,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Distribution",
-          "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+          "setterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@param distribution The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
           "setterMethodName" : "setDistribution",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -28741,12 +29628,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>\n@param distribution The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "distribution",
             "variableType" : "String",
-            "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+            "documentation" : "<p>The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -30645,11 +31532,11 @@
         "c2jName" : "distribution",
         "c2jShape" : "Distribution",
         "deprecated" : false,
-        "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+        "documentation" : "",
         "enumType" : "Distribution",
-        "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "fluentSetterDocumentation" : "/**\n@param distribution \n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
         "fluentSetterMethodName" : "withDistribution",
-        "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+        "getterDocumentation" : "/**\n@return \n@see Distribution*/",
         "getterMethodName" : "getDistribution",
         "getterModel" : {
           "returnType" : "String",
@@ -30681,7 +31568,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Distribution",
-        "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+        "setterDocumentation" : "/**\n@param distribution \n@see Distribution*/",
         "setterMethodName" : "setDistribution",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -30694,12 +31581,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "varargSetterDocumentation" : "/**\n@param distribution \n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "distribution",
           "variableType" : "String",
-          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+          "documentation" : "",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -30901,11 +31788,11 @@
           "c2jName" : "distribution",
           "c2jShape" : "Distribution",
           "deprecated" : false,
-          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+          "documentation" : "",
           "enumType" : "Distribution",
-          "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "fluentSetterDocumentation" : "/**\n@param distribution \n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
           "fluentSetterMethodName" : "withDistribution",
-          "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+          "getterDocumentation" : "/**\n@return \n@see Distribution*/",
           "getterMethodName" : "getDistribution",
           "getterModel" : {
             "returnType" : "String",
@@ -30937,7 +31824,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Distribution",
-          "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+          "setterDocumentation" : "/**\n@param distribution \n@see Distribution*/",
           "setterMethodName" : "setDistribution",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -30950,12 +31837,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "varargSetterDocumentation" : "/**\n@param distribution \n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "distribution",
             "variableType" : "String",
-            "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

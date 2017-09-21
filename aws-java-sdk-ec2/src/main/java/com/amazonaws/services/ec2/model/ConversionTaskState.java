@@ -42,6 +42,9 @@ public enum ConversionTaskState {
      * @param value
      *        real value
      * @return ConversionTaskState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ConversionTaskState fromValue(String value) {
         if (value == null || "".equals(value)) {

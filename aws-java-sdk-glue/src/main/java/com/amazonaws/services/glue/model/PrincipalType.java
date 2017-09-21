@@ -41,6 +41,9 @@ public enum PrincipalType {
      * @param value
      *        real value
      * @return PrincipalType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static PrincipalType fromValue(String value) {
         if (value == null || "".equals(value)) {

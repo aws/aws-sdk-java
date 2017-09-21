@@ -903,6 +903,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @throws NotFoundException
      *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
      *         account ID.
+     * @throws DuplicateRecordException
+     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
      * @sample AWSBudgets.UpdateNotification
      */
     @Override
@@ -956,6 +958,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @throws NotFoundException
      *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
      *         account ID.
+     * @throws DuplicateRecordException
+     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
      * @sample AWSBudgets.UpdateSubscriber
      */
     @Override

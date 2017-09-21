@@ -40,6 +40,9 @@ public enum HostTenancy {
      * @param value
      *        real value
      * @return HostTenancy corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static HostTenancy fromValue(String value) {
         if (value == null || "".equals(value)) {

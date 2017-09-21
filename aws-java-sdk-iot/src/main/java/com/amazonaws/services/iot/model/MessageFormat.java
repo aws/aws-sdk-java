@@ -40,6 +40,9 @@ public enum MessageFormat {
      * @param value
      *        real value
      * @return MessageFormat corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MessageFormat fromValue(String value) {
         if (value == null || "".equals(value)) {

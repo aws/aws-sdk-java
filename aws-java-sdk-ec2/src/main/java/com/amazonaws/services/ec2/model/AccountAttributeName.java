@@ -40,6 +40,9 @@ public enum AccountAttributeName {
      * @param value
      *        real value
      * @return AccountAttributeName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AccountAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {

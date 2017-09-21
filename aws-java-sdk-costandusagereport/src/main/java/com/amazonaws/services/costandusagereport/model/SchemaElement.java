@@ -40,6 +40,9 @@ public enum SchemaElement {
      * @param value
      *        real value
      * @return SchemaElement corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SchemaElement fromValue(String value) {
         if (value == null || "".equals(value)) {

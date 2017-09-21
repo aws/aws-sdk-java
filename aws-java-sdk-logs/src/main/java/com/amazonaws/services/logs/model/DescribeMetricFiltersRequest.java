@@ -49,11 +49,7 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Integer limit;
-    /**
-     * <p>
-     * The name of the CloudWatch metric.
-     * </p>
-     */
+
     private String metricName;
     /**
      * <p>
@@ -241,12 +237,7 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * The name of the CloudWatch metric.
-     * </p>
-     * 
      * @param metricName
-     *        The name of the CloudWatch metric.
      */
 
     public void setMetricName(String metricName) {
@@ -254,11 +245,7 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * The name of the CloudWatch metric.
-     * </p>
-     * 
-     * @return The name of the CloudWatch metric.
+     * @return
      */
 
     public String getMetricName() {
@@ -266,12 +253,7 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p>
-     * The name of the CloudWatch metric.
-     * </p>
-     * 
      * @param metricName
-     *        The name of the CloudWatch metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

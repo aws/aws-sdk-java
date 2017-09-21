@@ -44,6 +44,9 @@ public enum VpcCidrBlockStateCode {
      * @param value
      *        real value
      * @return VpcCidrBlockStateCode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static VpcCidrBlockStateCode fromValue(String value) {
         if (value == null || "".equals(value)) {

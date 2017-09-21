@@ -41,6 +41,9 @@ public enum ChangeTypeEnum {
      * @param value
      *        real value
      * @return ChangeTypeEnum corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ChangeTypeEnum fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -43,6 +43,9 @@ public enum LoggerLevel {
      * @param value
      *        real value
      * @return LoggerLevel corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static LoggerLevel fromValue(String value) {
         if (value == null || "".equals(value)) {

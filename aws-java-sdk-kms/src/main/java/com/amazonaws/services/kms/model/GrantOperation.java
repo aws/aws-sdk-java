@@ -47,6 +47,9 @@ public enum GrantOperation {
      * @param value
      *        real value
      * @return GrantOperation corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static GrantOperation fromValue(String value) {
         if (value == null || "".equals(value)) {

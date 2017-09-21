@@ -40,6 +40,9 @@ public enum ChangeSetType {
      * @param value
      *        real value
      * @return ChangeSetType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ChangeSetType fromValue(String value) {
         if (value == null || "".equals(value)) {

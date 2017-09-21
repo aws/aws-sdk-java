@@ -40,6 +40,9 @@ public enum IdentityType {
      * @param value
      *        real value
      * @return IdentityType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static IdentityType fromValue(String value) {
         if (value == null || "".equals(value)) {

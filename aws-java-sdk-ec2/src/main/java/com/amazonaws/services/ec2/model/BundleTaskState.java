@@ -45,6 +45,9 @@ public enum BundleTaskState {
      * @param value
      *        real value
      * @return BundleTaskState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static BundleTaskState fromValue(String value) {
         if (value == null || "".equals(value)) {

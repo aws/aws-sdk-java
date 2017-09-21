@@ -40,6 +40,9 @@ public enum ScaleDownBehavior {
      * @param value
      *        real value
      * @return ScaleDownBehavior corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ScaleDownBehavior fromValue(String value) {
         if (value == null || "".equals(value)) {

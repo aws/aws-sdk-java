@@ -53,6 +53,9 @@ public enum ConstraintViolationExceptionReason {
      * @param value
      *        real value
      * @return ConstraintViolationExceptionReason corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ConstraintViolationExceptionReason fromValue(String value) {
         if (value == null || "".equals(value)) {

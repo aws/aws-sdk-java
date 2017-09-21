@@ -74,6 +74,9 @@ public enum ResourceType {
      * @param value
      *        real value
      * @return ResourceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ResourceType fromValue(String value) {
         if (value == null || "".equals(value)) {

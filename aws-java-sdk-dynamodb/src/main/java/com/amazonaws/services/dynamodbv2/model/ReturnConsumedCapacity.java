@@ -66,6 +66,9 @@ public enum ReturnConsumedCapacity {
      * @param value
      *        real value
      * @return ReturnConsumedCapacity corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReturnConsumedCapacity fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -39,6 +39,9 @@ public enum StatusName {
      * @param value
      *        real value
      * @return StatusName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static StatusName fromValue(String value) {
         if (value == null || "".equals(value)) {

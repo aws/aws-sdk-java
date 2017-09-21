@@ -72,6 +72,9 @@ public enum EC2InstanceType {
      * @param value
      *        real value
      * @return EC2InstanceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static EC2InstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {

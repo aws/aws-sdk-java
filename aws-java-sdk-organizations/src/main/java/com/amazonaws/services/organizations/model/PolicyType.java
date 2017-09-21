@@ -39,6 +39,9 @@ public enum PolicyType {
      * @param value
      *        real value
      * @return PolicyType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static PolicyType fromValue(String value) {
         if (value == null || "".equals(value)) {

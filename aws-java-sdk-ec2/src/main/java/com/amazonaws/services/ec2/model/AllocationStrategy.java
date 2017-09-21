@@ -40,6 +40,9 @@ public enum AllocationStrategy {
      * @param value
      *        real value
      * @return AllocationStrategy corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AllocationStrategy fromValue(String value) {
         if (value == null || "".equals(value)) {

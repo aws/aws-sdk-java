@@ -45,6 +45,9 @@ public enum DeviceAttribute {
      * @param value
      *        real value
      * @return DeviceAttribute corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DeviceAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {

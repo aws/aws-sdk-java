@@ -42,6 +42,9 @@ public enum ListingStatus {
      * @param value
      *        real value
      * @return ListingStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ListingStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

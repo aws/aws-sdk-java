@@ -40,6 +40,9 @@ public enum AcceptanceType {
      * @param value
      *        real value
      * @return AcceptanceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AcceptanceType fromValue(String value) {
         if (value == null || "".equals(value)) {

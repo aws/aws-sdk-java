@@ -46,6 +46,9 @@ public enum InstanceInformationFilterKey {
      * @param value
      *        real value
      * @return InstanceInformationFilterKey corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static InstanceInformationFilterKey fromValue(String value) {
         if (value == null || "".equals(value)) {

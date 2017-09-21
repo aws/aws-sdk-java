@@ -60,6 +60,12 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long storedBytes;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -291,6 +297,46 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogGroup withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -312,7 +358,9 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getStoredBytes() != null)
-            sb.append("StoredBytes: ").append(getStoredBytes());
+            sb.append("StoredBytes: ").append(getStoredBytes()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +399,10 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStoredBytes() != null && other.getStoredBytes().equals(this.getStoredBytes()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -365,6 +417,7 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMetricFilterCount() == null) ? 0 : getMetricFilterCount().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

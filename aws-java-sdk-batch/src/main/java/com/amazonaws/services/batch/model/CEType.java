@@ -40,6 +40,9 @@ public enum CEType {
      * @param value
      *        real value
      * @return CEType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static CEType fromValue(String value) {
         if (value == null || "".equals(value)) {

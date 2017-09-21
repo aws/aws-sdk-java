@@ -42,6 +42,9 @@ public enum PlayerSessionStatus {
      * @param value
      *        real value
      * @return PlayerSessionStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static PlayerSessionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

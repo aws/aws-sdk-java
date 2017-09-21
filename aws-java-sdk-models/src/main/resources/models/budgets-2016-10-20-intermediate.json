@@ -586,6 +586,10 @@
         "exceptionName" : "NotFoundException",
         "documentation" : "This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an account ID.",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DuplicateRecordException",
+        "documentation" : "The exception is thrown when customer tries to create a record (e.g. budget) that already exists.",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -624,6 +628,10 @@
       }, {
         "exceptionName" : "NotFoundException",
         "documentation" : "This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an account ID.",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DuplicateRecordException",
+        "documentation" : "The exception is thrown when customer tries to create a record (e.g. budget) that already exists.",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,

@@ -1244,6 +1244,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CopyFpgaImageResult> copyFpgaImageAsync(CopyFpgaImageRequest request) {
+
+        return copyFpgaImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyFpgaImageResult> copyFpgaImageAsync(final CopyFpgaImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopyFpgaImageRequest, CopyFpgaImageResult> asyncHandler) {
+        final CopyFpgaImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CopyFpgaImageResult>() {
+            @Override
+            public CopyFpgaImageResult call() throws Exception {
+                CopyFpgaImageResult result = null;
+
+                try {
+                    result = executeCopyFpgaImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request) {
 
         return copyImageAsync(request, null);
@@ -2503,6 +2536,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDeleteFlowLogs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFpgaImageResult> deleteFpgaImageAsync(DeleteFpgaImageRequest request) {
+
+        return deleteFpgaImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFpgaImageResult> deleteFpgaImageAsync(final DeleteFpgaImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFpgaImageRequest, DeleteFpgaImageResult> asyncHandler) {
+        final DeleteFpgaImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFpgaImageResult>() {
+            @Override
+            public DeleteFpgaImageResult call() throws Exception {
+                DeleteFpgaImageResult result = null;
+
+                try {
+                    result = executeDeleteFpgaImage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3930,6 +3996,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
             com.amazonaws.handlers.AsyncHandler<DescribeFlowLogsRequest, DescribeFlowLogsResult> asyncHandler) {
 
         return describeFlowLogsAsync(new DescribeFlowLogsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFpgaImageAttributeResult> describeFpgaImageAttributeAsync(DescribeFpgaImageAttributeRequest request) {
+
+        return describeFpgaImageAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFpgaImageAttributeResult> describeFpgaImageAttributeAsync(final DescribeFpgaImageAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFpgaImageAttributeRequest, DescribeFpgaImageAttributeResult> asyncHandler) {
+        final DescribeFpgaImageAttributeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFpgaImageAttributeResult>() {
+            @Override
+            public DescribeFpgaImageAttributeResult call() throws Exception {
+                DescribeFpgaImageAttributeResult result = null;
+
+                try {
+                    result = executeDescribeFpgaImageAttribute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -7673,6 +7772,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyFpgaImageAttributeResult> modifyFpgaImageAttributeAsync(ModifyFpgaImageAttributeRequest request) {
+
+        return modifyFpgaImageAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyFpgaImageAttributeResult> modifyFpgaImageAttributeAsync(final ModifyFpgaImageAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyFpgaImageAttributeRequest, ModifyFpgaImageAttributeResult> asyncHandler) {
+        final ModifyFpgaImageAttributeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyFpgaImageAttributeResult>() {
+            @Override
+            public ModifyFpgaImageAttributeResult call() throws Exception {
+                ModifyFpgaImageAttributeResult result = null;
+
+                try {
+                    result = executeModifyFpgaImageAttribute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyHostsResult> modifyHostsAsync(ModifyHostsRequest request) {
 
         return modifyHostsAsync(request, null);
@@ -8787,6 +8919,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeRequestSpotInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetFpgaImageAttributeResult> resetFpgaImageAttributeAsync(ResetFpgaImageAttributeRequest request) {
+
+        return resetFpgaImageAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetFpgaImageAttributeResult> resetFpgaImageAttributeAsync(final ResetFpgaImageAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetFpgaImageAttributeRequest, ResetFpgaImageAttributeResult> asyncHandler) {
+        final ResetFpgaImageAttributeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetFpgaImageAttributeResult>() {
+            @Override
+            public ResetFpgaImageAttributeResult call() throws Exception {
+                ResetFpgaImageAttributeResult result = null;
+
+                try {
+                    result = executeResetFpgaImageAttribute(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

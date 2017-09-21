@@ -40,6 +40,9 @@ public enum MetricType {
      * @param value
      *        real value
      * @return MetricType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MetricType fromValue(String value) {
         if (value == null || "".equals(value)) {

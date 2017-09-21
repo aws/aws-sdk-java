@@ -40,6 +40,9 @@ public enum CommentVisibilityType {
      * @param value
      *        real value
      * @return CommentVisibilityType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static CommentVisibilityType fromValue(String value) {
         if (value == null || "".equals(value)) {

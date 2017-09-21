@@ -42,6 +42,9 @@ public enum ReferenceType {
      * @param value
      *        real value
      * @return ReferenceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReferenceType fromValue(String value) {
         if (value == null || "".equals(value)) {

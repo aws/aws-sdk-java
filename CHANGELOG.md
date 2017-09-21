@@ -1,3 +1,20 @@
+# __1.11.201__ __2017-09-21__
+## __AWS Budgets__
+  - ### Features
+    - Including "DuplicateRecordException" in UpdateNotification and UpdateSubscriber. 
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Adds support for associating LogGroups with KMS Keys.
+
+## __Amazon EC2__
+  - ### Features
+    - Add EC2 APIs to copy Amazon FPGA Images (AFIs) within the same region and across multiple regions, delete AFIs, and modify AFI attributes. AFI attributes include name, description and granting/denying other AWS accounts to load the AFI.
+
+## __Amazon S3__
+  - ### Deprecations
+    - Deprecating AmazonS3#doesBucketExist in favor of the newly introduced AmazonS3#doesBucketExistV2. The new method is more reliable when called with incorrect credentials. See https://github.com/aws/aws-sdk-java/issues/1256 for a full discussion.
+
 # __1.11.200__ __2017-09-20__
 ## __AWS CodePipeline__
   - ### Features

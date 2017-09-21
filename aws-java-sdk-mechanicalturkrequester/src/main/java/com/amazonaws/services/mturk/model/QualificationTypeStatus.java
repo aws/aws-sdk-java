@@ -40,6 +40,9 @@ public enum QualificationTypeStatus {
      * @param value
      *        real value
      * @return QualificationTypeStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static QualificationTypeStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -48,6 +48,9 @@ public enum JobFlowExecutionState {
      * @param value
      *        real value
      * @return JobFlowExecutionState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static JobFlowExecutionState fromValue(String value) {
         if (value == null || "".equals(value)) {

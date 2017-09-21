@@ -41,6 +41,9 @@ public enum TrafficType {
      * @param value
      *        real value
      * @return TrafficType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static TrafficType fromValue(String value) {
         if (value == null || "".equals(value)) {

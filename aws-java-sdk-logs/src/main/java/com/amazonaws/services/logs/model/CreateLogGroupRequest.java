@@ -33,6 +33,14 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private String logGroupName;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
      * The key-value pairs to use for the tags.
      * </p>
      */
@@ -93,6 +101,58 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateLogGroupRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *         Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLogGroupRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -173,6 +233,8 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getLogGroupName() != null)
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -193,6 +255,10 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -206,6 +272,7 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

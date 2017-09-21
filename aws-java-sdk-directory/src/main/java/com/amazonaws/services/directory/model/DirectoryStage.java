@@ -49,6 +49,9 @@ public enum DirectoryStage {
      * @param value
      *        real value
      * @return DirectoryStage corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DirectoryStage fromValue(String value) {
         if (value == null || "".equals(value)) {

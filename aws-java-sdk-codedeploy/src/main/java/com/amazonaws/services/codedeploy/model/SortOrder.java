@@ -40,6 +40,9 @@ public enum SortOrder {
      * @param value
      *        real value
      * @return SortOrder corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SortOrder fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -41,6 +41,9 @@ public enum DeliveryStatus {
      * @param value
      *        real value
      * @return DeliveryStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DeliveryStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

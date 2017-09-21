@@ -277,6 +277,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateKmsKeyResult> associateKmsKeyAsync(AssociateKmsKeyRequest request) {
+
+        return associateKmsKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateKmsKeyResult> associateKmsKeyAsync(final AssociateKmsKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateKmsKeyRequest, AssociateKmsKeyResult> asyncHandler) {
+        final AssociateKmsKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateKmsKeyResult>() {
+            @Override
+            public AssociateKmsKeyResult call() throws Exception {
+                AssociateKmsKeyResult result = null;
+
+                try {
+                    result = executeAssociateKmsKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest request) {
 
         return cancelExportTaskAsync(request, null);
@@ -901,6 +934,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeDescribeSubscriptionFilters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateKmsKeyResult> disassociateKmsKeyAsync(DisassociateKmsKeyRequest request) {
+
+        return disassociateKmsKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateKmsKeyResult> disassociateKmsKeyAsync(final DisassociateKmsKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateKmsKeyRequest, DisassociateKmsKeyResult> asyncHandler) {
+        final DisassociateKmsKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateKmsKeyResult>() {
+            @Override
+            public DisassociateKmsKeyResult call() throws Exception {
+                DisassociateKmsKeyResult result = null;
+
+                try {
+                    result = executeDisassociateKmsKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

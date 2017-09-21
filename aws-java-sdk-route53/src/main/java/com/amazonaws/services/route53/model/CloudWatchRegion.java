@@ -52,6 +52,9 @@ public enum CloudWatchRegion {
      * @param value
      *        real value
      * @return CloudWatchRegion corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static CloudWatchRegion fromValue(String value) {
         if (value == null || "".equals(value)) {

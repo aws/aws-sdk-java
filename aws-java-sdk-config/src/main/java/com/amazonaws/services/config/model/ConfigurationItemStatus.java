@@ -42,6 +42,9 @@ public enum ConfigurationItemStatus {
      * @param value
      *        real value
      * @return ConfigurationItemStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ConfigurationItemStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

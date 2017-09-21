@@ -79,6 +79,9 @@ public enum LagState {
      * @param value
      *        real value
      * @return LagState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static LagState fromValue(String value) {
         if (value == null || "".equals(value)) {

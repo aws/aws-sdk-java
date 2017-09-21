@@ -55,6 +55,9 @@ public enum BatchWriteExceptionType {
      * @param value
      *        real value
      * @return BatchWriteExceptionType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static BatchWriteExceptionType fromValue(String value) {
         if (value == null || "".equals(value)) {

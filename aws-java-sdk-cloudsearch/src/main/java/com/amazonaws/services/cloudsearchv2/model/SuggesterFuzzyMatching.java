@@ -41,6 +41,9 @@ public enum SuggesterFuzzyMatching {
      * @param value
      *        real value
      * @return SuggesterFuzzyMatching corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SuggesterFuzzyMatching fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -48,6 +48,9 @@ public enum Comparator {
      * @param value
      *        real value
      * @return Comparator corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static Comparator fromValue(String value) {
         if (value == null || "".equals(value)) {

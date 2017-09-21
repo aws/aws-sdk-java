@@ -39,6 +39,9 @@ public enum SourceAuthType {
      * @param value
      *        real value
      * @return SourceAuthType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SourceAuthType fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -40,6 +40,9 @@ public enum NotifyWorkersFailureCode {
      * @param value
      *        real value
      * @return NotifyWorkersFailureCode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static NotifyWorkersFailureCode fromValue(String value) {
         if (value == null || "".equals(value)) {

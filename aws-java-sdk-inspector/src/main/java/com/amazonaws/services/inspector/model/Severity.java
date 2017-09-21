@@ -43,6 +43,9 @@ public enum Severity {
      * @param value
      *        real value
      * @return Severity corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static Severity fromValue(String value) {
         if (value == null || "".equals(value)) {

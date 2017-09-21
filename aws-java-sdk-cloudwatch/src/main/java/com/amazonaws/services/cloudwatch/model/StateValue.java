@@ -41,6 +41,9 @@ public enum StateValue {
      * @param value
      *        real value
      * @return StateValue corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static StateValue fromValue(String value) {
         if (value == null || "".equals(value)) {

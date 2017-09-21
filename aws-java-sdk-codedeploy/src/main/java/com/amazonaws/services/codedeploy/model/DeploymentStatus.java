@@ -45,6 +45,9 @@ public enum DeploymentStatus {
      * @param value
      *        real value
      * @return DeploymentStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DeploymentStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

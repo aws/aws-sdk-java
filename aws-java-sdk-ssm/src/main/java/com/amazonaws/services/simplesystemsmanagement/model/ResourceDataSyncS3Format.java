@@ -39,6 +39,9 @@ public enum ResourceDataSyncS3Format {
      * @param value
      *        real value
      * @return ResourceDataSyncS3Format corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ResourceDataSyncS3Format fromValue(String value) {
         if (value == null || "".equals(value)) {

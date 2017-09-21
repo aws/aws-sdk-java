@@ -44,6 +44,9 @@ public enum ExecutionStatus {
      * @param value
      *        real value
      * @return ExecutionStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ExecutionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

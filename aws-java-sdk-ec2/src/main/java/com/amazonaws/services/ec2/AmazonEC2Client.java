@@ -1877,6 +1877,53 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Copies the specified Amazon FPGA Image (AFI) to the current region.
+     * </p>
+     * 
+     * @param copyFpgaImageRequest
+     * @return Result of the CopyFpgaImage operation returned by the service.
+     * @sample AmazonEC2.CopyFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CopyFpgaImageResult copyFpgaImage(CopyFpgaImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyFpgaImage(request);
+    }
+
+    @SdkInternalApi
+    final CopyFpgaImageResult executeCopyFpgaImage(CopyFpgaImageRequest copyFpgaImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyFpgaImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyFpgaImageRequest> request = null;
+        Response<CopyFpgaImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(copyFpgaImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CopyFpgaImageResult> responseHandler = new StaxResponseHandler<CopyFpgaImageResult>(new CopyFpgaImageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Initiates the copy of an AMI from the specified source region to the current region. You specify the destination
      * region by using its endpoint when making the request.
      * </p>
@@ -4165,6 +4212,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Deletes the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param deleteFpgaImageRequest
+     * @return Result of the DeleteFpgaImage operation returned by the service.
+     * @sample AmazonEC2.DeleteFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFpgaImageResult deleteFpgaImage(DeleteFpgaImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFpgaImage(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFpgaImageResult executeDeleteFpgaImage(DeleteFpgaImageRequest deleteFpgaImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFpgaImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFpgaImageRequest> request = null;
+        Response<DeleteFpgaImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(deleteFpgaImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteFpgaImageResult> responseHandler = new StaxResponseHandler<DeleteFpgaImageResult>(
+                    new DeleteFpgaImageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete
      * it.
      * </p>
@@ -6072,6 +6167,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeFlowLogsResult describeFlowLogs() {
         return describeFlowLogs(new DescribeFlowLogsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the specified attribute of the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param describeFpgaImageAttributeRequest
+     * @return Result of the DescribeFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2.DescribeFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeFpgaImageAttributeResult describeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFpgaImageAttribute(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFpgaImageAttributeResult executeDescribeFpgaImageAttribute(DescribeFpgaImageAttributeRequest describeFpgaImageAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFpgaImageAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFpgaImageAttributeRequest> request = null;
+        Response<DescribeFpgaImageAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeFpgaImageAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeFpgaImageAttributeResult>(
+                    new DescribeFpgaImageAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -10548,12 +10691,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Retrieves the encrypted administrator password for an instance running Windows.
+     * Retrieves the encrypted administrator password for a running Windows instance.
      * </p>
      * <p>
-     * The Windows password is generated at boot if the <code>EC2Config</code> service plugin,
-     * <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time an AMI is launched, and then
-     * <code>Ec2SetPassword</code> is automatically disabled. The password is not generated for rebundled AMIs unless
+     * The Windows password is generated at boot by the <code>EC2Config</code> service or <code>EC2Launch</code> scripts
+     * (Windows Server 2016 and later). This usually only happens the first time an instance is launched. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a> and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a> in the Amazon Elastic
+     * Compute Cloud User Guide.
+     * </p>
+     * <p>
+     * For the <code>EC2Config</code> service, the password is not generated for rebundled AMIs unless
      * <code>Ec2SetPassword</code> is enabled before bundling.
      * </p>
      * <p>
@@ -10561,8 +10710,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * the corresponding key pair file.
      * </p>
      * <p>
-     * Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after
-     * launching an instance before trying to retrieve the generated password.
+     * When you launch an instance, password generation and encryption may take a few minutes. If you try to retrieve
+     * the password before it's available, the output returns an empty string. We recommend that you wait up to 15
+     * minutes after launching an instance before trying to retrieve the generated password.
      * </p>
      * 
      * @param getPasswordDataRequest
@@ -10926,6 +11076,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportVolumeResult> responseHandler = new StaxResponseHandler<ImportVolumeResult>(new ImportVolumeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param modifyFpgaImageAttributeRequest
+     * @return Result of the ModifyFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2.ModifyFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyFpgaImageAttributeResult modifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyFpgaImageAttribute(request);
+    }
+
+    @SdkInternalApi
+    final ModifyFpgaImageAttributeResult executeModifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest modifyFpgaImageAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyFpgaImageAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyFpgaImageAttributeRequest> request = null;
+        Response<ModifyFpgaImageAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyFpgaImageAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyFpgaImageAttributeResult>(
+                    new ModifyFpgaImageAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12926,6 +13124,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RequestSpotInstancesResult> responseHandler = new StaxResponseHandler<RequestSpotInstancesResult>(
                     new RequestSpotInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default value. You can only reset
+     * the load permission attribute.
+     * </p>
+     * 
+     * @param resetFpgaImageAttributeRequest
+     * @return Result of the ResetFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2.ResetFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ResetFpgaImageAttributeResult resetFpgaImageAttribute(ResetFpgaImageAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetFpgaImageAttribute(request);
+    }
+
+    @SdkInternalApi
+    final ResetFpgaImageAttributeResult executeResetFpgaImageAttribute(ResetFpgaImageAttributeRequest resetFpgaImageAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetFpgaImageAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetFpgaImageAttributeRequest> request = null;
+        Response<ResetFpgaImageAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetFpgaImageAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ResetFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ResetFpgaImageAttributeResult>(
+                    new ResetFpgaImageAttributeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

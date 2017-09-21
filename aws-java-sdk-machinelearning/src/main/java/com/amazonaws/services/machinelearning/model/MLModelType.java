@@ -41,6 +41,9 @@ public enum MLModelType {
      * @param value
      *        real value
      * @return MLModelType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MLModelType fromValue(String value) {
         if (value == null || "".equals(value)) {

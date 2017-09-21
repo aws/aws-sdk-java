@@ -40,6 +40,9 @@ public enum AutomationExecutionFilterKey {
      * @param value
      *        real value
      * @return AutomationExecutionFilterKey corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AutomationExecutionFilterKey fromValue(String value) {
         if (value == null || "".equals(value)) {

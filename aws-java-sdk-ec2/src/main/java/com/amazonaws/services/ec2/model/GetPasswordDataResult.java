@@ -33,7 +33,7 @@ public class GetPasswordDataResult extends com.amazonaws.AmazonWebServiceResult<
     private String instanceId;
     /**
      * <p>
-     * The password of the instance.
+     * The password of the instance. Returns an empty string if the password is not available.
      * </p>
      */
     private String passwordData;
@@ -86,11 +86,11 @@ public class GetPasswordDataResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The password of the instance.
+     * The password of the instance. Returns an empty string if the password is not available.
      * </p>
      * 
      * @param passwordData
-     *        The password of the instance.
+     *        The password of the instance. Returns an empty string if the password is not available.
      */
 
     public void setPasswordData(String passwordData) {
@@ -99,10 +99,10 @@ public class GetPasswordDataResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The password of the instance.
+     * The password of the instance. Returns an empty string if the password is not available.
      * </p>
      * 
-     * @return The password of the instance.
+     * @return The password of the instance. Returns an empty string if the password is not available.
      */
 
     public String getPasswordData() {
@@ -111,11 +111,11 @@ public class GetPasswordDataResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The password of the instance.
+     * The password of the instance. Returns an empty string if the password is not available.
      * </p>
      * 
      * @param passwordData
-     *        The password of the instance.
+     *        The password of the instance. Returns an empty string if the password is not available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

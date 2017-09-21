@@ -40,6 +40,9 @@ public enum SlotValueSelectionStrategy {
      * @param value
      *        real value
      * @return SlotValueSelectionStrategy corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SlotValueSelectionStrategy fromValue(String value) {
         if (value == null || "".equals(value)) {

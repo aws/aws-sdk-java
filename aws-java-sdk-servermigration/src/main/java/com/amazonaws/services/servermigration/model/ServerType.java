@@ -39,6 +39,9 @@ public enum ServerType {
      * @param value
      *        real value
      * @return ServerType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ServerType fromValue(String value) {
         if (value == null || "".equals(value)) {

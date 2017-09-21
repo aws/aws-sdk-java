@@ -44,6 +44,9 @@ public enum InstanceMetricName {
      * @param value
      *        real value
      * @return InstanceMetricName corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static InstanceMetricName fromValue(String value) {
         if (value == null || "".equals(value)) {

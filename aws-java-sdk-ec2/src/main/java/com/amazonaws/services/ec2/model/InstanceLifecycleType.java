@@ -40,6 +40,9 @@ public enum InstanceLifecycleType {
      * @param value
      *        real value
      * @return InstanceLifecycleType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static InstanceLifecycleType fromValue(String value) {
         if (value == null || "".equals(value)) {

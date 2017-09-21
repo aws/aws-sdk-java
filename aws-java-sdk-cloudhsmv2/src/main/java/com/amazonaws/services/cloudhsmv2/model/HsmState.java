@@ -43,6 +43,9 @@ public enum HsmState {
      * @param value
      *        real value
      * @return HsmState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static HsmState fromValue(String value) {
         if (value == null || "".equals(value)) {

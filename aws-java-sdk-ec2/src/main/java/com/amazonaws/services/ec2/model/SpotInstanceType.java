@@ -40,6 +40,9 @@ public enum SpotInstanceType {
      * @param value
      *        real value
      * @return SpotInstanceType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SpotInstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {

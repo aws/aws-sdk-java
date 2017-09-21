@@ -65,6 +65,9 @@ public enum MetricUnit {
      * @param value
      *        real value
      * @return MetricUnit corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MetricUnit fromValue(String value) {
         if (value == null || "".equals(value)) {

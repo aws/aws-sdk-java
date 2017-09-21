@@ -40,6 +40,9 @@ public enum DeliveryStreamType {
      * @param value
      *        real value
      * @return DeliveryStreamType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DeliveryStreamType fromValue(String value) {
         if (value == null || "".equals(value)) {

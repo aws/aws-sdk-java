@@ -39,6 +39,9 @@ public enum DocumentPermissionType {
      * @param value
      *        real value
      * @return DocumentPermissionType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DocumentPermissionType fromValue(String value) {
         if (value == null || "".equals(value)) {

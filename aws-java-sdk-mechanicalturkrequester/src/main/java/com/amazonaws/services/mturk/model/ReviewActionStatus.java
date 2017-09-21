@@ -42,6 +42,9 @@ public enum ReviewActionStatus {
      * @param value
      *        real value
      * @return ReviewActionStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReviewActionStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

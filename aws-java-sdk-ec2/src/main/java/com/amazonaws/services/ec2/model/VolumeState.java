@@ -44,6 +44,9 @@ public enum VolumeState {
      * @param value
      *        real value
      * @return VolumeState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static VolumeState fromValue(String value) {
         if (value == null || "".equals(value)) {

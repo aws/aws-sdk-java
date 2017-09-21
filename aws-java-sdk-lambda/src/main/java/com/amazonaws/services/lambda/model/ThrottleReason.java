@@ -41,6 +41,9 @@ public enum ThrottleReason {
      * @param value
      *        real value
      * @return ThrottleReason corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ThrottleReason fromValue(String value) {
         if (value == null || "".equals(value)) {

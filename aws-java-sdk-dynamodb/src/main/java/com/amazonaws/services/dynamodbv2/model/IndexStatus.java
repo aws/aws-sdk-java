@@ -42,6 +42,9 @@ public enum IndexStatus {
      * @param value
      *        real value
      * @return IndexStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static IndexStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

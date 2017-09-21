@@ -41,6 +41,9 @@ public enum ReachabilityStatus {
      * @param value
      *        real value
      * @return ReachabilityStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReachabilityStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

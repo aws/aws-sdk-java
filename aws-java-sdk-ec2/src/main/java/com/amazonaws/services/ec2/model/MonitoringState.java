@@ -42,6 +42,9 @@ public enum MonitoringState {
      * @param value
      *        real value
      * @return MonitoringState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static MonitoringState fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -46,6 +46,9 @@ public enum CannedAccessControlList {
      * @param value
      *        real value
      * @return CannedAccessControlList corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static CannedAccessControlList fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -51,6 +51,9 @@ public enum ServerStatus {
      * @param value
      *        real value
      * @return ServerStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ServerStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

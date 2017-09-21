@@ -40,6 +40,9 @@ public enum SnowballType {
      * @param value
      *        real value
      * @return SnowballType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SnowballType fromValue(String value) {
         if (value == null || "".equals(value)) {

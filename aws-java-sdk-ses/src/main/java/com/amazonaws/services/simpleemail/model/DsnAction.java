@@ -43,6 +43,9 @@ public enum DsnAction {
      * @param value
      *        real value
      * @return DsnAction corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DsnAction fromValue(String value) {
         if (value == null || "".equals(value)) {

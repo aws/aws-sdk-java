@@ -194,6 +194,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CopyFpgaImageResult copyFpgaImage(CopyFpgaImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CopyImageResult copyImage(CopyImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -385,6 +390,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteFlowLogsResult deleteFlowLogs(DeleteFlowLogsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFpgaImageResult deleteFpgaImage(DeleteFpgaImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -616,6 +626,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeFlowLogsResult describeFlowLogs() {
         return describeFlowLogs(new DescribeFlowLogsRequest());
+    }
+
+    @Override
+    public DescribeFpgaImageAttributeResult describeFpgaImageAttribute(DescribeFpgaImageAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1239,6 +1254,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyFpgaImageAttributeResult modifyFpgaImageAttribute(ModifyFpgaImageAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyHostsResult modifyHosts(ModifyHostsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1405,6 +1425,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RequestSpotInstancesResult requestSpotInstances(RequestSpotInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetFpgaImageAttributeResult resetFpgaImageAttribute(ResetFpgaImageAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

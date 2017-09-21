@@ -99,6 +99,9 @@ public enum ErrorCode {
      * @param value
      *        real value
      * @return ErrorCode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {

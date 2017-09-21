@@ -15,7 +15,9 @@ package com.amazonaws.services.logs.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The method used to distribute log data to the destination, which can be either random or grouped by log stream.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Distribution {
@@ -40,6 +42,9 @@ public enum Distribution {
      * @param value
      *        real value
      * @return Distribution corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static Distribution fromValue(String value) {
         if (value == null || "".equals(value)) {

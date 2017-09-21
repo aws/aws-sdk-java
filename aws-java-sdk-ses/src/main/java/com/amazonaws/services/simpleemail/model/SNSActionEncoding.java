@@ -40,6 +40,9 @@ public enum SNSActionEncoding {
      * @param value
      *        real value
      * @return SNSActionEncoding corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static SNSActionEncoding fromValue(String value) {
         if (value == null || "".equals(value)) {

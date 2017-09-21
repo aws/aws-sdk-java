@@ -84,8 +84,9 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     private String roleArn;
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      */
     private String distribution;
@@ -466,14 +467,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @see Distribution
      */
 
@@ -483,13 +485,14 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
-     * @return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *         stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *         data randomly.
+     * @return The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *         but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *         the destination is an Amazon Kinesis stream.
      * @see Distribution
      */
 
@@ -500,14 +503,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Distribution
      */
@@ -519,14 +523,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @see Distribution
      */
 
@@ -537,14 +542,15 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
-     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * The method used to distribute log data to the destination. By default log data is grouped by log stream, but the
+     * grouping can be set to random for a more even distribution. This property is only applicable when the destination
+     * is an Amazon Kinesis stream.
      * </p>
      * 
      * @param distribution
-     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
-     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
-     *        data randomly.
+     *        The method used to distribute log data to the destination. By default log data is grouped by log stream,
+     *        but the grouping can be set to random for a more even distribution. This property is only applicable when
+     *        the destination is an Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Distribution
      */

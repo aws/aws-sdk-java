@@ -40,6 +40,9 @@ public enum ElasticsearchS3BackupMode {
      * @param value
      *        real value
      * @return ElasticsearchS3BackupMode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ElasticsearchS3BackupMode fromValue(String value) {
         if (value == null || "".equals(value)) {

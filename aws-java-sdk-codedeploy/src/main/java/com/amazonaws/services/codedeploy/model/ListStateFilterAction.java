@@ -41,6 +41,9 @@ public enum ListStateFilterAction {
      * @param value
      *        real value
      * @return ListStateFilterAction corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ListStateFilterAction fromValue(String value) {
         if (value == null || "".equals(value)) {

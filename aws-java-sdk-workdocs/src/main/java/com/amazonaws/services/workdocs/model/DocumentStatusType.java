@@ -40,6 +40,9 @@ public enum DocumentStatusType {
      * @param value
      *        real value
      * @return DocumentStatusType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static DocumentStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {

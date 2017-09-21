@@ -40,6 +40,9 @@ public enum UpdateActionType {
      * @param value
      *        real value
      * @return UpdateActionType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static UpdateActionType fromValue(String value) {
         if (value == null || "".equals(value)) {

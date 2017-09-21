@@ -53,6 +53,9 @@ public enum VPCRegion {
      * @param value
      *        real value
      * @return VPCRegion corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static VPCRegion fromValue(String value) {
         if (value == null || "".equals(value)) {

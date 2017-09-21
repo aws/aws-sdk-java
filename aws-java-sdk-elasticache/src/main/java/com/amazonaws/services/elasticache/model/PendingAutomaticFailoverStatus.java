@@ -40,6 +40,9 @@ public enum PendingAutomaticFailoverStatus {
      * @param value
      *        real value
      * @return PendingAutomaticFailoverStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static PendingAutomaticFailoverStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

@@ -46,6 +46,9 @@ public enum UserImportJobStatusType {
      * @param value
      *        real value
      * @return UserImportJobStatusType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static UserImportJobStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {

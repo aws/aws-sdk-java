@@ -41,6 +41,9 @@ public enum ReportStatus {
      * @param value
      *        real value
      * @return ReportStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ReportStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

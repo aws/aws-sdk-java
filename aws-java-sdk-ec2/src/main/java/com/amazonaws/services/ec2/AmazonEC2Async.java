@@ -1484,6 +1484,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Copies the specified Amazon FPGA Image (AFI) to the current region.
+     * </p>
+     * 
+     * @param copyFpgaImageRequest
+     * @return A Java Future containing the result of the CopyFpgaImage operation returned by the service.
+     * @sample AmazonEC2Async.CopyFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyFpgaImageResult> copyFpgaImageAsync(CopyFpgaImageRequest copyFpgaImageRequest);
+
+    /**
+     * <p>
+     * Copies the specified Amazon FPGA Image (AFI) to the current region.
+     * </p>
+     * 
+     * @param copyFpgaImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyFpgaImage operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CopyFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyFpgaImageResult> copyFpgaImageAsync(CopyFpgaImageRequest copyFpgaImageRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyFpgaImageRequest, CopyFpgaImageResult> asyncHandler);
+
+    /**
+     * <p>
      * Initiates the copy of an AMI from the specified source region to the current region. You specify the destination
      * region by using its endpoint when making the request.
      * </p>
@@ -3699,6 +3730,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param deleteFpgaImageRequest
+     * @return A Java Future containing the result of the DeleteFpgaImage operation returned by the service.
+     * @sample AmazonEC2Async.DeleteFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFpgaImageResult> deleteFpgaImageAsync(DeleteFpgaImageRequest deleteFpgaImageRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param deleteFpgaImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFpgaImage operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteFpgaImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFpgaImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFpgaImageResult> deleteFpgaImageAsync(DeleteFpgaImageRequest deleteFpgaImageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFpgaImageRequest, DeleteFpgaImageResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete
      * it.
      * </p>
@@ -5327,6 +5389,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeFlowLogsResult> describeFlowLogsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeFlowLogsRequest, DescribeFlowLogsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified attribute of the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param describeFpgaImageAttributeRequest
+     * @return A Java Future containing the result of the DescribeFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2Async.DescribeFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFpgaImageAttributeResult> describeFpgaImageAttributeAsync(
+            DescribeFpgaImageAttributeRequest describeFpgaImageAttributeRequest);
+
+    /**
+     * <p>
+     * Describes the specified attribute of the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param describeFpgaImageAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFpgaImageAttributeResult> describeFpgaImageAttributeAsync(
+            DescribeFpgaImageAttributeRequest describeFpgaImageAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFpgaImageAttributeRequest, DescribeFpgaImageAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -9464,12 +9559,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Retrieves the encrypted administrator password for an instance running Windows.
+     * Retrieves the encrypted administrator password for a running Windows instance.
      * </p>
      * <p>
-     * The Windows password is generated at boot if the <code>EC2Config</code> service plugin,
-     * <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time an AMI is launched, and then
-     * <code>Ec2SetPassword</code> is automatically disabled. The password is not generated for rebundled AMIs unless
+     * The Windows password is generated at boot by the <code>EC2Config</code> service or <code>EC2Launch</code> scripts
+     * (Windows Server 2016 and later). This usually only happens the first time an instance is launched. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a> and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a> in the Amazon Elastic
+     * Compute Cloud User Guide.
+     * </p>
+     * <p>
+     * For the <code>EC2Config</code> service, the password is not generated for rebundled AMIs unless
      * <code>Ec2SetPassword</code> is enabled before bundling.
      * </p>
      * <p>
@@ -9477,8 +9578,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the corresponding key pair file.
      * </p>
      * <p>
-     * Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after
-     * launching an instance before trying to retrieve the generated password.
+     * When you launch an instance, password generation and encryption may take a few minutes. If you try to retrieve
+     * the password before it's available, the output returns an empty string. We recommend that you wait up to 15
+     * minutes after launching an instance before trying to retrieve the generated password.
      * </p>
      * 
      * @param getPasswordDataRequest
@@ -9492,12 +9594,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Retrieves the encrypted administrator password for an instance running Windows.
+     * Retrieves the encrypted administrator password for a running Windows instance.
      * </p>
      * <p>
-     * The Windows password is generated at boot if the <code>EC2Config</code> service plugin,
-     * <code>Ec2SetPassword</code>, is enabled. This usually only happens the first time an AMI is launched, and then
-     * <code>Ec2SetPassword</code> is automatically disabled. The password is not generated for rebundled AMIs unless
+     * The Windows password is generated at boot by the <code>EC2Config</code> service or <code>EC2Launch</code> scripts
+     * (Windows Server 2016 and later). This usually only happens the first time an instance is launched. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a> and <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a> in the Amazon Elastic
+     * Compute Cloud User Guide.
+     * </p>
+     * <p>
+     * For the <code>EC2Config</code> service, the password is not generated for rebundled AMIs unless
      * <code>Ec2SetPassword</code> is enabled before bundling.
      * </p>
      * <p>
@@ -9505,8 +9613,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the corresponding key pair file.
      * </p>
      * <p>
-     * Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after
-     * launching an instance before trying to retrieve the generated password.
+     * When you launch an instance, password generation and encryption may take a few minutes. If you try to retrieve
+     * the password before it's available, the output returns an empty string. We recommend that you wait up to 15
+     * minutes after launching an instance before trying to retrieve the generated password.
      * </p>
      * 
      * @param getPasswordDataRequest
@@ -9803,6 +9912,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ImportVolumeResult> importVolumeAsync(ImportVolumeRequest importVolumeRequest,
             com.amazonaws.handlers.AsyncHandler<ImportVolumeRequest, ImportVolumeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param modifyFpgaImageAttributeRequest
+     * @return A Java Future containing the result of the ModifyFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2Async.ModifyFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyFpgaImageAttributeResult> modifyFpgaImageAttributeAsync(ModifyFpgaImageAttributeRequest modifyFpgaImageAttributeRequest);
+
+    /**
+     * <p>
+     * Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
+     * </p>
+     * 
+     * @param modifyFpgaImageAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyFpgaImageAttributeResult> modifyFpgaImageAttributeAsync(ModifyFpgaImageAttributeRequest modifyFpgaImageAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyFpgaImageAttributeRequest, ModifyFpgaImageAttributeResult> asyncHandler);
 
     /**
      * <p>
@@ -11621,6 +11761,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<RequestSpotInstancesResult> requestSpotInstancesAsync(RequestSpotInstancesRequest requestSpotInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<RequestSpotInstancesRequest, RequestSpotInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default value. You can only reset
+     * the load permission attribute.
+     * </p>
+     * 
+     * @param resetFpgaImageAttributeRequest
+     * @return A Java Future containing the result of the ResetFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2Async.ResetFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetFpgaImageAttributeResult> resetFpgaImageAttributeAsync(ResetFpgaImageAttributeRequest resetFpgaImageAttributeRequest);
+
+    /**
+     * <p>
+     * Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default value. You can only reset
+     * the load permission attribute.
+     * </p>
+     * 
+     * @param resetFpgaImageAttributeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetFpgaImageAttribute operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ResetFpgaImageAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetFpgaImageAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetFpgaImageAttributeResult> resetFpgaImageAttributeAsync(ResetFpgaImageAttributeRequest resetFpgaImageAttributeRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetFpgaImageAttributeRequest, ResetFpgaImageAttributeResult> asyncHandler);
 
     /**
      * <p>

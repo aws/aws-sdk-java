@@ -126,6 +126,41 @@ public interface AWSLogs {
 
     /**
      * <p>
+     * Associates the specified AWS Key Management Service (AWS KMS) customer master key (CMK) with the specified log
+     * group.
+     * </p>
+     * <p>
+     * Associating an AWS KMS CMK with a log group overrides any existing associations between the log group and a CMK.
+     * After a CMK is associated with a log group, all newly ingested data for the log group is encrypted using the CMK.
+     * This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs.
+     * This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+     * </p>
+     * <p>
+     * Note that it can take up to 5 minutes for this operation to take effect.
+     * </p>
+     * <p>
+     * If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you will
+     * receive an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @param associateKmsKeyRequest
+     * @return Result of the AssociateKmsKey operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws OperationAbortedException
+     *         Multiple requests to update the same resource were in conflict.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.AssociateKmsKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/AssociateKmsKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AssociateKmsKeyResult associateKmsKey(AssociateKmsKeyRequest associateKmsKeyRequest);
+
+    /**
+     * <p>
      * Cancels the specified export task.
      * </p>
      * <p>
@@ -212,6 +247,15 @@ public interface AWSLogs {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK) with the log group, ingested
+     * data is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still
+     * within Amazon CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
+     * </p>
+     * <p>
+     * If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you will
+     * receive an <code>InvalidParameterException</code> error.
+     * </p>
      * 
      * @param createLogGroupRequest
      * @return Result of the CreateLogGroup operation returned by the service.
@@ -520,7 +564,7 @@ public interface AWSLogs {
     /**
      * <p>
      * Lists the specified metric filters. You can list all the metric filters or filter the results by log name,
-     * prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.
+     * prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.
      * </p>
      * 
      * @param describeMetricFiltersRequest
@@ -576,6 +620,36 @@ public interface AWSLogs {
 
     /**
      * <p>
+     * Disassociates the associated AWS Key Management Service (AWS KMS) customer master key (CMK) from the specified
+     * log group.
+     * </p>
+     * <p>
+     * After the AWS KMS CMK is disassociated from the log group, AWS CloudWatch Logs stops encrypting newly ingested
+     * data for the log group. All previously ingested data remains encrypted, and AWS CloudWatch Logs requires
+     * permissions for the CMK whenever the encrypted data is requested.
+     * </p>
+     * <p>
+     * Note that it can take up to 5 minutes for this operation to take effect.
+     * </p>
+     * 
+     * @param disassociateKmsKeyRequest
+     * @return Result of the DisassociateKmsKey operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws OperationAbortedException
+     *         Multiple requests to update the same resource were in conflict.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.DisassociateKmsKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DisassociateKmsKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DisassociateKmsKeyResult disassociateKmsKey(DisassociateKmsKeyRequest disassociateKmsKeyRequest);
+
+    /**
+     * <p>
      * Lists log events from the specified log group. You can list all the log events or filter the results using a
      * filter pattern, a time range, and the name of the log stream.
      * </p>
@@ -604,7 +678,7 @@ public interface AWSLogs {
      * Lists log events from the specified log stream. You can list all the log events or filter using a time range.
      * </p>
      * <p>
-     * By default, this operation returns as many log events as can fit in a response size of 1 MB (up to 10,000 log
+     * By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log
      * events). You can get additional log events by specifying one of the tokens in a subsequent call.
      * </p>
      * 
@@ -625,9 +699,6 @@ public interface AWSLogs {
     /**
      * <p>
      * Lists the tags for the specified log group.
-     * </p>
-     * <p>
-     * To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
      * </p>
      * 
      * @param listTagsLogGroupRequest

@@ -42,6 +42,9 @@ public enum AssessmentRunNotificationSnsStatusCode {
      * @param value
      *        real value
      * @return AssessmentRunNotificationSnsStatusCode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AssessmentRunNotificationSnsStatusCode fromValue(String value) {
         if (value == null || "".equals(value)) {

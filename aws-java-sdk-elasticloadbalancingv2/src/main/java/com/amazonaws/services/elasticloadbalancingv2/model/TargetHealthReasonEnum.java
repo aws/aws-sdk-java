@@ -49,6 +49,9 @@ public enum TargetHealthReasonEnum {
      * @param value
      *        real value
      * @return TargetHealthReasonEnum corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static TargetHealthReasonEnum fromValue(String value) {
         if (value == null || "".equals(value)) {

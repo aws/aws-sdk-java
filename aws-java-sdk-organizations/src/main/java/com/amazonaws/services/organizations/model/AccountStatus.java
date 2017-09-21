@@ -40,6 +40,9 @@ public enum AccountStatus {
      * @param value
      *        real value
      * @return AccountStatus corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static AccountStatus fromValue(String value) {
         if (value == null || "".equals(value)) {

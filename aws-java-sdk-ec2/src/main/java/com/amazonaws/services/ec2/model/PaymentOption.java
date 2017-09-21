@@ -41,6 +41,9 @@ public enum PaymentOption {
      * @param value
      *        real value
      * @return PaymentOption corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static PaymentOption fromValue(String value) {
         if (value == null || "".equals(value)) {

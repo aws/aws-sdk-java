@@ -39,6 +39,9 @@ public enum ExportType {
      * @param value
      *        real value
      * @return ExportType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static ExportType fromValue(String value) {
         if (value == null || "".equals(value)) {

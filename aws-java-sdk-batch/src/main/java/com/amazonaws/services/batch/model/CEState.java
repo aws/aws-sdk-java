@@ -40,6 +40,9 @@ public enum CEState {
      * @param value
      *        real value
      * @return CEState corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static CEState fromValue(String value) {
         if (value == null || "".equals(value)) {

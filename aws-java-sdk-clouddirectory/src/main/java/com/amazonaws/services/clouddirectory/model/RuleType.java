@@ -42,6 +42,9 @@ public enum RuleType {
      * @param value
      *        real value
      * @return RuleType corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static RuleType fromValue(String value) {
         if (value == null || "".equals(value)) {

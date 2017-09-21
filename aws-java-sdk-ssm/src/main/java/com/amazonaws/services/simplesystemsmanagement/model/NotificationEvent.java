@@ -44,6 +44,9 @@ public enum NotificationEvent {
      * @param value
      *        real value
      * @return NotificationEvent corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static NotificationEvent fromValue(String value) {
         if (value == null || "".equals(value)) {

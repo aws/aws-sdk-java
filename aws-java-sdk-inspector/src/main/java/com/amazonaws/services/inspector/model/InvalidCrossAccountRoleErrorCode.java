@@ -40,6 +40,9 @@ public enum InvalidCrossAccountRoleErrorCode {
      * @param value
      *        real value
      * @return InvalidCrossAccountRoleErrorCode corresponding to the value
+     *
+     * @throws IllegalArgumentException
+     *         If the specified value does not map to one of the known values in this enum.
      */
     public static InvalidCrossAccountRoleErrorCode fromValue(String value) {
         if (value == null || "".equals(value)) {
