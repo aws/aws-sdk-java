@@ -128,6 +128,14 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
                     StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getEnablePerformanceInsights() != null) {
+            request.addParameter("EnablePerformanceInsights", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getEnablePerformanceInsights()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId() != null) {
+            request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
         }

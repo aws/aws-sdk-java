@@ -64,7 +64,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>GetPipeline</a>, which returns information about a pipeline structure.
+ * <a>GetPipeline</a>, which returns information about the pipeline structure and pipeline metadata, including the
+ * pipeline Amazon Resource Name (ARN).
  * </p>
  * </li>
  * <li>
@@ -80,6 +81,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPipelineExecutions</a>, which gets a summary of the most recent executions for a pipeline.
  * </p>
  * </li>
  * <li>

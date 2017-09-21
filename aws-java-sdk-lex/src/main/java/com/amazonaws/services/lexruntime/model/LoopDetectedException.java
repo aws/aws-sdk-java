@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Lambda fulfilment function returned <code>DelegateDialogAction</code> to Amazon Lex without changing any slot values.
+ * This exception is not used.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

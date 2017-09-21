@@ -427,6 +427,10 @@ public class DBInstance implements Serializable, Cloneable {
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
 
+    private Boolean performanceInsightsEnabled;
+
+    private String performanceInsightsKMSKeyId;
+
     /**
      * <p>
      * Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.
@@ -3271,6 +3275,66 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * @param performanceInsightsEnabled
+     */
+
+    public void setPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
+        this.performanceInsightsEnabled = performanceInsightsEnabled;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getPerformanceInsightsEnabled() {
+        return this.performanceInsightsEnabled;
+    }
+
+    /**
+     * @param performanceInsightsEnabled
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
+        setPerformanceInsightsEnabled(performanceInsightsEnabled);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isPerformanceInsightsEnabled() {
+        return this.performanceInsightsEnabled;
+    }
+
+    /**
+     * @param performanceInsightsKMSKeyId
+     */
+
+    public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
+        this.performanceInsightsKMSKeyId = performanceInsightsKMSKeyId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getPerformanceInsightsKMSKeyId() {
+        return this.performanceInsightsKMSKeyId;
+    }
+
+    /**
+     * @param performanceInsightsKMSKeyId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
+        setPerformanceInsightsKMSKeyId(performanceInsightsKMSKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3378,7 +3442,11 @@ public class DBInstance implements Serializable, Cloneable {
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getIAMDatabaseAuthenticationEnabled() != null)
-            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getPerformanceInsightsEnabled() != null)
+            sb.append("PerformanceInsightsEnabled: ").append(getPerformanceInsightsEnabled()).append(",");
+        if (getPerformanceInsightsKMSKeyId() != null)
+            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -3594,6 +3662,14 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getIAMDatabaseAuthenticationEnabled() != null
                 && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getPerformanceInsightsEnabled() == null ^ this.getPerformanceInsightsEnabled() == null)
+            return false;
+        if (other.getPerformanceInsightsEnabled() != null && other.getPerformanceInsightsEnabled().equals(this.getPerformanceInsightsEnabled()) == false)
+            return false;
+        if (other.getPerformanceInsightsKMSKeyId() == null ^ this.getPerformanceInsightsKMSKeyId() == null)
+            return false;
+        if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -3651,6 +3727,8 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceInsightsEnabled() == null) ? 0 : getPerformanceInsightsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         return hashCode;
     }
 

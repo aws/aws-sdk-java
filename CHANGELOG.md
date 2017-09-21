@@ -1,4 +1,25 @@
-# __1.11.199__ __2017-09-19__
+# __1.11.200__ __2017-09-20__
+## __AWS CodePipeline__
+  - ### Features
+    - This change includes a PipelineMetadata object that is part of the output from the GetPipeline API that includes the Pipeline ARN, created, and updated timestamp.
+
+## __AWS Greengrass__
+  - ### Features
+    - Reset Deployments feature allows you to clean-up the cloud resource so you can delete the group. It also cleans up the core so that it goes back to the pre-deployment state.
+
+## __Amazon AppStream__
+  - ### Features
+    - API updates for supporting On-Demand fleets.
+
+## __Amazon Lex__
+  - ### Features
+    - Request attributes can be used to pass client specific information from the client to Amazon Lex as part of each request.
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Introduces the --option-group-name parameter to the ModifyDBSnapshot CLI command. You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance.  For more information, see http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG
+
+# __1.11.199__ __2017-09-20__
 ## __Amazon EC2__
   - ### Features
     - Fixed bug in EC2 clients preventing ElasticGpuSet from being set.

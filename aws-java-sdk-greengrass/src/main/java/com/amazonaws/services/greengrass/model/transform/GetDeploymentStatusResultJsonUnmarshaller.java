@@ -52,6 +52,14 @@ public class GetDeploymentStatusResultJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     getDeploymentStatusResult.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeploymentType", targetDepth)) {
+                    context.nextToken();
+                    getDeploymentStatusResult.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ErrorDetails", targetDepth)) {
+                    context.nextToken();
+                    getDeploymentStatusResult.setErrorDetails(new ListUnmarshaller<ErrorDetail>(ErrorDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
                     getDeploymentStatusResult.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));

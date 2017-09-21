@@ -308,6 +308,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ResetDeploymentsResult resetDeployments(ResetDeploymentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConnectivityInfoResult updateConnectivityInfo(UpdateConnectivityInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

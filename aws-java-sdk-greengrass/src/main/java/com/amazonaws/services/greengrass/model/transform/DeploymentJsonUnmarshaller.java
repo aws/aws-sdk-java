@@ -60,6 +60,10 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                     context.nextToken();
                     deployment.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeploymentType", targetDepth)) {
+                    context.nextToken();
+                    deployment.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GroupArn", targetDepth)) {
                     context.nextToken();
                     deployment.setGroupArn(context.getUnmarshaller(String.class).unmarshall(context));

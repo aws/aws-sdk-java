@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Request validation failed, there is no usable message in the context, or the bot build failed.
+ * Request validation failed, there is no usable message in the context, or the bot build failed, is still in progress,
+ * or contains unbuilt changes.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

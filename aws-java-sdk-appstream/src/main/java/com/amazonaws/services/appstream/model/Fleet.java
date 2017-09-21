@@ -60,10 +60,12 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private String imageName;
     /**
      * <p>
-     * The instance type of compute resources for the fleet. The fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances.
      * </p>
      */
     private String instanceType;
+
+    private String fleetType;
     /**
      * <p>
      * The capacity information for the fleet.
@@ -325,12 +327,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. The fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances.
      * </p>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. The fleet instances are launched from this instance
-     *        type.
+     *        The instance type to use when launching fleet instances.
      */
 
     public void setInstanceType(String instanceType) {
@@ -339,11 +340,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. The fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances.
      * </p>
      * 
-     * @return The instance type of compute resources for the fleet. The fleet instances are launched from this instance
-     *         type.
+     * @return The instance type to use when launching fleet instances.
      */
 
     public String getInstanceType() {
@@ -352,17 +352,67 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. The fleet instances are launched from this instance type.
+     * The instance type to use when launching fleet instances.
      * </p>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. The fleet instances are launched from this instance
-     *        type.
+     *        The instance type to use when launching fleet instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Fleet withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * @param fleetType
+     * @see FleetType
+     */
+
+    public void setFleetType(String fleetType) {
+        this.fleetType = fleetType;
+    }
+
+    /**
+     * @return
+     * @see FleetType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
+    public String getFleetType() {
+        return this.fleetType;
+    }
+
+    /**
+     * @param fleetType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetType
+     */
+
+    public Fleet withFleetType(String fleetType) {
+        setFleetType(fleetType);
+        return this;
+    }
+
+    /**
+     * @param fleetType
+     * @see FleetType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    public void setFleetType(FleetType fleetType) {
+        withFleetType(fleetType);
+    }
+
+    /**
+     * @param fleetType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetType
+     */
+
+    public Fleet withFleetType(FleetType fleetType) {
+        this.fleetType = fleetType.toString();
         return this;
     }
 
@@ -850,6 +900,8 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImageName: ").append(getImageName()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getFleetType() != null)
+            sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getComputeCapacityStatus() != null)
             sb.append("ComputeCapacityStatus: ").append(getComputeCapacityStatus()).append(",");
         if (getMaxUserDurationInSeconds() != null)
@@ -906,6 +958,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getFleetType() == null ^ this.getFleetType() == null)
+            return false;
+        if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
+            return false;
         if (other.getComputeCapacityStatus() == null ^ this.getComputeCapacityStatus() == null)
             return false;
         if (other.getComputeCapacityStatus() != null && other.getComputeCapacityStatus().equals(this.getComputeCapacityStatus()) == false)
@@ -956,6 +1012,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getComputeCapacityStatus() == null) ? 0 : getComputeCapacityStatus().hashCode());
         hashCode = prime * hashCode + ((getMaxUserDurationInSeconds() == null) ? 0 : getMaxUserDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimeoutInSeconds() == null) ? 0 : getDisconnectTimeoutInSeconds().hashCode());

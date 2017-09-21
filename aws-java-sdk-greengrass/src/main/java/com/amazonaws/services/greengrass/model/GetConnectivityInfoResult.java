@@ -23,15 +23,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetConnectivityInfoResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Connectivity info array */
+    /** Connectivity info list */
     private java.util.List<ConnectivityInfo> connectivityInfo;
     /** Response Text */
     private String message;
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      * 
-     * @return Connectivity info array
+     * @return Connectivity info list
      */
 
     public java.util.List<ConnectivityInfo> getConnectivityInfo() {
@@ -39,10 +39,10 @@ public class GetConnectivityInfoResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      * 
      * @param connectivityInfo
-     *        Connectivity info array
+     *        Connectivity info list
      */
 
     public void setConnectivityInfo(java.util.Collection<ConnectivityInfo> connectivityInfo) {
@@ -55,7 +55,7 @@ public class GetConnectivityInfoResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConnectivityInfo(java.util.Collection)} or {@link #withConnectivityInfo(java.util.Collection)} if you
@@ -63,7 +63,7 @@ public class GetConnectivityInfoResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param connectivityInfo
-     *        Connectivity info array
+     *        Connectivity info list
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class GetConnectivityInfoResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Connectivity info array
+     * Connectivity info list
      * 
      * @param connectivityInfo
-     *        Connectivity info array
+     *        Connectivity info list
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

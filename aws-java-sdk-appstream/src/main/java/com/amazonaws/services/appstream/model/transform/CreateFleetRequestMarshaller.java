@@ -33,6 +33,8 @@ public class CreateFleetRequestMarshaller {
             .marshallLocationName("ImageName").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<String> FLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetType").build();
     private static final MarshallingInfo<StructuredPojo> COMPUTECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeCapacity").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -69,6 +71,7 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getImageName(), IMAGENAME_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getFleetType(), FLEETTYPE_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getComputeCapacity(), COMPUTECAPACITY_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getMaxUserDurationInSeconds(), MAXUSERDURATIONINSECONDS_BINDING);

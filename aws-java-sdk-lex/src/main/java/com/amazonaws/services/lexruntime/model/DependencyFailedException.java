@@ -16,9 +16,25 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One of the downstream dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, if Amazon
- * Lex does not have sufficient permissions to call a Lambda function, it results in Lambda throwing an exception.
+ * One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example,
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * If Amazon Lex does not have sufficient permissions to call a Lambda function.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If a Lambda function takes longer than 30 seconds to execute.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DependencyFailedException extends com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException {

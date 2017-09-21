@@ -23,16 +23,16 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Arn of the deployment. */
+    /** The arn of the deployment. */
     private String deploymentArn;
-    /** Id of the deployment. */
+    /** The id of the deployment. */
     private String deploymentId;
 
     /**
-     * Arn of the deployment.
+     * The arn of the deployment.
      * 
      * @param deploymentArn
-     *        Arn of the deployment.
+     *        The arn of the deployment.
      */
 
     public void setDeploymentArn(String deploymentArn) {
@@ -40,9 +40,9 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Arn of the deployment.
+     * The arn of the deployment.
      * 
-     * @return Arn of the deployment.
+     * @return The arn of the deployment.
      */
 
     public String getDeploymentArn() {
@@ -50,10 +50,10 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Arn of the deployment.
+     * The arn of the deployment.
      * 
      * @param deploymentArn
-     *        Arn of the deployment.
+     *        The arn of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,10 +63,10 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Id of the deployment.
+     * The id of the deployment.
      * 
      * @param deploymentId
-     *        Id of the deployment.
+     *        The id of the deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -74,9 +74,9 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Id of the deployment.
+     * The id of the deployment.
      * 
-     * @return Id of the deployment.
+     * @return The id of the deployment.
      */
 
     public String getDeploymentId() {
@@ -84,10 +84,10 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Id of the deployment.
+     * The id of the deployment.
      * 
      * @param deploymentId
-     *        Id of the deployment.
+     *        The id of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

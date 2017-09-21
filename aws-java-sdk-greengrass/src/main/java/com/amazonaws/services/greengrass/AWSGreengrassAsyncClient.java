@@ -1931,6 +1931,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ResetDeploymentsResult> resetDeploymentsAsync(ResetDeploymentsRequest request) {
+
+        return resetDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetDeploymentsResult> resetDeploymentsAsync(final ResetDeploymentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetDeploymentsRequest, ResetDeploymentsResult> asyncHandler) {
+        final ResetDeploymentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetDeploymentsResult>() {
+            @Override
+            public ResetDeploymentsResult call() throws Exception {
+                ResetDeploymentsResult result = null;
+
+                try {
+                    result = executeResetDeployments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConnectivityInfoResult> updateConnectivityInfoAsync(UpdateConnectivityInfoRequest request) {
 
         return updateConnectivityInfoAsync(request, null);

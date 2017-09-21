@@ -60,7 +60,8 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
- * <a>GetPipeline</a>, which returns information about a pipeline structure.
+ * <a>GetPipeline</a>, which returns information about the pipeline structure and pipeline metadata, including the
+ * pipeline Amazon Resource Name (ARN).
  * </p>
  * </li>
  * <li>
@@ -76,6 +77,11 @@ import com.amazonaws.services.codepipeline.model.*;
  * <li>
  * <p>
  * <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPipelineExecutions</a>, which gets a summary of the most recent executions for a pipeline.
  * </p>
  * </li>
  * <li>
@@ -272,7 +278,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param acknowledgeJobRequest
-     *        Represents the input of an acknowledge job action.
+     *        Represents the input of an AcknowledgeJob action.
      * @return Result of the AcknowledgeJob operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -292,7 +298,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param acknowledgeThirdPartyJobRequest
-     *        Represents the input of an acknowledge third party job action.
+     *        Represents the input of an AcknowledgeThirdPartyJob action.
      * @return Result of the AcknowledgeThirdPartyJob operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -315,7 +321,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param createCustomActionTypeRequest
-     *        Represents the input of a create custom action operation.
+     *        Represents the input of a CreateCustomActionType operation.
      * @return Result of the CreateCustomActionType operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -333,7 +339,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param createPipelineRequest
-     *        Represents the input of a create pipeline action.
+     *        Represents the input of a CreatePipeline action.
      * @return Result of the CreatePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -368,7 +374,7 @@ public interface AWSCodePipeline {
      * </important>
      * 
      * @param deleteCustomActionTypeRequest
-     *        Represents the input of a delete custom action operation. The custom action will be marked as deleted.
+     *        Represents the input of a DeleteCustomActionType operation. The custom action will be marked as deleted.
      * @return Result of the DeleteCustomActionType operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -384,7 +390,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param deletePipelineRequest
-     *        Represents the input of a delete pipeline action.
+     *        Represents the input of a DeletePipeline action.
      * @return Result of the DeletePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -400,7 +406,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param disableStageTransitionRequest
-     *        Represents the input of a disable stage transition input action.
+     *        Represents the input of a DisableStageTransition action.
      * @return Result of the DisableStageTransition operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -420,7 +426,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param enableStageTransitionRequest
-     *        Represents the input of an enable stage transition action.
+     *        Represents the input of an EnableStageTransition action.
      * @return Result of the EnableStageTransition operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -447,7 +453,7 @@ public interface AWSCodePipeline {
      * </important>
      * 
      * @param getJobDetailsRequest
-     *        Represents the input of a get job details action.
+     *        Represents the input of a GetJobDetails action.
      * @return Result of the GetJobDetails operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -467,7 +473,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineRequest
-     *        Represents the input of a get pipeline action.
+     *        Represents the input of a GetPipeline action.
      * @return Result of the GetPipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -488,7 +494,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineExecutionRequest
-     *        Represents the input of a get pipeline execution action.
+     *        Represents the input of a GetPipelineExecution action.
      * @return Result of the GetPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -509,7 +515,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param getPipelineStateRequest
-     *        Represents the input of a get pipeline state action.
+     *        Represents the input of a GetPipelineState action.
      * @return Result of the GetPipelineState operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -534,7 +540,7 @@ public interface AWSCodePipeline {
      * </important>
      * 
      * @param getThirdPartyJobDetailsRequest
-     *        Represents the input of a get third party job details action.
+     *        Represents the input of a GetThirdPartyJobDetails action.
      * @return Result of the GetThirdPartyJobDetails operation returned by the service.
      * @throws JobNotFoundException
      *         The specified job was specified in an invalid format or cannot be found.
@@ -556,7 +562,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param listActionTypesRequest
-     *        Represents the input of a list action types action.
+     *        Represents the input of a ListActionTypes action.
      * @return Result of the ListActionTypes operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -575,7 +581,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param listPipelineExecutionsRequest
-     *        Represents the input of a list pipeline executions action.
+     *        Represents the input of a ListPipelineExecutions action.
      * @return Result of the ListPipelineExecutions operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -596,7 +602,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param listPipelinesRequest
-     *        Represents the input of a list pipelines action.
+     *        Represents the input of a ListPipelines action.
      * @return Result of the ListPipelines operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format. Make sure that the next token you provided is the
@@ -620,7 +626,7 @@ public interface AWSCodePipeline {
      * </important>
      * 
      * @param pollForJobsRequest
-     *        Represents the input of a poll for jobs action.
+     *        Represents the input of a PollForJobs action.
      * @return Result of the PollForJobs operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -644,7 +650,7 @@ public interface AWSCodePipeline {
      * </important>
      * 
      * @param pollForThirdPartyJobsRequest
-     *        Represents the input of a poll for third party jobs action.
+     *        Represents the input of a PollForThirdPartyJobs action.
      * @return Result of the PollForThirdPartyJobs operation returned by the service.
      * @throws ActionTypeNotFoundException
      *         The specified action type cannot be found.
@@ -662,7 +668,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param putActionRevisionRequest
-     *        Represents the input of a put action revision action.
+     *        Represents the input of a PutActionRevision action.
      * @return Result of the PutActionRevision operation returned by the service.
      * @throws PipelineNotFoundException
      *         The specified pipeline was specified in an invalid format or cannot be found.
@@ -685,7 +691,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param putApprovalResultRequest
-     *        Represents the input of a put approval result action.
+     *        Represents the input of a PutApprovalResult action.
      * @return Result of the PutApprovalResult operation returned by the service.
      * @throws InvalidApprovalTokenException
      *         The approval request already received a response or has expired.
@@ -711,7 +717,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param putJobFailureResultRequest
-     *        Represents the input of a put job failure result action.
+     *        Represents the input of a PutJobFailureResult action.
      * @return Result of the PutJobFailureResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -731,7 +737,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param putJobSuccessResultRequest
-     *        Represents the input of a put job success result action.
+     *        Represents the input of a PutJobSuccessResult action.
      * @return Result of the PutJobSuccessResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -752,7 +758,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param putThirdPartyJobFailureResultRequest
-     *        Represents the input of a third party job failure result action.
+     *        Represents the input of a PutThirdPartyJobFailureResult action.
      * @return Result of the PutThirdPartyJobFailureResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -775,7 +781,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param putThirdPartyJobSuccessResultRequest
-     *        Represents the input of a put third party job success result action.
+     *        Represents the input of a PutThirdPartyJobSuccessResult action.
      * @return Result of the PutThirdPartyJobSuccessResult operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -797,7 +803,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param retryStageExecutionRequest
-     *        Represents the input of a retry stage execution action.
+     *        Represents the input of a RetryStageExecution action.
      * @return Result of the RetryStageExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -825,7 +831,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param startPipelineExecutionRequest
-     *        Represents the input of a start pipeline execution action.
+     *        Represents the input of a StartPipelineExecution action.
      * @return Result of the StartPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
@@ -845,7 +851,7 @@ public interface AWSCodePipeline {
      * </p>
      * 
      * @param updatePipelineRequest
-     *        Represents the input of an update pipeline action.
+     *        Represents the input of an UpdatePipeline action.
      * @return Result of the UpdatePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.

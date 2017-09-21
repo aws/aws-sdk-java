@@ -33,6 +33,8 @@ public class DeploymentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentArn").build();
     private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentId").build();
+    private static final MarshallingInfo<String> DEPLOYMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentType").build();
     private static final MarshallingInfo<String> GROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GroupArn").build();
 
@@ -55,6 +57,7 @@ public class DeploymentMarshaller {
             protocolMarshaller.marshall(deployment.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(deployment.getDeploymentArn(), DEPLOYMENTARN_BINDING);
             protocolMarshaller.marshall(deployment.getDeploymentId(), DEPLOYMENTID_BINDING);
+            protocolMarshaller.marshall(deployment.getDeploymentType(), DEPLOYMENTTYPE_BINDING);
             protocolMarshaller.marshall(deployment.getGroupArn(), GROUPARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

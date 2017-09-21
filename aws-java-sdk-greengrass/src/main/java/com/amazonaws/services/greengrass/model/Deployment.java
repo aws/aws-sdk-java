@@ -32,6 +32,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private String deploymentArn;
     /** Id of the deployment. */
     private String deploymentId;
+    /** The type of deployment. */
+    private String deploymentType;
     /** Arn of the group for this deployment. */
     private String groupArn;
 
@@ -138,6 +140,58 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The type of deployment.
+     * 
+     * @param deploymentType
+     *        The type of deployment.
+     * @see DeploymentType
+     */
+
+    public void setDeploymentType(String deploymentType) {
+        this.deploymentType = deploymentType;
+    }
+
+    /**
+     * The type of deployment.
+     * 
+     * @return The type of deployment.
+     * @see DeploymentType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    public String getDeploymentType() {
+        return this.deploymentType;
+    }
+
+    /**
+     * The type of deployment.
+     * 
+     * @param deploymentType
+     *        The type of deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentType
+     */
+
+    public Deployment withDeploymentType(String deploymentType) {
+        setDeploymentType(deploymentType);
+        return this;
+    }
+
+    /**
+     * The type of deployment.
+     * 
+     * @param deploymentType
+     *        The type of deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentType
+     */
+
+    public Deployment withDeploymentType(DeploymentType deploymentType) {
+        this.deploymentType = deploymentType.toString();
+        return this;
+    }
+
+    /**
      * Arn of the group for this deployment.
      * 
      * @param groupArn
@@ -188,6 +242,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             sb.append("DeploymentArn: ").append(getDeploymentArn()).append(",");
         if (getDeploymentId() != null)
             sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
+        if (getDeploymentType() != null)
+            sb.append("DeploymentType: ").append(getDeploymentType()).append(",");
         if (getGroupArn() != null)
             sb.append("GroupArn: ").append(getGroupArn());
         sb.append("}");
@@ -216,6 +272,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
+        if (other.getDeploymentType() == null ^ this.getDeploymentType() == null)
+            return false;
+        if (other.getDeploymentType() != null && other.getDeploymentType().equals(this.getDeploymentType()) == false)
+            return false;
         if (other.getGroupArn() == null ^ this.getGroupArn() == null)
             return false;
         if (other.getGroupArn() != null && other.getGroupArn().equals(this.getGroupArn()) == false)
@@ -231,6 +291,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDeploymentArn() == null) ? 0 : getDeploymentArn().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getGroupArn() == null) ? 0 : getGroupArn().hashCode());
         return hashCode;
     }

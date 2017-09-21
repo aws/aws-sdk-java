@@ -67,7 +67,7 @@
     "defaultEndpoint" : "https://codepipeline.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "codepipeline.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<fullname>AWS CodePipeline</fullname> <p> <b>Overview</b> </p> <p>This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information, see the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html\">AWS CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described below.</p> <p> <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions, gates, and stages. </p> <p>You can work with pipelines by calling:</p> <ul> <li> <p> <a>CreatePipeline</a>, which creates a uniquely-named pipeline.</p> </li> <li> <p> <a>DeletePipeline</a>, which deletes the specified pipeline.</p> </li> <li> <p> <a>GetPipeline</a>, which returns information about a pipeline structure.</p> </li> <li> <p> <a>GetPipelineExecution</a>, which returns information about a specific execution of a pipeline.</p> </li> <li> <p> <a>GetPipelineState</a>, which returns information about the current state of the stages and actions of a pipeline.</p> </li> <li> <p> <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.</p> </li> <li> <p> <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.</p> </li> <li> <p> <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.</p> </li> </ul> <p>Pipelines include <i>stages</i>, which are logical groupings of gates and actions. Each stage contains one or more actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, also refer to the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html\">AWS CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. </p> <p>Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.</p> <p>You can work with transitions by calling:</p> <ul> <li> <p> <a>DisableStageTransition</a>, which prevents artifacts from transitioning to the next stage in a pipeline.</p> </li> <li> <p> <a>EnableStageTransition</a>, which enables transition of artifacts between stages in a pipeline. </p> </li> </ul> <p> <b>Using the API to integrate with AWS CodePipeline</b> </p> <p>For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will need to work with the following items:</p> <p> <b>Jobs</b>, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source. </p> <p>You can work with jobs by calling:</p> <ul> <li> <p> <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,</p> </li> <li> <p> <a>GetJobDetails</a>, which returns the details of a job,</p> </li> <li> <p> <a>PollForJobs</a>, which determines whether there are any jobs to act upon, </p> </li> <li> <p> <a>PutJobFailureResult</a>, which provides details of a job failure, and</p> </li> <li> <p> <a>PutJobSuccessResult</a>, which provides details of a job success.</p> </li> </ul> <p> <b>Third party jobs</b>, which are instances of an action created by a partner action and integrated into AWS CodePipeline. Partner actions are created by members of the AWS Partner Network.</p> <p>You can work with third party jobs by calling:</p> <ul> <li> <p> <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,</p> </li> <li> <p> <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action,</p> </li> <li> <p> <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon, </p> </li> <li> <p> <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and</p> </li> <li> <p> <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job success.</p> </li> </ul>",
+    "documentation" : "<fullname>AWS CodePipeline</fullname> <p> <b>Overview</b> </p> <p>This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information, see the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html\">AWS CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described below.</p> <p> <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions, gates, and stages. </p> <p>You can work with pipelines by calling:</p> <ul> <li> <p> <a>CreatePipeline</a>, which creates a uniquely-named pipeline.</p> </li> <li> <p> <a>DeletePipeline</a>, which deletes the specified pipeline.</p> </li> <li> <p> <a>GetPipeline</a>, which returns information about the pipeline structure and pipeline metadata, including the pipeline Amazon Resource Name (ARN).</p> </li> <li> <p> <a>GetPipelineExecution</a>, which returns information about a specific execution of a pipeline.</p> </li> <li> <p> <a>GetPipelineState</a>, which returns information about the current state of the stages and actions of a pipeline.</p> </li> <li> <p> <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.</p> </li> <li> <p> <a>ListPipelineExecutions</a>, which gets a summary of the most recent executions for a pipeline.</p> </li> <li> <p> <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.</p> </li> <li> <p> <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.</p> </li> </ul> <p>Pipelines include <i>stages</i>, which are logical groupings of gates and actions. Each stage contains one or more actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, also refer to the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html\">AWS CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. </p> <p>Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.</p> <p>You can work with transitions by calling:</p> <ul> <li> <p> <a>DisableStageTransition</a>, which prevents artifacts from transitioning to the next stage in a pipeline.</p> </li> <li> <p> <a>EnableStageTransition</a>, which enables transition of artifacts between stages in a pipeline. </p> </li> </ul> <p> <b>Using the API to integrate with AWS CodePipeline</b> </p> <p>For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will need to work with the following items:</p> <p> <b>Jobs</b>, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source. </p> <p>You can work with jobs by calling:</p> <ul> <li> <p> <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,</p> </li> <li> <p> <a>GetJobDetails</a>, which returns the details of a job,</p> </li> <li> <p> <a>PollForJobs</a>, which determines whether there are any jobs to act upon, </p> </li> <li> <p> <a>PutJobFailureResult</a>, which provides details of a job failure, and</p> </li> <li> <p> <a>PutJobSuccessResult</a>, which provides details of a job success.</p> </li> </ul> <p> <b>Third party jobs</b>, which are instances of an action created by a partner action and integrated into AWS CodePipeline. Partner actions are created by members of the AWS Partner Network.</p> <p>You can work with third party jobs by calling:</p> <ul> <li> <p> <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,</p> </li> <li> <p> <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action,</p> </li> <li> <p> <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon, </p> </li> <li> <p> <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and</p> </li> <li> <p> <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job success.</p> </li> </ul>",
     "endpointPrefix" : "codepipeline",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -121,7 +121,7 @@
         "variableDeclarationType" : "AcknowledgeJobRequest",
         "variableName" : "acknowledgeJobRequest",
         "variableType" : "AcknowledgeJobRequest",
-        "documentation" : "<p>Represents the input of an acknowledge job action.</p>",
+        "documentation" : "<p>Represents the input of an AcknowledgeJob action.</p>",
         "simpleType" : "AcknowledgeJobRequest",
         "variableSetterType" : "AcknowledgeJobRequest"
       },
@@ -130,7 +130,7 @@
       "operationName" : "AcknowledgeJob",
       "returnType" : {
         "returnType" : "AcknowledgeJobResult",
-        "documentation" : "<p>Represents the output of an acknowledge job action.</p>"
+        "documentation" : "<p>Represents the output of an AcknowledgeJob action.</p>"
       },
       "syncReturnType" : "AcknowledgeJobResult"
     },
@@ -164,7 +164,7 @@
         "variableDeclarationType" : "AcknowledgeThirdPartyJobRequest",
         "variableName" : "acknowledgeThirdPartyJobRequest",
         "variableType" : "AcknowledgeThirdPartyJobRequest",
-        "documentation" : "<p>Represents the input of an acknowledge third party job action.</p>",
+        "documentation" : "<p>Represents the input of an AcknowledgeThirdPartyJob action.</p>",
         "simpleType" : "AcknowledgeThirdPartyJobRequest",
         "variableSetterType" : "AcknowledgeThirdPartyJobRequest"
       },
@@ -173,7 +173,7 @@
       "operationName" : "AcknowledgeThirdPartyJob",
       "returnType" : {
         "returnType" : "AcknowledgeThirdPartyJobResult",
-        "documentation" : "<p>Represents the output of an acknowledge third party job action.</p>"
+        "documentation" : "<p>Represents the output of an AcknowledgeThirdPartyJob action.</p>"
       },
       "syncReturnType" : "AcknowledgeThirdPartyJobResult"
     },
@@ -199,7 +199,7 @@
         "variableDeclarationType" : "CreateCustomActionTypeRequest",
         "variableName" : "createCustomActionTypeRequest",
         "variableType" : "CreateCustomActionTypeRequest",
-        "documentation" : "<p>Represents the input of a create custom action operation.</p>",
+        "documentation" : "<p>Represents the input of a CreateCustomActionType operation.</p>",
         "simpleType" : "CreateCustomActionTypeRequest",
         "variableSetterType" : "CreateCustomActionTypeRequest"
       },
@@ -208,7 +208,7 @@
       "operationName" : "CreateCustomActionType",
       "returnType" : {
         "returnType" : "CreateCustomActionTypeResult",
-        "documentation" : "<p>Represents the output of a create custom action operation.</p>"
+        "documentation" : "<p>Represents the output of a CreateCustomActionType operation.</p>"
       },
       "syncReturnType" : "CreateCustomActionTypeResult"
     },
@@ -254,7 +254,7 @@
         "variableDeclarationType" : "CreatePipelineRequest",
         "variableName" : "createPipelineRequest",
         "variableType" : "CreatePipelineRequest",
-        "documentation" : "<p>Represents the input of a create pipeline action.</p>",
+        "documentation" : "<p>Represents the input of a CreatePipeline action.</p>",
         "simpleType" : "CreatePipelineRequest",
         "variableSetterType" : "CreatePipelineRequest"
       },
@@ -263,7 +263,7 @@
       "operationName" : "CreatePipeline",
       "returnType" : {
         "returnType" : "CreatePipelineResult",
-        "documentation" : "<p>Represents the output of a create pipeline action.</p>"
+        "documentation" : "<p>Represents the output of a CreatePipeline action.</p>"
       },
       "syncReturnType" : "CreatePipelineResult"
     },
@@ -285,7 +285,7 @@
         "variableDeclarationType" : "DeleteCustomActionTypeRequest",
         "variableName" : "deleteCustomActionTypeRequest",
         "variableType" : "DeleteCustomActionTypeRequest",
-        "documentation" : "<p>Represents the input of a delete custom action operation. The custom action will be marked as deleted.</p>",
+        "documentation" : "<p>Represents the input of a DeleteCustomActionType operation. The custom action will be marked as deleted.</p>",
         "simpleType" : "DeleteCustomActionTypeRequest",
         "variableSetterType" : "DeleteCustomActionTypeRequest"
       },
@@ -316,7 +316,7 @@
         "variableDeclarationType" : "DeletePipelineRequest",
         "variableName" : "deletePipelineRequest",
         "variableType" : "DeletePipelineRequest",
-        "documentation" : "<p>Represents the input of a delete pipeline action.</p>",
+        "documentation" : "<p>Represents the input of a DeletePipeline action.</p>",
         "simpleType" : "DeletePipelineRequest",
         "variableSetterType" : "DeletePipelineRequest"
       },
@@ -355,7 +355,7 @@
         "variableDeclarationType" : "DisableStageTransitionRequest",
         "variableName" : "disableStageTransitionRequest",
         "variableType" : "DisableStageTransitionRequest",
-        "documentation" : "<p>Represents the input of a disable stage transition input action.</p>",
+        "documentation" : "<p>Represents the input of a DisableStageTransition action.</p>",
         "simpleType" : "DisableStageTransitionRequest",
         "variableSetterType" : "DisableStageTransitionRequest"
       },
@@ -394,7 +394,7 @@
         "variableDeclarationType" : "EnableStageTransitionRequest",
         "variableName" : "enableStageTransitionRequest",
         "variableType" : "EnableStageTransitionRequest",
-        "documentation" : "<p>Represents the input of an enable stage transition action.</p>",
+        "documentation" : "<p>Represents the input of an EnableStageTransition action.</p>",
         "simpleType" : "EnableStageTransitionRequest",
         "variableSetterType" : "EnableStageTransitionRequest"
       },
@@ -429,7 +429,7 @@
         "variableDeclarationType" : "GetJobDetailsRequest",
         "variableName" : "getJobDetailsRequest",
         "variableType" : "GetJobDetailsRequest",
-        "documentation" : "<p>Represents the input of a get job details action.</p>",
+        "documentation" : "<p>Represents the input of a GetJobDetails action.</p>",
         "simpleType" : "GetJobDetailsRequest",
         "variableSetterType" : "GetJobDetailsRequest"
       },
@@ -438,7 +438,7 @@
       "operationName" : "GetJobDetails",
       "returnType" : {
         "returnType" : "GetJobDetailsResult",
-        "documentation" : "<p>Represents the output of a get job details action.</p>"
+        "documentation" : "<p>Represents the output of a GetJobDetails action.</p>"
       },
       "syncReturnType" : "GetJobDetailsResult"
     },
@@ -468,7 +468,7 @@
         "variableDeclarationType" : "GetPipelineRequest",
         "variableName" : "getPipelineRequest",
         "variableType" : "GetPipelineRequest",
-        "documentation" : "<p>Represents the input of a get pipeline action.</p>",
+        "documentation" : "<p>Represents the input of a GetPipeline action.</p>",
         "simpleType" : "GetPipelineRequest",
         "variableSetterType" : "GetPipelineRequest"
       },
@@ -477,7 +477,7 @@
       "operationName" : "GetPipeline",
       "returnType" : {
         "returnType" : "GetPipelineResult",
-        "documentation" : "<p>Represents the output of a get pipeline action.</p>"
+        "documentation" : "<p>Represents the output of a GetPipeline action.</p>"
       },
       "syncReturnType" : "GetPipelineResult"
     },
@@ -507,7 +507,7 @@
         "variableDeclarationType" : "GetPipelineExecutionRequest",
         "variableName" : "getPipelineExecutionRequest",
         "variableType" : "GetPipelineExecutionRequest",
-        "documentation" : "<p>Represents the input of a get pipeline execution action.</p>",
+        "documentation" : "<p>Represents the input of a GetPipelineExecution action.</p>",
         "simpleType" : "GetPipelineExecutionRequest",
         "variableSetterType" : "GetPipelineExecutionRequest"
       },
@@ -516,7 +516,7 @@
       "operationName" : "GetPipelineExecution",
       "returnType" : {
         "returnType" : "GetPipelineExecutionResult",
-        "documentation" : "<p>Represents the output of a get pipeline execution action.</p>"
+        "documentation" : "<p>Represents the output of a GetPipelineExecution action.</p>"
       },
       "syncReturnType" : "GetPipelineExecutionResult"
     },
@@ -542,7 +542,7 @@
         "variableDeclarationType" : "GetPipelineStateRequest",
         "variableName" : "getPipelineStateRequest",
         "variableType" : "GetPipelineStateRequest",
-        "documentation" : "<p>Represents the input of a get pipeline state action.</p>",
+        "documentation" : "<p>Represents the input of a GetPipelineState action.</p>",
         "simpleType" : "GetPipelineStateRequest",
         "variableSetterType" : "GetPipelineStateRequest"
       },
@@ -551,7 +551,7 @@
       "operationName" : "GetPipelineState",
       "returnType" : {
         "returnType" : "GetPipelineStateResult",
-        "documentation" : "<p>Represents the output of a get pipeline state action.</p>"
+        "documentation" : "<p>Represents the output of a GetPipelineState action.</p>"
       },
       "syncReturnType" : "GetPipelineStateResult"
     },
@@ -585,7 +585,7 @@
         "variableDeclarationType" : "GetThirdPartyJobDetailsRequest",
         "variableName" : "getThirdPartyJobDetailsRequest",
         "variableType" : "GetThirdPartyJobDetailsRequest",
-        "documentation" : "<p>Represents the input of a get third party job details action.</p>",
+        "documentation" : "<p>Represents the input of a GetThirdPartyJobDetails action.</p>",
         "simpleType" : "GetThirdPartyJobDetailsRequest",
         "variableSetterType" : "GetThirdPartyJobDetailsRequest"
       },
@@ -594,7 +594,7 @@
       "operationName" : "GetThirdPartyJobDetails",
       "returnType" : {
         "returnType" : "GetThirdPartyJobDetailsResult",
-        "documentation" : "<p>Represents the output of a get third party job details action.</p>"
+        "documentation" : "<p>Represents the output of a GetThirdPartyJobDetails action.</p>"
       },
       "syncReturnType" : "GetThirdPartyJobDetailsResult"
     },
@@ -620,7 +620,7 @@
         "variableDeclarationType" : "ListActionTypesRequest",
         "variableName" : "listActionTypesRequest",
         "variableType" : "ListActionTypesRequest",
-        "documentation" : "<p>Represents the input of a list action types action.</p>",
+        "documentation" : "<p>Represents the input of a ListActionTypes action.</p>",
         "simpleType" : "ListActionTypesRequest",
         "variableSetterType" : "ListActionTypesRequest"
       },
@@ -629,7 +629,7 @@
       "operationName" : "ListActionTypes",
       "returnType" : {
         "returnType" : "ListActionTypesResult",
-        "documentation" : "<p>Represents the output of a list action types action.</p>"
+        "documentation" : "<p>Represents the output of a ListActionTypes action.</p>"
       },
       "syncReturnType" : "ListActionTypesResult"
     },
@@ -659,7 +659,7 @@
         "variableDeclarationType" : "ListPipelineExecutionsRequest",
         "variableName" : "listPipelineExecutionsRequest",
         "variableType" : "ListPipelineExecutionsRequest",
-        "documentation" : "<p>Represents the input of a list pipeline executions action.</p>",
+        "documentation" : "<p>Represents the input of a ListPipelineExecutions action.</p>",
         "simpleType" : "ListPipelineExecutionsRequest",
         "variableSetterType" : "ListPipelineExecutionsRequest"
       },
@@ -668,7 +668,7 @@
       "operationName" : "ListPipelineExecutions",
       "returnType" : {
         "returnType" : "ListPipelineExecutionsResult",
-        "documentation" : "<p>Represents the output of a list pipeline executions action. </p>"
+        "documentation" : "<p>Represents the output of a ListPipelineExecutions action.</p>"
       },
       "syncReturnType" : "ListPipelineExecutionsResult"
     },
@@ -690,7 +690,7 @@
         "variableDeclarationType" : "ListPipelinesRequest",
         "variableName" : "listPipelinesRequest",
         "variableType" : "ListPipelinesRequest",
-        "documentation" : "<p>Represents the input of a list pipelines action.</p>",
+        "documentation" : "<p>Represents the input of a ListPipelines action.</p>",
         "simpleType" : "ListPipelinesRequest",
         "variableSetterType" : "ListPipelinesRequest"
       },
@@ -699,7 +699,7 @@
       "operationName" : "ListPipelines",
       "returnType" : {
         "returnType" : "ListPipelinesResult",
-        "documentation" : "<p>Represents the output of a list pipelines action.</p>"
+        "documentation" : "<p>Represents the output of a ListPipelines action.</p>"
       },
       "syncReturnType" : "ListPipelinesResult"
     },
@@ -725,7 +725,7 @@
         "variableDeclarationType" : "PollForJobsRequest",
         "variableName" : "pollForJobsRequest",
         "variableType" : "PollForJobsRequest",
-        "documentation" : "<p>Represents the input of a poll for jobs action.</p>",
+        "documentation" : "<p>Represents the input of a PollForJobs action.</p>",
         "simpleType" : "PollForJobsRequest",
         "variableSetterType" : "PollForJobsRequest"
       },
@@ -734,7 +734,7 @@
       "operationName" : "PollForJobs",
       "returnType" : {
         "returnType" : "PollForJobsResult",
-        "documentation" : "<p>Represents the output of a poll for jobs action.</p>"
+        "documentation" : "<p>Represents the output of a PollForJobs action.</p>"
       },
       "syncReturnType" : "PollForJobsResult"
     },
@@ -760,7 +760,7 @@
         "variableDeclarationType" : "PollForThirdPartyJobsRequest",
         "variableName" : "pollForThirdPartyJobsRequest",
         "variableType" : "PollForThirdPartyJobsRequest",
-        "documentation" : "<p>Represents the input of a poll for third party jobs action.</p>",
+        "documentation" : "<p>Represents the input of a PollForThirdPartyJobs action.</p>",
         "simpleType" : "PollForThirdPartyJobsRequest",
         "variableSetterType" : "PollForThirdPartyJobsRequest"
       },
@@ -769,7 +769,7 @@
       "operationName" : "PollForThirdPartyJobs",
       "returnType" : {
         "returnType" : "PollForThirdPartyJobsResult",
-        "documentation" : "<p>Represents the output of a poll for third party jobs action.</p>"
+        "documentation" : "<p>Represents the output of a PollForThirdPartyJobs action.</p>"
       },
       "syncReturnType" : "PollForThirdPartyJobsResult"
     },
@@ -803,7 +803,7 @@
         "variableDeclarationType" : "PutActionRevisionRequest",
         "variableName" : "putActionRevisionRequest",
         "variableType" : "PutActionRevisionRequest",
-        "documentation" : "<p>Represents the input of a put action revision action.</p>",
+        "documentation" : "<p>Represents the input of a PutActionRevision action.</p>",
         "simpleType" : "PutActionRevisionRequest",
         "variableSetterType" : "PutActionRevisionRequest"
       },
@@ -812,7 +812,7 @@
       "operationName" : "PutActionRevision",
       "returnType" : {
         "returnType" : "PutActionRevisionResult",
-        "documentation" : "<p>Represents the output of a put action revision action.</p>"
+        "documentation" : "<p>Represents the output of a PutActionRevision action.</p>"
       },
       "syncReturnType" : "PutActionRevisionResult"
     },
@@ -854,7 +854,7 @@
         "variableDeclarationType" : "PutApprovalResultRequest",
         "variableName" : "putApprovalResultRequest",
         "variableType" : "PutApprovalResultRequest",
-        "documentation" : "<p>Represents the input of a put approval result action.</p>",
+        "documentation" : "<p>Represents the input of a PutApprovalResult action.</p>",
         "simpleType" : "PutApprovalResultRequest",
         "variableSetterType" : "PutApprovalResultRequest"
       },
@@ -863,7 +863,7 @@
       "operationName" : "PutApprovalResult",
       "returnType" : {
         "returnType" : "PutApprovalResultResult",
-        "documentation" : "<p>Represents the output of a put approval result action.</p>"
+        "documentation" : "<p>Represents the output of a PutApprovalResult action.</p>"
       },
       "syncReturnType" : "PutApprovalResultResult"
     },
@@ -893,7 +893,7 @@
         "variableDeclarationType" : "PutJobFailureResultRequest",
         "variableName" : "putJobFailureResultRequest",
         "variableType" : "PutJobFailureResultRequest",
-        "documentation" : "<p>Represents the input of a put job failure result action.</p>",
+        "documentation" : "<p>Represents the input of a PutJobFailureResult action.</p>",
         "simpleType" : "PutJobFailureResultRequest",
         "variableSetterType" : "PutJobFailureResultRequest"
       },
@@ -932,7 +932,7 @@
         "variableDeclarationType" : "PutJobSuccessResultRequest",
         "variableName" : "putJobSuccessResultRequest",
         "variableType" : "PutJobSuccessResultRequest",
-        "documentation" : "<p>Represents the input of a put job success result action.</p>",
+        "documentation" : "<p>Represents the input of a PutJobSuccessResult action.</p>",
         "simpleType" : "PutJobSuccessResultRequest",
         "variableSetterType" : "PutJobSuccessResultRequest"
       },
@@ -975,7 +975,7 @@
         "variableDeclarationType" : "PutThirdPartyJobFailureResultRequest",
         "variableName" : "putThirdPartyJobFailureResultRequest",
         "variableType" : "PutThirdPartyJobFailureResultRequest",
-        "documentation" : "<p>Represents the input of a third party job failure result action.</p>",
+        "documentation" : "<p>Represents the input of a PutThirdPartyJobFailureResult action.</p>",
         "simpleType" : "PutThirdPartyJobFailureResultRequest",
         "variableSetterType" : "PutThirdPartyJobFailureResultRequest"
       },
@@ -1018,7 +1018,7 @@
         "variableDeclarationType" : "PutThirdPartyJobSuccessResultRequest",
         "variableName" : "putThirdPartyJobSuccessResultRequest",
         "variableType" : "PutThirdPartyJobSuccessResultRequest",
-        "documentation" : "<p>Represents the input of a put third party job success result action.</p>",
+        "documentation" : "<p>Represents the input of a PutThirdPartyJobSuccessResult action.</p>",
         "simpleType" : "PutThirdPartyJobSuccessResultRequest",
         "variableSetterType" : "PutThirdPartyJobSuccessResultRequest"
       },
@@ -1065,7 +1065,7 @@
         "variableDeclarationType" : "RetryStageExecutionRequest",
         "variableName" : "retryStageExecutionRequest",
         "variableType" : "RetryStageExecutionRequest",
-        "documentation" : "<p>Represents the input of a retry stage execution action.</p>",
+        "documentation" : "<p>Represents the input of a RetryStageExecution action.</p>",
         "simpleType" : "RetryStageExecutionRequest",
         "variableSetterType" : "RetryStageExecutionRequest"
       },
@@ -1074,7 +1074,7 @@
       "operationName" : "RetryStageExecution",
       "returnType" : {
         "returnType" : "RetryStageExecutionResult",
-        "documentation" : "<p>Represents the output of a retry stage execution action.</p>"
+        "documentation" : "<p>Represents the output of a RetryStageExecution action.</p>"
       },
       "syncReturnType" : "RetryStageExecutionResult"
     },
@@ -1100,7 +1100,7 @@
         "variableDeclarationType" : "StartPipelineExecutionRequest",
         "variableName" : "startPipelineExecutionRequest",
         "variableType" : "StartPipelineExecutionRequest",
-        "documentation" : "<p>Represents the input of a start pipeline execution action.</p>",
+        "documentation" : "<p>Represents the input of a StartPipelineExecution action.</p>",
         "simpleType" : "StartPipelineExecutionRequest",
         "variableSetterType" : "StartPipelineExecutionRequest"
       },
@@ -1109,7 +1109,7 @@
       "operationName" : "StartPipelineExecution",
       "returnType" : {
         "returnType" : "StartPipelineExecutionResult",
-        "documentation" : "<p>Represents the output of a start pipeline execution action.</p>"
+        "documentation" : "<p>Represents the output of a StartPipelineExecution action.</p>"
       },
       "syncReturnType" : "StartPipelineExecutionResult"
     },
@@ -1147,7 +1147,7 @@
         "variableDeclarationType" : "UpdatePipelineRequest",
         "variableName" : "updatePipelineRequest",
         "variableType" : "UpdatePipelineRequest",
-        "documentation" : "<p>Represents the input of an update pipeline action.</p>",
+        "documentation" : "<p>Represents the input of an UpdatePipeline action.</p>",
         "simpleType" : "UpdatePipelineRequest",
         "variableSetterType" : "UpdatePipelineRequest"
       },
@@ -1156,7 +1156,7 @@
       "operationName" : "UpdatePipeline",
       "returnType" : {
         "returnType" : "UpdatePipelineResult",
-        "documentation" : "<p>Represents the output of an update pipeline action.</p>"
+        "documentation" : "<p>Represents the output of an UpdatePipeline action.</p>"
       },
       "syncReturnType" : "UpdatePipelineResult"
     }
@@ -1592,7 +1592,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an acknowledge job action.</p>",
+      "documentation" : "<p>Represents the input of an AcknowledgeJob action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1890,7 +1890,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of an acknowledge job action.</p>",
+      "documentation" : "<p>Represents the output of an AcknowledgeJob action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -2057,7 +2057,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an acknowledge third party job action.</p>",
+      "documentation" : "<p>Represents the input of an AcknowledgeThirdPartyJob action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -2482,7 +2482,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of an acknowledge third party job action.</p>",
+      "documentation" : "<p>Represents the output of an AcknowledgeThirdPartyJob action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -3293,11 +3293,11 @@
         "c2jName" : "queryable",
         "c2jShape" : "Boolean",
         "deprecated" : false,
-        "documentation" : "<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
+        "documentation" : "<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withQueryable",
-        "getterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@return Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
+        "getterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@return Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
         "getterMethodName" : "getQueryable",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -3329,7 +3329,7 @@
         "marshallingTargetClass" : "Boolean",
         "marshallingType" : "BOOLEAN",
         "name" : "Queryable",
-        "setterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
+        "setterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
         "setterMethodName" : "setQueryable",
         "setterModel" : {
           "variableDeclarationType" : "Boolean",
@@ -3342,12 +3342,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
           "variableName" : "queryable",
           "variableType" : "Boolean",
-          "documentation" : "<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
+          "documentation" : "<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -3676,11 +3676,11 @@
           "c2jName" : "queryable",
           "c2jShape" : "Boolean",
           "deprecated" : false,
-          "documentation" : "<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
+          "documentation" : "<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withQueryable",
-          "getterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@return Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
+          "getterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@return Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
           "getterMethodName" : "getQueryable",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -3712,7 +3712,7 @@
           "marshallingTargetClass" : "Boolean",
           "marshallingType" : "BOOLEAN",
           "name" : "Queryable",
-          "setterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
+          "setterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.*/",
           "setterMethodName" : "setQueryable",
           "setterModel" : {
             "variableDeclarationType" : "Boolean",
@@ -3725,12 +3725,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>\n@param queryable Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
             "variableName" : "queryable",
             "variableType" : "Boolean",
-            "documentation" : "<p>Indicates that the proprety will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
+            "documentation" : "<p>Indicates that the property will be used in conjunction with PollForJobs. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to additional restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -12971,7 +12971,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create custom action operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateCustomActionType operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14060,7 +14060,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create custom action operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateCustomActionType operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14227,7 +14227,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create pipeline action.</p>",
+      "documentation" : "<p>Represents the input of a CreatePipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14398,7 +14398,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create pipeline action.</p>",
+      "documentation" : "<p>Represents the output of a CreatePipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15113,7 +15113,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete custom action operation. The custom action will be marked as deleted.</p>",
+      "documentation" : "<p>Represents the input of a DeleteCustomActionType operation. The custom action will be marked as deleted.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15577,7 +15577,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete pipeline action.</p>",
+      "documentation" : "<p>Represents the input of a DeletePipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15787,7 +15787,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a disable stage transition input action.</p>",
+      "documentation" : "<p>Represents the input of a DisableStageTransition action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -16378,7 +16378,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an enable stage transition action.</p>",
+      "documentation" : "<p>Represents the input of an EnableStageTransition action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -18371,7 +18371,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get job details action.</p>",
+      "documentation" : "<p>Represents the input of a GetJobDetails action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -18542,7 +18542,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get job details action.</p>",
+      "documentation" : "<p>Represents the output of a GetJobDetails action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -18709,7 +18709,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get pipeline execution action.</p>",
+      "documentation" : "<p>Represents the input of a GetPipelineExecution action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -19007,7 +19007,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get pipeline execution action.</p>",
+      "documentation" : "<p>Represents the output of a GetPipelineExecution action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -19174,7 +19174,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get pipeline action.</p>",
+      "documentation" : "<p>Represents the input of a GetPipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -19472,7 +19472,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get pipeline action.</p>",
+      "documentation" : "<p>Represents the output of a GetPipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -19543,8 +19543,135 @@
           "variableSetterType" : "PipelineDeclaration"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "metadata",
+        "c2jShape" : "PipelineMetadata",
+        "deprecated" : false,
+        "documentation" : "<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@param metadata Represents the pipeline metadata information returned as part of the output of a GetPipeline action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMetadata",
+        "getterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@return Represents the pipeline metadata information returned as part of the output of a GetPipeline action.*/",
+        "getterMethodName" : "getMetadata",
+        "getterModel" : {
+          "returnType" : "PipelineMetadata",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "metadata",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "metadata",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "Metadata",
+        "setterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@param metadata Represents the pipeline metadata information returned as part of the output of a GetPipeline action.*/",
+        "setterMethodName" : "setMetadata",
+        "setterModel" : {
+          "variableDeclarationType" : "PipelineMetadata",
+          "variableName" : "metadata",
+          "variableType" : "PipelineMetadata",
+          "documentation" : "",
+          "simpleType" : "PipelineMetadata",
+          "variableSetterType" : "PipelineMetadata"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@param metadata Represents the pipeline metadata information returned as part of the output of a GetPipeline action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "PipelineMetadata",
+          "variableName" : "metadata",
+          "variableType" : "PipelineMetadata",
+          "documentation" : "<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>",
+          "simpleType" : "PipelineMetadata",
+          "variableSetterType" : "PipelineMetadata"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "Metadata" : {
+          "c2jName" : "metadata",
+          "c2jShape" : "PipelineMetadata",
+          "deprecated" : false,
+          "documentation" : "<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@param metadata Represents the pipeline metadata information returned as part of the output of a GetPipeline action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMetadata",
+          "getterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@return Represents the pipeline metadata information returned as part of the output of a GetPipeline action.*/",
+          "getterMethodName" : "getMetadata",
+          "getterModel" : {
+            "returnType" : "PipelineMetadata",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "metadata",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "metadata",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "Metadata",
+          "setterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@param metadata Represents the pipeline metadata information returned as part of the output of a GetPipeline action.*/",
+          "setterMethodName" : "setMetadata",
+          "setterModel" : {
+            "variableDeclarationType" : "PipelineMetadata",
+            "variableName" : "metadata",
+            "variableType" : "PipelineMetadata",
+            "documentation" : "",
+            "simpleType" : "PipelineMetadata",
+            "variableSetterType" : "PipelineMetadata"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>\n@param metadata Represents the pipeline metadata information returned as part of the output of a GetPipeline action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "PipelineMetadata",
+            "variableName" : "metadata",
+            "variableType" : "PipelineMetadata",
+            "documentation" : "<p>Represents the pipeline metadata information returned as part of the output of a GetPipeline action.</p>",
+            "simpleType" : "PipelineMetadata",
+            "variableSetterType" : "PipelineMetadata"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Pipeline" : {
           "c2jName" : "pipeline",
           "c2jShape" : "PipelineDeclaration",
@@ -19639,7 +19766,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get pipeline state action.</p>",
+      "documentation" : "<p>Represents the input of a GetPipelineState action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -19810,7 +19937,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get pipeline state action.</p>",
+      "documentation" : "<p>Represents the output of a GetPipelineState action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -20641,7 +20768,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get third party job details action.</p>",
+      "documentation" : "<p>Represents the input of a GetThirdPartyJobDetails action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -20939,7 +21066,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get third party job details action.</p>",
+      "documentation" : "<p>Represents the output of a GetThirdPartyJobDetails action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -24102,7 +24229,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list action types action.</p>",
+      "documentation" : "<p>Represents the input of a ListActionTypes action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -24400,7 +24527,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list action types action.</p>",
+      "documentation" : "<p>Represents the output of a ListActionTypes action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -24850,7 +24977,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list pipeline executions action.</p>",
+      "documentation" : "<p>Represents the input of a ListPipelineExecutions action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -24995,11 +25122,11 @@
         "c2jName" : "nextToken",
         "c2jShape" : "NextToken",
         "deprecated" : false,
-        "documentation" : "<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>",
+        "documentation" : "<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@return The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.*/",
+        "getterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@return The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -25031,7 +25158,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.*/",
+        "setterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -25044,12 +25171,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>",
+          "documentation" : "<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -25124,11 +25251,11 @@
           "c2jName" : "nextToken",
           "c2jShape" : "NextToken",
           "deprecated" : false,
-          "documentation" : "<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>",
+          "documentation" : "<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@return The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.*/",
+          "getterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@return The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -25160,7 +25287,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.*/",
+          "setterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -25173,12 +25300,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>\n@param nextToken The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>",
+            "documentation" : "<p>The token that was returned from the previous ListPipelineExecutions call, which can be used to return the next set of pipeline executions in the list.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -25275,7 +25402,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list pipeline executions action. </p>",
+      "documentation" : "<p>Represents the output of a ListPipelineExecutions action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -25428,11 +25555,11 @@
         "c2jName" : "nextToken",
         "c2jShape" : "NextToken",
         "deprecated" : false,
-        "documentation" : "<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
+        "documentation" : "<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextToken",
-        "getterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@return A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
+        "getterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@return A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
         "getterMethodName" : "getNextToken",
         "getterModel" : {
           "returnType" : "String",
@@ -25464,7 +25591,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextToken",
-        "setterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
+        "setterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
         "setterMethodName" : "setNextToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -25477,12 +25604,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextToken",
           "variableType" : "String",
-          "documentation" : "<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
+          "documentation" : "<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -25493,11 +25620,11 @@
           "c2jName" : "nextToken",
           "c2jShape" : "NextToken",
           "deprecated" : false,
-          "documentation" : "<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
+          "documentation" : "<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextToken",
-          "getterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@return A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
+          "getterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@return A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
           "getterMethodName" : "getNextToken",
           "getterModel" : {
             "returnType" : "String",
@@ -25529,7 +25656,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextToken",
-          "setterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
+          "setterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.*/",
           "setterMethodName" : "setNextToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -25542,12 +25669,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>\n@param nextToken A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextToken",
             "variableType" : "String",
-            "documentation" : "<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
+            "documentation" : "<p>A token that can be used in the next ListPipelineExecutions call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -25725,7 +25852,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list pipelines action.</p>",
+      "documentation" : "<p>Represents the input of a ListPipelines action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -25896,7 +26023,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list pipelines action.</p>",
+      "documentation" : "<p>Represents the output of a ListPipelines action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -26687,11 +26814,11 @@
         "c2jName" : "action",
         "c2jShape" : "ActionContext",
         "deprecated" : false,
-        "documentation" : "<p/>",
+        "documentation" : "<p>The context of an action to a job worker within the stage of a pipeline.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p/>\n@param action \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@param action The context of an action to a job worker within the stage of a pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAction",
-        "getterDocumentation" : "/**<p/>\n@return */",
+        "getterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@return The context of an action to a job worker within the stage of a pipeline.*/",
         "getterMethodName" : "getAction",
         "getterModel" : {
           "returnType" : "ActionContext",
@@ -26723,7 +26850,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Action",
-        "setterDocumentation" : "/**<p/>\n@param action */",
+        "setterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@param action The context of an action to a job worker within the stage of a pipeline.*/",
         "setterMethodName" : "setAction",
         "setterModel" : {
           "variableDeclarationType" : "ActionContext",
@@ -26736,12 +26863,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p/>\n@param action \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@param action The context of an action to a job worker within the stage of a pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ActionContext",
           "variableName" : "action",
           "variableType" : "ActionContext",
-          "documentation" : "<p/>",
+          "documentation" : "<p>The context of an action to a job worker within the stage of a pipeline.</p>",
           "simpleType" : "ActionContext",
           "variableSetterType" : "ActionContext"
         },
@@ -26752,11 +26879,11 @@
           "c2jName" : "action",
           "c2jShape" : "ActionContext",
           "deprecated" : false,
-          "documentation" : "<p/>",
+          "documentation" : "<p>The context of an action to a job worker within the stage of a pipeline.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p/>\n@param action \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@param action The context of an action to a job worker within the stage of a pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAction",
-          "getterDocumentation" : "/**<p/>\n@return */",
+          "getterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@return The context of an action to a job worker within the stage of a pipeline.*/",
           "getterMethodName" : "getAction",
           "getterModel" : {
             "returnType" : "ActionContext",
@@ -26788,7 +26915,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Action",
-          "setterDocumentation" : "/**<p/>\n@param action */",
+          "setterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@param action The context of an action to a job worker within the stage of a pipeline.*/",
           "setterMethodName" : "setAction",
           "setterModel" : {
             "variableDeclarationType" : "ActionContext",
@@ -26801,12 +26928,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p/>\n@param action \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The context of an action to a job worker within the stage of a pipeline.</p>\n@param action The context of an action to a job worker within the stage of a pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ActionContext",
             "variableName" : "action",
             "variableType" : "ActionContext",
-            "documentation" : "<p/>",
+            "documentation" : "<p>The context of an action to a job worker within the stage of a pipeline.</p>",
             "simpleType" : "ActionContext",
             "variableSetterType" : "ActionContext"
           },
@@ -27108,11 +27235,11 @@
         "c2jName" : "artifactStore",
         "c2jShape" : "ArtifactStore",
         "deprecated" : false,
-        "documentation" : "<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>",
+        "documentation" : "<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@param artifactStore Represents the context of an action within the stage of a pipeline to a job worker.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@param artifactStore Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withArtifactStore",
-        "getterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@return Represents the context of an action within the stage of a pipeline to a job worker.*/",
+        "getterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.*/",
         "getterMethodName" : "getArtifactStore",
         "getterModel" : {
           "returnType" : "ArtifactStore",
@@ -27144,7 +27271,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "ArtifactStore",
-        "setterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@param artifactStore Represents the context of an action within the stage of a pipeline to a job worker.*/",
+        "setterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@param artifactStore Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.*/",
         "setterMethodName" : "setArtifactStore",
         "setterModel" : {
           "variableDeclarationType" : "ArtifactStore",
@@ -27157,12 +27284,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@param artifactStore Represents the context of an action within the stage of a pipeline to a job worker.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@param artifactStore Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ArtifactStore",
           "variableName" : "artifactStore",
           "variableType" : "ArtifactStore",
-          "documentation" : "<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>",
+          "documentation" : "<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>",
           "simpleType" : "ArtifactStore",
           "variableSetterType" : "ArtifactStore"
         },
@@ -27377,11 +27504,11 @@
           "c2jName" : "artifactStore",
           "c2jShape" : "ArtifactStore",
           "deprecated" : false,
-          "documentation" : "<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>",
+          "documentation" : "<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@param artifactStore Represents the context of an action within the stage of a pipeline to a job worker.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@param artifactStore Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withArtifactStore",
-          "getterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@return Represents the context of an action within the stage of a pipeline to a job worker.*/",
+          "getterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.*/",
           "getterMethodName" : "getArtifactStore",
           "getterModel" : {
             "returnType" : "ArtifactStore",
@@ -27413,7 +27540,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "ArtifactStore",
-          "setterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@param artifactStore Represents the context of an action within the stage of a pipeline to a job worker.*/",
+          "setterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@param artifactStore Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.*/",
           "setterMethodName" : "setArtifactStore",
           "setterModel" : {
             "variableDeclarationType" : "ArtifactStore",
@@ -27426,12 +27553,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>\n@param artifactStore Represents the context of an action within the stage of a pipeline to a job worker.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>\n@param artifactStore Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ArtifactStore",
             "variableName" : "artifactStore",
             "variableType" : "ArtifactStore",
-            "documentation" : "<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>",
+            "documentation" : "<p>Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline. </p>",
             "simpleType" : "ArtifactStore",
             "variableSetterType" : "ArtifactStore"
           },
@@ -28002,11 +28129,11 @@
         "c2jName" : "status",
         "c2jShape" : "PipelineExecutionStatus",
         "deprecated" : false,
-        "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+        "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
         "enumType" : "PipelineExecutionStatus",
-        "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
         "fluentSetterMethodName" : "withStatus",
-        "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+        "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
         "getterMethodName" : "getStatus",
         "getterModel" : {
           "returnType" : "String",
@@ -28038,7 +28165,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
-        "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+        "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -28051,12 +28178,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+        "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
-          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -28542,11 +28669,11 @@
           "c2jName" : "status",
           "c2jShape" : "PipelineExecutionStatus",
           "deprecated" : false,
-          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
           "enumType" : "PipelineExecutionStatus",
-          "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
           "fluentSetterMethodName" : "withStatus",
-          "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+          "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
           "getterMethodName" : "getStatus",
           "getterModel" : {
             "returnType" : "String",
@@ -28578,7 +28705,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
-          "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+          "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -28591,12 +28718,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+          "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
-            "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+            "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -28794,11 +28921,11 @@
         "c2jName" : "status",
         "c2jShape" : "PipelineExecutionStatus",
         "deprecated" : false,
-        "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+        "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
         "enumType" : "PipelineExecutionStatus",
-        "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
         "fluentSetterMethodName" : "withStatus",
-        "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+        "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
         "getterMethodName" : "getStatus",
         "getterModel" : {
           "returnType" : "String",
@@ -28830,7 +28957,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Status",
-        "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+        "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -28843,12 +28970,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+        "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
-          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -29177,11 +29304,11 @@
           "c2jName" : "status",
           "c2jShape" : "PipelineExecutionStatus",
           "deprecated" : false,
-          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
           "enumType" : "PipelineExecutionStatus",
-          "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
           "fluentSetterMethodName" : "withStatus",
-          "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+          "getterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@return The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
           "getterMethodName" : "getStatus",
           "getterModel" : {
             "returnType" : "String",
@@ -29213,7 +29340,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Status",
-          "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@see PipelineExecutionStatus*/",
+          "setterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@see PipelineExecutionStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -29226,12 +29353,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
+          "varargSetterDocumentation" : "/**<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>\n@param status The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see PipelineExecutionStatus*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
-            "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+            "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -29255,6 +29382,427 @@
         "documentation" : null,
         "simpleType" : "PipelineExecutionSummary",
         "variableSetterType" : "PipelineExecutionSummary"
+      },
+      "wrapper" : false
+    },
+    "PipelineMetadata" : {
+      "c2jName" : "PipelineMetadata",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Information about a pipeline.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "pipelineArn",
+        "c2jShape" : "PipelineArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the pipeline.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@param pipelineArn The Amazon Resource Name (ARN) of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPipelineArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@return The Amazon Resource Name (ARN) of the pipeline.*/",
+        "getterMethodName" : "getPipelineArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "pipelineArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "pipelineArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "PipelineArn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@param pipelineArn The Amazon Resource Name (ARN) of the pipeline.*/",
+        "setterMethodName" : "setPipelineArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "pipelineArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@param pipelineArn The Amazon Resource Name (ARN) of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "pipelineArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the pipeline.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "created",
+        "c2jShape" : "Timestamp",
+        "deprecated" : false,
+        "documentation" : "<p>The date and time the pipeline was created, in timestamp format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@param created The date and time the pipeline was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCreated",
+        "getterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@return The date and time the pipeline was created, in timestamp format.*/",
+        "getterMethodName" : "getCreated",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "created",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "created",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
+        "name" : "Created",
+        "setterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@param created The date and time the pipeline was created, in timestamp format.*/",
+        "setterMethodName" : "setCreated",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "created",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@param created The date and time the pipeline was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "created",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The date and time the pipeline was created, in timestamp format.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "updated",
+        "c2jShape" : "Timestamp",
+        "deprecated" : false,
+        "documentation" : "<p>The date and time the pipeline was last updated, in timestamp format.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@param updated The date and time the pipeline was last updated, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUpdated",
+        "getterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@return The date and time the pipeline was last updated, in timestamp format.*/",
+        "getterMethodName" : "getUpdated",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "updated",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "updated",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
+        "name" : "Updated",
+        "setterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@param updated The date and time the pipeline was last updated, in timestamp format.*/",
+        "setterMethodName" : "setUpdated",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "updated",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@param updated The date and time the pipeline was last updated, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "updated",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The date and time the pipeline was last updated, in timestamp format.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Created" : {
+          "c2jName" : "created",
+          "c2jShape" : "Timestamp",
+          "deprecated" : false,
+          "documentation" : "<p>The date and time the pipeline was created, in timestamp format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@param created The date and time the pipeline was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCreated",
+          "getterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@return The date and time the pipeline was created, in timestamp format.*/",
+          "getterMethodName" : "getCreated",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "created",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "created",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
+          "name" : "Created",
+          "setterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@param created The date and time the pipeline was created, in timestamp format.*/",
+          "setterMethodName" : "setCreated",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "created",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The date and time the pipeline was created, in timestamp format.</p>\n@param created The date and time the pipeline was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "created",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The date and time the pipeline was created, in timestamp format.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PipelineArn" : {
+          "c2jName" : "pipelineArn",
+          "c2jShape" : "PipelineArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the pipeline.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@param pipelineArn The Amazon Resource Name (ARN) of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPipelineArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@return The Amazon Resource Name (ARN) of the pipeline.*/",
+          "getterMethodName" : "getPipelineArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "pipelineArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "pipelineArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "PipelineArn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@param pipelineArn The Amazon Resource Name (ARN) of the pipeline.*/",
+          "setterMethodName" : "setPipelineArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "pipelineArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the pipeline.</p>\n@param pipelineArn The Amazon Resource Name (ARN) of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "pipelineArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the pipeline.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Updated" : {
+          "c2jName" : "updated",
+          "c2jShape" : "Timestamp",
+          "deprecated" : false,
+          "documentation" : "<p>The date and time the pipeline was last updated, in timestamp format.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@param updated The date and time the pipeline was last updated, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUpdated",
+          "getterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@return The date and time the pipeline was last updated, in timestamp format.*/",
+          "getterMethodName" : "getUpdated",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "updated",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "updated",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
+          "name" : "Updated",
+          "setterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@param updated The date and time the pipeline was last updated, in timestamp format.*/",
+          "setterMethodName" : "setUpdated",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "updated",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The date and time the pipeline was last updated, in timestamp format.</p>\n@param updated The date and time the pipeline was last updated, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "updated",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The date and time the pipeline was last updated, in timestamp format.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PipelineMetadata",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "PipelineMetadata",
+        "variableName" : "pipelineMetadata",
+        "variableType" : "PipelineMetadata",
+        "documentation" : null,
+        "simpleType" : "PipelineMetadata",
+        "variableSetterType" : "PipelineMetadata"
       },
       "wrapper" : false
     },
@@ -29923,7 +30471,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a poll for jobs action.</p>",
+      "documentation" : "<p>Represents the input of a PollForJobs action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -30504,7 +31052,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a poll for jobs action.</p>",
+      "documentation" : "<p>Represents the output of a PollForJobs action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -30827,7 +31375,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a poll for third party jobs action.</p>",
+      "documentation" : "<p>Represents the input of a PollForThirdPartyJobs action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -31125,7 +31673,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a poll for third party jobs action.</p>",
+      "documentation" : "<p>Represents the output of a PollForThirdPartyJobs action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -31448,7 +31996,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a put action revision action.</p>",
+      "documentation" : "<p>Represents the input of a PutActionRevision action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -32000,7 +32548,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a put action revision action.</p>",
+      "documentation" : "<p>Represents the output of a PutActionRevision action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -32294,7 +32842,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a put approval result action.</p>",
+      "documentation" : "<p>Represents the input of a PutApprovalResult action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -32973,7 +33521,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a put approval result action.</p>",
+      "documentation" : "<p>Represents the output of a PutApprovalResult action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -33140,7 +33688,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a put job failure result action.</p>",
+      "documentation" : "<p>Represents the input of a PutJobFailureResult action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -33477,7 +34025,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a put job success result action.</p>",
+      "documentation" : "<p>Represents the input of a PutJobSuccessResult action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -34068,7 +34616,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a third party job failure result action.</p>",
+      "documentation" : "<p>Represents the input of a PutThirdPartyJobFailureResult action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -34532,7 +35080,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a put third party job success result action.</p>",
+      "documentation" : "<p>Represents the input of a PutThirdPartyJobSuccessResult action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -35250,7 +35798,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a retry stage execution action.</p>",
+      "documentation" : "<p>Represents the input of a RetryStageExecution action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -35802,7 +36350,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a retry stage execution action.</p>",
+      "documentation" : "<p>Represents the output of a RetryStageExecution action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -38368,7 +38916,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a start pipeline execution action.</p>",
+      "documentation" : "<p>Represents the input of a StartPipelineExecution action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -38539,7 +39087,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a start pipeline execution action.</p>",
+      "documentation" : "<p>Represents the output of a StartPipelineExecution action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -41337,7 +41885,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an update pipeline action.</p>",
+      "documentation" : "<p>Represents the input of an UpdatePipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -41508,7 +42056,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of an update pipeline action.</p>",
+      "documentation" : "<p>Represents the output of an UpdatePipeline action.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

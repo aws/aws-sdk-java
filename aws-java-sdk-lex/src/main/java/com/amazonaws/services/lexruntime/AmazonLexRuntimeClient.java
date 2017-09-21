@@ -147,8 +147,12 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Sends user input (text or speech) to Amazon Lex. Clients use this API to send requests to Amazon Lex at runtime.
-     * Amazon Lex interprets the user input using the machine learning model that it built for the bot.
+     * Sends user input (text or speech) to Amazon Lex. Clients use this API to send text and audio requests to Amazon
+     * Lex at runtime. Amazon Lex interprets the user input using the machine learning model that it built for the bot.
+     * </p>
+     * <p>
+     * The <code>PostContent</code> operation supports audio input at 8kHz and 16kHz. You can use 8kHz audio to achieve
+     * higher speech recognition accuracy in telephone audio applications.
      * </p>
      * <p>
      * In response, Amazon Lex returns the next message to convey to the user. Consider the following example messages:
@@ -233,7 +237,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
      * @throws NotFoundException
      *         The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
      * @throws BadRequestException
-     *         Request validation failed, there is no usable message in the context, or the bot build failed.
+     *         Request validation failed, there is no usable message in the context, or the bot build failed, is still
+     *         in progress, or contains unbuilt changes.
      * @throws LimitExceededException
      *         Exceeded a limit.
      * @throws InternalFailureException
@@ -247,15 +252,29 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
      * @throws RequestTimeoutException
      *         The input speech is too long.
      * @throws DependencyFailedException
-     *         One of the downstream dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example,
-     *         if Amazon Lex does not have sufficient permissions to call a Lambda function, it results in Lambda
-     *         throwing an exception.
+     *         One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If Amazon Lex does not have sufficient permissions to call a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a Lambda function takes longer than 30 seconds to execute.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot
+     *         values.
+     *         </p>
+     *         </li>
      * @throws BadGatewayException
      *         Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda)
      *         failed with an internal service error.
      * @throws LoopDetectedException
-     *         Lambda fulfilment function returned <code>DelegateDialogAction</code> to Amazon Lex without changing any
-     *         slot values.
+     *         This exception is not used.
      * @sample AmazonLexRuntime.PostContent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent" target="_top">AWS API
      *      Documentation</a>
@@ -386,7 +405,8 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
      * @throws NotFoundException
      *         The resource (such as the Amazon Lex bot or an alias) that is referred to is not found.
      * @throws BadRequestException
-     *         Request validation failed, there is no usable message in the context, or the bot build failed.
+     *         Request validation failed, there is no usable message in the context, or the bot build failed, is still
+     *         in progress, or contains unbuilt changes.
      * @throws LimitExceededException
      *         Exceeded a limit.
      * @throws InternalFailureException
@@ -394,15 +414,29 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
      * @throws ConflictException
      *         Two clients are using the same AWS account, Amazon Lex bot, and user ID.
      * @throws DependencyFailedException
-     *         One of the downstream dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example,
-     *         if Amazon Lex does not have sufficient permissions to call a Lambda function, it results in Lambda
-     *         throwing an exception.
+     *         One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If Amazon Lex does not have sufficient permissions to call a Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a Lambda function takes longer than 30 seconds to execute.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot
+     *         values.
+     *         </p>
+     *         </li>
      * @throws BadGatewayException
      *         Either the Amazon Lex bot is still building, or one of the dependent services (Amazon Polly, AWS Lambda)
      *         failed with an internal service error.
      * @throws LoopDetectedException
-     *         Lambda fulfilment function returned <code>DelegateDialogAction</code> to Amazon Lex without changing any
-     *         slot values.
+     *         This exception is not used.
      * @sample AmazonLexRuntime.PostText
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostText" target="_top">AWS API
      *      Documentation</a>

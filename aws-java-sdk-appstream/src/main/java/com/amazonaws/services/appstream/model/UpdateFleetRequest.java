@@ -39,8 +39,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -105,6 +104,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -116,11 +140,6 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * stream.graphics-pro.16xlarge
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
      * </p>
      * </li>
      * </ul>
@@ -274,8 +293,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -340,6 +358,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -353,16 +396,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *        type. Available instance types are:</p>
+     *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -426,6 +463,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-pro.4xlarge
      *        </p>
      *        </li>
@@ -439,11 +501,6 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        stream.graphics-pro.16xlarge
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        stream.graphics-desktop.2xlarge
-     *        </p>
-     *        </li>
      */
 
     public void setInstanceType(String instanceType) {
@@ -452,8 +509,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -518,6 +574,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -531,15 +612,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *         type. Available instance types are:</p>
+     * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -603,6 +678,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
+     *         stream.graphics-design.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         stream.graphics-pro.4xlarge
      *         </p>
      *         </li>
@@ -616,11 +716,6 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         stream.graphics-pro.16xlarge
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         stream.graphics-desktop.2xlarge
-     *         </p>
-     *         </li>
      */
 
     public String getInstanceType() {
@@ -629,8 +724,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -695,6 +789,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -708,16 +827,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *        type. Available instance types are:</p>
+     *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -781,6 +894,31 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-pro.4xlarge
      *        </p>
      *        </li>
@@ -792,11 +930,6 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.graphics-pro.16xlarge
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        stream.graphics-desktop.2xlarge
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -35,6 +35,8 @@ public class PostContentRequestMarshaller {
             .marshallLocationName("userId").build();
     private static final MarshallingInfo<String> SESSIONATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-lex-session-attributes").build();
+    private static final MarshallingInfo<String> REQUESTATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-lex-request-attributes").build();
     private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Content-Type").build();
     private static final MarshallingInfo<String> ACCEPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
@@ -62,6 +64,7 @@ public class PostContentRequestMarshaller {
             protocolMarshaller.marshall(postContentRequest.getBotAlias(), BOTALIAS_BINDING);
             protocolMarshaller.marshall(postContentRequest.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(postContentRequest.getSessionAttributes(), SESSIONATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(postContentRequest.getRequestAttributes(), REQUESTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(postContentRequest.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(postContentRequest.getAccept(), ACCEPT_BINDING);
             protocolMarshaller.marshall(postContentRequest.getInputStream(), INPUTSTREAM_BINDING);

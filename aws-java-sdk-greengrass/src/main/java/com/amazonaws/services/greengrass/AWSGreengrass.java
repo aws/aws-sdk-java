@@ -796,6 +796,20 @@ public interface AWSGreengrass {
     ListSubscriptionDefinitionsResult listSubscriptionDefinitions(ListSubscriptionDefinitionsRequest listSubscriptionDefinitionsRequest);
 
     /**
+     * Resets a group's deployments.
+     * 
+     * @param resetDeploymentsRequest
+     *        Information needed to perform a reset of a group's deployments.
+     * @return Result of the ResetDeployments operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @sample AWSGreengrass.ResetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ResetDeploymentsResult resetDeployments(ResetDeploymentsRequest resetDeploymentsRequest);
+
+    /**
      * Updates the connectivity information for the core. Any devices that belong to the group which has this core will
      * receive this information in order to find the location of the core and connect to it.
      * 

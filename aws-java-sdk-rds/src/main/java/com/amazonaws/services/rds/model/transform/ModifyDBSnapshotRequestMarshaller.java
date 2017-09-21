@@ -48,6 +48,10 @@ public class ModifyDBSnapshotRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("EngineVersion", StringUtils.fromString(modifyDBSnapshotRequest.getEngineVersion()));
         }
 
+        if (modifyDBSnapshotRequest.getOptionGroupName() != null) {
+            request.addParameter("OptionGroupName", StringUtils.fromString(modifyDBSnapshotRequest.getOptionGroupName()));
+        }
+
         return request;
     }
 

@@ -25,6 +25,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /** Status of the deployment. */
     private String deploymentStatus;
+    /** The type of the deployment. */
+    private String deploymentType;
+    /** The error Details */
+    private java.util.List<ErrorDetail> errorDetails;
     /** Error Message */
     private String errorMessage;
     /** Last time the deployment status was updated. */
@@ -61,6 +65,120 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     public GetDeploymentStatusResult withDeploymentStatus(String deploymentStatus) {
         setDeploymentStatus(deploymentStatus);
+        return this;
+    }
+
+    /**
+     * The type of the deployment.
+     * 
+     * @param deploymentType
+     *        The type of the deployment.
+     * @see DeploymentType
+     */
+
+    public void setDeploymentType(String deploymentType) {
+        this.deploymentType = deploymentType;
+    }
+
+    /**
+     * The type of the deployment.
+     * 
+     * @return The type of the deployment.
+     * @see DeploymentType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    public String getDeploymentType() {
+        return this.deploymentType;
+    }
+
+    /**
+     * The type of the deployment.
+     * 
+     * @param deploymentType
+     *        The type of the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentType
+     */
+
+    public GetDeploymentStatusResult withDeploymentType(String deploymentType) {
+        setDeploymentType(deploymentType);
+        return this;
+    }
+
+    /**
+     * The type of the deployment.
+     * 
+     * @param deploymentType
+     *        The type of the deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentType
+     */
+
+    public GetDeploymentStatusResult withDeploymentType(DeploymentType deploymentType) {
+        this.deploymentType = deploymentType.toString();
+        return this;
+    }
+
+    /**
+     * The error Details
+     * 
+     * @return The error Details
+     */
+
+    public java.util.List<ErrorDetail> getErrorDetails() {
+        return errorDetails;
+    }
+
+    /**
+     * The error Details
+     * 
+     * @param errorDetails
+     *        The error Details
+     */
+
+    public void setErrorDetails(java.util.Collection<ErrorDetail> errorDetails) {
+        if (errorDetails == null) {
+            this.errorDetails = null;
+            return;
+        }
+
+        this.errorDetails = new java.util.ArrayList<ErrorDetail>(errorDetails);
+    }
+
+    /**
+     * The error Details
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrorDetails(java.util.Collection)} or {@link #withErrorDetails(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param errorDetails
+     *        The error Details
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentStatusResult withErrorDetails(ErrorDetail... errorDetails) {
+        if (this.errorDetails == null) {
+            setErrorDetails(new java.util.ArrayList<ErrorDetail>(errorDetails.length));
+        }
+        for (ErrorDetail ele : errorDetails) {
+            this.errorDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The error Details
+     * 
+     * @param errorDetails
+     *        The error Details
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentStatusResult withErrorDetails(java.util.Collection<ErrorDetail> errorDetails) {
+        setErrorDetails(errorDetails);
         return this;
     }
 
@@ -145,6 +263,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
         sb.append("{");
         if (getDeploymentStatus() != null)
             sb.append("DeploymentStatus: ").append(getDeploymentStatus()).append(",");
+        if (getDeploymentType() != null)
+            sb.append("DeploymentType: ").append(getDeploymentType()).append(",");
+        if (getErrorDetails() != null)
+            sb.append("ErrorDetails: ").append(getErrorDetails()).append(",");
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getUpdatedAt() != null)
@@ -167,6 +289,14 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getDeploymentStatus() != null && other.getDeploymentStatus().equals(this.getDeploymentStatus()) == false)
             return false;
+        if (other.getDeploymentType() == null ^ this.getDeploymentType() == null)
+            return false;
+        if (other.getDeploymentType() != null && other.getDeploymentType().equals(this.getDeploymentType()) == false)
+            return false;
+        if (other.getErrorDetails() == null ^ this.getErrorDetails() == null)
+            return false;
+        if (other.getErrorDetails() != null && other.getErrorDetails().equals(this.getErrorDetails()) == false)
+            return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
@@ -184,6 +314,8 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
+        hashCode = prime * hashCode + ((getErrorDetails() == null) ? 0 : getErrorDetails().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;

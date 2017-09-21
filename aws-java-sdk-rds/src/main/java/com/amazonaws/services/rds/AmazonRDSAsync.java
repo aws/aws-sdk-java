@@ -1375,8 +1375,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if the
-     * following are true:
+     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if both of
+     * the following conditions are true:
      * </p>
      * <ul>
      * <li>
@@ -1421,8 +1421,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if the
-     * following are true:
+     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if both of
+     * the following conditions are true:
      * </p>
      * <ul>
      * <li>
@@ -4074,9 +4074,16 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created from the source DB cluster
-     * restore point with the same configuration as the original source DB cluster, except that the new DB cluster is
-     * created with the default security group.
+     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+     * </p>
+     * <p>
+     * If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default
+     * configuration and default security group.
+     * </p>
+     * <p>
+     * If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point
+     * with the same configuration as the original source DB cluster, except that the new DB cluster is created with the
+     * default security group.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
@@ -4095,9 +4102,16 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created from the source DB cluster
-     * restore point with the same configuration as the original source DB cluster, except that the new DB cluster is
-     * created with the default security group.
+     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+     * </p>
+     * <p>
+     * If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default
+     * configuration and default security group.
+     * </p>
+     * <p>
+     * If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point
+     * with the same configuration as the original source DB cluster, except that the new DB cluster is created with the
+     * default security group.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a

@@ -37,6 +37,8 @@ public class PostTextRequestMarshaller {
             .marshallLocationName("userId").build();
     private static final MarshallingInfo<Map> SESSIONATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionAttributes").build();
+    private static final MarshallingInfo<Map> REQUESTATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestAttributes").build();
     private static final MarshallingInfo<String> INPUTTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputText").build();
 
@@ -60,6 +62,7 @@ public class PostTextRequestMarshaller {
             protocolMarshaller.marshall(postTextRequest.getBotAlias(), BOTALIAS_BINDING);
             protocolMarshaller.marshall(postTextRequest.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(postTextRequest.getSessionAttributes(), SESSIONATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(postTextRequest.getRequestAttributes(), REQUESTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(postTextRequest.getInputText(), INPUTTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

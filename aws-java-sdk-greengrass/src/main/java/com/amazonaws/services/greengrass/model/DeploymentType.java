@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum DeploymentType {
 
     NewDeployment("NewDeployment"),
-    Redeployment("Redeployment");
+    Redeployment("Redeployment"),
+    ResetDeployment("ResetDeployment"),
+    ForceResetDeployment("ForceResetDeployment");
 
     private String value;
 

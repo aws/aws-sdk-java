@@ -42,8 +42,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String imageName;
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -108,6 +107,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -121,14 +145,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      */
     private String instanceType;
+
+    private String fleetType;
     /**
      * <p>
      * The parameters for the capacity allocated to the fleet.
@@ -264,8 +285,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -330,6 +350,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -343,16 +388,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *        type. Available instance types are:</p>
+     *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -416,6 +455,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-pro.4xlarge
      *        </p>
      *        </li>
@@ -429,11 +493,6 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        stream.graphics-pro.16xlarge
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        stream.graphics-desktop.2xlarge
-     *        </p>
-     *        </li>
      */
 
     public void setInstanceType(String instanceType) {
@@ -442,8 +501,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -508,6 +566,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -521,15 +604,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *         type. Available instance types are:</p>
+     * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -593,6 +670,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
+     *         stream.graphics-design.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-design.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         stream.graphics-pro.4xlarge
      *         </p>
      *         </li>
@@ -606,11 +708,6 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         stream.graphics-pro.16xlarge
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         stream.graphics-desktop.2xlarge
-     *         </p>
-     *         </li>
      */
 
     public String getInstanceType() {
@@ -619,8 +716,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The instance type of compute resources for the fleet. Fleet instances are launched from this instance type.
-     * Available instance types are:
+     * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
      * <li>
@@ -685,6 +781,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics-design.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-design.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -698,16 +819,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.graphics-pro.16xlarge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * stream.graphics-desktop.2xlarge
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param instanceType
-     *        The instance type of compute resources for the fleet. Fleet instances are launched from this instance
-     *        type. Available instance types are:</p>
+     *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -771,6 +886,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        stream.graphics-design.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-design.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-pro.4xlarge
      *        </p>
      *        </li>
@@ -784,16 +924,52 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        stream.graphics-pro.16xlarge
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        stream.graphics-desktop.2xlarge
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * @param fleetType
+     * @see FleetType
+     */
+
+    public void setFleetType(String fleetType) {
+        this.fleetType = fleetType;
+    }
+
+    /**
+     * @return
+     * @see FleetType
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
+    public String getFleetType() {
+        return this.fleetType;
+    }
+
+    /**
+     * @param fleetType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetType
+     */
+
+    public CreateFleetRequest withFleetType(String fleetType) {
+        setFleetType(fleetType);
+        return this;
+    }
+
+    /**
+     * @param fleetType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetType
+     */
+
+    public CreateFleetRequest withFleetType(FleetType fleetType) {
+        this.fleetType = fleetType.toString();
         return this;
     }
 
@@ -1170,6 +1346,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("ImageName: ").append(getImageName()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getFleetType() != null)
+            sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getComputeCapacity() != null)
             sb.append("ComputeCapacity: ").append(getComputeCapacity()).append(",");
         if (getVpcConfig() != null)
@@ -1211,6 +1389,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getFleetType() == null ^ this.getFleetType() == null)
+            return false;
+        if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
             return false;
         if (other.getComputeCapacity() == null ^ this.getComputeCapacity() == null)
             return false;
@@ -1255,6 +1437,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getComputeCapacity() == null) ? 0 : getComputeCapacity().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getMaxUserDurationInSeconds() == null) ? 0 : getMaxUserDurationInSeconds().hashCode());

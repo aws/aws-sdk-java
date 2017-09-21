@@ -23,15 +23,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Information on deployments */
+    /** List of deployments for the requested groups */
     private java.util.List<Deployment> deployments;
     /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
 
     /**
-     * Information on deployments
+     * List of deployments for the requested groups
      * 
-     * @return Information on deployments
+     * @return List of deployments for the requested groups
      */
 
     public java.util.List<Deployment> getDeployments() {
@@ -39,10 +39,10 @@ public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Information on deployments
+     * List of deployments for the requested groups
      * 
      * @param deployments
-     *        Information on deployments
+     *        List of deployments for the requested groups
      */
 
     public void setDeployments(java.util.Collection<Deployment> deployments) {
@@ -55,7 +55,7 @@ public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Information on deployments
+     * List of deployments for the requested groups
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDeployments(java.util.Collection)} or {@link #withDeployments(java.util.Collection)} if you want to
@@ -63,7 +63,7 @@ public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param deployments
-     *        Information on deployments
+     *        List of deployments for the requested groups
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Information on deployments
+     * List of deployments for the requested groups
      * 
      * @param deployments
-     *        Information on deployments
+     *        List of deployments for the requested groups
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

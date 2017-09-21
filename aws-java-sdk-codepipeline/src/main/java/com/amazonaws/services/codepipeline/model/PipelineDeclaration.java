@@ -43,7 +43,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     private String roleArn;
     /**
      * <p>
-     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
      */
     private ArtifactStore artifactStore;
@@ -149,11 +149,11 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * 
      * @param artifactStore
-     *        Represents the context of an action within the stage of a pipeline to a job worker.
+     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      */
 
     public void setArtifactStore(ArtifactStore artifactStore) {
@@ -162,10 +162,10 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * 
-     * @return Represents the context of an action within the stage of a pipeline to a job worker.
+     * @return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      */
 
     public ArtifactStore getArtifactStore() {
@@ -174,11 +174,11 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * 
      * @param artifactStore
-     *        Represents the context of an action within the stage of a pipeline to a job worker.
+     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

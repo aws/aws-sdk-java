@@ -38,6 +38,8 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
      */
     private String engineVersion;
 
+    private String optionGroupName;
+
     /**
      * <p>
      * The identifier of the DB snapshot to modify.
@@ -119,6 +121,32 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * @param optionGroupName
+     */
+
+    public void setOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOptionGroupName() {
+        return this.optionGroupName;
+    }
+
+    /**
+     * @param optionGroupName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBSnapshotRequest withOptionGroupName(String optionGroupName) {
+        setOptionGroupName(optionGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -132,7 +160,9 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDBSnapshotIdentifier() != null)
             sb.append("DBSnapshotIdentifier: ").append(getDBSnapshotIdentifier()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getOptionGroupName() != null)
+            sb.append("OptionGroupName: ").append(getOptionGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +185,10 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null)
+            return false;
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +199,7 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getDBSnapshotIdentifier() == null) ? 0 : getDBSnapshotIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
         return hashCode;
     }
 

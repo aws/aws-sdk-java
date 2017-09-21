@@ -1664,6 +1664,35 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
             com.amazonaws.handlers.AsyncHandler<ListSubscriptionDefinitionsRequest, ListSubscriptionDefinitionsResult> asyncHandler);
 
     /**
+     * Resets a group's deployments.
+     * 
+     * @param resetDeploymentsRequest
+     *        Information needed to perform a reset of a group's deployments.
+     * @return A Java Future containing the result of the ResetDeployments operation returned by the service.
+     * @sample AWSGreengrassAsync.ResetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetDeploymentsResult> resetDeploymentsAsync(ResetDeploymentsRequest resetDeploymentsRequest);
+
+    /**
+     * Resets a group's deployments.
+     * 
+     * @param resetDeploymentsRequest
+     *        Information needed to perform a reset of a group's deployments.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetDeployments operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.ResetDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetDeploymentsResult> resetDeploymentsAsync(ResetDeploymentsRequest resetDeploymentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetDeploymentsRequest, ResetDeploymentsResult> asyncHandler);
+
+    /**
      * Updates the connectivity information for the core. Any devices that belong to the group which has this core will
      * receive this information in order to find the location of the core and connect to it.
      * 

@@ -52,6 +52,10 @@ public class GetPipelineResultJsonUnmarshaller implements Unmarshaller<GetPipeli
                     context.nextToken();
                     getPipelineResult.setPipeline(PipelineDeclarationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("metadata", targetDepth)) {
+                    context.nextToken();
+                    getPipelineResult.setMetadata(PipelineMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

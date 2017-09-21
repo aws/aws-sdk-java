@@ -72,6 +72,10 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetType", targetDepth)) {
+                    context.nextToken();
+                    fleet.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ComputeCapacityStatus", targetDepth)) {
                     context.nextToken();
                     fleet.setComputeCapacityStatus(ComputeCapacityStatusJsonUnmarshaller.getInstance().unmarshall(context));

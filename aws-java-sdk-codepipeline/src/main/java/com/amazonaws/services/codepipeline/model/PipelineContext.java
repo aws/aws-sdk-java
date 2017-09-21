@@ -41,7 +41,11 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private StageContext stage;
-    /** <p/> */
+    /**
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
+     */
     private ActionContext action;
 
     /**
@@ -131,9 +135,12 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
      * 
      * @param action
+     *        The context of an action to a job worker within the stage of a pipeline.
      */
 
     public void setAction(ActionContext action) {
@@ -141,9 +148,11 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
      * 
-     * @return
+     * @return The context of an action to a job worker within the stage of a pipeline.
      */
 
     public ActionContext getAction() {
@@ -151,9 +160,12 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The context of an action to a job worker within the stage of a pipeline.
+     * </p>
      * 
      * @param action
+     *        The context of an action to a job worker within the stage of a pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

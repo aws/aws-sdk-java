@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a get pipeline action.
+ * Represents the output of a GetPipeline action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline" target="_top">AWS API
@@ -32,6 +32,12 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private PipelineDeclaration pipeline;
+    /**
+     * <p>
+     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * </p>
+     */
+    private PipelineMetadata metadata;
 
     /**
      * <p>
@@ -74,6 +80,46 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * </p>
+     * 
+     * @param metadata
+     *        Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     */
+
+    public void setMetadata(PipelineMetadata metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
+     * <p>
+     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * </p>
+     * 
+     * @return Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     */
+
+    public PipelineMetadata getMetadata() {
+        return this.metadata;
+    }
+
+    /**
+     * <p>
+     * Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * </p>
+     * 
+     * @param metadata
+     *        Represents the pipeline metadata information returned as part of the output of a GetPipeline action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPipelineResult withMetadata(PipelineMetadata metadata) {
+        setMetadata(metadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -85,7 +131,9 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipeline() != null)
-            sb.append("Pipeline: ").append(getPipeline());
+            sb.append("Pipeline: ").append(getPipeline()).append(",");
+        if (getMetadata() != null)
+            sb.append("Metadata: ").append(getMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getPipeline() != null && other.getPipeline().equals(this.getPipeline()) == false)
             return false;
+        if (other.getMetadata() == null ^ this.getMetadata() == null)
+            return false;
+        if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPipeline() == null) ? 0 : getPipeline().hashCode());
+        hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         return hashCode;
     }
 

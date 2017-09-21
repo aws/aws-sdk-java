@@ -108,6 +108,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      */
     private Boolean supportsIAMDatabaseAuthentication;
 
+    private Boolean supportsPerformanceInsights;
+
     /**
      * <p>
      * The engine type of the orderable DB instance.
@@ -746,6 +748,40 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * @param supportsPerformanceInsights
+     */
+
+    public void setSupportsPerformanceInsights(Boolean supportsPerformanceInsights) {
+        this.supportsPerformanceInsights = supportsPerformanceInsights;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getSupportsPerformanceInsights() {
+        return this.supportsPerformanceInsights;
+    }
+
+    /**
+     * @param supportsPerformanceInsights
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportsPerformanceInsights(Boolean supportsPerformanceInsights) {
+        setSupportsPerformanceInsights(supportsPerformanceInsights);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isSupportsPerformanceInsights() {
+        return this.supportsPerformanceInsights;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -781,7 +817,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getSupportsEnhancedMonitoring() != null)
             sb.append("SupportsEnhancedMonitoring: ").append(getSupportsEnhancedMonitoring()).append(",");
         if (getSupportsIAMDatabaseAuthentication() != null)
-            sb.append("SupportsIAMDatabaseAuthentication: ").append(getSupportsIAMDatabaseAuthentication());
+            sb.append("SupportsIAMDatabaseAuthentication: ").append(getSupportsIAMDatabaseAuthentication()).append(",");
+        if (getSupportsPerformanceInsights() != null)
+            sb.append("SupportsPerformanceInsights: ").append(getSupportsPerformanceInsights());
         sb.append("}");
         return sb.toString();
     }
@@ -849,6 +887,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (other.getSupportsIAMDatabaseAuthentication() != null
                 && other.getSupportsIAMDatabaseAuthentication().equals(this.getSupportsIAMDatabaseAuthentication()) == false)
             return false;
+        if (other.getSupportsPerformanceInsights() == null ^ this.getSupportsPerformanceInsights() == null)
+            return false;
+        if (other.getSupportsPerformanceInsights() != null && other.getSupportsPerformanceInsights().equals(this.getSupportsPerformanceInsights()) == false)
+            return false;
         return true;
     }
 
@@ -870,6 +912,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportsIops() == null) ? 0 : getSupportsIops().hashCode());
         hashCode = prime * hashCode + ((getSupportsEnhancedMonitoring() == null) ? 0 : getSupportsEnhancedMonitoring().hashCode());
         hashCode = prime * hashCode + ((getSupportsIAMDatabaseAuthentication() == null) ? 0 : getSupportsIAMDatabaseAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getSupportsPerformanceInsights() == null) ? 0 : getSupportsPerformanceInsights().hashCode());
         return hashCode;
     }
 
