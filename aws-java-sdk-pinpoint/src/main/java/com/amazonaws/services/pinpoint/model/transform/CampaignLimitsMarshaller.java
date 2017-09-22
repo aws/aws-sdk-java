@@ -29,10 +29,6 @@ public class CampaignLimitsMarshaller {
 
     private static final MarshallingInfo<Integer> DAILY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Daily").build();
-    private static final MarshallingInfo<Integer> MAXIMUMDURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumDuration").build();
-    private static final MarshallingInfo<Integer> MESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
     private static final MarshallingInfo<Integer> TOTAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Total").build();
 
@@ -53,8 +49,6 @@ public class CampaignLimitsMarshaller {
 
         try {
             protocolMarshaller.marshall(campaignLimits.getDaily(), DAILY_BINDING);
-            protocolMarshaller.marshall(campaignLimits.getMaximumDuration(), MAXIMUMDURATION_BINDING);
-            protocolMarshaller.marshall(campaignLimits.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(campaignLimits.getTotal(), TOTAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

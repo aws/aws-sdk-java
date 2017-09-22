@@ -89,7 +89,7 @@ public interface AmazonPinpoint {
     void setRegion(Region region);
 
     /**
-     * Creates or updates an app.
+     * Used to create an app.
      * 
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
@@ -173,27 +173,6 @@ public interface AmazonPinpoint {
     CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest);
 
     /**
-     * Delete an ADM channel
-     * 
-     * @param deleteAdmChannelRequest
-     * @return Result of the DeleteAdmChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.DeleteAdmChannel
-     */
-    DeleteAdmChannelResult deleteAdmChannel(DeleteAdmChannelRequest deleteAdmChannelRequest);
-
-    /**
      * Deletes the APNs channel for an app.
      * 
      * @param deleteApnsChannelRequest
@@ -255,27 +234,6 @@ public interface AmazonPinpoint {
      * @sample AmazonPinpoint.DeleteApp
      */
     DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
-
-    /**
-     * Delete a BAIDU GCM channel
-     * 
-     * @param deleteBaiduChannelRequest
-     * @return Result of the DeleteBaiduChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.DeleteBaiduChannel
-     */
-    DeleteBaiduChannelResult deleteBaiduChannel(DeleteBaiduChannelRequest deleteBaiduChannelRequest);
 
     /**
      * Deletes a campaign.
@@ -405,27 +363,6 @@ public interface AmazonPinpoint {
     DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest);
 
     /**
-     * Get an ADM channel
-     * 
-     * @param getAdmChannelRequest
-     * @return Result of the GetAdmChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.GetAdmChannel
-     */
-    GetAdmChannelResult getAdmChannel(GetAdmChannelRequest getAdmChannelRequest);
-
-    /**
      * Returns information about the APNs channel for an app.
      * 
      * @param getApnsChannelRequest
@@ -529,27 +466,6 @@ public interface AmazonPinpoint {
      * @sample AmazonPinpoint.GetApps
      */
     GetAppsResult getApps(GetAppsRequest getAppsRequest);
-
-    /**
-     * Get a BAIDU GCM channel
-     * 
-     * @param getBaiduChannelRequest
-     * @return Result of the GetBaiduChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.GetBaiduChannel
-     */
-    GetBaiduChannelResult getBaiduChannel(GetBaiduChannelRequest getBaiduChannelRequest);
 
     /**
      * Returns information about a campaign.
@@ -953,48 +869,6 @@ public interface AmazonPinpoint {
     SendMessagesResult sendMessages(SendMessagesRequest sendMessagesRequest);
 
     /**
-     * Send a batch of messages to users
-     * 
-     * @param sendUsersMessagesRequest
-     * @return Result of the SendUsersMessages operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.SendUsersMessages
-     */
-    SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest sendUsersMessagesRequest);
-
-    /**
-     * Update an ADM channel
-     * 
-     * @param updateAdmChannelRequest
-     * @return Result of the UpdateAdmChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.UpdateAdmChannel
-     */
-    UpdateAdmChannelResult updateAdmChannel(UpdateAdmChannelRequest updateAdmChannelRequest);
-
-    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
@@ -1056,27 +930,6 @@ public interface AmazonPinpoint {
      * @sample AmazonPinpoint.UpdateApplicationSettings
      */
     UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest);
-
-    /**
-     * Update a BAIDU GCM channel
-     * 
-     * @param updateBaiduChannelRequest
-     * @return Result of the UpdateBaiduChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.UpdateBaiduChannel
-     */
-    UpdateBaiduChannelResult updateBaiduChannel(UpdateBaiduChannelRequest updateBaiduChannelRequest);
 
     /**
      * Use to update a campaign.

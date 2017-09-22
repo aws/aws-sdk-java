@@ -17,7 +17,6 @@ package com.amazonaws.services.dynamodbv2.datamodeling;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.services.dynamodbv2.model.KeysAndAttributes;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -504,31 +503,34 @@ public class DynamoDBMapperConfig {
     /**
      * Enumeration of pagination loading strategy.
      */
-    public static enum PaginationLoadingStrategy {
+    public enum PaginationLoadingStrategy {
         /**
-         * Paginated list is lazily loaded when possible, and all loaded results
-         * are kept in the memory.
+         * Paginated list is lazily loaded when possible, and all loaded results are kept in the memory. Data will
+         * only be fetched when accessed so this can be more performant than {@link #EAGER_LOADING} when not all
+         * data is used. Calls to methods such as {@link List#size()} will cause all results to be fetched from
+         * the service.
          * <p>
          * By default, the mapper uses LAZY_LOADING.
          */
         LAZY_LOADING,
 
         /**
-         * Only supports using iterator to read from the paginated list. All
-         * other list operations will return UnsupportedOperationException
-         * immediately. During the iteration, the list will clear all the
-         * previous results before loading the next page, so that the list will
-         * keep at most one page of the loaded results in memory. This also
-         * means the list could only be iterated once.
+         * Only supports using iterator to read from the paginated list. All other list operations will return
+         * UnsupportedOperationException immediately. During the iteration, the list will clear all the
+         * previous results before loading the next page, so that the list will keep at most one page of the loaded results in
+         * memory. This also means the list could only be iterated once.
          * <p>
          * Use this configuration to reduce the memory overhead when handling
-         * large DynamoDB items.
+         * large DynamoDB items. This is the most performant option when you only need to iterate the results
+         * of a query.
          */
         ITERATION_ONLY,
 
         /**
-         * Paginated list will eagerly load all the paginated results from
-         * DynamoDB as soon as the list is initialized.
+         * Paginated list will eagerly load all the paginated results from DynamoDB as soon as the list is initialized. This may
+         * make several service calls when the list is created and is not recommended for large data sets. The benefit of using
+         * eager loading is that service call penalties are paid up front and you get predictable latencies when accessing the
+         * list afterwards since all contents are in memory.
          */
         EAGER_LOADING;
 

@@ -3262,7 +3262,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A list that contains the status of the delivery of either the snapshot or the configuration history to the specified Amazon S3 bucket.</p>",
+      "documentation" : "<p>Provides status of the delivery of the snapshot or the configuration history to the specified Amazon S3 bucket. Also provides the status of notifications about the Amazon S3 delivery to the specified Amazon SNS topic.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -35527,6 +35527,21 @@
       }, {
         "name" : "AWSCloudFormationStack",
         "value" : "AWS::CloudFormation::Stack"
+      }, {
+        "name" : "AWSDynamoDBTable",
+        "value" : "AWS::DynamoDB::Table"
+      }, {
+        "name" : "AWSAutoScalingAutoScalingGroup",
+        "value" : "AWS::AutoScaling::AutoScalingGroup"
+      }, {
+        "name" : "AWSAutoScalingLaunchConfiguration",
+        "value" : "AWS::AutoScaling::LaunchConfiguration"
+      }, {
+        "name" : "AWSAutoScalingScalingPolicy",
+        "value" : "AWS::AutoScaling::ScalingPolicy"
+      }, {
+        "name" : "AWSAutoScalingScheduledAction",
+        "value" : "AWS::AutoScaling::ScheduledAction"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -35718,11 +35733,11 @@
         "c2jName" : "TagKey",
         "c2jShape" : "StringWithCharLimit128",
         "deprecated" : false,
-        "documentation" : "<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>",
+        "documentation" : "<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagKey",
-        "getterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@return The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.*/",
+        "getterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@return The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.*/",
         "getterMethodName" : "getTagKey",
         "getterModel" : {
           "returnType" : "String",
@@ -35754,7 +35769,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TagKey",
-        "setterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.*/",
+        "setterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.*/",
         "setterMethodName" : "setTagKey",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -35767,12 +35782,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "tagKey",
           "variableType" : "String",
-          "documentation" : "<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>",
+          "documentation" : "<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -36115,11 +36130,11 @@
           "c2jName" : "TagKey",
           "c2jShape" : "StringWithCharLimit128",
           "deprecated" : false,
-          "documentation" : "<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>",
+          "documentation" : "<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagKey",
-          "getterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@return The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.*/",
+          "getterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@return The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.*/",
           "getterMethodName" : "getTagKey",
           "getterModel" : {
             "returnType" : "String",
@@ -36151,7 +36166,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TagKey",
-          "setterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.*/",
+          "setterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.*/",
           "setterMethodName" : "setTagKey",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -36164,12 +36179,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>\n@param tagKey The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "tagKey",
             "variableType" : "String",
-            "documentation" : "<p>The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the rule.</p>",
+            "documentation" : "<p>The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

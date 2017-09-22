@@ -55,16 +55,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * ARN, container name, and container port specified in the service definition are immutable.
      * </p>
      * <p>
-     * For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance is registered with the load
-     * balancer specified here.
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
-     * For Elastic Load Balancing Application load balancers, this object must contain the load balancer target group
-     * ARN, the container name (as it appears in a container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.
+     * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container instance, the container instance and
+     * port combination is registered as a target in the target group specified here.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
@@ -277,16 +276,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * ARN, container name, and container port specified in the service definition are immutable.
      * </p>
      * <p>
-     * For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance is registered with the load
-     * balancer specified here.
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
-     * For Elastic Load Balancing Application load balancers, this object must contain the load balancer target group
-     * ARN, the container name (as it appears in a container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.
+     * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container instance, the container instance and
+     * port combination is registered as a target in the target group specified here.
      * </p>
      * 
      * @return A load balancer object representing the load balancer to use with your service. Currently, you are
@@ -294,16 +292,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         name or target group ARN, container name, and container port specified in the service definition are
      *         immutable.</p>
      *         <p>
-     *         For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the
-     *         container name (as it appears in a container definition), and the container port to access from the load
-     *         balancer. When a task from this service is placed on a container instance, the container instance is
-     *         registered with the load balancer specified here.
+     *         For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *         appears in a container definition), and the container port to access from the load balancer. When a task
+     *         from this service is placed on a container instance, the container instance is registered with the load
+     *         balancer specified here.
      *         </p>
      *         <p>
-     *         For Elastic Load Balancing Application load balancers, this object must contain the load balancer target
-     *         group ARN, the container name (as it appears in a container definition), and the container port to access
-     *         from the load balancer. When a task from this service is placed on a container instance, the container
-     *         instance and port combination is registered as a target in the target group specified here.
+     *         For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
+     *         target group ARN, the container name (as it appears in a container definition), and the container port to
+     *         access from the load balancer. When a task from this service is placed on a container instance, the
+     *         container instance and port combination is registered as a target in the target group specified here.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -320,16 +318,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * ARN, container name, and container port specified in the service definition are immutable.
      * </p>
      * <p>
-     * For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance is registered with the load
-     * balancer specified here.
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
-     * For Elastic Load Balancing Application load balancers, this object must contain the load balancer target group
-     * ARN, the container name (as it appears in a container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.
+     * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container instance, the container instance and
+     * port combination is registered as a target in the target group specified here.
      * </p>
      * 
      * @param loadBalancers
@@ -338,16 +335,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        target group ARN, container name, and container port specified in the service definition are
      *        immutable.</p>
      *        <p>
-     *        For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the
-     *        container name (as it appears in a container definition), and the container port to access from the load
-     *        balancer. When a task from this service is placed on a container instance, the container instance is
-     *        registered with the load balancer specified here.
+     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to access from the load balancer. When a task
+     *        from this service is placed on a container instance, the container instance is registered with the load
+     *        balancer specified here.
      *        </p>
      *        <p>
-     *        For Elastic Load Balancing Application load balancers, this object must contain the load balancer target
-     *        group ARN, the container name (as it appears in a container definition), and the container port to access
-     *        from the load balancer. When a task from this service is placed on a container instance, the container
-     *        instance and port combination is registered as a target in the target group specified here.
+     *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
+     *        target group ARN, the container name (as it appears in a container definition), and the container port to
+     *        access from the load balancer. When a task from this service is placed on a container instance, the
+     *        container instance and port combination is registered as a target in the target group specified here.
      */
 
     public void setLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -366,16 +363,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * ARN, container name, and container port specified in the service definition are immutable.
      * </p>
      * <p>
-     * For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance is registered with the load
-     * balancer specified here.
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
-     * For Elastic Load Balancing Application load balancers, this object must contain the load balancer target group
-     * ARN, the container name (as it appears in a container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.
+     * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container instance, the container instance and
+     * port combination is registered as a target in the target group specified here.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -389,16 +385,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        target group ARN, container name, and container port specified in the service definition are
      *        immutable.</p>
      *        <p>
-     *        For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the
-     *        container name (as it appears in a container definition), and the container port to access from the load
-     *        balancer. When a task from this service is placed on a container instance, the container instance is
-     *        registered with the load balancer specified here.
+     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to access from the load balancer. When a task
+     *        from this service is placed on a container instance, the container instance is registered with the load
+     *        balancer specified here.
      *        </p>
      *        <p>
-     *        For Elastic Load Balancing Application load balancers, this object must contain the load balancer target
-     *        group ARN, the container name (as it appears in a container definition), and the container port to access
-     *        from the load balancer. When a task from this service is placed on a container instance, the container
-     *        instance and port combination is registered as a target in the target group specified here.
+     *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
+     *        target group ARN, the container name (as it appears in a container definition), and the container port to
+     *        access from the load balancer. When a task from this service is placed on a container instance, the
+     *        container instance and port combination is registered as a target in the target group specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,16 +415,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * ARN, container name, and container port specified in the service definition are immutable.
      * </p>
      * <p>
-     * For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the container
-     * name (as it appears in a container definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance is registered with the load
-     * balancer specified here.
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
-     * For Elastic Load Balancing Application load balancers, this object must contain the load balancer target group
-     * ARN, the container name (as it appears in a container definition), and the container port to access from the load
-     * balancer. When a task from this service is placed on a container instance, the container instance and port
-     * combination is registered as a target in the target group specified here.
+     * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
+     * group ARN, the container name (as it appears in a container definition), and the container port to access from
+     * the load balancer. When a task from this service is placed on a container instance, the container instance and
+     * port combination is registered as a target in the target group specified here.
      * </p>
      * 
      * @param loadBalancers
@@ -437,16 +432,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        target group ARN, container name, and container port specified in the service definition are
      *        immutable.</p>
      *        <p>
-     *        For Elastic Load Balancing Classic load balancers, this object must contain the load balancer name, the
-     *        container name (as it appears in a container definition), and the container port to access from the load
-     *        balancer. When a task from this service is placed on a container instance, the container instance is
-     *        registered with the load balancer specified here.
+     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to access from the load balancer. When a task
+     *        from this service is placed on a container instance, the container instance is registered with the load
+     *        balancer specified here.
      *        </p>
      *        <p>
-     *        For Elastic Load Balancing Application load balancers, this object must contain the load balancer target
-     *        group ARN, the container name (as it appears in a container definition), and the container port to access
-     *        from the load balancer. When a task from this service is placed on a container instance, the container
-     *        instance and port combination is registered as a target in the target group specified here.
+     *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
+     *        target group ARN, the container name (as it appears in a container definition), and the container port to
+     *        access from the load balancer. When a task from this service is placed on a container instance, the
+     *        container instance and port combination is registered as a target in the target group specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

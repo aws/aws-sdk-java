@@ -25,8 +25,6 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     /** The message to APNS channels. Overrides the default push notification message. */
     private APNSMessage aPNSMessage;
-    /** The message to Baidu GCM channels. Overrides the default push notification message. */
-    private BaiduMessage baiduMessage;
     /** The default message for all channels. */
     private DefaultMessage defaultMessage;
     /** The default push notification message for all push channels. */
@@ -67,40 +65,6 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
 
     public DirectMessageConfiguration withAPNSMessage(APNSMessage aPNSMessage) {
         setAPNSMessage(aPNSMessage);
-        return this;
-    }
-
-    /**
-     * The message to Baidu GCM channels. Overrides the default push notification message.
-     * 
-     * @param baiduMessage
-     *        The message to Baidu GCM channels. Overrides the default push notification message.
-     */
-
-    public void setBaiduMessage(BaiduMessage baiduMessage) {
-        this.baiduMessage = baiduMessage;
-    }
-
-    /**
-     * The message to Baidu GCM channels. Overrides the default push notification message.
-     * 
-     * @return The message to Baidu GCM channels. Overrides the default push notification message.
-     */
-
-    public BaiduMessage getBaiduMessage() {
-        return this.baiduMessage;
-    }
-
-    /**
-     * The message to Baidu GCM channels. Overrides the default push notification message.
-     * 
-     * @param baiduMessage
-     *        The message to Baidu GCM channels. Overrides the default push notification message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DirectMessageConfiguration withBaiduMessage(BaiduMessage baiduMessage) {
-        setBaiduMessage(baiduMessage);
         return this;
     }
 
@@ -253,8 +217,6 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getAPNSMessage() != null)
             sb.append("APNSMessage: ").append(getAPNSMessage()).append(",");
-        if (getBaiduMessage() != null)
-            sb.append("BaiduMessage: ").append(getBaiduMessage()).append(",");
         if (getDefaultMessage() != null)
             sb.append("DefaultMessage: ").append(getDefaultMessage()).append(",");
         if (getDefaultPushNotificationMessage() != null)
@@ -280,10 +242,6 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         if (other.getAPNSMessage() == null ^ this.getAPNSMessage() == null)
             return false;
         if (other.getAPNSMessage() != null && other.getAPNSMessage().equals(this.getAPNSMessage()) == false)
-            return false;
-        if (other.getBaiduMessage() == null ^ this.getBaiduMessage() == null)
-            return false;
-        if (other.getBaiduMessage() != null && other.getBaiduMessage().equals(this.getBaiduMessage()) == false)
             return false;
         if (other.getDefaultMessage() == null ^ this.getDefaultMessage() == null)
             return false;
@@ -311,7 +269,6 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAPNSMessage() == null) ? 0 : getAPNSMessage().hashCode());
-        hashCode = prime * hashCode + ((getBaiduMessage() == null) ? 0 : getBaiduMessage().hashCode());
         hashCode = prime * hashCode + ((getDefaultMessage() == null) ? 0 : getDefaultMessage().hashCode());
         hashCode = prime * hashCode + ((getDefaultPushNotificationMessage() == null) ? 0 : getDefaultPushNotificationMessage().hashCode());
         hashCode = prime * hashCode + ((getGCMMessage() == null) ? 0 : getGCMMessage().hashCode());

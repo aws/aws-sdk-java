@@ -29,7 +29,7 @@ import com.amazonaws.services.pinpoint.model.*;
 public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
-     * Creates or updates an app.
+     * Used to create an app.
      * 
      * @param createAppRequest
      * @return A Java Future containing the result of the CreateApp operation returned by the service.
@@ -38,7 +38,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest createAppRequest);
 
     /**
-     * Creates or updates an app.
+     * Used to create an app.
      * 
      * @param createAppRequest
      * @param asyncHandler
@@ -121,29 +121,6 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<CreateSegmentRequest, CreateSegmentResult> asyncHandler);
 
     /**
-     * Delete an ADM channel
-     * 
-     * @param deleteAdmChannelRequest
-     * @return A Java Future containing the result of the DeleteAdmChannel operation returned by the service.
-     * @sample AmazonPinpointAsync.DeleteAdmChannel
-     */
-    java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest deleteAdmChannelRequest);
-
-    /**
-     * Delete an ADM channel
-     * 
-     * @param deleteAdmChannelRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteAdmChannel operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.DeleteAdmChannel
-     */
-    java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest deleteAdmChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteAdmChannelRequest, DeleteAdmChannelResult> asyncHandler);
-
-    /**
      * Deletes the APNs channel for an app.
      * 
      * @param deleteApnsChannelRequest
@@ -211,29 +188,6 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler);
-
-    /**
-     * Delete a BAIDU GCM channel
-     * 
-     * @param deleteBaiduChannelRequest
-     * @return A Java Future containing the result of the DeleteBaiduChannel operation returned by the service.
-     * @sample AmazonPinpointAsync.DeleteBaiduChannel
-     */
-    java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest deleteBaiduChannelRequest);
-
-    /**
-     * Delete a BAIDU GCM channel
-     * 
-     * @param deleteBaiduChannelRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteBaiduChannel operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.DeleteBaiduChannel
-     */
-    java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest deleteBaiduChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteBaiduChannelRequest, DeleteBaiduChannelResult> asyncHandler);
 
     /**
      * Deletes a campaign.
@@ -376,29 +330,6 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteSmsChannelRequest, DeleteSmsChannelResult> asyncHandler);
 
     /**
-     * Get an ADM channel
-     * 
-     * @param getAdmChannelRequest
-     * @return A Java Future containing the result of the GetAdmChannel operation returned by the service.
-     * @sample AmazonPinpointAsync.GetAdmChannel
-     */
-    java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest getAdmChannelRequest);
-
-    /**
-     * Get an ADM channel
-     * 
-     * @param getAdmChannelRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetAdmChannel operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.GetAdmChannel
-     */
-    java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest getAdmChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<GetAdmChannelRequest, GetAdmChannelResult> asyncHandler);
-
-    /**
      * Returns information about the APNs channel for an app.
      * 
      * @param getApnsChannelRequest
@@ -512,29 +443,6 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest getAppsRequest,
             com.amazonaws.handlers.AsyncHandler<GetAppsRequest, GetAppsResult> asyncHandler);
-
-    /**
-     * Get a BAIDU GCM channel
-     * 
-     * @param getBaiduChannelRequest
-     * @return A Java Future containing the result of the GetBaiduChannel operation returned by the service.
-     * @sample AmazonPinpointAsync.GetBaiduChannel
-     */
-    java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest getBaiduChannelRequest);
-
-    /**
-     * Get a BAIDU GCM channel
-     * 
-     * @param getBaiduChannelRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetBaiduChannel operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.GetBaiduChannel
-     */
-    java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest getBaiduChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<GetBaiduChannelRequest, GetBaiduChannelResult> asyncHandler);
 
     /**
      * Returns information about a campaign.
@@ -978,52 +886,6 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<SendMessagesRequest, SendMessagesResult> asyncHandler);
 
     /**
-     * Send a batch of messages to users
-     * 
-     * @param sendUsersMessagesRequest
-     * @return A Java Future containing the result of the SendUsersMessages operation returned by the service.
-     * @sample AmazonPinpointAsync.SendUsersMessages
-     */
-    java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest sendUsersMessagesRequest);
-
-    /**
-     * Send a batch of messages to users
-     * 
-     * @param sendUsersMessagesRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the SendUsersMessages operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.SendUsersMessages
-     */
-    java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest sendUsersMessagesRequest,
-            com.amazonaws.handlers.AsyncHandler<SendUsersMessagesRequest, SendUsersMessagesResult> asyncHandler);
-
-    /**
-     * Update an ADM channel
-     * 
-     * @param updateAdmChannelRequest
-     * @return A Java Future containing the result of the UpdateAdmChannel operation returned by the service.
-     * @sample AmazonPinpointAsync.UpdateAdmChannel
-     */
-    java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest updateAdmChannelRequest);
-
-    /**
-     * Update an ADM channel
-     * 
-     * @param updateAdmChannelRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateAdmChannel operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.UpdateAdmChannel
-     */
-    java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest updateAdmChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateAdmChannelRequest, UpdateAdmChannelResult> asyncHandler);
-
-    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
@@ -1093,29 +955,6 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
     java.util.concurrent.Future<UpdateApplicationSettingsResult> updateApplicationSettingsAsync(
             UpdateApplicationSettingsRequest updateApplicationSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationSettingsRequest, UpdateApplicationSettingsResult> asyncHandler);
-
-    /**
-     * Update a BAIDU GCM channel
-     * 
-     * @param updateBaiduChannelRequest
-     * @return A Java Future containing the result of the UpdateBaiduChannel operation returned by the service.
-     * @sample AmazonPinpointAsync.UpdateBaiduChannel
-     */
-    java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest updateBaiduChannelRequest);
-
-    /**
-     * Update a BAIDU GCM channel
-     * 
-     * @param updateBaiduChannelRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UpdateBaiduChannel operation returned by the service.
-     * @sample AmazonPinpointAsyncHandler.UpdateBaiduChannel
-     */
-    java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest updateBaiduChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateBaiduChannelRequest, UpdateBaiduChannelResult> asyncHandler);
 
     /**
      * Use to update a campaign.

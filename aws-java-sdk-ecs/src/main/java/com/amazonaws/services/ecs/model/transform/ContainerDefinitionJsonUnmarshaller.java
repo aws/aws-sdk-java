@@ -100,6 +100,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setVolumesFrom(new ListUnmarshaller<VolumeFrom>(VolumeFromJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("linuxParameters", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setLinuxParameters(LinuxParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hostname", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setHostname(context.getUnmarshaller(String.class).unmarshall(context));

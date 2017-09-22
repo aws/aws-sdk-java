@@ -1,3 +1,16 @@
+# __1.11.202__ __2017-09-22__
+## __AWS Config__
+  - ### Features
+    - AWS Config support for DynamoDB tables and Auto Scaling resource types
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon ECS users can now add and drop Linux capabilities to their containers through the use of docker's cap-add and cap-drop features. Customers can specify the capabilities they wish to add or drop for each container in their task definition. 
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Documentation updates for rds
+
 # __1.11.201__ __2017-09-21__
 ## __AWS Budgets__
   - ### Features

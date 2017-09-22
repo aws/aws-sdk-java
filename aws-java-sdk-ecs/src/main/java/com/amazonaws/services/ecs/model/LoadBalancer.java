@@ -36,7 +36,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
     private String targetGroupArn;
     /**
      * <p>
-     * The name of a Classic load balancer.
+     * The name of a load balancer.
      * </p>
      */
     private String loadBalancerName;
@@ -97,11 +97,11 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a Classic load balancer.
+     * The name of a load balancer.
      * </p>
      * 
      * @param loadBalancerName
-     *        The name of a Classic load balancer.
+     *        The name of a load balancer.
      */
 
     public void setLoadBalancerName(String loadBalancerName) {
@@ -110,10 +110,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a Classic load balancer.
+     * The name of a load balancer.
      * </p>
      * 
-     * @return The name of a Classic load balancer.
+     * @return The name of a load balancer.
      */
 
     public String getLoadBalancerName() {
@@ -122,11 +122,11 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a Classic load balancer.
+     * The name of a load balancer.
      * </p>
      * 
      * @param loadBalancerName
-     *        The name of a Classic load balancer.
+     *        The name of a load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

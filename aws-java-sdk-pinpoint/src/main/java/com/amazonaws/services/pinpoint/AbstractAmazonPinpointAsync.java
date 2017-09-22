@@ -80,19 +80,6 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest request) {
-
-        return deleteAdmChannelAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAdmChannelRequest, DeleteAdmChannelResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<DeleteApnsChannelResult> deleteApnsChannelAsync(DeleteApnsChannelRequest request) {
 
         return deleteApnsChannelAsync(request, null);
@@ -127,19 +114,6 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest request) {
-
-        return deleteBaiduChannelAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteBaiduChannelRequest, DeleteBaiduChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,19 +197,6 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
-    public java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest request) {
-
-        return getAdmChannelAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetAdmChannelRequest, GetAdmChannelResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<GetApnsChannelResult> getApnsChannelAsync(GetApnsChannelRequest request) {
 
         return getApnsChannelAsync(request, null);
@@ -296,19 +257,6 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAppsRequest, GetAppsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest request) {
-
-        return getBaiduChannelAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetBaiduChannelRequest, GetBaiduChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -561,32 +509,6 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
-    public java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest request) {
-
-        return sendUsersMessagesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest request,
-            com.amazonaws.handlers.AsyncHandler<SendUsersMessagesRequest, SendUsersMessagesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest request) {
-
-        return updateAdmChannelAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAdmChannelRequest, UpdateAdmChannelResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<UpdateApnsChannelResult> updateApnsChannelAsync(UpdateApnsChannelRequest request) {
 
         return updateApnsChannelAsync(request, null);
@@ -621,19 +543,6 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<UpdateApplicationSettingsResult> updateApplicationSettingsAsync(UpdateApplicationSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationSettingsRequest, UpdateApplicationSettingsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest request) {
-
-        return updateBaiduChannelAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateBaiduChannelRequest, UpdateBaiduChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

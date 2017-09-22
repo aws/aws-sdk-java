@@ -55,7 +55,12 @@ public enum ResourceType {
     AWSRedshiftClusterSubnetGroup("AWS::Redshift::ClusterSubnetGroup"),
     AWSRedshiftEventSubscription("AWS::Redshift::EventSubscription"),
     AWSCloudWatchAlarm("AWS::CloudWatch::Alarm"),
-    AWSCloudFormationStack("AWS::CloudFormation::Stack");
+    AWSCloudFormationStack("AWS::CloudFormation::Stack"),
+    AWSDynamoDBTable("AWS::DynamoDB::Table"),
+    AWSAutoScalingAutoScalingGroup("AWS::AutoScaling::AutoScalingGroup"),
+    AWSAutoScalingLaunchConfiguration("AWS::AutoScaling::LaunchConfiguration"),
+    AWSAutoScalingScalingPolicy("AWS::AutoScaling::ScalingPolicy"),
+    AWSAutoScalingScheduledAction("AWS::AutoScaling::ScheduledAction");
 
     private String value;
 

@@ -120,19 +120,19 @@ public class PredefinedBackoffStrategies {
     /**
      * A private class that implements the default back-off strategy.
      **/
-    static class SDKDefaultBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
+    public static class SDKDefaultBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
 
         private final BackoffStrategy fullJitterBackoffStrategy;
         private final BackoffStrategy equalJitterBackoffStrategy;
 
-        SDKDefaultBackoffStrategy() {
+        public SDKDefaultBackoffStrategy() {
             fullJitterBackoffStrategy = new PredefinedBackoffStrategies.FullJitterBackoffStrategy(
                     SDK_DEFAULT_BASE_DELAY, SDK_DEFAULT_MAX_BACKOFF_IN_MILLISECONDS);
             equalJitterBackoffStrategy = new PredefinedBackoffStrategies.EqualJitterBackoffStrategy(
                     SDK_DEFAULT_THROTTLED_BASE_DELAY, SDK_DEFAULT_MAX_BACKOFF_IN_MILLISECONDS);
         }
 
-        SDKDefaultBackoffStrategy(final int baseDelay, final int throttledBaseDelay, final int maxBackoff) {
+        public SDKDefaultBackoffStrategy(final int baseDelay, final int throttledBaseDelay, final int maxBackoff) {
             fullJitterBackoffStrategy = new PredefinedBackoffStrategies.FullJitterBackoffStrategy(
                     baseDelay, maxBackoff);
             equalJitterBackoffStrategy = new PredefinedBackoffStrategies.EqualJitterBackoffStrategy(

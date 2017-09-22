@@ -51,8 +51,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered, and they will begin connection draining according to the settings on the
      * load balancer or target group.
      * </p>
      */
@@ -180,8 +180,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered, and they will begin connection draining according to the settings on the
      * load balancer or target group.
      * </p>
      * 
@@ -193,8 +193,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *        service, then the service scheduler starts another copy of that task, on a different container instance if
      *        possible. </p>
      *        <p>
-     *        Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *        Application load balancer target group are deregistered, and they will begin connection draining according
+     *        Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *        Application Load Balancer target group are deregistered, and they will begin connection draining according
      *        to the settings on the load balancer or target group.
      */
 
@@ -211,8 +211,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered, and they will begin connection draining according to the settings on the
      * load balancer or target group.
      * </p>
      * 
@@ -223,8 +223,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *         service, then the service scheduler starts another copy of that task, on a different container instance
      *         if possible. </p>
      *         <p>
-     *         Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *         Application load balancer target group are deregistered, and they will begin connection draining
+     *         Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *         Application Load Balancer target group are deregistered, and they will begin connection draining
      *         according to the settings on the load balancer or target group.
      */
 
@@ -241,8 +241,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered, and they will begin connection draining according to the settings on the
      * load balancer or target group.
      * </p>
      * 
@@ -254,8 +254,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *        service, then the service scheduler starts another copy of that task, on a different container instance if
      *        possible. </p>
      *        <p>
-     *        Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *        Application load balancer target group are deregistered, and they will begin connection draining according
+     *        Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *        Application Load Balancer target group are deregistered, and they will begin connection draining according
      *        to the settings on the load balancer or target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -274,8 +274,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * starts another copy of that task, on a different container instance if possible.
      * </p>
      * <p>
-     * Any containers in orphaned service tasks that are registered with a Classic load balancer or an Application load
-     * balancer target group are deregistered, and they will begin connection draining according to the settings on the
+     * Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an Application Load
+     * Balancer target group are deregistered, and they will begin connection draining according to the settings on the
      * load balancer or target group.
      * </p>
      * 
@@ -286,8 +286,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      *         service, then the service scheduler starts another copy of that task, on a different container instance
      *         if possible. </p>
      *         <p>
-     *         Any containers in orphaned service tasks that are registered with a Classic load balancer or an
-     *         Application load balancer target group are deregistered, and they will begin connection draining
+     *         Any containers in orphaned service tasks that are registered with a Classic Load Balancer or an
+     *         Application Load Balancer target group are deregistered, and they will begin connection draining
      *         according to the settings on the load balancer or target group.
      */
 

@@ -45,8 +45,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
-     * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
+     * Hub registry are available by default. Other repositories are specified with either
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     * <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
@@ -57,8 +58,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
+     * or <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -312,6 +316,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VolumeFrom> volumesFrom;
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * </p>
+     */
+    private LinuxParameters linuxParameters;
     /**
      * <p>
      * The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
@@ -577,8 +587,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
-     * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
+     * Hub registry are available by default. Other repositories are specified with either
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     * <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
@@ -589,8 +600,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
+     * or <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -615,10 +629,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param image
      *        The image used to start a container. This string is passed directly to the Docker daemon. Images in the
-     *        Docker Hub registry are available by default. Other repositories are specified with
-     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     *        numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This
-     *        parameter maps to <code>Image</code> in the <a
+     *        Docker Hub registry are available by default. Other repositories are specified with either
+     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     *        <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and
+     *        lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed.
+     *        This parameter maps to <code>Image</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
@@ -627,8 +642,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *        Images in Amazon ECR repositories can be specified by either using the full
+     *        <code>registry/repository:tag</code> or <code>registry/repository@digest</code>. For example,
+     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -658,8 +676,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
-     * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
+     * Hub registry are available by default. Other repositories are specified with either
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     * <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
@@ -670,8 +689,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
+     * or <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -695,8 +717,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @return The image used to start a container. This string is passed directly to the Docker daemon. Images in the
-     *         Docker Hub registry are available by default. Other repositories are specified with
-     *         <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and
+     *         Docker Hub registry are available by default. Other repositories are specified with either
+     *         <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     *         <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and
      *         lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are
      *         allowed. This parameter maps to <code>Image</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
@@ -707,8 +730,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     *         <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *         Images in Amazon ECR repositories can be specified by either using the full
+     *         <code>registry/repository:tag</code> or <code>registry/repository@digest</code>. For example,
+     *         <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     *         <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     *         .
      *         </p>
      *         </li>
      *         <li>
@@ -738,8 +764,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker
-     * Hub registry are available by default. Other repositories are specified with
-     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
+     * Hub registry are available by default. Other repositories are specified with either
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     * <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
@@ -750,8 +777,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
+     * or <code>registry/repository@digest</code>. For example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     * .
      * </p>
      * </li>
      * <li>
@@ -776,10 +806,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param image
      *        The image used to start a container. This string is passed directly to the Docker daemon. Images in the
-     *        Docker Hub registry are available by default. Other repositories are specified with
-     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters (uppercase and lowercase),
-     *        numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This
-     *        parameter maps to <code>Image</code> in the <a
+     *        Docker Hub registry are available by default. Other repositories are specified with either
+     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code> or
+     *        <code> <i>repository-url</i>/<i>image</i>@<i>digest</i> </code>. Up to 255 letters (uppercase and
+     *        lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed.
+     *        This parameter maps to <code>Image</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
@@ -788,8 +819,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        Images in Amazon ECR repositories use the full registry and repository URI (for example,
-     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     *        Images in Amazon ECR repositories can be specified by either using the full
+     *        <code>registry/repository:tag</code> or <code>registry/repository@digest</code>. For example,
+     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
+     *        <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -2643,6 +2677,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * </p>
+     * 
+     * @param linuxParameters
+     *        Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     */
+
+    public void setLinuxParameters(LinuxParameters linuxParameters) {
+        this.linuxParameters = linuxParameters;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * </p>
+     * 
+     * @return Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     */
+
+    public LinuxParameters getLinuxParameters() {
+        return this.linuxParameters;
+    }
+
+    /**
+     * <p>
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * </p>
+     * 
+     * @param linuxParameters
+     *        Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withLinuxParameters(LinuxParameters linuxParameters) {
+        setLinuxParameters(linuxParameters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
      * container</a> section of the <a
@@ -4133,6 +4207,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("MountPoints: ").append(getMountPoints()).append(",");
         if (getVolumesFrom() != null)
             sb.append("VolumesFrom: ").append(getVolumesFrom()).append(",");
+        if (getLinuxParameters() != null)
+            sb.append("LinuxParameters: ").append(getLinuxParameters()).append(",");
         if (getHostname() != null)
             sb.append("Hostname: ").append(getHostname()).append(",");
         if (getUser() != null)
@@ -4225,6 +4301,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getVolumesFrom() != null && other.getVolumesFrom().equals(this.getVolumesFrom()) == false)
             return false;
+        if (other.getLinuxParameters() == null ^ this.getLinuxParameters() == null)
+            return false;
+        if (other.getLinuxParameters() != null && other.getLinuxParameters().equals(this.getLinuxParameters()) == false)
+            return false;
         if (other.getHostname() == null ^ this.getHostname() == null)
             return false;
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
@@ -4298,6 +4378,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getMountPoints() == null) ? 0 : getMountPoints().hashCode());
         hashCode = prime * hashCode + ((getVolumesFrom() == null) ? 0 : getVolumesFrom().hashCode());
+        hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
         hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());

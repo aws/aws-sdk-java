@@ -33,11 +33,54 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBSnapshotIdentifier;
     /**
      * <p>
-     * The engine version to update the DB snapshot to.
+     * The engine version to upgrade the DB snapshot to.
      * </p>
+     * <p>
+     * The following are the database engines and engine versions that are available when you upgrade a DB snapshot.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engineVersion;
-
+    /**
+     * <p>
+     * The option group to identify with the upgraded DB snapshot.
+     * </p>
+     * <p>
+     * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
+     * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option Group Considerations</a>.
+     * </p>
+     */
     private String optionGroupName;
 
     /**
@@ -82,11 +125,77 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine version to update the DB snapshot to.
+     * The engine version to upgrade the DB snapshot to.
      * </p>
+     * <p>
+     * The following are the database engines and engine versions that are available when you upgrade a DB snapshot.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineVersion
-     *        The engine version to update the DB snapshot to.
+     *        The engine version to upgrade the DB snapshot to. </p>
+     *        <p>
+     *        The following are the database engines and engine versions that are available when you upgrade a DB
+     *        snapshot.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     *        </p>
+     *        </li>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -95,10 +204,76 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine version to update the DB snapshot to.
+     * The engine version to upgrade the DB snapshot to.
      * </p>
+     * <p>
+     * The following are the database engines and engine versions that are available when you upgrade a DB snapshot.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The engine version to update the DB snapshot to.
+     * @return The engine version to upgrade the DB snapshot to. </p>
+     *         <p>
+     *         The following are the database engines and engine versions that are available when you upgrade a DB
+     *         snapshot.
+     *         </p>
+     *         <p>
+     *         <b>MySQL</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Oracle</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     *         </p>
+     *         </li>
      */
 
     public String getEngineVersion() {
@@ -107,11 +282,77 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine version to update the DB snapshot to.
+     * The engine version to upgrade the DB snapshot to.
      * </p>
+     * <p>
+     * The following are the database engines and engine versions that are available when you upgrade a DB snapshot.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineVersion
-     *        The engine version to update the DB snapshot to.
+     *        The engine version to upgrade the DB snapshot to. </p>
+     *        <p>
+     *        The following are the database engines and engine versions that are available when you upgrade a DB
+     *        snapshot.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.5.46</code> (supported for 5.1 DB snapshots)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,7 +362,24 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The option group to identify with the upgraded DB snapshot.
+     * </p>
+     * <p>
+     * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
+     * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option Group Considerations</a>.
+     * </p>
+     * 
      * @param optionGroupName
+     *        The option group to identify with the upgraded DB snapshot. </p>
+     *        <p>
+     *        You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group
+     *        considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     *        >Option Group Considerations</a>.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -129,7 +387,23 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The option group to identify with the upgraded DB snapshot.
+     * </p>
+     * <p>
+     * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
+     * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option Group Considerations</a>.
+     * </p>
+     * 
+     * @return The option group to identify with the upgraded DB snapshot. </p>
+     *         <p>
+     *         You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group
+     *         considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     *         >Option Group Considerations</a>.
      */
 
     public String getOptionGroupName() {
@@ -137,7 +411,24 @@ public class ModifyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The option group to identify with the upgraded DB snapshot.
+     * </p>
+     * <p>
+     * You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply
+     * when upgrading a DB snapshot as when upgrading a DB instance. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     * >Option Group Considerations</a>.
+     * </p>
+     * 
      * @param optionGroupName
+     *        The option group to identify with the upgraded DB snapshot. </p>
+     *        <p>
+     *        You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group
+     *        considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG"
+     *        >Option Group Considerations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

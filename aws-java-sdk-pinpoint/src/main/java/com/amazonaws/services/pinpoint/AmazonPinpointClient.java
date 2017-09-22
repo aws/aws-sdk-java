@@ -71,14 +71,14 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
-                                    com.amazonaws.services.pinpoint.model.ForbiddenException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
                                     com.amazonaws.services.pinpoint.model.NotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MethodNotAllowedException").withModeledClass(
                                     com.amazonaws.services.pinpoint.model.MethodNotAllowedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.ForbiddenException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
                                     com.amazonaws.services.pinpoint.model.TooManyRequestsException.class))
@@ -273,7 +273,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Creates or updates an app.
+     * Used to create an app.
      * 
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
@@ -497,62 +497,6 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Delete an ADM channel
-     * 
-     * @param deleteAdmChannelRequest
-     * @return Result of the DeleteAdmChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.DeleteAdmChannel
-     */
-    @Override
-    public DeleteAdmChannelResult deleteAdmChannel(DeleteAdmChannelRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteAdmChannel(request);
-    }
-
-    @SdkInternalApi
-    final DeleteAdmChannelResult executeDeleteAdmChannel(DeleteAdmChannelRequest deleteAdmChannelRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteAdmChannelRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteAdmChannelRequest> request = null;
-        Response<DeleteAdmChannelResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteAdmChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAdmChannelRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteAdmChannelResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAdmChannelResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
      * Deletes the APNs channel for an app.
      * 
      * @param deleteApnsChannelRequest
@@ -712,62 +656,6 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * Delete a BAIDU GCM channel
-     * 
-     * @param deleteBaiduChannelRequest
-     * @return Result of the DeleteBaiduChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.DeleteBaiduChannel
-     */
-    @Override
-    public DeleteBaiduChannelResult deleteBaiduChannel(DeleteBaiduChannelRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteBaiduChannel(request);
-    }
-
-    @SdkInternalApi
-    final DeleteBaiduChannelResult executeDeleteBaiduChannel(DeleteBaiduChannelRequest deleteBaiduChannelRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteBaiduChannelRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteBaiduChannelRequest> request = null;
-        Response<DeleteBaiduChannelResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteBaiduChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBaiduChannelRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<DeleteBaiduChannelResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBaiduChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1116,62 +1004,6 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Get an ADM channel
-     * 
-     * @param getAdmChannelRequest
-     * @return Result of the GetAdmChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.GetAdmChannel
-     */
-    @Override
-    public GetAdmChannelResult getAdmChannel(GetAdmChannelRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetAdmChannel(request);
-    }
-
-    @SdkInternalApi
-    final GetAdmChannelResult executeGetAdmChannel(GetAdmChannelRequest getAdmChannelRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getAdmChannelRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetAdmChannelRequest> request = null;
-        Response<GetAdmChannelResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetAdmChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAdmChannelRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetAdmChannelResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAdmChannelResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
      * Returns information about the APNs channel for an app.
      * 
      * @param getApnsChannelRequest
@@ -1443,62 +1275,6 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetAppsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAppsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * Get a BAIDU GCM channel
-     * 
-     * @param getBaiduChannelRequest
-     * @return Result of the GetBaiduChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.GetBaiduChannel
-     */
-    @Override
-    public GetBaiduChannelResult getBaiduChannel(GetBaiduChannelRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetBaiduChannel(request);
-    }
-
-    @SdkInternalApi
-    final GetBaiduChannelResult executeGetBaiduChannel(GetBaiduChannelRequest getBaiduChannelRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getBaiduChannelRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetBaiduChannelRequest> request = null;
-        Response<GetBaiduChannelResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetBaiduChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBaiduChannelRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetBaiduChannelResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBaiduChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2577,118 +2353,6 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Send a batch of messages to users
-     * 
-     * @param sendUsersMessagesRequest
-     * @return Result of the SendUsersMessages operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.SendUsersMessages
-     */
-    @Override
-    public SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest request) {
-        request = beforeClientExecution(request);
-        return executeSendUsersMessages(request);
-    }
-
-    @SdkInternalApi
-    final SendUsersMessagesResult executeSendUsersMessages(SendUsersMessagesRequest sendUsersMessagesRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(sendUsersMessagesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<SendUsersMessagesRequest> request = null;
-        Response<SendUsersMessagesResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new SendUsersMessagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendUsersMessagesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<SendUsersMessagesResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendUsersMessagesResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * Update an ADM channel
-     * 
-     * @param updateAdmChannelRequest
-     * @return Result of the UpdateAdmChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.UpdateAdmChannel
-     */
-    @Override
-    public UpdateAdmChannelResult updateAdmChannel(UpdateAdmChannelRequest request) {
-        request = beforeClientExecution(request);
-        return executeUpdateAdmChannel(request);
-    }
-
-    @SdkInternalApi
-    final UpdateAdmChannelResult executeUpdateAdmChannel(UpdateAdmChannelRequest updateAdmChannelRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(updateAdmChannelRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateAdmChannelRequest> request = null;
-        Response<UpdateAdmChannelResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateAdmChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAdmChannelRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<UpdateAdmChannelResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAdmChannelResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
@@ -2850,62 +2514,6 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateApplicationSettingsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * Update a BAIDU GCM channel
-     * 
-     * @param updateBaiduChannelRequest
-     * @return Result of the UpdateBaiduChannel operation returned by the service.
-     * @throws BadRequestException
-     *         Simple message object.
-     * @throws InternalServerErrorException
-     *         Simple message object.
-     * @throws ForbiddenException
-     *         Simple message object.
-     * @throws NotFoundException
-     *         Simple message object.
-     * @throws MethodNotAllowedException
-     *         Simple message object.
-     * @throws TooManyRequestsException
-     *         Simple message object.
-     * @sample AmazonPinpoint.UpdateBaiduChannel
-     */
-    @Override
-    public UpdateBaiduChannelResult updateBaiduChannel(UpdateBaiduChannelRequest request) {
-        request = beforeClientExecution(request);
-        return executeUpdateBaiduChannel(request);
-    }
-
-    @SdkInternalApi
-    final UpdateBaiduChannelResult executeUpdateBaiduChannel(UpdateBaiduChannelRequest updateBaiduChannelRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(updateBaiduChannelRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateBaiduChannelRequest> request = null;
-        Response<UpdateBaiduChannelResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateBaiduChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBaiduChannelRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<UpdateBaiduChannelResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateBaiduChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -33,8 +33,6 @@ public class MessageRequestMarshaller {
             .marshallLocationName("Addresses").build();
     private static final MarshallingInfo<Map> CONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Context").build();
-    private static final MarshallingInfo<Map> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<StructuredPojo> MESSAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageConfiguration").build();
 
@@ -56,7 +54,6 @@ public class MessageRequestMarshaller {
         try {
             protocolMarshaller.marshall(messageRequest.getAddresses(), ADDRESSES_BINDING);
             protocolMarshaller.marshall(messageRequest.getContext(), CONTEXT_BINDING);
-            protocolMarshaller.marshall(messageRequest.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(messageRequest.getMessageConfiguration(), MESSAGECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

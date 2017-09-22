@@ -4571,11 +4571,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version. You can update
-     * the engine version to either a new major or minor engine version.
+     * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
      * <p>
-     * Amazon RDS supports upgrading a MySQL DB snapshot from MySQL 5.1 to MySQL 5.5.
+     * Amazon RDS supports upgrading DB snapshots for MySQL and Oracle.
      * </p>
      * 
      * @param modifyDBSnapshotRequest

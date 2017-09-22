@@ -52,11 +52,6 @@ public class MessageResponseJsonUnmarshaller implements Unmarshaller<MessageResp
                     context.nextToken();
                     messageResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("EndpointResult", targetDepth)) {
-                    context.nextToken();
-                    messageResponse.setEndpointResult(new MapUnmarshaller<String, EndpointMessageResult>(context.getUnmarshaller(String.class),
-                            EndpointMessageResultJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();
                     messageResponse.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));

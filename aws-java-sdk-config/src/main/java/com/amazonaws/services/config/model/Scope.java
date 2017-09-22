@@ -39,8 +39,7 @@ public class Scope implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> complianceResourceTypes;
     /**
      * <p>
-     * The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the
-     * rule.
+     * The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.
      * </p>
      */
     private String tagKey;
@@ -142,13 +141,12 @@ public class Scope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the
-     * rule.
+     * The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.
      * </p>
      * 
      * @param tagKey
-     *        The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation
-     *        for the rule.
+     *        The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the
+     *        rule.
      */
 
     public void setTagKey(String tagKey) {
@@ -157,12 +155,11 @@ public class Scope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the
-     * rule.
+     * The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.
      * </p>
      * 
-     * @return The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation
-     *         for the rule.
+     * @return The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the
+     *         rule.
      */
 
     public String getTagKey() {
@@ -171,13 +168,12 @@ public class Scope implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation for the
-     * rule.
+     * The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the rule.
      * </p>
      * 
      * @param tagKey
-     *        The tag key that is applied to only those AWS resources that you want you want to trigger an evaluation
-     *        for the rule.
+     *        The tag key that is applied to only those AWS resources that you want to trigger an evaluation for the
+     *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
