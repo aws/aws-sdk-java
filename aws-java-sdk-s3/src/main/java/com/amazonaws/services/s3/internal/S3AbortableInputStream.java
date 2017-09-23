@@ -179,10 +179,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
                     "Not all bytes were read from the S3ObjectInputStream, aborting HTTP connection. This is likely an error and " +
                     "may result in sub-optimal behavior. Request only the bytes you need via a ranged GET or drain the input " +
                     "stream after use.");
-            if (httpRequest != null) {
-                httpRequest.abort();
-            }
-            IOUtils.closeQuietly(in, null);
+            abort();
         }
     }
 
