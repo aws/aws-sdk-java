@@ -249,6 +249,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public UpdateTerminationProtectionResult updateTerminationProtection(UpdateTerminationProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ValidateTemplateResult validateTemplate(ValidateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

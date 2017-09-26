@@ -72,6 +72,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>FailureToleranceCount</code> .
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -85,6 +89,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds down to the
      * next whole number. This is true except in cases where rounding down would result is zero. In this case,
      * CloudFormation sets the number as one instead.
+     * </p>
+     * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
      * </p>
      * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
@@ -343,6 +351,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>FailureToleranceCount</code> .
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -351,6 +363,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
      *        value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
      *        <code>FailureToleranceCount</code> .</p>
+     *        <p>
+     *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
+     *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
+     *        throttling.
+     *        </p>
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *        <code>MaxConcurrentPercentage</code>, but not both.
@@ -367,6 +384,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>FailureToleranceCount</code> .
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -374,6 +395,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * @return The maximum number of accounts in which to perform this operation at one time. This is dependent on the
      *         value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
      *         <code>FailureToleranceCount</code> .</p>
+     *         <p>
+     *         Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
+     *         certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
+     *         throttling.
+     *         </p>
      *         <p>
      *         Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *         <code>MaxConcurrentPercentage</code>, but not both.
@@ -390,6 +416,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>FailureToleranceCount</code> .
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -398,6 +428,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
      *        value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
      *        <code>FailureToleranceCount</code> .</p>
+     *        <p>
+     *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
+     *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
+     *        throttling.
+     *        </p>
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *        <code>MaxConcurrentPercentage</code>, but not both.
@@ -419,6 +454,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * CloudFormation sets the number as one instead.
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -429,6 +468,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds down
      *        to the next whole number. This is true except in cases where rounding down would result is zero. In this
      *        case, CloudFormation sets the number as one instead.
+     *        </p>
+     *        <p>
+     *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
+     *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
+     *        throttling.
      *        </p>
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
@@ -449,6 +493,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * CloudFormation sets the number as one instead.
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -458,6 +506,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *         When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds down
      *         to the next whole number. This is true except in cases where rounding down would result is zero. In this
      *         case, CloudFormation sets the number as one instead.
+     *         </p>
+     *         <p>
+     *         Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
+     *         certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
+     *         throttling.
      *         </p>
      *         <p>
      *         Conditional: You must specify either <code>MaxConcurrentCount</code> or
@@ -478,6 +531,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * CloudFormation sets the number as one instead.
      * </p>
      * <p>
+     * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
+     * circumstances the actual number of accounts acted upon concurrently may be lower due to service throttling.
+     * </p>
+     * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
@@ -488,6 +545,11 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        When calculating the number of accounts based on the specified percentage, AWS CloudFormation rounds down
      *        to the next whole number. This is true except in cases where rounding down would result is zero. In this
      *        case, CloudFormation sets the number as one instead.
+     *        </p>
+     *        <p>
+     *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
+     *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
+     *        throttling.
      *        </p>
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or

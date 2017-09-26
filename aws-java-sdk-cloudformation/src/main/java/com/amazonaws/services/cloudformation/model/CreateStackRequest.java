@@ -231,6 +231,20 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is disabled on
+     * stacks by default.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     */
+    private Boolean enableTerminationProtection;
 
     /**
      * <p>
@@ -1927,6 +1941,126 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is disabled on
+     * stacks by default.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @param enableTerminationProtection
+     *        Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     *        termination protection enabled, the operation fails and the stack remains unchanged. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">
+     *        Protecting a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination
+     *        protection is disabled on stacks by default. </p>
+     *        <p>
+     *        For <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     *        stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested
+     *        stack.
+     */
+
+    public void setEnableTerminationProtection(Boolean enableTerminationProtection) {
+        this.enableTerminationProtection = enableTerminationProtection;
+    }
+
+    /**
+     * <p>
+     * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is disabled on
+     * stacks by default.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @return Whether to enable termination protection on the specified stack. If a user attempts to delete a stack
+     *         with termination protection enabled, the operation fails and the stack remains unchanged. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html"
+     *         >Protecting a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination
+     *         protection is disabled on stacks by default. </p>
+     *         <p>
+     *         For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">
+     *         nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the
+     *         nested stack.
+     */
+
+    public Boolean getEnableTerminationProtection() {
+        return this.enableTerminationProtection;
+    }
+
+    /**
+     * <p>
+     * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is disabled on
+     * stacks by default.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @param enableTerminationProtection
+     *        Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     *        termination protection enabled, the operation fails and the stack remains unchanged. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">
+     *        Protecting a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination
+     *        protection is disabled on stacks by default. </p>
+     *        <p>
+     *        For <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     *        stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested
+     *        stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withEnableTerminationProtection(Boolean enableTerminationProtection) {
+        setEnableTerminationProtection(enableTerminationProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to enable termination protection on the specified stack. If a user attempts to delete a stack with
+     * termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is disabled on
+     * stacks by default.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @return Whether to enable termination protection on the specified stack. If a user attempts to delete a stack
+     *         with termination protection enabled, the operation fails and the stack remains unchanged. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html"
+     *         >Protecting a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination
+     *         protection is disabled on stacks by default. </p>
+     *         <p>
+     *         For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">
+     *         nested stacks</a>, termination protection is set on the root stack and cannot be changed directly on the
+     *         nested stack.
+     */
+
+    public Boolean isEnableTerminationProtection() {
+        return this.enableTerminationProtection;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1968,7 +2102,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getEnableTerminationProtection() != null)
+            sb.append("EnableTerminationProtection: ").append(getEnableTerminationProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -2047,6 +2183,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getEnableTerminationProtection() == null ^ this.getEnableTerminationProtection() == null)
+            return false;
+        if (other.getEnableTerminationProtection() != null && other.getEnableTerminationProtection().equals(this.getEnableTerminationProtection()) == false)
+            return false;
         return true;
     }
 
@@ -2071,6 +2211,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getEnableTerminationProtection() == null) ? 0 : getEnableTerminationProtection().hashCode());
         return hashCode;
     }
 

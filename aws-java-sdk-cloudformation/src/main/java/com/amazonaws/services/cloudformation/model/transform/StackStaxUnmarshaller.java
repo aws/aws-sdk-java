@@ -80,6 +80,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("DeletionTime", targetDepth)) {
+                    stack.setDeletionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
                     stack.setLastUpdatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -155,6 +160,20 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("EnableTerminationProtection", targetDepth)) {
+                    stack.setEnableTerminationProtection(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ParentId", targetDepth)) {
+                    stack.setParentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RootId", targetDepth)) {
+                    stack.setRootId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stack;

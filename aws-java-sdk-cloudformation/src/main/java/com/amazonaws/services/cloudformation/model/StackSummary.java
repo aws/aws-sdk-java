@@ -75,6 +75,30 @@ public class StackSummary implements Serializable, Cloneable {
      * </p>
      */
     private String stackStatusReason;
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String parentId;
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String rootId;
 
     /**
      * <p>
@@ -438,6 +462,152 @@ public class StackSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param parentId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of
+     *        this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of
+     *         this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *         with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getParentId() {
+        return this.parentId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of this
+     * stack. For the first level of nested stacks, the root stack is also the parent stack.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param parentId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the direct parent of
+     *        this stack. For the first level of nested stacks, the root stack is also the parent stack.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSummary withParentId(String parentId) {
+        setParentId(parentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param rootId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
+     *        to which the nested stack ultimately belongs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setRootId(String rootId) {
+        this.rootId = rootId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
+     *         to which the nested stack ultimately belongs.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *         with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getRootId() {
+        return this.rootId;
+    }
+
+    /**
+     * <p>
+     * For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack to
+     * which the nested stack ultimately belongs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working with
+     * Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param rootId
+     *        For nested stacks--stacks created as resources for another stack--the stack ID of the the top-level stack
+     *        to which the nested stack ultimately belongs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
+     *        with Nested Stacks</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSummary withRootId(String rootId) {
+        setRootId(rootId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -463,7 +633,11 @@ public class StackSummary implements Serializable, Cloneable {
         if (getStackStatus() != null)
             sb.append("StackStatus: ").append(getStackStatus()).append(",");
         if (getStackStatusReason() != null)
-            sb.append("StackStatusReason: ").append(getStackStatusReason());
+            sb.append("StackStatusReason: ").append(getStackStatusReason()).append(",");
+        if (getParentId() != null)
+            sb.append("ParentId: ").append(getParentId()).append(",");
+        if (getRootId() != null)
+            sb.append("RootId: ").append(getRootId());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +684,14 @@ public class StackSummary implements Serializable, Cloneable {
             return false;
         if (other.getStackStatusReason() != null && other.getStackStatusReason().equals(this.getStackStatusReason()) == false)
             return false;
+        if (other.getParentId() == null ^ this.getParentId() == null)
+            return false;
+        if (other.getParentId() != null && other.getParentId().equals(this.getParentId()) == false)
+            return false;
+        if (other.getRootId() == null ^ this.getRootId() == null)
+            return false;
+        if (other.getRootId() != null && other.getRootId().equals(this.getRootId()) == false)
+            return false;
         return true;
     }
 
@@ -526,6 +708,8 @@ public class StackSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeletionTime() == null) ? 0 : getDeletionTime().hashCode());
         hashCode = prime * hashCode + ((getStackStatus() == null) ? 0 : getStackStatus().hashCode());
         hashCode = prime * hashCode + ((getStackStatusReason() == null) ? 0 : getStackStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getParentId() == null) ? 0 : getParentId().hashCode());
+        hashCode = prime * hashCode + ((getRootId() == null) ? 0 : getRootId().hashCode());
         return hashCode;
     }
 

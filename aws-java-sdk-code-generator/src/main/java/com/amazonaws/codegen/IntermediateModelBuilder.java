@@ -71,7 +71,7 @@ public class IntermediateModelBuilder {
         this.codeGenConfig = models.codeGenConfig();
         this.service = models.serviceModel();
         this.examples = models.examplesModel();
-        this.namingStrategy = new DefaultNamingStrategy(service, codeGenConfig, customConfig);
+        this.namingStrategy = new DefaultNamingStrategy(service, customConfig);
         this.typeUtils = new TypeUtils(namingStrategy);
         this.shapeProcessors = createShapeProcessors();
         this.waiters = models.waitersModel();

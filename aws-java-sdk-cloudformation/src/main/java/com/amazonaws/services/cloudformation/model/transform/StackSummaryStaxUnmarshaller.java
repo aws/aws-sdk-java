@@ -82,6 +82,16 @@ public class StackSummaryStaxUnmarshaller implements Unmarshaller<StackSummary, 
                     stackSummary.setStackStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ParentId", targetDepth)) {
+                    stackSummary.setParentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RootId", targetDepth)) {
+                    stackSummary.setRootId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSummary;

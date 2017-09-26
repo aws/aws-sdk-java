@@ -2450,6 +2450,61 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
+     * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @param updateTerminationProtectionRequest
+     * @return Result of the UpdateTerminationProtection operation returned by the service.
+     * @sample AmazonCloudFormation.UpdateTerminationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTerminationProtectionResult updateTerminationProtection(UpdateTerminationProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTerminationProtection(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTerminationProtectionResult executeUpdateTerminationProtection(UpdateTerminationProtectionRequest updateTerminationProtectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTerminationProtectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTerminationProtectionRequest> request = null;
+        Response<UpdateTerminationProtectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTerminationProtectionRequestMarshaller().marshall(super.beforeMarshalling(updateTerminationProtectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateTerminationProtectionResult> responseHandler = new StaxResponseHandler<UpdateTerminationProtectionResult>(
+                    new UpdateTerminationProtectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Validates a specified template. AWS CloudFormation first checks if the template is valid JSON. If it isn't, AWS
      * CloudFormation checks if the template is valid YAML. If both these checks fail, AWS CloudFormation returns a
      * template validation error.

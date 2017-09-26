@@ -954,6 +954,26 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
+     * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @param updateTerminationProtectionRequest
+     * @return Result of the UpdateTerminationProtection operation returned by the service.
+     * @sample AmazonCloudFormation.UpdateTerminationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTerminationProtectionResult updateTerminationProtection(UpdateTerminationProtectionRequest updateTerminationProtectionRequest);
+
+    /**
+     * <p>
      * Validates a specified template. AWS CloudFormation first checks if the template is valid JSON. If it isn't, AWS
      * CloudFormation checks if the template is valid YAML. If both these checks fail, AWS CloudFormation returns a
      * template validation error.

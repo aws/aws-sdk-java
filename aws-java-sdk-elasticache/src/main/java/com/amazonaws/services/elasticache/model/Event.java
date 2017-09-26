@@ -51,7 +51,7 @@ public class Event implements Serializable, Cloneable {
      * The date and time when the event occurred.
      * </p>
      */
-    private java.util.Date dateValue;
+    private java.util.Date date;
 
     /**
      * <p>
@@ -219,12 +219,12 @@ public class Event implements Serializable, Cloneable {
      * The date and time when the event occurred.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date and time when the event occurred.
      */
 
-    public void setDate(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(java.util.Date date) {
+        this.date = date;
     }
 
     /**
@@ -236,7 +236,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public java.util.Date getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -244,13 +244,13 @@ public class Event implements Serializable, Cloneable {
      * The date and time when the event occurred.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date and time when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Event withDate(java.util.Date dateValue) {
-        setDate(dateValue);
+    public Event withDate(java.util.Date date) {
+        setDate(date);
         return this;
     }
 

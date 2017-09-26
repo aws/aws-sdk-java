@@ -33,7 +33,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * The date of the notification.
      * </p>
      */
-    private java.util.Date dateValue;
+    private java.util.Date date;
     /**
      * <p>
      * The event for which a notification is sent.
@@ -70,12 +70,12 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * The date of the notification.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date of the notification.
      */
 
-    public void setDate(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(java.util.Date date) {
+        this.date = date;
     }
 
     /**
@@ -87,7 +87,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      */
 
     public java.util.Date getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -95,13 +95,13 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * The date of the notification.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date of the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssessmentRunNotification withDate(java.util.Date dateValue) {
-        setDate(dateValue);
+    public AssessmentRunNotification withDate(java.util.Date date) {
+        setDate(date);
         return this;
     }
 

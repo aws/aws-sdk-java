@@ -1669,6 +1669,53 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
+     * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @param updateTerminationProtectionRequest
+     * @return A Java Future containing the result of the UpdateTerminationProtection operation returned by the service.
+     * @sample AmazonCloudFormationAsync.UpdateTerminationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTerminationProtectionResult> updateTerminationProtectionAsync(
+            UpdateTerminationProtectionRequest updateTerminationProtectionRequest);
+
+    /**
+     * <p>
+     * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
+     * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
+     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * </p>
+     * 
+     * @param updateTerminationProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTerminationProtection operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.UpdateTerminationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTerminationProtectionResult> updateTerminationProtectionAsync(
+            UpdateTerminationProtectionRequest updateTerminationProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTerminationProtectionRequest, UpdateTerminationProtectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Validates a specified template. AWS CloudFormation first checks if the template is valid JSON. If it isn't, AWS
      * CloudFormation checks if the template is valid YAML. If both these checks fail, AWS CloudFormation returns a
      * template validation error.

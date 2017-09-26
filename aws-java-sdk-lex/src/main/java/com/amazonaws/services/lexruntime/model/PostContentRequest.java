@@ -233,7 +233,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * locally.
      * </p>
      */
-    private java.io.InputStream inputStreamValue;
+    private java.io.InputStream inputStream;
 
     /**
      * <p>
@@ -1483,7 +1483,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * locally.
      * </p>
      * 
-     * @param inputStreamValue
+     * @param inputStream
      *        User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP
      *        header. </p>
      *        <p>
@@ -1492,8 +1492,8 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        the data locally.
      */
 
-    public void setInputStream(java.io.InputStream inputStreamValue) {
-        this.inputStreamValue = inputStreamValue;
+    public void setInputStream(java.io.InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 
     /**
@@ -1515,7 +1515,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public java.io.InputStream getInputStream() {
-        return this.inputStreamValue;
+        return this.inputStream;
     }
 
     /**
@@ -1528,7 +1528,7 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * locally.
      * </p>
      * 
-     * @param inputStreamValue
+     * @param inputStream
      *        User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP
      *        header. </p>
      *        <p>
@@ -1538,8 +1538,8 @@ public class PostContentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PostContentRequest withInputStream(java.io.InputStream inputStreamValue) {
-        setInputStream(inputStreamValue);
+    public PostContentRequest withInputStream(java.io.InputStream inputStream) {
+        setInputStream(inputStream);
         return this;
     }
 

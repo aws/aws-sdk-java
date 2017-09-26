@@ -17,7 +17,7 @@ package com.amazonaws.handlers;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.ClassLoaderHelper;
 import com.amazonaws.util.StringUtils;
-
+import com.sun.org.apache.bcel.internal.util.ClassLoader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,6 +25,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -61,7 +62,7 @@ public class HandlerChainFactory {
 
         try {
             List<URL> globalHandlerListLocations = Collections
-                    .list(HandlerChainFactory.class.getClassLoader().getResources(GLOBAL_HANDLER_PATH));
+                    .list(getGlobalHandlerResources());
 
             for (URL url : globalHandlerListLocations) {
 
@@ -91,6 +92,14 @@ public class HandlerChainFactory {
             }
         }
         return handlers;
+    }
+
+    private Enumeration<URL> getGlobalHandlerResources() throws IOException {
+        // Classloader may be null if loaded by bootstrap classloader.
+        if (HandlerChainFactory.class.getClassLoader() == null) {
+            return ClassLoader.getSystemResources(GLOBAL_HANDLER_PATH);
+        }
+        return HandlerChainFactory.class.getClassLoader().getResources(GLOBAL_HANDLER_PATH);
     }
 
     private RequestHandler2 createRequestHandler(String handlerClassName, Class<?> handlerApiClass)

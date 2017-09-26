@@ -51,7 +51,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * The date when the association was made.
      * </p>
      */
-    private java.util.Date dateValue;
+    private java.util.Date date;
     /**
      * <p>
      * The date when the association was last updated.
@@ -250,12 +250,12 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * The date when the association was made.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date when the association was made.
      */
 
-    public void setDate(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(java.util.Date date) {
+        this.date = date;
     }
 
     /**
@@ -267,7 +267,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      */
 
     public java.util.Date getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -275,13 +275,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * The date when the association was made.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date when the association was made.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssociationDescription withDate(java.util.Date dateValue) {
-        setDate(dateValue);
+    public AssociationDescription withDate(java.util.Date date) {
+        setDate(date);
         return this;
     }
 

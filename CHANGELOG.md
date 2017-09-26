@@ -1,3 +1,13 @@
+# __1.11.203__ __2017-09-26__
+## __AWS Cloud Formation__
+  - ### Features
+    - You can now prevent a stack from being accidentally deleted by enabling termination protection on the stack. If you attempt to delete a stack with termination protection enabled, the deletion fails and the stack, including its status, remains unchanged. You can enable termination protection on a stack when you create it. Termination protection on stacks is disabled by default. After creation, you can set termination protection on a stack whose status is CREATE_COMPLETE, UPDATE_COMPLETE, or UPDATE_ROLLBACK_COMPLETE.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixing https://github.com/aws/aws-sdk-java/issues/1243 by adding full list of reserved keywords to code generator.
+    - Fixing issue https://github.com/aws/aws-sdk-java/issues/1262. When the SDK was being loaded by the bootstrap classloader, looking up global request handlers would throw an NPE.
+
 # __1.11.202__ __2017-09-22__
 ## __AWS Config__
   - ### Features

@@ -101,6 +101,8 @@ public enum CloudFormationActions implements Action {
     UpdateStack("cloudformation:UpdateStack"),
     /** Action for the UpdateStackSet operation. */
     UpdateStackSet("cloudformation:UpdateStackSet"),
+    /** Action for the UpdateTerminationProtection operation. */
+    UpdateTerminationProtection("cloudformation:UpdateTerminationProtection"),
     /** Action for the ValidateTemplate operation. */
     ValidateTemplate("cloudformation:ValidateTemplate"),
 

@@ -207,6 +207,10 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             request.addParameter("ClientRequestToken", StringUtils.fromString(createStackRequest.getClientRequestToken()));
         }
 
+        if (createStackRequest.getEnableTerminationProtection() != null) {
+            request.addParameter("EnableTerminationProtection", StringUtils.fromBoolean(createStackRequest.getEnableTerminationProtection()));
+        }
+
         return request;
     }
 

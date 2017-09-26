@@ -54,7 +54,7 @@ public class Event implements Serializable, Cloneable {
      * Specifies the date and time of the event.
      * </p>
      */
-    private java.util.Date dateValue;
+    private java.util.Date date;
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the event.
@@ -295,12 +295,12 @@ public class Event implements Serializable, Cloneable {
      * Specifies the date and time of the event.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        Specifies the date and time of the event.
      */
 
-    public void setDate(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(java.util.Date date) {
+        this.date = date;
     }
 
     /**
@@ -312,7 +312,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public java.util.Date getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -320,13 +320,13 @@ public class Event implements Serializable, Cloneable {
      * Specifies the date and time of the event.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        Specifies the date and time of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Event withDate(java.util.Date dateValue) {
-        setDate(dateValue);
+    public Event withDate(java.util.Date date) {
+        setDate(date);
         return this;
     }
 

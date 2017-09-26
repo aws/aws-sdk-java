@@ -45,7 +45,7 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
      * The date when the specified commit was pushed to the repository.
      * </p>
      */
-    private String dateValue;
+    private String date;
 
     /**
      * <p>
@@ -132,12 +132,12 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
      * The date when the specified commit was pushed to the repository.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date when the specified commit was pushed to the repository.
      */
 
-    public void setDate(String dateValue) {
-        this.dateValue = dateValue;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     /**
@@ -149,7 +149,7 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public String getDate() {
-        return this.dateValue;
+        return this.date;
     }
 
     /**
@@ -157,13 +157,13 @@ public class UserInfo implements Serializable, Cloneable, StructuredPojo {
      * The date when the specified commit was pushed to the repository.
      * </p>
      * 
-     * @param dateValue
+     * @param date
      *        The date when the specified commit was pushed to the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UserInfo withDate(String dateValue) {
-        setDate(dateValue);
+    public UserInfo withDate(String date) {
+        setDate(date);
         return this;
     }
 
