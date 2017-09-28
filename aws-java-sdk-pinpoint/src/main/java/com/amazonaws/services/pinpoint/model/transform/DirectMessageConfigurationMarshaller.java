@@ -27,12 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DirectMessageConfigurationMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ADMMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ADMMessage").build();
     private static final MarshallingInfo<StructuredPojo> APNSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("APNSMessage").build();
+    private static final MarshallingInfo<StructuredPojo> BAIDUMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaiduMessage").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultMessage").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTPUSHNOTIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultPushNotificationMessage").build();
+    private static final MarshallingInfo<StructuredPojo> EMAILMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailMessage").build();
     private static final MarshallingInfo<StructuredPojo> GCMMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCMMessage").build();
     private static final MarshallingInfo<StructuredPojo> SMSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,9 +60,12 @@ public class DirectMessageConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(directMessageConfiguration.getADMMessage(), ADMMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getAPNSMessage(), APNSMESSAGE_BINDING);
+            protocolMarshaller.marshall(directMessageConfiguration.getBaiduMessage(), BAIDUMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getDefaultMessage(), DEFAULTMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getDefaultPushNotificationMessage(), DEFAULTPUSHNOTIFICATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(directMessageConfiguration.getEmailMessage(), EMAILMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getGCMMessage(), GCMMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getSMSMessage(), SMSMESSAGE_BINDING);
         } catch (Exception e) {

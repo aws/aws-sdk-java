@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * DeleteEventStream Request
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

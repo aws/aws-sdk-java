@@ -89,7 +89,7 @@ public interface AmazonPinpoint {
     void setRegion(Region region);
 
     /**
-     * Used to create an app.
+     * Creates or updates an app.
      * 
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
@@ -106,6 +106,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.CreateApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateAppResult createApp(CreateAppRequest createAppRequest);
 
@@ -127,6 +129,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.CreateCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateCampaignResult createCampaign(CreateCampaignRequest createCampaignRequest);
 
@@ -148,6 +152,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.CreateImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest);
 
@@ -169,8 +175,33 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.CreateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest);
+
+    /**
+     * Delete an ADM channel
+     * 
+     * @param deleteAdmChannelRequest
+     * @return Result of the DeleteAdmChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAdmChannelResult deleteAdmChannel(DeleteAdmChannelRequest deleteAdmChannelRequest);
 
     /**
      * Deletes the APNs channel for an app.
@@ -190,6 +221,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest deleteApnsChannelRequest);
 
@@ -211,6 +244,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
      */
     DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
 
@@ -232,8 +267,33 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
+
+    /**
+     * Delete a BAIDU GCM channel
+     * 
+     * @param deleteBaiduChannelRequest
+     * @return Result of the DeleteBaiduChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteBaiduChannelResult deleteBaiduChannel(DeleteBaiduChannelRequest deleteBaiduChannelRequest);
 
     /**
      * Deletes a campaign.
@@ -253,6 +313,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteCampaignResult deleteCampaign(DeleteCampaignRequest deleteCampaignRequest);
 
@@ -274,6 +336,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     DeleteEmailChannelResult deleteEmailChannel(DeleteEmailChannelRequest deleteEmailChannelRequest);
 
@@ -296,6 +360,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest deleteEventStreamRequest);
 
@@ -317,6 +383,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest);
 
@@ -338,6 +406,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteSegmentResult deleteSegment(DeleteSegmentRequest deleteSegmentRequest);
 
@@ -359,8 +429,33 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.DeleteSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest);
+
+    /**
+     * Get an ADM channel
+     * 
+     * @param getAdmChannelRequest
+     * @return Result of the GetAdmChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAdmChannelResult getAdmChannel(GetAdmChannelRequest getAdmChannelRequest);
 
     /**
      * Returns information about the APNs channel for an app.
@@ -380,6 +475,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     GetApnsChannelResult getApnsChannel(GetApnsChannelRequest getApnsChannelRequest);
 
@@ -401,6 +498,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
 
@@ -422,6 +521,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp" target="_top">AWS API
+     *      Documentation</a>
      */
     GetAppResult getApp(GetAppRequest getAppRequest);
 
@@ -443,6 +544,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetApplicationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest);
 
@@ -464,8 +567,33 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetApps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps" target="_top">AWS API
+     *      Documentation</a>
      */
     GetAppsResult getApps(GetAppsRequest getAppsRequest);
+
+    /**
+     * Get a BAIDU GCM channel
+     * 
+     * @param getBaiduChannelRequest
+     * @return Result of the GetBaiduChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetBaiduChannelResult getBaiduChannel(GetBaiduChannelRequest getBaiduChannelRequest);
 
     /**
      * Returns information about a campaign.
@@ -485,6 +613,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     GetCampaignResult getCampaign(GetCampaignRequest getCampaignRequest);
 
@@ -506,6 +636,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities" target="_top">AWS
+     *      API Documentation</a>
      */
     GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
 
@@ -527,6 +659,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion" target="_top">AWS
+     *      API Documentation</a>
      */
     GetCampaignVersionResult getCampaignVersion(GetCampaignVersionRequest getCampaignVersionRequest);
 
@@ -548,6 +682,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     GetCampaignVersionsResult getCampaignVersions(GetCampaignVersionsRequest getCampaignVersionsRequest);
 
@@ -569,6 +705,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetCampaigns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns" target="_top">AWS API
+     *      Documentation</a>
      */
     GetCampaignsResult getCampaigns(GetCampaignsRequest getCampaignsRequest);
 
@@ -590,6 +728,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     GetEmailChannelResult getEmailChannel(GetEmailChannelRequest getEmailChannelRequest);
 
@@ -611,6 +751,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     GetEndpointResult getEndpoint(GetEndpointRequest getEndpointRequest);
 
@@ -633,6 +775,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     GetEventStreamResult getEventStream(GetEventStreamRequest getEventStreamRequest);
 
@@ -654,6 +798,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     GetGcmChannelResult getGcmChannel(GetGcmChannelRequest getGcmChannelRequest);
 
@@ -675,6 +821,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
      */
     GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest);
 
@@ -696,6 +844,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs" target="_top">AWS API
+     *      Documentation</a>
      */
     GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest);
 
@@ -717,6 +867,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest);
 
@@ -738,6 +890,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs" target="_top">AWS
+     *      API Documentation</a>
      */
     GetSegmentImportJobsResult getSegmentImportJobs(GetSegmentImportJobsRequest getSegmentImportJobsRequest);
 
@@ -759,6 +913,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSegmentVersionResult getSegmentVersion(GetSegmentVersionRequest getSegmentVersionRequest);
 
@@ -780,6 +936,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     GetSegmentVersionsResult getSegmentVersions(GetSegmentVersionsRequest getSegmentVersionsRequest);
 
@@ -801,6 +959,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSegmentsResult getSegments(GetSegmentsRequest getSegmentsRequest);
 
@@ -822,6 +982,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.GetSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     GetSmsChannelResult getSmsChannel(GetSmsChannelRequest getSmsChannelRequest);
 
@@ -829,7 +991,6 @@ public interface AmazonPinpoint {
      * Use to create or update the event stream for an app.
      * 
      * @param putEventStreamRequest
-     *        PutEventStream Request
      * @return Result of the PutEventStream operation returned by the service.
      * @throws BadRequestException
      *         Simple message object.
@@ -844,6 +1005,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.PutEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     PutEventStreamResult putEventStream(PutEventStreamRequest putEventStreamRequest);
 
@@ -865,8 +1028,56 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.SendMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages" target="_top">AWS API
+     *      Documentation</a>
      */
     SendMessagesResult sendMessages(SendMessagesRequest sendMessagesRequest);
+
+    /**
+     * Send a batch of messages to users
+     * 
+     * @param sendUsersMessagesRequest
+     * @return Result of the SendUsersMessages operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.SendUsersMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest sendUsersMessagesRequest);
+
+    /**
+     * Update an ADM channel
+     * 
+     * @param updateAdmChannelRequest
+     * @return Result of the UpdateAdmChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAdmChannelResult updateAdmChannel(UpdateAdmChannelRequest updateAdmChannelRequest);
 
     /**
      * Use to update the APNs channel for an app.
@@ -886,6 +1097,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest updateApnsChannelRequest);
 
@@ -907,6 +1120,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateApnsSandboxChannelResult updateApnsSandboxChannel(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
 
@@ -928,8 +1143,33 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateApplicationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest);
+
+    /**
+     * Update a BAIDU GCM channel
+     * 
+     * @param updateBaiduChannelRequest
+     * @return Result of the UpdateBaiduChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateBaiduChannelResult updateBaiduChannel(UpdateBaiduChannelRequest updateBaiduChannelRequest);
 
     /**
      * Use to update a campaign.
@@ -949,6 +1189,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateCampaignResult updateCampaign(UpdateCampaignRequest updateCampaignRequest);
 
@@ -970,6 +1212,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateEmailChannelResult updateEmailChannel(UpdateEmailChannelRequest updateEmailChannelRequest);
 
@@ -991,6 +1235,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
 
@@ -1012,6 +1258,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateEndpointsBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch" target="_top">AWS
+     *      API Documentation</a>
      */
     UpdateEndpointsBatchResult updateEndpointsBatch(UpdateEndpointsBatchRequest updateEndpointsBatchRequest);
 
@@ -1033,6 +1281,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest);
 
@@ -1054,6 +1304,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateSegmentResult updateSegment(UpdateSegmentRequest updateSegmentRequest);
 
@@ -1075,6 +1327,8 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         Simple message object.
      * @sample AmazonPinpoint.UpdateSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest updateSmsChannelRequest);
 

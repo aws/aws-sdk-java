@@ -19,6 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Used to create a campaign.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteCampaignRequest" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteCampaignRequest implements Serializable, Cloneable, StructuredPojo {
@@ -46,6 +49,8 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     private String segmentId;
     /** The version of the segment to which the campaign sends messages. */
     private Integer segmentVersion;
+    /** Whether or not to enable trace logging for the campaign. Undocumented */
+    private Boolean trace;
     /** A custom description for the treatment. */
     private String treatmentDescription;
     /** The custom name of a variation of the campaign used for A/B testing. */
@@ -438,6 +443,50 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     * 
+     * @param trace
+     *        Whether or not to enable trace logging for the campaign. Undocumented
+     */
+
+    public void setTrace(Boolean trace) {
+        this.trace = trace;
+    }
+
+    /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     * 
+     * @return Whether or not to enable trace logging for the campaign. Undocumented
+     */
+
+    public Boolean getTrace() {
+        return this.trace;
+    }
+
+    /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     * 
+     * @param trace
+     *        Whether or not to enable trace logging for the campaign. Undocumented
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteCampaignRequest withTrace(Boolean trace) {
+        setTrace(trace);
+        return this;
+    }
+
+    /**
+     * Whether or not to enable trace logging for the campaign. Undocumented
+     * 
+     * @return Whether or not to enable trace logging for the campaign. Undocumented
+     */
+
+    public Boolean isTrace() {
+        return this.trace;
+    }
+
+    /**
      * A custom description for the treatment.
      * 
      * @param treatmentDescription
@@ -536,6 +585,8 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
             sb.append("SegmentId: ").append(getSegmentId()).append(",");
         if (getSegmentVersion() != null)
             sb.append("SegmentVersion: ").append(getSegmentVersion()).append(",");
+        if (getTrace() != null)
+            sb.append("Trace: ").append(getTrace()).append(",");
         if (getTreatmentDescription() != null)
             sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
@@ -594,6 +645,10 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
             return false;
         if (other.getSegmentVersion() != null && other.getSegmentVersion().equals(this.getSegmentVersion()) == false)
             return false;
+        if (other.getTrace() == null ^ this.getTrace() == null)
+            return false;
+        if (other.getTrace() != null && other.getTrace().equals(this.getTrace()) == false)
+            return false;
         if (other.getTreatmentDescription() == null ^ this.getTreatmentDescription() == null)
             return false;
         if (other.getTreatmentDescription() != null && other.getTreatmentDescription().equals(this.getTreatmentDescription()) == false)
@@ -620,6 +675,7 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getSegmentId() == null) ? 0 : getSegmentId().hashCode());
         hashCode = prime * hashCode + ((getSegmentVersion() == null) ? 0 : getSegmentVersion().hashCode());
+        hashCode = prime * hashCode + ((getTrace() == null) ? 0 : getTrace().hashCode());
         hashCode = prime * hashCode + ((getTreatmentDescription() == null) ? 0 : getTreatmentDescription().hashCode());
         hashCode = prime * hashCode + ((getTreatmentName() == null) ? 0 : getTreatmentName().hashCode());
         return hashCode;

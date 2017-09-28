@@ -39,8 +39,12 @@ public class APNSMessageMarshaller {
             .marshallLocationName("Category").build();
     private static final MarshallingInfo<Map> DATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Data").build();
+    private static final MarshallingInfo<String> JSONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JsonData").build();
     private static final MarshallingInfo<String> MEDIAURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MediaUrl").build();
+    private static final MarshallingInfo<String> PREFERREDAUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredAuthenticationMethod").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RawContent").build();
     private static final MarshallingInfo<Boolean> SILENTPUSH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -77,7 +81,9 @@ public class APNSMessageMarshaller {
             protocolMarshaller.marshall(aPNSMessage.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getData(), DATA_BINDING);
+            protocolMarshaller.marshall(aPNSMessage.getJsonData(), JSONDATA_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getMediaUrl(), MEDIAURL_BINDING);
+            protocolMarshaller.marshall(aPNSMessage.getPreferredAuthenticationMethod(), PREFERREDAUTHENTICATIONMETHOD_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getSilentPush(), SILENTPUSH_BINDING);
             protocolMarshaller.marshall(aPNSMessage.getSound(), SOUND_BINDING);

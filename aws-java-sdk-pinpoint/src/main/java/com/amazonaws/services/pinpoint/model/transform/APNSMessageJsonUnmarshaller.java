@@ -69,9 +69,17 @@ public class APNSMessageJsonUnmarshaller implements Unmarshaller<APNSMessage, Js
                     aPNSMessage.setData(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("JsonData", targetDepth)) {
+                    context.nextToken();
+                    aPNSMessage.setJsonData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MediaUrl", targetDepth)) {
                     context.nextToken();
                     aPNSMessage.setMediaUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreferredAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    aPNSMessage.setPreferredAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RawContent", targetDepth)) {
                     context.nextToken();

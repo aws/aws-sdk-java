@@ -77,6 +77,10 @@ public class GCMMessageJsonUnmarshaller implements Unmarshaller<GCMMessage, Json
                     context.nextToken();
                     gCMMessage.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JsonData", targetDepth)) {
+                    context.nextToken();
+                    gCMMessage.setJsonData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RawContent", targetDepth)) {
                     context.nextToken();
                     gCMMessage.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));

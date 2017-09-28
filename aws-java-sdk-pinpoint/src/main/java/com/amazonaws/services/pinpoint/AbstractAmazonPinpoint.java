@@ -58,6 +58,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteAdmChannelResult deleteAdmChannel(DeleteAdmChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public DeleteAppResult deleteApp(DeleteAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBaiduChannelResult deleteBaiduChannel(DeleteBaiduChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +113,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetAdmChannelResult getAdmChannel(GetAdmChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetApnsChannelResult getApnsChannel(GetApnsChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +139,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetAppsResult getApps(GetAppsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBaiduChannelResult getBaiduChannel(GetBaiduChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,6 +243,16 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAdmChannelResult updateAdmChannel(UpdateAdmChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -234,6 +264,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateBaiduChannelResult updateBaiduChannel(UpdateBaiduChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -48,9 +48,17 @@ public class DirectMessageConfigurationJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ADMMessage", targetDepth)) {
+                    context.nextToken();
+                    directMessageConfiguration.setADMMessage(ADMMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("APNSMessage", targetDepth)) {
                     context.nextToken();
                     directMessageConfiguration.setAPNSMessage(APNSMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("BaiduMessage", targetDepth)) {
+                    context.nextToken();
+                    directMessageConfiguration.setBaiduMessage(BaiduMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultMessage", targetDepth)) {
                     context.nextToken();
@@ -60,6 +68,10 @@ public class DirectMessageConfigurationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     directMessageConfiguration.setDefaultPushNotificationMessage(DefaultPushNotificationMessageJsonUnmarshaller.getInstance().unmarshall(
                             context));
+                }
+                if (context.testExpression("EmailMessage", targetDepth)) {
+                    context.nextToken();
+                    directMessageConfiguration.setEmailMessage(EmailMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("GCMMessage", targetDepth)) {
                     context.nextToken();

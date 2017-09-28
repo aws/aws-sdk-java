@@ -29,16 +29,18 @@ import com.amazonaws.services.pinpoint.model.*;
 public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
-     * Used to create an app.
+     * Creates or updates an app.
      * 
      * @param createAppRequest
      * @return A Java Future containing the result of the CreateApp operation returned by the service.
      * @sample AmazonPinpointAsync.CreateApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest createAppRequest);
 
     /**
-     * Used to create an app.
+     * Creates or updates an app.
      * 
      * @param createAppRequest
      * @param asyncHandler
@@ -47,6 +49,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateApp operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.CreateApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateApp" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest createAppRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler);
@@ -57,6 +61,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param createCampaignRequest
      * @return A Java Future containing the result of the CreateCampaign operation returned by the service.
      * @sample AmazonPinpointAsync.CreateCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateCampaignResult> createCampaignAsync(CreateCampaignRequest createCampaignRequest);
 
@@ -70,6 +76,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateCampaign operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.CreateCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateCampaignResult> createCampaignAsync(CreateCampaignRequest createCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCampaignRequest, CreateCampaignResult> asyncHandler);
@@ -80,6 +88,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param createImportJobRequest
      * @return A Java Future containing the result of the CreateImportJob operation returned by the service.
      * @sample AmazonPinpointAsync.CreateImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest createImportJobRequest);
 
@@ -93,6 +103,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateImportJob operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.CreateImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateImportJob" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest createImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<CreateImportJobRequest, CreateImportJobResult> asyncHandler);
@@ -103,6 +115,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param createSegmentRequest
      * @return A Java Future containing the result of the CreateSegment operation returned by the service.
      * @sample AmazonPinpointAsync.CreateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest createSegmentRequest);
 
@@ -116,9 +130,38 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSegment operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.CreateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<CreateSegmentResult> createSegmentAsync(CreateSegmentRequest createSegmentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSegmentRequest, CreateSegmentResult> asyncHandler);
+
+    /**
+     * Delete an ADM channel
+     * 
+     * @param deleteAdmChannelRequest
+     * @return A Java Future containing the result of the DeleteAdmChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest deleteAdmChannelRequest);
+
+    /**
+     * Delete an ADM channel
+     * 
+     * @param deleteAdmChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAdmChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAdmChannelResult> deleteAdmChannelAsync(DeleteAdmChannelRequest deleteAdmChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAdmChannelRequest, DeleteAdmChannelResult> asyncHandler);
 
     /**
      * Deletes the APNs channel for an app.
@@ -126,6 +169,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteApnsChannelRequest
      * @return A Java Future containing the result of the DeleteApnsChannel operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteApnsChannelResult> deleteApnsChannelAsync(DeleteApnsChannelRequest deleteApnsChannelRequest);
 
@@ -139,6 +184,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApnsChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteApnsChannelResult> deleteApnsChannelAsync(DeleteApnsChannelRequest deleteApnsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApnsChannelRequest, DeleteApnsChannelResult> asyncHandler);
@@ -149,6 +196,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteApnsSandboxChannelRequest
      * @return A Java Future containing the result of the DeleteApnsSandboxChannel operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
 
@@ -162,6 +211,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApnsSandboxChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApnsSandboxChannelRequest, DeleteApnsSandboxChannelResult> asyncHandler);
@@ -172,6 +223,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteAppRequest
      * @return A Java Future containing the result of the DeleteApp operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest);
 
@@ -185,9 +238,38 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteApp operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApp" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler);
+
+    /**
+     * Delete a BAIDU GCM channel
+     * 
+     * @param deleteBaiduChannelRequest
+     * @return A Java Future containing the result of the DeleteBaiduChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest deleteBaiduChannelRequest);
+
+    /**
+     * Delete a BAIDU GCM channel
+     * 
+     * @param deleteBaiduChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBaiduChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteBaiduChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBaiduChannelResult> deleteBaiduChannelAsync(DeleteBaiduChannelRequest deleteBaiduChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBaiduChannelRequest, DeleteBaiduChannelResult> asyncHandler);
 
     /**
      * Deletes a campaign.
@@ -195,6 +277,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteCampaignRequest
      * @return A Java Future containing the result of the DeleteCampaign operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteCampaignResult> deleteCampaignAsync(DeleteCampaignRequest deleteCampaignRequest);
 
@@ -208,6 +292,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteCampaign operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteCampaignResult> deleteCampaignAsync(DeleteCampaignRequest deleteCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCampaignRequest, DeleteCampaignResult> asyncHandler);
@@ -218,6 +304,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteEmailChannelRequest
      * @return A Java Future containing the result of the DeleteEmailChannel operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteEmailChannelResult> deleteEmailChannelAsync(DeleteEmailChannelRequest deleteEmailChannelRequest);
 
@@ -231,6 +319,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteEmailChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteEmailChannelResult> deleteEmailChannelAsync(DeleteEmailChannelRequest deleteEmailChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEmailChannelRequest, DeleteEmailChannelResult> asyncHandler);
@@ -242,6 +332,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        DeleteEventStream Request
      * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest);
 
@@ -256,6 +348,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteEventStream operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteEventStreamResult> deleteEventStreamAsync(DeleteEventStreamRequest deleteEventStreamRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventStreamRequest, DeleteEventStreamResult> asyncHandler);
@@ -266,6 +360,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteGcmChannelRequest
      * @return A Java Future containing the result of the DeleteGcmChannel operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteGcmChannelResult> deleteGcmChannelAsync(DeleteGcmChannelRequest deleteGcmChannelRequest);
 
@@ -279,6 +375,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteGcmChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteGcmChannelResult> deleteGcmChannelAsync(DeleteGcmChannelRequest deleteGcmChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGcmChannelRequest, DeleteGcmChannelResult> asyncHandler);
@@ -289,6 +387,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteSegmentRequest
      * @return A Java Future containing the result of the DeleteSegment operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(DeleteSegmentRequest deleteSegmentRequest);
 
@@ -302,6 +402,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSegment operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSegmentResult> deleteSegmentAsync(DeleteSegmentRequest deleteSegmentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSegmentRequest, DeleteSegmentResult> asyncHandler);
@@ -312,6 +414,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param deleteSmsChannelRequest
      * @return A Java Future containing the result of the DeleteSmsChannel operation returned by the service.
      * @sample AmazonPinpointAsync.DeleteSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSmsChannelResult> deleteSmsChannelAsync(DeleteSmsChannelRequest deleteSmsChannelRequest);
 
@@ -325,9 +429,38 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSmsChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.DeleteSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteSmsChannelResult> deleteSmsChannelAsync(DeleteSmsChannelRequest deleteSmsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSmsChannelRequest, DeleteSmsChannelResult> asyncHandler);
+
+    /**
+     * Get an ADM channel
+     * 
+     * @param getAdmChannelRequest
+     * @return A Java Future containing the result of the GetAdmChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.GetAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest getAdmChannelRequest);
+
+    /**
+     * Get an ADM channel
+     * 
+     * @param getAdmChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAdmChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest getAdmChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAdmChannelRequest, GetAdmChannelResult> asyncHandler);
 
     /**
      * Returns information about the APNs channel for an app.
@@ -335,6 +468,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getApnsChannelRequest
      * @return A Java Future containing the result of the GetApnsChannel operation returned by the service.
      * @sample AmazonPinpointAsync.GetApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetApnsChannelResult> getApnsChannelAsync(GetApnsChannelRequest getApnsChannelRequest);
 
@@ -348,6 +483,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApnsChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetApnsChannelResult> getApnsChannelAsync(GetApnsChannelRequest getApnsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetApnsChannelRequest, GetApnsChannelResult> asyncHandler);
@@ -358,6 +495,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getApnsSandboxChannelRequest
      * @return A Java Future containing the result of the GetApnsSandboxChannel operation returned by the service.
      * @sample AmazonPinpointAsync.GetApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetApnsSandboxChannelResult> getApnsSandboxChannelAsync(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
 
@@ -371,6 +510,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApnsSandboxChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsSandboxChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetApnsSandboxChannelResult> getApnsSandboxChannelAsync(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetApnsSandboxChannelRequest, GetApnsSandboxChannelResult> asyncHandler);
@@ -381,6 +522,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getAppRequest
      * @return A Java Future containing the result of the GetApp operation returned by the service.
      * @sample AmazonPinpointAsync.GetApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest getAppRequest);
 
@@ -394,6 +537,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApp operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetApp
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApp" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest getAppRequest,
             com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler);
@@ -404,6 +549,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getApplicationSettingsRequest
      * @return A Java Future containing the result of the GetApplicationSettings operation returned by the service.
      * @sample AmazonPinpointAsync.GetApplicationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest getApplicationSettingsRequest);
 
@@ -417,6 +564,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApplicationSettings operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetApplicationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApplicationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest getApplicationSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetApplicationSettingsRequest, GetApplicationSettingsResult> asyncHandler);
@@ -427,6 +576,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getAppsRequest
      * @return A Java Future containing the result of the GetApps operation returned by the service.
      * @sample AmazonPinpointAsync.GetApps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest getAppsRequest);
 
@@ -440,9 +591,38 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetApps operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetApps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest getAppsRequest,
             com.amazonaws.handlers.AsyncHandler<GetAppsRequest, GetAppsResult> asyncHandler);
+
+    /**
+     * Get a BAIDU GCM channel
+     * 
+     * @param getBaiduChannelRequest
+     * @return A Java Future containing the result of the GetBaiduChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.GetBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest getBaiduChannelRequest);
+
+    /**
+     * Get a BAIDU GCM channel
+     * 
+     * @param getBaiduChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBaiduChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetBaiduChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetBaiduChannelResult> getBaiduChannelAsync(GetBaiduChannelRequest getBaiduChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBaiduChannelRequest, GetBaiduChannelResult> asyncHandler);
 
     /**
      * Returns information about a campaign.
@@ -450,6 +630,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getCampaignRequest
      * @return A Java Future containing the result of the GetCampaign operation returned by the service.
      * @sample AmazonPinpointAsync.GetCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignResult> getCampaignAsync(GetCampaignRequest getCampaignRequest);
 
@@ -463,6 +645,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCampaign operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignResult> getCampaignAsync(GetCampaignRequest getCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignRequest, GetCampaignResult> asyncHandler);
@@ -473,6 +657,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getCampaignActivitiesRequest
      * @return A Java Future containing the result of the GetCampaignActivities operation returned by the service.
      * @sample AmazonPinpointAsync.GetCampaignActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignActivitiesResult> getCampaignActivitiesAsync(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
 
@@ -486,6 +672,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCampaignActivities operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetCampaignActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignActivitiesResult> getCampaignActivitiesAsync(GetCampaignActivitiesRequest getCampaignActivitiesRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignActivitiesRequest, GetCampaignActivitiesResult> asyncHandler);
@@ -496,6 +684,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getCampaignVersionRequest
      * @return A Java Future containing the result of the GetCampaignVersion operation returned by the service.
      * @sample AmazonPinpointAsync.GetCampaignVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignVersionResult> getCampaignVersionAsync(GetCampaignVersionRequest getCampaignVersionRequest);
 
@@ -509,6 +699,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCampaignVersion operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetCampaignVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersion" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignVersionResult> getCampaignVersionAsync(GetCampaignVersionRequest getCampaignVersionRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignVersionRequest, GetCampaignVersionResult> asyncHandler);
@@ -519,6 +711,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getCampaignVersionsRequest
      * @return A Java Future containing the result of the GetCampaignVersions operation returned by the service.
      * @sample AmazonPinpointAsync.GetCampaignVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignVersionsResult> getCampaignVersionsAsync(GetCampaignVersionsRequest getCampaignVersionsRequest);
 
@@ -532,6 +726,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCampaignVersions operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetCampaignVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignVersionsResult> getCampaignVersionsAsync(GetCampaignVersionsRequest getCampaignVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignVersionsRequest, GetCampaignVersionsResult> asyncHandler);
@@ -542,6 +738,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getCampaignsRequest
      * @return A Java Future containing the result of the GetCampaigns operation returned by the service.
      * @sample AmazonPinpointAsync.GetCampaigns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignsResult> getCampaignsAsync(GetCampaignsRequest getCampaignsRequest);
 
@@ -555,6 +753,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetCampaigns operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetCampaigns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaigns" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetCampaignsResult> getCampaignsAsync(GetCampaignsRequest getCampaignsRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignsRequest, GetCampaignsResult> asyncHandler);
@@ -565,6 +765,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getEmailChannelRequest
      * @return A Java Future containing the result of the GetEmailChannel operation returned by the service.
      * @sample AmazonPinpointAsync.GetEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEmailChannelResult> getEmailChannelAsync(GetEmailChannelRequest getEmailChannelRequest);
 
@@ -578,6 +780,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetEmailChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEmailChannelResult> getEmailChannelAsync(GetEmailChannelRequest getEmailChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetEmailChannelRequest, GetEmailChannelResult> asyncHandler);
@@ -588,6 +792,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getEndpointRequest
      * @return A Java Future containing the result of the GetEndpoint operation returned by the service.
      * @sample AmazonPinpointAsync.GetEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEndpointResult> getEndpointAsync(GetEndpointRequest getEndpointRequest);
 
@@ -601,6 +807,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetEndpoint operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEndpointResult> getEndpointAsync(GetEndpointRequest getEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<GetEndpointRequest, GetEndpointResult> asyncHandler);
@@ -612,6 +820,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        GetEventStream Request
      * @return A Java Future containing the result of the GetEventStream operation returned by the service.
      * @sample AmazonPinpointAsync.GetEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest);
 
@@ -626,6 +836,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetEventStream operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetEventStreamResult> getEventStreamAsync(GetEventStreamRequest getEventStreamRequest,
             com.amazonaws.handlers.AsyncHandler<GetEventStreamRequest, GetEventStreamResult> asyncHandler);
@@ -636,6 +848,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getGcmChannelRequest
      * @return A Java Future containing the result of the GetGcmChannel operation returned by the service.
      * @sample AmazonPinpointAsync.GetGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetGcmChannelResult> getGcmChannelAsync(GetGcmChannelRequest getGcmChannelRequest);
 
@@ -649,6 +863,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetGcmChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetGcmChannelResult> getGcmChannelAsync(GetGcmChannelRequest getGcmChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetGcmChannelRequest, GetGcmChannelResult> asyncHandler);
@@ -659,6 +875,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getImportJobRequest
      * @return A Java Future containing the result of the GetImportJob operation returned by the service.
      * @sample AmazonPinpointAsync.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest getImportJobRequest);
 
@@ -672,6 +890,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetImportJob operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest getImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler);
@@ -682,6 +902,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getImportJobsRequest
      * @return A Java Future containing the result of the GetImportJobs operation returned by the service.
      * @sample AmazonPinpointAsync.GetImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetImportJobsResult> getImportJobsAsync(GetImportJobsRequest getImportJobsRequest);
 
@@ -695,6 +917,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetImportJobs operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetImportJobsResult> getImportJobsAsync(GetImportJobsRequest getImportJobsRequest,
             com.amazonaws.handlers.AsyncHandler<GetImportJobsRequest, GetImportJobsResult> asyncHandler);
@@ -705,6 +929,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getSegmentRequest
      * @return A Java Future containing the result of the GetSegment operation returned by the service.
      * @sample AmazonPinpointAsync.GetSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest getSegmentRequest);
 
@@ -718,6 +944,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSegment operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest getSegmentRequest,
             com.amazonaws.handlers.AsyncHandler<GetSegmentRequest, GetSegmentResult> asyncHandler);
@@ -728,6 +956,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getSegmentImportJobsRequest
      * @return A Java Future containing the result of the GetSegmentImportJobs operation returned by the service.
      * @sample AmazonPinpointAsync.GetSegmentImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentImportJobsResult> getSegmentImportJobsAsync(GetSegmentImportJobsRequest getSegmentImportJobsRequest);
 
@@ -741,6 +971,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSegmentImportJobs operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetSegmentImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentImportJobs" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentImportJobsResult> getSegmentImportJobsAsync(GetSegmentImportJobsRequest getSegmentImportJobsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSegmentImportJobsRequest, GetSegmentImportJobsResult> asyncHandler);
@@ -751,6 +983,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getSegmentVersionRequest
      * @return A Java Future containing the result of the GetSegmentVersion operation returned by the service.
      * @sample AmazonPinpointAsync.GetSegmentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentVersionResult> getSegmentVersionAsync(GetSegmentVersionRequest getSegmentVersionRequest);
 
@@ -764,6 +998,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSegmentVersion operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetSegmentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersion" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentVersionResult> getSegmentVersionAsync(GetSegmentVersionRequest getSegmentVersionRequest,
             com.amazonaws.handlers.AsyncHandler<GetSegmentVersionRequest, GetSegmentVersionResult> asyncHandler);
@@ -774,6 +1010,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getSegmentVersionsRequest
      * @return A Java Future containing the result of the GetSegmentVersions operation returned by the service.
      * @sample AmazonPinpointAsync.GetSegmentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentVersionsResult> getSegmentVersionsAsync(GetSegmentVersionsRequest getSegmentVersionsRequest);
 
@@ -787,6 +1025,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSegmentVersions operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetSegmentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentVersionsResult> getSegmentVersionsAsync(GetSegmentVersionsRequest getSegmentVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSegmentVersionsRequest, GetSegmentVersionsResult> asyncHandler);
@@ -797,6 +1037,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getSegmentsRequest
      * @return A Java Future containing the result of the GetSegments operation returned by the service.
      * @sample AmazonPinpointAsync.GetSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentsResult> getSegmentsAsync(GetSegmentsRequest getSegmentsRequest);
 
@@ -810,6 +1052,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSegments operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetSegments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegments" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSegmentsResult> getSegmentsAsync(GetSegmentsRequest getSegmentsRequest,
             com.amazonaws.handlers.AsyncHandler<GetSegmentsRequest, GetSegmentsResult> asyncHandler);
@@ -820,6 +1064,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param getSmsChannelRequest
      * @return A Java Future containing the result of the GetSmsChannel operation returned by the service.
      * @sample AmazonPinpointAsync.GetSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSmsChannelResult> getSmsChannelAsync(GetSmsChannelRequest getSmsChannelRequest);
 
@@ -833,6 +1079,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSmsChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.GetSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<GetSmsChannelResult> getSmsChannelAsync(GetSmsChannelRequest getSmsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetSmsChannelRequest, GetSmsChannelResult> asyncHandler);
@@ -841,9 +1089,10 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * Use to create or update the event stream for an app.
      * 
      * @param putEventStreamRequest
-     *        PutEventStream Request
      * @return A Java Future containing the result of the PutEventStream operation returned by the service.
      * @sample AmazonPinpointAsync.PutEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest putEventStreamRequest);
 
@@ -851,13 +1100,14 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * Use to create or update the event stream for an app.
      * 
      * @param putEventStreamRequest
-     *        PutEventStream Request
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutEventStream operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.PutEventStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEventStream" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest putEventStreamRequest,
             com.amazonaws.handlers.AsyncHandler<PutEventStreamRequest, PutEventStreamResult> asyncHandler);
@@ -868,6 +1118,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param sendMessagesRequest
      * @return A Java Future containing the result of the SendMessages operation returned by the service.
      * @sample AmazonPinpointAsync.SendMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendMessagesResult> sendMessagesAsync(SendMessagesRequest sendMessagesRequest);
 
@@ -881,9 +1133,65 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the SendMessages operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.SendMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<SendMessagesResult> sendMessagesAsync(SendMessagesRequest sendMessagesRequest,
             com.amazonaws.handlers.AsyncHandler<SendMessagesRequest, SendMessagesResult> asyncHandler);
+
+    /**
+     * Send a batch of messages to users
+     * 
+     * @param sendUsersMessagesRequest
+     * @return A Java Future containing the result of the SendUsersMessages operation returned by the service.
+     * @sample AmazonPinpointAsync.SendUsersMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest sendUsersMessagesRequest);
+
+    /**
+     * Send a batch of messages to users
+     * 
+     * @param sendUsersMessagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendUsersMessages operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.SendUsersMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendUsersMessagesResult> sendUsersMessagesAsync(SendUsersMessagesRequest sendUsersMessagesRequest,
+            com.amazonaws.handlers.AsyncHandler<SendUsersMessagesRequest, SendUsersMessagesResult> asyncHandler);
+
+    /**
+     * Update an ADM channel
+     * 
+     * @param updateAdmChannelRequest
+     * @return A Java Future containing the result of the UpdateAdmChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest updateAdmChannelRequest);
+
+    /**
+     * Update an ADM channel
+     * 
+     * @param updateAdmChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAdmChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateAdmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateAdmChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAdmChannelResult> updateAdmChannelAsync(UpdateAdmChannelRequest updateAdmChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAdmChannelRequest, UpdateAdmChannelResult> asyncHandler);
 
     /**
      * Use to update the APNs channel for an app.
@@ -891,6 +1199,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateApnsChannelRequest
      * @return A Java Future containing the result of the UpdateApnsChannel operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateApnsChannelResult> updateApnsChannelAsync(UpdateApnsChannelRequest updateApnsChannelRequest);
 
@@ -904,6 +1214,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApnsChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateApnsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateApnsChannelResult> updateApnsChannelAsync(UpdateApnsChannelRequest updateApnsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApnsChannelRequest, UpdateApnsChannelResult> asyncHandler);
@@ -914,6 +1226,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateApnsSandboxChannelRequest
      * @return A Java Future containing the result of the UpdateApnsSandboxChannel operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApnsSandboxChannelResult> updateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
 
@@ -927,6 +1241,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApnsSandboxChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateApnsSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApnsSandboxChannelResult> updateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApnsSandboxChannelRequest, UpdateApnsSandboxChannelResult> asyncHandler);
@@ -937,6 +1253,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateApplicationSettingsRequest
      * @return A Java Future containing the result of the UpdateApplicationSettings operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateApplicationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationSettingsResult> updateApplicationSettingsAsync(
             UpdateApplicationSettingsRequest updateApplicationSettingsRequest);
@@ -951,10 +1269,39 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateApplicationSettings operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateApplicationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateApplicationSettingsResult> updateApplicationSettingsAsync(
             UpdateApplicationSettingsRequest updateApplicationSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationSettingsRequest, UpdateApplicationSettingsResult> asyncHandler);
+
+    /**
+     * Update a BAIDU GCM channel
+     * 
+     * @param updateBaiduChannelRequest
+     * @return A Java Future containing the result of the UpdateBaiduChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest updateBaiduChannelRequest);
+
+    /**
+     * Update a BAIDU GCM channel
+     * 
+     * @param updateBaiduChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBaiduChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateBaiduChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateBaiduChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBaiduChannelResult> updateBaiduChannelAsync(UpdateBaiduChannelRequest updateBaiduChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBaiduChannelRequest, UpdateBaiduChannelResult> asyncHandler);
 
     /**
      * Use to update a campaign.
@@ -962,6 +1309,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateCampaignRequest
      * @return A Java Future containing the result of the UpdateCampaign operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest updateCampaignRequest);
 
@@ -975,6 +1324,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateCampaign operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateCampaign
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateCampaign" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest updateCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCampaignRequest, UpdateCampaignResult> asyncHandler);
@@ -985,6 +1336,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateEmailChannelRequest
      * @return A Java Future containing the result of the UpdateEmailChannel operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateEmailChannelResult> updateEmailChannelAsync(UpdateEmailChannelRequest updateEmailChannelRequest);
 
@@ -998,6 +1351,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEmailChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateEmailChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailChannel" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateEmailChannelResult> updateEmailChannelAsync(UpdateEmailChannelRequest updateEmailChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEmailChannelRequest, UpdateEmailChannelResult> asyncHandler);
@@ -1008,6 +1363,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateEndpointRequest
      * @return A Java Future containing the result of the UpdateEndpoint operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest updateEndpointRequest);
 
@@ -1021,6 +1378,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEndpoint operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest updateEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler);
@@ -1031,6 +1390,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateEndpointsBatchRequest
      * @return A Java Future containing the result of the UpdateEndpointsBatch operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateEndpointsBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateEndpointsBatchResult> updateEndpointsBatchAsync(UpdateEndpointsBatchRequest updateEndpointsBatchRequest);
 
@@ -1044,6 +1405,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateEndpointsBatch operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateEndpointsBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateEndpointsBatchResult> updateEndpointsBatchAsync(UpdateEndpointsBatchRequest updateEndpointsBatchRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointsBatchRequest, UpdateEndpointsBatchResult> asyncHandler);
@@ -1054,6 +1417,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateGcmChannelRequest
      * @return A Java Future containing the result of the UpdateGcmChannel operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateGcmChannelResult> updateGcmChannelAsync(UpdateGcmChannelRequest updateGcmChannelRequest);
 
@@ -1067,6 +1432,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateGcmChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateGcmChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateGcmChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateGcmChannelResult> updateGcmChannelAsync(UpdateGcmChannelRequest updateGcmChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGcmChannelRequest, UpdateGcmChannelResult> asyncHandler);
@@ -1077,6 +1444,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateSegmentRequest
      * @return A Java Future containing the result of the UpdateSegment operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSegmentResult> updateSegmentAsync(UpdateSegmentRequest updateSegmentRequest);
 
@@ -1090,6 +1459,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSegment operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateSegment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSegment" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSegmentResult> updateSegmentAsync(UpdateSegmentRequest updateSegmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSegmentRequest, UpdateSegmentResult> asyncHandler);
@@ -1100,6 +1471,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      * @param updateSmsChannelRequest
      * @return A Java Future containing the result of the UpdateSmsChannel operation returned by the service.
      * @sample AmazonPinpointAsync.UpdateSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSmsChannelResult> updateSmsChannelAsync(UpdateSmsChannelRequest updateSmsChannelRequest);
 
@@ -1113,6 +1486,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSmsChannel operation returned by the service.
      * @sample AmazonPinpointAsyncHandler.UpdateSmsChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsChannel" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateSmsChannelResult> updateSmsChannelAsync(UpdateSmsChannelRequest updateSmsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSmsChannelRequest, UpdateSmsChannelResult> asyncHandler);

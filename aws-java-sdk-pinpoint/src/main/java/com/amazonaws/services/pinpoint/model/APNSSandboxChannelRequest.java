@@ -19,16 +19,63 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Apple Development Push Notification Service channel definition.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSSandboxChannelRequest" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSSandboxChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
+    /** The bundle id used for APNs Tokens. */
+    private String bundleId;
     /** The distribution certificate from Apple. */
     private String certificate;
+    /** The default authentication method used for APNs. */
+    private String defaultAuthenticationMethod;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
     /** The certificate private key. */
     private String privateKey;
+    /** The team id used for APNs Tokens. */
+    private String teamId;
+    /** The token key used for APNs Tokens. */
+    private String tokenKey;
+    /** The token key used for APNs Tokens. */
+    private String tokenKeyId;
+
+    /**
+     * The bundle id used for APNs Tokens.
+     * 
+     * @param bundleId
+     *        The bundle id used for APNs Tokens.
+     */
+
+    public void setBundleId(String bundleId) {
+        this.bundleId = bundleId;
+    }
+
+    /**
+     * The bundle id used for APNs Tokens.
+     * 
+     * @return The bundle id used for APNs Tokens.
+     */
+
+    public String getBundleId() {
+        return this.bundleId;
+    }
+
+    /**
+     * The bundle id used for APNs Tokens.
+     * 
+     * @param bundleId
+     *        The bundle id used for APNs Tokens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelRequest withBundleId(String bundleId) {
+        setBundleId(bundleId);
+        return this;
+    }
 
     /**
      * The distribution certificate from Apple.
@@ -61,6 +108,40 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
 
     public APNSSandboxChannelRequest withCertificate(String certificate) {
         setCertificate(certificate);
+        return this;
+    }
+
+    /**
+     * The default authentication method used for APNs.
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for APNs.
+     */
+
+    public void setDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        this.defaultAuthenticationMethod = defaultAuthenticationMethod;
+    }
+
+    /**
+     * The default authentication method used for APNs.
+     * 
+     * @return The default authentication method used for APNs.
+     */
+
+    public String getDefaultAuthenticationMethod() {
+        return this.defaultAuthenticationMethod;
+    }
+
+    /**
+     * The default authentication method used for APNs.
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for APNs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelRequest withDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        setDefaultAuthenticationMethod(defaultAuthenticationMethod);
         return this;
     }
 
@@ -143,6 +224,108 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     }
 
     /**
+     * The team id used for APNs Tokens.
+     * 
+     * @param teamId
+     *        The team id used for APNs Tokens.
+     */
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    /**
+     * The team id used for APNs Tokens.
+     * 
+     * @return The team id used for APNs Tokens.
+     */
+
+    public String getTeamId() {
+        return this.teamId;
+    }
+
+    /**
+     * The team id used for APNs Tokens.
+     * 
+     * @param teamId
+     *        The team id used for APNs Tokens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelRequest withTeamId(String teamId) {
+        setTeamId(teamId);
+        return this;
+    }
+
+    /**
+     * The token key used for APNs Tokens.
+     * 
+     * @param tokenKey
+     *        The token key used for APNs Tokens.
+     */
+
+    public void setTokenKey(String tokenKey) {
+        this.tokenKey = tokenKey;
+    }
+
+    /**
+     * The token key used for APNs Tokens.
+     * 
+     * @return The token key used for APNs Tokens.
+     */
+
+    public String getTokenKey() {
+        return this.tokenKey;
+    }
+
+    /**
+     * The token key used for APNs Tokens.
+     * 
+     * @param tokenKey
+     *        The token key used for APNs Tokens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelRequest withTokenKey(String tokenKey) {
+        setTokenKey(tokenKey);
+        return this;
+    }
+
+    /**
+     * The token key used for APNs Tokens.
+     * 
+     * @param tokenKeyId
+     *        The token key used for APNs Tokens.
+     */
+
+    public void setTokenKeyId(String tokenKeyId) {
+        this.tokenKeyId = tokenKeyId;
+    }
+
+    /**
+     * The token key used for APNs Tokens.
+     * 
+     * @return The token key used for APNs Tokens.
+     */
+
+    public String getTokenKeyId() {
+        return this.tokenKeyId;
+    }
+
+    /**
+     * The token key used for APNs Tokens.
+     * 
+     * @param tokenKeyId
+     *        The token key used for APNs Tokens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelRequest withTokenKeyId(String tokenKeyId) {
+        setTokenKeyId(tokenKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -153,12 +336,22 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBundleId() != null)
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getDefaultAuthenticationMethod() != null)
+            sb.append("DefaultAuthenticationMethod: ").append(getDefaultAuthenticationMethod()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey());
+            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
+        if (getTeamId() != null)
+            sb.append("TeamId: ").append(getTeamId()).append(",");
+        if (getTokenKey() != null)
+            sb.append("TokenKey: ").append(getTokenKey()).append(",");
+        if (getTokenKeyId() != null)
+            sb.append("TokenKeyId: ").append(getTokenKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -173,9 +366,17 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
         if (obj instanceof APNSSandboxChannelRequest == false)
             return false;
         APNSSandboxChannelRequest other = (APNSSandboxChannelRequest) obj;
+        if (other.getBundleId() == null ^ this.getBundleId() == null)
+            return false;
+        if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false)
+            return false;
         if (other.getCertificate() == null ^ this.getCertificate() == null)
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
+            return false;
+        if (other.getDefaultAuthenticationMethod() == null ^ this.getDefaultAuthenticationMethod() == null)
+            return false;
+        if (other.getDefaultAuthenticationMethod() != null && other.getDefaultAuthenticationMethod().equals(this.getDefaultAuthenticationMethod()) == false)
             return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
@@ -185,6 +386,18 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
             return false;
         if (other.getPrivateKey() != null && other.getPrivateKey().equals(this.getPrivateKey()) == false)
             return false;
+        if (other.getTeamId() == null ^ this.getTeamId() == null)
+            return false;
+        if (other.getTeamId() != null && other.getTeamId().equals(this.getTeamId()) == false)
+            return false;
+        if (other.getTokenKey() == null ^ this.getTokenKey() == null)
+            return false;
+        if (other.getTokenKey() != null && other.getTokenKey().equals(this.getTokenKey()) == false)
+            return false;
+        if (other.getTokenKeyId() == null ^ this.getTokenKeyId() == null)
+            return false;
+        if (other.getTokenKeyId() != null && other.getTokenKeyId().equals(this.getTokenKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -193,9 +406,14 @@ public class APNSSandboxChannelRequest implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getDefaultAuthenticationMethod() == null) ? 0 : getDefaultAuthenticationMethod().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode());
+        hashCode = prime * hashCode + ((getTeamId() == null) ? 0 : getTeamId().hashCode());
+        hashCode = prime * hashCode + ((getTokenKey() == null) ? 0 : getTokenKey().hashCode());
+        hashCode = prime * hashCode + ((getTokenKeyId() == null) ? 0 : getTokenKeyId().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,8 @@
+# __1.11.204__ __2017-09-27__
+## __Amazon Pinpoint__
+  - ### Features
+    - Added two new push notification channels: Amazon Device Messaging (ADM) and, for push notification support in China, Baidu Cloud Push. Added support for APNs auth via .p8 key file. Added operation for direct message deliveries to user IDs, enabling you to message an individual user on multiple endpoints.
+
 # __1.11.203__ __2017-09-26__
 ## __AWS Cloud Formation__
   - ### Features

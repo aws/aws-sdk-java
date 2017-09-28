@@ -43,6 +43,8 @@ public class GCMMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageIconUrl").build();
     private static final MarshallingInfo<String> IMAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageUrl").build();
+    private static final MarshallingInfo<String> JSONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JsonData").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RawContent").build();
     private static final MarshallingInfo<String> RESTRICTEDPACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -83,6 +85,7 @@ public class GCMMessageMarshaller {
             protocolMarshaller.marshall(gCMMessage.getIconReference(), ICONREFERENCE_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageIconUrl(), IMAGEICONURL_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageUrl(), IMAGEURL_BINDING);
+            protocolMarshaller.marshall(gCMMessage.getJsonData(), JSONDATA_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRestrictedPackageName(), RESTRICTEDPACKAGENAME_BINDING);
             protocolMarshaller.marshall(gCMMessage.getSilentPush(), SILENTPUSH_BINDING);

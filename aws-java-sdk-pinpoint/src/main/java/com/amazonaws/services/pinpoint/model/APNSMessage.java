@@ -19,6 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * APNS Message.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSMessage" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
@@ -48,8 +51,15 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * object
      */
     private java.util.Map<String, String> data;
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     */
+    private String jsonData;
     /** The URL that points to a video used in the push notification. */
     private String mediaUrl;
+    /** The preferred authentication method, either "CERTIFICATE" or "TOKEN" */
+    private String preferredAuthenticationMethod;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
     /**
@@ -357,6 +367,46 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @param jsonData
+     *        The data payload used for a silent push. This payload is added to the notifications'
+     *        data.pinpoint.jsonBody' object
+     */
+
+    public void setJsonData(String jsonData) {
+        this.jsonData = jsonData;
+    }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @return The data payload used for a silent push. This payload is added to the notifications'
+     *         data.pinpoint.jsonBody' object
+     */
+
+    public String getJsonData() {
+        return this.jsonData;
+    }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @param jsonData
+     *        The data payload used for a silent push. This payload is added to the notifications'
+     *        data.pinpoint.jsonBody' object
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSMessage withJsonData(String jsonData) {
+        setJsonData(jsonData);
+        return this;
+    }
+
+    /**
      * The URL that points to a video used in the push notification.
      * 
      * @param mediaUrl
@@ -387,6 +437,40 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     public APNSMessage withMediaUrl(String mediaUrl) {
         setMediaUrl(mediaUrl);
+        return this;
+    }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * 
+     * @param preferredAuthenticationMethod
+     *        The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+
+    public void setPreferredAuthenticationMethod(String preferredAuthenticationMethod) {
+        this.preferredAuthenticationMethod = preferredAuthenticationMethod;
+    }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * 
+     * @return The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     */
+
+    public String getPreferredAuthenticationMethod() {
+        return this.preferredAuthenticationMethod;
+    }
+
+    /**
+     * The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * 
+     * @param preferredAuthenticationMethod
+     *        The preferred authentication method, either "CERTIFICATE" or "TOKEN"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSMessage withPreferredAuthenticationMethod(String preferredAuthenticationMethod) {
+        setPreferredAuthenticationMethod(preferredAuthenticationMethod);
         return this;
     }
 
@@ -709,8 +793,12 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Category: ").append(getCategory()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
+        if (getJsonData() != null)
+            sb.append("JsonData: ").append(getJsonData()).append(",");
         if (getMediaUrl() != null)
             sb.append("MediaUrl: ").append(getMediaUrl()).append(",");
+        if (getPreferredAuthenticationMethod() != null)
+            sb.append("PreferredAuthenticationMethod: ").append(getPreferredAuthenticationMethod()).append(",");
         if (getRawContent() != null)
             sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getSilentPush() != null)
@@ -759,9 +847,18 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
             return false;
+        if (other.getJsonData() == null ^ this.getJsonData() == null)
+            return false;
+        if (other.getJsonData() != null && other.getJsonData().equals(this.getJsonData()) == false)
+            return false;
         if (other.getMediaUrl() == null ^ this.getMediaUrl() == null)
             return false;
         if (other.getMediaUrl() != null && other.getMediaUrl().equals(this.getMediaUrl()) == false)
+            return false;
+        if (other.getPreferredAuthenticationMethod() == null ^ this.getPreferredAuthenticationMethod() == null)
+            return false;
+        if (other.getPreferredAuthenticationMethod() != null
+                && other.getPreferredAuthenticationMethod().equals(this.getPreferredAuthenticationMethod()) == false)
             return false;
         if (other.getRawContent() == null ^ this.getRawContent() == null)
             return false;
@@ -804,7 +901,9 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime * hashCode + ((getJsonData() == null) ? 0 : getJsonData().hashCode());
         hashCode = prime * hashCode + ((getMediaUrl() == null) ? 0 : getMediaUrl().hashCode());
+        hashCode = prime * hashCode + ((getPreferredAuthenticationMethod() == null) ? 0 : getPreferredAuthenticationMethod().hashCode());
         hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getSilentPush() == null) ? 0 : getSilentPush().hashCode());
         hashCode = prime * hashCode + ((getSound() == null) ? 0 : getSound().hashCode());

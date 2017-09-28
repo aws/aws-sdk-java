@@ -56,6 +56,10 @@ public class SMSChannelRequestJsonUnmarshaller implements Unmarshaller<SMSChanne
                     context.nextToken();
                     sMSChannelRequest.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ShortCode", targetDepth)) {
+                    context.nextToken();
+                    sMSChannelRequest.setShortCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

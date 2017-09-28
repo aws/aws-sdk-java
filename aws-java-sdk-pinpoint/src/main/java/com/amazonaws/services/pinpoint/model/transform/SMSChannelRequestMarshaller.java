@@ -31,6 +31,8 @@ public class SMSChannelRequestMarshaller {
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> SENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SenderId").build();
+    private static final MarshallingInfo<String> SHORTCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ShortCode").build();
 
     private static final SMSChannelRequestMarshaller instance = new SMSChannelRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class SMSChannelRequestMarshaller {
         try {
             protocolMarshaller.marshall(sMSChannelRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(sMSChannelRequest.getSenderId(), SENDERID_BINDING);
+            protocolMarshaller.marshall(sMSChannelRequest.getShortCode(), SHORTCODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

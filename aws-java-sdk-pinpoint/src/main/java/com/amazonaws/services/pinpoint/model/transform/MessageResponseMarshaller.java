@@ -31,6 +31,8 @@ public class MessageResponseMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<Map> ENDPOINTRESULT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EndpointResult").build();
     private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RequestId").build();
     private static final MarshallingInfo<Map> RESULT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class MessageResponseMarshaller {
 
         try {
             protocolMarshaller.marshall(messageResponse.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(messageResponse.getEndpointResult(), ENDPOINTRESULT_BINDING);
             protocolMarshaller.marshall(messageResponse.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(messageResponse.getResult(), RESULT_BINDING);
         } catch (Exception e) {

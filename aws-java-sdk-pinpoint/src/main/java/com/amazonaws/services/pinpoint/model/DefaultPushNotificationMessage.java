@@ -19,6 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Default Push Notification Message.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultPushNotificationMessage"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DefaultPushNotificationMessage implements Serializable, Cloneable, StructuredPojo {
@@ -38,6 +41,11 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      * object
      */
     private java.util.Map<String, String> data;
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     */
+    private String jsonData;
     /**
      * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
      * and Phone Home use cases.
@@ -251,6 +259,46 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
     }
 
     /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @param jsonData
+     *        The data payload used for a silent push. This payload is added to the notifications'
+     *        data.pinpoint.jsonBody' object
+     */
+
+    public void setJsonData(String jsonData) {
+        this.jsonData = jsonData;
+    }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @return The data payload used for a silent push. This payload is added to the notifications'
+     *         data.pinpoint.jsonBody' object
+     */
+
+    public String getJsonData() {
+        return this.jsonData;
+    }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @param jsonData
+     *        The data payload used for a silent push. This payload is added to the notifications'
+     *        data.pinpoint.jsonBody' object
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DefaultPushNotificationMessage withJsonData(String jsonData) {
+        setJsonData(jsonData);
+        return this;
+    }
+
+    /**
      * Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration
      * and Phone Home use cases.
      * 
@@ -442,6 +490,8 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
             sb.append("Body: ").append(getBody()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
+        if (getJsonData() != null)
+            sb.append("JsonData: ").append(getJsonData()).append(",");
         if (getSilentPush() != null)
             sb.append("SilentPush: ").append(getSilentPush()).append(",");
         if (getSubstitutions() != null)
@@ -476,6 +526,10 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
             return false;
+        if (other.getJsonData() == null ^ this.getJsonData() == null)
+            return false;
+        if (other.getJsonData() != null && other.getJsonData().equals(this.getJsonData()) == false)
+            return false;
         if (other.getSilentPush() == null ^ this.getSilentPush() == null)
             return false;
         if (other.getSilentPush() != null && other.getSilentPush().equals(this.getSilentPush()) == false)
@@ -503,6 +557,7 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
+        hashCode = prime * hashCode + ((getJsonData() == null) ? 0 : getJsonData().hashCode());
         hashCode = prime * hashCode + ((getSilentPush() == null) ? 0 : getSilentPush().hashCode());
         hashCode = prime * hashCode + ((getSubstitutions() == null) ? 0 : getSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());

@@ -48,9 +48,17 @@ public class APNSChannelRequestJsonUnmarshaller implements Unmarshaller<APNSChan
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("BundleId", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelRequest.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
                     aPNSChannelRequest.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelRequest.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
@@ -59,6 +67,18 @@ public class APNSChannelRequestJsonUnmarshaller implements Unmarshaller<APNSChan
                 if (context.testExpression("PrivateKey", targetDepth)) {
                     context.nextToken();
                     aPNSChannelRequest.setPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TeamId", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelRequest.setTeamId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TokenKey", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelRequest.setTokenKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TokenKeyId", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelRequest.setTokenKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

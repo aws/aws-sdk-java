@@ -19,6 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * GetEventStream Request
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {

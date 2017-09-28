@@ -25,7 +25,8 @@ public enum ChannelType {
     APNS_SANDBOX("APNS_SANDBOX"),
     ADM("ADM"),
     SMS("SMS"),
-    EMAIL("EMAIL");
+    EMAIL("EMAIL"),
+    BAIDU("BAIDU");
 
     private String value;
 

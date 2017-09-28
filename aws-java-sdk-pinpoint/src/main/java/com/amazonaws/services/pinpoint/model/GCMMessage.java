@@ -19,6 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * GCM Message.
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GCMMessage" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
@@ -50,6 +53,11 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     private String imageIconUrl;
     /** The URL that points to an image used in the push notification. */
     private String imageUrl;
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     */
+    private String jsonData;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
     /**
@@ -428,6 +436,46 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @param jsonData
+     *        The data payload used for a silent push. This payload is added to the notifications'
+     *        data.pinpoint.jsonBody' object
+     */
+
+    public void setJsonData(String jsonData) {
+        this.jsonData = jsonData;
+    }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @return The data payload used for a silent push. This payload is added to the notifications'
+     *         data.pinpoint.jsonBody' object
+     */
+
+    public String getJsonData() {
+        return this.jsonData;
+    }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
+     * object
+     * 
+     * @param jsonData
+     *        The data payload used for a silent push. This payload is added to the notifications'
+     *        data.pinpoint.jsonBody' object
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMMessage withJsonData(String jsonData) {
+        setJsonData(jsonData);
+        return this;
+    }
+
+    /**
      * The Raw JSON formatted string to be used as the payload. This value overrides the message.
      * 
      * @param rawContent
@@ -781,6 +829,8 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
         if (getImageUrl() != null)
             sb.append("ImageUrl: ").append(getImageUrl()).append(",");
+        if (getJsonData() != null)
+            sb.append("JsonData: ").append(getJsonData()).append(",");
         if (getRawContent() != null)
             sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getRestrictedPackageName() != null)
@@ -839,6 +889,10 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageUrl() != null && other.getImageUrl().equals(this.getImageUrl()) == false)
             return false;
+        if (other.getJsonData() == null ^ this.getJsonData() == null)
+            return false;
+        if (other.getJsonData() != null && other.getJsonData().equals(this.getJsonData()) == false)
+            return false;
         if (other.getRawContent() == null ^ this.getRawContent() == null)
             return false;
         if (other.getRawContent() != null && other.getRawContent().equals(this.getRawContent()) == false)
@@ -886,6 +940,7 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIconReference() == null) ? 0 : getIconReference().hashCode());
         hashCode = prime * hashCode + ((getImageIconUrl() == null) ? 0 : getImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getImageUrl() == null) ? 0 : getImageUrl().hashCode());
+        hashCode = prime * hashCode + ((getJsonData() == null) ? 0 : getJsonData().hashCode());
         hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getRestrictedPackageName() == null) ? 0 : getRestrictedPackageName().hashCode());
         hashCode = prime * hashCode + ((getSilentPush() == null) ? 0 : getSilentPush().hashCode());

@@ -61,6 +61,10 @@ public class DefaultPushNotificationMessageJsonUnmarshaller implements Unmarshal
                     defaultPushNotificationMessage.setData(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("JsonData", targetDepth)) {
+                    context.nextToken();
+                    defaultPushNotificationMessage.setJsonData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SilentPush", targetDepth)) {
                     context.nextToken();
                     defaultPushNotificationMessage.setSilentPush(context.getUnmarshaller(Boolean.class).unmarshall(context));
