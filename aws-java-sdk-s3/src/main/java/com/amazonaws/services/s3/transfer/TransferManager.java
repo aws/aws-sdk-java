@@ -1149,12 +1149,26 @@ public class TransferManager {
     }
 
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory, KeyFilter filter) {
-        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false, filter);
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false, filter, false);
     }
 
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
                                                   boolean resumeOnRetry) {
-        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, null);
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, null, false);
+    }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory, KeyFilter filter, boolean stripKeyPrefix) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false, filter, stripKeyPrefix);
+    }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
+                                                  boolean resumeOnRetry, boolean stripKeyPrefix) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, null, stripKeyPrefix);
+    }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
+                                                  boolean resumeOnRetry, KeyFilter filter) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, filter, false);
     }
 
     /**
@@ -1178,7 +1192,9 @@ public class TransferManager {
      *            recursively.
      * @param destinationDirectory
      *            The directory to place downloaded files. Subdirectories will
-     *            be created as necessary.
+     *            be created as necessary. The created directory structure
+     *            will match that of the entire keys. See {@code stripKeyPrefix}
+     *            to change this behavior.
      * @param resumeOnRetry
      *            If set to true, upon an immediate retry of a failed object
      *            download, the <code>TransferManager</code> will resume the
@@ -1186,9 +1202,12 @@ public class TransferManager {
      * @param filter
      *           If set, applies the filter to determine which keys to include
      *           in the download request. (default is include all).
+     * @param stripKeyPrefix
+     *           If set, strips the {@code keyPrefix} from the directory structure
+     *           of the downloaded files.
      */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
-                                                  boolean resumeOnRetry, KeyFilter filter) {
+                                                  boolean resumeOnRetry, KeyFilter filter, boolean stripKeyPrefix) {
         if ( keyPrefix == null )
             keyPrefix = "";
         if ( filter == null ) {
