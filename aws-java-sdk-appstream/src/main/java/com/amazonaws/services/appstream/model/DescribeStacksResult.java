@@ -25,7 +25,7 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of stack details.
+     * Information about the stacks.
      * </p>
      */
     private java.util.List<Stack> stacks;
@@ -39,10 +39,10 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of stack details.
+     * Information about the stacks.
      * </p>
      * 
-     * @return The list of stack details.
+     * @return Information about the stacks.
      */
 
     public java.util.List<Stack> getStacks() {
@@ -51,11 +51,11 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of stack details.
+     * Information about the stacks.
      * </p>
      * 
      * @param stacks
-     *        The list of stack details.
+     *        Information about the stacks.
      */
 
     public void setStacks(java.util.Collection<Stack> stacks) {
@@ -69,7 +69,7 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of stack details.
+     * Information about the stacks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param stacks
-     *        The list of stack details.
+     *        Information about the stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of stack details.
+     * Information about the stacks.
      * </p>
      * 
      * @param stacks
-     *        The list of stack details.
+     *        Information about the stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

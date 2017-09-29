@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming instance to
- * connect to the directory.
+ * Describes the credentials for the service account used by the streaming instance to connect to the directory.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ServiceAccountCredentials"
@@ -31,31 +30,30 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect to the
-     * directory. This account must have the following privileges: create computer objects, join computers to the
-     * domain, change/reset the password on descendant computer objects for the organizational units specified.
+     * The user name of the account. This account must have the following privileges: create computer objects, join
+     * computers to the domain, and change/reset the password on descendant computer objects for the organizational
+     * units specified.
      * </p>
      */
     private String accountName;
     /**
      * <p>
-     * The password for the user account for directory actions.
+     * The password for the account.
      * </p>
      */
     private String accountPassword;
 
     /**
      * <p>
-     * The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect to the
-     * directory. This account must have the following privileges: create computer objects, join computers to the
-     * domain, change/reset the password on descendant computer objects for the organizational units specified.
+     * The user name of the account. This account must have the following privileges: create computer objects, join
+     * computers to the domain, and change/reset the password on descendant computer objects for the organizational
+     * units specified.
      * </p>
      * 
      * @param accountName
-     *        The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect
-     *        to the directory. This account must have the following privileges: create computer objects, join computers
-     *        to the domain, change/reset the password on descendant computer objects for the organizational units
-     *        specified.
+     *        The user name of the account. This account must have the following privileges: create computer objects,
+     *        join computers to the domain, and change/reset the password on descendant computer objects for the
+     *        organizational units specified.
      */
 
     public void setAccountName(String accountName) {
@@ -64,15 +62,14 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect to the
-     * directory. This account must have the following privileges: create computer objects, join computers to the
-     * domain, change/reset the password on descendant computer objects for the organizational units specified.
+     * The user name of the account. This account must have the following privileges: create computer objects, join
+     * computers to the domain, and change/reset the password on descendant computer objects for the organizational
+     * units specified.
      * </p>
      * 
-     * @return The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect
-     *         to the directory. This account must have the following privileges: create computer objects, join
-     *         computers to the domain, change/reset the password on descendant computer objects for the organizational
-     *         units specified.
+     * @return The user name of the account. This account must have the following privileges: create computer objects,
+     *         join computers to the domain, and change/reset the password on descendant computer objects for the
+     *         organizational units specified.
      */
 
     public String getAccountName() {
@@ -81,16 +78,15 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect to the
-     * directory. This account must have the following privileges: create computer objects, join computers to the
-     * domain, change/reset the password on descendant computer objects for the organizational units specified.
+     * The user name of the account. This account must have the following privileges: create computer objects, join
+     * computers to the domain, and change/reset the password on descendant computer objects for the organizational
+     * units specified.
      * </p>
      * 
      * @param accountName
-     *        The user name of an account in the directory that is used by AppStream 2.0 streaming instances to connect
-     *        to the directory. This account must have the following privileges: create computer objects, join computers
-     *        to the domain, change/reset the password on descendant computer objects for the organizational units
-     *        specified.
+     *        The user name of the account. This account must have the following privileges: create computer objects,
+     *        join computers to the domain, and change/reset the password on descendant computer objects for the
+     *        organizational units specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +97,11 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The password for the user account for directory actions.
+     * The password for the account.
      * </p>
      * 
      * @param accountPassword
-     *        The password for the user account for directory actions.
+     *        The password for the account.
      */
 
     public void setAccountPassword(String accountPassword) {
@@ -114,10 +110,10 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The password for the user account for directory actions.
+     * The password for the account.
      * </p>
      * 
-     * @return The password for the user account for directory actions.
+     * @return The password for the account.
      */
 
     public String getAccountPassword() {
@@ -126,11 +122,11 @@ public class ServiceAccountCredentials implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The password for the user account for directory actions.
+     * The password for the account.
      * </p>
      * 
      * @param accountPassword
-     *        The password for the user account for directory actions.
+     *        The password for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

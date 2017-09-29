@@ -28,7 +28,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the
-     * <a>ListPolicies</a> operation.
+     * <a>ListRoots</a> operation.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
@@ -46,7 +46,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the
-     * <a>ListPolicies</a> operation.
+     * <a>ListRoots</a> operation.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
@@ -55,7 +55,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param rootId
      *        The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from
-     *        the <a>ListPolicies</a> operation.</p>
+     *        the <a>ListRoots</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
      *        followed by from 4 to 32 lower-case letters or digits.
@@ -68,7 +68,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the
-     * <a>ListPolicies</a> operation.
+     * <a>ListRoots</a> operation.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
@@ -76,7 +76,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @return The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID
-     *         from the <a>ListPolicies</a> operation.</p>
+     *         from the <a>ListRoots</a> operation.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
      *         followed by from 4 to 32 lower-case letters or digits.
@@ -89,7 +89,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from the
-     * <a>ListPolicies</a> operation.
+     * <a>ListRoots</a> operation.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
@@ -98,7 +98,7 @@ public class DisablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param rootId
      *        The unique identifier (ID) of the root in which you want to disable a policy type. You can get the ID from
-     *        the <a>ListPolicies</a> operation.</p>
+     *        the <a>ListRoots</a> operation.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
      *        followed by from 4 to 32 lower-case letters or digits.

@@ -14,7 +14,8 @@
 /**
  * <fullname>Amazon AppStream 2.0</fullname>
  * <p>
- * API documentation for Amazon AppStream 2.0.
+ * You can use Amazon AppStream 2.0 to stream desktop applications to any device running a web browser, without
+ * rewriting them.
  * </p>
  */
 package com.amazonaws.services.appstream;

@@ -27,24 +27,24 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the fleet to associate.
+     * The name of the fleet.
      * </p>
      */
     private String fleetName;
     /**
      * <p>
-     * The name of the stack to which the fleet is associated.
+     * The name of the stack.
      * </p>
      */
     private String stackName;
 
     /**
      * <p>
-     * The name of the fleet to associate.
+     * The name of the fleet.
      * </p>
      * 
      * @param fleetName
-     *        The name of the fleet to associate.
+     *        The name of the fleet.
      */
 
     public void setFleetName(String fleetName) {
@@ -53,10 +53,10 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the fleet to associate.
+     * The name of the fleet.
      * </p>
      * 
-     * @return The name of the fleet to associate.
+     * @return The name of the fleet.
      */
 
     public String getFleetName() {
@@ -65,11 +65,11 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the fleet to associate.
+     * The name of the fleet.
      * </p>
      * 
      * @param fleetName
-     *        The name of the fleet to associate.
+     *        The name of the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the stack to which the fleet is associated.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack to which the fleet is associated.
+     *        The name of the stack.
      */
 
     public void setStackName(String stackName) {
@@ -93,10 +93,10 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the stack to which the fleet is associated.
+     * The name of the stack.
      * </p>
      * 
-     * @return The name of the stack to which the fleet is associated.
+     * @return The name of the stack.
      */
 
     public String getStackName() {
@@ -105,11 +105,11 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the stack to which the fleet is associated.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack to which the fleet is associated.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

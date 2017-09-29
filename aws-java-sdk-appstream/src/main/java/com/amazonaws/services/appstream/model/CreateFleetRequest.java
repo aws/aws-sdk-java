@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for the new fleet to create.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
  *      Documentation</a>
@@ -30,13 +27,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet.
+     * A unique name for the fleet.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Unique name of the image used by the fleet.
+     * The name of the image used by the fleet.
      * </p>
      */
     private String imageName;
@@ -152,7 +149,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String fleetType;
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      */
     private ComputeCapacity computeCapacity;
@@ -164,28 +161,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
-     * and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
-     * any numeric value in seconds between 60 and 57600.
+     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
+     * value between 60 and 57600.
      * </p>
      */
     private Integer disconnectTimeoutInSeconds;
     /**
      * <p>
-     * The description of the fleet.
+     * The description displayed to end users.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The display name of the fleet.
+     * The fleet name displayed to end users.
      * </p>
      */
     private String displayName;
@@ -197,19 +193,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean enableDefaultInternetAccess;
     /**
      * <p>
-     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
-     * for the AppStream 2.0 streaming instances.
+     * The information needed for streaming instances to join a domain.
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
 
     /**
      * <p>
-     * A unique identifier for the fleet.
+     * A unique name for the fleet.
      * </p>
      * 
      * @param name
-     *        A unique identifier for the fleet.
+     *        A unique name for the fleet.
      */
 
     public void setName(String name) {
@@ -218,10 +213,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet.
+     * A unique name for the fleet.
      * </p>
      * 
-     * @return A unique identifier for the fleet.
+     * @return A unique name for the fleet.
      */
 
     public String getName() {
@@ -230,11 +225,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the fleet.
+     * A unique name for the fleet.
      * </p>
      * 
      * @param name
-     *        A unique identifier for the fleet.
+     *        A unique name for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +240,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique name of the image used by the fleet.
+     * The name of the image used by the fleet.
      * </p>
      * 
      * @param imageName
-     *        Unique name of the image used by the fleet.
+     *        The name of the image used by the fleet.
      */
 
     public void setImageName(String imageName) {
@@ -258,10 +253,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique name of the image used by the fleet.
+     * The name of the image used by the fleet.
      * </p>
      * 
-     * @return Unique name of the image used by the fleet.
+     * @return The name of the image used by the fleet.
      */
 
     public String getImageName() {
@@ -270,11 +265,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique name of the image used by the fleet.
+     * The name of the image used by the fleet.
      * </p>
      * 
      * @param imageName
-     *        Unique name of the image used by the fleet.
+     *        The name of the image used by the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -975,11 +970,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      * 
      * @param computeCapacity
-     *        The parameters for the capacity allocated to the fleet.
+     *        The desired capacity for the fleet.
      */
 
     public void setComputeCapacity(ComputeCapacity computeCapacity) {
@@ -988,10 +983,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      * 
-     * @return The parameters for the capacity allocated to the fleet.
+     * @return The desired capacity for the fleet.
      */
 
     public ComputeCapacity getComputeCapacity() {
@@ -1000,11 +995,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The parameters for the capacity allocated to the fleet.
+     * The desired capacity for the fleet.
      * </p>
      * 
      * @param computeCapacity
-     *        The parameters for the capacity allocated to the fleet.
+     *        The desired capacity for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1055,13 +1050,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
-     * and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time for which a streaming session can run. The input can be any numeric value in seconds
-     *        between 600 and 57600.
+     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -1070,12 +1063,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
-     * and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      * </p>
      * 
-     * @return The maximum time for which a streaming session can run. The input can be any numeric value in seconds
-     *         between 600 and 57600.
+     * @return The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -1084,13 +1075,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
-     * and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time for which a streaming session can run. The input can be any numeric value in seconds
-     *        between 600 and 57600.
+     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1101,15 +1090,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
-     * any numeric value in seconds between 60 and 57600.
+     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
+     * value between 60 and 57600.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     *        reconnects within this timeout interval, the user is connected back to their previous session. The input
-     *        can be any numeric value in seconds between 60 and 57600.
+     *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     *        disconnected reconnects within this time interval, the user is connected to their previous session.
+     *        Specify a value between 60 and 57600.
      */
 
     public void setDisconnectTimeoutInSeconds(Integer disconnectTimeoutInSeconds) {
@@ -1118,14 +1107,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
-     * any numeric value in seconds between 60 and 57600.
+     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
+     * value between 60 and 57600.
      * </p>
      * 
-     * @return The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     *         reconnects within this timeout interval, the user is connected back to their previous session. The input
-     *         can be any numeric value in seconds between 60 and 57600.
+     * @return The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     *         disconnected reconnects within this time interval, the user is connected to their previous session.
+     *         Specify a value between 60 and 57600.
      */
 
     public Integer getDisconnectTimeoutInSeconds() {
@@ -1134,15 +1123,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
-     * any numeric value in seconds between 60 and 57600.
+     * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
+     * value between 60 and 57600.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended. If a user who got disconnected
-     *        reconnects within this timeout interval, the user is connected back to their previous session. The input
-     *        can be any numeric value in seconds between 60 and 57600.
+     *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
+     *        disconnected reconnects within this time interval, the user is connected to their previous session.
+     *        Specify a value between 60 and 57600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1153,11 +1142,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the fleet.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        The description of the fleet.
+     *        The description displayed to end users.
      */
 
     public void setDescription(String description) {
@@ -1166,10 +1155,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the fleet.
+     * The description displayed to end users.
      * </p>
      * 
-     * @return The description of the fleet.
+     * @return The description displayed to end users.
      */
 
     public String getDescription() {
@@ -1178,11 +1167,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the fleet.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        The description of the fleet.
+     *        The description displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1193,11 +1182,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The display name of the fleet.
+     * The fleet name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The display name of the fleet.
+     *        The fleet name displayed to end users.
      */
 
     public void setDisplayName(String displayName) {
@@ -1206,10 +1195,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The display name of the fleet.
+     * The fleet name displayed to end users.
      * </p>
      * 
-     * @return The display name of the fleet.
+     * @return The fleet name displayed to end users.
      */
 
     public String getDisplayName() {
@@ -1218,11 +1207,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The display name of the fleet.
+     * The fleet name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The display name of the fleet.
+     *        The fleet name displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1285,13 +1274,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
-     * for the AppStream 2.0 streaming instances.
+     * The information needed for streaming instances to join a domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join
-     *        domains for the AppStream 2.0 streaming instances.
+     *        The information needed for streaming instances to join a domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -1300,12 +1287,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
-     * for the AppStream 2.0 streaming instances.
+     * The information needed for streaming instances to join a domain.
      * </p>
      * 
-     * @return The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join
-     *         domains for the AppStream 2.0 streaming instances.
+     * @return The information needed for streaming instances to join a domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -1314,13 +1299,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
-     * for the AppStream 2.0 streaming instances.
+     * The information needed for streaming instances to join a domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join
-     *        domains for the AppStream 2.0 streaming instances.
+     *        The information needed for streaming instances to join a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

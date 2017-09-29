@@ -27,18 +27,18 @@ public class StartFleetRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the fleet to start.
+     * The name of the fleet.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the fleet to start.
+     * The name of the fleet.
      * </p>
      * 
      * @param name
-     *        The name of the fleet to start.
+     *        The name of the fleet.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class StartFleetRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the fleet to start.
+     * The name of the fleet.
      * </p>
      * 
-     * @return The name of the fleet to start.
+     * @return The name of the fleet.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class StartFleetRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the fleet to start.
+     * The name of the fleet.
      * </p>
      * 
      * @param name
-     *        The name of the fleet to start.
+     *        The name of the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

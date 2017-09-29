@@ -27,7 +27,7 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      */
     private String stackName;
@@ -41,11 +41,11 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack whose associated fleets are listed.
+     *        The name of the stack.
      */
 
     public void setStackName(String stackName) {
@@ -54,10 +54,10 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      * 
-     * @return The name of the stack whose associated fleets are listed.
+     * @return The name of the stack.
      */
 
     public String getStackName() {
@@ -66,11 +66,11 @@ public class ListAssociatedFleetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the stack whose associated fleets are listed.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The name of the stack whose associated fleets are listed.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

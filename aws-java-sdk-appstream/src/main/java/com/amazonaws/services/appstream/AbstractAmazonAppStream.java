@@ -54,6 +54,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public CreateImageBuilderResult createImageBuilder(CreateImageBuilderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateImageBuilderStreamingURLResult createImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStackResult createStack(CreateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +84,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public DeleteImageResult deleteImage(DeleteImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteImageBuilderResult deleteImageBuilder(DeleteImageBuilderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteStackResult deleteStack(DeleteStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -85,6 +105,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public DescribeFleetsResult describeFleets(DescribeFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeImageBuildersResult describeImageBuilders(DescribeImageBuildersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,7 +154,17 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public StartImageBuilderResult startImageBuilder(StartImageBuilderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopFleetResult stopFleet(StopFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopImageBuilderResult stopImageBuilder(StopImageBuilderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

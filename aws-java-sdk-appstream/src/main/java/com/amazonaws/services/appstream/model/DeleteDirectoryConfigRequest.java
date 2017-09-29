@@ -27,18 +27,18 @@ public class DeleteDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the directory configuration to be deleted.
+     * The name of the directory configuration.
      * </p>
      */
     private String directoryName;
 
     /**
      * <p>
-     * The name of the directory configuration to be deleted.
+     * The name of the directory configuration.
      * </p>
      * 
      * @param directoryName
-     *        The name of the directory configuration to be deleted.
+     *        The name of the directory configuration.
      */
 
     public void setDirectoryName(String directoryName) {
@@ -47,10 +47,10 @@ public class DeleteDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the directory configuration to be deleted.
+     * The name of the directory configuration.
      * </p>
      * 
-     * @return The name of the directory configuration to be deleted.
+     * @return The name of the directory configuration.
      */
 
     public String getDirectoryName() {
@@ -59,11 +59,11 @@ public class DeleteDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the directory configuration to be deleted.
+     * The name of the directory configuration.
      * </p>
      * 
      * @param directoryName
-     *        The name of the directory configuration to be deleted.
+     *        The name of the directory configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

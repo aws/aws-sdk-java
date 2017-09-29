@@ -53,7 +53,7 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools, such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
+ * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
  * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
  * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
  * Guide</i>.
@@ -83,7 +83,21 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+ * repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
+ * pushed to the repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteProject</code>: Deletes a build project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+ * repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to
+ * the repository.
  * </p>
  * </li>
  * <li>
@@ -158,6 +172,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccountLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codebuild.model.AccountLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OAuthProviderException").withModeledClass(
+                                    com.amazonaws.services.codebuild.model.OAuthProviderException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.codebuild.model.ResourceAlreadyExistsException.class))
@@ -552,6 +569,75 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
+     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS
+     * CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+     * </p>
+     * <important>
+     * <p>
+     * If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline,
+     * then two identical builds will be created for each commit. One build is triggered through webhooks, and one
+     * through AWS CodePipeline. Because billing is on a per-build basis, you will be billed for both builds. Therefore,
+     * if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild
+     * console, clear the Webhook box. For more information, see step 9 in <a
+     * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
+     * Build Project’s Settings</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createWebhookRequest
+     * @return Result of the CreateWebhook operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws OAuthProviderException
+     *         There was a problem with the underlying OAuth provider.
+     * @throws ResourceAlreadyExistsException
+     *         The specified AWS resource cannot be created, because an AWS resource with the same settings already
+     *         exists.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.CreateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateWebhookResult createWebhook(CreateWebhookRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWebhook(request);
+    }
+
+    @SdkInternalApi
+    final CreateWebhookResult executeCreateWebhook(CreateWebhookRequest createWebhookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWebhookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWebhookRequest> request = null;
+        Response<CreateWebhookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebhookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWebhookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a build project.
      * </p>
      * 
@@ -590,6 +676,61 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, stops AWS
+     * CodeBuild from automatically rebuilding the source code every time a code change is pushed to the repository.
+     * </p>
+     * 
+     * @param deleteWebhookRequest
+     * @return Result of the DeleteWebhook operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws OAuthProviderException
+     *         There was a problem with the underlying OAuth provider.
+     * @sample AWSCodeBuild.DeleteWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteWebhookResult deleteWebhook(DeleteWebhookRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWebhook(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWebhookResult executeDeleteWebhook(DeleteWebhookRequest deleteWebhookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWebhookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWebhookRequest> request = null;
+        Response<DeleteWebhookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebhookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWebhookResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

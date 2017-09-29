@@ -25,18 +25,18 @@ public class CreateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The details for the created stack.
+     * Information about the stack.
      * </p>
      */
     private Stack stack;
 
     /**
      * <p>
-     * The details for the created stack.
+     * Information about the stack.
      * </p>
      * 
      * @param stack
-     *        The details for the created stack.
+     *        Information about the stack.
      */
 
     public void setStack(Stack stack) {
@@ -45,10 +45,10 @@ public class CreateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The details for the created stack.
+     * Information about the stack.
      * </p>
      * 
-     * @return The details for the created stack.
+     * @return Information about the stack.
      */
 
     public Stack getStack() {
@@ -57,11 +57,11 @@ public class CreateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The details for the created stack.
+     * Information about the stack.
      * </p>
      * 
      * @param stack
-     *        The details for the created stack.
+     *        Information about the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

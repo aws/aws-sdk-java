@@ -27,36 +27,36 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      */
     private java.util.List<StorageConnector> storageConnectors;
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier for this stack.
+     *        The name of the stack.
      */
 
     public void setName(String name) {
@@ -65,10 +65,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      * 
-     * @return The unique identifier for this stack.
+     * @return The name of the stack.
      */
 
     public String getName() {
@@ -77,11 +77,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier for this stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier for this stack.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description displayed to end users.
      */
 
     public void setDescription(String description) {
@@ -105,10 +105,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      * 
-     * @return The description displayed to end users on the AppStream 2.0 portal.
+     * @return The description displayed to end users.
      */
 
     public String getDescription() {
@@ -117,11 +117,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The stack name displayed to end users.
      */
 
     public void setDisplayName(String displayName) {
@@ -145,10 +145,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      * 
-     * @return The name displayed to end users on the AppStream 2.0 portal.
+     * @return The stack name displayed to end users.
      */
 
     public String getDisplayName() {
@@ -157,11 +157,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The stack name displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,10 +172,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
-     * @return The storage connectors to be enabled for the stack.
+     * @return The storage connectors to enable.
      */
 
     public java.util.List<StorageConnector> getStorageConnectors() {
@@ -184,11 +184,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      */
 
     public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
@@ -202,7 +202,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +211,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

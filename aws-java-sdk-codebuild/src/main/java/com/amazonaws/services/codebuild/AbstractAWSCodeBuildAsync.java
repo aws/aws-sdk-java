@@ -80,6 +80,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWebhookResult> createWebhookAsync(CreateWebhookRequest request) {
+
+        return createWebhookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebhookResult> createWebhookAsync(CreateWebhookRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWebhookRequest, CreateWebhookResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request) {
 
         return deleteProjectAsync(request, null);
@@ -88,6 +101,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     @Override
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest request) {
+
+        return deleteWebhookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWebhookRequest, DeleteWebhookResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

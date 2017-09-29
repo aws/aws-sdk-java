@@ -29,7 +29,8 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
  * <p>
  * <fullname>Amazon AppStream 2.0</fullname>
  * <p>
- * API documentation for Amazon AppStream 2.0.
+ * You can use Amazon AppStream 2.0 to stream desktop applications to any device running a web browser, without
+ * rewriting them.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -96,7 +97,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Associate a fleet to a stack.
+     * Associates the specified fleet with the specified stack.
      * </p>
      * 
      * @param associateFleetRequest
@@ -119,7 +120,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a directory configuration with the given parameters.
+     * Creates a directory configuration.
      * </p>
      * 
      * @param createDirectoryConfigRequest
@@ -136,11 +137,10 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a new fleet.
+     * Creates a fleet.
      * </p>
      * 
      * @param createFleetRequest
-     *        Contains the parameters for the new fleet to create.
      * @return Result of the CreateFleet operation returned by the service.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
@@ -165,8 +165,46 @@ public interface AmazonAppStream {
     CreateFleetResult createFleet(CreateFleetRequest createFleetRequest);
 
     /**
+     * @param createImageBuilderRequest
+     * @return Result of the CreateImageBuilder operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
+     * @sample AmazonAppStream.CreateImageBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateImageBuilderResult createImageBuilder(CreateImageBuilderRequest createImageBuilderRequest);
+
+    /**
+     * @param createImageBuilderStreamingURLRequest
+     * @return Result of the CreateImageBuilderStreamingURL operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.CreateImageBuilderStreamingURL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilderStreamingURL"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateImageBuilderStreamingURLResult createImageBuilderStreamingURL(CreateImageBuilderStreamingURLRequest createImageBuilderStreamingURLRequest);
+
+    /**
      * <p>
-     * Create a new stack.
+     * Creates a stack.
      * </p>
      * 
      * @param createStackRequest
@@ -191,8 +229,10 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a URL to start an AppStream 2.0 streaming session for a user. By default, the URL is valid only for 1
-     * minute from the time that it is generated.
+     * Creates a URL to start a streaming session for the specified user.
+     * </p>
+     * <p>
+     * By default, the URL is valid only for one minute from the time that it is generated.
      * </p>
      * 
      * @param createStreamingURLRequest
@@ -213,7 +253,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Deletes the directory configuration with the given parameters.
+     * Deletes the specified directory configuration.
      * </p>
      * 
      * @param deleteDirectoryConfigRequest
@@ -230,7 +270,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Deletes a fleet.
+     * Deletes the specified fleet.
      * </p>
      * 
      * @param deleteFleetRequest
@@ -248,8 +288,40 @@ public interface AmazonAppStream {
     DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest);
 
     /**
+     * @param deleteImageRequest
+     * @return Result of the DeleteImage operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.DeleteImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteImageResult deleteImage(DeleteImageRequest deleteImageRequest);
+
+    /**
+     * @param deleteImageBuilderRequest
+     * @return Result of the DeleteImageBuilder operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.DeleteImageBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteImageBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteImageBuilderResult deleteImageBuilder(DeleteImageBuilderRequest deleteImageBuilderRequest);
+
+    /**
      * <p>
-     * Deletes the stack. After this operation completes, the environment can no longer be activated, and any
+     * Deletes the specified stack. After this operation completes, the environment can no longer be activated and any
      * reservations made for the stack are released.
      * </p>
      * 
@@ -269,7 +341,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Returns a list describing the specified directory configurations.
+     * Describes the specified directory configurations.
      * </p>
      * 
      * @param describeDirectoryConfigsRequest
@@ -284,8 +356,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * If fleet names are provided, this operation describes the specified fleets; otherwise, all the fleets in the
-     * account are described.
+     * Describes the specified fleets or all fleets in the account.
      * </p>
      * 
      * @param describeFleetsRequest
@@ -299,9 +370,19 @@ public interface AmazonAppStream {
     DescribeFleetsResult describeFleets(DescribeFleetsRequest describeFleetsRequest);
 
     /**
+     * @param describeImageBuildersRequest
+     * @return Result of the DescribeImageBuilders operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeImageBuilders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeImageBuildersResult describeImageBuilders(DescribeImageBuildersRequest describeImageBuildersRequest);
+
+    /**
      * <p>
-     * Describes the images. If a list of names is not provided, all images in your account are returned. This operation
-     * does not return a paginated result.
+     * Describes the specified images or all images in the account.
      * </p>
      * 
      * @param describeImagesRequest
@@ -316,10 +397,9 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
-     * streaming sessions for only that user. To retrieve the next set of items, pass this value for the
-     * <code>nextToken</code> parameter in a subsequent call to this operation. If an authentication type is not
-     * provided, the operation defaults to users authenticated using a streaming URL.
+     * Describes the streaming sessions for the specified stack and fleet. If a user ID is provided, only the streaming
+     * sessions for only that user are returned. If an authentication type is not provided, the default is to
+     * authenticate users using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -334,9 +414,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the
-     * account are described. To retrieve the next set of items, pass the <code>nextToken</code> value in a subsequent
-     * call to this operation.
+     * Describes the specified stacks or all stacks in the account.
      * </p>
      * 
      * @param describeStacksRequest
@@ -351,7 +429,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Disassociates a fleet from a stack.
+     * Disassociates the specified fleet from the specified stack.
      * </p>
      * 
      * @param disassociateFleetRequest
@@ -370,7 +448,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * This operation immediately stops a streaming session.
+     * Stops the specified streaming session.
      * </p>
      * 
      * @param expireSessionRequest
@@ -383,7 +461,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Lists all fleets associated with the stack.
+     * Lists the fleets associated with the specified stack.
      * </p>
      * 
      * @param listAssociatedFleetsRequest
@@ -396,7 +474,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Lists all stacks to which the specified fleet is associated.
+     * Lists the stacks associated with the specified fleet.
      * </p>
      * 
      * @param listAssociatedStacksRequest
@@ -409,7 +487,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Starts a fleet.
+     * Starts the specified fleet.
      * </p>
      * 
      * @param startFleetRequest
@@ -429,8 +507,23 @@ public interface AmazonAppStream {
     StartFleetResult startFleet(StartFleetRequest startFleetRequest);
 
     /**
+     * @param startImageBuilderRequest
+     * @return Result of the StartImageBuilder operation returned by the service.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.StartImageBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartImageBuilderResult startImageBuilder(StartImageBuilderRequest startImageBuilderRequest);
+
+    /**
      * <p>
-     * Stops a fleet.
+     * Stops the specified fleet.
      * </p>
      * 
      * @param stopFleetRequest
@@ -446,8 +539,23 @@ public interface AmazonAppStream {
     StopFleetResult stopFleet(StopFleetRequest stopFleetRequest);
 
     /**
+     * @param stopImageBuilderRequest
+     * @return Result of the StopImageBuilder operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.StopImageBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopImageBuilder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopImageBuilderResult stopImageBuilder(StopImageBuilderRequest stopImageBuilderRequest);
+
+    /**
      * <p>
-     * Updates the directory configuration with the given parameters.
+     * Updates the specified directory configuration.
      * </p>
      * 
      * @param updateDirectoryConfigRequest
@@ -466,9 +574,13 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
-     * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
-     * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
+     * Updates the specified fleet.
+     * </p>
+     * <p>
+     * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the
+     * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code> and
+     * <code>ComputeCapacity</code> attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code>
+     * state, you can't update it.
      * </p>
      * 
      * @param updateFleetRequest
@@ -499,7 +611,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Updates the specified fields in the stack with the specified name.
+     * Updates the specified stack.
      * </p>
      * 
      * @param updateStackRequest

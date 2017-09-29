@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a stack.
+ * Describes a stack.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Stack" target="_top">AWS API
@@ -36,37 +36,37 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description displayed to end users.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name displayed to end users.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The time stamp when the stack was created.
+     * The time the stack was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      */
     private java.util.List<StorageConnector> storageConnectors;
     /**
      * <p>
-     * The list of errors associated with the stack.
+     * The errors for the stack.
      * </p>
      */
     private java.util.List<StackError> stackErrors;
@@ -113,11 +113,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier of the stack.
+     *        The name of the stack.
      */
 
     public void setName(String name) {
@@ -126,10 +126,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      * 
-     * @return The unique identifier of the stack.
+     * @return The name of the stack.
      */
 
     public String getName() {
@@ -138,11 +138,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the stack.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The unique identifier of the stack.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        A meaningful description for the stack.
+     *        The description displayed to end users.
      */
 
     public void setDescription(String description) {
@@ -166,10 +166,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description displayed to end users.
      * </p>
      * 
-     * @return A meaningful description for the stack.
+     * @return The description displayed to end users.
      */
 
     public String getDescription() {
@@ -178,11 +178,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A meaningful description for the stack.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        A meaningful description for the stack.
+     *        The description displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        A display name for the stack.
+     *        The stack name displayed to end users.
      */
 
     public void setDisplayName(String displayName) {
@@ -206,10 +206,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name displayed to end users.
      * </p>
      * 
-     * @return A display name for the stack.
+     * @return The stack name displayed to end users.
      */
 
     public String getDisplayName() {
@@ -218,11 +218,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the stack.
+     * The stack name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        A display name for the stack.
+     *        The stack name displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time stamp when the stack was created.
+     * The time the stack was created.
      * </p>
      * 
      * @param createdTime
-     *        The time stamp when the stack was created.
+     *        The time the stack was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -246,10 +246,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time stamp when the stack was created.
+     * The time the stack was created.
      * </p>
      * 
-     * @return The time stamp when the stack was created.
+     * @return The time the stack was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -258,11 +258,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time stamp when the stack was created.
+     * The time the stack was created.
      * </p>
      * 
      * @param createdTime
-     *        The time stamp when the stack was created.
+     *        The time the stack was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,10 +273,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
-     * @return The storage connectors to be enabled for the stack.
+     * @return The storage connectors to enable.
      */
 
     public java.util.List<StorageConnector> getStorageConnectors() {
@@ -285,11 +285,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      */
 
     public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
@@ -303,7 +303,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -312,7 +312,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,11 +328,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,10 +343,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of errors associated with the stack.
+     * The errors for the stack.
      * </p>
      * 
-     * @return The list of errors associated with the stack.
+     * @return The errors for the stack.
      */
 
     public java.util.List<StackError> getStackErrors() {
@@ -355,11 +355,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of errors associated with the stack.
+     * The errors for the stack.
      * </p>
      * 
      * @param stackErrors
-     *        The list of errors associated with the stack.
+     *        The errors for the stack.
      */
 
     public void setStackErrors(java.util.Collection<StackError> stackErrors) {
@@ -373,7 +373,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of errors associated with the stack.
+     * The errors for the stack.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -382,7 +382,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param stackErrors
-     *        The list of errors associated with the stack.
+     *        The errors for the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,11 +398,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of errors associated with the stack.
+     * The errors for the stack.
      * </p>
      * 
      * @param stackErrors
-     *        The list of errors associated with the stack.
+     *        The errors for the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

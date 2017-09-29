@@ -363,6 +363,37 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      */
     private String insufficientDataHealthStatus;
+    /**
+     * <p>
+     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
+     * default value. Valid values for <code>ResetElement</code> include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+     * to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set of
+     * regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> resetElements;
 
     /**
      * <p>
@@ -2721,6 +2752,353 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
+     * default value. Valid values for <code>ResetElement</code> include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+     * to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set of
+     * regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A complex type that contains one <code>ResetElement</code> element for each element that you want to
+     *         reset to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to
+     *         null.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     *         <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set
+     *         of regions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     *         </p>
+     *         </li>
+     * @see ResettableElementName
+     */
+
+    public java.util.List<String> getResetElements() {
+        if (resetElements == null) {
+            resetElements = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return resetElements;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
+     * default value. Valid values for <code>ResetElement</code> include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+     * to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set of
+     * regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resetElements
+     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
+     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     *        <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set
+     *        of regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     *        </p>
+     *        </li>
+     * @see ResettableElementName
+     */
+
+    public void setResetElements(java.util.Collection<String> resetElements) {
+        if (resetElements == null) {
+            this.resetElements = null;
+            return;
+        }
+
+        this.resetElements = new com.amazonaws.internal.SdkInternalList<String>(resetElements);
+    }
+
+    /**
+     * <p>
+     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
+     * default value. Valid values for <code>ResetElement</code> include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+     * to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set of
+     * regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResetElements(java.util.Collection)} or {@link #withResetElements(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param resetElements
+     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
+     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     *        <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set
+     *        of regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResettableElementName
+     */
+
+    public UpdateHealthCheckRequest withResetElements(String... resetElements) {
+        if (this.resetElements == null) {
+            setResetElements(new com.amazonaws.internal.SdkInternalList<String>(resetElements.length));
+        }
+        for (String ele : resetElements) {
+            this.resetElements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
+     * default value. Valid values for <code>ResetElement</code> include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+     * to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set of
+     * regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resetElements
+     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
+     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     *        <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set
+     *        of regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResettableElementName
+     */
+
+    public UpdateHealthCheckRequest withResetElements(java.util.Collection<String> resetElements) {
+        setResetElements(resetElements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
+     * default value. Valid values for <code>ResetElement</code> include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets <a>HealthCheckConfig$FullyQualifiedDomainName</a>
+     * to null.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set of
+     * regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resetElements
+     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
+     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ChildHealthChecks</code>: Amazon Route 53 resets <a>HealthCheckConfig$ChildHealthChecks</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FullyQualifiedDomainName</code>: Amazon Route 53 resets
+     *        <a>HealthCheckConfig$FullyQualifiedDomainName</a> to null.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Regions</code>: Amazon Route 53 resets the <a>HealthCheckConfig$Regions</a> list to the default set
+     *        of regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ResourcePath</code>: Amazon Route 53 resets <a>HealthCheckConfig$ResourcePath</a> to null.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResettableElementName
+     */
+
+    public UpdateHealthCheckRequest withResetElements(ResettableElementName... resetElements) {
+        com.amazonaws.internal.SdkInternalList<String> resetElementsCopy = new com.amazonaws.internal.SdkInternalList<String>(resetElements.length);
+        for (ResettableElementName value : resetElements) {
+            resetElementsCopy.add(value.toString());
+        }
+        if (getResetElements() == null) {
+            setResetElements(resetElementsCopy);
+        } else {
+            getResetElements().addAll(resetElementsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2760,7 +3138,9 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAlarmIdentifier() != null)
             sb.append("AlarmIdentifier: ").append(getAlarmIdentifier()).append(",");
         if (getInsufficientDataHealthStatus() != null)
-            sb.append("InsufficientDataHealthStatus: ").append(getInsufficientDataHealthStatus());
+            sb.append("InsufficientDataHealthStatus: ").append(getInsufficientDataHealthStatus()).append(",");
+        if (getResetElements() != null)
+            sb.append("ResetElements: ").append(getResetElements());
         sb.append("}");
         return sb.toString();
     }
@@ -2835,6 +3215,10 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getInsufficientDataHealthStatus() != null && other.getInsufficientDataHealthStatus().equals(this.getInsufficientDataHealthStatus()) == false)
             return false;
+        if (other.getResetElements() == null ^ this.getResetElements() == null)
+            return false;
+        if (other.getResetElements() != null && other.getResetElements().equals(this.getResetElements()) == false)
+            return false;
         return true;
     }
 
@@ -2858,6 +3242,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         hashCode = prime * hashCode + ((getAlarmIdentifier() == null) ? 0 : getAlarmIdentifier().hashCode());
         hashCode = prime * hashCode + ((getInsufficientDataHealthStatus() == null) ? 0 : getInsufficientDataHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getResetElements() == null) ? 0 : getResetElements().hashCode());
         return hashCode;
     }
 

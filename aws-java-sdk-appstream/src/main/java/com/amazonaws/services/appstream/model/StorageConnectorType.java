@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The type of storage connector. The possible values include: HOMEFOLDERS.
+ * The type of storage connector.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

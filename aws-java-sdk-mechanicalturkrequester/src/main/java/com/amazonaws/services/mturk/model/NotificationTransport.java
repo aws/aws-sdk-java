@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum NotificationTransport {
 
     Email("Email"),
-    SQS("SQS");
+    SQS("SQS"),
+    SNS("SNS");
 
     private String value;
 

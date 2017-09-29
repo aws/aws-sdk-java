@@ -1,3 +1,32 @@
+# __1.11.205__ __2017-09-29__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support for Building GitHub Pull Requests in AWS CodeBuild
+
+## __AWS Organizations__
+  - ### Features
+    - This release flags the HandshakeParty structure's Type and Id fields as 'required'. They effectively were required in the past, as you received an error if you did not include them. This is now reflected at the API definition level. 
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixing https://github.com/aws/aws-sdk-java/issues/1110. Calls to EC2MetadataUtils#getItems correctly handle potential nulls when the path does not exist.
+
+## __Amazon AppStream__
+  - ### Features
+    - Includes APIs for managing and accessing image builders, and deleting images.
+
+## __Amazon Mechanical Turk Requester Service__
+  - ### Features
+    - Today, Amazon Mechanical Turk (MTurk) supports SQS Notifications being delivered to Customers' SQS queues when different stages of the MTurk workflow are complete.  We are going to create new functionality so that Customers can leverage SNS topics as a destination for notification messages when various stages of the MTurk workflow are complete. 
+
+## __Amazon Route 53__
+  - ### Features
+    - This change allows customers to reset elements of health check.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Allow the use of MD5 implementations that cannot be cloned when performing checksum validation on uploaded objects. The use of such implementations will now potentially fail on request retries instead of on the initial request attempt.
+
 # __1.11.204__ __2017-09-27__
 ## __Amazon Pinpoint__
   - ### Features

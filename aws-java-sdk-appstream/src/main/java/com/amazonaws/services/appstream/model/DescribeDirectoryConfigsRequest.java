@@ -27,30 +27,30 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A specific list of directory names.
+     * The directory names.
      * </p>
      */
     private java.util.List<String> directoryNames;
     /**
      * <p>
-     * The size of each page of results.
+     * The maximum size of each page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is the
-     * first call, pass null.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A specific list of directory names.
+     * The directory names.
      * </p>
      * 
-     * @return A specific list of directory names.
+     * @return The directory names.
      */
 
     public java.util.List<String> getDirectoryNames() {
@@ -59,11 +59,11 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A specific list of directory names.
+     * The directory names.
      * </p>
      * 
      * @param directoryNames
-     *        A specific list of directory names.
+     *        The directory names.
      */
 
     public void setDirectoryNames(java.util.Collection<String> directoryNames) {
@@ -77,7 +77,7 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A specific list of directory names.
+     * The directory names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -86,7 +86,7 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param directoryNames
-     *        A specific list of directory names.
+     *        The directory names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A specific list of directory names.
+     * The directory names.
      * </p>
      * 
      * @param directoryNames
-     *        A specific list of directory names.
+     *        The directory names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The size of each page of results.
+     * The maximum size of each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The size of each page of results.
+     *        The maximum size of each page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -130,10 +130,10 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The size of each page of results.
+     * The maximum size of each page of results.
      * </p>
      * 
-     * @return The size of each page of results.
+     * @return The maximum size of each page of results.
      */
 
     public Integer getMaxResults() {
@@ -142,11 +142,11 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The size of each page of results.
+     * The maximum size of each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The size of each page of results.
+     *        The maximum size of each page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,13 +157,13 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is the
-     * first call, pass null.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      * 
      * @param nextToken
-     *        The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is
-     *        the first call, pass null.
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -172,12 +172,12 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is the
-     * first call, pass null.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      * 
-     * @return The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is
-     *         the first call, pass null.
+     * @return The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *         null, it retrieves the first page.
      */
 
     public String getNextToken() {
@@ -186,13 +186,13 @@ public class DescribeDirectoryConfigsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is the
-     * first call, pass null.
+     * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it
+     * retrieves the first page.
      * </p>
      * 
      * @param nextToken
-     *        The DescribeDirectoryConfigsResult.NextToken from a previous call to DescribeDirectoryConfigs. If this is
-     *        the first call, pass null.
+     *        The pagination token to use to retrieve the next page of results for this operation. If this value is
+     *        null, it retrieves the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,19 +16,7 @@ package com.amazonaws.util;
 
 import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY;
 
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import com.amazonaws.AmazonClientException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.json.Jackson;
@@ -38,6 +26,16 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Utility class for retrieving Amazon EC2 instance metadata.<br>
@@ -291,20 +289,16 @@ public class EC2MetadataUtils {
     public static Map<String, IAMSecurityCredential> getIAMSecurityCredentials() {
         Map<String, IAMSecurityCredential> credentialsInfoMap = new HashMap<String, IAMSecurityCredential>();
 
-        List<String> credentials = getItems(EC2_METADATA_ROOT
-                + "/iam/security-credentials");
+        List<String> credentials = getItems(EC2_METADATA_ROOT + "/iam/security-credentials");
 
-        if (null != credentials) {
+        if (credentials != null) {
             for (String credential : credentials) {
-                String json = getData(EC2_METADATA_ROOT
-                        + "/iam/security-credentials/" + credential);
+                String json = getData(EC2_METADATA_ROOT + "/iam/security-credentials/" + credential);
                 try {
-                    IAMSecurityCredential credentialInfo = mapper
-                            .readValue(json, IAMSecurityCredential.class);
+                    IAMSecurityCredential credentialInfo = mapper.readValue(json, IAMSecurityCredential.class);
                     credentialsInfoMap.put(credential, credentialInfo);
                 } catch (Exception e) {
-                    log.warn("Unable to process the credential (" + credential
-                            + "). " + e.getMessage(), e);
+                    log.warn("Unable to process the credential (" + credential + "). " + e.getMessage(), e);
                 }
             }
         }
@@ -317,11 +311,12 @@ public class EC2MetadataUtils {
     public static Map<String, String> getBlockDeviceMapping() {
         Map<String, String> blockDeviceMapping = new HashMap<String, String>();
 
-        List<String> devices = getItems(EC2_METADATA_ROOT
-                + "/block-device-mapping");
-        for (String device : devices) {
-            blockDeviceMapping.put(device, getData(EC2_METADATA_ROOT
-                    + "/block-device-mapping/" + device));
+        List<String> devices = getItems(EC2_METADATA_ROOT + "/block-device-mapping");
+        if (devices != null) {
+            for (String device : devices) {
+                blockDeviceMapping.put(device, getData(EC2_METADATA_ROOT
+                                                       + "/block-device-mapping/" + device));
+            }
         }
         return blockDeviceMapping;
     }
@@ -332,13 +327,15 @@ public class EC2MetadataUtils {
     public static List<NetworkInterface> getNetworkInterfaces() {
         List<NetworkInterface> networkInterfaces = new LinkedList<NetworkInterface>();
 
-        List<String> macs = getItems(EC2_METADATA_ROOT
-                + "/network/interfaces/macs/");
-        for (String mac : macs) {
-            String key = mac.trim();
-            if (key.endsWith("/"))
-                key = key.substring(0, key.length() - 1);
-            networkInterfaces.add(new NetworkInterface(key));
+        List<String> macs = getItems(EC2_METADATA_ROOT + "/network/interfaces/macs/");
+        if (macs != null) {
+            for (String mac : macs) {
+                String key = mac.trim();
+                if (key.endsWith("/")) {
+                    key = key.substring(0, key.length() - 1);
+                }
+                networkInterfaces.add(new NetworkInterface(key));
+            }
         }
         return networkInterfaces;
     }
@@ -361,10 +358,19 @@ public class EC2MetadataUtils {
         return null;
     }
 
+    /**
+     * @param path Path to query.
+     * @return List of items for given path or null if path does not exist.
+     */
     public static List<String> getItems(String path) {
         return getItems(path, DEFAULT_QUERY_RETRIES, false);
     }
 
+    /**
+     * @param path  Path to query.
+     * @param tries Number of attempts to query EC2 metadata service for items.
+     * @return List of items for given path or null if path does not exist.
+     */
     public static List<String> getItems(String path, int tries) {
         return getItems(path, tries, false);
     }
@@ -707,31 +713,29 @@ public class EC2MetadataUtils {
             if (data.containsKey(key))
                 return data.get(key);
 
-            // Since the keys are variable, cache a list of which ones are
-            // available
-            // to prevent unnecessary trips to the service.
-            if (null == availableKeys)
-                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT
-                        + path);
+            // Since the keys are variable, cache a list of which ones are available to prevent unnecessary trips to the service.
+            if (null == availableKeys) {
+                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT + path);
+            }
 
-            if (availableKeys.contains(key)) {
-                data.put(key, EC2MetadataUtils.getData(EC2_METADATA_ROOT + path
-                        + key));
+            if (availableKeys != null && availableKeys.contains(key)) {
+                data.put(key, EC2MetadataUtils.getData(EC2_METADATA_ROOT + path + key));
                 return data.get(key);
-            } else
+            } else {
                 return null;
+            }
         }
 
         private List<String> getItems(String key) {
-            if (null == availableKeys)
-                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT
-                        + path);
+            if (null == availableKeys) {
+                availableKeys = EC2MetadataUtils.getItems(EC2_METADATA_ROOT + path);
+            }
 
-            if (availableKeys.contains(key))
-                return EC2MetadataUtils
-                        .getItems(EC2_METADATA_ROOT + path + key);
-            else
+            if (availableKeys != null && availableKeys.contains(key)) {
+                return EC2MetadataUtils.getItems(EC2_METADATA_ROOT + path + key);
+            } else {
                 return new LinkedList<String>();
+            }
         }
     }
 }

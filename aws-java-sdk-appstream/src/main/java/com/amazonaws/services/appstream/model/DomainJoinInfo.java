@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains for
- * the AppStream 2.0 streaming instances.
+ * Contains the information needed for streaming instances to join a domain.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DomainJoinInfo" target="_top">AWS API
@@ -31,24 +30,24 @@ public class DomainJoinInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      */
     private String directoryName;
     /**
      * <p>
-     * The distinguished name of the organizational unit to place the computer account in.
+     * The distinguished name of the organizational unit for computer accounts.
      * </p>
      */
     private String organizationalUnitDistinguishedName;
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
      * @param directoryName
-     *        The fully qualified name of the directory, such as corp.example.com
+     *        The fully qualified name of the directory (for example, corp.example.com).
      */
 
     public void setDirectoryName(String directoryName) {
@@ -57,10 +56,10 @@ public class DomainJoinInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
-     * @return The fully qualified name of the directory, such as corp.example.com
+     * @return The fully qualified name of the directory (for example, corp.example.com).
      */
 
     public String getDirectoryName() {
@@ -69,11 +68,11 @@ public class DomainJoinInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
      * @param directoryName
-     *        The fully qualified name of the directory, such as corp.example.com
+     *        The fully qualified name of the directory (for example, corp.example.com).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +83,11 @@ public class DomainJoinInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The distinguished name of the organizational unit to place the computer account in.
+     * The distinguished name of the organizational unit for computer accounts.
      * </p>
      * 
      * @param organizationalUnitDistinguishedName
-     *        The distinguished name of the organizational unit to place the computer account in.
+     *        The distinguished name of the organizational unit for computer accounts.
      */
 
     public void setOrganizationalUnitDistinguishedName(String organizationalUnitDistinguishedName) {
@@ -97,10 +96,10 @@ public class DomainJoinInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The distinguished name of the organizational unit to place the computer account in.
+     * The distinguished name of the organizational unit for computer accounts.
      * </p>
      * 
-     * @return The distinguished name of the organizational unit to place the computer account in.
+     * @return The distinguished name of the organizational unit for computer accounts.
      */
 
     public String getOrganizationalUnitDistinguishedName() {
@@ -109,11 +108,11 @@ public class DomainJoinInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The distinguished name of the organizational unit to place the computer account in.
+     * The distinguished name of the organizational unit for computer accounts.
      * </p>
      * 
      * @param organizationalUnitDistinguishedName
-     *        The distinguished name of the organizational unit to place the computer account in.
+     *        The distinguished name of the organizational unit for computer accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

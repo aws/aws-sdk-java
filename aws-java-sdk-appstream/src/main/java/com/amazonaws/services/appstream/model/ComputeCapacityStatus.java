@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The capacity information for the fleet.
+ * Describes the capacity status for a fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ComputeCapacityStatus" target="_top">AWS
@@ -42,7 +42,7 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
     private Integer running;
     /**
      * <p>
-     * The number of instances that are being used for streaming.
+     * The number of instances in use for streaming.
      * </p>
      */
     private Integer inUse;
@@ -135,11 +135,11 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of instances that are being used for streaming.
+     * The number of instances in use for streaming.
      * </p>
      * 
      * @param inUse
-     *        The number of instances that are being used for streaming.
+     *        The number of instances in use for streaming.
      */
 
     public void setInUse(Integer inUse) {
@@ -148,10 +148,10 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of instances that are being used for streaming.
+     * The number of instances in use for streaming.
      * </p>
      * 
-     * @return The number of instances that are being used for streaming.
+     * @return The number of instances in use for streaming.
      */
 
     public Integer getInUse() {
@@ -160,11 +160,11 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of instances that are being used for streaming.
+     * The number of instances in use for streaming.
      * </p>
      * 
      * @param inUse
-     *        The number of instances that are being used for streaming.
+     *        The number of instances in use for streaming.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

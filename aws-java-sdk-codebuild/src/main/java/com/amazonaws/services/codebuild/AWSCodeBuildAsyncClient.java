@@ -35,7 +35,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
- * and build tools, such as Apach Maven, Gradle, and more. You can also fully customize build environments in AWS
+ * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
  * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
  * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
  * Guide</i>.
@@ -65,7 +65,21 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+ * repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
+ * pushed to the repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteProject</code>: Deletes a build project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
+ * repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to
+ * the repository.
  * </p>
  * </li>
  * <li>
@@ -454,6 +468,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWebhookResult> createWebhookAsync(CreateWebhookRequest request) {
+
+        return createWebhookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWebhookResult> createWebhookAsync(final CreateWebhookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWebhookRequest, CreateWebhookResult> asyncHandler) {
+        final CreateWebhookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWebhookResult>() {
+            @Override
+            public CreateWebhookResult call() throws Exception {
+                CreateWebhookResult result = null;
+
+                try {
+                    result = executeCreateWebhook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request) {
 
         return deleteProjectAsync(request, null);
@@ -471,6 +518,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeDeleteProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest request) {
+
+        return deleteWebhookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(final DeleteWebhookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWebhookRequest, DeleteWebhookResult> asyncHandler) {
+        final DeleteWebhookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWebhookResult>() {
+            @Override
+            public DeleteWebhookResult call() throws Exception {
+                DeleteWebhookResult result = null;
+
+                try {
+                    result = executeDeleteWebhook(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

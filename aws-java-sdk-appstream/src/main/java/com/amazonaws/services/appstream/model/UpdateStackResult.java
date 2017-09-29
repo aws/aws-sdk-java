@@ -25,18 +25,18 @@ public class UpdateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of stack details.
+     * Information about the stack.
      * </p>
      */
     private Stack stack;
 
     /**
      * <p>
-     * A list of stack details.
+     * Information about the stack.
      * </p>
      * 
      * @param stack
-     *        A list of stack details.
+     *        Information about the stack.
      */
 
     public void setStack(Stack stack) {
@@ -45,10 +45,10 @@ public class UpdateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of stack details.
+     * Information about the stack.
      * </p>
      * 
-     * @return A list of stack details.
+     * @return Information about the stack.
      */
 
     public Stack getStack() {
@@ -57,11 +57,11 @@ public class UpdateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of stack details.
+     * Information about the stack.
      * </p>
      * 
      * @param stack
-     *        A list of stack details.
+     *        Information about the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

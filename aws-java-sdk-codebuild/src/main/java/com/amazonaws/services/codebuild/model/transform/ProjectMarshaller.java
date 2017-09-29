@@ -52,6 +52,8 @@ public class ProjectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModified").build();
+    private static final MarshallingInfo<StructuredPojo> WEBHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("webhook").build();
 
     private static final ProjectMarshaller instance = new ProjectMarshaller();
 
@@ -81,6 +83,7 @@ public class ProjectMarshaller {
             protocolMarshaller.marshall(project.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(project.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(project.getLastModified(), LASTMODIFIED_BINDING);
+            protocolMarshaller.marshall(project.getWebhook(), WEBHOOK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

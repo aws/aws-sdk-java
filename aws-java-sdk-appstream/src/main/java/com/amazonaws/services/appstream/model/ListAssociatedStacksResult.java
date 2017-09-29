@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The response from a successful operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks" target="_top">AWS API
  *      Documentation</a>
@@ -28,7 +25,7 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of associated stacks.
+     * The names of the stacks.
      * </p>
      */
     private java.util.List<String> names;
@@ -42,10 +39,10 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of associated stacks.
+     * The names of the stacks.
      * </p>
      * 
-     * @return The names of associated stacks.
+     * @return The names of the stacks.
      */
 
     public java.util.List<String> getNames() {
@@ -54,11 +51,11 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of associated stacks.
+     * The names of the stacks.
      * </p>
      * 
      * @param names
-     *        The names of associated stacks.
+     *        The names of the stacks.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -72,7 +69,7 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of associated stacks.
+     * The names of the stacks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +78,7 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param names
-     *        The names of associated stacks.
+     *        The names of the stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +94,11 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of associated stacks.
+     * The names of the stacks.
      * </p>
      * 
      * @param names
-     *        The names of associated stacks.
+     *        The names of the stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

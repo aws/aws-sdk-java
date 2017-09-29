@@ -142,6 +142,19 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
                 if (updateHealthCheckRequest.getInsufficientDataHealthStatus() != null) {
                     xmlWriter.startElement("InsufficientDataHealthStatus").value(updateHealthCheckRequest.getInsufficientDataHealthStatus()).endElement();
                 }
+
+                com.amazonaws.internal.SdkInternalList<String> updateHealthCheckRequestResetElementsList = (com.amazonaws.internal.SdkInternalList<String>) updateHealthCheckRequest
+                        .getResetElements();
+                if (!updateHealthCheckRequestResetElementsList.isEmpty() || !updateHealthCheckRequestResetElementsList.isAutoConstruct()) {
+                    xmlWriter.startElement("ResetElements");
+
+                    for (String updateHealthCheckRequestResetElementsListValue : updateHealthCheckRequestResetElementsList) {
+                        xmlWriter.startElement("ResettableElementName");
+                        xmlWriter.value(updateHealthCheckRequestResetElementsListValue);
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
+                }
             }
             xmlWriter.endElement();
 

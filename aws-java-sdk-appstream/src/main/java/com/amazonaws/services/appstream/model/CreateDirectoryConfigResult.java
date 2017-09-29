@@ -25,18 +25,18 @@ public class CreateDirectoryConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Directory configuration details.
+     * Information about the directory configuration.
      * </p>
      */
     private DirectoryConfig directoryConfig;
 
     /**
      * <p>
-     * Directory configuration details.
+     * Information about the directory configuration.
      * </p>
      * 
      * @param directoryConfig
-     *        Directory configuration details.
+     *        Information about the directory configuration.
      */
 
     public void setDirectoryConfig(DirectoryConfig directoryConfig) {
@@ -45,10 +45,10 @@ public class CreateDirectoryConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Directory configuration details.
+     * Information about the directory configuration.
      * </p>
      * 
-     * @return Directory configuration details.
+     * @return Information about the directory configuration.
      */
 
     public DirectoryConfig getDirectoryConfig() {
@@ -57,11 +57,11 @@ public class CreateDirectoryConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Directory configuration details.
+     * Information about the directory configuration.
      * </p>
      * 
      * @param directoryConfig
-     *        Directory configuration details.
+     *        Information about the directory configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     * The names of the fleets to describe.
      * </p>
      */
     private java.util.List<String> names;
@@ -41,10 +41,10 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     * The names of the fleets to describe.
      * </p>
      * 
-     * @return The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     * @return The names of the fleets to describe.
      */
 
     public java.util.List<String> getNames() {
@@ -53,11 +53,11 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     * The names of the fleets to describe.
      * </p>
      * 
      * @param names
-     *        The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     *        The names of the fleets to describe.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -71,7 +71,7 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     * The names of the fleets to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param names
-     *        The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     *        The names of the fleets to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     * The names of the fleets to describe.
      * </p>
      * 
      * @param names
-     *        The fleet names to describe. Use null to describe all the fleets for the AWS account.
+     *        The names of the fleets to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

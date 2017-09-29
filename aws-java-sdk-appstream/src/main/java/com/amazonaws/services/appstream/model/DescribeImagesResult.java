@@ -25,17 +25,17 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of images.
+     * Information about the images.
      * </p>
      */
     private java.util.List<Image> images;
 
     /**
      * <p>
-     * The list of images.
+     * Information about the images.
      * </p>
      * 
-     * @return The list of images.
+     * @return Information about the images.
      */
 
     public java.util.List<Image> getImages() {
@@ -44,11 +44,11 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of images.
+     * Information about the images.
      * </p>
      * 
      * @param images
-     *        The list of images.
+     *        Information about the images.
      */
 
     public void setImages(java.util.Collection<Image> images) {
@@ -62,7 +62,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of images.
+     * Information about the images.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param images
-     *        The list of images.
+     *        Information about the images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of images.
+     * Information about the images.
      * </p>
      * 
      * @param images
-     *        The list of images.
+     *        Information about the images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

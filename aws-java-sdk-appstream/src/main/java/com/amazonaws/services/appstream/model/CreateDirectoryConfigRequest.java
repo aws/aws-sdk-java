@@ -27,31 +27,30 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      */
     private String directoryName;
     /**
      * <p>
-     * The list of the distinguished names of organizational units to place computer accounts in.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      */
     private java.util.List<String> organizationalUnitDistinguishedNames;
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the streaming
-     * instance to connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      */
     private ServiceAccountCredentials serviceAccountCredentials;
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
      * @param directoryName
-     *        The fully qualified name of the directory, such as corp.example.com
+     *        The fully qualified name of the directory (for example, corp.example.com).
      */
 
     public void setDirectoryName(String directoryName) {
@@ -60,10 +59,10 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
-     * @return The fully qualified name of the directory, such as corp.example.com
+     * @return The fully qualified name of the directory (for example, corp.example.com).
      */
 
     public String getDirectoryName() {
@@ -72,11 +71,11 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
      * @param directoryName
-     *        The fully qualified name of the directory, such as corp.example.com
+     *        The fully qualified name of the directory (for example, corp.example.com).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +86,10 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units to place computer accounts in.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * 
-     * @return The list of the distinguished names of organizational units to place computer accounts in.
+     * @return The distinguished names of the organizational units for computer accounts.
      */
 
     public java.util.List<String> getOrganizationalUnitDistinguishedNames() {
@@ -99,11 +98,11 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units to place computer accounts in.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * 
      * @param organizationalUnitDistinguishedNames
-     *        The list of the distinguished names of organizational units to place computer accounts in.
+     *        The distinguished names of the organizational units for computer accounts.
      */
 
     public void setOrganizationalUnitDistinguishedNames(java.util.Collection<String> organizationalUnitDistinguishedNames) {
@@ -117,7 +116,7 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units to place computer accounts in.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +126,7 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param organizationalUnitDistinguishedNames
-     *        The list of the distinguished names of organizational units to place computer accounts in.
+     *        The distinguished names of the organizational units for computer accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +142,11 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units to place computer accounts in.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * 
      * @param organizationalUnitDistinguishedNames
-     *        The list of the distinguished names of organizational units to place computer accounts in.
+     *        The distinguished names of the organizational units for computer accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,13 +157,11 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the streaming
-     * instance to connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      * 
      * @param serviceAccountCredentials
-     *        The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the
-     *        streaming instance to connect to the directory.
+     *        The credentials for the service account used by the streaming instance to connect to the directory.
      */
 
     public void setServiceAccountCredentials(ServiceAccountCredentials serviceAccountCredentials) {
@@ -173,12 +170,10 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the streaming
-     * instance to connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      * 
-     * @return The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the
-     *         streaming instance to connect to the directory.
+     * @return The credentials for the service account used by the streaming instance to connect to the directory.
      */
 
     public ServiceAccountCredentials getServiceAccountCredentials() {
@@ -187,13 +182,11 @@ public class CreateDirectoryConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the streaming
-     * instance to connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      * 
      * @param serviceAccountCredentials
-     *        The <i>AccountName</i> and <i>AccountPassword</i> values for the service account, which are used by the
-     *        streaming instance to connect to the directory.
+     *        The credentials for the service account used by the streaming instance to connect to the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

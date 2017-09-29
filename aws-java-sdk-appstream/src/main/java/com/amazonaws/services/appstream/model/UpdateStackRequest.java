@@ -27,42 +27,42 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The name of the stack to update.
+     * The name of the stack.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      */
     private java.util.List<StorageConnector> storageConnectors;
     /**
      * <p>
-     * Remove all the storage connectors currently enabled for the stack.
+     * Deletes the storage connectors currently enabled for the stack.
      * </p>
      */
     private Boolean deleteStorageConnectors;
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The stack name displayed to end users.
      */
 
     public void setDisplayName(String displayName) {
@@ -71,10 +71,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      * 
-     * @return The name displayed to end users on the AppStream 2.0 portal.
+     * @return The stack name displayed to end users.
      */
 
     public String getDisplayName() {
@@ -83,11 +83,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name displayed to end users on the AppStream 2.0 portal.
+     * The stack name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The name displayed to end users on the AppStream 2.0 portal.
+     *        The stack name displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description displayed to end users.
      */
 
     public void setDescription(String description) {
@@ -111,10 +111,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      * 
-     * @return The description displayed to end users on the AppStream 2.0 portal.
+     * @return The description displayed to end users.
      */
 
     public String getDescription() {
@@ -123,11 +123,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users on the AppStream 2.0 portal.
+     * The description displayed to end users.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users on the AppStream 2.0 portal.
+     *        The description displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the stack to update.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The name of the stack to update.
+     *        The name of the stack.
      */
 
     public void setName(String name) {
@@ -151,10 +151,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the stack to update.
+     * The name of the stack.
      * </p>
      * 
-     * @return The name of the stack to update.
+     * @return The name of the stack.
      */
 
     public String getName() {
@@ -163,11 +163,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the stack to update.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The name of the stack to update.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +178,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
-     * @return The storage connectors to be enabled for the stack.
+     * @return The storage connectors to enable.
      */
 
     public java.util.List<StorageConnector> getStorageConnectors() {
@@ -190,11 +190,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      */
 
     public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
@@ -208,7 +208,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -217,7 +217,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The storage connectors to be enabled for the stack.
+     * The storage connectors to enable.
      * </p>
      * 
      * @param storageConnectors
-     *        The storage connectors to be enabled for the stack.
+     *        The storage connectors to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +248,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove all the storage connectors currently enabled for the stack.
+     * Deletes the storage connectors currently enabled for the stack.
      * </p>
      * 
      * @param deleteStorageConnectors
-     *        Remove all the storage connectors currently enabled for the stack.
+     *        Deletes the storage connectors currently enabled for the stack.
      */
 
     public void setDeleteStorageConnectors(Boolean deleteStorageConnectors) {
@@ -261,10 +261,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove all the storage connectors currently enabled for the stack.
+     * Deletes the storage connectors currently enabled for the stack.
      * </p>
      * 
-     * @return Remove all the storage connectors currently enabled for the stack.
+     * @return Deletes the storage connectors currently enabled for the stack.
      */
 
     public Boolean getDeleteStorageConnectors() {
@@ -273,11 +273,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove all the storage connectors currently enabled for the stack.
+     * Deletes the storage connectors currently enabled for the stack.
      * </p>
      * 
      * @param deleteStorageConnectors
-     *        Remove all the storage connectors currently enabled for the stack.
+     *        Deletes the storage connectors currently enabled for the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,10 +288,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Remove all the storage connectors currently enabled for the stack.
+     * Deletes the storage connectors currently enabled for the stack.
      * </p>
      * 
-     * @return Remove all the storage connectors currently enabled for the stack.
+     * @return Deletes the storage connectors currently enabled for the stack.
      */
 
     public Boolean isDeleteStorageConnectors() {

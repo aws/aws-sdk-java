@@ -25,24 +25,24 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of directory configurations.
+     * Information about the directory configurations.
      * </p>
      */
     private java.util.List<DirectoryConfig> directoryConfigs;
     /**
      * <p>
-     * If not null, more results are available. To retrieve the next set of items, pass this value for the NextToken
-     * parameter in a subsequent call to DescribeDirectoryConfigs.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The list of directory configurations.
+     * Information about the directory configurations.
      * </p>
      * 
-     * @return The list of directory configurations.
+     * @return Information about the directory configurations.
      */
 
     public java.util.List<DirectoryConfig> getDirectoryConfigs() {
@@ -51,11 +51,11 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of directory configurations.
+     * Information about the directory configurations.
      * </p>
      * 
      * @param directoryConfigs
-     *        The list of directory configurations.
+     *        Information about the directory configurations.
      */
 
     public void setDirectoryConfigs(java.util.Collection<DirectoryConfig> directoryConfigs) {
@@ -69,7 +69,7 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of directory configurations.
+     * Information about the directory configurations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param directoryConfigs
-     *        The list of directory configurations.
+     *        Information about the directory configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The list of directory configurations.
+     * Information about the directory configurations.
      * </p>
      * 
      * @param directoryConfigs
-     *        The list of directory configurations.
+     *        Information about the directory configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If not null, more results are available. To retrieve the next set of items, pass this value for the NextToken
-     * parameter in a subsequent call to DescribeDirectoryConfigs.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. To retrieve the next set of items, pass this value for the
-     *        NextToken parameter in a subsequent call to DescribeDirectoryConfigs.
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +124,12 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If not null, more results are available. To retrieve the next set of items, pass this value for the NextToken
-     * parameter in a subsequent call to DescribeDirectoryConfigs.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      * 
-     * @return If not null, more results are available. To retrieve the next set of items, pass this value for the
-     *         NextToken parameter in a subsequent call to DescribeDirectoryConfigs.
+     * @return The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *         pages, this value is null.
      */
 
     public String getNextToken() {
@@ -138,13 +138,13 @@ public class DescribeDirectoryConfigsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If not null, more results are available. To retrieve the next set of items, pass this value for the NextToken
-     * parameter in a subsequent call to DescribeDirectoryConfigs.
+     * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
+     * this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. To retrieve the next set of items, pass this value for the
-     *        NextToken parameter in a subsequent call to DescribeDirectoryConfigs.
+     *        The pagination token to use to retrieve the next page of results for this operation. If there are no more
+     *        pages, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

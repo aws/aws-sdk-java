@@ -110,6 +110,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastModified;
+    /**
+     * <p>
+     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * </p>
+     */
+    private Webhook webhook;
 
     /**
      * <p>
@@ -681,6 +687,47 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * </p>
+     * 
+     * @param webhook
+     *        Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     */
+
+    public void setWebhook(Webhook webhook) {
+        this.webhook = webhook;
+    }
+
+    /**
+     * <p>
+     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * </p>
+     * 
+     * @return Information about a webhook in GitHub that connects repository events to a build project in AWS
+     *         CodeBuild.
+     */
+
+    public Webhook getWebhook() {
+        return this.webhook;
+    }
+
+    /**
+     * <p>
+     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * </p>
+     * 
+     * @param webhook
+     *        Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withWebhook(Webhook webhook) {
+        setWebhook(webhook);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -714,7 +761,9 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         if (getCreated() != null)
             sb.append("Created: ").append(getCreated()).append(",");
         if (getLastModified() != null)
-            sb.append("LastModified: ").append(getLastModified());
+            sb.append("LastModified: ").append(getLastModified()).append(",");
+        if (getWebhook() != null)
+            sb.append("Webhook: ").append(getWebhook());
         sb.append("}");
         return sb.toString();
     }
@@ -777,6 +826,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastModified() != null && other.getLastModified().equals(this.getLastModified()) == false)
             return false;
+        if (other.getWebhook() == null ^ this.getWebhook() == null)
+            return false;
+        if (other.getWebhook() != null && other.getWebhook().equals(this.getWebhook()) == false)
+            return false;
         return true;
     }
 
@@ -797,6 +850,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
+        hashCode = prime * hashCode + ((getWebhook() == null) ? 0 : getWebhook().hashCode());
         return hashCode;
     }
 

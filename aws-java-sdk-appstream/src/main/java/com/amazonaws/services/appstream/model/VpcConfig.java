@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * VPC configuration information.
+ * Describes VPC configuration information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/VpcConfig" target="_top">AWS API
@@ -30,23 +30,23 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of subnets to which a network interface is established from the fleet instance.
+     * The subnets to which a network interface is established from the fleet instance.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * Security groups associated with the fleet.
+     * The security groups for the fleet.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
 
     /**
      * <p>
-     * The list of subnets to which a network interface is established from the fleet instance.
+     * The subnets to which a network interface is established from the fleet instance.
      * </p>
      * 
-     * @return The list of subnets to which a network interface is established from the fleet instance.
+     * @return The subnets to which a network interface is established from the fleet instance.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -55,11 +55,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of subnets to which a network interface is established from the fleet instance.
+     * The subnets to which a network interface is established from the fleet instance.
      * </p>
      * 
      * @param subnetIds
-     *        The list of subnets to which a network interface is established from the fleet instance.
+     *        The subnets to which a network interface is established from the fleet instance.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -73,7 +73,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of subnets to which a network interface is established from the fleet instance.
+     * The subnets to which a network interface is established from the fleet instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnetIds
-     *        The list of subnets to which a network interface is established from the fleet instance.
+     *        The subnets to which a network interface is established from the fleet instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of subnets to which a network interface is established from the fleet instance.
+     * The subnets to which a network interface is established from the fleet instance.
      * </p>
      * 
      * @param subnetIds
-     *        The list of subnets to which a network interface is established from the fleet instance.
+     *        The subnets to which a network interface is established from the fleet instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +113,10 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Security groups associated with the fleet.
+     * The security groups for the fleet.
      * </p>
      * 
-     * @return Security groups associated with the fleet.
+     * @return The security groups for the fleet.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -125,11 +125,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Security groups associated with the fleet.
+     * The security groups for the fleet.
      * </p>
      * 
      * @param securityGroupIds
-     *        Security groups associated with the fleet.
+     *        The security groups for the fleet.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -143,7 +143,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Security groups associated with the fleet.
+     * The security groups for the fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +152,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroupIds
-     *        Security groups associated with the fleet.
+     *        The security groups for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Security groups associated with the fleet.
+     * The security groups for the fleet.
      * </p>
      * 
      * @param securityGroupIds
-     *        Security groups associated with the fleet.
+     *        The security groups for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

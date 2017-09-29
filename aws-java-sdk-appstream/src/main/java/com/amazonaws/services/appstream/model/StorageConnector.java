@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the parameters for a storage connector.
+ * Describes a storage connector.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StorageConnector" target="_top">AWS API
@@ -30,24 +30,24 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of storage connector. The possible values include: HOMEFOLDERS.
+     * The type of storage connector.
      * </p>
      */
     private String connectorType;
     /**
      * <p>
-     * The ARN associated with the storage connector.
+     * The ARN of the storage connector.
      * </p>
      */
     private String resourceIdentifier;
 
     /**
      * <p>
-     * The type of storage connector. The possible values include: HOMEFOLDERS.
+     * The type of storage connector.
      * </p>
      * 
      * @param connectorType
-     *        The type of storage connector. The possible values include: HOMEFOLDERS.
+     *        The type of storage connector.
      * @see StorageConnectorType
      */
 
@@ -57,10 +57,10 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of storage connector. The possible values include: HOMEFOLDERS.
+     * The type of storage connector.
      * </p>
      * 
-     * @return The type of storage connector. The possible values include: HOMEFOLDERS.
+     * @return The type of storage connector.
      * @see StorageConnectorType
      */
 
@@ -71,11 +71,11 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of storage connector. The possible values include: HOMEFOLDERS.
+     * The type of storage connector.
      * </p>
      * 
      * @param connectorType
-     *        The type of storage connector. The possible values include: HOMEFOLDERS.
+     *        The type of storage connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageConnectorType
      */
@@ -87,11 +87,11 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of storage connector. The possible values include: HOMEFOLDERS.
+     * The type of storage connector.
      * </p>
      * 
      * @param connectorType
-     *        The type of storage connector. The possible values include: HOMEFOLDERS.
+     *        The type of storage connector.
      * @see StorageConnectorType
      */
 
@@ -102,11 +102,11 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of storage connector. The possible values include: HOMEFOLDERS.
+     * The type of storage connector.
      * </p>
      * 
      * @param connectorType
-     *        The type of storage connector. The possible values include: HOMEFOLDERS.
+     *        The type of storage connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageConnectorType
      */
@@ -118,11 +118,11 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN associated with the storage connector.
+     * The ARN of the storage connector.
      * </p>
      * 
      * @param resourceIdentifier
-     *        The ARN associated with the storage connector.
+     *        The ARN of the storage connector.
      */
 
     public void setResourceIdentifier(String resourceIdentifier) {
@@ -131,10 +131,10 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN associated with the storage connector.
+     * The ARN of the storage connector.
      * </p>
      * 
-     * @return The ARN associated with the storage connector.
+     * @return The ARN of the storage connector.
      */
 
     public String getResourceIdentifier() {
@@ -143,11 +143,11 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN associated with the storage connector.
+     * The ARN of the storage connector.
      * </p>
      * 
      * @param resourceIdentifier
-     *        The ARN associated with the storage connector.
+     *        The ARN of the storage connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

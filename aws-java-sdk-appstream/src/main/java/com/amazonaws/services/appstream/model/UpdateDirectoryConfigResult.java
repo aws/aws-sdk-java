@@ -25,18 +25,18 @@ public class UpdateDirectoryConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated directory configuration details.
+     * Information about the directory configuration.
      * </p>
      */
     private DirectoryConfig directoryConfig;
 
     /**
      * <p>
-     * The updated directory configuration details.
+     * Information about the directory configuration.
      * </p>
      * 
      * @param directoryConfig
-     *        The updated directory configuration details.
+     *        Information about the directory configuration.
      */
 
     public void setDirectoryConfig(DirectoryConfig directoryConfig) {
@@ -45,10 +45,10 @@ public class UpdateDirectoryConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated directory configuration details.
+     * Information about the directory configuration.
      * </p>
      * 
-     * @return The updated directory configuration details.
+     * @return Information about the directory configuration.
      */
 
     public DirectoryConfig getDirectoryConfig() {
@@ -57,11 +57,11 @@ public class UpdateDirectoryConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The updated directory configuration details.
+     * Information about the directory configuration.
      * </p>
      * 
      * @param directoryConfig
-     *        The updated directory configuration details.
+     *        Information about the directory configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

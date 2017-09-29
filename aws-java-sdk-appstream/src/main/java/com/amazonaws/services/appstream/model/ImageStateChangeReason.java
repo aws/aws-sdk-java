@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The reason why the last state change occurred.
+ * Describes the reason why the last state change occurred.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason" target="_top">AWS
@@ -30,24 +30,24 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @see ImageStateChangeReasonCode
      */
 
@@ -57,10 +57,10 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
-     * @return The state change reason code of the image.
+     * @return The state change reason code.
      * @see ImageStateChangeReasonCode
      */
 
@@ -71,11 +71,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageStateChangeReasonCode
      */
@@ -87,11 +87,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @see ImageStateChangeReasonCode
      */
 
@@ -102,11 +102,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason code of the image.
+     * The state change reason code.
      * </p>
      * 
      * @param code
-     *        The state change reason code of the image.
+     *        The state change reason code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageStateChangeReasonCode
      */
@@ -118,11 +118,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      * 
      * @param message
-     *        The state change reason message to the end user.
+     *        The state change reason message.
      */
 
     public void setMessage(String message) {
@@ -131,10 +131,10 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      * 
-     * @return The state change reason message to the end user.
+     * @return The state change reason message.
      */
 
     public String getMessage() {
@@ -143,11 +143,11 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The state change reason message to the end user.
+     * The state change reason message.
      * </p>
      * 
      * @param message
-     *        The state change reason message to the end user.
+     *        The state change reason message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,8 +33,12 @@ public enum CodebuildActions implements Action {
     BatchGetProjects("codebuild:BatchGetProjects"),
     /** Action for the CreateProject operation. */
     CreateProject("codebuild:CreateProject"),
+    /** Action for the CreateWebhook operation. */
+    CreateWebhook("codebuild:CreateWebhook"),
     /** Action for the DeleteProject operation. */
     DeleteProject("codebuild:DeleteProject"),
+    /** Action for the DeleteWebhook operation. */
+    DeleteWebhook("codebuild:DeleteWebhook"),
     /** Action for the ListBuilds operation. */
     ListBuilds("codebuild:ListBuilds"),
     /** Action for the ListBuildsForProject operation. */

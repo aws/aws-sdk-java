@@ -18,7 +18,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : {
       "Assignment" : [ "AssignmentStatus" ],
       "CreateQualificationTypeRequest" : [ "QualificationTypeStatus" ],
@@ -4546,7 +4546,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "BonusAmount",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "",
         "enumType" : null,
@@ -4864,7 +4864,7 @@
         },
         "BonusAmount" : {
           "c2jName" : "BonusAmount",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "",
           "enumType" : null,
@@ -5618,7 +5618,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "HITId" ],
+      "required" : [ "HITId", "NumberOfAdditionalAssignments" ],
       "shapeName" : "CreateAdditionalAssignmentsForHITRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -5950,7 +5950,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Reward",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "<p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>",
         "enumType" : null,
@@ -7852,7 +7852,7 @@
         },
         "Reward" : {
           "c2jName" : "Reward",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "<p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>",
           "enumType" : null,
@@ -8379,7 +8379,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Reward",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "<p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>",
         "enumType" : null,
@@ -9172,7 +9172,7 @@
         },
         "Reward" : {
           "c2jName" : "Reward",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "<p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>",
           "enumType" : null,
@@ -14296,7 +14296,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "AvailableBalance",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "",
         "enumType" : null,
@@ -14359,7 +14359,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "OnHoldBalance",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "",
         "enumType" : null,
@@ -14424,7 +14424,7 @@
       "membersAsMap" : {
         "AvailableBalance" : {
           "c2jName" : "AvailableBalance",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "",
           "enumType" : null,
@@ -14488,7 +14488,7 @@
         },
         "OnHoldBalance" : {
           "c2jName" : "OnHoldBalance",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "",
           "enumType" : null,
@@ -17354,7 +17354,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Reward",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "",
         "enumType" : null,
@@ -19358,7 +19358,7 @@
         },
         "Reward" : {
           "c2jName" : "Reward",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "",
           "enumType" : null,
@@ -19781,7 +19781,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "Name", "Value" ],
       "shapeName" : "HITLayoutParameter",
       "signerAware" : false,
       "signerType" : null,
@@ -31665,11 +31665,11 @@
         "c2jName" : "Destination",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>",
+        "documentation" : "<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@param destination The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@param destination The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withDestination",
-        "getterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@return The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.*/",
+        "getterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@return The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>*/",
         "getterMethodName" : "getDestination",
         "getterModel" : {
           "returnType" : "String",
@@ -31701,7 +31701,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Destination",
-        "setterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@param destination The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.*/",
+        "setterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@param destination The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>*/",
         "setterMethodName" : "setDestination",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -31714,12 +31714,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@param destination The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@param destination The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "destination",
           "variableType" : "String",
-          "documentation" : "<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>",
+          "documentation" : "<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -31728,11 +31728,11 @@
         "c2jName" : "Transport",
         "c2jShape" : "NotificationTransport",
         "deprecated" : false,
-        "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>",
+        "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>",
         "enumType" : "NotificationTransport",
-        "fluentSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
+        "fluentSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
         "fluentSetterMethodName" : "withTransport",
-        "getterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@return The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@see NotificationTransport*/",
+        "getterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@return The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@see NotificationTransport*/",
         "getterMethodName" : "getTransport",
         "getterModel" : {
           "returnType" : "String",
@@ -31764,7 +31764,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Transport",
-        "setterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@see NotificationTransport*/",
+        "setterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@see NotificationTransport*/",
         "setterMethodName" : "setTransport",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -31777,12 +31777,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
+        "varargSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "transport",
           "variableType" : "String",
-          "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>",
+          "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -31997,11 +31997,11 @@
           "c2jName" : "Destination",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>",
+          "documentation" : "<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@param destination The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@param destination The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withDestination",
-          "getterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@return The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.*/",
+          "getterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@return The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>*/",
           "getterMethodName" : "getDestination",
           "getterModel" : {
             "returnType" : "String",
@@ -32033,7 +32033,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Destination",
-          "setterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@param destination The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.*/",
+          "setterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@param destination The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>*/",
           "setterMethodName" : "setDestination",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -32046,12 +32046,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>\n@param destination The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>\n@param destination The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "destination",
             "variableType" : "String",
-            "documentation" : "<p> The destination for notification messages. or email notifications (if Transport is Email), this is an email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for your Amazon SQS queue. </p>",
+            "documentation" : "<p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p> <ul> <li> <p>When Transport is Email, the Destination is your email address.</p> </li> <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li> <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -32203,11 +32203,11 @@
           "c2jName" : "Transport",
           "c2jShape" : "NotificationTransport",
           "deprecated" : false,
-          "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>",
+          "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>",
           "enumType" : "NotificationTransport",
-          "fluentSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
+          "fluentSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
           "fluentSetterMethodName" : "withTransport",
-          "getterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@return The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@see NotificationTransport*/",
+          "getterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@return The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@see NotificationTransport*/",
           "getterMethodName" : "getTransport",
           "getterModel" : {
             "returnType" : "String",
@@ -32239,7 +32239,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Transport",
-          "setterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@see NotificationTransport*/",
+          "setterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@see NotificationTransport*/",
           "setterMethodName" : "setTransport",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -32252,12 +32252,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
+          "varargSetterDocumentation" : "/**<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>\n@param transport The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationTransport*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "transport",
             "variableType" : "String",
-            "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS. </p>",
+            "documentation" : "<p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -32330,7 +32330,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "Destination", "Transport" ],
+      "required" : [ "Destination", "Transport", "Version", "EventTypes" ],
       "shapeName" : "NotificationSpecification",
       "signerAware" : false,
       "signerType" : null,
@@ -32364,6 +32364,9 @@
       }, {
         "name" : "SQS",
         "value" : "SQS"
+      }, {
+        "name" : "SNS",
+        "value" : "SNS"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -39601,7 +39604,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "AssignmentId" ],
+      "required" : [ "AssignmentId", "RequesterFeedback" ],
       "shapeName" : "RejectAssignmentRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -41695,7 +41698,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "PolicyName" ],
       "shapeName" : "ReviewPolicy",
       "signerAware" : false,
       "signerType" : null,
@@ -43300,7 +43303,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "BonusAmount",
-        "c2jShape" : "NumericValue",
+        "c2jShape" : "CurrencyAmount",
         "deprecated" : false,
         "documentation" : "<p> The Bonus amount is a US Dollar amount specified using a string (for example, \"5\" represents $5.00 USD and \"101.42\" represents $101.42 USD). Do not include currency symbols or currency codes. </p>",
         "enumType" : null,
@@ -43618,7 +43621,7 @@
         },
         "BonusAmount" : {
           "c2jName" : "BonusAmount",
-          "c2jShape" : "NumericValue",
+          "c2jShape" : "CurrencyAmount",
           "deprecated" : false,
           "documentation" : "<p> The Bonus amount is a US Dollar amount specified using a string (for example, \"5\" represents $5.00 USD and \"101.42\" represents $101.42 USD). Do not include currency symbols or currency codes. </p>",
           "enumType" : null,
@@ -43875,7 +43878,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "WorkerId", "BonusAmount", "AssignmentId" ],
+      "required" : [ "WorkerId", "BonusAmount", "AssignmentId", "Reason" ],
       "shapeName" : "SendBonusRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -44713,7 +44716,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "HITId" ],
+      "required" : [ "HITId", "ExpireAt" ],
       "shapeName" : "UpdateExpirationForHITRequest",
       "signerAware" : false,
       "signerType" : null,

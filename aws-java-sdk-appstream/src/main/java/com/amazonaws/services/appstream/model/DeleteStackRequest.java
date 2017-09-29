@@ -27,18 +27,18 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the stack to delete.
+     * The name of the stack.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the stack to delete.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The name of the stack to delete.
+     *        The name of the stack.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the stack to delete.
+     * The name of the stack.
      * </p>
      * 
-     * @return The name of the stack to delete.
+     * @return The name of the stack.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the stack to delete.
+     * The name of the stack.
      * </p>
      * 
      * @param name
-     *        The name of the stack to delete.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

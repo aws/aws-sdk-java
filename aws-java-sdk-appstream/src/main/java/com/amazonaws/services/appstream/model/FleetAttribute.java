@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Fleet attribute.
+ * The fleet attribute.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

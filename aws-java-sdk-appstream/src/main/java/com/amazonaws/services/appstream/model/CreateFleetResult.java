@@ -25,18 +25,18 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The details for the created fleet.
+     * Information about the fleet.
      * </p>
      */
     private Fleet fleet;
 
     /**
      * <p>
-     * The details for the created fleet.
+     * Information about the fleet.
      * </p>
      * 
      * @param fleet
-     *        The details for the created fleet.
+     *        Information about the fleet.
      */
 
     public void setFleet(Fleet fleet) {
@@ -45,10 +45,10 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The details for the created fleet.
+     * Information about the fleet.
      * </p>
      * 
-     * @return The details for the created fleet.
+     * @return Information about the fleet.
      */
 
     public Fleet getFleet() {
@@ -57,11 +57,11 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The details for the created fleet.
+     * Information about the fleet.
      * </p>
      * 
      * @param fleet
-     *        The details for the created fleet.
+     *        Information about the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

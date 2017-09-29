@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Full directory configuration details, which are used to join domains for the AppStream 2.0 streaming instances.
+ * Configuration information for the directory used to join domains.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig" target="_top">AWS API
@@ -30,37 +30,36 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      */
     private String directoryName;
     /**
      * <p>
-     * The list of the distinguished names of organizational units in which to place computer accounts.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      */
     private java.util.List<String> organizationalUnitDistinguishedNames;
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming instance to
-     * connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      */
     private ServiceAccountCredentials serviceAccountCredentials;
     /**
      * <p>
-     * The time stamp when the directory configuration was created within AppStream 2.0.
+     * The time the directory configuration was created.
      * </p>
      */
     private java.util.Date createdTime;
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
      * @param directoryName
-     *        The fully qualified name of the directory, such as corp.example.com
+     *        The fully qualified name of the directory (for example, corp.example.com).
      */
 
     public void setDirectoryName(String directoryName) {
@@ -69,10 +68,10 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
-     * @return The fully qualified name of the directory, such as corp.example.com
+     * @return The fully qualified name of the directory (for example, corp.example.com).
      */
 
     public String getDirectoryName() {
@@ -81,11 +80,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fully qualified name of the directory, such as corp.example.com
+     * The fully qualified name of the directory (for example, corp.example.com).
      * </p>
      * 
      * @param directoryName
-     *        The fully qualified name of the directory, such as corp.example.com
+     *        The fully qualified name of the directory (for example, corp.example.com).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,10 +95,10 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units in which to place computer accounts.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * 
-     * @return The list of the distinguished names of organizational units in which to place computer accounts.
+     * @return The distinguished names of the organizational units for computer accounts.
      */
 
     public java.util.List<String> getOrganizationalUnitDistinguishedNames() {
@@ -108,11 +107,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units in which to place computer accounts.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * 
      * @param organizationalUnitDistinguishedNames
-     *        The list of the distinguished names of organizational units in which to place computer accounts.
+     *        The distinguished names of the organizational units for computer accounts.
      */
 
     public void setOrganizationalUnitDistinguishedNames(java.util.Collection<String> organizationalUnitDistinguishedNames) {
@@ -126,7 +125,7 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units in which to place computer accounts.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +135,7 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param organizationalUnitDistinguishedNames
-     *        The list of the distinguished names of organizational units in which to place computer accounts.
+     *        The distinguished names of the organizational units for computer accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +151,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The list of the distinguished names of organizational units in which to place computer accounts.
+     * The distinguished names of the organizational units for computer accounts.
      * </p>
      * 
      * @param organizationalUnitDistinguishedNames
-     *        The list of the distinguished names of organizational units in which to place computer accounts.
+     *        The distinguished names of the organizational units for computer accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,13 +166,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming instance to
-     * connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      * 
      * @param serviceAccountCredentials
-     *        The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming
-     *        instance to connect to the directory.
+     *        The credentials for the service account used by the streaming instance to connect to the directory.
      */
 
     public void setServiceAccountCredentials(ServiceAccountCredentials serviceAccountCredentials) {
@@ -182,12 +179,10 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming instance to
-     * connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      * 
-     * @return The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming
-     *         instance to connect to the directory.
+     * @return The credentials for the service account used by the streaming instance to connect to the directory.
      */
 
     public ServiceAccountCredentials getServiceAccountCredentials() {
@@ -196,13 +191,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming instance to
-     * connect to the directory.
+     * The credentials for the service account used by the streaming instance to connect to the directory.
      * </p>
      * 
      * @param serviceAccountCredentials
-     *        The <i>AccountName</i> and <i>AccountPassword</i> of the service account, to be used by the streaming
-     *        instance to connect to the directory.
+     *        The credentials for the service account used by the streaming instance to connect to the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +206,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time stamp when the directory configuration was created within AppStream 2.0.
+     * The time the directory configuration was created.
      * </p>
      * 
      * @param createdTime
-     *        The time stamp when the directory configuration was created within AppStream 2.0.
+     *        The time the directory configuration was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -226,10 +219,10 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time stamp when the directory configuration was created within AppStream 2.0.
+     * The time the directory configuration was created.
      * </p>
      * 
-     * @return The time stamp when the directory configuration was created within AppStream 2.0.
+     * @return The time the directory configuration was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -238,11 +231,11 @@ public class DirectoryConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time stamp when the directory configuration was created within AppStream 2.0.
+     * The time the directory configuration was created.
      * </p>
      * 
      * @param createdTime
-     *        The time stamp when the directory configuration was created within AppStream 2.0.
+     *        The time the directory configuration was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

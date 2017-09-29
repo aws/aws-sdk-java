@@ -30,15 +30,30 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The destination for notification messages. or email notifications (if Transport is Email), this is an email
-     * address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for
-     * your Amazon SQS queue.
+     * The target for notification messages. The Destination’s format is determined by the specified Transport:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When Transport is Email, the Destination is your email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SQS, the Destination is your queue URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SNS, the Destination is the ARN of your topic.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String destination;
     /**
      * <p>
-     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * </p>
      */
     private String transport;
@@ -60,15 +75,45 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The destination for notification messages. or email notifications (if Transport is Email), this is an email
-     * address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for
-     * your Amazon SQS queue.
+     * The target for notification messages. The Destination’s format is determined by the specified Transport:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When Transport is Email, the Destination is your email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SQS, the Destination is your queue URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SNS, the Destination is the ARN of your topic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destination
-     *        The destination for notification messages. or email notifications (if Transport is Email), this is an
-     *        email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is
-     *        the URL for your Amazon SQS queue.
+     *        The target for notification messages. The Destination’s format is determined by the specified Transport:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When Transport is Email, the Destination is your email address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When Transport is SQS, the Destination is your queue URL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When Transport is SNS, the Destination is the ARN of your topic.
+     *        </p>
+     *        </li>
      */
 
     public void setDestination(String destination) {
@@ -77,14 +122,44 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The destination for notification messages. or email notifications (if Transport is Email), this is an email
-     * address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for
-     * your Amazon SQS queue.
+     * The target for notification messages. The Destination’s format is determined by the specified Transport:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When Transport is Email, the Destination is your email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SQS, the Destination is your queue URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SNS, the Destination is the ARN of your topic.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The destination for notification messages. or email notifications (if Transport is Email), this is an
-     *         email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is
-     *         the URL for your Amazon SQS queue.
+     * @return The target for notification messages. The Destination’s format is determined by the specified Transport:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         When Transport is Email, the Destination is your email address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When Transport is SQS, the Destination is your queue URL.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When Transport is SNS, the Destination is the ARN of your topic.
+     *         </p>
+     *         </li>
      */
 
     public String getDestination() {
@@ -93,15 +168,45 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The destination for notification messages. or email notifications (if Transport is Email), this is an email
-     * address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is the URL for
-     * your Amazon SQS queue.
+     * The target for notification messages. The Destination’s format is determined by the specified Transport:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When Transport is Email, the Destination is your email address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SQS, the Destination is your queue URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When Transport is SNS, the Destination is the ARN of your topic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destination
-     *        The destination for notification messages. or email notifications (if Transport is Email), this is an
-     *        email address. For Amazon Simple Queue Service (Amazon SQS) notifications (if Transport is SQS), this is
-     *        the URL for your Amazon SQS queue.
+     *        The target for notification messages. The Destination’s format is determined by the specified Transport:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When Transport is Email, the Destination is your email address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When Transport is SQS, the Destination is your queue URL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When Transport is SNS, the Destination is the ARN of your topic.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +217,11 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * </p>
      * 
      * @param transport
-     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * @see NotificationTransport
      */
 
@@ -126,10 +231,10 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * </p>
      * 
-     * @return The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * @return The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * @see NotificationTransport
      */
 
@@ -140,11 +245,11 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * </p>
      * 
      * @param transport
-     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationTransport
      */
@@ -156,11 +261,11 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * </p>
      * 
      * @param transport
-     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * @see NotificationTransport
      */
 
@@ -171,11 +276,11 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     * The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * </p>
      * 
      * @param transport
-     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS.
+     *        The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationTransport
      */

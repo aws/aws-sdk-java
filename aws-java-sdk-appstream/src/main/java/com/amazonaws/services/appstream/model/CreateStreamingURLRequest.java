@@ -27,19 +27,19 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      */
     private String fleetName;
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The ID of the user.
      * </p>
      */
     private String userId;
@@ -51,25 +51,24 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     private String applicationId;
     /**
      * <p>
-     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
-     * between 1 and 604800 seconds.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      * </p>
      */
     private Long validity;
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context of the streaming URL.
      * </p>
      */
     private String sessionContext;
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The stack for which the URL is generated.
+     *        The name of the stack.
      */
 
     public void setStackName(String stackName) {
@@ -78,10 +77,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      * 
-     * @return The stack for which the URL is generated.
+     * @return The name of the stack.
      */
 
     public String getStackName() {
@@ -90,11 +89,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The stack for which the URL is generated.
+     * The name of the stack.
      * </p>
      * 
      * @param stackName
-     *        The stack for which the URL is generated.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +104,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      * 
      * @param fleetName
-     *        The fleet for which the URL is generated.
+     *        The name of the fleet.
      */
 
     public void setFleetName(String fleetName) {
@@ -118,10 +117,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      * 
-     * @return The fleet for which the URL is generated.
+     * @return The name of the fleet.
      */
 
     public String getFleetName() {
@@ -130,11 +129,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The fleet for which the URL is generated.
+     * The name of the fleet.
      * </p>
      * 
      * @param fleetName
-     *        The fleet for which the URL is generated.
+     *        The name of the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +144,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The ID of the user.
      * </p>
      * 
      * @param userId
-     *        A unique user ID for whom the URL is generated.
+     *        The ID of the user.
      */
 
     public void setUserId(String userId) {
@@ -158,10 +157,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The ID of the user.
      * </p>
      * 
-     * @return A unique user ID for whom the URL is generated.
+     * @return The ID of the user.
      */
 
     public String getUserId() {
@@ -170,11 +169,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique user ID for whom the URL is generated.
+     * The ID of the user.
      * </p>
      * 
      * @param userId
-     *        A unique user ID for whom the URL is generated.
+     *        The ID of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,13 +224,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
-     * between 1 and 604800 seconds.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      * </p>
      * 
      * @param validity
-     *        The duration up to which the URL returned by this action is valid. The input can be any numeric value in
-     *        seconds between 1 and 604800 seconds.
+     *        The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      */
 
     public void setValidity(Long validity) {
@@ -240,12 +237,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
-     * between 1 and 604800 seconds.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      * </p>
      * 
-     * @return The duration up to which the URL returned by this action is valid. The input can be any numeric value in
-     *         seconds between 1 and 604800 seconds.
+     * @return The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      */
 
     public Long getValidity() {
@@ -254,13 +249,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
-     * between 1 and 604800 seconds.
+     * The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      * </p>
      * 
      * @param validity
-     *        The duration up to which the URL returned by this action is valid. The input can be any numeric value in
-     *        seconds between 1 and 604800 seconds.
+     *        The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,11 +264,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context of the streaming URL.
      * </p>
      * 
      * @param sessionContext
-     *        The sessionContext of the streaming URL.
+     *        The session context of the streaming URL.
      */
 
     public void setSessionContext(String sessionContext) {
@@ -284,10 +277,10 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context of the streaming URL.
      * </p>
      * 
-     * @return The sessionContext of the streaming URL.
+     * @return The session context of the streaming URL.
      */
 
     public String getSessionContext() {
@@ -296,11 +289,11 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The sessionContext of the streaming URL.
+     * The session context of the streaming URL.
      * </p>
      * 
      * @param sessionContext
-     *        The sessionContext of the streaming URL.
+     *        The session context of the streaming URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

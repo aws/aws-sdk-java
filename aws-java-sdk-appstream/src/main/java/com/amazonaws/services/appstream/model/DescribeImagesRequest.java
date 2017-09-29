@@ -27,17 +27,17 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific list of images to describe.
+     * The names of the images to describe.
      * </p>
      */
     private java.util.List<String> names;
 
     /**
      * <p>
-     * A specific list of images to describe.
+     * The names of the images to describe.
      * </p>
      * 
-     * @return A specific list of images to describe.
+     * @return The names of the images to describe.
      */
 
     public java.util.List<String> getNames() {
@@ -46,11 +46,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific list of images to describe.
+     * The names of the images to describe.
      * </p>
      * 
      * @param names
-     *        A specific list of images to describe.
+     *        The names of the images to describe.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -64,7 +64,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific list of images to describe.
+     * The names of the images to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param names
-     *        A specific list of images to describe.
+     *        The names of the images to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A specific list of images to describe.
+     * The names of the images to describe.
      * </p>
      * 
      * @param names
-     *        A specific list of images to describe.
+     *        The names of the images to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

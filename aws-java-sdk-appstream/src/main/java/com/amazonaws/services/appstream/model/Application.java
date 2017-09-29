@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An entry for a single application in the application catalog.
+ * Describes an application in the application catalog.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Application" target="_top">AWS API
@@ -30,19 +30,19 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the application.
+     * The name of the application.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The name of the application shown to the end users.
+     * The application name displayed to end users.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The URL for the application icon. This URL may be time-limited.
+     * The URL for the application icon. This URL might be time-limited.
      * </p>
      */
     private String iconURL;
@@ -54,13 +54,13 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private String launchPath;
     /**
      * <p>
-     * A list of arguments that are passed to the application at launch.
+     * The arguments that are passed to the application at launch.
      * </p>
      */
     private String launchParameters;
     /**
      * <p>
-     * If there is a problem, an application can be disabled after image creation.
+     * If there is a problem, the application can be disabled after image creation.
      * </p>
      */
     private Boolean enabled;
@@ -73,11 +73,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the application.
+     * The name of the application.
      * </p>
      * 
      * @param name
-     *        The unique identifier for the application.
+     *        The name of the application.
      */
 
     public void setName(String name) {
@@ -86,10 +86,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the application.
+     * The name of the application.
      * </p>
      * 
-     * @return The unique identifier for the application.
+     * @return The name of the application.
      */
 
     public String getName() {
@@ -98,11 +98,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the application.
+     * The name of the application.
      * </p>
      * 
      * @param name
-     *        The unique identifier for the application.
+     *        The name of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the application shown to the end users.
+     * The application name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The name of the application shown to the end users.
+     *        The application name displayed to end users.
      */
 
     public void setDisplayName(String displayName) {
@@ -126,10 +126,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the application shown to the end users.
+     * The application name displayed to end users.
      * </p>
      * 
-     * @return The name of the application shown to the end users.
+     * @return The application name displayed to end users.
      */
 
     public String getDisplayName() {
@@ -138,11 +138,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the application shown to the end users.
+     * The application name displayed to end users.
      * </p>
      * 
      * @param displayName
-     *        The name of the application shown to the end users.
+     *        The application name displayed to end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the application icon. This URL may be time-limited.
+     * The URL for the application icon. This URL might be time-limited.
      * </p>
      * 
      * @param iconURL
-     *        The URL for the application icon. This URL may be time-limited.
+     *        The URL for the application icon. This URL might be time-limited.
      */
 
     public void setIconURL(String iconURL) {
@@ -166,10 +166,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the application icon. This URL may be time-limited.
+     * The URL for the application icon. This URL might be time-limited.
      * </p>
      * 
-     * @return The URL for the application icon. This URL may be time-limited.
+     * @return The URL for the application icon. This URL might be time-limited.
      */
 
     public String getIconURL() {
@@ -178,11 +178,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the application icon. This URL may be time-limited.
+     * The URL for the application icon. This URL might be time-limited.
      * </p>
      * 
      * @param iconURL
-     *        The URL for the application icon. This URL may be time-limited.
+     *        The URL for the application icon. This URL might be time-limited.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of arguments that are passed to the application at launch.
+     * The arguments that are passed to the application at launch.
      * </p>
      * 
      * @param launchParameters
-     *        A list of arguments that are passed to the application at launch.
+     *        The arguments that are passed to the application at launch.
      */
 
     public void setLaunchParameters(String launchParameters) {
@@ -246,10 +246,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of arguments that are passed to the application at launch.
+     * The arguments that are passed to the application at launch.
      * </p>
      * 
-     * @return A list of arguments that are passed to the application at launch.
+     * @return The arguments that are passed to the application at launch.
      */
 
     public String getLaunchParameters() {
@@ -258,11 +258,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of arguments that are passed to the application at launch.
+     * The arguments that are passed to the application at launch.
      * </p>
      * 
      * @param launchParameters
-     *        A list of arguments that are passed to the application at launch.
+     *        The arguments that are passed to the application at launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If there is a problem, an application can be disabled after image creation.
+     * If there is a problem, the application can be disabled after image creation.
      * </p>
      * 
      * @param enabled
-     *        If there is a problem, an application can be disabled after image creation.
+     *        If there is a problem, the application can be disabled after image creation.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -286,10 +286,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If there is a problem, an application can be disabled after image creation.
+     * If there is a problem, the application can be disabled after image creation.
      * </p>
      * 
-     * @return If there is a problem, an application can be disabled after image creation.
+     * @return If there is a problem, the application can be disabled after image creation.
      */
 
     public Boolean getEnabled() {
@@ -298,11 +298,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If there is a problem, an application can be disabled after image creation.
+     * If there is a problem, the application can be disabled after image creation.
      * </p>
      * 
      * @param enabled
-     *        If there is a problem, an application can be disabled after image creation.
+     *        If there is a problem, the application can be disabled after image creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,10 +313,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If there is a problem, an application can be disabled after image creation.
+     * If there is a problem, the application can be disabled after image creation.
      * </p>
      * 
-     * @return If there is a problem, an application can be disabled after image creation.
+     * @return If there is a problem, the application can be disabled after image creation.
      */
 
     public Boolean isEnabled() {
