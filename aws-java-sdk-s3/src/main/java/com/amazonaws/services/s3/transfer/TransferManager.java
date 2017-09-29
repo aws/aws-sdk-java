@@ -1287,7 +1287,7 @@ public class TransferManager {
 
         for ( S3ObjectSummary summary : objectSummaries ) {
             // TODO: non-standard delimiters
-            File f = new File(destinationDirectory, summary.getKey());
+            File f = new File(destinationDirectory, stripKeyPrefix ? summary.getKey().substring(keyPrefix.length()) : summary.getKey());
             File parentFile = f.getParentFile();
 
             if ( !parentFile.exists() && !parentFile.mkdirs() ) {
