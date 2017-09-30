@@ -124,7 +124,11 @@ public class JsonPolicyWriter {
 
             List<Principal> principals = statement.getPrincipals();
             if (isNotNull(principals) && !principals.isEmpty())
-                writePrincipals(principals);
+                writePrincipals(principals, JsonDocumentFields.PRINCIPAL);
+
+            List<Principal> notPrincipals = statement.getNotPrincipals();
+            if (isNotNull(notPrincipals) && !notPrincipals.isEmpty())
+                writePrincipals(notPrincipals, JsonDocumentFields.NOT_PRINCIPAL);
 
             List<Action> actions = statement.getActions();
             if (isNotNull(actions) && !actions.isEmpty())
@@ -211,17 +215,20 @@ public class JsonPolicyWriter {
     }
 
     /**
-     * Writes the list of <code>Principal</code>s to the JSONGenerator.
+     * Writes the list of <code>Principal</code>s or <code>NotPrincipal</code>s to the JSONGenerator.
      *
      * @param principals
      *            the list of principals to be written.
+     * @param jsonDocumentField
+     *            the json field to write the principals under either 
+     *            JsonDocumentFields.PRINCIPAL or JsonDocumentFields.NOT_PRINCIPAL.
      */
-    private void writePrincipals(List<Principal> principals)
+    private void writePrincipals(List<Principal> principals, String jsonDocumentField)
             throws JsonGenerationException, IOException {
         if (principals.size() == 1 && principals.get(0).equals(Principal.All)) {
-            writeJsonKeyValue(JsonDocumentFields.PRINCIPAL, Principal.All.getId());
+            writeJsonKeyValue(jsonDocumentField, Principal.All.getId());
         } else {
-            writeJsonObjectStart(JsonDocumentFields.PRINCIPAL);
+            writeJsonObjectStart(jsonDocumentField);
 
             Map<String, List<String>> principalsByScheme = groupPrincipalByScheme(principals);
 

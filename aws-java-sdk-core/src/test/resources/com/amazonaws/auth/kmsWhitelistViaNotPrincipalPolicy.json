@@ -1,0 +1,38 @@
+{
+  "Version": "2012-10-17",
+  "Id": "key-default-1",
+  "Statement": [
+    {
+      "Sid": "Allow root and tester all kms actions",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::111111111111:root",
+          "arn:aws:iam::111111111111:user/tester"
+        ]
+      },
+      "Action": [
+        "kms:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "Deny everyone but root and tester user",
+      "Effect": "Deny",
+      "NotPrincipal": {
+        "AWS": [
+          "arn:aws:iam::111111111111:user/tester",
+          "arn:aws:iam::111111111111:root"
+        ]
+      },
+      "Action": [
+        "kms:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

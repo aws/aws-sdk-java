@@ -19,11 +19,12 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Set;
 
-import junit.framework.Assert;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 
 import com.amazonaws.auth.policy.Principal.Services;
@@ -385,14 +386,40 @@ public class PolicyTest {
         String ID_WITH_HYPHEN = "a-b-c-d-e-f-g";
         String ID_WITHOUT_HYPHEN = "abcdefg";
 
-        Assert.assertEquals(ID_WITHOUT_HYPHEN,
-                            new Principal(ID_WITH_HYPHEN).getId());
-        Assert.assertEquals(ID_WITHOUT_HYPHEN,
-                new Principal("AWS", ID_WITH_HYPHEN).getId());
+        assertEquals(ID_WITHOUT_HYPHEN, new Principal(ID_WITH_HYPHEN).getId());
+        assertEquals(ID_WITHOUT_HYPHEN, new Principal("AWS", ID_WITH_HYPHEN).getId());
 
-        Assert.assertEquals(ID_WITH_HYPHEN,
-                new Principal("Federated", ID_WITH_HYPHEN).getId());
-        Assert.assertEquals(ID_WITH_HYPHEN,
-                new Principal("AWS", ID_WITH_HYPHEN, false).getId());
+        assertEquals(ID_WITH_HYPHEN, new Principal("Federated", ID_WITH_HYPHEN).getId());
+        assertEquals(ID_WITH_HYPHEN, new Principal("AWS", ID_WITH_HYPHEN, false).getId());
+    }
+
+    @Test
+    public void testThatAddingAStatementWithNotPrincipleGeneratesExpectedJson() throws IOException {
+        String rootArn = "arn:aws:iam::111111111111:root";
+        String testerArn = "arn:aws:iam::111111111111:user/tester";
+        Principal root = new Principal("AWS", rootArn, false);
+        Principal testUser = new Principal("AWS", testerArn, false);
+        String kmsAllActions = "kms:*";
+
+        InputStream kmsWhitelistViaNotPrincipalPolicy = getClass().getClassLoader()
+                .getResourceAsStream("com/amazonaws/auth/kmsWhitelistViaNotPrincipalPolicy.json");
+        JsonNode expectedPolicy = new ObjectMapper().readValue(kmsWhitelistViaNotPrincipalPolicy, JsonNode.class);
+
+        Policy policy = new Policy("key-default-1").withStatements(
+            new Statement(Effect.Allow)
+                    .withId("Allow root and tester all kms actions")
+                    .withPrincipals(root, testUser)
+                    .withActions(new TestAction(kmsAllActions))
+                    .withResources(new Resource("*")),
+            new Statement(Effect.Deny)
+                    .withId("Deny everyone but root and tester user")
+                    .withNotPrincipals(testUser, root)
+                    .withActions(new TestAction(kmsAllActions))
+                    .withResources(new Resource("*"))
+        );
+
+        JsonNode actualPolicy = new ObjectMapper().readValue(policy.toJson(), JsonNode.class);
+
+        assertEquals(expectedPolicy, actualPolicy);
     }
 }

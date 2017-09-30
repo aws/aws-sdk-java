@@ -16,12 +16,18 @@ package com.amazonaws.auth.policy;
 
 import static org.hamcrest.Matchers.contains;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import com.amazonaws.auth.policy.Principal.Services;
@@ -371,6 +377,59 @@ public class PolicyReaderTest {
                 .getPrincipals().get(0).getId());
         assertEquals("Service", statements.get(0).getPrincipals().get(0)
                 .getProvider());
+    }
+
+    @Test
+    public void testThatAValidKMSKeyPolicyThatUsesNotPrincipalToWhitelistCanBeRead() throws IOException {
+        String rootArn = "arn:aws:iam::111111111111:root";
+        String testerArn = "arn:aws:iam::111111111111:user/tester";
+        Principal root = new Principal("AWS", rootArn, false);
+        Principal testUser = new Principal("AWS", testerArn, false);
+        String kmsAllActions = "kms:*";
+
+        InputStream kmsWhitelistViaNotPrincipalPolicy = getClass().getClassLoader()
+                .getResourceAsStream("com/amazonaws/auth/kmsWhitelistViaNotPrincipalPolicy.json");
+        String policyJsonAsString = IOUtils.toString(kmsWhitelistViaNotPrincipalPolicy);
+        Policy policy = Policy.fromJson(policyJsonAsString);
+
+        assertEquals(POLICY_VERSION, policy.getVersion());
+        assertEquals("key-default-1", policy.getId());
+        List<Statement> statements = new LinkedList<Statement>(policy.getStatements());
+        assertEquals(2, statements.size());
+
+        Statement allowRootAndTestAllKMSActions = null;
+        Statement denyEveryOneButRootAndTestAllKmsActions = null;
+        for (Statement statement : statements) {
+            if (StringUtils.equals(statement.getId(), "Allow root and tester all kms actions")) {
+                allowRootAndTestAllKMSActions = statement;
+            }
+
+            if (StringUtils.equals(statement.getId(),"Deny everyone but root and tester user")) {
+                denyEveryOneButRootAndTestAllKmsActions = statement;
+            }
+        }
+
+        assertNotNull(allowRootAndTestAllKMSActions);
+        assertEquals(Effect.Allow , allowRootAndTestAllKMSActions.getEffect());
+        assertEquals(1, allowRootAndTestAllKMSActions.getActions().size());
+        assertEquals(kmsAllActions, allowRootAndTestAllKMSActions.getActions().get(0).getActionName());
+        assertEquals(0, allowRootAndTestAllKMSActions.getNotPrincipals().size());
+        assertEquals(2, allowRootAndTestAllKMSActions.getPrincipals().size());
+        assertTrue(allowRootAndTestAllKMSActions.getPrincipals().contains(root));
+        assertTrue(allowRootAndTestAllKMSActions.getPrincipals().contains(testUser));
+        assertEquals(1, allowRootAndTestAllKMSActions.getResources().size());
+        assertEquals("*", allowRootAndTestAllKMSActions.getResources().get(0).getId());
+
+        assertNotNull(denyEveryOneButRootAndTestAllKmsActions);
+        assertEquals(Effect.Deny , denyEveryOneButRootAndTestAllKmsActions.getEffect());
+        assertEquals(1, denyEveryOneButRootAndTestAllKmsActions.getActions().size());
+        assertEquals(kmsAllActions, denyEveryOneButRootAndTestAllKmsActions.getActions().get(0).getActionName());
+        assertEquals(0, denyEveryOneButRootAndTestAllKmsActions.getPrincipals().size());
+        assertEquals(2, denyEveryOneButRootAndTestAllKmsActions.getNotPrincipals().size());
+        assertTrue(denyEveryOneButRootAndTestAllKmsActions.getNotPrincipals().contains(root));
+        assertTrue(denyEveryOneButRootAndTestAllKmsActions.getNotPrincipals().contains(testUser));
+        assertEquals(1, denyEveryOneButRootAndTestAllKmsActions.getResources().size());
+        assertEquals("*", denyEveryOneButRootAndTestAllKmsActions.getResources().get(0).getId());
     }
 
     @Test

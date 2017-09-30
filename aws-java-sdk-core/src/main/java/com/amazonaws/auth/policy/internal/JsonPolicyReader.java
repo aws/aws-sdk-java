@@ -154,6 +154,10 @@ public class JsonPolicyReader {
         if (isNotNull(principalNodes))
             statement.setPrincipals(principalOf(principalNodes));
 
+        JsonNode notPrincipalNodes = jStatement.get(JsonDocumentFields.NOT_PRINCIPAL);
+        if (isNotNull(notPrincipalNodes))
+            statement.setNotPrincipals(principalOf(notPrincipalNodes));
+
         return statement;
     }
 
