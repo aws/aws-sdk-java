@@ -31,7 +31,8 @@ public class ListLunaClientsResult extends com.amazonaws.AmazonWebServiceResult<
     private com.amazonaws.internal.SdkInternalList<String> clientList;
     /**
      * <p>
-     * If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of
+     * items.
      * </p>
      */
     private String nextToken;
@@ -111,12 +112,13 @@ public class ListLunaClientsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of
+     * items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of
-     *        items.
+     *        If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next
+     *        set of items.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,11 +127,12 @@ public class ListLunaClientsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of
+     * items.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of
-     *         items.
+     * @return If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next
+     *         set of items.
      */
 
     public String getNextToken() {
@@ -138,12 +141,13 @@ public class ListLunaClientsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of
+     * items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of
-     *        items.
+     *        If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next
+     *        set of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

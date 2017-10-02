@@ -13,6 +13,15 @@
 
 /**
  * <fullname>AWS CloudHSM Service</fullname>
+ * <p>
+ * This is the reference for AWS CloudHSM Classic. For more information, see <a
+ * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a> and the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>.
+ * </p>
+ * <p>
+ * For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>.
+ * </p>
  */
 package com.amazonaws.services.cloudhsm;
 

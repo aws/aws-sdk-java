@@ -136,6 +136,22 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
     }
 
     /**
+     * Sets the optional credentials provider to use for this request, overriding the default credentials
+     * provider at the client level.
+     *
+     * @param credentialsProvider
+     *            The optional AWS security credentials provider to use for this request, overriding the
+     *            default credentials provider at the client level.
+     * @return A reference to this updated object so that method calls can be chained together.
+     */
+    public <T extends AmazonWebServiceRequest> T withRequestCredentialsProvider(final AWSCredentialsProvider credentialsProvider) {
+        setRequestCredentialsProvider(credentialsProvider);
+        @SuppressWarnings("unchecked")
+        T t = (T) this;
+        return t;
+    }
+
+    /**
      * Gets the options stored with this request object. Intended for internal use only.
      */
     public RequestClientOptions getRequestClientOptions() {

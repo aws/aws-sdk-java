@@ -38,11 +38,11 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String hapgSerial;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> hsmsLastActionFailed;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> hsmsPendingDeletion;
-
+    /** <p/> */
     private com.amazonaws.internal.SdkInternalList<String> hsmsPendingRegistration;
     /**
      * <p>
@@ -150,6 +150,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -161,6 +163,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsLastActionFailed
      */
 
@@ -174,6 +178,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)}
@@ -195,6 +200,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsLastActionFailed
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -205,6 +212,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -216,6 +225,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingDeletion
      */
 
@@ -229,6 +240,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)}
@@ -250,6 +262,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingDeletion
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -260,6 +274,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -271,6 +287,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingRegistration
      */
 
@@ -284,6 +302,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHsmsPendingRegistration(java.util.Collection)} or
@@ -305,6 +324,8 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p/>
+     * 
      * @param hsmsPendingRegistration
      * @return Returns a reference to this object so that method calls can be chained together.
      */

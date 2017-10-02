@@ -27,19 +27,21 @@ public class ListLunaClientsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.
+     * The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the
+     * first call.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.
+     * The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the
+     * first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first
-     *        call.
+     *        The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this
+     *        is the first call.
      */
 
     public void setNextToken(String nextToken) {
@@ -48,11 +50,12 @@ public class ListLunaClientsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.
+     * The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the
+     * first call.
      * </p>
      * 
-     * @return The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first
-     *         call.
+     * @return The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this
+     *         is the first call.
      */
 
     public String getNextToken() {
@@ -61,12 +64,13 @@ public class ListLunaClientsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.
+     * The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the
+     * first call.
      * </p>
      * 
      * @param nextToken
-     *        The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first
-     *        call.
+     *        The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this
+     *        is the first call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

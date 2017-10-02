@@ -49,6 +49,15 @@ import com.amazonaws.services.cloudhsm.model.transform.*;
  * service call completes.
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
+ * <p>
+ * This is the reference for AWS CloudHSM Classic. For more information, see <a
+ * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a> and the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>.
+ * </p>
+ * <p>
+ * For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
+ * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -380,9 +389,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * Creates an uninitialized HSM instance.
      * </p>
      * <p>
-     * There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you
-     * accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a>
-     * operation, go to the <a href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, create a new
+     * There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation.
+     * If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a>
+     * operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new
      * case, and select <b>Account and Billing Support</b>.
      * </p>
      * <important>
@@ -393,7 +402,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> operation.
+     *        Contains the inputs for the <code>CreateHsm</code> operation.
      * @return Result of the CreateHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -955,9 +964,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * Lists the high-availability partition groups for the account.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a>
-     * to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListHapgs</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listHapgsRequest
@@ -1019,9 +1028,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * Retrieves the identifiers of all of the HSMs provisioned for the current customer.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to
-     * retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListHsms</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listHsmsRequest
@@ -1083,9 +1092,9 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * Lists all of the clients.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available,
-     * the <i>NextToken</i> member of the response contains a token that you pass in the next call to
-     * <a>ListLunaClients</a> to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> member. If more results are
+     * available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to
+     * <code>ListLunaClients</code> to retrieve the next set of items.
      * </p>
      * 
      * @param listLunaClientsRequest

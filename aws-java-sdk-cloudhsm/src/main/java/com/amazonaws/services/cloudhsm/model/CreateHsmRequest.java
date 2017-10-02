@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>CreateHsm</a> operation.
+ * Contains the inputs for the <code>CreateHsm</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm" target="_top">AWS API
@@ -57,7 +57,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String iamRoleArn;
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      */
     private String externalId;
@@ -258,11 +258,11 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      * 
      * @param externalId
-     *        The external ID from <b>IamRoleArn</b>, if present.
+     *        The external ID from <code>IamRoleArn</code>, if present.
      */
 
     public void setExternalId(String externalId) {
@@ -271,10 +271,10 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      * 
-     * @return The external ID from <b>IamRoleArn</b>, if present.
+     * @return The external ID from <code>IamRoleArn</code>, if present.
      */
 
     public String getExternalId() {
@@ -283,11 +283,11 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The external ID from <b>IamRoleArn</b>, if present.
+     * The external ID from <code>IamRoleArn</code>, if present.
      * </p>
      * 
      * @param externalId
-     *        The external ID from <b>IamRoleArn</b>, if present.
+     *        The external ID from <code>IamRoleArn</code>, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

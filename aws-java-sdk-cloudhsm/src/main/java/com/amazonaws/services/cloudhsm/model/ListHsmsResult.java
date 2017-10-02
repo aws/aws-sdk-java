@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the output of the <a>ListHsms</a> operation.
+ * Contains the output of the <code>ListHsms</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms" target="_top">AWS API
@@ -34,7 +34,8 @@ public class ListHsmsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private com.amazonaws.internal.SdkInternalList<String> hsmList;
     /**
      * <p>
-     * If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of
+     * items.
      * </p>
      */
     private String nextToken;
@@ -114,12 +115,13 @@ public class ListHsmsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of
+     * items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of
-     *        items.
+     *        If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set
+     *        of items.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,11 +130,12 @@ public class ListHsmsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of
+     * items.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of
-     *         items.
+     * @return If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next
+     *         set of items.
      */
 
     public String getNextToken() {
@@ -141,12 +144,13 @@ public class ListHsmsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.
+     * If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of
+     * items.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of
-     *        items.
+     *        If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set
+     *        of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

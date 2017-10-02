@@ -1,3 +1,8 @@
+# __1.11.206__ __2017-10-02__
+## __AWS CloudHSM__
+  - ### Features
+    - Documentation updates for CloudHSM
+
 # __1.11.205__ __2017-09-29__
 ## __AWS CodeBuild__
   - ### Features
