@@ -726,8 +726,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Determines whether a product code is associated with an instance. This action can only be used by the owner of
-     * the product code. It is useful when a product code owner needs to verify whether another user's instance is
-     * eligible for support.
+     * the product code. It is useful when a product code owner must verify whether another user's instance is eligible
+     * for support.
      * </p>
      * 
      * @param confirmProductInstanceRequest
@@ -1206,8 +1206,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a placement group that you launch cluster instances into. You must give the group a name that's unique
-     * within the scope of your account.
+     * Creates a placement group that you launch cluster instances into. Give the group a name that's unique within the
+     * scope of your account.
      * </p>
      * <p>
      * For more information about placement groups and cluster instances, see <a
@@ -1642,9 +1642,8 @@ public interface AmazonEC2 {
      * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
      * </p>
      * <p>
-     * For more information about VPN connections, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding a Hardware Virtual Private
-     * Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
+     * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createVpnConnectionRequest
@@ -4244,7 +4243,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * Instance console output is buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2
-     * preserves the most recent 64 KB output which is available for at least one hour after the most recent post.
+     * preserves the most recent 64 KB output, which is available for at least one hour after the most recent post.
      * </p>
      * <p>
      * For Linux instances, the instance console output displays the exact console output that would normally be
@@ -5503,8 +5502,8 @@ public interface AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * To ensure faster instance launches, break up large requests into smaller batches. For example, create 5 separate
-     * launch requests for 100 instances each instead of 1 launch request for 500 instances.
+     * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
+     * separate launch requests for 100 instances each instead of one launch request for 500 instances.
      * </p>
      * <p>
      * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
@@ -5562,14 +5561,17 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Starts an Amazon EBS-backed AMI that you've previously stopped.
+     * Starts an Amazon EBS-backed instance that you've previously stopped.
      * </p>
      * <p>
      * Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started. When an instance
-     * is stopped, the compute resources are released and you are not billed for hourly instance usage. However, your
-     * root partition Amazon EBS volume remains, continues to persist your data, and you are charged for Amazon EBS
-     * volume usage. You can restart your instance at any time. Each time you transition an instance from stopped to
-     * started, Amazon EC2 charges a full instance hour, even if transitions happen multiple times within a single hour.
+     * is stopped, the compute resources are released and you are not billed for instance usage. However, your root
+     * partition Amazon EBS volume remains and continues to persist your data, and you are charged for Amazon EBS volume
+     * usage. You can restart your instance at any time. Every time you start your Windows instance, Amazon EC2 charges
+     * you for a full instance hour. If you stop and restart your Windows instance, a new instance hour begins and
+     * Amazon EC2 charges you for another full instance hour even if you are still within the same 60-minute period when
+     * it was stopped. Every time you start your Linux instance, Amazon EC2 charges a one-minute minimum for instance
+     * usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
      * Before stopping an instance, make sure it is in a state from which it can be restarted. Stopping an instance does
@@ -5597,13 +5599,15 @@ public interface AmazonEC2 {
      * Stops an Amazon EBS-backed instance.
      * </p>
      * <p>
-     * We don't charge hourly usage for a stopped instance, or data transfer fees; however, your root partition Amazon
-     * EBS volume remains, continues to persist your data, and you are charged for Amazon EBS volume usage. Each time
-     * you transition an instance from stopped to started, Amazon EC2 charges a full instance hour, even if transitions
-     * happen multiple times within a single hour.
+     * We don't charge usage for a stopped instance, or data transfer fees; however, your root partition Amazon EBS
+     * volume remains and continues to persist your data, and you are charged for Amazon EBS volume usage. Every time
+     * you start your Windows instance, Amazon EC2 charges you for a full instance hour. If you stop and restart your
+     * Windows instance, a new instance hour begins and Amazon EC2 charges you for another full instance hour even if
+     * you are still within the same 60-minute period when it was stopped. Every time you start your Linux instance,
+     * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start or stop Spot instances, and you can't stop instance store-backed instances.
+     * You can't start or stop Spot Instances, and you can't stop instance store-backed instances.
      * </p>
      * <p>
      * When you stop an instance, we shut it down. You can restart your instance at any time. Before stopping an

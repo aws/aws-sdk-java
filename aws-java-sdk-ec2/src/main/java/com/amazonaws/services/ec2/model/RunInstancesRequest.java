@@ -182,8 +182,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      */
     private String userData;
@@ -218,9 +218,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private Boolean disableApiTermination;
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
-     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1470,8 +1471,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      * 
      * @param userData
@@ -1479,8 +1480,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is
-     *        performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is
+     *        performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -1493,16 +1494,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      * 
      * @return The user data to make available to the instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *         Instance at Launch</a> (Linux) and <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *         >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is
-     *         performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded
+     *         >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is
+     *         performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded
      *         text.
      */
 
@@ -1516,8 +1517,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
+     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      * 
      * @param userData
@@ -1525,8 +1526,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, Base64-encoding is
-     *        performed for you, and you can load the text from a file. Otherwise, you must provide Base64-encoded text.
+     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is
+     *        performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1747,19 +1748,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
-     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
-     *        optimization isn't available with all instance types. Additional usage charges apply when using an
-     *        EBS-optimized instance.</p>
+     *        Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *        throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
+     *        performance. This optimization isn't available with all instance types. Additional usage charges apply
+     *        when using an EBS-optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -1770,18 +1772,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
-     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *         to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
-     *         optimization isn't available with all instance types. Additional usage charges apply when using an
-     *         EBS-optimized instance.</p>
+     * @return Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
+     *         performance. This optimization isn't available with all instance types. Additional usage charges apply
+     *         when using an EBS-optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1792,19 +1795,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
-     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *        to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
-     *        optimization isn't available with all instance types. Additional usage charges apply when using an
-     *        EBS-optimized instance.</p>
+     *        Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *        throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
+     *        performance. This optimization isn't available with all instance types. Additional usage charges apply
+     *        when using an EBS-optimized instance.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1817,18 +1821,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
-     * available with all instance types. Additional usage charges apply when using an EBS-optimized instance.
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized
+     * instance.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *         to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This
-     *         optimization isn't available with all instance types. Additional usage charges apply when using an
-     *         EBS-optimized instance.</p>
+     * @return Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O
+     *         performance. This optimization isn't available with all instance types. Additional usage charges apply
+     *         when using an EBS-optimized instance.</p>
      *         <p>
      *         Default: <code>false</code>
      */

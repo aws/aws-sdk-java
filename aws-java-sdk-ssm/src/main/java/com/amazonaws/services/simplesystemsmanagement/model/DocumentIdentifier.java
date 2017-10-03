@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the name of an SSM document.
+ * Describes the name of a Systems Manager document.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier" target="_top">AWS API
@@ -30,13 +30,13 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The AWS user account of the person who created the document.
+     * The AWS user account that created the document.
      * </p>
      */
     private String owner;
@@ -64,14 +64,20 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String schemaVersion;
+    /**
+     * <p>
+     * The tags, or metadata, that have been applied to the document.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      * 
      * @param name
-     *        The name of the SSM document.
+     *        The name of the Systems Manager document.
      */
 
     public void setName(String name) {
@@ -80,10 +86,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      * 
-     * @return The name of the SSM document.
+     * @return The name of the Systems Manager document.
      */
 
     public String getName() {
@@ -92,11 +98,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      * 
      * @param name
-     *        The name of the SSM document.
+     *        The name of the Systems Manager document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +113,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS user account of the person who created the document.
+     * The AWS user account that created the document.
      * </p>
      * 
      * @param owner
-     *        The AWS user account of the person who created the document.
+     *        The AWS user account that created the document.
      */
 
     public void setOwner(String owner) {
@@ -120,10 +126,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS user account of the person who created the document.
+     * The AWS user account that created the document.
      * </p>
      * 
-     * @return The AWS user account of the person who created the document.
+     * @return The AWS user account that created the document.
      */
 
     public String getOwner() {
@@ -132,11 +138,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS user account of the person who created the document.
+     * The AWS user account that created the document.
      * </p>
      * 
      * @param owner
-     *        The AWS user account of the person who created the document.
+     *        The AWS user account that created the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,6 +408,79 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The tags, or metadata, that have been applied to the document.
+     * </p>
+     * 
+     * @return The tags, or metadata, that have been applied to the document.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags, or metadata, that have been applied to the document.
+     * </p>
+     * 
+     * @param tags
+     *        The tags, or metadata, that have been applied to the document.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags, or metadata, that have been applied to the document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags, or metadata, that have been applied to the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags, or metadata, that have been applied to the document.
+     * </p>
+     * 
+     * @param tags
+     *        The tags, or metadata, that have been applied to the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -423,7 +502,9 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         if (getDocumentType() != null)
             sb.append("DocumentType: ").append(getDocumentType()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: ").append(getSchemaVersion());
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +543,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -476,6 +561,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

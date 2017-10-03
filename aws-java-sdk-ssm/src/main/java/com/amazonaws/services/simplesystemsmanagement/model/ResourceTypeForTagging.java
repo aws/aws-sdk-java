@@ -20,9 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceTypeForTagging {
 
+    Document("Document"),
     ManagedInstance("ManagedInstance"),
     MaintenanceWindow("MaintenanceWindow"),
-    Parameter("Parameter");
+    Parameter("Parameter"),
+    PatchBaseline("PatchBaseline");
 
     private String value;
 

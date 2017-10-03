@@ -47,11 +47,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     private String vpnGatewayId;
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      */
     private VpnConnectionOptionsSpecification options;
@@ -202,18 +198,11 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      * 
      * @param options
-     *        Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
-     *        device that does not support BGP, you must specify <code>true</code>.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        The options for the VPN connection.
      */
 
     public void setOptions(VpnConnectionOptionsSpecification options) {
@@ -222,17 +211,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      * 
-     * @return Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
-     *         device that does not support BGP, you must specify <code>true</code>.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return The options for the VPN connection.
      */
 
     public VpnConnectionOptionsSpecification getOptions() {
@@ -241,18 +223,11 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device
-     * that does not support BGP, you must specify <code>true</code>.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * The options for the VPN connection.
      * </p>
      * 
      * @param options
-     *        Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a
-     *        device that does not support BGP, you must specify <code>true</code>.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        The options for the VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

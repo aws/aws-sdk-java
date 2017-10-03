@@ -43,6 +43,15 @@ public class VpnConnection implements Serializable, Cloneable {
     private String customerGatewayId;
     /**
      * <p>
+     * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     */
+    private String category;
+    /**
+     * <p>
      * The current state of the VPN connection.
      * </p>
      */
@@ -185,6 +194,64 @@ public class VpnConnection implements Serializable, Cloneable {
 
     public VpnConnection withCustomerGatewayId(String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param category
+     *        The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value
+     *        of <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     *        Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     */
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * <p>
+     * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value
+     *         of <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     *         Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * <p>
+     * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param category
+     *        The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value
+     *        of <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
+     *        Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnection withCategory(String category) {
+        setCategory(category);
         return this;
     }
 
@@ -692,6 +759,8 @@ public class VpnConnection implements Serializable, Cloneable {
             sb.append("CustomerGatewayConfiguration: ").append(getCustomerGatewayConfiguration()).append(",");
         if (getCustomerGatewayId() != null)
             sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
+        if (getCategory() != null)
+            sb.append("Category: ").append(getCategory()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
@@ -729,6 +798,10 @@ public class VpnConnection implements Serializable, Cloneable {
         if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null)
             return false;
         if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false)
+            return false;
+        if (other.getCategory() == null ^ this.getCategory() == null)
+            return false;
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -772,6 +845,7 @@ public class VpnConnection implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getCustomerGatewayConfiguration() == null) ? 0 : getCustomerGatewayConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId().hashCode());

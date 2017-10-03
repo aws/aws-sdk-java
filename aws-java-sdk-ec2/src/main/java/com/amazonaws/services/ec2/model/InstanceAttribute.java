@@ -53,7 +53,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O.
+     * Indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      */
     private Boolean ebsOptimized;
@@ -102,9 +102,9 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private String rootDeviceName;
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
-     * perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -381,11 +381,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O.
+     * Indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O.
+     *        Indicates whether the instance is optimized for Amazon EBS I/O.
      */
 
     public void setEbsOptimized(Boolean ebsOptimized) {
@@ -394,10 +394,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O.
+     * Indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O.
+     * @return Indicates whether the instance is optimized for Amazon EBS I/O.
      */
 
     public Boolean getEbsOptimized() {
@@ -406,11 +406,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O.
+     * Indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O.
+     *        Indicates whether the instance is optimized for Amazon EBS I/O.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,10 +421,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O.
+     * Indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O.
+     * @return Indicates whether the instance is optimized for Amazon EBS I/O.
      */
 
     public Boolean isEbsOptimized() {
@@ -752,15 +752,15 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
-     * perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
-     *        enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
-     *        NAT instance to perform NAT.
+     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking
+     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
+     *        for a NAT instance to perform NAT.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -769,14 +769,14 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
-     * perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
-     *         enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
-     *         NAT instance to perform NAT.
+     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means that
+     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
+     *         <code>false</code> for a NAT instance to perform NAT.
      */
 
     public Boolean getSourceDestCheck() {
@@ -785,15 +785,15 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
-     * perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
-     *        enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
-     *        NAT instance to perform NAT.
+     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking
+     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
+     *        for a NAT instance to perform NAT.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,14 +804,14 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
-     * perform NAT.
+     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
-     *         enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
-     *         NAT instance to perform NAT.
+     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means that
+     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
+     *         <code>false</code> for a NAT instance to perform NAT.
      */
 
     public Boolean isSourceDestCheck() {

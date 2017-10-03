@@ -58,6 +58,26 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
             if (options.getStaticRoutesOnly() != null) {
                 request.addParameter("Options.StaticRoutesOnly", StringUtils.fromBoolean(options.getStaticRoutesOnly()));
             }
+
+            com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification> vpnConnectionOptionsSpecificationTunnelOptionsList = (com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification>) options
+                    .getTunnelOptions();
+            if (!vpnConnectionOptionsSpecificationTunnelOptionsList.isEmpty() || !vpnConnectionOptionsSpecificationTunnelOptionsList.isAutoConstruct()) {
+                int tunnelOptionsListIndex = 1;
+
+                for (VpnTunnelOptionsSpecification vpnConnectionOptionsSpecificationTunnelOptionsListValue : vpnConnectionOptionsSpecificationTunnelOptionsList) {
+
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getTunnelInsideCidr() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".TunnelInsideCidr",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getTunnelInsideCidr()));
+                    }
+
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getPreSharedKey() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".PreSharedKey",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getPreSharedKey()));
+                    }
+                    tunnelOptionsListIndex++;
+                }
+            }
         }
 
         return request;

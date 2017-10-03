@@ -54,7 +54,7 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
     private String name;
     /**
      * <p>
-     * The version of an SSM document used when the association version was created.
+     * The version of a Systems Manager document used when the association version was created.
      * </p>
      */
     private String documentVersion;
@@ -251,11 +251,11 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The version of an SSM document used when the association version was created.
+     * The version of a Systems Manager document used when the association version was created.
      * </p>
      * 
      * @param documentVersion
-     *        The version of an SSM document used when the association version was created.
+     *        The version of a Systems Manager document used when the association version was created.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -264,10 +264,10 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The version of an SSM document used when the association version was created.
+     * The version of a Systems Manager document used when the association version was created.
      * </p>
      * 
-     * @return The version of an SSM document used when the association version was created.
+     * @return The version of a Systems Manager document used when the association version was created.
      */
 
     public String getDocumentVersion() {
@@ -276,11 +276,11 @@ public class AssociationVersionInfo implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The version of an SSM document used when the association version was created.
+     * The version of a Systems Manager document used when the association version was created.
      * </p>
      * 
      * @param documentVersion
-     *        The version of an SSM document used when the association version was created.
+     *        The version of a Systems Manager document used when the association version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

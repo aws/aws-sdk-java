@@ -65,6 +65,12 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
  * Prerequisites</a>.
  * </p>
+ * <p>
+ * For information about other API actions you can perform on Amazon EC2 instances, see the <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about how
+ * to use a Query API, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API Requests</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -527,12 +533,12 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you assign to your managed
-     * instances, Maintenance Windows, or Parameter Store parameters. Tags enable you to categorize your resources in
-     * different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
-     * both of which you define. For example, you could define a set of tags for your account's managed instances that
-     * helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or
-     * Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
+     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your
+     * documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines. Tags enable
+     * you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag
+     * consists of a key and an optional value, both of which you define. For example, you could define a set of tags
+     * for your account's managed instances that helps you track each instance's owner and stack level. For example:
+     * Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
      * </p>
      * <p>
      * Each resource can have a maximum of 10 tags.
@@ -552,8 +558,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param addTagsToResourceRequest
      * @return Result of the AddTagsToResource operation returned by the service.
      * @throws InvalidResourceTypeException
-     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
-     *         registered, managed instance.
+     *         The resource type is not valid. For example, if you are attempting to tag an instance, the instance must
+     *         be a registered, managed instance.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -772,8 +778,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidOutputLocationException
      *         The output location is not valid or does not exist.
      * @throws InvalidParametersException
-     *         You must specify values for all required parameters in the SSM document. You can only supply values to
-     *         parameters defined in the SSM document.
+     *         You must specify values for all required parameters in the Systems Manager document. You can only supply
+     *         values to parameters defined in the Systems Manager document.
      * @throws InvalidTargetException
      *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
      *         might not have permission to perform the operation.
@@ -858,8 +864,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws InvalidParametersException
-     *         You must specify values for all required parameters in the SSM document. You can only supply values to
-     *         parameters defined in the SSM document.
+     *         You must specify values for all required parameters in the Systems Manager document. You can only supply
+     *         values to parameters defined in the Systems Manager document.
      * @throws DuplicateInstanceIdException
      *         You cannot specify an instance ID in more than one association.
      * @throws AssociationLimitExceededException
@@ -935,7 +941,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidDocumentContentException
      *         The content for the document is not valid.
      * @throws DocumentLimitExceededException
-     *         You can have at most 200 active SSM documents.
+     *         You can have at most 200 active Systems Manager documents.
      * @throws InvalidDocumentSchemaVersionException
      *         The version of the document schema is not supported.
      * @sample AWSSimpleSystemsManagement.CreateDocument
@@ -2092,7 +2098,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the specified SSM document.
+     * Describes the specified Systems Manager document.
      * </p>
      * 
      * @param describeDocumentRequest
@@ -3453,7 +3459,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Gets the contents of the specified SSM document.
+     * Gets the contents of the specified Systems Manager document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -4492,8 +4498,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param listComplianceItemsRequest
      * @return Result of the ListComplianceItems operation returned by the service.
      * @throws InvalidResourceTypeException
-     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
-     *         registered, managed instance.
+     *         The resource type is not valid. For example, if you are attempting to tag an instance, the instance must
+     *         be a registered, managed instance.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -4657,7 +4663,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes one or more of your SSM documents.
+     * Describes one or more of your Systems Manager documents.
      * </p>
      * 
      * @param listDocumentsRequest
@@ -4912,8 +4918,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws InvalidResourceTypeException
-     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
-     *         registered, managed instance.
+     *         The resource type is not valid. For example, if you are attempting to tag an instance, the instance must
+     *         be a registered, managed instance.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -4979,7 +4985,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         accounts. You can publicly share up to five documents. If you need to increase this limit, contact AWS
      *         Support.
      * @throws DocumentLimitExceededException
-     *         You can have at most 200 active SSM documents.
+     *         You can have at most 200 active Systems Manager documents.
      * @sample AWSSimpleSystemsManagement.ModifyDocumentPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission" target="_top">AWS
      *      API Documentation</a>
@@ -5043,8 +5049,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws ComplianceTypeCountLimitExceededException
      *         You specified too many custom compliance types. You can specify a maximum of 10 different types.
      * @throws InvalidResourceTypeException
-     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
-     *         registered, managed instance.
+     *         The resource type is not valid. For example, if you are attempting to tag an instance, the instance must
+     *         be a registered, managed instance.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @sample AWSSimpleSystemsManagement.PutComplianceItems
@@ -5508,8 +5514,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param removeTagsFromResourceRequest
      * @return Result of the RemoveTagsFromResource operation returned by the service.
      * @throws InvalidResourceTypeException
-     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
-     *         registered, managed instance.
+     *         The resource type is not valid. For example, if you are attempting to tag an instance, the instance must
+     *         be a registered, managed instance.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -5642,8 +5648,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidOutputFolderException
      *         The S3 bucket does not exist.
      * @throws InvalidParametersException
-     *         You must specify values for all required parameters in the SSM document. You can only supply values to
-     *         parameters defined in the SSM document.
+     *         You must specify values for all required parameters in the Systems Manager document. You can only supply
+     *         values to parameters defined in the Systems Manager document.
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given instance ID(s). For example, you sent an
      *         document for a Windows instance to a Linux instance.
@@ -5830,8 +5836,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidScheduleException
      *         The schedule is invalid. Verify your cron or rate expression and try again.
      * @throws InvalidParametersException
-     *         You must specify values for all required parameters in the SSM document. You can only supply values to
-     *         parameters defined in the SSM document.
+     *         You must specify values for all required parameters in the Systems Manager document. You can only supply
+     *         values to parameters defined in the Systems Manager document.
      * @throws InvalidOutputLocationException
      *         The output location is not valid or does not exist.
      * @throws InvalidDocumentVersionException

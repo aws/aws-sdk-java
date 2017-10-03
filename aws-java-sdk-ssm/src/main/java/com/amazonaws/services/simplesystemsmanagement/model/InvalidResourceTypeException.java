@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource type is not valid. If you are attempting to tag an instance, the instance must be a registered, managed
- * instance.
+ * The resource type is not valid. For example, if you are attempting to tag an instance, the instance must be a
+ * registered, managed instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

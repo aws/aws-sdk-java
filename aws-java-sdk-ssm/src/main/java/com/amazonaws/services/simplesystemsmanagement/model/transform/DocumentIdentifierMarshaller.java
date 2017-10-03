@@ -40,6 +40,8 @@ public class DocumentIdentifierMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentType").build();
     private static final MarshallingInfo<String> SCHEMAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaVersion").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final DocumentIdentifierMarshaller instance = new DocumentIdentifierMarshaller();
 
@@ -63,6 +65,7 @@ public class DocumentIdentifierMarshaller {
             protocolMarshaller.marshall(documentIdentifier.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(documentIdentifier.getDocumentType(), DOCUMENTTYPE_BINDING);
             protocolMarshaller.marshall(documentIdentifier.getSchemaVersion(), SCHEMAVERSION_BINDING);
+            protocolMarshaller.marshall(documentIdentifier.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

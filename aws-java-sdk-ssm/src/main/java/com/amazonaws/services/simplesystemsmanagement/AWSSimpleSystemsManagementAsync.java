@@ -42,18 +42,24 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
  * Prerequisites</a>.
  * </p>
+ * <p>
+ * For information about other API actions you can perform on Amazon EC2 instances, see the <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about how
+ * to use a Query API, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API Requests</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you assign to your managed
-     * instances, Maintenance Windows, or Parameter Store parameters. Tags enable you to categorize your resources in
-     * different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
-     * both of which you define. For example, you could define a set of tags for your account's managed instances that
-     * helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or
-     * Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
+     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your
+     * documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines. Tags enable
+     * you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag
+     * consists of a key and an optional value, both of which you define. For example, you could define a set of tags
+     * for your account's managed instances that helps you track each instance's owner and stack level. For example:
+     * Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
      * </p>
      * <p>
      * Each resource can have a maximum of 10 tags.
@@ -80,12 +86,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you assign to your managed
-     * instances, Maintenance Windows, or Parameter Store parameters. Tags enable you to categorize your resources in
-     * different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
-     * both of which you define. For example, you could define a set of tags for your account's managed instances that
-     * helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or
-     * Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
+     * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your
+     * documents, managed instances, Maintenance Windows, Parameter Store parameters, and patch baselines. Tags enable
+     * you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag
+     * consists of a key and an optional value, both of which you define. For example, you could define a set of tags
+     * for your account's managed instances that helps you track each instance's owner and stack level. For example:
+     * Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
      * </p>
      * <p>
      * Each resource can have a maximum of 10 tags.
@@ -979,7 +985,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the specified SSM document.
+     * Describes the specified Systems Manager document.
      * </p>
      * 
      * @param describeDocumentRequest
@@ -992,7 +998,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the specified SSM document.
+     * Describes the specified Systems Manager document.
      * </p>
      * 
      * @param describeDocumentRequest
@@ -1780,7 +1786,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Gets the contents of the specified SSM document.
+     * Gets the contents of the specified Systems Manager document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -1793,7 +1799,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Gets the contents of the specified SSM document.
+     * Gets the contents of the specified Systems Manager document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -2483,7 +2489,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes one or more of your SSM documents.
+     * Describes one or more of your Systems Manager documents.
      * </p>
      * 
      * @param listDocumentsRequest
@@ -2496,7 +2502,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes one or more of your SSM documents.
+     * Describes one or more of your Systems Manager documents.
      * </p>
      * 
      * @param listDocumentsRequest

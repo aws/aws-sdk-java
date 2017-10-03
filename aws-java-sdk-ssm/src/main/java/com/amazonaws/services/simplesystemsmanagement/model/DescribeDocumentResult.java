@@ -25,18 +25,18 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      */
     private DocumentDescription document;
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      * 
      * @param document
-     *        Information about the SSM document.
+     *        Information about the Systems Manager document.
      */
 
     public void setDocument(DocumentDescription document) {
@@ -45,10 +45,10 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      * 
-     * @return Information about the SSM document.
+     * @return Information about the Systems Manager document.
      */
 
     public DocumentDescription getDocument() {
@@ -57,11 +57,11 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the SSM document.
+     * Information about the Systems Manager document.
      * </p>
      * 
      * @param document
-     *        Information about the SSM document.
+     *        Information about the Systems Manager document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

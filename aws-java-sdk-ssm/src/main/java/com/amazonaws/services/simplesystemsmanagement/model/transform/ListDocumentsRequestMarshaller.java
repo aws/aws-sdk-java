@@ -30,6 +30,8 @@ public class ListDocumentsRequestMarshaller {
 
     private static final MarshallingInfo<List> DOCUMENTFILTERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentFilterList").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class ListDocumentsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listDocumentsRequest.getDocumentFilterList(), DOCUMENTFILTERLIST_BINDING);
+            protocolMarshaller.marshall(listDocumentsRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(listDocumentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listDocumentsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

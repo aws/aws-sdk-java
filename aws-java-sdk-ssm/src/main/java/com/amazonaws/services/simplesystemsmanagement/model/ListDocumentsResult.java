@@ -25,7 +25,7 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentIdentifier> documentIdentifiers;
@@ -39,10 +39,10 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * 
-     * @return The names of the SSM documents.
+     * @return The names of the Systems Manager documents.
      */
 
     public java.util.List<DocumentIdentifier> getDocumentIdentifiers() {
@@ -54,11 +54,11 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the SSM documents.
+     *        The names of the Systems Manager documents.
      */
 
     public void setDocumentIdentifiers(java.util.Collection<DocumentIdentifier> documentIdentifiers) {
@@ -72,7 +72,7 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the SSM documents.
+     *        The names of the Systems Manager documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The names of the SSM documents.
+     * The names of the Systems Manager documents.
      * </p>
      * 
      * @param documentIdentifiers
-     *        The names of the SSM documents.
+     *        The names of the Systems Manager documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

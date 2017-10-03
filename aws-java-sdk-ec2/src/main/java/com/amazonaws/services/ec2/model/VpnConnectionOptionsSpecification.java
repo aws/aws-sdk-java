@@ -28,21 +28,35 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't
-     * support BGP.
+     * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean staticRoutesOnly;
+    /**
+     * <p>
+     * The tunnel options for the VPN connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification> tunnelOptions;
 
     /**
      * <p>
-     * Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't
-     * support BGP.
+     * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param staticRoutesOnly
-     *        Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that
-     *        don't support BGP.
+     *        Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
+     *        device that does not support BGP, you must specify <code>true</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
      */
 
     public void setStaticRoutesOnly(Boolean staticRoutesOnly) {
@@ -51,12 +65,17 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't
-     * support BGP.
+     * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that
-     *         don't support BGP.
+     * @return Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
+     *         device that does not support BGP, you must specify <code>true</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean getStaticRoutesOnly() {
@@ -65,13 +84,18 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't
-     * support BGP.
+     * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param staticRoutesOnly
-     *        Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that
-     *        don't support BGP.
+     *        Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
+     *        device that does not support BGP, you must specify <code>true</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,16 +106,94 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't
-     * support BGP.
+     * Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a device
+     * that does not support BGP, you must specify <code>true</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that
-     *         don't support BGP.
+     * @return Indicate whether the VPN connection uses static routes only. If you are creating a VPN connection for a
+     *         device that does not support BGP, you must specify <code>true</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
 
     public Boolean isStaticRoutesOnly() {
         return this.staticRoutesOnly;
+    }
+
+    /**
+     * <p>
+     * The tunnel options for the VPN connection.
+     * </p>
+     * 
+     * @return The tunnel options for the VPN connection.
+     */
+
+    public java.util.List<VpnTunnelOptionsSpecification> getTunnelOptions() {
+        if (tunnelOptions == null) {
+            tunnelOptions = new com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification>();
+        }
+        return tunnelOptions;
+    }
+
+    /**
+     * <p>
+     * The tunnel options for the VPN connection.
+     * </p>
+     * 
+     * @param tunnelOptions
+     *        The tunnel options for the VPN connection.
+     */
+
+    public void setTunnelOptions(java.util.Collection<VpnTunnelOptionsSpecification> tunnelOptions) {
+        if (tunnelOptions == null) {
+            this.tunnelOptions = null;
+            return;
+        }
+
+        this.tunnelOptions = new com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification>(tunnelOptions);
+    }
+
+    /**
+     * <p>
+     * The tunnel options for the VPN connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTunnelOptions(java.util.Collection)} or {@link #withTunnelOptions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param tunnelOptions
+     *        The tunnel options for the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withTunnelOptions(VpnTunnelOptionsSpecification... tunnelOptions) {
+        if (this.tunnelOptions == null) {
+            setTunnelOptions(new com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification>(tunnelOptions.length));
+        }
+        for (VpnTunnelOptionsSpecification ele : tunnelOptions) {
+            this.tunnelOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tunnel options for the VPN connection.
+     * </p>
+     * 
+     * @param tunnelOptions
+     *        The tunnel options for the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withTunnelOptions(java.util.Collection<VpnTunnelOptionsSpecification> tunnelOptions) {
+        setTunnelOptions(tunnelOptions);
+        return this;
     }
 
     /**
@@ -106,7 +208,9 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStaticRoutesOnly() != null)
-            sb.append("StaticRoutesOnly: ").append(getStaticRoutesOnly());
+            sb.append("StaticRoutesOnly: ").append(getStaticRoutesOnly()).append(",");
+        if (getTunnelOptions() != null)
+            sb.append("TunnelOptions: ").append(getTunnelOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -125,6 +229,10 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
             return false;
         if (other.getStaticRoutesOnly() != null && other.getStaticRoutesOnly().equals(this.getStaticRoutesOnly()) == false)
             return false;
+        if (other.getTunnelOptions() == null ^ this.getTunnelOptions() == null)
+            return false;
+        if (other.getTunnelOptions() != null && other.getTunnelOptions().equals(this.getTunnelOptions()) == false)
+            return false;
         return true;
     }
 
@@ -134,6 +242,7 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStaticRoutesOnly() == null) ? 0 : getStaticRoutesOnly().hashCode());
+        hashCode = prime * hashCode + ((getTunnelOptions() == null) ? 0 : getTunnelOptions().hashCode());
         return hashCode;
     }
 

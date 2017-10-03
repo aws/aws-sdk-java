@@ -1,3 +1,12 @@
+# __1.11.207__ __2017-10-03__
+## __Amazon EC2__
+  - ### Features
+    - This release includes service updates to AWS VPN.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - EC2 Systems Manager support for tagging SSM Documents. Also support for tag-based permissions to restrict access to SSM Documents based on these tags.
+
 # __1.11.206__ __2017-10-02__
 ## __AWS CloudHSM__
   - ### Features

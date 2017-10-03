@@ -60,7 +60,7 @@ public class PurchaseHostReservationResultStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
-                if (context.testExpression("purchase/member", targetDepth)) {
+                if (context.testExpression("purchase/item", targetDepth)) {
                     purchaseHostReservationResult.withPurchase(PurchaseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

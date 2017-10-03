@@ -119,7 +119,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      * </p>
      * </li>
      * <li>
@@ -129,28 +129,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.description</code> - A description of the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
+     * address.
      * </p>
      * </li>
      * <li>
@@ -161,18 +146,33 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.description</code> - A description of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.group-id</code> - The ID of the security group associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.group-name</code> - The name of the security group associated with the network interface.
+     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
-     * address.
+     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      * </p>
      * </li>
      * <li>
@@ -235,11 +235,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
@@ -353,7 +348,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      * </p>
      * </li>
      * <li>
@@ -363,28 +358,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.description</code> - A description of the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
+     * address.
      * </p>
      * </li>
      * <li>
@@ -395,18 +375,33 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.description</code> - A description of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.group-id</code> - The ID of the security group associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.group-name</code> - The name of the security group associated with the network interface.
+     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
-     * address.
+     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      * </p>
      * </li>
      * <li>
@@ -469,11 +464,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
@@ -577,7 +567,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     *         <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      *         </p>
      *         </li>
      *         <li>
@@ -587,29 +577,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *         <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.device-index</code> - The index of the device for the network interface
-     *         attachment on the instance.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-interface.description</code> - A description of the network interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-interface.private-ip-address</code> - The primary private IP address of the network
-     *         interface.
+     *         <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary
+     *         private IP address.
      *         </p>
      *         </li>
      *         <li>
@@ -620,20 +594,35 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
+     *         <code>network-interface.description</code> - A description of the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.device-index</code> - The index of the device for the network interface
+     *         attachment on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>network-interface.group-id</code> - The ID of the security group associated with the network
      *         interface.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.group-name</code> - The name of the security group associated with the network
+     *         <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.private-ip-address</code> - The primary private IP address of the network
      *         interface.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary
-     *         private IP address.
+     *         <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      *         </p>
      *         </li>
      *         <li>
@@ -698,11 +687,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *         </p>
      *         </li>
      *         <li>
@@ -815,7 +799,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      * </p>
      * </li>
      * <li>
@@ -825,28 +809,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.description</code> - A description of the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
+     * address.
      * </p>
      * </li>
      * <li>
@@ -857,18 +826,33 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.description</code> - A description of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.group-id</code> - The ID of the security group associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.group-name</code> - The name of the security group associated with the network interface.
+     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
-     * address.
+     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      * </p>
      * </li>
      * <li>
@@ -931,11 +915,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
@@ -1040,7 +1019,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     *        <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1050,29 +1029,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *        <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.device-index</code> - The index of the device for the network interface attachment
-     *        on the instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.description</code> - A description of the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.private-ip-address</code> - The primary private IP address of the network
-     *        interface.
+     *        <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private
+     *        IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -1083,20 +1046,35 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.description</code> - A description of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.device-index</code> - The index of the device for the network interface attachment
+     *        on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.group-id</code> - The ID of the security group associated with the network
      *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.group-name</code> - The name of the security group associated with the network
+     *        <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.private-ip-address</code> - The primary private IP address of the network
      *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private
-     *        IP address.
+     *        <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1161,11 +1139,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *        </p>
      *        </li>
      *        <li>
@@ -1280,7 +1253,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      * </p>
      * </li>
      * <li>
@@ -1290,28 +1263,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.description</code> - A description of the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
+     * address.
      * </p>
      * </li>
      * <li>
@@ -1322,18 +1280,33 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.description</code> - A description of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.group-id</code> - The ID of the security group associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.group-name</code> - The name of the security group associated with the network interface.
+     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
-     * address.
+     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      * </p>
      * </li>
      * <li>
@@ -1396,11 +1369,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
@@ -1510,7 +1478,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     *        <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1520,29 +1488,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *        <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.device-index</code> - The index of the device for the network interface attachment
-     *        on the instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.description</code> - A description of the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.private-ip-address</code> - The primary private IP address of the network
-     *        interface.
+     *        <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private
+     *        IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -1553,20 +1505,35 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.description</code> - A description of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.device-index</code> - The index of the device for the network interface attachment
+     *        on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.group-id</code> - The ID of the security group associated with the network
      *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.group-name</code> - The name of the security group associated with the network
+     *        <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.private-ip-address</code> - The primary private IP address of the network
      *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private
-     *        IP address.
+     *        <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1631,11 +1598,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *        </p>
      *        </li>
      *        <li>
@@ -1752,7 +1714,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      * </p>
      * </li>
      * <li>
@@ -1762,28 +1724,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.description</code> - A description of the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
+     * address.
      * </p>
      * </li>
      * <li>
@@ -1794,18 +1741,33 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.description</code> - A description of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.device-index</code> - The index of the device for the network interface attachment on the
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.group-id</code> - The ID of the security group associated with the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.group-name</code> - The name of the security group associated with the network interface.
+     * <code>network-interface.network-interface-id</code> - The ID of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private IP
-     * address.
+     * <code>network-interface.private-ip-address</code> - The primary private IP address of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      * </p>
      * </li>
      * <li>
@@ -1868,11 +1830,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      * </p>
      * </li>
      * <li>
@@ -1977,7 +1934,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.monitoring-enabled</code> - Whether monitoring is enabled for the Spot instance.
+     *        <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled for the Spot instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1987,29 +1944,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *        <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.device-index</code> - The index of the device for the network interface attachment
-     *        on the instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.description</code> - A description of the network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.private-ip-address</code> - The primary private IP address of the network
-     *        interface.
+     *        <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private
+     *        IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -2020,20 +1961,35 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.description</code> - A description of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.device-index</code> - The index of the device for the network interface attachment
+     *        on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.group-id</code> - The ID of the security group associated with the network
      *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.group-name</code> - The name of the security group associated with the network
+     *        <code>network-interface.network-interface-id</code> - The ID of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.private-ip-address</code> - The primary private IP address of the network
      *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.primary</code> - Indicates whether the IP address is the primary private
-     *        IP address.
+     *        <code>network-interface.subnet-id</code> - The ID of the subnet for the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -2098,11 +2054,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>type</code> - The type of Spot instance request (<code>one-time</code> | <code>persistent</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>launched-availability-zone</code> - The Availability Zone in which the bid is launched.
      *        </p>
      *        </li>
      *        <li>

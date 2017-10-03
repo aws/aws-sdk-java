@@ -55,7 +55,7 @@ public class GetHostReservationPurchasePreviewResultStaxUnmarshaller implements 
                     continue;
                 }
 
-                if (context.testExpression("purchase/member", targetDepth)) {
+                if (context.testExpression("purchase/item", targetDepth)) {
                     getHostReservationPurchasePreviewResult.withPurchase(PurchaseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

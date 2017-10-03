@@ -91,7 +91,7 @@ public class Instance implements Serializable, Cloneable {
      * Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.
      * </p>
      * <p>
-     * [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've enabled DNS
+     * [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS
      * resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your
      * custom domain name servers must resolve the hostname as appropriate.
      * </p>
@@ -173,8 +173,8 @@ public class Instance implements Serializable, Cloneable {
     private String clientToken;
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
      * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      */
@@ -199,7 +199,7 @@ public class Instance implements Serializable, Cloneable {
     private IamInstanceProfile iamInstanceProfile;
     /**
      * <p>
-     * Indicates whether this is a Spot instance or a Scheduled Instance.
+     * Indicates whether this is a Spot Instance or a Scheduled Instance.
      * </p>
      */
     private String instanceLifecycle;
@@ -236,9 +236,9 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to
-     * perform NAT. For more information, see <a
+     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
+     * instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
@@ -246,7 +246,7 @@ public class Instance implements Serializable, Cloneable {
     private Boolean sourceDestCheck;
     /**
      * <p>
-     * If the request is a Spot instance request, the ID of the request.
+     * If the request is a Spot Instance request, the ID of the request.
      * </p>
      */
     private String spotInstanceRequestId;
@@ -751,7 +751,7 @@ public class Instance implements Serializable, Cloneable {
      * Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.
      * </p>
      * <p>
-     * [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've enabled DNS
+     * [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS
      * resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your
      * custom domain name servers must resolve the hostname as appropriate.
      * </p>
@@ -761,9 +761,9 @@ public class Instance implements Serializable, Cloneable {
      *        inside the Amazon EC2 network. This name is not available until the instance enters the
      *        <code>running</code> state. </p>
      *        <p>
-     *        [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've
-     *        enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server
-     *        in your VPC, your custom domain name servers must resolve the hostname as appropriate.
+     *        [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled
+     *        DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your
+     *        VPC, your custom domain name servers must resolve the hostname as appropriate.
      */
 
     public void setPrivateDnsName(String privateDnsName) {
@@ -776,7 +776,7 @@ public class Instance implements Serializable, Cloneable {
      * Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.
      * </p>
      * <p>
-     * [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've enabled DNS
+     * [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS
      * resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your
      * custom domain name servers must resolve the hostname as appropriate.
      * </p>
@@ -785,9 +785,9 @@ public class Instance implements Serializable, Cloneable {
      *         inside the Amazon EC2 network. This name is not available until the instance enters the
      *         <code>running</code> state. </p>
      *         <p>
-     *         [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've
-     *         enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server
-     *         in your VPC, your custom domain name servers must resolve the hostname as appropriate.
+     *         [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled
+     *         DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your
+     *         VPC, your custom domain name servers must resolve the hostname as appropriate.
      */
 
     public String getPrivateDnsName() {
@@ -800,7 +800,7 @@ public class Instance implements Serializable, Cloneable {
      * Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state.
      * </p>
      * <p>
-     * [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've enabled DNS
+     * [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS
      * resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your
      * custom domain name servers must resolve the hostname as appropriate.
      * </p>
@@ -810,9 +810,9 @@ public class Instance implements Serializable, Cloneable {
      *        inside the Amazon EC2 network. This name is not available until the instance enters the
      *        <code>running</code> state. </p>
      *        <p>
-     *        [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS hostnames if you've
-     *        enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server
-     *        in your VPC, your custom domain name servers must resolve the hostname as appropriate.
+     *        [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled
+     *        DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your
+     *        VPC, your custom domain name servers must resolve the hostname as appropriate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1416,16 +1416,16 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
      * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *        to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization
-     *        isn't available with all instance types. Additional usage charges apply when using an EBS Optimized
-     *        instance.
+     *        Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *        throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *        Optimized instance.
      */
 
     public void setEbsOptimized(Boolean ebsOptimized) {
@@ -1434,15 +1434,15 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
      * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *         to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization
-     *         isn't available with all instance types. Additional usage charges apply when using an EBS Optimized
-     *         instance.
+     * @return Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This
+     *         optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *         Optimized instance.
      */
 
     public Boolean getEbsOptimized() {
@@ -1451,16 +1451,16 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
      * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * 
      * @param ebsOptimized
-     *        Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *        to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization
-     *        isn't available with all instance types. Additional usage charges apply when using an EBS Optimized
-     *        instance.
+     *        Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *        throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This
+     *        optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *        Optimized instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1471,15 +1471,15 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
-     * Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
+     * Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput
+     * to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't
      * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
      * </p>
      * 
-     * @return Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput
-     *         to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization
-     *         isn't available with all instance types. Additional usage charges apply when using an EBS Optimized
-     *         instance.
+     * @return Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated
+     *         throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This
+     *         optimization isn't available with all instance types. Additional usage charges apply when using an EBS
+     *         Optimized instance.
      */
 
     public Boolean isEbsOptimized() {
@@ -1655,11 +1655,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance or a Scheduled Instance.
+     * Indicates whether this is a Spot Instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance or a Scheduled Instance.
+     *        Indicates whether this is a Spot Instance or a Scheduled Instance.
      * @see InstanceLifecycleType
      */
 
@@ -1669,10 +1669,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance or a Scheduled Instance.
+     * Indicates whether this is a Spot Instance or a Scheduled Instance.
      * </p>
      * 
-     * @return Indicates whether this is a Spot instance or a Scheduled Instance.
+     * @return Indicates whether this is a Spot Instance or a Scheduled Instance.
      * @see InstanceLifecycleType
      */
 
@@ -1683,11 +1683,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance or a Scheduled Instance.
+     * Indicates whether this is a Spot Instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance or a Scheduled Instance.
+     *        Indicates whether this is a Spot Instance or a Scheduled Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceLifecycleType
      */
@@ -1699,11 +1699,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance or a Scheduled Instance.
+     * Indicates whether this is a Spot Instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance or a Scheduled Instance.
+     *        Indicates whether this is a Spot Instance or a Scheduled Instance.
      * @see InstanceLifecycleType
      */
 
@@ -1714,11 +1714,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this is a Spot instance or a Scheduled Instance.
+     * Indicates whether this is a Spot Instance or a Scheduled Instance.
      * </p>
      * 
      * @param instanceLifecycle
-     *        Indicates whether this is a Spot instance or a Scheduled Instance.
+     *        Indicates whether this is a Spot Instance or a Scheduled Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceLifecycleType
      */
@@ -2065,18 +2065,18 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to
-     * perform NAT. For more information, see <a
+     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
+     * instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param sourceDestCheck
      *        Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *        source/destination checking is enabled on the instance. A value of <code>true</code> means checking is
-     *        enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the
-     *        instance to perform NAT. For more information, see <a
+     *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
+     *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
+     *        for the instance to perform NAT. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *        the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -2088,17 +2088,17 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to
-     * perform NAT. For more information, see <a
+     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
+     * instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *         source/destination checking is enabled on the instance. A value of <code>true</code> means checking is
-     *         enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the
-     *         instance to perform NAT. For more information, see <a
+     *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
+     *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
+     *         for the instance to perform NAT. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *         the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -2110,18 +2110,18 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to
-     * perform NAT. For more information, see <a
+     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
+     * instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param sourceDestCheck
      *        Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *        source/destination checking is enabled on the instance. A value of <code>true</code> means checking is
-     *        enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the
-     *        instance to perform NAT. For more information, see <a
+     *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
+     *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
+     *        for the instance to perform NAT. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *        the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2135,17 +2135,17 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means checking is enabled,
-     * and <code>false</code> means checking is disabled. The value must be <code>false</code> for the instance to
-     * perform NAT. For more information, see <a
+     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
+     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
+     * instance to perform NAT. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *         source/destination checking is enabled on the instance. A value of <code>true</code> means checking is
-     *         enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code> for the
-     *         instance to perform NAT. For more information, see <a
+     *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
+     *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
+     *         for the instance to perform NAT. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *         the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -2156,11 +2156,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request is a Spot instance request, the ID of the request.
+     * If the request is a Spot Instance request, the ID of the request.
      * </p>
      * 
      * @param spotInstanceRequestId
-     *        If the request is a Spot instance request, the ID of the request.
+     *        If the request is a Spot Instance request, the ID of the request.
      */
 
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
@@ -2169,10 +2169,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request is a Spot instance request, the ID of the request.
+     * If the request is a Spot Instance request, the ID of the request.
      * </p>
      * 
-     * @return If the request is a Spot instance request, the ID of the request.
+     * @return If the request is a Spot Instance request, the ID of the request.
      */
 
     public String getSpotInstanceRequestId() {
@@ -2181,11 +2181,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the request is a Spot instance request, the ID of the request.
+     * If the request is a Spot Instance request, the ID of the request.
      * </p>
      * 
      * @param spotInstanceRequestId
-     *        If the request is a Spot instance request, the ID of the request.
+     *        If the request is a Spot Instance request, the ID of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

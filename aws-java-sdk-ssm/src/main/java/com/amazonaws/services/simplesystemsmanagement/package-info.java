@@ -29,6 +29,12 @@
  * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
  * Prerequisites</a>.
  * </p>
+ * <p>
+ * For information about other API actions you can perform on Amazon EC2 instances, see the <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about how
+ * to use a Query API, see <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API Requests</a>.
+ * </p>
  */
 package com.amazonaws.services.simplesystemsmanagement;
 

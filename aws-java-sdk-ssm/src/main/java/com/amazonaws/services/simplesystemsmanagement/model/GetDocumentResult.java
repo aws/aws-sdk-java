@@ -25,7 +25,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      */
     private String name;
@@ -37,7 +37,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String documentVersion;
     /**
      * <p>
-     * The contents of the SSM document.
+     * The contents of the Systems Manager document.
      * </p>
      */
     private String content;
@@ -50,11 +50,11 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      * 
      * @param name
-     *        The name of the SSM document.
+     *        The name of the Systems Manager document.
      */
 
     public void setName(String name) {
@@ -63,10 +63,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      * 
-     * @return The name of the SSM document.
+     * @return The name of the Systems Manager document.
      */
 
     public String getName() {
@@ -75,11 +75,11 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the SSM document.
+     * The name of the Systems Manager document.
      * </p>
      * 
      * @param name
-     *        The name of the SSM document.
+     *        The name of the Systems Manager document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The contents of the SSM document.
+     * The contents of the Systems Manager document.
      * </p>
      * 
      * @param content
-     *        The contents of the SSM document.
+     *        The contents of the Systems Manager document.
      */
 
     public void setContent(String content) {
@@ -143,10 +143,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The contents of the SSM document.
+     * The contents of the Systems Manager document.
      * </p>
      * 
-     * @return The contents of the SSM document.
+     * @return The contents of the Systems Manager document.
      */
 
     public String getContent() {
@@ -155,11 +155,11 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The contents of the SSM document.
+     * The contents of the Systems Manager document.
      * </p>
      * 
      * @param content
-     *        The contents of the SSM document.
+     *        The contents of the Systems Manager document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

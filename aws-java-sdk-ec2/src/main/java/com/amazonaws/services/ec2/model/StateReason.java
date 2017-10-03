@@ -55,7 +55,7 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the market
      * price.
      * </p>
      * </li>
@@ -158,7 +158,7 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the market
      * price.
      * </p>
      * </li>
@@ -218,7 +218,7 @@ public class StateReason implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
+     *        <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the
      *        market price.
      *        </p>
      *        </li>
@@ -283,7 +283,7 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the market
      * price.
      * </p>
      * </li>
@@ -342,7 +342,7 @@ public class StateReason implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
+     *         <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the
      *         market price.
      *         </p>
      *         </li>
@@ -407,7 +407,7 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the market
      * price.
      * </p>
      * </li>
@@ -467,7 +467,7 @@ public class StateReason implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
+     *        <code>Server.SpotInstanceTermination</code>: A Spot Instance was terminated due to an increase in the
      *        market price.
      *        </p>
      *        </li>

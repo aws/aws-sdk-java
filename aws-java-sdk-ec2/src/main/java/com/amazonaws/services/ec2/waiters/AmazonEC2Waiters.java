@@ -339,9 +339,10 @@ public class AmazonEC2Waiters {
 
         return new WaiterBuilder<DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResult>()
                 .withSdkFunction(new DescribeSpotInstanceRequestsFunction(client))
-                .withAcceptors(new SpotInstanceRequestFulfilled.IsFulfilledMatcher(), new SpotInstanceRequestFulfilled.IsScheduleexpiredMatcher(),
-                        new SpotInstanceRequestFulfilled.IsCanceledbeforefulfillmentMatcher(), new SpotInstanceRequestFulfilled.IsBadparametersMatcher(),
-                        new SpotInstanceRequestFulfilled.IsSystemerrorMatcher(),
+                .withAcceptors(new SpotInstanceRequestFulfilled.IsFulfilledMatcher(),
+                        new SpotInstanceRequestFulfilled.IsRequestcanceledandinstancerunningMatcher(),
+                        new SpotInstanceRequestFulfilled.IsScheduleexpiredMatcher(), new SpotInstanceRequestFulfilled.IsCanceledbeforefulfillmentMatcher(),
+                        new SpotInstanceRequestFulfilled.IsBadparametersMatcher(), new SpotInstanceRequestFulfilled.IsSystemerrorMatcher(),
                         new SpotInstanceRequestFulfilled.IsInvalidSpotInstanceRequestIDNotFoundMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
