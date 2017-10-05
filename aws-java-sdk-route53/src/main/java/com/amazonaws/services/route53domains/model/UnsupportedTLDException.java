@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Route 53 does not support this top-level domain.
+ * Amazon Route 53 does not support this top-level domain (TLD).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

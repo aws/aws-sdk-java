@@ -125,7 +125,6 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see TriggerType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }

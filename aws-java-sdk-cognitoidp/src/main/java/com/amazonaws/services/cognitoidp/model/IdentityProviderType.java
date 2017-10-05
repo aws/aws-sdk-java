@@ -180,7 +180,6 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * @see IdentityProviderTypeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("providerType")
     public String getProviderType() {
         return this.providerType;
     }
@@ -211,7 +210,6 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      * @see IdentityProviderTypeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProviderType(IdentityProviderTypeType providerType) {
         withProviderType(providerType);
     }

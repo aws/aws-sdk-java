@@ -237,7 +237,6 @@ public class Diagnostics implements Serializable, Cloneable, StructuredPojo {
      * @see LifecycleErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -394,7 +393,6 @@ public class Diagnostics implements Serializable, Cloneable, StructuredPojo {
      * @see LifecycleErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setErrorCode(LifecycleErrorCode errorCode) {
         withErrorCode(errorCode);
     }

@@ -242,7 +242,6 @@ public class EventTopic implements Serializable, Cloneable, StructuredPojo {
      * @see TopicStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -273,7 +272,6 @@ public class EventTopic implements Serializable, Cloneable, StructuredPojo {
      * @see TopicStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(TopicStatus status) {
         withStatus(status);
     }

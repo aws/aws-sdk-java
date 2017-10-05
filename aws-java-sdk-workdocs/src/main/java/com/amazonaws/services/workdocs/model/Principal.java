@@ -110,7 +110,6 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
      * @see PrincipalType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -141,7 +140,6 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
      * @see PrincipalType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PrincipalType type) {
         withType(type);
     }

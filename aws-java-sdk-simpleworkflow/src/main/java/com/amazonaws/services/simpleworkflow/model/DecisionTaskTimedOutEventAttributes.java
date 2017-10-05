@@ -73,7 +73,6 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable, Clonea
      * @see DecisionTaskTimeoutType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("timeoutType")
     public String getTimeoutType() {
         return this.timeoutType;
     }
@@ -104,7 +103,6 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable, Clonea
      * @see DecisionTaskTimeoutType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeoutType(DecisionTaskTimeoutType timeoutType) {
         withTimeoutType(timeoutType);
     }

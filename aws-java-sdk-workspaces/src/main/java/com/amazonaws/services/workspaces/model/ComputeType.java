@@ -58,7 +58,6 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
      * @see Compute
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -89,7 +88,6 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
      * @see Compute
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(Compute name) {
         withName(name);
     }

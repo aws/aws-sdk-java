@@ -285,7 +285,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ServiceNamespace
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
     public String getServiceNamespace() {
         return this.serviceNamespace;
     }
@@ -324,7 +323,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ServiceNamespace
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         withServiceNamespace(serviceNamespace);
     }
@@ -820,7 +818,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalableDimension
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scalableDimension")
     public String getScalableDimension() {
         return this.scalableDimension;
     }
@@ -1027,7 +1024,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalableDimension
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         withScalableDimension(scalableDimension);
     }
@@ -1159,7 +1155,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see PolicyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     public String getPolicyType() {
         return this.policyType;
     }
@@ -1190,7 +1185,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see PolicyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPolicyType(PolicyType policyType) {
         withPolicyType(policyType);
     }

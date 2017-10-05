@@ -459,7 +459,6 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see KeyUsageType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("keyUsage")
     public String getKeyUsage() {
         return this.keyUsage;
     }
@@ -500,7 +499,6 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see KeyUsageType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeyUsage(KeyUsageType keyUsage) {
         withKeyUsage(keyUsage);
     }
@@ -589,7 +587,6 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see OriginType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("origin")
     public String getOrigin() {
         return this.origin;
     }
@@ -660,7 +657,6 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see OriginType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrigin(OriginType origin) {
         withOrigin(origin);
     }

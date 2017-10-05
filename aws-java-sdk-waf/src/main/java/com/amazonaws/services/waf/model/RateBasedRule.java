@@ -379,7 +379,6 @@ public class RateBasedRule implements Serializable, Cloneable, StructuredPojo {
      * @see RateKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("rateKey")
     public String getRateKey() {
         return this.rateKey;
     }
@@ -422,7 +421,6 @@ public class RateBasedRule implements Serializable, Cloneable, StructuredPojo {
      * @see RateKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRateKey(RateKey rateKey) {
         withRateKey(rateKey);
     }

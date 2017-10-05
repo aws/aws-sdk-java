@@ -512,7 +512,6 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
      * @see StreamViewType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("streamViewType")
     public String getStreamViewType() {
         return this.streamViewType;
     }
@@ -629,7 +628,6 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
      * @see StreamViewType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStreamViewType(StreamViewType streamViewType) {
         withStreamViewType(streamViewType);
     }

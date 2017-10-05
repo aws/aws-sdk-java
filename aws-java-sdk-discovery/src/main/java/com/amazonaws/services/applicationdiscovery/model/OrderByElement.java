@@ -101,7 +101,6 @@ public class OrderByElement implements Serializable, Cloneable, StructuredPojo {
      * @see OrderString
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -132,7 +131,6 @@ public class OrderByElement implements Serializable, Cloneable, StructuredPojo {
      * @see OrderString
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(OrderString sortOrder) {
         withSortOrder(sortOrder);
     }

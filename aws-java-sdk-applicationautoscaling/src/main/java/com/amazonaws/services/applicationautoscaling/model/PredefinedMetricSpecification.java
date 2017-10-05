@@ -65,7 +65,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * @see MetricType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("predefinedMetricType")
     public String getPredefinedMetricType() {
         return this.predefinedMetricType;
     }
@@ -96,7 +95,6 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      * @see MetricType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPredefinedMetricType(MetricType predefinedMetricType) {
         withPredefinedMetricType(predefinedMetricType);
     }

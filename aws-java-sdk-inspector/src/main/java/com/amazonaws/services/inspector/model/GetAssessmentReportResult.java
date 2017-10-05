@@ -60,7 +60,6 @@ public class GetAssessmentReportResult extends com.amazonaws.AmazonWebServiceRes
      * @see ReportStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -91,7 +90,6 @@ public class GetAssessmentReportResult extends com.amazonaws.AmazonWebServiceRes
      * @see ReportStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ReportStatus status) {
         withStatus(status);
     }

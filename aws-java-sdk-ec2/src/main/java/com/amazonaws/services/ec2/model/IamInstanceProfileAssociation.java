@@ -200,7 +200,6 @@ public class IamInstanceProfileAssociation implements Serializable, Cloneable {
      * @see IamInstanceProfileAssociationState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -231,7 +230,6 @@ public class IamInstanceProfileAssociation implements Serializable, Cloneable {
      * @see IamInstanceProfileAssociationState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(IamInstanceProfileAssociationState state) {
         withState(state);
     }

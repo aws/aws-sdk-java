@@ -135,7 +135,6 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * @see VolumeStatusInfoStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -166,7 +165,6 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      * @see VolumeStatusInfoStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(VolumeStatusInfoStatus status) {
         withStatus(status);
     }

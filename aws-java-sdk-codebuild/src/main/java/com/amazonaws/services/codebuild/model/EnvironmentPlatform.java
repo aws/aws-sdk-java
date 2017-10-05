@@ -64,7 +64,6 @@ public class EnvironmentPlatform implements Serializable, Cloneable, StructuredP
      * @see PlatformType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -95,7 +94,6 @@ public class EnvironmentPlatform implements Serializable, Cloneable, StructuredP
      * @see PlatformType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(PlatformType platform) {
         withPlatform(platform);
     }

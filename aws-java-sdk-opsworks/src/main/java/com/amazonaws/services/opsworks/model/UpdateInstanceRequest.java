@@ -398,7 +398,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see AutoScalingType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("autoScalingType")
     public String getAutoScalingType() {
         return this.autoScalingType;
     }
@@ -429,7 +428,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see AutoScalingType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         withAutoScalingType(autoScalingType);
     }
@@ -976,7 +974,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Architecture
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     public String getArchitecture() {
         return this.architecture;
     }
@@ -1017,7 +1014,6 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see Architecture
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setArchitecture(Architecture architecture) {
         withArchitecture(architecture);
     }

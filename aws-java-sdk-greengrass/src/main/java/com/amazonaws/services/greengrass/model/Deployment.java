@@ -158,7 +158,6 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * @see DeploymentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     public String getDeploymentType() {
         return this.deploymentType;
     }

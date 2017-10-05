@@ -106,7 +106,6 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     public String getIpAddressType() {
         return this.ipAddressType;
     }
@@ -141,7 +140,6 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         withIpAddressType(ipAddressType);
     }

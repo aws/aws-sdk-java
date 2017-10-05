@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
  *      target="_top">AWS API Documentation</a>
@@ -45,6 +44,15 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private InputStartingPositionConfiguration inputStartingPositionConfiguration;
+
+    private S3Configuration s3Configuration;
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     * records.
+     * </p>
+     */
+    private InputProcessingConfiguration inputProcessingConfiguration;
 
     /**
      * <p>
@@ -173,6 +181,78 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * @param s3Configuration
+     */
+
+    public void setS3Configuration(S3Configuration s3Configuration) {
+        this.s3Configuration = s3Configuration;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Configuration getS3Configuration() {
+        return this.s3Configuration;
+    }
+
+    /**
+     * @param s3Configuration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInputSchemaRequest withS3Configuration(S3Configuration s3Configuration) {
+        setS3Configuration(s3Configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     * records.
+     * </p>
+     * 
+     * @param inputProcessingConfiguration
+     *        The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of
+     *        the records.
+     */
+
+    public void setInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
+        this.inputProcessingConfiguration = inputProcessingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     * records.
+     * </p>
+     * 
+     * @return The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of
+     *         the records.
+     */
+
+    public InputProcessingConfiguration getInputProcessingConfiguration() {
+        return this.inputProcessingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the
+     * records.
+     * </p>
+     * 
+     * @param inputProcessingConfiguration
+     *        The <a>InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of
+     *        the records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverInputSchemaRequest withInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
+        setInputProcessingConfiguration(inputProcessingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -188,7 +268,11 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
         if (getRoleARN() != null)
             sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getInputStartingPositionConfiguration() != null)
-            sb.append("InputStartingPositionConfiguration: ").append(getInputStartingPositionConfiguration());
+            sb.append("InputStartingPositionConfiguration: ").append(getInputStartingPositionConfiguration()).append(",");
+        if (getS3Configuration() != null)
+            sb.append("S3Configuration: ").append(getS3Configuration()).append(",");
+        if (getInputProcessingConfiguration() != null)
+            sb.append("InputProcessingConfiguration: ").append(getInputProcessingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -216,6 +300,14 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getInputStartingPositionConfiguration() != null
                 && other.getInputStartingPositionConfiguration().equals(this.getInputStartingPositionConfiguration()) == false)
             return false;
+        if (other.getS3Configuration() == null ^ this.getS3Configuration() == null)
+            return false;
+        if (other.getS3Configuration() != null && other.getS3Configuration().equals(this.getS3Configuration()) == false)
+            return false;
+        if (other.getInputProcessingConfiguration() == null ^ this.getInputProcessingConfiguration() == null)
+            return false;
+        if (other.getInputProcessingConfiguration() != null && other.getInputProcessingConfiguration().equals(this.getInputProcessingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -227,6 +319,8 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getInputStartingPositionConfiguration() == null) ? 0 : getInputStartingPositionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getS3Configuration() == null) ? 0 : getS3Configuration().hashCode());
+        hashCode = prime * hashCode + ((getInputProcessingConfiguration() == null) ? 0 : getInputProcessingConfiguration().hashCode());
         return hashCode;
     }
 

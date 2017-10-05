@@ -74,7 +74,6 @@ public class SourceAuth implements Serializable, Cloneable, StructuredPojo {
      * @see SourceAuthType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -109,7 +108,6 @@ public class SourceAuth implements Serializable, Cloneable, StructuredPojo {
      * @see SourceAuthType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SourceAuthType type) {
         withType(type);
     }

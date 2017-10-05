@@ -707,7 +707,6 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * @see FileExistsBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("fileExistsBehavior")
     public String getFileExistsBehavior() {
         return this.fileExistsBehavior;
     }
@@ -824,7 +823,6 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * @see FileExistsBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
         withFileExistsBehavior(fileExistsBehavior);
     }

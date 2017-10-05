@@ -233,7 +233,6 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
      * @see DomainStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
     public String getValidationStatus() {
         return this.validationStatus;
     }
@@ -264,7 +263,6 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
      * @see DomainStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setValidationStatus(DomainStatus validationStatus) {
         withValidationStatus(validationStatus);
     }

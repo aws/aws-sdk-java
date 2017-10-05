@@ -285,7 +285,6 @@ public class Qualification implements Serializable, Cloneable, StructuredPojo {
      * @see QualificationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -316,7 +315,6 @@ public class Qualification implements Serializable, Cloneable, StructuredPojo {
      * @see QualificationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(QualificationStatus status) {
         withStatus(status);
     }

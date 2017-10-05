@@ -156,7 +156,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @see SnapshotAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -203,7 +202,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @see SnapshotAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(SnapshotAttributeName attribute) {
         withAttribute(attribute);
     }
@@ -368,7 +366,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @see OperationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     public String getOperationType() {
         return this.operationType;
     }
@@ -399,7 +396,6 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      * @see OperationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperationType(OperationType operationType) {
         withOperationType(operationType);
     }

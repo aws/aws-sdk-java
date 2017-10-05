@@ -274,7 +274,6 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * @see NetworkProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -399,7 +398,6 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * @see NetworkProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(NetworkProtocol protocol) {
         withProtocol(protocol);
     }
@@ -490,7 +488,6 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * @see PortState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -521,7 +518,6 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      * @see PortState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(PortState state) {
         withState(state);
     }

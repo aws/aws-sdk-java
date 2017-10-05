@@ -136,7 +136,6 @@ public class GetCredentialReportResult extends com.amazonaws.AmazonWebServiceRes
      * @see ReportFormatType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
     public String getReportFormat() {
         return this.reportFormat;
     }
@@ -167,7 +166,6 @@ public class GetCredentialReportResult extends com.amazonaws.AmazonWebServiceRes
      * @see ReportFormatType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReportFormat(ReportFormatType reportFormat) {
         withReportFormat(reportFormat);
     }

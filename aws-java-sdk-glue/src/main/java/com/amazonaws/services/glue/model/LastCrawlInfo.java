@@ -88,7 +88,6 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
      * @see LastCrawlStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

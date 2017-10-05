@@ -102,7 +102,6 @@ public class ProductCode implements Serializable, Cloneable {
      * @see ProductCodeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("productCodeType")
     public String getProductCodeType() {
         return this.productCodeType;
     }
@@ -133,7 +132,6 @@ public class ProductCode implements Serializable, Cloneable {
      * @see ProductCodeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductCodeType(ProductCodeValues productCodeType) {
         withProductCodeType(productCodeType);
     }

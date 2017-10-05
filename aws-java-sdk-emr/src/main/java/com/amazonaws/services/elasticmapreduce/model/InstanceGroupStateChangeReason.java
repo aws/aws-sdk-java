@@ -64,7 +64,6 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable, 
      * @see InstanceGroupStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -95,7 +94,6 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable, 
      * @see InstanceGroupStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(InstanceGroupStateChangeReasonCode code) {
         withCode(code);
     }

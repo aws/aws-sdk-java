@@ -130,7 +130,6 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see PutMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("mode")
     public String getMode() {
         return this.mode;
     }
@@ -165,7 +164,6 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see PutMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMode(PutMode mode) {
         withMode(mode);
     }

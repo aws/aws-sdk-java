@@ -41,6 +41,19 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
     }
 
     @Override
+    public java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(CheckDomainTransferabilityRequest request) {
+
+        return checkDomainTransferabilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(CheckDomainTransferabilityRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckDomainTransferabilityRequest, CheckDomainTransferabilityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest request) {
 
         return deleteTagsForDomainAsync(request, null);

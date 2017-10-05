@@ -209,7 +209,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ArtifactCategory
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -318,7 +317,6 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ArtifactCategory
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ArtifactCategory type) {
         withType(type);
     }

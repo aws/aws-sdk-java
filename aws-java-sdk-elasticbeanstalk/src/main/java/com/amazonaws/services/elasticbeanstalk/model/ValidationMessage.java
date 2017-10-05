@@ -172,7 +172,6 @@ public class ValidationMessage implements Serializable, Cloneable {
      * @see ValidationSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("severity")
     public String getSeverity() {
         return this.severity;
     }
@@ -249,7 +248,6 @@ public class ValidationMessage implements Serializable, Cloneable {
      * @see ValidationSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSeverity(ValidationSeverity severity) {
         withSeverity(severity);
     }

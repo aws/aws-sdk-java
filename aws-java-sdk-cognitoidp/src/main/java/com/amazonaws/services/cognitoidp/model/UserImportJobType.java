@@ -626,7 +626,6 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * @see UserImportJobStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -829,7 +828,6 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      * @see UserImportJobStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(UserImportJobStatusType status) {
         withStatus(status);
     }

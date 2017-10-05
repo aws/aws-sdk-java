@@ -154,11 +154,10 @@
         this.${variableName} = ${setter.variableName};
     }
 
+    <#-- Do not add Jackson annotations to enum getters and setters. This can break customers.
+         See commit bda4dd89 in codegen package -->
     ${getterDoc}
     ${deprecated}
-    <#if member.enumType?has_content && shape.type != "Exception">
-    @com.fasterxml.jackson.annotation.JsonProperty("${variableName}")
-    </#if>
     <@AdditionalAnnotationsForAccessors.content shape.type member/>
     public ${getter.returnType} ${getterMethodName}() {
         return this.${variableName};
@@ -188,10 +187,11 @@
         </#if>
     </#list>
 
+     <#-- Do not add Jackson annotations to enum getters and setters. This can break customers.
+          See commit bda4dd89 in codegen package -->
     <#if member.enumType?has_content && member.shouldEmitLegacyEnumSetter>
     ${setterDoc}
     ${deprecated}
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void ${setterMethodName}(${member.enumType} ${setter.variableName}) {
         ${fluentSetterMethodName}(${setter.variableName});
     }

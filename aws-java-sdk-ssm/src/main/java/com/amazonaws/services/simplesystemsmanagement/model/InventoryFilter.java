@@ -194,7 +194,6 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * @see InventoryQueryOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -227,7 +226,6 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      * @see InventoryQueryOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(InventoryQueryOperatorType type) {
         withType(type);
     }

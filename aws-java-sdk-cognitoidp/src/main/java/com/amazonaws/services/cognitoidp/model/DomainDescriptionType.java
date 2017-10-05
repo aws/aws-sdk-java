@@ -334,7 +334,6 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
      * @see DomainStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -365,7 +364,6 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
      * @see DomainStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(DomainStatusType status) {
         withStatus(status);
     }

@@ -152,7 +152,6 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
      * @see NodeAssociationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("nodeAssociationStatus")
     public String getNodeAssociationStatus() {
         return this.nodeAssociationStatus;
     }
@@ -261,7 +260,6 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
      * @see NodeAssociationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNodeAssociationStatus(NodeAssociationStatus nodeAssociationStatus) {
         withNodeAssociationStatus(nodeAssociationStatus);
     }

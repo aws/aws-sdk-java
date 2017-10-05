@@ -165,7 +165,6 @@ public class VolumeModification implements Serializable, Cloneable {
      * @see VolumeModificationState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("modificationState")
     public String getModificationState() {
         return this.modificationState;
     }
@@ -196,7 +195,6 @@ public class VolumeModification implements Serializable, Cloneable {
      * @see VolumeModificationState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setModificationState(VolumeModificationState modificationState) {
         withModificationState(modificationState);
     }
@@ -360,7 +358,6 @@ public class VolumeModification implements Serializable, Cloneable {
      * @see VolumeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("targetVolumeType")
     public String getTargetVolumeType() {
         return this.targetVolumeType;
     }
@@ -391,7 +388,6 @@ public class VolumeModification implements Serializable, Cloneable {
      * @see VolumeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetVolumeType(VolumeType targetVolumeType) {
         withTargetVolumeType(targetVolumeType);
     }
@@ -515,7 +511,6 @@ public class VolumeModification implements Serializable, Cloneable {
      * @see VolumeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("originalVolumeType")
     public String getOriginalVolumeType() {
         return this.originalVolumeType;
     }
@@ -546,7 +541,6 @@ public class VolumeModification implements Serializable, Cloneable {
      * @see VolumeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOriginalVolumeType(VolumeType originalVolumeType) {
         withOriginalVolumeType(originalVolumeType);
     }

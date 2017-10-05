@@ -95,7 +95,6 @@ public class PlacementStrategy implements Serializable, Cloneable, StructuredPoj
      * @see PlacementStrategyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -146,7 +145,6 @@ public class PlacementStrategy implements Serializable, Cloneable, StructuredPoj
      * @see PlacementStrategyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PlacementStrategyType type) {
         withType(type);
     }

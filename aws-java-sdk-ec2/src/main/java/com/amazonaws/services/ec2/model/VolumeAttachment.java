@@ -206,7 +206,6 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @see VolumeAttachmentState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -237,7 +236,6 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * @see VolumeAttachmentState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(VolumeAttachmentState state) {
         withState(state);
     }

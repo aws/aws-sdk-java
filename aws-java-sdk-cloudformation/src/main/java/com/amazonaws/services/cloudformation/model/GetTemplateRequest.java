@@ -290,7 +290,6 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TemplateStage
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("templateStage")
     public String getTemplateStage() {
         return this.templateStage;
     }
@@ -343,7 +342,6 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see TemplateStage
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTemplateStage(TemplateStage templateStage) {
         withTemplateStage(templateStage);
     }

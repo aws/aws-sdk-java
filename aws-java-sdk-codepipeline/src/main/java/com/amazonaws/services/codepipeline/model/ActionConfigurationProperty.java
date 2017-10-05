@@ -481,7 +481,6 @@ public class ActionConfigurationProperty implements Serializable, Cloneable, Str
      * @see ActionConfigurationPropertyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -512,7 +511,6 @@ public class ActionConfigurationProperty implements Serializable, Cloneable, Str
      * @see ActionConfigurationPropertyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ActionConfigurationPropertyType type) {
         withType(type);
     }

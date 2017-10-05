@@ -222,7 +222,6 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see EncryptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encryptionType")
     public String getEncryptionType() {
         return this.encryptionType;
     }
@@ -301,7 +300,6 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see EncryptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncryptionType(EncryptionType encryptionType) {
         withEncryptionType(encryptionType);
     }

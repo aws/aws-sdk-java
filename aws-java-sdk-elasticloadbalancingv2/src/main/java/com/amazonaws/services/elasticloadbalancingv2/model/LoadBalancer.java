@@ -356,7 +356,6 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see LoadBalancerSchemeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scheme")
     public String getScheme() {
         return this.scheme;
     }
@@ -413,7 +412,6 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see LoadBalancerSchemeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScheme(LoadBalancerSchemeEnum scheme) {
         withScheme(scheme);
     }
@@ -550,7 +548,6 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see LoadBalancerTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -581,7 +578,6 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see LoadBalancerTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(LoadBalancerTypeEnum type) {
         withType(type);
     }
@@ -769,7 +765,6 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     public String getIpAddressType() {
         return this.ipAddressType;
     }
@@ -804,7 +799,6 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         withIpAddressType(ipAddressType);
     }

@@ -467,7 +467,6 @@ public class UpdateIntegrationResponseResult extends com.amazonaws.AmazonWebServ
      * @see ContentHandlingStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("contentHandling")
     public String getContentHandling() {
         return this.contentHandling;
     }
@@ -568,7 +567,6 @@ public class UpdateIntegrationResponseResult extends com.amazonaws.AmazonWebServ
      * @see ContentHandlingStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         withContentHandling(contentHandling);
     }

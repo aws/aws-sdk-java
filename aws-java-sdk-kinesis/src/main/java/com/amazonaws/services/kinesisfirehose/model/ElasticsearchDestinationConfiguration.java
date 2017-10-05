@@ -335,7 +335,6 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * @see ElasticsearchIndexRotationPeriod
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("indexRotationPeriod")
     public String getIndexRotationPeriod() {
         return this.indexRotationPeriod;
     }
@@ -378,7 +377,6 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * @see ElasticsearchIndexRotationPeriod
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
         withIndexRotationPeriod(indexRotationPeriod);
     }
@@ -542,7 +540,6 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * @see ElasticsearchS3BackupMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("s3BackupMode")
     public String getS3BackupMode() {
         return this.s3BackupMode;
     }
@@ -595,7 +592,6 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * @see ElasticsearchS3BackupMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setS3BackupMode(ElasticsearchS3BackupMode s3BackupMode) {
         withS3BackupMode(s3BackupMode);
     }

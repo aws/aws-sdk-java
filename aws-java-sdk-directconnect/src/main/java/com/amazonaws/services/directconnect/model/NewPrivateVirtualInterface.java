@@ -214,7 +214,6 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
      * @see AddressFamily
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("addressFamily")
     public String getAddressFamily() {
         return this.addressFamily;
     }
@@ -235,7 +234,6 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
      * @see AddressFamily
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         withAddressFamily(addressFamily);
     }

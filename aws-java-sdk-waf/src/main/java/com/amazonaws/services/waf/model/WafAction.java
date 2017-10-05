@@ -159,7 +159,6 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * @see WafActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -268,7 +267,6 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      * @see WafActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(WafActionType type) {
         withType(type);
     }

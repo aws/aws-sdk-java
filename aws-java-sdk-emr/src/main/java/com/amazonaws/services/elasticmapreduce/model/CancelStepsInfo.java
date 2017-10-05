@@ -111,7 +111,6 @@ public class CancelStepsInfo implements Serializable, Cloneable, StructuredPojo 
      * @see CancelStepsRequestStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -142,7 +141,6 @@ public class CancelStepsInfo implements Serializable, Cloneable, StructuredPojo 
      * @see CancelStepsRequestStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CancelStepsRequestStatus status) {
         withStatus(status);
     }

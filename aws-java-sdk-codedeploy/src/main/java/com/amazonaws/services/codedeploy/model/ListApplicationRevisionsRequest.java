@@ -271,7 +271,6 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see ApplicationRevisionSortBy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     public String getSortBy() {
         return this.sortBy;
     }
@@ -380,7 +379,6 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see ApplicationRevisionSortBy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortBy(ApplicationRevisionSortBy sortBy) {
         withSortBy(sortBy);
     }
@@ -533,7 +531,6 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -634,7 +631,6 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }
@@ -875,7 +871,6 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see ListStateFilterAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deployed")
     public String getDeployed() {
         return this.deployed;
     }
@@ -972,7 +967,6 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * @see ListStateFilterAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeployed(ListStateFilterAction deployed) {
         withDeployed(deployed);
     }

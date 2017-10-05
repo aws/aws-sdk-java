@@ -129,7 +129,6 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * @see ActionCategory
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("category")
     public String getCategory() {
         return this.category;
     }
@@ -180,7 +179,6 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * @see ActionCategory
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCategory(ActionCategory category) {
         withCategory(category);
     }

@@ -1814,7 +1814,6 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RootDeviceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("defaultRootDeviceType")
     public String getDefaultRootDeviceType() {
         return this.defaultRootDeviceType;
     }
@@ -1857,7 +1856,6 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see RootDeviceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
         withDefaultRootDeviceType(defaultRootDeviceType);
     }

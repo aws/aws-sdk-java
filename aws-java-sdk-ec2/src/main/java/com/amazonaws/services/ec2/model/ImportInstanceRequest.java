@@ -228,7 +228,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      * @see PlatformValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -259,7 +258,6 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      * @see PlatformValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(PlatformValues platform) {
         withPlatform(platform);
     }

@@ -205,7 +205,6 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -236,7 +235,6 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ExecutionStatus status) {
         withStatus(status);
     }

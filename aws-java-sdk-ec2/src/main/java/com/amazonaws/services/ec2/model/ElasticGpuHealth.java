@@ -56,7 +56,6 @@ public class ElasticGpuHealth implements Serializable, Cloneable {
      * @see ElasticGpuStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

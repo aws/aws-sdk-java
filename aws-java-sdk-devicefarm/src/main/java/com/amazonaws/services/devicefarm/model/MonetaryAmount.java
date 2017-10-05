@@ -104,7 +104,6 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
      * @see CurrencyCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -135,7 +134,6 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
      * @see CurrencyCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrencyCode(CurrencyCode currencyCode) {
         withCurrencyCode(currencyCode);
     }

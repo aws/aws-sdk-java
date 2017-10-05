@@ -268,7 +268,6 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * @see MaintenanceWindowTaskType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -299,7 +298,6 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * @see MaintenanceWindowTaskType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(MaintenanceWindowTaskType type) {
         withType(type);
     }

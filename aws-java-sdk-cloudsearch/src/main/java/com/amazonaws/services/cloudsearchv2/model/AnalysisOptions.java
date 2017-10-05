@@ -357,7 +357,6 @@ public class AnalysisOptions implements Serializable, Cloneable {
      * @see AlgorithmicStemming
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("algorithmicStemming")
     public String getAlgorithmicStemming() {
         return this.algorithmicStemming;
     }
@@ -404,7 +403,6 @@ public class AnalysisOptions implements Serializable, Cloneable {
      * @see AlgorithmicStemming
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAlgorithmicStemming(AlgorithmicStemming algorithmicStemming) {
         withAlgorithmicStemming(algorithmicStemming);
     }

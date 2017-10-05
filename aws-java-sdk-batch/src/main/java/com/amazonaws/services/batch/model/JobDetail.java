@@ -259,7 +259,6 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JobStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -290,7 +289,6 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JobStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(JobStatus status) {
         withStatus(status);
     }

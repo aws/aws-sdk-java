@@ -64,7 +64,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * @see ExtraParamName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -95,7 +94,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * @see ExtraParamName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(ExtraParamName name) {
         withName(name);
     }

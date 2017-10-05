@@ -433,7 +433,6 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -494,7 +493,6 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }
@@ -854,7 +852,6 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * @see Locale
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -885,7 +882,6 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * @see Locale
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(Locale locale) {
         withLocale(locale);
     }

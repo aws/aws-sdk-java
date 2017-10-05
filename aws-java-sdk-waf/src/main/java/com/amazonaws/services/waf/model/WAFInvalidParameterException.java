@@ -128,7 +128,6 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      * @see ParameterExceptionField
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setField(ParameterExceptionField field) {
         withField(field);
     }
@@ -208,7 +207,6 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      * @see ParameterExceptionReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReason(ParameterExceptionReason reason) {
         withReason(reason);
     }

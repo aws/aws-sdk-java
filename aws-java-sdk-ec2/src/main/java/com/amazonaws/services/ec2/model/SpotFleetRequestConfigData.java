@@ -155,7 +155,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see AllocationStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("allocationStrategy")
     public String getAllocationStrategy() {
         return this.allocationStrategy;
     }
@@ -190,7 +189,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see AllocationStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAllocationStrategy(AllocationStrategy allocationStrategy) {
         withAllocationStrategy(allocationStrategy);
     }
@@ -298,7 +296,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see ExcessCapacityTerminationPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("excessCapacityTerminationPolicy")
     public String getExcessCapacityTerminationPolicy() {
         return this.excessCapacityTerminationPolicy;
     }
@@ -333,7 +330,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see ExcessCapacityTerminationPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         withExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
     }
@@ -703,7 +699,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see FleetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -754,7 +749,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see FleetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(FleetType type) {
         withType(type);
     }
@@ -964,7 +958,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see InstanceInterruptionBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceInterruptionBehavior")
     public String getInstanceInterruptionBehavior() {
         return this.instanceInterruptionBehavior;
     }
@@ -995,7 +988,6 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @see InstanceInterruptionBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceInterruptionBehavior(InstanceInterruptionBehavior instanceInterruptionBehavior) {
         withInstanceInterruptionBehavior(instanceInterruptionBehavior);
     }

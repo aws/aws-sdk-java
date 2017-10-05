@@ -534,7 +534,6 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * @see TestType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("testType")
     public String getTestType() {
         return this.testType;
     }
@@ -867,7 +866,6 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * @see TestType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTestType(TestType testType) {
         withTestType(testType);
     }

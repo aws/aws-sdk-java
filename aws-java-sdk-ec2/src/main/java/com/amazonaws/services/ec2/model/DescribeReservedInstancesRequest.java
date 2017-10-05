@@ -962,7 +962,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @see OfferingClassType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("offeringClass")
     public String getOfferingClass() {
         return this.offeringClass;
     }
@@ -993,7 +992,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @see OfferingClassType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOfferingClass(OfferingClassType offeringClass) {
         withOfferingClass(offeringClass);
     }
@@ -1134,7 +1132,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @see OfferingTypeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("offeringType")
     public String getOfferingType() {
         return this.offeringType;
     }
@@ -1169,7 +1166,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      * @see OfferingTypeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOfferingType(OfferingTypeValues offeringType) {
         withOfferingType(offeringType);
     }

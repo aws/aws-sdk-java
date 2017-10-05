@@ -177,7 +177,6 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
      * @see MaintenanceWindowResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -208,7 +207,6 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
      * @see MaintenanceWindowResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(MaintenanceWindowResourceType resourceType) {
         withResourceType(resourceType);
     }

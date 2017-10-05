@@ -74,7 +74,6 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * @see EncryptionOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encryptionOption")
     public String getEncryptionOption() {
         return this.encryptionOption;
     }
@@ -113,7 +112,6 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * @see EncryptionOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncryptionOption(EncryptionOption encryptionOption) {
         withEncryptionOption(encryptionOption);
     }

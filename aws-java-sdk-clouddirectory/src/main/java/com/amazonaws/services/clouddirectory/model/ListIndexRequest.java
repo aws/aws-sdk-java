@@ -315,7 +315,6 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ConsistencyLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("consistencyLevel")
     public String getConsistencyLevel() {
         return this.consistencyLevel;
     }
@@ -346,7 +345,6 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ConsistencyLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
         withConsistencyLevel(consistencyLevel);
     }

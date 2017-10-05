@@ -347,7 +347,6 @@ public class Subnet implements Serializable, Cloneable {
      * @see SubnetState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -378,7 +377,6 @@ public class Subnet implements Serializable, Cloneable {
      * @see SubnetState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(SubnetState state) {
         withState(state);
     }

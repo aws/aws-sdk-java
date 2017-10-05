@@ -293,7 +293,6 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * @see RRType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("nextRecordType")
     public String getNextRecordType() {
         return this.nextRecordType;
     }
@@ -334,7 +333,6 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      * @see RRType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNextRecordType(RRType nextRecordType) {
         withNextRecordType(nextRecordType);
     }

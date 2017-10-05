@@ -199,7 +199,6 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
      * @see RateKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("rateKey")
     public String getRateKey() {
         return this.rateKey;
     }
@@ -242,7 +241,6 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
      * @see RateKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRateKey(RateKey rateKey) {
         withRateKey(rateKey);
     }

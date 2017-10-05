@@ -76,7 +76,6 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      * @see RangeMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("startMode")
     public String getStartMode() {
         return this.startMode;
     }
@@ -107,7 +106,6 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      * @see RangeMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStartMode(RangeMode startMode) {
         withStartMode(startMode);
     }
@@ -191,7 +189,6 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      * @see RangeMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("endMode")
     public String getEndMode() {
         return this.endMode;
     }
@@ -222,7 +219,6 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      * @see RangeMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEndMode(RangeMode endMode) {
         withEndMode(endMode);
     }

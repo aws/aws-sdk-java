@@ -506,7 +506,6 @@ public class Snapshot implements Serializable, Cloneable {
      * @see SnapshotState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -537,7 +536,6 @@ public class Snapshot implements Serializable, Cloneable {
      * @see SnapshotState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(SnapshotState state) {
         withState(state);
     }

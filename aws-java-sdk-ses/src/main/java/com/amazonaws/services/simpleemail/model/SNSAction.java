@@ -148,7 +148,6 @@ public class SNSAction implements Serializable, Cloneable {
      * @see SNSActionEncoding
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     public String getEncoding() {
         return this.encoding;
     }
@@ -187,7 +186,6 @@ public class SNSAction implements Serializable, Cloneable {
      * @see SNSActionEncoding
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncoding(SNSActionEncoding encoding) {
         withEncoding(encoding);
     }

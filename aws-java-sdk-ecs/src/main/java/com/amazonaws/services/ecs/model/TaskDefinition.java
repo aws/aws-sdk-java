@@ -398,7 +398,6 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @see NetworkMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("networkMode")
     public String getNetworkMode() {
         return this.networkMode;
     }
@@ -471,7 +470,6 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @see NetworkMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNetworkMode(NetworkMode networkMode) {
         withNetworkMode(networkMode);
     }
@@ -683,7 +681,6 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @see TaskDefinitionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -714,7 +711,6 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @see TaskDefinitionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(TaskDefinitionStatus status) {
         withStatus(status);
     }

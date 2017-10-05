@@ -211,7 +211,6 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      * @see PredicateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -242,7 +241,6 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      * @see PredicateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PredicateType type) {
         withType(type);
     }

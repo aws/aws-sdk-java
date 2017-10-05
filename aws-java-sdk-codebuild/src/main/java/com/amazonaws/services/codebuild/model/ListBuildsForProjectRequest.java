@@ -168,7 +168,6 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * @see SortOrderType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -245,7 +244,6 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      * @see SortOrderType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrderType sortOrder) {
         withSortOrder(sortOrder);
     }

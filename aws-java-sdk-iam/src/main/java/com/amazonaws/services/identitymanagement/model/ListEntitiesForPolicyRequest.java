@@ -193,7 +193,6 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
      * @see EntityType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("entityFilter")
     public String getEntityFilter() {
         return this.entityFilter;
     }
@@ -244,7 +243,6 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
      * @see EntityType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEntityFilter(EntityType entityFilter) {
         withEntityFilter(entityFilter);
     }

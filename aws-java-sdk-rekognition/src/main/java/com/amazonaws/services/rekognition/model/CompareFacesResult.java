@@ -339,7 +339,6 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see OrientationCorrection
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sourceImageOrientationCorrection")
     public String getSourceImageOrientationCorrection() {
         return this.sourceImageOrientationCorrection;
     }
@@ -412,7 +411,6 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see OrientationCorrection
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSourceImageOrientationCorrection(OrientationCorrection sourceImageOrientationCorrection) {
         withSourceImageOrientationCorrection(sourceImageOrientationCorrection);
     }
@@ -521,7 +519,6 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see OrientationCorrection
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("targetImageOrientationCorrection")
     public String getTargetImageOrientationCorrection() {
         return this.targetImageOrientationCorrection;
     }
@@ -596,7 +593,6 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see OrientationCorrection
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetImageOrientationCorrection(OrientationCorrection targetImageOrientationCorrection) {
         withTargetImageOrientationCorrection(targetImageOrientationCorrection);
     }

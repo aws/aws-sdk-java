@@ -204,7 +204,6 @@ public class SpotPlacement implements Serializable, Cloneable {
      * @see Tenancy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
     public String getTenancy() {
         return this.tenancy;
     }
@@ -243,7 +242,6 @@ public class SpotPlacement implements Serializable, Cloneable {
      * @see Tenancy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTenancy(Tenancy tenancy) {
         withTenancy(tenancy);
     }

@@ -818,7 +818,6 @@ public class Change implements Serializable, Cloneable {
      * @see ChangeAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -1261,7 +1260,6 @@ public class Change implements Serializable, Cloneable {
      * @see ChangeAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(ChangeAction action) {
         withAction(action);
     }

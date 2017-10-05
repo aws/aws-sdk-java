@@ -69,7 +69,6 @@ public class StepStateChangeReason implements Serializable, Cloneable, Structure
      * @see StepStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -104,7 +103,6 @@ public class StepStateChangeReason implements Serializable, Cloneable, Structure
      * @see StepStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(StepStateChangeReasonCode code) {
         withCode(code);
     }

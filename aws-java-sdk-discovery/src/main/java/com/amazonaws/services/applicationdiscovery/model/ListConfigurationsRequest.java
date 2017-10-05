@@ -87,7 +87,6 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see ConfigurationItemType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("configurationType")
     public String getConfigurationType() {
         return this.configurationType;
     }
@@ -118,7 +117,6 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see ConfigurationItemType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConfigurationType(ConfigurationItemType configurationType) {
         withConfigurationType(configurationType);
     }

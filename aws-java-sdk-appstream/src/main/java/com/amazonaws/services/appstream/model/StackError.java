@@ -64,7 +64,6 @@ public class StackError implements Serializable, Cloneable, StructuredPojo {
      * @see StackErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -95,7 +94,6 @@ public class StackError implements Serializable, Cloneable, StructuredPojo {
      * @see StackErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setErrorCode(StackErrorCode errorCode) {
         withErrorCode(errorCode);
     }

@@ -196,7 +196,6 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @see ComparisonOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -231,7 +230,6 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @see ComparisonOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }
@@ -412,7 +410,6 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @see Statistic
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statistic")
     public String getStatistic() {
         return this.statistic;
     }
@@ -443,7 +440,6 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      * @see Statistic
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatistic(Statistic statistic) {
         withStatistic(statistic);
     }

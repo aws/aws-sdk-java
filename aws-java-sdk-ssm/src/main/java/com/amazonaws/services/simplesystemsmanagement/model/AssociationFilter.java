@@ -64,7 +64,6 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * @see AssociationFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -95,7 +94,6 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      * @see AssociationFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(AssociationFilterKey key) {
         withKey(key);
     }

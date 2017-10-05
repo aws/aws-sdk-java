@@ -163,7 +163,6 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * @see StateMachineStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -194,7 +193,6 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * @see StateMachineStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StateMachineStatus status) {
         withStatus(status);
     }

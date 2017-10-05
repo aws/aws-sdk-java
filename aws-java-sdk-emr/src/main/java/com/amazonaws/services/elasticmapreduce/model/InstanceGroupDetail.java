@@ -277,7 +277,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see MarketType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("market")
     public String getMarket() {
         return this.market;
     }
@@ -308,7 +307,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see MarketType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMarket(MarketType market) {
         withMarket(market);
     }
@@ -352,7 +350,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see InstanceRoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceRole")
     public String getInstanceRole() {
         return this.instanceRole;
     }
@@ -383,7 +380,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see InstanceRoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceRole(InstanceRoleType instanceRole) {
         withInstanceRole(instanceRole);
     }
@@ -587,7 +583,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see InstanceGroupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -618,7 +613,6 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @see InstanceGroupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(InstanceGroupState state) {
         withState(state);
     }

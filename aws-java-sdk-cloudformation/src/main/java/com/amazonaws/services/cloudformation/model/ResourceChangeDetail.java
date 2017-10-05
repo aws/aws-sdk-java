@@ -235,7 +235,6 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      * @see EvaluationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("evaluation")
     public String getEvaluation() {
         return this.evaluation;
     }
@@ -324,7 +323,6 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      * @see EvaluationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvaluation(EvaluationType evaluation) {
         withEvaluation(evaluation);
     }
@@ -531,7 +529,6 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      * @see ChangeSource
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("changeSource")
     public String getChangeSource() {
         return this.changeSource;
     }
@@ -696,7 +693,6 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      * @see ChangeSource
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChangeSource(ChangeSource changeSource) {
         withChangeSource(changeSource);
     }

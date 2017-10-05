@@ -54,7 +54,6 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
      * @see DeliveryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deliveryStatus")
     public String getDeliveryStatus() {
         return this.deliveryStatus;
     }
@@ -81,7 +80,6 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
      * @see DeliveryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeliveryStatus(DeliveryStatus deliveryStatus) {
         withDeliveryStatus(deliveryStatus);
     }

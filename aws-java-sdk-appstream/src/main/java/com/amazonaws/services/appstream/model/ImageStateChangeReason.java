@@ -64,7 +64,6 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
      * @see ImageStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -95,7 +94,6 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
      * @see ImageStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(ImageStateChangeReasonCode code) {
         withCode(code);
     }

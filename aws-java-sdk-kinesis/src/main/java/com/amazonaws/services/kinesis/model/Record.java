@@ -351,7 +351,6 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * @see EncryptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encryptionType")
     public String getEncryptionType() {
         return this.encryptionType;
     }

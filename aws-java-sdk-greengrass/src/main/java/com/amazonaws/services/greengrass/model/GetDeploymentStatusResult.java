@@ -87,7 +87,6 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
      * @see DeploymentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     public String getDeploymentType() {
         return this.deploymentType;
     }

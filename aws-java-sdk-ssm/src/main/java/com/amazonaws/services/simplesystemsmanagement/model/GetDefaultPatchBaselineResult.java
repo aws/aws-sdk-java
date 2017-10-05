@@ -99,7 +99,6 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -130,7 +129,6 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }

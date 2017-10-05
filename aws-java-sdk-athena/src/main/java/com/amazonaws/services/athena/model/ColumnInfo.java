@@ -446,7 +446,6 @@ public class ColumnInfo implements Serializable, Cloneable, StructuredPojo {
      * @see ColumnNullable
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("nullable")
     public String getNullable() {
         return this.nullable;
     }
@@ -477,7 +476,6 @@ public class ColumnInfo implements Serializable, Cloneable, StructuredPojo {
      * @see ColumnNullable
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNullable(ColumnNullable nullable) {
         withNullable(nullable);
     }

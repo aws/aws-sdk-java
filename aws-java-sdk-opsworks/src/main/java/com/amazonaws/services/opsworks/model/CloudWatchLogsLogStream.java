@@ -246,7 +246,6 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      * @see CloudWatchLogsTimeZone
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     public String getTimeZone() {
         return this.timeZone;
     }
@@ -277,7 +276,6 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      * @see CloudWatchLogsTimeZone
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeZone(CloudWatchLogsTimeZone timeZone) {
         withTimeZone(timeZone);
     }
@@ -532,7 +530,6 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      * @see CloudWatchLogsInitialPosition
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("initialPosition")
     public String getInitialPosition() {
         return this.initialPosition;
     }
@@ -567,7 +564,6 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      * @see CloudWatchLogsInitialPosition
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInitialPosition(CloudWatchLogsInitialPosition initialPosition) {
         withInitialPosition(initialPosition);
     }
@@ -617,7 +613,6 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      * @see CloudWatchLogsEncoding
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     public String getEncoding() {
         return this.encoding;
     }
@@ -652,7 +647,6 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      * @see CloudWatchLogsEncoding
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncoding(CloudWatchLogsEncoding encoding) {
         withEncoding(encoding);
     }

@@ -128,7 +128,6 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * @see InspectorEvent
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("event")
     public String getEvent() {
         return this.event;
     }
@@ -159,7 +158,6 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * @see InspectorEvent
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvent(InspectorEvent event) {
         withEvent(event);
     }
@@ -335,7 +333,6 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * @see AssessmentRunNotificationSnsStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("snsPublishStatusCode")
     public String getSnsPublishStatusCode() {
         return this.snsPublishStatusCode;
     }
@@ -366,7 +363,6 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * @see AssessmentRunNotificationSnsStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
         withSnsPublishStatusCode(snsPublishStatusCode);
     }

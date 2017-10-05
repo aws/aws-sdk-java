@@ -179,7 +179,6 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see BuildStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -296,7 +295,6 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see BuildStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(BuildStatus status) {
         withStatus(status);
     }

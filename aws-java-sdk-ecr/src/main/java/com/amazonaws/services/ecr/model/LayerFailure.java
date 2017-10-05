@@ -110,7 +110,6 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
      * @see LayerFailureCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("failureCode")
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -141,7 +140,6 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
      * @see LayerFailureCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailureCode(LayerFailureCode failureCode) {
         withFailureCode(failureCode);
     }

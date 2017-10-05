@@ -2070,7 +2070,6 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ScaleDownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scaleDownBehavior")
     public String getScaleDownBehavior() {
         return this.scaleDownBehavior;
     }
@@ -2135,7 +2134,6 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ScaleDownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
         withScaleDownBehavior(scaleDownBehavior);
     }
@@ -2366,7 +2364,6 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see RepoUpgradeOnBoot
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("repoUpgradeOnBoot")
     public String getRepoUpgradeOnBoot() {
         return this.repoUpgradeOnBoot;
     }
@@ -2409,7 +2406,6 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see RepoUpgradeOnBoot
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
         withRepoUpgradeOnBoot(repoUpgradeOnBoot);
     }

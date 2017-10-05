@@ -102,7 +102,6 @@ public class DescribeFpgaImageAttributeRequest extends AmazonWebServiceRequest i
      * @see FpgaImageAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }

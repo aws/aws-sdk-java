@@ -409,7 +409,6 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * @see RRType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("startRecordType")
     public String getStartRecordType() {
         return this.startRecordType;
     }
@@ -618,7 +617,6 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * @see RRType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStartRecordType(RRType startRecordType) {
         withStartRecordType(startRecordType);
     }

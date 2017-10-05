@@ -128,7 +128,6 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      * @see NotificationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("notificationType")
     public String getNotificationType() {
         return this.notificationType;
     }
@@ -159,7 +158,6 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      * @see NotificationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         withNotificationType(notificationType);
     }

@@ -252,7 +252,6 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
      * @see LifeCycleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
     public String getLifeCycleState() {
         return this.lifeCycleState;
     }
@@ -283,7 +282,6 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
      * @see LifeCycleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         withLifeCycleState(lifeCycleState);
     }

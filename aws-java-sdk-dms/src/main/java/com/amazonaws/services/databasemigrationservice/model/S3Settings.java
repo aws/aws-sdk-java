@@ -345,7 +345,6 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @see CompressionTypeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("compressionType")
     public String getCompressionType() {
         return this.compressionType;
     }
@@ -380,7 +379,6 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @see CompressionTypeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCompressionType(CompressionTypeValue compressionType) {
         withCompressionType(compressionType);
     }

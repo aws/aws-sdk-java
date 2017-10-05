@@ -233,7 +233,6 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
      * @see AuthorizerType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -272,7 +271,6 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
      * @see AuthorizerType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(AuthorizerType type) {
         withType(type);
     }

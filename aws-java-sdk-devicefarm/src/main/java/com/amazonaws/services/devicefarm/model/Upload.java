@@ -675,7 +675,6 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * @see UploadType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1044,7 +1043,6 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * @see UploadType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(UploadType type) {
         withType(type);
     }
@@ -1355,7 +1353,6 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * @see UploadStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -1484,7 +1481,6 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * @see UploadStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(UploadStatus status) {
         withStatus(status);
     }

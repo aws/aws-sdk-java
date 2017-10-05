@@ -71,7 +71,6 @@ public class NotifyWorkersFailureStatus implements Serializable, Cloneable, Stru
      * @see NotifyWorkersFailureCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("notifyWorkersFailureCode")
     public String getNotifyWorkersFailureCode() {
         return this.notifyWorkersFailureCode;
     }
@@ -102,7 +101,6 @@ public class NotifyWorkersFailureStatus implements Serializable, Cloneable, Stru
      * @see NotifyWorkersFailureCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNotifyWorkersFailureCode(NotifyWorkersFailureCode notifyWorkersFailureCode) {
         withNotifyWorkersFailureCode(notifyWorkersFailureCode);
     }

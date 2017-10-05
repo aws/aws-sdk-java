@@ -161,7 +161,6 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see ArchitectureValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     public String getArchitecture() {
         return this.architecture;
     }
@@ -192,7 +191,6 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see ArchitectureValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setArchitecture(ArchitectureValues architecture) {
         withArchitecture(architecture);
     }
@@ -386,7 +384,6 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see ShutdownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceInitiatedShutdownBehavior")
     public String getInstanceInitiatedShutdownBehavior() {
         return this.instanceInitiatedShutdownBehavior;
     }
@@ -421,7 +418,6 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see ShutdownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
         withInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
     }
@@ -475,7 +471,6 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -514,7 +509,6 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      * @see InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }

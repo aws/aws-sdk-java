@@ -147,7 +147,6 @@ public class GetObjectInformationRequest extends com.amazonaws.AmazonWebServiceR
      * @see ConsistencyLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("consistencyLevel")
     public String getConsistencyLevel() {
         return this.consistencyLevel;
     }
@@ -178,7 +177,6 @@ public class GetObjectInformationRequest extends com.amazonaws.AmazonWebServiceR
      * @see ConsistencyLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
         withConsistencyLevel(consistencyLevel);
     }

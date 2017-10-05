@@ -310,6 +310,41 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     }
 
     @Override
+    public java.util.concurrent.Future<AddApplicationInputProcessingConfigurationResult> addApplicationInputProcessingConfigurationAsync(
+            AddApplicationInputProcessingConfigurationRequest request) {
+
+        return addApplicationInputProcessingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationInputProcessingConfigurationResult> addApplicationInputProcessingConfigurationAsync(
+            final AddApplicationInputProcessingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddApplicationInputProcessingConfigurationRequest, AddApplicationInputProcessingConfigurationResult> asyncHandler) {
+        final AddApplicationInputProcessingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddApplicationInputProcessingConfigurationResult>() {
+            @Override
+            public AddApplicationInputProcessingConfigurationResult call() throws Exception {
+                AddApplicationInputProcessingConfigurationResult result = null;
+
+                try {
+                    result = executeAddApplicationInputProcessingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddApplicationOutputResult> addApplicationOutputAsync(AddApplicationOutputRequest request) {
 
         return addApplicationOutputAsync(request, null);
@@ -463,6 +498,41 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
 
                 try {
                     result = executeDeleteApplicationCloudWatchLoggingOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationInputProcessingConfigurationResult> deleteApplicationInputProcessingConfigurationAsync(
+            DeleteApplicationInputProcessingConfigurationRequest request) {
+
+        return deleteApplicationInputProcessingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationInputProcessingConfigurationResult> deleteApplicationInputProcessingConfigurationAsync(
+            final DeleteApplicationInputProcessingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationInputProcessingConfigurationRequest, DeleteApplicationInputProcessingConfigurationResult> asyncHandler) {
+        final DeleteApplicationInputProcessingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationInputProcessingConfigurationResult>() {
+            @Override
+            public DeleteApplicationInputProcessingConfigurationResult call() throws Exception {
+                DeleteApplicationInputProcessingConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteApplicationInputProcessingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

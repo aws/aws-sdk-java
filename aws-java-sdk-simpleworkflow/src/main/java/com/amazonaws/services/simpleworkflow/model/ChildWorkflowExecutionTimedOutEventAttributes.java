@@ -166,7 +166,6 @@ public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializab
      * @see WorkflowExecutionTimeoutType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("timeoutType")
     public String getTimeoutType() {
         return this.timeoutType;
     }
@@ -197,7 +196,6 @@ public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializab
      * @see WorkflowExecutionTimeoutType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
         withTimeoutType(timeoutType);
     }

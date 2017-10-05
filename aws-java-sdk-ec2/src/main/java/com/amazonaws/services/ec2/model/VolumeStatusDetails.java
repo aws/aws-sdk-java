@@ -62,7 +62,6 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * @see VolumeStatusName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -93,7 +92,6 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      * @see VolumeStatusName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(VolumeStatusName name) {
         withName(name);
     }

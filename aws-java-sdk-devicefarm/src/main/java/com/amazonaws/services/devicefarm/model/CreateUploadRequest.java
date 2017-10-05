@@ -620,7 +620,6 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see UploadType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1005,7 +1004,6 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see UploadType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(UploadType type) {
         withType(type);
     }

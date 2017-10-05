@@ -200,7 +200,6 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
      * @see CannedAccessControlList
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cannedAcl")
     public String getCannedAcl() {
         return this.cannedAcl;
     }
@@ -237,7 +236,6 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
      * @see CannedAccessControlList
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCannedAcl(CannedAccessControlList cannedAcl) {
         withCannedAcl(cannedAcl);
     }

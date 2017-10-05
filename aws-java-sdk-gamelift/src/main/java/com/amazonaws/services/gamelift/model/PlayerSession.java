@@ -552,7 +552,6 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
      * @see PlayerSessionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -689,7 +688,6 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
      * @see PlayerSessionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(PlayerSessionStatus status) {
         withStatus(status);
     }

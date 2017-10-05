@@ -292,7 +292,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see NetworkProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -417,7 +416,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see NetworkProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(NetworkProtocol protocol) {
         withProtocol(protocol);
     }
@@ -548,7 +546,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see PortAccessType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     public String getAccessType() {
         return this.accessType;
     }
@@ -579,7 +576,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see PortAccessType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAccessType(PortAccessType accessType) {
         withAccessType(accessType);
     }
@@ -663,7 +659,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see AccessDirection
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("accessDirection")
     public String getAccessDirection() {
         return this.accessDirection;
     }
@@ -694,7 +689,6 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      * @see AccessDirection
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAccessDirection(AccessDirection accessDirection) {
         withAccessDirection(accessDirection);
     }

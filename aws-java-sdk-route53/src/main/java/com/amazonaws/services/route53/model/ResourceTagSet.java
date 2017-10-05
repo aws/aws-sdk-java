@@ -126,7 +126,6 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @see TagResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -203,7 +202,6 @@ public class ResourceTagSet implements Serializable, Cloneable {
      * @see TagResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(TagResourceType resourceType) {
         withResourceType(resourceType);
     }

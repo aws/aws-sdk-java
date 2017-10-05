@@ -462,7 +462,6 @@ public class Parameter implements Serializable, Cloneable {
      * @see ChangeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("changeType")
     public String getChangeType() {
         return this.changeType;
     }
@@ -507,7 +506,6 @@ public class Parameter implements Serializable, Cloneable {
      * @see ChangeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChangeType(ChangeType changeType) {
         withChangeType(changeType);
     }

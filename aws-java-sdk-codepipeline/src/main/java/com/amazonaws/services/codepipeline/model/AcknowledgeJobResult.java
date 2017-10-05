@@ -56,7 +56,6 @@ public class AcknowledgeJobResult extends com.amazonaws.AmazonWebServiceResult<c
      * @see JobStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -87,7 +86,6 @@ public class AcknowledgeJobResult extends com.amazonaws.AmazonWebServiceResult<c
      * @see JobStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(JobStatus status) {
         withStatus(status);
     }

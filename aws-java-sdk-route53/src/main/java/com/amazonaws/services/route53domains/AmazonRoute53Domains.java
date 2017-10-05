@@ -102,11 +102,11 @@ public interface AmazonRoute53Domains {
      *        The CheckDomainAvailability request contains the following elements.
      * @return Result of the CheckDomainAvailability operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.CheckDomainAvailability
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability"
      *      target="_top">AWS API Documentation</a>
@@ -115,10 +115,30 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
+     * Checks whether a domain name can be transferred to Amazon Route 53.
+     * </p>
+     * 
+     * @param checkDomainTransferabilityRequest
+     *        The CheckDomainTransferability request contains the following elements.
+     * @return Result of the CheckDomainTransferability operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
+     *         the requester account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.CheckDomainTransferability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CheckDomainTransferabilityResult checkDomainTransferability(CheckDomainTransferabilityRequest checkDomainTransferabilityRequest);
+
+    /**
+     * <p>
      * This operation deletes the specified tags for a domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -126,13 +146,13 @@ public interface AmazonRoute53Domains {
      *        The DeleteTagsForDomainRequest includes the following elements.
      * @return Result of the DeleteTagsForDomain operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.DeleteTagsForDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain"
      *      target="_top">AWS API Documentation</a>
@@ -147,11 +167,11 @@ public interface AmazonRoute53Domains {
      * @param disableDomainAutoRenewRequest
      * @return Result of the DisableDomainAutoRenew operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.DisableDomainAutoRenew
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew"
      *      target="_top">AWS API Documentation</a>
@@ -171,8 +191,8 @@ public interface AmazonRoute53Domains {
      *        The DisableDomainTransferLock request includes the following element.
      * @return Result of the DisableDomainTransferLock operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
@@ -181,7 +201,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.DisableDomainTransferLock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock"
      *      target="_top">AWS API Documentation</a>
@@ -204,11 +224,11 @@ public interface AmazonRoute53Domains {
      * @param enableDomainAutoRenewRequest
      * @return Result of the EnableDomainAutoRenew operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @throws TLDRulesViolationException
      *         The top-level domain does not support this operation.
      * @sample AmazonRoute53Domains.EnableDomainAutoRenew
@@ -229,8 +249,8 @@ public interface AmazonRoute53Domains {
      *        A request to set the transfer lock for the specified domain.
      * @return Result of the EnableDomainTransferLock operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
@@ -239,7 +259,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.EnableDomainTransferLock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock"
      *      target="_top">AWS API Documentation</a>
@@ -258,13 +278,13 @@ public interface AmazonRoute53Domains {
      * @param getContactReachabilityStatusRequest
      * @return Result of the GetContactReachabilityStatus operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.GetContactReachabilityStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus"
      *      target="_top">AWS API Documentation</a>
@@ -281,11 +301,11 @@ public interface AmazonRoute53Domains {
      *        The GetDomainDetail request includes the following element.
      * @return Result of the GetDomainDetail operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.GetDomainDetail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail" target="_top">AWS
      *      API Documentation</a>
@@ -301,11 +321,11 @@ public interface AmazonRoute53Domains {
      * @param getDomainSuggestionsRequest
      * @return Result of the GetDomainSuggestions operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.GetDomainSuggestions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions"
      *      target="_top">AWS API Documentation</a>
@@ -321,8 +341,8 @@ public interface AmazonRoute53Domains {
      *        The <a>GetOperationDetail</a> request includes the following element.
      * @return Result of the GetOperationDetail operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.GetOperationDetail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail"
@@ -339,8 +359,8 @@ public interface AmazonRoute53Domains {
      *        The ListDomains request includes the following elements.
      * @return Result of the ListDomains operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.ListDomains
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains" target="_top">AWS API
@@ -364,8 +384,8 @@ public interface AmazonRoute53Domains {
      *        The ListOperations request includes the following elements.
      * @return Result of the ListOperations operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.ListOperations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations" target="_top">AWS
@@ -385,7 +405,7 @@ public interface AmazonRoute53Domains {
      * This operation returns all of the tags that are associated with the specified domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -393,13 +413,13 @@ public interface AmazonRoute53Domains {
      *        The ListTagsForDomainRequest includes the following elements.
      * @return Result of the ListTagsForDomain operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.ListTagsForDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain"
      *      target="_top">AWS API Documentation</a>
@@ -452,11 +472,11 @@ public interface AmazonRoute53Domains {
      *        The RegisterDomain request includes the following elements.
      * @return Result of the RegisterDomain operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
      * @throws TLDRulesViolationException
@@ -489,11 +509,11 @@ public interface AmazonRoute53Domains {
      *        expiration year.
      * @return Result of the RenewDomain operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
      * @throws TLDRulesViolationException
@@ -516,13 +536,13 @@ public interface AmazonRoute53Domains {
      * @param resendContactReachabilityEmailRequest
      * @return Result of the ResendContactReachabilityEmail operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.ResendContactReachabilityEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail"
      *      target="_top">AWS API Documentation</a>
@@ -540,11 +560,11 @@ public interface AmazonRoute53Domains {
      *        you provide this value to the new registrar.
      * @return Result of the RetrieveDomainAuthCode operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.RetrieveDomainAuthCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode"
      *      target="_top">AWS API Documentation</a>
@@ -586,11 +606,11 @@ public interface AmazonRoute53Domains {
      *        The TransferDomain request includes the following elements.
      * @return Result of the TransferDomain operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
      * @throws TLDRulesViolationException
@@ -620,8 +640,8 @@ public interface AmazonRoute53Domains {
      *        The UpdateDomainContact request includes the following elements.
      * @return Result of the UpdateDomainContact operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
@@ -630,7 +650,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.UpdateDomainContact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact"
      *      target="_top">AWS API Documentation</a>
@@ -655,8 +675,8 @@ public interface AmazonRoute53Domains {
      *        The UpdateDomainContactPrivacy request includes the following elements.
      * @return Result of the UpdateDomainContactPrivacy operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
@@ -665,7 +685,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.UpdateDomainContactPrivacy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy"
      *      target="_top">AWS API Documentation</a>
@@ -693,8 +713,8 @@ public interface AmazonRoute53Domains {
      *        notified by email.
      * @return Result of the UpdateDomainNameservers operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws DuplicateRequestException
      *         The request is already in progress for the domain.
@@ -703,7 +723,7 @@ public interface AmazonRoute53Domains {
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.UpdateDomainNameservers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers"
      *      target="_top">AWS API Documentation</a>
@@ -715,7 +735,7 @@ public interface AmazonRoute53Domains {
      * This operation adds or updates tags for a specified domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -723,13 +743,13 @@ public interface AmazonRoute53Domains {
      *        The UpdateTagsForDomainRequest includes the following elements.
      * @return Result of the UpdateTagsForDomain operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @throws OperationLimitExceededException
      *         The number of operations or jobs running exceeded the allowed threshold for the account.
      * @throws UnsupportedTLDException
-     *         Amazon Route 53 does not support this top-level domain.
+     *         Amazon Route 53 does not support this top-level domain (TLD).
      * @sample AmazonRoute53Domains.UpdateTagsForDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain"
      *      target="_top">AWS API Documentation</a>
@@ -745,8 +765,8 @@ public interface AmazonRoute53Domains {
      *        The ViewBilling request includes the following elements.
      * @return Result of the ViewBilling operation returned by the service.
      * @throws InvalidInputException
-     *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
-     *         operation that is already completed. For a domain name, it may not be a valid domain name or belong to
+     *         The requested item is not acceptable. For example, for an OperationId it might refer to the ID of an
+     *         operation that is already completed. For a domain name, it might not be a valid domain name or belong to
      *         the requester account.
      * @sample AmazonRoute53Domains.ViewBilling
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling" target="_top">AWS API

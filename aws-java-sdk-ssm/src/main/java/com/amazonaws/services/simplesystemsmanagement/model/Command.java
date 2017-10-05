@@ -663,7 +663,6 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @see CommandStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -694,7 +693,6 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @see CommandStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CommandStatus status) {
         withStatus(status);
     }

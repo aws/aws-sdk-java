@@ -209,7 +209,6 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * @see EncodingType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encoding")
     public String getEncoding() {
         return this.encoding;
     }
@@ -244,7 +243,6 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * @see EncodingType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncoding(EncodingType encoding) {
         withEncoding(encoding);
     }

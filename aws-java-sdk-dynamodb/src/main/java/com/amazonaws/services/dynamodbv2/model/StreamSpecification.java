@@ -232,7 +232,6 @@ public class StreamSpecification implements Serializable, Cloneable, StructuredP
      * @see StreamViewType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("streamViewType")
     public String getStreamViewType() {
         return this.streamViewType;
     }
@@ -355,7 +354,6 @@ public class StreamSpecification implements Serializable, Cloneable, StructuredP
      * @see StreamViewType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStreamViewType(StreamViewType streamViewType) {
         withStreamViewType(streamViewType);
     }

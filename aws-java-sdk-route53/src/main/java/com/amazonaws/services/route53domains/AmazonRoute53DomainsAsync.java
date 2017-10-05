@@ -69,10 +69,45 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
+     * Checks whether a domain name can be transferred to Amazon Route 53.
+     * </p>
+     * 
+     * @param checkDomainTransferabilityRequest
+     *        The CheckDomainTransferability request contains the following elements.
+     * @return A Java Future containing the result of the CheckDomainTransferability operation returned by the service.
+     * @sample AmazonRoute53DomainsAsync.CheckDomainTransferability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(
+            CheckDomainTransferabilityRequest checkDomainTransferabilityRequest);
+
+    /**
+     * <p>
+     * Checks whether a domain name can be transferred to Amazon Route 53.
+     * </p>
+     * 
+     * @param checkDomainTransferabilityRequest
+     *        The CheckDomainTransferability request contains the following elements.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CheckDomainTransferability operation returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.CheckDomainTransferability
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferability"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(
+            CheckDomainTransferabilityRequest checkDomainTransferabilityRequest,
+            com.amazonaws.handlers.AsyncHandler<CheckDomainTransferabilityRequest, CheckDomainTransferabilityResult> asyncHandler);
+
+    /**
+     * <p>
      * This operation deletes the specified tags for a domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -90,7 +125,7 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation deletes the specified tags for a domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -512,7 +547,7 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation returns all of the tags that are associated with the specified domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -530,7 +565,7 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation returns all of the tags that are associated with the specified domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -1027,7 +1062,7 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation adds or updates tags for a specified domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 
@@ -1045,7 +1080,7 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * This operation adds or updates tags for a specified domain.
      * </p>
      * <p>
-     * All tag operations are eventually consistent; subsequent operations may not immediately represent all issued
+     * All tag operations are eventually consistent; subsequent operations might not immediately represent all issued
      * operations.
      * </p>
      * 

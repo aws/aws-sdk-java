@@ -198,7 +198,6 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * @see TransportProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -229,7 +228,6 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      * @see TransportProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(TransportProtocol protocol) {
         withProtocol(protocol);
     }

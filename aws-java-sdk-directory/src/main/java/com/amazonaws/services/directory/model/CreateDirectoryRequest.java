@@ -255,7 +255,6 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DirectorySize
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("size")
     public String getSize() {
         return this.size;
     }
@@ -286,7 +285,6 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * @see DirectorySize
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSize(DirectorySize size) {
         withSize(size);
     }

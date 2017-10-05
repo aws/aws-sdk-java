@@ -205,7 +205,6 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * @see PendingAutomaticFailoverStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("automaticFailoverStatus")
     public String getAutomaticFailoverStatus() {
         return this.automaticFailoverStatus;
     }
@@ -312,7 +311,6 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * @see PendingAutomaticFailoverStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
         withAutomaticFailoverStatus(automaticFailoverStatus);
     }

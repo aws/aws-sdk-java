@@ -215,7 +215,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see InvocationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("invocationType")
     public String getInvocationType() {
         return this.invocationType;
     }
@@ -268,7 +267,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see InvocationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInvocationType(InvocationType invocationType) {
         withInvocationType(invocationType);
     }
@@ -335,7 +333,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see LogType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("logType")
     public String getLogType() {
         return this.logType;
     }
@@ -378,7 +375,6 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see LogType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLogType(LogType logType) {
         withLogType(logType);
     }

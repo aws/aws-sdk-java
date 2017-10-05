@@ -109,7 +109,6 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
      * @see ActionExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -140,7 +139,6 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
      * @see ActionExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ActionExecutionStatus status) {
         withStatus(status);
     }

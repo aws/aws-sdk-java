@@ -451,7 +451,6 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ExpirationModelType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("expirationModel")
     public String getExpirationModel() {
         return this.expirationModel;
     }
@@ -490,7 +489,6 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ExpirationModelType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExpirationModel(ExpirationModelType expirationModel) {
         withExpirationModel(expirationModel);
     }

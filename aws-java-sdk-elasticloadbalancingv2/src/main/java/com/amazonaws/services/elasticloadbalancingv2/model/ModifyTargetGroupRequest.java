@@ -150,7 +150,6 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("healthCheckProtocol")
     public String getHealthCheckProtocol() {
         return this.healthCheckProtocol;
     }
@@ -185,7 +184,6 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
         withHealthCheckProtocol(healthCheckProtocol);
     }

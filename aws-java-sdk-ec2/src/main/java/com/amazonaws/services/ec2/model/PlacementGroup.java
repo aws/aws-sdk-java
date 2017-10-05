@@ -126,7 +126,6 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @see PlacementGroupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -157,7 +156,6 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @see PlacementGroupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(PlacementGroupState state) {
         withState(state);
     }
@@ -201,7 +199,6 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @see PlacementStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("strategy")
     public String getStrategy() {
         return this.strategy;
     }
@@ -232,7 +229,6 @@ public class PlacementGroup implements Serializable, Cloneable {
      * @see PlacementStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStrategy(PlacementStrategy strategy) {
         withStrategy(strategy);
     }

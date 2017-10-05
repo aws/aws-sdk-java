@@ -107,7 +107,6 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
      * @see AccessLevelFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -172,7 +171,6 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
      * @see AccessLevelFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(AccessLevelFilterKey key) {
         withKey(key);
     }

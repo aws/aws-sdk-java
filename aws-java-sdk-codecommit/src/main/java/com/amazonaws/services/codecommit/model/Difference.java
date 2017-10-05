@@ -164,7 +164,6 @@ public class Difference implements Serializable, Cloneable, StructuredPojo {
      * @see ChangeTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("changeType")
     public String getChangeType() {
         return this.changeType;
     }
@@ -195,7 +194,6 @@ public class Difference implements Serializable, Cloneable, StructuredPojo {
      * @see ChangeTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChangeType(ChangeTypeEnum changeType) {
         withChangeType(changeType);
     }

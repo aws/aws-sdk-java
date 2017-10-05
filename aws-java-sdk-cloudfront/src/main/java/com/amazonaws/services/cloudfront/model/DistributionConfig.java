@@ -1164,7 +1164,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @see PriceClass
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("priceClass")
     public String getPriceClass() {
         return this.priceClass;
     }
@@ -1251,7 +1250,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @see PriceClass
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPriceClass(PriceClass priceClass) {
         withPriceClass(priceClass);
     }
@@ -1584,7 +1582,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @see HttpVersion
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("httpVersion")
     public String getHttpVersion() {
         return this.httpVersion;
     }
@@ -1655,7 +1652,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @see HttpVersion
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHttpVersion(HttpVersion httpVersion) {
         withHttpVersion(httpVersion);
     }

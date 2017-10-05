@@ -64,7 +64,6 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("role")
     public String getRole() {
         return this.role;
     }
@@ -95,7 +94,6 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRole(RoleType role) {
         withRole(role);
     }
@@ -139,7 +137,6 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RolePermissionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -170,7 +167,6 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      * @see RolePermissionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(RolePermissionType type) {
         withType(type);
     }

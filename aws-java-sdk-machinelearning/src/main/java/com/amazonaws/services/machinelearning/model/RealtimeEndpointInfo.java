@@ -267,7 +267,6 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * @see RealtimeEndpointStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("endpointStatus")
     public String getEndpointStatus() {
         return this.endpointStatus;
     }
@@ -320,7 +319,6 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * @see RealtimeEndpointStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEndpointStatus(RealtimeEndpointStatus endpointStatus) {
         withEndpointStatus(endpointStatus);
     }

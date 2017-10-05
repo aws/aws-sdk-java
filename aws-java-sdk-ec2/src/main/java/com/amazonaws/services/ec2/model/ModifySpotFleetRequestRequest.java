@@ -75,7 +75,6 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      * @see ExcessCapacityTerminationPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("excessCapacityTerminationPolicy")
     public String getExcessCapacityTerminationPolicy() {
         return this.excessCapacityTerminationPolicy;
     }
@@ -110,7 +109,6 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      * @see ExcessCapacityTerminationPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         withExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
     }

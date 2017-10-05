@@ -62,7 +62,6 @@ public class LoadPermissionRequest implements Serializable, Cloneable {
      * @see PermissionGroup
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("group")
     public String getGroup() {
         return this.group;
     }

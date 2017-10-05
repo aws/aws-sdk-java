@@ -452,7 +452,6 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * @see DeploymentCommandName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -771,7 +770,6 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * @see DeploymentCommandName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(DeploymentCommandName name) {
         withName(name);
     }

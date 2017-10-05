@@ -384,7 +384,6 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
      * @see AddressFamily
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("addressFamily")
     public String getAddressFamily() {
         return this.addressFamily;
     }
@@ -405,7 +404,6 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
      * @see AddressFamily
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         withAddressFamily(addressFamily);
     }
@@ -435,7 +433,6 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
      * @see VirtualInterfaceState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("virtualInterfaceState")
     public String getVirtualInterfaceState() {
         return this.virtualInterfaceState;
     }
@@ -456,7 +453,6 @@ public class AllocatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonW
      * @see VirtualInterfaceState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         withVirtualInterfaceState(virtualInterfaceState);
     }

@@ -64,7 +64,6 @@ public class ParametersFilter implements Serializable, Cloneable, StructuredPojo
      * @see ParametersFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -95,7 +94,6 @@ public class ParametersFilter implements Serializable, Cloneable, StructuredPojo
      * @see ParametersFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(ParametersFilterKey key) {
         withKey(key);
     }

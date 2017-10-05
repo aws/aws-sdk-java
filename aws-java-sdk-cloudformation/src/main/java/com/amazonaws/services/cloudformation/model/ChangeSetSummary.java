@@ -282,7 +282,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     public String getExecutionStatus() {
         return this.executionStatus;
     }
@@ -325,7 +324,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         withExecutionStatus(executionStatus);
     }
@@ -379,7 +377,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * @see ChangeSetStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -414,7 +411,6 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      * @see ChangeSetStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ChangeSetStatus status) {
         withStatus(status);
     }

@@ -79,7 +79,6 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * @see PlacementConstraintType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -118,7 +117,6 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * @see PlacementConstraintType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PlacementConstraintType type) {
         withType(type);
     }

@@ -209,7 +209,6 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
      * @see RegionName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -240,7 +239,6 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
      * @see RegionName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(RegionName name) {
         withName(name);
     }

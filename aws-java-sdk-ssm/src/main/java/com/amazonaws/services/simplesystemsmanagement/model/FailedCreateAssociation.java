@@ -150,7 +150,6 @@ public class FailedCreateAssociation implements Serializable, Cloneable, Structu
      * @see Fault
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("fault")
     public String getFault() {
         return this.fault;
     }
@@ -181,7 +180,6 @@ public class FailedCreateAssociation implements Serializable, Cloneable, Structu
      * @see Fault
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFault(Fault fault) {
         withFault(fault);
     }

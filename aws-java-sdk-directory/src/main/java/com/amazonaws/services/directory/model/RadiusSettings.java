@@ -349,7 +349,6 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
      * @see RadiusAuthenticationProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("authenticationProtocol")
     public String getAuthenticationProtocol() {
         return this.authenticationProtocol;
     }
@@ -380,7 +379,6 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
      * @see RadiusAuthenticationProtocol
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
         withAuthenticationProtocol(authenticationProtocol);
     }

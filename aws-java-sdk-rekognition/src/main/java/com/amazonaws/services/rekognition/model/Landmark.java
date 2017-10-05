@@ -69,7 +69,6 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
      * @see LandmarkType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -100,7 +99,6 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
      * @see LandmarkType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(LandmarkType type) {
         withType(type);
     }

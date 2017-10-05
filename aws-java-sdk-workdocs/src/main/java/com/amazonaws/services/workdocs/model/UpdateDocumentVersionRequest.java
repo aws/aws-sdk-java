@@ -200,7 +200,6 @@ public class UpdateDocumentVersionRequest extends com.amazonaws.AmazonWebService
      * @see DocumentVersionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("versionStatus")
     public String getVersionStatus() {
         return this.versionStatus;
     }
@@ -231,7 +230,6 @@ public class UpdateDocumentVersionRequest extends com.amazonaws.AmazonWebService
      * @see DocumentVersionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVersionStatus(DocumentVersionStatus versionStatus) {
         withVersionStatus(versionStatus);
     }

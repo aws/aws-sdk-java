@@ -102,7 +102,6 @@ public class Purchase implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -137,7 +136,6 @@ public class Purchase implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         withCurrencyCode(currencyCode);
     }
@@ -416,7 +414,6 @@ public class Purchase implements Serializable, Cloneable {
      * @see PaymentOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("paymentOption")
     public String getPaymentOption() {
         return this.paymentOption;
     }
@@ -447,7 +444,6 @@ public class Purchase implements Serializable, Cloneable {
      * @see PaymentOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPaymentOption(PaymentOption paymentOption) {
         withPaymentOption(paymentOption);
     }

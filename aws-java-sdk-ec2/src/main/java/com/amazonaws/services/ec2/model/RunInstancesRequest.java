@@ -523,7 +523,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @see InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -572,7 +571,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @see InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }
@@ -1919,7 +1917,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @see ShutdownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceInitiatedShutdownBehavior")
     public String getInstanceInitiatedShutdownBehavior() {
         return this.instanceInitiatedShutdownBehavior;
     }
@@ -1964,7 +1961,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @see ShutdownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
         withInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
     }

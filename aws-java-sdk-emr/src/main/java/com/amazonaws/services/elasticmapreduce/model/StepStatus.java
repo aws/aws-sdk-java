@@ -77,7 +77,6 @@ public class StepStatus implements Serializable, Cloneable, StructuredPojo {
      * @see StepState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -108,7 +107,6 @@ public class StepStatus implements Serializable, Cloneable, StructuredPojo {
      * @see StepState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(StepState state) {
         withState(state);
     }

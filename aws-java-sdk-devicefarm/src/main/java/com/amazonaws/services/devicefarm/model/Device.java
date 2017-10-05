@@ -408,7 +408,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * @see DeviceFormFactor
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("formFactor")
     public String getFormFactor() {
         return this.formFactor;
     }
@@ -497,7 +496,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * @see DeviceFormFactor
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFormFactor(DeviceFormFactor formFactor) {
         withFormFactor(formFactor);
     }
@@ -628,7 +626,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -717,7 +714,6 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * @see DevicePlatform
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlatform(DevicePlatform platform) {
         withPlatform(platform);
     }

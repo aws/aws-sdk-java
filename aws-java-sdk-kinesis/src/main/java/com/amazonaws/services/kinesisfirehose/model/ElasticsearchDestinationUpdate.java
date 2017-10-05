@@ -324,7 +324,6 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * @see ElasticsearchIndexRotationPeriod
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("indexRotationPeriod")
     public String getIndexRotationPeriod() {
         return this.indexRotationPeriod;
     }
@@ -367,7 +366,6 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * @see ElasticsearchIndexRotationPeriod
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
         withIndexRotationPeriod(indexRotationPeriod);
     }

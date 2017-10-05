@@ -351,7 +351,6 @@ public class Activity implements Serializable, Cloneable {
      * @see ScalingActivityStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -382,7 +381,6 @@ public class Activity implements Serializable, Cloneable {
      * @see ScalingActivityStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusCode(ScalingActivityStatusCode statusCode) {
         withStatusCode(statusCode);
     }

@@ -89,7 +89,6 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * @see ESPartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -120,7 +119,6 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * @see ESPartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(ESPartitionInstanceType instanceType) {
         withInstanceType(instanceType);
     }
@@ -340,7 +338,6 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * @see ESPartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dedicatedMasterType")
     public String getDedicatedMasterType() {
         return this.dedicatedMasterType;
     }
@@ -371,7 +368,6 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * @see ESPartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
         withDedicatedMasterType(dedicatedMasterType);
     }

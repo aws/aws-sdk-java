@@ -452,7 +452,6 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
      * @see CrawlerState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

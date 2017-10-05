@@ -172,7 +172,6 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * @see CACertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -203,7 +202,6 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * @see CACertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CACertificateStatus status) {
         withStatus(status);
     }
@@ -371,7 +369,6 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * @see AutoRegistrationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("autoRegistrationStatus")
     public String getAutoRegistrationStatus() {
         return this.autoRegistrationStatus;
     }
@@ -406,7 +403,6 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * @see AutoRegistrationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutoRegistrationStatus(AutoRegistrationStatus autoRegistrationStatus) {
         withAutoRegistrationStatus(autoRegistrationStatus);
     }

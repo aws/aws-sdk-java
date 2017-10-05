@@ -275,7 +275,6 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see ActionCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -306,7 +305,6 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see ActionCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(ActionCode action) {
         withAction(action);
     }
@@ -529,7 +527,6 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see StatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -560,7 +557,6 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see StatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusCode(StatusCode statusCode) {
         withStatusCode(statusCode);
     }

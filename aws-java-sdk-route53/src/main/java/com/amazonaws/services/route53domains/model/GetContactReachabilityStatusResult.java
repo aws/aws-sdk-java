@@ -197,7 +197,6 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
      * @see ReachabilityStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -306,7 +305,6 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
      * @see ReachabilityStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ReachabilityStatus status) {
         withStatus(status);
     }

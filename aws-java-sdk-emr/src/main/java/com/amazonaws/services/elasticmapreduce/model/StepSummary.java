@@ -207,7 +207,6 @@ public class StepSummary implements Serializable, Cloneable, StructuredPojo {
      * @see ActionOnFailure
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("actionOnFailure")
     public String getActionOnFailure() {
         return this.actionOnFailure;
     }
@@ -242,7 +241,6 @@ public class StepSummary implements Serializable, Cloneable, StructuredPojo {
      * @see ActionOnFailure
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
         withActionOnFailure(actionOnFailure);
     }

@@ -45,7 +45,6 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
      * @see FleetErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     public String getErrorCode() {
         return this.errorCode;
     }

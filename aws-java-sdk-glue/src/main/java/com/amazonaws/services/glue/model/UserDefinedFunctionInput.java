@@ -202,7 +202,6 @@ public class UserDefinedFunctionInput implements Serializable, Cloneable, Struct
      * @see PrincipalType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ownerType")
     public String getOwnerType() {
         return this.ownerType;
     }

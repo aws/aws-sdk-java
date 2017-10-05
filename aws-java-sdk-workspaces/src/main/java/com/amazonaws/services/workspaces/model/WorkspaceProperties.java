@@ -69,7 +69,6 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * @see RunningMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("runningMode")
     public String getRunningMode() {
         return this.runningMode;
     }
@@ -104,7 +103,6 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      * @see RunningMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRunningMode(RunningMode runningMode) {
         withRunningMode(runningMode);
     }

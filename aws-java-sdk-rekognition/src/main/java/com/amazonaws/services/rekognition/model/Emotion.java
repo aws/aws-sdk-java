@@ -61,7 +61,6 @@ public class Emotion implements Serializable, Cloneable, StructuredPojo {
      * @see EmotionName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -92,7 +91,6 @@ public class Emotion implements Serializable, Cloneable, StructuredPojo {
      * @see EmotionName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(EmotionName type) {
         withType(type);
     }

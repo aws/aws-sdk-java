@@ -451,7 +451,6 @@ public class FlowLog implements Serializable, Cloneable {
      * @see TrafficType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("trafficType")
     public String getTrafficType() {
         return this.trafficType;
     }
@@ -482,7 +481,6 @@ public class FlowLog implements Serializable, Cloneable {
      * @see TrafficType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTrafficType(TrafficType trafficType) {
         withTrafficType(trafficType);
     }

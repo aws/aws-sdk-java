@@ -43,6 +43,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public CheckDomainTransferabilityResult checkDomainTransferability(CheckDomainTransferabilityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

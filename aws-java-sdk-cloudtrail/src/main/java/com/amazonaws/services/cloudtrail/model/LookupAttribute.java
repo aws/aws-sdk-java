@@ -64,7 +64,6 @@ public class LookupAttribute implements Serializable, Cloneable, StructuredPojo 
      * @see LookupAttributeKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attributeKey")
     public String getAttributeKey() {
         return this.attributeKey;
     }
@@ -95,7 +94,6 @@ public class LookupAttribute implements Serializable, Cloneable, StructuredPojo 
      * @see LookupAttributeKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttributeKey(LookupAttributeKey attributeKey) {
         withAttributeKey(attributeKey);
     }

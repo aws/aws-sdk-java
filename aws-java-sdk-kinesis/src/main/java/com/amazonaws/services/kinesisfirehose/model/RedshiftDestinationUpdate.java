@@ -477,7 +477,6 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
      * @see RedshiftS3BackupMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("s3BackupMode")
     public String getS3BackupMode() {
         return this.s3BackupMode;
     }
@@ -508,7 +507,6 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
      * @see RedshiftS3BackupMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
         withS3BackupMode(s3BackupMode);
     }

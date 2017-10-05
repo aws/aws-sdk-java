@@ -229,7 +229,6 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
      * @see PipelineExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -350,7 +349,6 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
      * @see PipelineExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(PipelineExecutionStatus status) {
         withStatus(status);
     }

@@ -108,7 +108,6 @@ public class NotifyApplicationStateRequest extends com.amazonaws.AmazonWebServic
      * @see ApplicationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

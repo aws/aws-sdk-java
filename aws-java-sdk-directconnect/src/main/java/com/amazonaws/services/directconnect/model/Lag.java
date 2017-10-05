@@ -314,7 +314,6 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * @see LagState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("lagState")
     public String getLagState() {
         return this.lagState;
     }
@@ -335,7 +334,6 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      * @see LagState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLagState(LagState lagState) {
         withLagState(lagState);
     }

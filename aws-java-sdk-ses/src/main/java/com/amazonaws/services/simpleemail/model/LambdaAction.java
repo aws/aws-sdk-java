@@ -251,7 +251,6 @@ public class LambdaAction implements Serializable, Cloneable {
      * @see InvocationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("invocationType")
     public String getInvocationType() {
         return this.invocationType;
     }
@@ -324,7 +323,6 @@ public class LambdaAction implements Serializable, Cloneable {
      * @see InvocationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInvocationType(InvocationType invocationType) {
         withInvocationType(invocationType);
     }

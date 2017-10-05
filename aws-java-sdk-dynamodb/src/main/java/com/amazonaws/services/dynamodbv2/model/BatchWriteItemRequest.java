@@ -454,7 +454,6 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReturnConsumedCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("returnConsumedCapacity")
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -475,7 +474,6 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReturnConsumedCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         withReturnConsumedCapacity(returnConsumedCapacity);
     }
@@ -522,7 +520,6 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReturnItemCollectionMetrics
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("returnItemCollectionMetrics")
     public String getReturnItemCollectionMetrics() {
         return this.returnItemCollectionMetrics;
     }
@@ -561,7 +558,6 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReturnItemCollectionMetrics
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }

@@ -306,7 +306,6 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * @see ScalingStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statusFilter")
     public String getStatusFilter() {
         return this.statusFilter;
     }
@@ -487,7 +486,6 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * @see ScalingStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusFilter(ScalingStatusType statusFilter) {
         withStatusFilter(statusFilter);
     }

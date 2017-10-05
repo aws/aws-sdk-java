@@ -64,7 +64,6 @@ public class DocumentFilter implements Serializable, Cloneable, StructuredPojo {
      * @see DocumentFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -95,7 +94,6 @@ public class DocumentFilter implements Serializable, Cloneable, StructuredPojo {
      * @see DocumentFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(DocumentFilterKey key) {
         withKey(key);
     }

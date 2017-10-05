@@ -169,7 +169,6 @@ public class StartStreamEncryptionRequest extends com.amazonaws.AmazonWebService
      * @see EncryptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("encryptionType")
     public String getEncryptionType() {
         return this.encryptionType;
     }
@@ -248,7 +247,6 @@ public class StartStreamEncryptionRequest extends com.amazonaws.AmazonWebService
      * @see EncryptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEncryptionType(EncryptionType encryptionType) {
         withEncryptionType(encryptionType);
     }

@@ -45,7 +45,6 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see NotificationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("notificationType")
     public String getNotificationType() {
         return this.notificationType;
     }
@@ -66,7 +65,6 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see NotificationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNotificationType(NotificationType notificationType) {
         withNotificationType(notificationType);
     }
@@ -96,7 +94,6 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -117,7 +114,6 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }
@@ -173,7 +169,6 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see ThresholdType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("thresholdType")
     public String getThresholdType() {
         return this.thresholdType;
     }
@@ -194,7 +189,6 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      * @see ThresholdType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setThresholdType(ThresholdType thresholdType) {
         withThresholdType(thresholdType);
     }

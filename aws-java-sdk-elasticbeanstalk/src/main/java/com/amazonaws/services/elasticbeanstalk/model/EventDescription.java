@@ -424,7 +424,6 @@ public class EventDescription implements Serializable, Cloneable {
      * @see EventSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("severity")
     public String getSeverity() {
         return this.severity;
     }
@@ -455,7 +454,6 @@ public class EventDescription implements Serializable, Cloneable {
      * @see EventSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSeverity(EventSeverity severity) {
         withSeverity(severity);
     }

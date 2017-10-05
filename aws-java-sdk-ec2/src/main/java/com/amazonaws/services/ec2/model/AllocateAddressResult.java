@@ -159,7 +159,6 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
      * @see DomainType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("domain")
     public String getDomain() {
         return this.domain;
     }
@@ -194,7 +193,6 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
      * @see DomainType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDomain(DomainType domain) {
         withDomain(domain);
     }

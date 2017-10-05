@@ -326,7 +326,6 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
      * @see ProductType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -361,7 +360,6 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
      * @see ProductType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ProductType type) {
         withType(type);
     }

@@ -62,7 +62,6 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @see VerificationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("verificationStatus")
     public String getVerificationStatus() {
         return this.verificationStatus;
     }
@@ -93,7 +92,6 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @see VerificationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVerificationStatus(VerificationStatus verificationStatus) {
         withVerificationStatus(verificationStatus);
     }

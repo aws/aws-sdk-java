@@ -153,7 +153,6 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
      * @see ComplianceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("complianceType")
     public String getComplianceType() {
         return this.complianceType;
     }
@@ -202,7 +201,6 @@ public class EvaluationResult implements Serializable, Cloneable, StructuredPojo
      * @see ComplianceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComplianceType(ComplianceType complianceType) {
         withComplianceType(complianceType);
     }

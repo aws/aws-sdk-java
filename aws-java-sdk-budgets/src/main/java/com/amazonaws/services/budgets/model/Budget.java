@@ -178,7 +178,6 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * @see TimeUnit
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
     public String getTimeUnit() {
         return this.timeUnit;
     }
@@ -199,7 +198,6 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * @see TimeUnit
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeUnit(TimeUnit timeUnit) {
         withTimeUnit(timeUnit);
     }
@@ -281,7 +279,6 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * @see BudgetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("budgetType")
     public String getBudgetType() {
         return this.budgetType;
     }
@@ -302,7 +299,6 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * @see BudgetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBudgetType(BudgetType budgetType) {
         withBudgetType(budgetType);
     }

@@ -64,7 +64,6 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      * @see Logical
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("logical")
     public String getLogical() {
         return this.logical;
     }

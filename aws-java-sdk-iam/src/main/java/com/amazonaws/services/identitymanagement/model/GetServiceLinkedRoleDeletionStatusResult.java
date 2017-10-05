@@ -60,7 +60,6 @@ public class GetServiceLinkedRoleDeletionStatusResult extends com.amazonaws.Amaz
      * @see DeletionTaskStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

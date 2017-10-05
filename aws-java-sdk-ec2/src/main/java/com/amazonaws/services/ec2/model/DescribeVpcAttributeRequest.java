@@ -64,7 +64,6 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      * @see VpcAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -95,7 +94,6 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      * @see VpcAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(VpcAttributeName attribute) {
         withAttribute(attribute);
     }

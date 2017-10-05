@@ -107,7 +107,6 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
      * @see SignalType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("signalType")
     public String getSignalType() {
         return this.signalType;
     }

@@ -138,7 +138,6 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     public String getActionType() {
         return this.actionType;
     }
@@ -169,7 +168,6 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionType(ActionType actionType) {
         withActionType(actionType);
     }
@@ -253,7 +251,6 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * @see FailureType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("failureType")
     public String getFailureType() {
         return this.failureType;
     }
@@ -284,7 +281,6 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * @see FailureType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailureType(FailureType failureType) {
         withFailureType(failureType);
     }
@@ -328,7 +324,6 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * @see ActionHistoryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -359,7 +354,6 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      * @see ActionHistoryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ActionHistoryStatus status) {
         withStatus(status);
     }

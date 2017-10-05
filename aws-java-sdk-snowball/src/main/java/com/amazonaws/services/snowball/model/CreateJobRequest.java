@@ -165,7 +165,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see JobType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     public String getJobType() {
         return this.jobType;
     }
@@ -196,7 +195,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see JobType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobType(JobType jobType) {
         withJobType(jobType);
     }
@@ -528,7 +526,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("snowballCapacityPreference")
     public String getSnowballCapacityPreference() {
         return this.snowballCapacityPreference;
     }
@@ -563,7 +560,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
         withSnowballCapacityPreference(snowballCapacityPreference);
     }
@@ -715,7 +711,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ShippingOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("shippingOption")
     public String getShippingOption() {
         return this.shippingOption;
     }
@@ -852,7 +847,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ShippingOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setShippingOption(ShippingOption shippingOption) {
         withShippingOption(shippingOption);
     }
@@ -1039,7 +1033,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("snowballType")
     public String getSnowballType() {
         return this.snowballType;
     }
@@ -1074,7 +1067,6 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see SnowballType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         withSnowballType(snowballType);
     }

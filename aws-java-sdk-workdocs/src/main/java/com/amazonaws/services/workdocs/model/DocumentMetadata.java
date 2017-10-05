@@ -340,7 +340,6 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
      * @see ResourceStateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceState")
     public String getResourceState() {
         return this.resourceState;
     }
@@ -371,7 +370,6 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
      * @see ResourceStateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceState(ResourceStateType resourceState) {
         withResourceState(resourceState);
     }

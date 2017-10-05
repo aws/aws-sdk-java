@@ -238,7 +238,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * @see Tenancy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceTenancy")
     public String getInstanceTenancy() {
         return this.instanceTenancy;
     }
@@ -309,7 +308,6 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * @see Tenancy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceTenancy(Tenancy instanceTenancy) {
         withInstanceTenancy(instanceTenancy);
     }

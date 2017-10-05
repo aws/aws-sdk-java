@@ -545,7 +545,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalingStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -724,7 +723,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalingStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ScalingStatusType status) {
         withStatus(status);
     }
@@ -956,7 +954,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalingAdjustmentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scalingAdjustmentType")
     public String getScalingAdjustmentType() {
         return this.scalingAdjustmentType;
     }
@@ -1061,7 +1058,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ScalingAdjustmentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
         withScalingAdjustmentType(scalingAdjustmentType);
     }
@@ -1142,7 +1138,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1173,7 +1168,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see ComparisonOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperatorType comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }
@@ -1450,7 +1444,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see MetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     public String getMetricName() {
         return this.metricName;
     }
@@ -1631,7 +1624,6 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * @see MetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMetricName(MetricName metricName) {
         withMetricName(metricName);
     }

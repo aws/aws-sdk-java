@@ -175,7 +175,6 @@ public class HostReservation implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     public String getCurrencyCode() {
         return this.currencyCode;
     }
@@ -210,7 +209,6 @@ public class HostReservation implements Serializable, Cloneable {
      * @see CurrencyCodeValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
         withCurrencyCode(currencyCode);
     }
@@ -584,7 +582,6 @@ public class HostReservation implements Serializable, Cloneable {
      * @see PaymentOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("paymentOption")
     public String getPaymentOption() {
         return this.paymentOption;
     }
@@ -615,7 +612,6 @@ public class HostReservation implements Serializable, Cloneable {
      * @see PaymentOption
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPaymentOption(PaymentOption paymentOption) {
         withPaymentOption(paymentOption);
     }
@@ -699,7 +695,6 @@ public class HostReservation implements Serializable, Cloneable {
      * @see ReservationState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -730,7 +725,6 @@ public class HostReservation implements Serializable, Cloneable {
      * @see ReservationState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ReservationState state) {
         withState(state);
     }

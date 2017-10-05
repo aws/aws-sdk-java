@@ -43,7 +43,6 @@ public class ConfirmPrivateVirtualInterfaceResult extends com.amazonaws.AmazonWe
      * @see VirtualInterfaceState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("virtualInterfaceState")
     public String getVirtualInterfaceState() {
         return this.virtualInterfaceState;
     }
@@ -64,7 +63,6 @@ public class ConfirmPrivateVirtualInterfaceResult extends com.amazonaws.AmazonWe
      * @see VirtualInterfaceState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
         withVirtualInterfaceState(virtualInterfaceState);
     }

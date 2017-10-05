@@ -2131,7 +2131,6 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see QueryParser
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("queryParser")
     public String getQueryParser() {
         return this.queryParser;
     }
@@ -2274,7 +2273,6 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @see QueryParser
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setQueryParser(QueryParser queryParser) {
         withQueryParser(queryParser);
     }

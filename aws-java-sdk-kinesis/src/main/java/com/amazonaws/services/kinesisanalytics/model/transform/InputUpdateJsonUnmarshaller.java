@@ -56,6 +56,10 @@ public class InputUpdateJsonUnmarshaller implements Unmarshaller<InputUpdate, Js
                     context.nextToken();
                     inputUpdate.setNamePrefixUpdate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InputProcessingConfigurationUpdate", targetDepth)) {
+                    context.nextToken();
+                    inputUpdate.setInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("KinesisStreamsInputUpdate", targetDepth)) {
                     context.nextToken();
                     inputUpdate.setKinesisStreamsInputUpdate(KinesisStreamsInputUpdateJsonUnmarshaller.getInstance().unmarshall(context));

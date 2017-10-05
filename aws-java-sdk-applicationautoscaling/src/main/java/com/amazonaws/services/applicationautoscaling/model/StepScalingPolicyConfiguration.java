@@ -107,7 +107,6 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * @see AdjustmentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("adjustmentType")
     public String getAdjustmentType() {
         return this.adjustmentType;
     }
@@ -142,7 +141,6 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * @see AdjustmentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAdjustmentType(AdjustmentType adjustmentType) {
         withAdjustmentType(adjustmentType);
     }
@@ -450,7 +448,6 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * @see MetricAggregationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("metricAggregationType")
     public String getMetricAggregationType() {
         return this.metricAggregationType;
     }
@@ -485,7 +482,6 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * @see MetricAggregationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMetricAggregationType(MetricAggregationType metricAggregationType) {
         withMetricAggregationType(metricAggregationType);
     }

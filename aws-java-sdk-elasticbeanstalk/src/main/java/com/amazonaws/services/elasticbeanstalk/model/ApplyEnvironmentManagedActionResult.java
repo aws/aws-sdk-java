@@ -155,7 +155,6 @@ public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWeb
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     public String getActionType() {
         return this.actionType;
     }
@@ -186,7 +185,6 @@ public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWeb
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionType(ActionType actionType) {
         withActionType(actionType);
     }

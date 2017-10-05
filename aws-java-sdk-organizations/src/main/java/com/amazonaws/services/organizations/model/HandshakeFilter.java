@@ -84,7 +84,6 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     public String getActionType() {
         return this.actionType;
     }
@@ -125,7 +124,6 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionType(ActionType actionType) {
         withActionType(actionType);
     }

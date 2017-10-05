@@ -217,7 +217,6 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      * @see BatchPredictionFilterVariable
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("filterVariable")
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -304,7 +303,6 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      * @see BatchPredictionFilterVariable
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFilterVariable(BatchPredictionFilterVariable filterVariable) {
         withFilterVariable(filterVariable);
     }
@@ -859,7 +857,6 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -916,7 +913,6 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }

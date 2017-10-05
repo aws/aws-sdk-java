@@ -111,7 +111,6 @@ public class ResourceChange implements Serializable, Cloneable {
      * @see ChangeAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -146,7 +145,6 @@ public class ResourceChange implements Serializable, Cloneable {
      * @see ChangeAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(ChangeAction action) {
         withAction(action);
     }
@@ -360,7 +358,6 @@ public class ResourceChange implements Serializable, Cloneable {
      * @see Replacement
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("replacement")
     public String getReplacement() {
         return this.replacement;
     }
@@ -433,7 +430,6 @@ public class ResourceChange implements Serializable, Cloneable {
      * @see Replacement
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReplacement(Replacement replacement) {
         withReplacement(replacement);
     }

@@ -65,7 +65,6 @@ public class StorageGatewayError implements Serializable, Cloneable, StructuredP
      * @see ErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -96,7 +95,6 @@ public class StorageGatewayError implements Serializable, Cloneable, StructuredP
      * @see ErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setErrorCode(ErrorCode errorCode) {
         withErrorCode(errorCode);
     }

@@ -110,7 +110,6 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
      * @see DeliveryMediumType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deliveryMedium")
     public String getDeliveryMedium() {
         return this.deliveryMedium;
     }
@@ -141,7 +140,6 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
      * @see DeliveryMediumType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeliveryMedium(DeliveryMediumType deliveryMedium) {
         withDeliveryMedium(deliveryMedium);
     }

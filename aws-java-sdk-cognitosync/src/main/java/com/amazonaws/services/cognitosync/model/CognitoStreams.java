@@ -175,7 +175,6 @@ public class CognitoStreams implements Serializable, Cloneable, StructuredPojo {
      * @see StreamingStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("streamingStatus")
     public String getStreamingStatus() {
         return this.streamingStatus;
     }
@@ -230,7 +229,6 @@ public class CognitoStreams implements Serializable, Cloneable, StructuredPojo {
      * @see StreamingStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStreamingStatus(StreamingStatus streamingStatus) {
         withStreamingStatus(streamingStatus);
     }

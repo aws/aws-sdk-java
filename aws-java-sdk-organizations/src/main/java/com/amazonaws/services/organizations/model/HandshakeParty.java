@@ -129,7 +129,6 @@ public class HandshakeParty implements Serializable, Cloneable, StructuredPojo {
      * @see HandshakePartyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -160,7 +159,6 @@ public class HandshakeParty implements Serializable, Cloneable, StructuredPojo {
      * @see HandshakePartyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(HandshakePartyType type) {
         withType(type);
     }

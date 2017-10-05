@@ -70,7 +70,6 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
      * @see FailureType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -101,7 +100,6 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
      * @see FailureType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(FailureType type) {
         withType(type);
     }

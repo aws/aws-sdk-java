@@ -341,7 +341,6 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see AgentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("health")
     public String getHealth() {
         return this.health;
     }
@@ -372,7 +371,6 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
      * @see AgentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHealth(AgentStatus health) {
         withHealth(health);
     }

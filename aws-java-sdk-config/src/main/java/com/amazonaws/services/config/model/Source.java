@@ -78,7 +78,6 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * @see Owner
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("owner")
     public String getOwner() {
         return this.owner;
     }
@@ -109,7 +108,6 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * @see Owner
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOwner(Owner owner) {
         withOwner(owner);
     }

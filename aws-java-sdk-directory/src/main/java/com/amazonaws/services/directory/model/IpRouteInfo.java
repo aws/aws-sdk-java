@@ -168,7 +168,6 @@ public class IpRouteInfo implements Serializable, Cloneable, StructuredPojo {
      * @see IpRouteStatusMsg
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ipRouteStatusMsg")
     public String getIpRouteStatusMsg() {
         return this.ipRouteStatusMsg;
     }
@@ -199,7 +198,6 @@ public class IpRouteInfo implements Serializable, Cloneable, StructuredPojo {
      * @see IpRouteStatusMsg
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIpRouteStatusMsg(IpRouteStatusMsg ipRouteStatusMsg) {
         withIpRouteStatusMsg(ipRouteStatusMsg);
     }

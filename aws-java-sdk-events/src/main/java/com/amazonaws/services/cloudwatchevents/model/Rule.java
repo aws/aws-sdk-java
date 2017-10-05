@@ -227,7 +227,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -258,7 +257,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(RuleState state) {
         withState(state);
     }

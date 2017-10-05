@@ -98,7 +98,6 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      * @see ResetImageAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -129,7 +128,6 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      * @see ResetImageAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(ResetImageAttributeName attribute) {
         withAttribute(attribute);
     }

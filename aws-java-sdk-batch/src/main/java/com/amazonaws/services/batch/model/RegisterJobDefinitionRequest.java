@@ -130,7 +130,6 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @see JobDefinitionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -161,7 +160,6 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @see JobDefinitionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(JobDefinitionType type) {
         withType(type);
     }

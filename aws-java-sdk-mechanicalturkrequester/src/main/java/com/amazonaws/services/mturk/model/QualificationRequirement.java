@@ -162,7 +162,6 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
      * @see Comparator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("comparator")
     public String getComparator() {
         return this.comparator;
     }
@@ -213,7 +212,6 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
      * @see Comparator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparator(Comparator comparator) {
         withComparator(comparator);
     }

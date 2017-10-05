@@ -59,7 +59,6 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
      * @see InstanceMetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     public String getMetricName() {
         return this.metricName;
     }
@@ -90,7 +89,6 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
      * @see InstanceMetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMetricName(InstanceMetricName metricName) {
         withMetricName(metricName);
     }

@@ -324,7 +324,6 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * @see StackSetOperationResultStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -485,7 +484,6 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * @see StackSetOperationResultStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StackSetOperationResultStatus status) {
         withStatus(status);
     }

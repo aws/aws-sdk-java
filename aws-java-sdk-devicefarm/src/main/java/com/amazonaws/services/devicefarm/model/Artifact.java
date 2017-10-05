@@ -760,7 +760,6 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * @see ArtifactType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1269,7 +1268,6 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      * @see ArtifactType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ArtifactType type) {
         withType(type);
     }

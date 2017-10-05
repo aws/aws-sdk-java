@@ -195,7 +195,6 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * @see MarketType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("market")
     public String getMarket() {
         return this.market;
     }
@@ -226,7 +225,6 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * @see MarketType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMarket(MarketType market) {
         withMarket(market);
     }
@@ -270,7 +268,6 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * @see InstanceRoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceRole")
     public String getInstanceRole() {
         return this.instanceRole;
     }
@@ -301,7 +298,6 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      * @see InstanceRoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceRole(InstanceRoleType instanceRole) {
         withInstanceRole(instanceRole);
     }

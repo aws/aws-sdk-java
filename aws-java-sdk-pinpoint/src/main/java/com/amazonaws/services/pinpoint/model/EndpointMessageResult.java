@@ -90,7 +90,6 @@ public class EndpointMessageResult implements Serializable, Cloneable, Structure
      * @see DeliveryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deliveryStatus")
     public String getDeliveryStatus() {
         return this.deliveryStatus;
     }

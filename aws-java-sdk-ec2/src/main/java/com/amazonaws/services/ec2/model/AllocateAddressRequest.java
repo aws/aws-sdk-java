@@ -76,7 +76,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * @see DomainType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("domain")
     public String getDomain() {
         return this.domain;
     }
@@ -117,7 +116,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * @see DomainType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDomain(DomainType domain) {
         withDomain(domain);
     }

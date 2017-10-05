@@ -57,6 +57,10 @@ public class DiscoverInputSchemaResultJsonUnmarshaller implements Unmarshaller<D
                     discoverInputSchemaResult.setParsedInputRecords(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
                             .getUnmarshaller(String.class))).unmarshall(context));
                 }
+                if (context.testExpression("ProcessedInputRecords", targetDepth)) {
+                    context.nextToken();
+                    discoverInputSchemaResult.setProcessedInputRecords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("RawInputRecords", targetDepth)) {
                     context.nextToken();
                     discoverInputSchemaResult.setRawInputRecords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

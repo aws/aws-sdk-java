@@ -175,7 +175,6 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JQState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -206,7 +205,6 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JQState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(JQState state) {
         withState(state);
     }
@@ -250,7 +248,6 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JQStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -281,7 +278,6 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * @see JQStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(JQStatus status) {
         withStatus(status);
     }

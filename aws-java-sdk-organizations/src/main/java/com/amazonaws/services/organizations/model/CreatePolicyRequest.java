@@ -277,7 +277,6 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see PolicyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -324,7 +323,6 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see PolicyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(PolicyType type) {
         withType(type);
     }

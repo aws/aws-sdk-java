@@ -462,7 +462,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see UserStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -493,7 +492,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see UserStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(UserStatusType status) {
         withStatus(status);
     }
@@ -537,7 +535,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see UserType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -568,7 +565,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see UserType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(UserType type) {
         withType(type);
     }
@@ -732,7 +728,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see LocaleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -763,7 +758,6 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * @see LocaleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(LocaleType locale) {
         withLocale(locale);
     }

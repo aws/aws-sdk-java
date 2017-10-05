@@ -188,7 +188,6 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
      * @see ComplianceQueryOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }

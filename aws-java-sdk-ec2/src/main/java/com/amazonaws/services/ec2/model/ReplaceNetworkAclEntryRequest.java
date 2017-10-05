@@ -473,7 +473,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      * @see RuleAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
     public String getRuleAction() {
         return this.ruleAction;
     }
@@ -504,7 +503,6 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      * @see RuleAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRuleAction(RuleAction ruleAction) {
         withRuleAction(ruleAction);
     }

@@ -60,7 +60,6 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
      * @see AttributeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     public String getAttributeType() {
         return this.attributeType;
     }
@@ -91,7 +90,6 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
      * @see AttributeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttributeType(AttributeType attributeType) {
         withAttributeType(attributeType);
     }

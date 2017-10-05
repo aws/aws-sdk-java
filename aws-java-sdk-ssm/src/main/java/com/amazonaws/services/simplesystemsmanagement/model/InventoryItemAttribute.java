@@ -104,7 +104,6 @@ public class InventoryItemAttribute implements Serializable, Cloneable, Structur
      * @see InventoryAttributeDataType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     public String getDataType() {
         return this.dataType;
     }
@@ -135,7 +134,6 @@ public class InventoryItemAttribute implements Serializable, Cloneable, Structur
      * @see InventoryAttributeDataType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDataType(InventoryAttributeDataType dataType) {
         withDataType(dataType);
     }

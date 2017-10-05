@@ -116,7 +116,6 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
      * @see EventAggregateField
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("aggregateField")
     public String getAggregateField() {
         return this.aggregateField;
     }
@@ -147,7 +146,6 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
      * @see EventAggregateField
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAggregateField(EventAggregateField aggregateField) {
         withAggregateField(aggregateField);
     }

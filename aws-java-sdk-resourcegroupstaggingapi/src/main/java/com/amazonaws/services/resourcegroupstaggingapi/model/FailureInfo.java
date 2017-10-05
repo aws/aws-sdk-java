@@ -120,7 +120,6 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
      * @see ErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -159,7 +158,6 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
      * @see ErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setErrorCode(ErrorCode errorCode) {
         withErrorCode(errorCode);
     }

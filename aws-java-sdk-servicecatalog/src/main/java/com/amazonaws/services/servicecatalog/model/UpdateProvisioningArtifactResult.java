@@ -166,7 +166,6 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -197,7 +196,6 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }

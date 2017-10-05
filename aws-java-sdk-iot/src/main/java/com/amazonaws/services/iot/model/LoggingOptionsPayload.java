@@ -101,7 +101,6 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
      * @see LogLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
     public String getLogLevel() {
         return this.logLevel;
     }
@@ -132,7 +131,6 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
      * @see LogLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLogLevel(LogLevel logLevel) {
         withLogLevel(logLevel);
     }

@@ -141,7 +141,6 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
      * @see JobState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("jobState")
     public String getJobState() {
         return this.jobState;
     }
@@ -172,7 +171,6 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
      * @see JobState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobState(JobState jobState) {
         withJobState(jobState);
     }
@@ -296,7 +294,6 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
      * @see JobType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     public String getJobType() {
         return this.jobType;
     }
@@ -327,7 +324,6 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
      * @see JobType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobType(JobType jobType) {
         withJobType(jobType);
     }
@@ -371,7 +367,6 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("snowballType")
     public String getSnowballType() {
         return this.snowballType;
     }
@@ -402,7 +397,6 @@ public class JobListEntry implements Serializable, Cloneable, StructuredPojo {
      * @see SnowballType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSnowballType(SnowballType snowballType) {
         withSnowballType(snowballType);
     }

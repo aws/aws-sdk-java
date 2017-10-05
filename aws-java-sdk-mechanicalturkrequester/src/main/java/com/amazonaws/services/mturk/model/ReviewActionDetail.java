@@ -268,7 +268,6 @@ public class ReviewActionDetail implements Serializable, Cloneable, StructuredPo
      * @see ReviewActionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -299,7 +298,6 @@ public class ReviewActionDetail implements Serializable, Cloneable, StructuredPo
      * @see ReviewActionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ReviewActionStatus status) {
         withStatus(status);
     }

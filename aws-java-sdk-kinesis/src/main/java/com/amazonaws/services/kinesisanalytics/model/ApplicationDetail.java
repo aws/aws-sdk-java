@@ -255,7 +255,6 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * @see ApplicationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("applicationStatus")
     public String getApplicationStatus() {
         return this.applicationStatus;
     }
@@ -286,7 +285,6 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * @see ApplicationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
         withApplicationStatus(applicationStatus);
     }

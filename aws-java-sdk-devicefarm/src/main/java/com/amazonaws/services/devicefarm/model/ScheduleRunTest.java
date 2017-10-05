@@ -622,7 +622,6 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * @see TestType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -955,7 +954,6 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * @see TestType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(TestType type) {
         withType(type);
     }

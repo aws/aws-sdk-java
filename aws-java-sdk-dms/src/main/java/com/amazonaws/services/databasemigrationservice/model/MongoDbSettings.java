@@ -367,7 +367,6 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * @see AuthTypeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("authType")
     public String getAuthType() {
         return this.authType;
     }
@@ -420,7 +419,6 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * @see AuthTypeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAuthType(AuthTypeValue authType) {
         withAuthType(authType);
     }
@@ -501,7 +499,6 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * @see AuthMechanismValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("authMechanism")
     public String getAuthMechanism() {
         return this.authMechanism;
     }
@@ -558,7 +555,6 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * @see AuthMechanismValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAuthMechanism(AuthMechanismValue authMechanism) {
         withAuthMechanism(authMechanism);
     }
@@ -637,7 +633,6 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * @see NestingLevelValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("nestingLevel")
     public String getNestingLevel() {
         return this.nestingLevel;
     }
@@ -690,7 +685,6 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * @see NestingLevelValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNestingLevel(NestingLevelValue nestingLevel) {
         withNestingLevel(nestingLevel);
     }

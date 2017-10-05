@@ -93,7 +93,6 @@ public class GetStatusResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see JobType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     public String getJobType() {
         return this.jobType;
     }
@@ -114,7 +113,6 @@ public class GetStatusResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see JobType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJobType(JobType jobType) {
         withJobType(jobType);
     }

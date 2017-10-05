@@ -565,7 +565,6 @@ public class Route implements Serializable, Cloneable {
      * @see RouteOrigin
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("origin")
     public String getOrigin() {
         return this.origin;
     }
@@ -662,7 +661,6 @@ public class Route implements Serializable, Cloneable {
      * @see RouteOrigin
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrigin(RouteOrigin origin) {
         withOrigin(origin);
     }
@@ -745,7 +743,6 @@ public class Route implements Serializable, Cloneable {
      * @see RouteState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -782,7 +779,6 @@ public class Route implements Serializable, Cloneable {
      * @see RouteState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(RouteState state) {
         withState(state);
     }

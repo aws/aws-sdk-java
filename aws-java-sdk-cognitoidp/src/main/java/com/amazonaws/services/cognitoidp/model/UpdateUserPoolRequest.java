@@ -661,7 +661,6 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see UserPoolMfaType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("mfaConfiguration")
     public String getMfaConfiguration() {
         return this.mfaConfiguration;
     }
@@ -762,7 +761,6 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see UserPoolMfaType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
         withMfaConfiguration(mfaConfiguration);
     }

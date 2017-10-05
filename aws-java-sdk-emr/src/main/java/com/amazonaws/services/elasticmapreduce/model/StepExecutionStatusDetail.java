@@ -117,7 +117,6 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
      * @see StepExecutionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -148,7 +147,6 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
      * @see StepExecutionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(StepExecutionState state) {
         withState(state);
     }

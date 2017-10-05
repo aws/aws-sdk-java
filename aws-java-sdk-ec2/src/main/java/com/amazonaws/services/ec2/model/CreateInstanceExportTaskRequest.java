@@ -196,7 +196,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * @see ExportEnvironment
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("targetEnvironment")
     public String getTargetEnvironment() {
         return this.targetEnvironment;
     }
@@ -227,7 +226,6 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * @see ExportEnvironment
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
         withTargetEnvironment(targetEnvironment);
     }

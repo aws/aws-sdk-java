@@ -116,7 +116,6 @@ public class DescribeElasticsearchInstanceTypeLimitsRequest extends com.amazonaw
      * @see ESPartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -149,7 +148,6 @@ public class DescribeElasticsearchInstanceTypeLimitsRequest extends com.amazonaw
      * @see ESPartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(ESPartitionInstanceType instanceType) {
         withInstanceType(instanceType);
     }

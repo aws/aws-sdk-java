@@ -422,7 +422,6 @@ public class StackEvent implements Serializable, Cloneable {
      * @see ResourceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceStatus")
     public String getResourceStatus() {
         return this.resourceStatus;
     }
@@ -453,7 +452,6 @@ public class StackEvent implements Serializable, Cloneable {
      * @see ResourceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceStatus(ResourceStatus resourceStatus) {
         withResourceStatus(resourceStatus);
     }

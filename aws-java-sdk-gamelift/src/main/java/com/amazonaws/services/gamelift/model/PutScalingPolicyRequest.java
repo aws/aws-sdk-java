@@ -363,7 +363,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalingAdjustmentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scalingAdjustmentType")
     public String getScalingAdjustmentType() {
         return this.scalingAdjustmentType;
     }
@@ -472,7 +471,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ScalingAdjustmentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
         withScalingAdjustmentType(scalingAdjustmentType);
     }
@@ -595,7 +593,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ComparisonOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -626,7 +623,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ComparisonOperatorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperatorType comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }
@@ -863,7 +859,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see MetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     public String getMetricName() {
         return this.metricName;
     }
@@ -1044,7 +1039,6 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @see MetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMetricName(MetricName metricName) {
         withMetricName(metricName);
     }

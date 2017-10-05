@@ -369,7 +369,6 @@ public class MetricDatum implements Serializable, Cloneable {
      * @see StandardUnit
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -400,7 +399,6 @@ public class MetricDatum implements Serializable, Cloneable {
      * @see StandardUnit
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(StandardUnit unit) {
         withUnit(unit);
     }

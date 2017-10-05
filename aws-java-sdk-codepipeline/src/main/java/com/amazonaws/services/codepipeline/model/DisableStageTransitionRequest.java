@@ -167,7 +167,6 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
      * @see StageTransitionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("transitionType")
     public String getTransitionType() {
         return this.transitionType;
     }
@@ -206,7 +205,6 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
      * @see StageTransitionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTransitionType(StageTransitionType transitionType) {
         withTransitionType(transitionType);
     }

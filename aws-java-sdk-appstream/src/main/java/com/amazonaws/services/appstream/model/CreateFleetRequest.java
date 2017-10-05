@@ -941,7 +941,6 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see FleetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
     public String getFleetType() {
         return this.fleetType;
     }

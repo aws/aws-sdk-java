@@ -330,7 +330,6 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
      * @see DocumentStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -361,7 +360,6 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
      * @see DocumentStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(DocumentStatusType status) {
         withStatus(status);
     }

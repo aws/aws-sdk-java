@@ -214,7 +214,6 @@ public class SchemaExtensionInfo implements Serializable, Cloneable, StructuredP
      * @see SchemaExtensionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("schemaExtensionStatus")
     public String getSchemaExtensionStatus() {
         return this.schemaExtensionStatus;
     }
@@ -245,7 +244,6 @@ public class SchemaExtensionInfo implements Serializable, Cloneable, StructuredP
      * @see SchemaExtensionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSchemaExtensionStatus(SchemaExtensionStatus schemaExtensionStatus) {
         withSchemaExtensionStatus(schemaExtensionStatus);
     }

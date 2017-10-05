@@ -409,7 +409,6 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * @see WafRuleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -452,7 +451,6 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * @see WafRuleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(WafRuleType type) {
         withType(type);
     }

@@ -44,6 +44,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * The authorization key for .fi domains
      * </p>
      */
+    @Deprecated
     private String fIAuthKey;
     /**
      * <p>
@@ -100,7 +101,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * @param fIAuthKey
      *        The authorization key for .fi domains
      */
-
+    @Deprecated
     public void setFIAuthKey(String fIAuthKey) {
         this.fIAuthKey = fIAuthKey;
     }
@@ -112,7 +113,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      * 
      * @return The authorization key for .fi domains
      */
-
+    @Deprecated
     public String getFIAuthKey() {
         return this.fIAuthKey;
     }
@@ -126,7 +127,7 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
      *        The authorization key for .fi domains
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateDomainNameserversRequest withFIAuthKey(String fIAuthKey) {
         setFIAuthKey(fIAuthKey);
         return this;

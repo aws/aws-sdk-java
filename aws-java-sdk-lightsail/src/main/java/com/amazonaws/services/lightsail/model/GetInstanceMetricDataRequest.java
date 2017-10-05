@@ -131,7 +131,6 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * @see InstanceMetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     public String getMetricName() {
         return this.metricName;
     }
@@ -162,7 +161,6 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * @see InstanceMetricName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMetricName(InstanceMetricName metricName) {
         withMetricName(metricName);
     }
@@ -326,7 +324,6 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * @see MetricUnit
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -357,7 +354,6 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * @see MetricUnit
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(MetricUnit unit) {
         withUnit(unit);
     }

@@ -120,7 +120,6 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
      * @see StopStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -197,7 +196,6 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
      * @see StopStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StopStatus status) {
         withStatus(status);
     }

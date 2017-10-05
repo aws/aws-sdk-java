@@ -65,7 +65,6 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ActionOwner
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("actionOwnerFilter")
     public String getActionOwnerFilter() {
         return this.actionOwnerFilter;
     }
@@ -96,7 +95,6 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ActionOwner
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionOwnerFilter(ActionOwner actionOwnerFilter) {
         withActionOwnerFilter(actionOwnerFilter);
     }

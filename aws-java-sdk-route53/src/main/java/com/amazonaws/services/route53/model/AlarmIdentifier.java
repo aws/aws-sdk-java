@@ -92,7 +92,6 @@ public class AlarmIdentifier implements Serializable, Cloneable {
      * @see CloudWatchRegion
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("region")
     public String getRegion() {
         return this.region;
     }
@@ -145,7 +144,6 @@ public class AlarmIdentifier implements Serializable, Cloneable {
      * @see CloudWatchRegion
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRegion(CloudWatchRegion region) {
         withRegion(region);
     }

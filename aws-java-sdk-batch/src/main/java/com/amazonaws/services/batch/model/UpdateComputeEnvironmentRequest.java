@@ -132,7 +132,6 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -167,7 +166,6 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(CEState state) {
         withState(state);
     }

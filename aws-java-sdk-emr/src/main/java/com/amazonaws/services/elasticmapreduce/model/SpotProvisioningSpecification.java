@@ -154,7 +154,6 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * @see SpotProvisioningTimeoutAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("timeoutAction")
     public String getTimeoutAction() {
         return this.timeoutAction;
     }
@@ -201,7 +200,6 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * @see SpotProvisioningTimeoutAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeoutAction(SpotProvisioningTimeoutAction timeoutAction) {
         withTimeoutAction(timeoutAction);
     }

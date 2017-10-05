@@ -110,7 +110,6 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
      * @see ChannelType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("channelType")
     public String getChannelType() {
         return this.channelType;
     }
@@ -145,7 +144,6 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
      * @see ChannelType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChannelType(ChannelType channelType) {
         withChannelType(channelType);
     }

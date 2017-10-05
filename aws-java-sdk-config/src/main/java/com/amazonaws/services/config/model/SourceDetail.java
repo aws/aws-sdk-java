@@ -112,7 +112,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see EventSource
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("eventSource")
     public String getEventSource() {
         return this.eventSource;
     }
@@ -143,7 +142,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see EventSource
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEventSource(EventSource eventSource) {
         withEventSource(eventSource);
     }
@@ -315,7 +313,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see MessageType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     public String getMessageType() {
         return this.messageType;
     }
@@ -474,7 +471,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see MessageType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMessageType(MessageType messageType) {
         withMessageType(messageType);
     }
@@ -610,7 +606,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see MaximumExecutionFrequency
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("maximumExecutionFrequency")
     public String getMaximumExecutionFrequency() {
         return this.maximumExecutionFrequency;
     }
@@ -669,7 +664,6 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * @see MaximumExecutionFrequency
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
         withMaximumExecutionFrequency(maximumExecutionFrequency);
     }

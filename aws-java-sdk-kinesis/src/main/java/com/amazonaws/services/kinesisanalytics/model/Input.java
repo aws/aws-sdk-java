@@ -41,6 +41,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private String namePrefix;
     /**
      * <p>
+     * The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are received
+     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a>InputLambdaProcessor</a>.
+     * </p>
+     */
+    private InputProcessingConfiguration inputProcessingConfiguration;
+    /**
+     * <p>
      * If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an
      * IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
@@ -135,6 +143,58 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withNamePrefix(String namePrefix) {
         setNamePrefix(namePrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are received
+     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a>InputLambdaProcessor</a>.
+     * </p>
+     * 
+     * @param inputProcessingConfiguration
+     *        The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are
+     *        received from the stream, before the application's SQL code executes. Currently, the only input processing
+     *        configuration available is <a>InputLambdaProcessor</a>.
+     */
+
+    public void setInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
+        this.inputProcessingConfiguration = inputProcessingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are received
+     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a>InputLambdaProcessor</a>.
+     * </p>
+     * 
+     * @return The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are
+     *         received from the stream, before the application's SQL code executes. Currently, the only input
+     *         processing configuration available is <a>InputLambdaProcessor</a>.
+     */
+
+    public InputProcessingConfiguration getInputProcessingConfiguration() {
+        return this.inputProcessingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are received
+     * from the stream, before the application's SQL code executes. Currently, the only input processing configuration
+     * available is <a>InputLambdaProcessor</a>.
+     * </p>
+     * 
+     * @param inputProcessingConfiguration
+     *        The <a>InputProcessingConfiguration</a> for the Input. An input processor transforms records as they are
+     *        received from the stream, before the application's SQL code executes. Currently, the only input processing
+     *        configuration available is <a>InputLambdaProcessor</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withInputProcessingConfiguration(InputProcessingConfiguration inputProcessingConfiguration) {
+        setInputProcessingConfiguration(inputProcessingConfiguration);
         return this;
     }
 
@@ -416,6 +476,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getNamePrefix() != null)
             sb.append("NamePrefix: ").append(getNamePrefix()).append(",");
+        if (getInputProcessingConfiguration() != null)
+            sb.append("InputProcessingConfiguration: ").append(getInputProcessingConfiguration()).append(",");
         if (getKinesisStreamsInput() != null)
             sb.append("KinesisStreamsInput: ").append(getKinesisStreamsInput()).append(",");
         if (getKinesisFirehoseInput() != null)
@@ -442,6 +504,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNamePrefix() != null && other.getNamePrefix().equals(this.getNamePrefix()) == false)
             return false;
+        if (other.getInputProcessingConfiguration() == null ^ this.getInputProcessingConfiguration() == null)
+            return false;
+        if (other.getInputProcessingConfiguration() != null && other.getInputProcessingConfiguration().equals(this.getInputProcessingConfiguration()) == false)
+            return false;
         if (other.getKinesisStreamsInput() == null ^ this.getKinesisStreamsInput() == null)
             return false;
         if (other.getKinesisStreamsInput() != null && other.getKinesisStreamsInput().equals(this.getKinesisStreamsInput()) == false)
@@ -467,6 +533,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNamePrefix() == null) ? 0 : getNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getInputProcessingConfiguration() == null) ? 0 : getInputProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getKinesisStreamsInput() == null) ? 0 : getKinesisStreamsInput().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseInput() == null) ? 0 : getKinesisFirehoseInput().hashCode());
         hashCode = prime * hashCode + ((getInputParallelism() == null) ? 0 : getInputParallelism().hashCode());

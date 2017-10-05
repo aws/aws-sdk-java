@@ -193,7 +193,6 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      * @see SlotConstraint
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("slotConstraint")
     public String getSlotConstraint() {
         return this.slotConstraint;
     }
@@ -224,7 +223,6 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      * @see SlotConstraint
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSlotConstraint(SlotConstraint slotConstraint) {
         withSlotConstraint(slotConstraint);
     }

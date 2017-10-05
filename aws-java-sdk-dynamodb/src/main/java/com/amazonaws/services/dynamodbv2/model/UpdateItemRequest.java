@@ -856,7 +856,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ConditionalOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("conditionalOperator")
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -897,7 +896,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ConditionalOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         withConditionalOperator(conditionalOperator);
     }
@@ -1098,7 +1096,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("returnValues")
     public String getReturnValues() {
         return this.returnValues;
     }
@@ -1281,7 +1278,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnValues(ReturnValue returnValues) {
         withReturnValues(returnValues);
     }
@@ -1392,7 +1388,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnConsumedCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("returnConsumedCapacity")
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -1413,7 +1408,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnConsumedCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         withReturnConsumedCapacity(returnConsumedCapacity);
     }
@@ -1460,7 +1454,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnItemCollectionMetrics
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("returnItemCollectionMetrics")
     public String getReturnItemCollectionMetrics() {
         return this.returnItemCollectionMetrics;
     }
@@ -1499,7 +1492,6 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @see ReturnItemCollectionMetrics
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }

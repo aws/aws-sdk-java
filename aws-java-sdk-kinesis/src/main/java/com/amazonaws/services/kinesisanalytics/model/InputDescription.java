@@ -51,6 +51,12 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> inAppStreamNames;
     /**
      * <p>
+     * The description of the preprocessor that executes on records in this input before the application's code is run.
+     * </p>
+     */
+    private InputProcessingConfigurationDescription inputProcessingConfigurationDescription;
+    /**
+     * <p>
      * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
      * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
@@ -64,7 +70,12 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private KinesisFirehoseInputDescription kinesisFirehoseInputDescription;
-
+    /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * in the in-application stream that is being created.
+     * </p>
+     */
     private SourceSchema inputSchema;
     /**
      * <p>
@@ -237,6 +248,49 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The description of the preprocessor that executes on records in this input before the application's code is run.
+     * </p>
+     * 
+     * @param inputProcessingConfigurationDescription
+     *        The description of the preprocessor that executes on records in this input before the application's code
+     *        is run.
+     */
+
+    public void setInputProcessingConfigurationDescription(InputProcessingConfigurationDescription inputProcessingConfigurationDescription) {
+        this.inputProcessingConfigurationDescription = inputProcessingConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the preprocessor that executes on records in this input before the application's code is run.
+     * </p>
+     * 
+     * @return The description of the preprocessor that executes on records in this input before the application's code
+     *         is run.
+     */
+
+    public InputProcessingConfigurationDescription getInputProcessingConfigurationDescription() {
+        return this.inputProcessingConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the preprocessor that executes on records in this input before the application's code is run.
+     * </p>
+     * 
+     * @param inputProcessingConfigurationDescription
+     *        The description of the preprocessor that executes on records in this input before the application's code
+     *        is run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDescription withInputProcessingConfigurationDescription(InputProcessingConfigurationDescription inputProcessingConfigurationDescription) {
+        setInputProcessingConfigurationDescription(inputProcessingConfigurationDescription);
+        return this;
+    }
+
+    /**
+     * <p>
      * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
      * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
@@ -334,7 +388,14 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * in the in-application stream that is being created.
+     * </p>
+     * 
      * @param inputSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns in the in-application stream that is being created.
      */
 
     public void setInputSchema(SourceSchema inputSchema) {
@@ -342,7 +403,13 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * in the in-application stream that is being created.
+     * </p>
+     * 
+     * @return Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *         columns in the in-application stream that is being created.
      */
 
     public SourceSchema getInputSchema() {
@@ -350,7 +417,14 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * in the in-application stream that is being created.
+     * </p>
+     * 
      * @param inputSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns in the in-application stream that is being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,6 +530,8 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
             sb.append("NamePrefix: ").append(getNamePrefix()).append(",");
         if (getInAppStreamNames() != null)
             sb.append("InAppStreamNames: ").append(getInAppStreamNames()).append(",");
+        if (getInputProcessingConfigurationDescription() != null)
+            sb.append("InputProcessingConfigurationDescription: ").append(getInputProcessingConfigurationDescription()).append(",");
         if (getKinesisStreamsInputDescription() != null)
             sb.append("KinesisStreamsInputDescription: ").append(getKinesisStreamsInputDescription()).append(",");
         if (getKinesisFirehoseInputDescription() != null)
@@ -492,6 +568,11 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getInAppStreamNames() != null && other.getInAppStreamNames().equals(this.getInAppStreamNames()) == false)
             return false;
+        if (other.getInputProcessingConfigurationDescription() == null ^ this.getInputProcessingConfigurationDescription() == null)
+            return false;
+        if (other.getInputProcessingConfigurationDescription() != null
+                && other.getInputProcessingConfigurationDescription().equals(this.getInputProcessingConfigurationDescription()) == false)
+            return false;
         if (other.getKinesisStreamsInputDescription() == null ^ this.getKinesisStreamsInputDescription() == null)
             return false;
         if (other.getKinesisStreamsInputDescription() != null
@@ -526,6 +607,7 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getInputId() == null) ? 0 : getInputId().hashCode());
         hashCode = prime * hashCode + ((getNamePrefix() == null) ? 0 : getNamePrefix().hashCode());
         hashCode = prime * hashCode + ((getInAppStreamNames() == null) ? 0 : getInAppStreamNames().hashCode());
+        hashCode = prime * hashCode + ((getInputProcessingConfigurationDescription() == null) ? 0 : getInputProcessingConfigurationDescription().hashCode());
         hashCode = prime * hashCode + ((getKinesisStreamsInputDescription() == null) ? 0 : getKinesisStreamsInputDescription().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseInputDescription() == null) ? 0 : getKinesisFirehoseInputDescription().hashCode());
         hashCode = prime * hashCode + ((getInputSchema() == null) ? 0 : getInputSchema().hashCode());

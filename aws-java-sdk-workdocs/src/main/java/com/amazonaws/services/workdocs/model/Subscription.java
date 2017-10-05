@@ -150,7 +150,6 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      * @see SubscriptionProtocolType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -181,7 +180,6 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      * @see SubscriptionProtocolType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(SubscriptionProtocolType protocol) {
         withProtocol(protocol);
     }

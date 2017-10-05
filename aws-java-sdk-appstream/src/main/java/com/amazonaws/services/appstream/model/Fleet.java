@@ -377,7 +377,6 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @see FleetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
     public String getFleetType() {
         return this.fleetType;
     }
@@ -398,7 +397,6 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @see FleetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFleetType(FleetType fleetType) {
         withFleetType(fleetType);
     }
@@ -569,7 +567,6 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @see FleetState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -600,7 +597,6 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @see FleetState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(FleetState state) {
         withState(state);
     }

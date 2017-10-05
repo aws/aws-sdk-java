@@ -186,7 +186,6 @@ public class GetUtterancesViewRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statusType")
     public String getStatusType() {
         return this.statusType;
     }
@@ -221,7 +220,6 @@ public class GetUtterancesViewRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusType(StatusType statusType) {
         withStatusType(statusType);
     }

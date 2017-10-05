@@ -104,7 +104,6 @@ public class AssessmentRunStateChange implements Serializable, Cloneable, Struct
      * @see AssessmentRunState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -135,7 +134,6 @@ public class AssessmentRunStateChange implements Serializable, Cloneable, Struct
      * @see AssessmentRunState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(AssessmentRunState state) {
         withState(state);
     }

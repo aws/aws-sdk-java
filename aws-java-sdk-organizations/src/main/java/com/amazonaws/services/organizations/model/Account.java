@@ -361,7 +361,6 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * @see AccountStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -392,7 +391,6 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * @see AccountStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(AccountStatus status) {
         withStatus(status);
     }
@@ -436,7 +434,6 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * @see AccountJoinedMethod
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("joinedMethod")
     public String getJoinedMethod() {
         return this.joinedMethod;
     }
@@ -467,7 +464,6 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * @see AccountJoinedMethod
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setJoinedMethod(AccountJoinedMethod joinedMethod) {
         withJoinedMethod(joinedMethod);
     }

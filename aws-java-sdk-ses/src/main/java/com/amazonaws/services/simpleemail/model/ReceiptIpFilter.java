@@ -71,7 +71,6 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      * @see ReceiptFilterPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("policy")
     public String getPolicy() {
         return this.policy;
     }
@@ -102,7 +101,6 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      * @see ReceiptFilterPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPolicy(ReceiptFilterPolicy policy) {
         withPolicy(policy);
     }

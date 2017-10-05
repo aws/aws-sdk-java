@@ -173,7 +173,6 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -208,7 +207,6 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         withProtocol(protocol);
     }

@@ -527,7 +527,6 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("buildStatus")
     public String getBuildStatus() {
         return this.buildStatus;
     }
@@ -684,7 +683,6 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBuildStatus(StatusType buildStatus) {
         withBuildStatus(buildStatus);
     }

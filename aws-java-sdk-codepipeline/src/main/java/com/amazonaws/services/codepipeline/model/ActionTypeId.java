@@ -83,7 +83,6 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @see ActionCategory
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("category")
     public String getCategory() {
         return this.category;
     }
@@ -118,7 +117,6 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @see ActionCategory
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCategory(ActionCategory category) {
         withCategory(category);
     }
@@ -164,7 +162,6 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @see ActionOwner
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("owner")
     public String getOwner() {
         return this.owner;
     }
@@ -195,7 +192,6 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      * @see ActionOwner
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOwner(ActionOwner owner) {
         withOwner(owner);
     }

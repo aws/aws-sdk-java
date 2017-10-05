@@ -198,7 +198,6 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see DataSourceFilterVariable
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("filterVariable")
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -271,7 +270,6 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see DataSourceFilterVariable
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFilterVariable(DataSourceFilterVariable filterVariable) {
         withFilterVariable(filterVariable);
     }
@@ -816,7 +814,6 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -873,7 +870,6 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }

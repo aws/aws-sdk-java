@@ -180,7 +180,6 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      * @see DeliveryStreamType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deliveryStreamType")
     public String getDeliveryStreamType() {
         return this.deliveryStreamType;
     }

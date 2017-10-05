@@ -453,7 +453,6 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see EventSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("severity")
     public String getSeverity() {
         return this.severity;
     }
@@ -488,7 +487,6 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see EventSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSeverity(EventSeverity severity) {
         withSeverity(severity);
     }

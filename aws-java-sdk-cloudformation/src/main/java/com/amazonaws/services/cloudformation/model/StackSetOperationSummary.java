@@ -168,7 +168,6 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
      * @see StackSetOperationAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -207,7 +206,6 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
      * @see StackSetOperationAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(StackSetOperationAction action) {
         withAction(action);
     }
@@ -381,7 +379,6 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
      * @see StackSetOperationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -538,7 +535,6 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
      * @see StackSetOperationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StackSetOperationStatus status) {
         withStatus(status);
     }

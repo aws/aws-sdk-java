@@ -100,7 +100,6 @@ public class CookiePreference implements Serializable, Cloneable {
      * @see ItemSelection
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("forward")
     public String getForward() {
         return this.forward;
     }
@@ -149,7 +148,6 @@ public class CookiePreference implements Serializable, Cloneable {
      * @see ItemSelection
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setForward(ItemSelection forward) {
         withForward(forward);
     }

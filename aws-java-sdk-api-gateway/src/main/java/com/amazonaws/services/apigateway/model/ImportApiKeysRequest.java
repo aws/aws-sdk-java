@@ -154,7 +154,6 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ApiKeysFormat
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("format")
     public String getFormat() {
         return this.format;
     }
@@ -189,7 +188,6 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ApiKeysFormat
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFormat(ApiKeysFormat format) {
         withFormat(format);
     }

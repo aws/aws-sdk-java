@@ -465,7 +465,6 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @see PriceClass
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("priceClass")
     public String getPriceClass() {
         return this.priceClass;
     }
@@ -496,7 +495,6 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * @see PriceClass
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPriceClass(PriceClass priceClass) {
         withPriceClass(priceClass);
     }

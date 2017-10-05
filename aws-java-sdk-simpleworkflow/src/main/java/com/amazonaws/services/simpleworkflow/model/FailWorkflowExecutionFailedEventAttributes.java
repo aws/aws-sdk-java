@@ -104,7 +104,6 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
      * @see FailWorkflowExecutionFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -165,7 +164,6 @@ public class FailWorkflowExecutionFailedEventAttributes implements Serializable,
      * @see FailWorkflowExecutionFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(FailWorkflowExecutionFailedCause cause) {
         withCause(cause);
     }

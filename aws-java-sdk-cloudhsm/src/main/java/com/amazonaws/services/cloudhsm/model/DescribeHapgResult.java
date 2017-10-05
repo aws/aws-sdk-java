@@ -511,7 +511,6 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see CloudHsmObjectState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -542,7 +541,6 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see CloudHsmObjectState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(CloudHsmObjectState state) {
         withState(state);
     }

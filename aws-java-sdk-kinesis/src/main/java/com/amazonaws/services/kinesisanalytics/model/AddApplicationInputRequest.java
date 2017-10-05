@@ -39,7 +39,11 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Long currentApplicationVersionId;
-    /** <p/> */
+    /**
+     * <p>
+     * The <a>Input</a> to add.
+     * </p>
+     */
     private Input input;
 
     /**
@@ -129,9 +133,12 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <a>Input</a> to add.
+     * </p>
      * 
      * @param input
+     *        The <a>Input</a> to add.
      */
 
     public void setInput(Input input) {
@@ -139,9 +146,11 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <a>Input</a> to add.
+     * </p>
      * 
-     * @return
+     * @return The <a>Input</a> to add.
      */
 
     public Input getInput() {
@@ -149,9 +158,12 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <a>Input</a> to add.
+     * </p>
      * 
      * @param input
+     *        The <a>Input</a> to add.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

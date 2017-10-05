@@ -161,7 +161,6 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * @see StartLambdaFunctionFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -224,7 +223,6 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      * @see StartLambdaFunctionFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(StartLambdaFunctionFailedCause cause) {
         withCause(cause);
     }

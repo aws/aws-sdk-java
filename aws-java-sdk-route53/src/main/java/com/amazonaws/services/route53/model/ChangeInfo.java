@@ -174,7 +174,6 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @see ChangeStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -209,7 +208,6 @@ public class ChangeInfo implements Serializable, Cloneable {
      * @see ChangeStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ChangeStatus status) {
         withStatus(status);
     }

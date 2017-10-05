@@ -256,7 +256,6 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see OrderBy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("orderBy")
     public String getOrderBy() {
         return this.orderBy;
     }
@@ -329,7 +328,6 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      * @see OrderBy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrderBy(OrderBy orderBy) {
         withOrderBy(orderBy);
     }

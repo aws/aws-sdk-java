@@ -146,7 +146,6 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -177,7 +176,6 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }

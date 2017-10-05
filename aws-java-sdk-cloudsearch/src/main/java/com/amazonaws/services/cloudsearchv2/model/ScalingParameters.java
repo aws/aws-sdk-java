@@ -68,7 +68,6 @@ public class ScalingParameters implements Serializable, Cloneable {
      * @see PartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("desiredInstanceType")
     public String getDesiredInstanceType() {
         return this.desiredInstanceType;
     }
@@ -101,7 +100,6 @@ public class ScalingParameters implements Serializable, Cloneable {
      * @see PartitionInstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDesiredInstanceType(PartitionInstanceType desiredInstanceType) {
         withDesiredInstanceType(desiredInstanceType);
     }

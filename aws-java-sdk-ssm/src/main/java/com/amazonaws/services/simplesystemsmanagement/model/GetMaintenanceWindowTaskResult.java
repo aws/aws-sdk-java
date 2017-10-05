@@ -379,7 +379,6 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * @see MaintenanceWindowTaskType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     public String getTaskType() {
         return this.taskType;
     }

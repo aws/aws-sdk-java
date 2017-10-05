@@ -63,7 +63,6 @@ public class ListImagesFilter implements Serializable, Cloneable, StructuredPojo
      * @see TagStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("tagStatus")
     public String getTagStatus() {
         return this.tagStatus;
     }
@@ -98,7 +97,6 @@ public class ListImagesFilter implements Serializable, Cloneable, StructuredPojo
      * @see TagStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTagStatus(TagStatus tagStatus) {
         withTagStatus(tagStatus);
     }

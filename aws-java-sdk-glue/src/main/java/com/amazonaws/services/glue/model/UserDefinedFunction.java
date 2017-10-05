@@ -208,7 +208,6 @@ public class UserDefinedFunction implements Serializable, Cloneable, StructuredP
      * @see PrincipalType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ownerType")
     public String getOwnerType() {
         return this.ownerType;
     }

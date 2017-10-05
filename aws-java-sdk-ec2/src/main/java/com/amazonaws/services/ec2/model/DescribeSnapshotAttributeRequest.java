@@ -99,7 +99,6 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * @see SnapshotAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -130,7 +129,6 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      * @see SnapshotAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(SnapshotAttributeName attribute) {
         withAttribute(attribute);
     }

@@ -927,7 +927,6 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      * @see ReportStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -958,7 +957,6 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      * @see ReportStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ReportStatusType status) {
         withStatus(status);
     }

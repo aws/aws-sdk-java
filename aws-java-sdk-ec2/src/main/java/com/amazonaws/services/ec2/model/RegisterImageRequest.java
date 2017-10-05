@@ -220,7 +220,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * @see ArchitectureValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     public String getArchitecture() {
         return this.architecture;
     }
@@ -265,7 +264,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * @see ArchitectureValues
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setArchitecture(ArchitectureValues architecture) {
         withArchitecture(architecture);
     }

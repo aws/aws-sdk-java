@@ -275,7 +275,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see DeviceAttribute
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -444,7 +443,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see DeviceAttribute
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(DeviceAttribute attribute) {
         withAttribute(attribute);
     }
@@ -683,7 +681,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operator")
     public String getOperator() {
         return this.operator;
     }
@@ -840,7 +837,6 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * @see RuleOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperator(RuleOperator operator) {
         withOperator(operator);
     }

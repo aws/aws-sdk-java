@@ -33,6 +33,10 @@ public class DiscoverInputSchemaRequestMarshaller {
             .marshallLocationName("RoleARN").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSTARTINGPOSITIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputStartingPositionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> S3CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Configuration").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTPROCESSINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputProcessingConfiguration").build();
 
     private static final DiscoverInputSchemaRequestMarshaller instance = new DiscoverInputSchemaRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class DiscoverInputSchemaRequestMarshaller {
             protocolMarshaller.marshall(discoverInputSchemaRequest.getResourceARN(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(discoverInputSchemaRequest.getRoleARN(), ROLEARN_BINDING);
             protocolMarshaller.marshall(discoverInputSchemaRequest.getInputStartingPositionConfiguration(), INPUTSTARTINGPOSITIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(discoverInputSchemaRequest.getS3Configuration(), S3CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(discoverInputSchemaRequest.getInputProcessingConfiguration(), INPUTPROCESSINGCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

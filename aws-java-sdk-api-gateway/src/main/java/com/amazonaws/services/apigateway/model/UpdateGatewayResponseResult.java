@@ -217,7 +217,6 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * @see GatewayResponseType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("responseType")
     public String getResponseType() {
         return this.responseType;
     }
@@ -336,7 +335,6 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * @see GatewayResponseType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResponseType(GatewayResponseType responseType) {
         withResponseType(responseType);
     }

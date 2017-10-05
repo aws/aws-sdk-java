@@ -64,7 +64,6 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      * @see VolumeAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -95,7 +94,6 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      * @see VolumeAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(VolumeAttributeName attribute) {
         withAttribute(attribute);
     }

@@ -150,7 +150,6 @@ public class CancelTimerFailedEventAttributes implements Serializable, Cloneable
      * @see CancelTimerFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -211,7 +210,6 @@ public class CancelTimerFailedEventAttributes implements Serializable, Cloneable
      * @see CancelTimerFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(CancelTimerFailedCause cause) {
         withCause(cause);
     }

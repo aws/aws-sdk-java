@@ -116,7 +116,6 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * @see DiskImageFormat
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("format")
     public String getFormat() {
         return this.format;
     }
@@ -147,7 +146,6 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * @see DiskImageFormat
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFormat(DiskImageFormat format) {
         withFormat(format);
     }

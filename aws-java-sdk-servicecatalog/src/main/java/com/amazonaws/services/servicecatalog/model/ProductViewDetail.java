@@ -159,7 +159,6 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -224,7 +223,6 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }

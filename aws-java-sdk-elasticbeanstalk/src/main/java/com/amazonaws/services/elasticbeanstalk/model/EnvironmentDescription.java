@@ -836,7 +836,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      * @see EnvironmentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -979,7 +978,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      * @see EnvironmentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(EnvironmentStatus status) {
         withStatus(status);
     }
@@ -1301,7 +1299,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      * @see EnvironmentHealth
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("health")
     public String getHealth() {
         return this.health;
     }
@@ -1450,7 +1447,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      * @see EnvironmentHealth
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHealth(EnvironmentHealth health) {
         withHealth(health);
     }
@@ -1561,7 +1557,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      * @see EnvironmentHealthStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("healthStatus")
     public String getHealthStatus() {
         return this.healthStatus;
     }
@@ -1600,7 +1595,6 @@ public class EnvironmentDescription implements Serializable, Cloneable {
      * @see EnvironmentHealthStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHealthStatus(EnvironmentHealthStatus healthStatus) {
         withHealthStatus(healthStatus);
     }

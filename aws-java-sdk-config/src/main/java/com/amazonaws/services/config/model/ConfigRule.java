@@ -540,7 +540,6 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * @see MaximumExecutionFrequency
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("maximumExecutionFrequency")
     public String getMaximumExecutionFrequency() {
         return this.maximumExecutionFrequency;
     }
@@ -649,7 +648,6 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * @see MaximumExecutionFrequency
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
         withMaximumExecutionFrequency(maximumExecutionFrequency);
     }
@@ -787,7 +785,6 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * @see ConfigRuleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("configRuleState")
     public String getConfigRuleState() {
         return this.configRuleState;
     }
@@ -872,7 +869,6 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * @see ConfigRuleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConfigRuleState(ConfigRuleState configRuleState) {
         withConfigRuleState(configRuleState);
     }

@@ -102,7 +102,6 @@ public class ResetFpgaImageAttributeRequest extends AmazonWebServiceRequest impl
      * @see ResetFpgaImageAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }

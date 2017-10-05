@@ -327,7 +327,6 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -362,7 +361,6 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusCode(EntityStatusCode statusCode) {
         withStatusCode(statusCode);
     }

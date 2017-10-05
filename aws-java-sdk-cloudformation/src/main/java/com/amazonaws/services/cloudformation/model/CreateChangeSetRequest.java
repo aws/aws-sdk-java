@@ -1625,7 +1625,6 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ChangeSetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("changeSetType")
     public String getChangeSetType() {
         return this.changeSetType;
     }
@@ -1700,7 +1699,6 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * @see ChangeSetType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChangeSetType(ChangeSetType changeSetType) {
         withChangeSetType(changeSetType);
     }

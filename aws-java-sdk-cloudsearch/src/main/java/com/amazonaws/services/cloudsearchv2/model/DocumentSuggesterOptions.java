@@ -124,7 +124,6 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
      * @see SuggesterFuzzyMatching
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("fuzzyMatching")
     public String getFuzzyMatching() {
         return this.fuzzyMatching;
     }
@@ -167,7 +166,6 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
      * @see SuggesterFuzzyMatching
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFuzzyMatching(SuggesterFuzzyMatching fuzzyMatching) {
         withFuzzyMatching(fuzzyMatching);
     }

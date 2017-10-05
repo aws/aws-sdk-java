@@ -167,7 +167,6 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
      * @see ProtectionPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protectionPolicy")
     public String getProtectionPolicy() {
         return this.protectionPolicy;
     }
@@ -248,7 +247,6 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
      * @see ProtectionPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
         withProtectionPolicy(protectionPolicy);
     }

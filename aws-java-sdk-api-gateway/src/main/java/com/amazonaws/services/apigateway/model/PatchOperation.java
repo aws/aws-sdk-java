@@ -97,7 +97,6 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * @see Op
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("op")
     public String getOp() {
         return this.op;
     }
@@ -140,7 +139,6 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      * @see Op
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOp(Op op) {
         withOp(op);
     }

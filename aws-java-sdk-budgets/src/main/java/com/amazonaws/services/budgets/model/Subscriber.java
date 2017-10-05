@@ -41,7 +41,6 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * @see SubscriptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
     public String getSubscriptionType() {
         return this.subscriptionType;
     }
@@ -62,7 +61,6 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      * @see SubscriptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         withSubscriptionType(subscriptionType);
     }

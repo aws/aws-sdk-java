@@ -227,7 +227,6 @@ public class Child implements Serializable, Cloneable, StructuredPojo {
      * @see ChildType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -258,7 +257,6 @@ public class Child implements Serializable, Cloneable, StructuredPojo {
      * @see ChildType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ChildType type) {
         withType(type);
     }

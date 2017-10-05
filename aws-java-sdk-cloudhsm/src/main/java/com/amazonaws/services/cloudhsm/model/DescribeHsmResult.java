@@ -212,7 +212,6 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see HsmStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -243,7 +242,6 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see HsmStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(HsmStatus status) {
         withStatus(status);
     }
@@ -438,7 +436,6 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see SubscriptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionType")
     public String getSubscriptionType() {
         return this.subscriptionType;
     }
@@ -459,7 +456,6 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @see SubscriptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSubscriptionType(SubscriptionType subscriptionType) {
         withSubscriptionType(subscriptionType);
     }

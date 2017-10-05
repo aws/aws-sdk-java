@@ -60,6 +60,11 @@ public class InputDescriptionJsonUnmarshaller implements Unmarshaller<InputDescr
                     context.nextToken();
                     inputDescription.setInAppStreamNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("InputProcessingConfigurationDescription", targetDepth)) {
+                    context.nextToken();
+                    inputDescription.setInputProcessingConfigurationDescription(InputProcessingConfigurationDescriptionJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("KinesisStreamsInputDescription", targetDepth)) {
                     context.nextToken();
                     inputDescription.setKinesisStreamsInputDescription(KinesisStreamsInputDescriptionJsonUnmarshaller.getInstance().unmarshall(context));

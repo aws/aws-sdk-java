@@ -241,7 +241,6 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
      * @see ChannelType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("channelType")
     public String getChannelType() {
         return this.channelType;
     }
@@ -276,7 +275,6 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
      * @see ChannelType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChannelType(ChannelType channelType) {
         withChannelType(channelType);
     }

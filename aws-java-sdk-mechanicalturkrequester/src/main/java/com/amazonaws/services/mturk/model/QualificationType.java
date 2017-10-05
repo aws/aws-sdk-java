@@ -373,7 +373,6 @@ public class QualificationType implements Serializable, Cloneable, StructuredPoj
      * @see QualificationTypeStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("qualificationTypeStatus")
     public String getQualificationTypeStatus() {
         return this.qualificationTypeStatus;
     }
@@ -412,7 +411,6 @@ public class QualificationType implements Serializable, Cloneable, StructuredPoj
      * @see QualificationTypeStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setQualificationTypeStatus(QualificationTypeStatus qualificationTypeStatus) {
         withQualificationTypeStatus(qualificationTypeStatus);
     }

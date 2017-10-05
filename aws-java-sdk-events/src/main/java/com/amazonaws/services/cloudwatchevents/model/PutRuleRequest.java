@@ -219,7 +219,6 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see RuleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -250,7 +249,6 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * @see RuleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(RuleState state) {
         withState(state);
     }

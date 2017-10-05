@@ -166,7 +166,6 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * @see CACertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -207,7 +206,6 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * @see CACertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CACertificateStatus status) {
         withStatus(status);
     }

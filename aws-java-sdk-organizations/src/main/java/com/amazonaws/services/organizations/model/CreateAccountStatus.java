@@ -240,7 +240,6 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * @see CreateAccountState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -271,7 +270,6 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * @see CreateAccountState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(CreateAccountState state) {
         withState(state);
     }
@@ -574,7 +572,6 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * @see CreateAccountFailureReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("failureReason")
     public String getFailureReason() {
         return this.failureReason;
     }
@@ -723,7 +720,6 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * @see CreateAccountFailureReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailureReason(CreateAccountFailureReason failureReason) {
         withFailureReason(failureReason);
     }

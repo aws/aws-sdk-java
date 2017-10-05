@@ -323,7 +323,6 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -354,7 +353,6 @@ public class StaticIp implements Serializable, Cloneable, StructuredPojo {
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }

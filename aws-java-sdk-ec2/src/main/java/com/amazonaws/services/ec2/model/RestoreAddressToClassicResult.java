@@ -101,7 +101,6 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -132,7 +131,6 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }

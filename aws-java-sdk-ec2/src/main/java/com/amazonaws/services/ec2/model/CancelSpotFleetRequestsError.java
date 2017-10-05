@@ -62,7 +62,6 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * @see CancelBatchErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -93,7 +92,6 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      * @see CancelBatchErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(CancelBatchErrorCode code) {
         withCode(code);
     }

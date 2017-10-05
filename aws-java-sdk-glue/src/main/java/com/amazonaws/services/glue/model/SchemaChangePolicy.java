@@ -64,7 +64,6 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
      * @see UpdateBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("updateBehavior")
     public String getUpdateBehavior() {
         return this.updateBehavior;
     }
@@ -124,7 +123,6 @@ public class SchemaChangePolicy implements Serializable, Cloneable, StructuredPo
      * @see DeleteBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deleteBehavior")
     public String getDeleteBehavior() {
         return this.deleteBehavior;
     }

@@ -254,7 +254,6 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
      * @see LifeCycleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
     public String getLifeCycleState() {
         return this.lifeCycleState;
     }
@@ -285,7 +284,6 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
      * @see LifeCycleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
         withLifeCycleState(lifeCycleState);
     }

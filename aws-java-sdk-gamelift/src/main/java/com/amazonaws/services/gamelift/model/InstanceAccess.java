@@ -203,7 +203,6 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -234,7 +233,6 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }

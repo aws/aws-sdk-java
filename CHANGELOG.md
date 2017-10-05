@@ -1,3 +1,16 @@
+# __1.11.208__ __2017-10-04__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Reverts a potential breaking change introduced in version 1.11.167 as a fix for https://github.com/aws/aws-sdk-java/issues/1226. This change removes the jackson annotations on enum getters and setters. Customers who rely on the annotations will see 'conflicting setter definitions for property' error during serialization and deserialization. They should either upgrade to Jackson 2.7+ or add custom MixIns for all classes (that contain enums) you want to serialize/deserialize.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Analytics now supports schema discovery on objects in S3.  Additionally, Kinesis Analytics now supports input data preprocessing through Lambda.
+
+## __Amazon Route 53 Domains__
+  - ### Features
+    - Added a new API that checks whether a domain name can be transferred to Amazon Route 53.
+
 # __1.11.207__ __2017-10-03__
 ## __Amazon EC2__
   - ### Features

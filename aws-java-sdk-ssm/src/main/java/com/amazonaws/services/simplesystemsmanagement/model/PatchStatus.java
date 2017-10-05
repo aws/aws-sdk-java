@@ -70,7 +70,6 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      * @see PatchDeploymentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deploymentStatus")
     public String getDeploymentStatus() {
         return this.deploymentStatus;
     }
@@ -101,7 +100,6 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      * @see PatchDeploymentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeploymentStatus(PatchDeploymentStatus deploymentStatus) {
         withDeploymentStatus(deploymentStatus);
     }
@@ -145,7 +143,6 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      * @see PatchComplianceLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("complianceLevel")
     public String getComplianceLevel() {
         return this.complianceLevel;
     }
@@ -176,7 +173,6 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      * @see PatchComplianceLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComplianceLevel(PatchComplianceLevel complianceLevel) {
         withComplianceLevel(complianceLevel);
     }

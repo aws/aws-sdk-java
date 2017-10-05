@@ -70,7 +70,6 @@ public class InstanceGroupStatus implements Serializable, Cloneable, StructuredP
      * @see InstanceGroupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -101,7 +100,6 @@ public class InstanceGroupStatus implements Serializable, Cloneable, StructuredP
      * @see InstanceGroupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(InstanceGroupState state) {
         withState(state);
     }

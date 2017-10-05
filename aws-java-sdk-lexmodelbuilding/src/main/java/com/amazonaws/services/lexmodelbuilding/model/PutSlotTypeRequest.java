@@ -563,7 +563,6 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @see SlotValueSelectionStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("valueSelectionStrategy")
     public String getValueSelectionStrategy() {
         return this.valueSelectionStrategy;
     }

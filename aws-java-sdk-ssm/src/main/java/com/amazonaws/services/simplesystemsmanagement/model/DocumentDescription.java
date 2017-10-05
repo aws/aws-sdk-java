@@ -278,7 +278,6 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentHashType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("hashType")
     public String getHashType() {
         return this.hashType;
     }
@@ -325,7 +324,6 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentHashType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHashType(DocumentHashType hashType) {
         withHashType(hashType);
     }
@@ -497,7 +495,6 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -528,7 +525,6 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(DocumentStatus status) {
         withStatus(status);
     }
@@ -826,7 +822,6 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     public String getDocumentType() {
         return this.documentType;
     }
@@ -857,7 +852,6 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * @see DocumentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDocumentType(DocumentType documentType) {
         withDocumentType(documentType);
     }

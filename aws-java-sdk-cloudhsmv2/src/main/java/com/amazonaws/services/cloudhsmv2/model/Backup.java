@@ -116,7 +116,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("backupState")
     public String getBackupState() {
         return this.backupState;
     }

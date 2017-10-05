@@ -454,7 +454,6 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * @see ErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }
@@ -797,7 +796,6 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      * @see ErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCode(ErrorCode code) {
         withCode(code);
     }

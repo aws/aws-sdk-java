@@ -117,7 +117,6 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see JQState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -148,7 +147,6 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see JQState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(JQState state) {
         withState(state);
     }

@@ -43,7 +43,6 @@ public class ImageBuilderStateChangeReason implements Serializable, Cloneable, S
      * @see ImageBuilderStateChangeReasonCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("code")
     public String getCode() {
         return this.code;
     }

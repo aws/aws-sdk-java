@@ -133,7 +133,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      * @see InstanceAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -184,7 +183,6 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      * @see InstanceAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(InstanceAttributeName attribute) {
         withAttribute(attribute);
     }

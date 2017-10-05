@@ -161,7 +161,6 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PerformanceMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("performanceMode")
     public String getPerformanceMode() {
         return this.performanceMode;
     }
@@ -204,7 +203,6 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * @see PerformanceMode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPerformanceMode(PerformanceMode performanceMode) {
         withPerformanceMode(performanceMode);
     }

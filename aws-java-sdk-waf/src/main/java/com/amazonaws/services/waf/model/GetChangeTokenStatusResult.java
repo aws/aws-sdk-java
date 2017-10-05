@@ -53,7 +53,6 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
      * @see ChangeTokenStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("changeTokenStatus")
     public String getChangeTokenStatus() {
         return this.changeTokenStatus;
     }
@@ -84,7 +83,6 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
      * @see ChangeTokenStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChangeTokenStatus(ChangeTokenStatus changeTokenStatus) {
         withChangeTokenStatus(changeTokenStatus);
     }

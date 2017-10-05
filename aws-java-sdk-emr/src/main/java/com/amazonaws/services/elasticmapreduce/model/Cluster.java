@@ -420,7 +420,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceCollectionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceCollectionType")
     public String getInstanceCollectionType() {
         return this.instanceCollectionType;
     }
@@ -481,7 +480,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceCollectionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
         withInstanceCollectionType(instanceCollectionType);
     }
@@ -1376,7 +1374,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see ScaleDownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scaleDownBehavior")
     public String getScaleDownBehavior() {
         return this.scaleDownBehavior;
     }
@@ -1441,7 +1438,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see ScaleDownBehavior
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
         withScaleDownBehavior(scaleDownBehavior);
     }
@@ -1598,7 +1594,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see RepoUpgradeOnBoot
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("repoUpgradeOnBoot")
     public String getRepoUpgradeOnBoot() {
         return this.repoUpgradeOnBoot;
     }
@@ -1633,7 +1628,6 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * @see RepoUpgradeOnBoot
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
         withRepoUpgradeOnBoot(repoUpgradeOnBoot);
     }

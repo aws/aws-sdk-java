@@ -42,6 +42,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     private String namePrefixUpdate;
     /**
      * <p>
+     * Describes updates for an input processing configuration.
+     * </p>
+     */
+    private InputProcessingConfigurationUpdate inputProcessingConfigurationUpdate;
+    /**
+     * <p>
      * If a Amazon Kinesis stream is the streaming source to be updated, provides an updated stream ARN and IAM role
      * ARN.
      * </p>
@@ -149,6 +155,46 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     public InputUpdate withNamePrefixUpdate(String namePrefixUpdate) {
         setNamePrefixUpdate(namePrefixUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes updates for an input processing configuration.
+     * </p>
+     * 
+     * @param inputProcessingConfigurationUpdate
+     *        Describes updates for an input processing configuration.
+     */
+
+    public void setInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdate inputProcessingConfigurationUpdate) {
+        this.inputProcessingConfigurationUpdate = inputProcessingConfigurationUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes updates for an input processing configuration.
+     * </p>
+     * 
+     * @return Describes updates for an input processing configuration.
+     */
+
+    public InputProcessingConfigurationUpdate getInputProcessingConfigurationUpdate() {
+        return this.inputProcessingConfigurationUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes updates for an input processing configuration.
+     * </p>
+     * 
+     * @param inputProcessingConfigurationUpdate
+     *        Describes updates for an input processing configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputUpdate withInputProcessingConfigurationUpdate(InputProcessingConfigurationUpdate inputProcessingConfigurationUpdate) {
+        setInputProcessingConfigurationUpdate(inputProcessingConfigurationUpdate);
         return this;
     }
 
@@ -351,6 +397,8 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
             sb.append("InputId: ").append(getInputId()).append(",");
         if (getNamePrefixUpdate() != null)
             sb.append("NamePrefixUpdate: ").append(getNamePrefixUpdate()).append(",");
+        if (getInputProcessingConfigurationUpdate() != null)
+            sb.append("InputProcessingConfigurationUpdate: ").append(getInputProcessingConfigurationUpdate()).append(",");
         if (getKinesisStreamsInputUpdate() != null)
             sb.append("KinesisStreamsInputUpdate: ").append(getKinesisStreamsInputUpdate()).append(",");
         if (getKinesisFirehoseInputUpdate() != null)
@@ -381,6 +429,11 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNamePrefixUpdate() != null && other.getNamePrefixUpdate().equals(this.getNamePrefixUpdate()) == false)
             return false;
+        if (other.getInputProcessingConfigurationUpdate() == null ^ this.getInputProcessingConfigurationUpdate() == null)
+            return false;
+        if (other.getInputProcessingConfigurationUpdate() != null
+                && other.getInputProcessingConfigurationUpdate().equals(this.getInputProcessingConfigurationUpdate()) == false)
+            return false;
         if (other.getKinesisStreamsInputUpdate() == null ^ this.getKinesisStreamsInputUpdate() == null)
             return false;
         if (other.getKinesisStreamsInputUpdate() != null && other.getKinesisStreamsInputUpdate().equals(this.getKinesisStreamsInputUpdate()) == false)
@@ -407,6 +460,7 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getInputId() == null) ? 0 : getInputId().hashCode());
         hashCode = prime * hashCode + ((getNamePrefixUpdate() == null) ? 0 : getNamePrefixUpdate().hashCode());
+        hashCode = prime * hashCode + ((getInputProcessingConfigurationUpdate() == null) ? 0 : getInputProcessingConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getKinesisStreamsInputUpdate() == null) ? 0 : getKinesisStreamsInputUpdate().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseInputUpdate() == null) ? 0 : getKinesisFirehoseInputUpdate().hashCode());
         hashCode = prime * hashCode + ((getInputSchemaUpdate() == null) ? 0 : getInputSchemaUpdate().hashCode());

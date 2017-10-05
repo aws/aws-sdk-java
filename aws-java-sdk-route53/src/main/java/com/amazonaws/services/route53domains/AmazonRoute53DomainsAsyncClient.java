@@ -279,6 +279,39 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(CheckDomainTransferabilityRequest request) {
+
+        return checkDomainTransferabilityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckDomainTransferabilityResult> checkDomainTransferabilityAsync(final CheckDomainTransferabilityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CheckDomainTransferabilityRequest, CheckDomainTransferabilityResult> asyncHandler) {
+        final CheckDomainTransferabilityRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CheckDomainTransferabilityResult>() {
+            @Override
+            public CheckDomainTransferabilityResult call() throws Exception {
+                CheckDomainTransferabilityResult result = null;
+
+                try {
+                    result = executeCheckDomainTransferability(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsForDomainResult> deleteTagsForDomainAsync(DeleteTagsForDomainRequest request) {
 
         return deleteTagsForDomainAsync(request, null);

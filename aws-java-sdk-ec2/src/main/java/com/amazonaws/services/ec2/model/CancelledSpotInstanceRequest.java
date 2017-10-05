@@ -102,7 +102,6 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * @see CancelSpotInstanceRequestState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -133,7 +132,6 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      * @see CancelSpotInstanceRequestState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(CancelSpotInstanceRequestState state) {
         withState(state);
     }

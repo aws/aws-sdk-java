@@ -385,7 +385,6 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
      * @see CacheClusterStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cacheClusterStatus")
     public String getCacheClusterStatus() {
         return this.cacheClusterStatus;
     }
@@ -416,7 +415,6 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
      * @see CacheClusterStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
         withCacheClusterStatus(cacheClusterStatus);
     }

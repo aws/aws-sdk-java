@@ -64,7 +64,6 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * @see NetworkInterfaceAttribute
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -95,7 +94,6 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      * @see NetworkInterfaceAttribute
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(NetworkInterfaceAttribute attribute) {
         withAttribute(attribute);
     }

@@ -666,7 +666,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see TestType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -999,7 +998,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see TestType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(TestType type) {
         withType(type);
     }
@@ -1432,7 +1430,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -1661,7 +1658,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ExecutionStatus status) {
         withStatus(status);
     }
@@ -1962,7 +1958,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("result")
     public String getResult() {
         return this.result;
     }
@@ -2151,7 +2146,6 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      * @see ExecutionResult
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResult(ExecutionResult result) {
         withResult(result);
     }

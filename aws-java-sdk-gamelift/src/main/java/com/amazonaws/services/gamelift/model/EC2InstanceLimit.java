@@ -86,7 +86,6 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
      * @see EC2InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("eC2InstanceType")
     public String getEC2InstanceType() {
         return this.eC2InstanceType;
     }
@@ -129,7 +128,6 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
      * @see EC2InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
         withEC2InstanceType(eC2InstanceType);
     }

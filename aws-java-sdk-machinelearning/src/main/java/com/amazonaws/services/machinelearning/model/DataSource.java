@@ -556,7 +556,6 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -615,7 +614,6 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * @see EntityStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(EntityStatus status) {
         withStatus(status);
     }

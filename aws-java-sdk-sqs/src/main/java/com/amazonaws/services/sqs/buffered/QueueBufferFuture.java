@@ -66,7 +66,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         // if we have a callback to call, schedule
         // it on a different thread. Who knows what this
         // thread is doing.
-        if (callback != null && issuingBuffer != null) {
+        if (callback != null) {
             QueueBuffer.executor.submit(new Callable<Void>() {
                 public Void call() throws Exception {
                     callback.onSuccess(result);
@@ -90,7 +90,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         // if we have a callback to call, schedule
         // it on a different thread. Who knows what this
         // thread is doing.
-        if (callback != null && issuingBuffer != null) {
+        if (callback != null) {
             QueueBuffer.executor.submit(new Callable<Void>() {
                 public Void call() throws Exception {
                     callback.onError(e);
@@ -108,7 +108,7 @@ class QueueBufferFuture<Req extends AmazonWebServiceRequest, Res> implements Fut
         return false;
     }
 
-    public void setBuffer(QueueBuffer paramBuffer) {
+    public synchronized void setBuffer(QueueBuffer paramBuffer) {
         issuingBuffer = paramBuffer;
     }
 

@@ -146,7 +146,6 @@ public class ModifyFpgaImageAttributeRequest extends AmazonWebServiceRequest imp
      * @see FpgaImageAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -206,7 +205,6 @@ public class ModifyFpgaImageAttributeRequest extends AmazonWebServiceRequest imp
      * @see OperationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     public String getOperationType() {
         return this.operationType;
     }

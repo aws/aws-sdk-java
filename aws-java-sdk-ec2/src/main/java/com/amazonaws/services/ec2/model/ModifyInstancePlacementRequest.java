@@ -76,7 +76,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * @see Affinity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("affinity")
     public String getAffinity() {
         return this.affinity;
     }
@@ -107,7 +106,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * @see Affinity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAffinity(Affinity affinity) {
         withAffinity(affinity);
     }
@@ -231,7 +229,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * @see HostTenancy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
     public String getTenancy() {
         return this.tenancy;
     }
@@ -262,7 +259,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * @see HostTenancy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTenancy(HostTenancy tenancy) {
         withTenancy(tenancy);
     }

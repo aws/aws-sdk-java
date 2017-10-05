@@ -382,7 +382,6 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -413,7 +412,6 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StatusType status) {
         withStatus(status);
     }
@@ -1171,7 +1169,6 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * @see UserPoolMfaType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("mfaConfiguration")
     public String getMfaConfiguration() {
         return this.mfaConfiguration;
     }
@@ -1272,7 +1269,6 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * @see UserPoolMfaType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
         withMfaConfiguration(mfaConfiguration);
     }

@@ -204,7 +204,6 @@ public class ActiveInstance implements Serializable, Cloneable {
      * @see InstanceHealthStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceHealth")
     public String getInstanceHealth() {
         return this.instanceHealth;
     }
@@ -243,7 +242,6 @@ public class ActiveInstance implements Serializable, Cloneable {
      * @see InstanceHealthStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceHealth(InstanceHealthStatus instanceHealth) {
         withInstanceHealth(instanceHealth);
     }

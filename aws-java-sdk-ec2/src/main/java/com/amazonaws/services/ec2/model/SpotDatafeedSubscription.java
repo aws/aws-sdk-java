@@ -240,7 +240,6 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @see DatafeedSubscriptionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -271,7 +270,6 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      * @see DatafeedSubscriptionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(DatafeedSubscriptionState state) {
         withState(state);
     }

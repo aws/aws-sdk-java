@@ -377,7 +377,6 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * @see ContainerInstanceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -420,7 +419,6 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * @see ContainerInstanceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ContainerInstanceStatus status) {
         withStatus(status);
     }

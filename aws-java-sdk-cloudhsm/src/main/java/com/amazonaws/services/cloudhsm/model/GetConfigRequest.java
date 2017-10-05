@@ -107,7 +107,6 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ClientVersion
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("clientVersion")
     public String getClientVersion() {
         return this.clientVersion;
     }
@@ -138,7 +137,6 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see ClientVersion
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setClientVersion(ClientVersion clientVersion) {
         withClientVersion(clientVersion);
     }

@@ -42,7 +42,6 @@ public class DeleteInterconnectResult extends com.amazonaws.AmazonWebServiceResu
      * @see InterconnectState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("interconnectState")
     public String getInterconnectState() {
         return this.interconnectState;
     }
@@ -63,7 +62,6 @@ public class DeleteInterconnectResult extends com.amazonaws.AmazonWebServiceResu
      * @see InterconnectState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInterconnectState(InterconnectState interconnectState) {
         withInterconnectState(interconnectState);
     }

@@ -99,7 +99,6 @@ public class GetLoggingOptionsResult extends com.amazonaws.AmazonWebServiceResul
      * @see LogLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
     public String getLogLevel() {
         return this.logLevel;
     }
@@ -130,7 +129,6 @@ public class GetLoggingOptionsResult extends com.amazonaws.AmazonWebServiceResul
      * @see LogLevel
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLogLevel(LogLevel logLevel) {
         withLogLevel(logLevel);
     }

@@ -64,7 +64,6 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * @see PatchFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -95,7 +94,6 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * @see PatchFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(PatchFilterKey key) {
         withKey(key);
     }

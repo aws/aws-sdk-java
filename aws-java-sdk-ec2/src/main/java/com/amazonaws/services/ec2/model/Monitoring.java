@@ -56,7 +56,6 @@ public class Monitoring implements Serializable, Cloneable {
      * @see MonitoringState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -87,7 +86,6 @@ public class Monitoring implements Serializable, Cloneable {
      * @see MonitoringState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(MonitoringState state) {
         withState(state);
     }

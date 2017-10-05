@@ -213,7 +213,6 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @see DsnAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -250,7 +249,6 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      * @see DsnAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(DsnAction action) {
         withAction(action);
     }

@@ -196,7 +196,6 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
      * @see ScheduleActivityTaskFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -257,7 +256,6 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
      * @see ScheduleActivityTaskFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(ScheduleActivityTaskFailedCause cause) {
         withCause(cause);
     }

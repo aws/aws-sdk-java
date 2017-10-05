@@ -142,7 +142,6 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
      * @see ExportStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("exportStatus")
     public String getExportStatus() {
         return this.exportStatus;
     }
@@ -173,7 +172,6 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
      * @see ExportStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExportStatus(ExportStatus exportStatus) {
         withExportStatus(exportStatus);
     }

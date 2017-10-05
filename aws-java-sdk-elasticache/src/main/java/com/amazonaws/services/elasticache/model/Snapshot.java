@@ -2160,7 +2160,6 @@ public class Snapshot implements Serializable, Cloneable {
      * @see AutomaticFailoverStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("automaticFailover")
     public String getAutomaticFailover() {
         return this.automaticFailover;
     }
@@ -2267,7 +2266,6 @@ public class Snapshot implements Serializable, Cloneable {
      * @see AutomaticFailoverStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
         withAutomaticFailover(automaticFailover);
     }

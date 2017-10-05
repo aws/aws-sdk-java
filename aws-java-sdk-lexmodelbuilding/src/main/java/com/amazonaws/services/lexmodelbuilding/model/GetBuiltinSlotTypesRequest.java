@@ -76,7 +76,6 @@ public class GetBuiltinSlotTypesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see Locale
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -107,7 +106,6 @@ public class GetBuiltinSlotTypesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see Locale
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(Locale locale) {
         withLocale(locale);
     }

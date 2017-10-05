@@ -150,7 +150,6 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * @see OrganizationFeatureSet
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
     public String getFeatureSet() {
         return this.featureSet;
     }
@@ -257,7 +256,6 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * @see OrganizationFeatureSet
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFeatureSet(OrganizationFeatureSet featureSet) {
         withFeatureSet(featureSet);
     }

@@ -131,7 +131,6 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      * @see CustomMailFromStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("mailFromDomainStatus")
     public String getMailFromDomainStatus() {
         return this.mailFromDomainStatus;
     }
@@ -174,7 +173,6 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      * @see CustomMailFromStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMailFromDomainStatus(CustomMailFromStatus mailFromDomainStatus) {
         withMailFromDomainStatus(mailFromDomainStatus);
     }
@@ -254,7 +252,6 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      * @see BehaviorOnMXFailure
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("behaviorOnMXFailure")
     public String getBehaviorOnMXFailure() {
         return this.behaviorOnMXFailure;
     }
@@ -315,7 +312,6 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      * @see BehaviorOnMXFailure
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
         withBehaviorOnMXFailure(behaviorOnMXFailure);
     }

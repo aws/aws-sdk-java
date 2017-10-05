@@ -104,7 +104,6 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
      * @see RegionName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("regionName")
     public String getRegionName() {
         return this.regionName;
     }
@@ -135,7 +134,6 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
      * @see RegionName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRegionName(RegionName regionName) {
         withRegionName(regionName);
     }

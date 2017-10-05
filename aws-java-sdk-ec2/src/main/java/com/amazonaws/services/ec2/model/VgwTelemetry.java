@@ -200,7 +200,6 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @see TelemetryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -231,7 +230,6 @@ public class VgwTelemetry implements Serializable, Cloneable {
      * @see TelemetryStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(TelemetryStatus status) {
         withStatus(status);
     }

@@ -110,7 +110,6 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see ParameterType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -141,7 +140,6 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * @see ParameterType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ParameterType type) {
         withType(type);
     }

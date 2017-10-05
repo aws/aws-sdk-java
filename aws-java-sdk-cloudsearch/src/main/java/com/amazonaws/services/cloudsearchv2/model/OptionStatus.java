@@ -237,7 +237,6 @@ public class OptionStatus implements Serializable, Cloneable {
      * @see OptionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -300,7 +299,6 @@ public class OptionStatus implements Serializable, Cloneable {
      * @see OptionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(OptionState state) {
         withState(state);
     }

@@ -248,7 +248,6 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
      * @see DirectorySize
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("size")
     public String getSize() {
         return this.size;
     }
@@ -279,7 +278,6 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
      * @see DirectorySize
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSize(DirectorySize size) {
         withSize(size);
     }

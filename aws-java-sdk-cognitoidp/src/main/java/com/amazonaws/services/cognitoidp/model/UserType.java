@@ -469,7 +469,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * @see UserStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("userStatus")
     public String getUserStatus() {
         return this.userStatus;
     }
@@ -606,7 +605,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * @see UserStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUserStatus(UserStatusType userStatus) {
         withUserStatus(userStatus);
     }

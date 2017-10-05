@@ -431,7 +431,6 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @see ApplicationVersionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -462,7 +461,6 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @see ApplicationVersionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ApplicationVersionStatus status) {
         withStatus(status);
     }

@@ -688,7 +688,6 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * @see CommandInvocationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -719,7 +718,6 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * @see CommandInvocationStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CommandInvocationStatus status) {
         withStatus(status);
     }

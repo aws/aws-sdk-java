@@ -280,7 +280,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     public String getBackupType() {
         return this.backupType;
     }
@@ -311,7 +310,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBackupType(BackupType backupType) {
         withBackupType(backupType);
     }
@@ -1032,7 +1030,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -1063,7 +1060,6 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * @see BackupStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(BackupStatus status) {
         withStatus(status);
     }

@@ -449,7 +449,6 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * @see JobRunState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("jobRunState")
     public String getJobRunState() {
         return this.jobRunState;
     }

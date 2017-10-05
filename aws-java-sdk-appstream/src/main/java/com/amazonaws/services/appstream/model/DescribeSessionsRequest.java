@@ -297,7 +297,6 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see AuthenticationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     public String getAuthenticationType() {
         return this.authenticationType;
     }
@@ -332,7 +331,6 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
      * @see AuthenticationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAuthenticationType(AuthenticationType authenticationType) {
         withAuthenticationType(authenticationType);
     }

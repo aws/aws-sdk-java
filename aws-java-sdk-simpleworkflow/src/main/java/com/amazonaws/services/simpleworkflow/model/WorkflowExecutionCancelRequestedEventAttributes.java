@@ -181,7 +181,6 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      * @see WorkflowExecutionCancelRequestedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -220,7 +219,6 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      * @see WorkflowExecutionCancelRequestedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(WorkflowExecutionCancelRequestedCause cause) {
         withCause(cause);
     }

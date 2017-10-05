@@ -229,7 +229,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -260,7 +259,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(CEType type) {
         withType(type);
     }
@@ -312,7 +310,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -351,7 +348,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(CEState state) {
         withState(state);
     }
@@ -399,7 +395,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -430,7 +425,6 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      * @see CEStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CEStatus status) {
         withStatus(status);
     }

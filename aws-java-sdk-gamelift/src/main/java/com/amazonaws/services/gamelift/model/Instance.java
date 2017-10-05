@@ -237,7 +237,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     public String getOperatingSystem() {
         return this.operatingSystem;
     }
@@ -268,7 +267,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see OperatingSystem
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOperatingSystem(OperatingSystem operatingSystem) {
         withOperatingSystem(operatingSystem);
     }
@@ -312,7 +310,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see EC2InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -343,7 +340,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see EC2InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(EC2InstanceType type) {
         withType(type);
     }
@@ -469,7 +465,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -582,7 +577,6 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(InstanceStatus status) {
         withStatus(status);
     }

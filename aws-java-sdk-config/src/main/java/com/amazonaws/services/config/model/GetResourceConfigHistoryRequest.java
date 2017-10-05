@@ -98,7 +98,6 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -129,7 +128,6 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }
@@ -303,7 +301,6 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      * @see ChronologicalOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("chronologicalOrder")
     public String getChronologicalOrder() {
         return this.chronologicalOrder;
     }
@@ -338,7 +335,6 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      * @see ChronologicalOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChronologicalOrder(ChronologicalOrder chronologicalOrder) {
         withChronologicalOrder(chronologicalOrder);
     }

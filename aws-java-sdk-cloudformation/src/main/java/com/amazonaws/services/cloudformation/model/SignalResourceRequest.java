@@ -222,7 +222,6 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ResourceSignalStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -257,7 +256,6 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ResourceSignalStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ResourceSignalStatus status) {
         withStatus(status);
     }

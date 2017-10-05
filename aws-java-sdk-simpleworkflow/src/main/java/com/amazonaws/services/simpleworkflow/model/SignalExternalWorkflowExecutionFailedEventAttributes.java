@@ -212,7 +212,6 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      * @see SignalExternalWorkflowExecutionFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -273,7 +272,6 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      * @see SignalExternalWorkflowExecutionFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(SignalExternalWorkflowExecutionFailedCause cause) {
         withCause(cause);
     }

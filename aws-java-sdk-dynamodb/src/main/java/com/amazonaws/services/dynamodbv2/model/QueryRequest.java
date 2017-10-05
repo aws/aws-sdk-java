@@ -781,7 +781,6 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @see Select
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("select")
     public String getSelect() {
         return this.select;
     }
@@ -1024,7 +1023,6 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @see Select
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSelect(Select select) {
         withSelect(select);
     }
@@ -1598,7 +1596,6 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @see ConditionalOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("conditionalOperator")
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -1637,7 +1634,6 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @see ConditionalOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         withConditionalOperator(conditionalOperator);
     }
@@ -1905,7 +1901,6 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @see ReturnConsumedCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("returnConsumedCapacity")
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -1926,7 +1921,6 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * @see ReturnConsumedCapacity
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
         withReturnConsumedCapacity(returnConsumedCapacity);
     }

@@ -115,7 +115,6 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @see StatusName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
     public String getName() {
         return this.name;
     }
@@ -146,7 +145,6 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @see StatusName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setName(StatusName name) {
         withName(name);
     }
@@ -190,7 +188,6 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -221,7 +218,6 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StatusType status) {
         withStatus(status);
     }

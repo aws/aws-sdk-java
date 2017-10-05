@@ -65,7 +65,6 @@ public class DescribeCopyProductStatusResult extends com.amazonaws.AmazonWebServ
      * @see CopyProductStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("copyProductStatus")
     public String getCopyProductStatus() {
         return this.copyProductStatus;
     }

@@ -123,7 +123,6 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * @see DeploymentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     public String getDeploymentType() {
         return this.deploymentType;
     }
@@ -150,7 +149,6 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * @see DeploymentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeploymentType(DeploymentType deploymentType) {
         withDeploymentType(deploymentType);
     }

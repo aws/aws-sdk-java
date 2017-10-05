@@ -266,7 +266,6 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * @see ChildPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("childPolicy")
     public String getChildPolicy() {
         return this.childPolicy;
     }
@@ -383,7 +382,6 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * @see ChildPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChildPolicy(ChildPolicy childPolicy) {
         withChildPolicy(childPolicy);
     }
@@ -478,7 +476,6 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * @see WorkflowExecutionTerminatedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -517,7 +514,6 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      * @see WorkflowExecutionTerminatedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(WorkflowExecutionTerminatedCause cause) {
         withCause(cause);
     }

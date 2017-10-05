@@ -116,7 +116,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      * @see InstanceAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     public String getAttribute() {
         return this.attribute;
     }
@@ -157,7 +156,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      * @see InstanceAttributeName
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAttribute(InstanceAttributeName attribute) {
         withAttribute(attribute);
     }

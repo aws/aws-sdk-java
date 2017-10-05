@@ -121,7 +121,6 @@ public class SpotPrice implements Serializable, Cloneable {
      * @see InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -152,7 +151,6 @@ public class SpotPrice implements Serializable, Cloneable {
      * @see InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(InstanceType instanceType) {
         withInstanceType(instanceType);
     }
@@ -196,7 +194,6 @@ public class SpotPrice implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("productDescription")
     public String getProductDescription() {
         return this.productDescription;
     }
@@ -227,7 +224,6 @@ public class SpotPrice implements Serializable, Cloneable {
      * @see RIProductDescription
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductDescription(RIProductDescription productDescription) {
         withProductDescription(productDescription);
     }

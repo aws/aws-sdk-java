@@ -109,7 +109,6 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ReportFileFormat
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("reportFileFormat")
     public String getReportFileFormat() {
         return this.reportFileFormat;
     }
@@ -140,7 +139,6 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ReportFileFormat
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReportFileFormat(ReportFileFormat reportFileFormat) {
         withReportFileFormat(reportFileFormat);
     }
@@ -194,7 +192,6 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ReportType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("reportType")
     public String getReportType() {
         return this.reportType;
     }
@@ -235,7 +232,6 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ReportType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReportType(ReportType reportType) {
         withReportType(reportType);
     }

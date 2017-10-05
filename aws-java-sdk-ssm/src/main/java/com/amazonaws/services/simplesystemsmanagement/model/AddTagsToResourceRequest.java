@@ -68,7 +68,6 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ResourceTypeForTagging
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -99,7 +98,6 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ResourceTypeForTagging
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceTypeForTagging resourceType) {
         withResourceType(resourceType);
     }

@@ -214,7 +214,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @see GatewayType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -245,7 +244,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      * @see GatewayType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(GatewayType type) {
         withType(type);
     }

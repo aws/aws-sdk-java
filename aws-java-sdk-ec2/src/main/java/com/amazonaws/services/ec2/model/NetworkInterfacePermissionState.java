@@ -62,7 +62,6 @@ public class NetworkInterfacePermissionState implements Serializable, Cloneable 
      * @see NetworkInterfacePermissionStateCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -93,7 +92,6 @@ public class NetworkInterfacePermissionState implements Serializable, Cloneable 
      * @see NetworkInterfacePermissionStateCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(NetworkInterfacePermissionStateCode state) {
         withState(state);
     }

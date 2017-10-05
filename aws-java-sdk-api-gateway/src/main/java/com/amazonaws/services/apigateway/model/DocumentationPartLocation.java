@@ -122,7 +122,6 @@ public class DocumentationPartLocation implements Serializable, Cloneable, Struc
      * @see DocumentationPartType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -175,7 +174,6 @@ public class DocumentationPartLocation implements Serializable, Cloneable, Struc
      * @see DocumentationPartType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(DocumentationPartType type) {
         withType(type);
     }

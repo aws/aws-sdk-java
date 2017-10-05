@@ -116,7 +116,6 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
      * @see DeploymentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -147,7 +146,6 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
      * @see DeploymentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(DeploymentStatus status) {
         withStatus(status);
     }

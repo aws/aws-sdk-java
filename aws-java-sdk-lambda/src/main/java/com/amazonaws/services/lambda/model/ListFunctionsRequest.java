@@ -228,7 +228,6 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see FunctionVersion
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("functionVersion")
     public String getFunctionVersion() {
         return this.functionVersion;
     }
@@ -287,7 +286,6 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see FunctionVersion
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFunctionVersion(FunctionVersion functionVersion) {
         withFunctionVersion(functionVersion);
     }

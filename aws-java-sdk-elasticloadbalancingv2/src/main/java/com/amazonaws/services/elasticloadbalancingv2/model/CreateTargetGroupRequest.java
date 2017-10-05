@@ -217,7 +217,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -252,7 +251,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         withProtocol(protocol);
     }
@@ -392,7 +390,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("healthCheckProtocol")
     public String getHealthCheckProtocol() {
         return this.healthCheckProtocol;
     }
@@ -431,7 +428,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
         withHealthCheckProtocol(healthCheckProtocol);
     }
@@ -844,7 +840,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see TargetTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
     public String getTargetType() {
         return this.targetType;
     }
@@ -905,7 +900,6 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see TargetTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetType(TargetTypeEnum targetType) {
         withTargetType(targetType);
     }

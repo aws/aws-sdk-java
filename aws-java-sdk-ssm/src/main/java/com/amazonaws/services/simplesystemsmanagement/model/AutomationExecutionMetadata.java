@@ -226,7 +226,6 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
      * @see AutomationExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("automationExecutionStatus")
     public String getAutomationExecutionStatus() {
         return this.automationExecutionStatus;
     }
@@ -257,7 +256,6 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
      * @see AutomationExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
         withAutomationExecutionStatus(automationExecutionStatus);
     }

@@ -188,7 +188,6 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
      * @see ComplianceSeverity
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("severity")
     public String getSeverity() {
         return this.severity;
     }
@@ -252,7 +251,6 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
      * @see ComplianceStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }

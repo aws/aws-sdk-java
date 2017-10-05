@@ -194,7 +194,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @see PolicyEvaluationDecisionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("evalDecision")
     public String getEvalDecision() {
         return this.evalDecision;
     }
@@ -225,7 +224,6 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @see PolicyEvaluationDecisionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvalDecision(PolicyEvaluationDecisionType evalDecision) {
         withEvalDecision(evalDecision);
     }

@@ -125,7 +125,6 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * @see ScheduleState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

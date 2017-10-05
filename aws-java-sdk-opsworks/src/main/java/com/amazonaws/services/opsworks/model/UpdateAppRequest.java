@@ -325,7 +325,6 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see AppType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -356,7 +355,6 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @see AppType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(AppType type) {
         withType(type);
     }

@@ -146,7 +146,6 @@ public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServi
      * @see LoaContentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("loaContentType")
     public String getLoaContentType() {
         return this.loaContentType;
     }
@@ -167,7 +166,6 @@ public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServi
      * @see LoaContentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLoaContentType(LoaContentType loaContentType) {
         withLoaContentType(loaContentType);
     }

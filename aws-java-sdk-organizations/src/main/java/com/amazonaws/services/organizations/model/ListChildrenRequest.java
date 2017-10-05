@@ -244,7 +244,6 @@ public class ListChildrenRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ChildType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("childType")
     public String getChildType() {
         return this.childType;
     }
@@ -275,7 +274,6 @@ public class ListChildrenRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ChildType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChildType(ChildType childType) {
         withChildType(childType);
     }

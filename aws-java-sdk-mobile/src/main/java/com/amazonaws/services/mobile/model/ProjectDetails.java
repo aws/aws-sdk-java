@@ -148,7 +148,6 @@ public class ProjectDetails implements Serializable, Cloneable, StructuredPojo {
      * @see ProjectState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

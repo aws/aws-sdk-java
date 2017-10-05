@@ -120,7 +120,6 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      * @see MaximumExecutionFrequency
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("deliveryFrequency")
     public String getDeliveryFrequency() {
         return this.deliveryFrequency;
     }
@@ -151,7 +150,6 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      * @see MaximumExecutionFrequency
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
         withDeliveryFrequency(deliveryFrequency);
     }

@@ -116,7 +116,6 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
      * @see DocumentPermissionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("permissionType")
     public String getPermissionType() {
         return this.permissionType;
     }
@@ -147,7 +146,6 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
      * @see DocumentPermissionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPermissionType(DocumentPermissionType permissionType) {
         withPermissionType(permissionType);
     }

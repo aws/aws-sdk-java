@@ -174,7 +174,6 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see OrientationCorrection
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("orientationCorrection")
     public String getOrientationCorrection() {
         return this.orientationCorrection;
     }
@@ -241,7 +240,6 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see OrientationCorrection
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
         withOrientationCorrection(orientationCorrection);
     }

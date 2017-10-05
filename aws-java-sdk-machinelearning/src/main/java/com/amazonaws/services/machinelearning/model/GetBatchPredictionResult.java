@@ -531,7 +531,6 @@ public class GetBatchPredictionResult extends com.amazonaws.AmazonWebServiceResu
      * @see EntityStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -594,7 +593,6 @@ public class GetBatchPredictionResult extends com.amazonaws.AmazonWebServiceResu
      * @see EntityStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(EntityStatus status) {
         withStatus(status);
     }

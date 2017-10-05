@@ -76,7 +76,6 @@ public class OfferingStatus implements Serializable, Cloneable, StructuredPojo {
      * @see OfferingTransactionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -107,7 +106,6 @@ public class OfferingStatus implements Serializable, Cloneable, StructuredPojo {
      * @see OfferingTransactionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(OfferingTransactionType type) {
         withType(type);
     }

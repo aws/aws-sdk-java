@@ -48,6 +48,11 @@ public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
     }
 
     @Override
+    public AddApplicationInputProcessingConfigurationResult addApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,12 @@ public class AbstractAmazonKinesisAnalytics implements AmazonKinesisAnalytics {
 
     @Override
     public DeleteApplicationCloudWatchLoggingOptionResult deleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteApplicationInputProcessingConfigurationResult deleteApplicationInputProcessingConfiguration(
+            DeleteApplicationInputProcessingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

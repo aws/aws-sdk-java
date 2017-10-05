@@ -161,7 +161,6 @@ public class ManagedAction implements Serializable, Cloneable {
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     public String getActionType() {
         return this.actionType;
     }
@@ -192,7 +191,6 @@ public class ManagedAction implements Serializable, Cloneable {
      * @see ActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setActionType(ActionType actionType) {
         withActionType(actionType);
     }
@@ -240,7 +238,6 @@ public class ManagedAction implements Serializable, Cloneable {
      * @see ActionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -275,7 +272,6 @@ public class ManagedAction implements Serializable, Cloneable {
      * @see ActionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ActionStatus status) {
         withStatus(status);
     }

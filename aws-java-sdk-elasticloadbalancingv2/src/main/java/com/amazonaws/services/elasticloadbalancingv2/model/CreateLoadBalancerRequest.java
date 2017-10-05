@@ -513,7 +513,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see LoadBalancerSchemeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scheme")
     public String getScheme() {
         return this.scheme;
     }
@@ -582,7 +581,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see LoadBalancerSchemeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScheme(LoadBalancerSchemeEnum scheme) {
         withScheme(scheme);
     }
@@ -715,7 +713,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see LoadBalancerTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -746,7 +743,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see LoadBalancerTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(LoadBalancerTypeEnum type) {
         withType(type);
     }
@@ -798,7 +794,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     public String getIpAddressType() {
         return this.ipAddressType;
     }
@@ -837,7 +832,6 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         withIpAddressType(ipAddressType);
     }

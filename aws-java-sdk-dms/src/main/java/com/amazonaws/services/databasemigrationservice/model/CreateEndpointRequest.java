@@ -211,7 +211,6 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReplicationEndpointTypeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("endpointType")
     public String getEndpointType() {
         return this.endpointType;
     }
@@ -242,7 +241,6 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ReplicationEndpointTypeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
         withEndpointType(endpointType);
     }
@@ -759,7 +757,6 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see DmsSslModeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
     public String getSslMode() {
         return this.sslMode;
     }
@@ -812,7 +809,6 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see DmsSslModeValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSslMode(DmsSslModeValue sslMode) {
         withSslMode(sslMode);
     }

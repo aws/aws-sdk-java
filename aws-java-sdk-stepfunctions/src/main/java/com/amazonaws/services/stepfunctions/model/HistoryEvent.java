@@ -151,7 +151,6 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
      * @see HistoryEventType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -182,7 +181,6 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
      * @see HistoryEventType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(HistoryEventType type) {
         withType(type);
     }

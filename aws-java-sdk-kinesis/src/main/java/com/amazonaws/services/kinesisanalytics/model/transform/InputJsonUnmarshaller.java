@@ -52,6 +52,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                     context.nextToken();
                     input.setNamePrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InputProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    input.setInputProcessingConfiguration(InputProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("KinesisStreamsInput", targetDepth)) {
                     context.nextToken();
                     input.setKinesisStreamsInput(KinesisStreamsInputJsonUnmarshaller.getInstance().unmarshall(context));

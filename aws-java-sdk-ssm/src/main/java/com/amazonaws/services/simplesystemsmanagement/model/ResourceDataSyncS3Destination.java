@@ -163,7 +163,6 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
      * @see ResourceDataSyncS3Format
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("syncFormat")
     public String getSyncFormat() {
         return this.syncFormat;
     }
@@ -194,7 +193,6 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
      * @see ResourceDataSyncS3Format
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSyncFormat(ResourceDataSyncS3Format syncFormat) {
         withSyncFormat(syncFormat);
     }

@@ -154,7 +154,6 @@ public class TagDescription implements Serializable, Cloneable {
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -185,7 +184,6 @@ public class TagDescription implements Serializable, Cloneable {
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }

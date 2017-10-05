@@ -131,7 +131,6 @@ public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebService
      * @see Locale
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("locale")
     public String getLocale() {
         return this.locale;
     }
@@ -162,7 +161,6 @@ public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebService
      * @see Locale
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setLocale(Locale locale) {
         withLocale(locale);
     }

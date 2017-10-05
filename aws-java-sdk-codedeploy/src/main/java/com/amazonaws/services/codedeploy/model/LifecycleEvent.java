@@ -407,7 +407,6 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
      * @see LifecycleEventStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -564,7 +563,6 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
      * @see LifecycleEventStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(LifecycleEventStatus status) {
         withStatus(status);
     }

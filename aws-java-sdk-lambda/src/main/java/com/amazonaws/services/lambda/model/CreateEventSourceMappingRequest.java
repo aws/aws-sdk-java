@@ -436,7 +436,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * @see EventSourcePosition
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("startingPosition")
     public String getStartingPosition() {
         return this.startingPosition;
     }
@@ -479,7 +478,6 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * @see EventSourcePosition
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStartingPosition(EventSourcePosition startingPosition) {
         withStartingPosition(startingPosition);
     }

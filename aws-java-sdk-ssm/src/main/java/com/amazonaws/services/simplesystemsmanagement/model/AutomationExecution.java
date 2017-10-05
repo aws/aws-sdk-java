@@ -313,7 +313,6 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * @see AutomationExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("automationExecutionStatus")
     public String getAutomationExecutionStatus() {
         return this.automationExecutionStatus;
     }
@@ -344,7 +343,6 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * @see AutomationExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
         withAutomationExecutionStatus(automationExecutionStatus);
     }

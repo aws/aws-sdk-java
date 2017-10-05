@@ -64,7 +64,6 @@ public class Processor implements Serializable, Cloneable, StructuredPojo {
      * @see ProcessorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -95,7 +94,6 @@ public class Processor implements Serializable, Cloneable, StructuredPojo {
      * @see ProcessorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(ProcessorType type) {
         withType(type);
     }

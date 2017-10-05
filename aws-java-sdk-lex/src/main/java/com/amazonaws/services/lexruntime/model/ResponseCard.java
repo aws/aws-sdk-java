@@ -112,7 +112,6 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
      * @see ContentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     public String getContentType() {
         return this.contentType;
     }
@@ -143,7 +142,6 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
      * @see ContentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContentType(ContentType contentType) {
         withContentType(contentType);
     }

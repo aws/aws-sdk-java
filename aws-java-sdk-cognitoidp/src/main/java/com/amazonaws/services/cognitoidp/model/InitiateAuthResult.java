@@ -292,7 +292,6 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see ChallengeNameType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("challengeName")
     public String getChallengeName() {
         return this.challengeName;
     }
@@ -489,7 +488,6 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * @see ChallengeNameType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setChallengeName(ChallengeNameType challengeName) {
         withChallengeName(challengeName);
     }

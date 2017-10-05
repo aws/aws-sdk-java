@@ -115,7 +115,6 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ExportTaskStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statusCode")
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -148,7 +147,6 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * @see ExportTaskStatusCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatusCode(ExportTaskStatusCode statusCode) {
         withStatusCode(statusCode);
     }

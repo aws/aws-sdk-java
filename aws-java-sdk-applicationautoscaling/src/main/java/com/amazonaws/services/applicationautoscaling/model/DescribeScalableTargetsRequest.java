@@ -179,7 +179,6 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * @see ServiceNamespace
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("serviceNamespace")
     public String getServiceNamespace() {
         return this.serviceNamespace;
     }
@@ -218,7 +217,6 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * @see ServiceNamespace
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
         withServiceNamespace(serviceNamespace);
     }
@@ -825,7 +823,6 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * @see ScalableDimension
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("scalableDimension")
     public String getScalableDimension() {
         return this.scalableDimension;
     }
@@ -1036,7 +1033,6 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      * @see ScalableDimension
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setScalableDimension(ScalableDimension scalableDimension) {
         withScalableDimension(scalableDimension);
     }

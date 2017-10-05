@@ -189,7 +189,6 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -249,7 +248,6 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see ExportType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("exportType")
     public String getExportType() {
         return this.exportType;
     }
@@ -375,7 +373,6 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @see ExportStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("exportStatus")
     public String getExportStatus() {
         return this.exportStatus;
     }

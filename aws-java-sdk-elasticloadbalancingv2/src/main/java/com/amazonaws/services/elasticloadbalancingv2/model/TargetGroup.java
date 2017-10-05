@@ -222,7 +222,6 @@ public class TargetGroup implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -253,7 +252,6 @@ public class TargetGroup implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         withProtocol(protocol);
     }
@@ -377,7 +375,6 @@ public class TargetGroup implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("healthCheckProtocol")
     public String getHealthCheckProtocol() {
         return this.healthCheckProtocol;
     }
@@ -408,7 +405,6 @@ public class TargetGroup implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
         withHealthCheckProtocol(healthCheckProtocol);
     }
@@ -811,7 +807,6 @@ public class TargetGroup implements Serializable, Cloneable {
      * @see TargetTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
     public String getTargetType() {
         return this.targetType;
     }
@@ -850,7 +845,6 @@ public class TargetGroup implements Serializable, Cloneable {
      * @see TargetTypeEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTargetType(TargetTypeEnum targetType) {
         withTargetType(targetType);
     }

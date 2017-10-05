@@ -304,7 +304,6 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see IntegrationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -335,7 +334,6 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see IntegrationType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(IntegrationType type) {
         withType(type);
     }
@@ -1075,7 +1073,6 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ContentHandlingStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("contentHandling")
     public String getContentHandling() {
         return this.contentHandling;
     }
@@ -1180,7 +1177,6 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ContentHandlingStrategy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
         withContentHandling(contentHandling);
     }

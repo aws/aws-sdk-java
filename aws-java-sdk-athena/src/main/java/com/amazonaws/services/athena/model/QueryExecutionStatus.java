@@ -96,7 +96,6 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
      * @see QueryExecutionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -143,7 +142,6 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
      * @see QueryExecutionState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(QueryExecutionState state) {
         withState(state);
     }

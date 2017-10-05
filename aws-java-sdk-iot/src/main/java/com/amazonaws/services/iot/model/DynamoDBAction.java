@@ -344,7 +344,6 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * @see DynamoKeyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("hashKeyType")
     public String getHashKeyType() {
         return this.hashKeyType;
     }
@@ -375,7 +374,6 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * @see DynamoKeyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setHashKeyType(DynamoKeyType hashKeyType) {
         withHashKeyType(hashKeyType);
     }
@@ -499,7 +497,6 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * @see DynamoKeyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("rangeKeyType")
     public String getRangeKeyType() {
         return this.rangeKeyType;
     }
@@ -530,7 +527,6 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * @see DynamoKeyType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRangeKeyType(DynamoKeyType rangeKeyType) {
         withRangeKeyType(rangeKeyType);
     }

@@ -198,7 +198,6 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see StateValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("stateValue")
     public String getStateValue() {
         return this.stateValue;
     }
@@ -229,7 +228,6 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see StateValue
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStateValue(StateValue stateValue) {
         withStateValue(stateValue);
     }

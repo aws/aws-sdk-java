@@ -246,7 +246,6 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ResourceStateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceState")
     public String getResourceState() {
         return this.resourceState;
     }
@@ -277,7 +276,6 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @see ResourceStateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceState(ResourceStateType resourceState) {
         withResourceState(resourceState);
     }

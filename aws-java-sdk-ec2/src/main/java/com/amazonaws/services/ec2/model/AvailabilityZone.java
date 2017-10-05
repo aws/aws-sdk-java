@@ -74,7 +74,6 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @see AvailabilityZoneState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -105,7 +104,6 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * @see AvailabilityZoneState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(AvailabilityZoneState state) {
         withState(state);
     }

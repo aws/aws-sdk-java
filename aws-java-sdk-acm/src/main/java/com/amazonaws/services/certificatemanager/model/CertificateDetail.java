@@ -733,7 +733,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see CertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -764,7 +763,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see CertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CertificateStatus status) {
         withStatus(status);
     }
@@ -858,7 +856,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see RevocationReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
     public String getRevocationReason() {
         return this.revocationReason;
     }
@@ -893,7 +890,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see RevocationReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRevocationReason(RevocationReason revocationReason) {
         withRevocationReason(revocationReason);
     }
@@ -1019,7 +1015,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see KeyAlgorithm
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("keyAlgorithm")
     public String getKeyAlgorithm() {
         return this.keyAlgorithm;
     }
@@ -1050,7 +1045,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see KeyAlgorithm
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
         withKeyAlgorithm(keyAlgorithm);
     }
@@ -1224,7 +1218,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see FailureReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("failureReason")
     public String getFailureReason() {
         return this.failureReason;
     }
@@ -1267,7 +1260,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see FailureReason
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFailureReason(FailureReason failureReason) {
         withFailureReason(failureReason);
     }
@@ -1341,7 +1333,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see CertificateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -1396,7 +1387,6 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * @see CertificateType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(CertificateType type) {
         withType(type);
     }

@@ -184,7 +184,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see ResourceSortType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sort")
     public String getSort() {
         return this.sort;
     }
@@ -215,7 +214,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see ResourceSortType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSort(ResourceSortType sort) {
         withSort(sort);
     }
@@ -259,7 +257,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see OrderType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("order")
     public String getOrder() {
         return this.order;
     }
@@ -290,7 +287,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see OrderType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOrder(OrderType order) {
         withOrder(order);
     }
@@ -414,7 +410,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see FolderContentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -445,7 +440,6 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * @see FolderContentType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(FolderContentType type) {
         withType(type);
     }

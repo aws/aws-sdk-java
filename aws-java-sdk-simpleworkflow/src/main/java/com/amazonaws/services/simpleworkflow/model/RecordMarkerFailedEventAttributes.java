@@ -150,7 +150,6 @@ public class RecordMarkerFailedEventAttributes implements Serializable, Cloneabl
      * @see RecordMarkerFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("cause")
     public String getCause() {
         return this.cause;
     }
@@ -211,7 +210,6 @@ public class RecordMarkerFailedEventAttributes implements Serializable, Cloneabl
      * @see RecordMarkerFailedCause
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setCause(RecordMarkerFailedCause cause) {
         withCause(cause);
     }

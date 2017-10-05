@@ -252,7 +252,6 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      * @see Distribution
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     public String getDistribution() {
         return this.distribution;
     }
@@ -273,7 +272,6 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      * @see Distribution
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDistribution(Distribution distribution) {
         withDistribution(distribution);
     }

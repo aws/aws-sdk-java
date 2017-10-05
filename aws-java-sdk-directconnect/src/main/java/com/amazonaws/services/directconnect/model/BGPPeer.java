@@ -108,7 +108,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see AddressFamily
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("addressFamily")
     public String getAddressFamily() {
         return this.addressFamily;
     }
@@ -129,7 +128,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see AddressFamily
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAddressFamily(AddressFamily addressFamily) {
         withAddressFamily(addressFamily);
     }
@@ -211,7 +209,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see BGPPeerState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("bgpPeerState")
     public String getBgpPeerState() {
         return this.bgpPeerState;
     }
@@ -232,7 +229,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see BGPPeerState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBgpPeerState(BGPPeerState bgpPeerState) {
         withBgpPeerState(bgpPeerState);
     }
@@ -262,7 +258,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see BGPStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("bgpStatus")
     public String getBgpStatus() {
         return this.bgpStatus;
     }
@@ -283,7 +278,6 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * @see BGPStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setBgpStatus(BGPStatus bgpStatus) {
         withBgpStatus(bgpStatus);
     }

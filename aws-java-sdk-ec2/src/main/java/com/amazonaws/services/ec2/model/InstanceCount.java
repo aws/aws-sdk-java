@@ -102,7 +102,6 @@ public class InstanceCount implements Serializable, Cloneable {
      * @see ListingState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -133,7 +132,6 @@ public class InstanceCount implements Serializable, Cloneable {
      * @see ListingState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ListingState state) {
         withState(state);
     }

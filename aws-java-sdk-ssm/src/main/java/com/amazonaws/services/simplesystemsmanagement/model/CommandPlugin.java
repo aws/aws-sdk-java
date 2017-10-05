@@ -266,7 +266,6 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * @see CommandPluginStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -297,7 +296,6 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * @see CommandPluginStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(CommandPluginStatus status) {
         withStatus(status);
     }

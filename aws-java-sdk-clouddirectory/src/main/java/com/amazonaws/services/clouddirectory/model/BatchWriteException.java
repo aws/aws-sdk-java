@@ -101,7 +101,6 @@ public class BatchWriteException extends com.amazonaws.services.clouddirectory.m
      * @see BatchWriteExceptionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(BatchWriteExceptionType type) {
         withType(type);
     }

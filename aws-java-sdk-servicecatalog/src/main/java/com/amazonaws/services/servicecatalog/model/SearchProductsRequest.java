@@ -356,7 +356,6 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ProductViewSortBy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     public String getSortBy() {
         return this.sortBy;
     }
@@ -387,7 +386,6 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see ProductViewSortBy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortBy(ProductViewSortBy sortBy) {
         withSortBy(sortBy);
     }
@@ -431,7 +429,6 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -462,7 +459,6 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      * @see SortOrder
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSortOrder(SortOrder sortOrder) {
         withSortOrder(sortOrder);
     }

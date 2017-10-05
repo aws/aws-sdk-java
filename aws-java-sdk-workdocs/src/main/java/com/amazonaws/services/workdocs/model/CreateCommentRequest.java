@@ -354,7 +354,6 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see CommentVisibilityType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("visibility")
     public String getVisibility() {
         return this.visibility;
     }
@@ -393,7 +392,6 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see CommentVisibilityType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVisibility(CommentVisibilityType visibility) {
         withVisibility(visibility);
     }

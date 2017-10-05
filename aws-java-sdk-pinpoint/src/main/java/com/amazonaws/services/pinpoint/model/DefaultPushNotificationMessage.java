@@ -93,7 +93,6 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      * @see Action
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("action")
     public String getAction() {
         return this.action;
     }
@@ -136,7 +135,6 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      * @see Action
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAction(Action action) {
         withAction(action);
     }

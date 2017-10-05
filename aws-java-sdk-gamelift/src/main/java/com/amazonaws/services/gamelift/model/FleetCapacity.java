@@ -243,7 +243,6 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      * @see EC2InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceType")
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -286,7 +285,6 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      * @see EC2InstanceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceType(EC2InstanceType instanceType) {
         withInstanceType(instanceType);
     }

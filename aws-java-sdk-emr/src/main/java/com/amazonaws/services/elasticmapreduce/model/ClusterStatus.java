@@ -70,7 +70,6 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
      * @see ClusterState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -101,7 +100,6 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
      * @see ClusterState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(ClusterState state) {
         withState(state);
     }

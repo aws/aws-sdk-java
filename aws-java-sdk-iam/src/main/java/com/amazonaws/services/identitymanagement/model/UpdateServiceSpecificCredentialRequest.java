@@ -211,7 +211,6 @@ public class UpdateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -242,7 +241,6 @@ public class UpdateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * @see StatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(StatusType status) {
         withStatus(status);
     }

@@ -256,7 +256,6 @@ public class Assignment implements Serializable, Cloneable, StructuredPojo {
      * @see AssignmentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("assignmentStatus")
     public String getAssignmentStatus() {
         return this.assignmentStatus;
     }
@@ -287,7 +286,6 @@ public class Assignment implements Serializable, Cloneable, StructuredPojo {
      * @see AssignmentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setAssignmentStatus(AssignmentStatus assignmentStatus) {
         withAssignmentStatus(assignmentStatus);
     }

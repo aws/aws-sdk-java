@@ -64,7 +64,6 @@ public class InstanceInformationFilter implements Serializable, Cloneable, Struc
      * @see InstanceInformationFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("key")
     public String getKey() {
         return this.key;
     }
@@ -95,7 +94,6 @@ public class InstanceInformationFilter implements Serializable, Cloneable, Struc
      * @see InstanceInformationFilterKey
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setKey(InstanceInformationFilterKey key) {
         withKey(key);
     }

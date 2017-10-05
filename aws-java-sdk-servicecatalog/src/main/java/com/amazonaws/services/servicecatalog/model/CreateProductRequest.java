@@ -558,7 +558,6 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ProductType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("productType")
     public String getProductType() {
         return this.productType;
     }
@@ -589,7 +588,6 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @see ProductType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProductType(ProductType productType) {
         withProductType(productType);
     }

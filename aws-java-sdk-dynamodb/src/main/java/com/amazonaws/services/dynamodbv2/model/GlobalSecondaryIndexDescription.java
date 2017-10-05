@@ -609,7 +609,6 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * @see IndexStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("indexStatus")
     public String getIndexStatus() {
         return this.indexStatus;
     }
@@ -726,7 +725,6 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      * @see IndexStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIndexStatus(IndexStatus indexStatus) {
         withIndexStatus(indexStatus);
     }

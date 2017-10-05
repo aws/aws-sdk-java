@@ -508,7 +508,6 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     public String getExecutionStatus() {
         return this.executionStatus;
     }
@@ -551,7 +550,6 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @see ExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         withExecutionStatus(executionStatus);
     }
@@ -605,7 +603,6 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @see ChangeSetStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -640,7 +637,6 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @see ChangeSetStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ChangeSetStatus status) {
         withStatus(status);
     }

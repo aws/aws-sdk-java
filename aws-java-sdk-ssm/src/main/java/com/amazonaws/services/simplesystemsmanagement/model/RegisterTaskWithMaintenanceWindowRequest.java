@@ -346,7 +346,6 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * @see MaintenanceWindowTaskType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     public String getTaskType() {
         return this.taskType;
     }
@@ -377,7 +376,6 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * @see MaintenanceWindowTaskType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTaskType(MaintenanceWindowTaskType taskType) {
         withTaskType(taskType);
     }

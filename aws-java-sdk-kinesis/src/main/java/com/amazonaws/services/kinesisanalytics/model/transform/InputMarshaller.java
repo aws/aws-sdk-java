@@ -29,6 +29,8 @@ public class InputMarshaller {
 
     private static final MarshallingInfo<String> NAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamePrefix").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTPROCESSINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputProcessingConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> KINESISSTREAMSINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisStreamsInput").build();
     private static final MarshallingInfo<StructuredPojo> KINESISFIREHOSEINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -55,6 +57,7 @@ public class InputMarshaller {
 
         try {
             protocolMarshaller.marshall(input.getNamePrefix(), NAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(input.getInputProcessingConfiguration(), INPUTPROCESSINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(input.getKinesisStreamsInput(), KINESISSTREAMSINPUT_BINDING);
             protocolMarshaller.marshall(input.getKinesisFirehoseInput(), KINESISFIREHOSEINPUT_BINDING);
             protocolMarshaller.marshall(input.getInputParallelism(), INPUTPARALLELISM_BINDING);

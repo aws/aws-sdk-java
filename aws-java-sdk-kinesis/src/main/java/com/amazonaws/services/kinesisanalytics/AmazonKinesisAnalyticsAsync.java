@@ -130,6 +130,47 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
 
     /**
      * <p>
+     * Adds an <a>InputProcessingConfiguration</a> to an application. An input processor preprocesses records on the
+     * input stream before the application's SQL code executes. Currently, the only input processor available is <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+     * </p>
+     * 
+     * @param addApplicationInputProcessingConfigurationRequest
+     * @return A Java Future containing the result of the AddApplicationInputProcessingConfiguration operation returned
+     *         by the service.
+     * @sample AmazonKinesisAnalyticsAsync.AddApplicationInputProcessingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddApplicationInputProcessingConfigurationResult> addApplicationInputProcessingConfigurationAsync(
+            AddApplicationInputProcessingConfigurationRequest addApplicationInputProcessingConfigurationRequest);
+
+    /**
+     * <p>
+     * Adds an <a>InputProcessingConfiguration</a> to an application. An input processor preprocesses records on the
+     * input stream before the application's SQL code executes. Currently, the only input processor available is <a
+     * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+     * </p>
+     * 
+     * @param addApplicationInputProcessingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddApplicationInputProcessingConfiguration operation returned
+     *         by the service.
+     * @sample AmazonKinesisAnalyticsAsyncHandler.AddApplicationInputProcessingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddApplicationInputProcessingConfigurationResult> addApplicationInputProcessingConfigurationAsync(
+            AddApplicationInputProcessingConfigurationRequest addApplicationInputProcessingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<AddApplicationInputProcessingConfigurationRequest, AddApplicationInputProcessingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds an external destination to your Amazon Kinesis Analytics application.
      * </p>
      * <p>
@@ -440,6 +481,43 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
     java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
             DeleteApplicationCloudWatchLoggingOptionRequest deleteApplicationCloudWatchLoggingOptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationCloudWatchLoggingOptionRequest, DeleteApplicationCloudWatchLoggingOptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an <a>InputProcessingConfiguration</a> from an input.
+     * </p>
+     * 
+     * @param deleteApplicationInputProcessingConfigurationRequest
+     * @return A Java Future containing the result of the DeleteApplicationInputProcessingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonKinesisAnalyticsAsync.DeleteApplicationInputProcessingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationInputProcessingConfigurationResult> deleteApplicationInputProcessingConfigurationAsync(
+            DeleteApplicationInputProcessingConfigurationRequest deleteApplicationInputProcessingConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes an <a>InputProcessingConfiguration</a> from an input.
+     * </p>
+     * 
+     * @param deleteApplicationInputProcessingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplicationInputProcessingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonKinesisAnalyticsAsyncHandler.DeleteApplicationInputProcessingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationInputProcessingConfigurationResult> deleteApplicationInputProcessingConfigurationAsync(
+            DeleteApplicationInputProcessingConfigurationRequest deleteApplicationInputProcessingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationInputProcessingConfigurationRequest, DeleteApplicationInputProcessingConfigurationResult> asyncHandler);
 
     /**
      * <p>

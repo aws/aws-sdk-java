@@ -134,7 +134,6 @@ public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see CertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("newStatus")
     public String getNewStatus() {
         return this.newStatus;
     }
@@ -191,7 +190,6 @@ public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see CertificateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNewStatus(CertificateStatus newStatus) {
         withNewStatus(newStatus);
     }

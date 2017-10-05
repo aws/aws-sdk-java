@@ -113,7 +113,6 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see StopAction
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("stopAction")
     public String getStopAction() {
         return this.stopAction;
     }

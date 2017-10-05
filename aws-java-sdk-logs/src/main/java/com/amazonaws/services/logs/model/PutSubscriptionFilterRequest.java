@@ -496,7 +496,6 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * @see Distribution
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     public String getDistribution() {
         return this.distribution;
     }
@@ -535,7 +534,6 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * @see Distribution
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDistribution(Distribution distribution) {
         withDistribution(distribution);
     }

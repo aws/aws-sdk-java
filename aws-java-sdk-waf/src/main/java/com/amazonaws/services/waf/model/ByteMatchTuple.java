@@ -1371,7 +1371,6 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * @see TextTransformation
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("textTransformation")
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -1946,7 +1945,6 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * @see TextTransformation
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTextTransformation(TextTransformation textTransformation) {
         withTextTransformation(textTransformation);
     }
@@ -2506,7 +2504,6 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * @see PositionalConstraint
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("positionalConstraint")
     public String getPositionalConstraint() {
         return this.positionalConstraint;
     }
@@ -2781,7 +2778,6 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * @see PositionalConstraint
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPositionalConstraint(PositionalConstraint positionalConstraint) {
         withPositionalConstraint(positionalConstraint);
     }

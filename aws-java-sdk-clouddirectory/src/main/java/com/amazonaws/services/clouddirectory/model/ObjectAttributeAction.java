@@ -64,7 +64,6 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
      * @see UpdateActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("objectAttributeActionType")
     public String getObjectAttributeActionType() {
         return this.objectAttributeActionType;
     }
@@ -95,7 +94,6 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
      * @see UpdateActionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setObjectAttributeActionType(UpdateActionType objectAttributeActionType) {
         withObjectAttributeActionType(objectAttributeActionType);
     }

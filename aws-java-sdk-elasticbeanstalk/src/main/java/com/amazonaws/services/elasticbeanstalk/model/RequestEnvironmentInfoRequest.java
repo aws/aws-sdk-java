@@ -285,7 +285,6 @@ public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServic
      * @see EnvironmentInfoType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("infoType")
     public String getInfoType() {
         return this.infoType;
     }
@@ -316,7 +315,6 @@ public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServic
      * @see EnvironmentInfoType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInfoType(EnvironmentInfoType infoType) {
         withInfoType(infoType);
     }

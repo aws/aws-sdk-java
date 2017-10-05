@@ -149,7 +149,6 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
      * @see Format
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("format")
     public String getFormat() {
         return this.format;
     }
@@ -176,7 +175,6 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
      * @see Format
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setFormat(Format format) {
         withFormat(format);
     }

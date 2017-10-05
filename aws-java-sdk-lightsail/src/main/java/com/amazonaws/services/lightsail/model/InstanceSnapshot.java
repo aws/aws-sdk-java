@@ -352,7 +352,6 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -383,7 +382,6 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * @see ResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(ResourceType resourceType) {
         withResourceType(resourceType);
     }
@@ -427,7 +425,6 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * @see InstanceSnapshotState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -458,7 +455,6 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * @see InstanceSnapshotState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(InstanceSnapshotState state) {
         withState(state);
     }

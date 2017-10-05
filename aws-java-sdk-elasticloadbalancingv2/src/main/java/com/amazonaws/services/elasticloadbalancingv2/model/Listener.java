@@ -213,7 +213,6 @@ public class Listener implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     public String getProtocol() {
         return this.protocol;
     }
@@ -244,7 +243,6 @@ public class Listener implements Serializable, Cloneable {
      * @see ProtocolEnum
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtocol(ProtocolEnum protocol) {
         withProtocol(protocol);
     }

@@ -53,7 +53,6 @@ public class SetIpAddressTypeResult extends com.amazonaws.AmazonWebServiceResult
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     public String getIpAddressType() {
         return this.ipAddressType;
     }
@@ -84,7 +83,6 @@ public class SetIpAddressTypeResult extends com.amazonaws.AmazonWebServiceResult
      * @see IpAddressType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setIpAddressType(IpAddressType ipAddressType) {
         withIpAddressType(ipAddressType);
     }

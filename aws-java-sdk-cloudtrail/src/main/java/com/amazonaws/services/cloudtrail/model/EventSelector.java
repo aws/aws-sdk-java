@@ -113,7 +113,6 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * @see ReadWriteType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("readWriteType")
     public String getReadWriteType() {
         return this.readWriteType;
     }
@@ -162,7 +161,6 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * @see ReadWriteType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setReadWriteType(ReadWriteType readWriteType) {
         withReadWriteType(readWriteType);
     }

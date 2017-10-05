@@ -290,7 +290,6 @@ public class AccountGateResult implements Serializable, Cloneable {
      * @see AccountGateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -493,7 +492,6 @@ public class AccountGateResult implements Serializable, Cloneable {
      * @see AccountGateStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(AccountGateStatus status) {
         withStatus(status);
     }

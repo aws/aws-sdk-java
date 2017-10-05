@@ -114,7 +114,6 @@ public class UnsubscribeFromEventRequest extends com.amazonaws.AmazonWebServiceR
      * @see InspectorEvent
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("event")
     public String getEvent() {
         return this.event;
     }
@@ -145,7 +144,6 @@ public class UnsubscribeFromEventRequest extends com.amazonaws.AmazonWebServiceR
      * @see InspectorEvent
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setEvent(InspectorEvent event) {
         withEvent(event);
     }

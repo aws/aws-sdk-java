@@ -64,7 +64,6 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * @see NoEncryptionConfig
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("noEncryptionConfig")
     public String getNoEncryptionConfig() {
         return this.noEncryptionConfig;
     }
@@ -95,7 +94,6 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * @see NoEncryptionConfig
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setNoEncryptionConfig(NoEncryptionConfig noEncryptionConfig) {
         withNoEncryptionConfig(noEncryptionConfig);
     }

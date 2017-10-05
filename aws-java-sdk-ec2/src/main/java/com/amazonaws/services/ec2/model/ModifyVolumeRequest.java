@@ -215,7 +215,6 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @see VolumeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("volumeType")
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -272,7 +271,6 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @see VolumeType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setVolumeType(VolumeType volumeType) {
         withVolumeType(volumeType);
     }

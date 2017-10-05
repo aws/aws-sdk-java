@@ -215,7 +215,6 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see PlayerSessionCreationPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("playerSessionCreationPolicy")
     public String getPlayerSessionCreationPolicy() {
         return this.playerSessionCreationPolicy;
     }
@@ -246,7 +245,6 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see PlayerSessionCreationPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
         withPlayerSessionCreationPolicy(playerSessionCreationPolicy);
     }
@@ -340,7 +338,6 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtectionPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("protectionPolicy")
     public String getProtectionPolicy() {
         return this.protectionPolicy;
     }
@@ -421,7 +418,6 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @see ProtectionPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
         withProtectionPolicy(protectionPolicy);
     }

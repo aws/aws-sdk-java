@@ -115,7 +115,6 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see ComparisonOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("comparisonOperator")
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -150,7 +149,6 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see ComparisonOperator
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         withComparisonOperator(comparisonOperator);
     }
@@ -368,7 +366,6 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see Statistic
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("statistic")
     public String getStatistic() {
         return this.statistic;
     }
@@ -399,7 +396,6 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see Statistic
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatistic(Statistic statistic) {
         withStatistic(statistic);
     }
@@ -487,7 +483,6 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see Unit
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("unit")
     public String getUnit() {
         return this.unit;
     }
@@ -522,7 +517,6 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      * @see Unit
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setUnit(Unit unit) {
         withUnit(unit);
     }

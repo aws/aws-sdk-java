@@ -166,7 +166,6 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @see AttachmentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -197,7 +196,6 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * @see AttachmentStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(AttachmentStatus status) {
         withStatus(status);
     }

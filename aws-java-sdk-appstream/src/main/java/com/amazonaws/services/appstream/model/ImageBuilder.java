@@ -249,7 +249,6 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * @see PlatformType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("platform")
     public String getPlatform() {
         return this.platform;
     }
@@ -290,7 +289,6 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * @see ImageBuilderState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }

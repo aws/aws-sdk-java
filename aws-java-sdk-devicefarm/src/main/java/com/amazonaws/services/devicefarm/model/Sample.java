@@ -568,7 +568,6 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
      * @see SampleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -965,7 +964,6 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
      * @see SampleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(SampleType type) {
         withType(type);
     }

@@ -168,7 +168,6 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable, Stru
      * @see MaintenanceWindowExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -199,7 +198,6 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable, Stru
      * @see MaintenanceWindowExecutionStatus
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(MaintenanceWindowExecutionStatus status) {
         withStatus(status);
     }

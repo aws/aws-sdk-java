@@ -693,7 +693,6 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * @see DialogState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dialogState")
     public String getDialogState() {
         return this.dialogState;
     }
@@ -954,7 +953,6 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * @see DialogState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setDialogState(DialogState dialogState) {
         withDialogState(dialogState);
     }

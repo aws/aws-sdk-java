@@ -108,7 +108,6 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @see VpnStaticRouteSource
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("source")
     public String getSource() {
         return this.source;
     }
@@ -139,7 +138,6 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @see VpnStaticRouteSource
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setSource(VpnStaticRouteSource source) {
         withSource(source);
     }
@@ -183,7 +181,6 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @see VpnState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -214,7 +211,6 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      * @see VpnState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(VpnState state) {
         withState(state);
     }

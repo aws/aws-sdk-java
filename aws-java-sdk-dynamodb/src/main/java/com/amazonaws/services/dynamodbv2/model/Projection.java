@@ -158,7 +158,6 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * @see ProjectionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("projectionType")
     public String getProjectionType() {
         return this.projectionType;
     }
@@ -259,7 +258,6 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      * @see ProjectionType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setProjectionType(ProjectionType projectionType) {
         withProjectionType(projectionType);
     }

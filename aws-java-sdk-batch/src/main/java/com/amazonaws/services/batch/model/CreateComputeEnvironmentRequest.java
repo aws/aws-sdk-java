@@ -141,7 +141,6 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -172,7 +171,6 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(CEType type) {
         withType(type);
     }
@@ -220,7 +218,6 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -255,7 +252,6 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      * @see CEState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(CEState state) {
         withState(state);
     }

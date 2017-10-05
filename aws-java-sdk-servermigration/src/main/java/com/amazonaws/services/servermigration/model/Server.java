@@ -75,7 +75,6 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see ServerType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("serverType")
     public String getServerType() {
         return this.serverType;
     }
@@ -96,7 +95,6 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      * @see ServerType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setServerType(ServerType serverType) {
         withServerType(serverType);
     }

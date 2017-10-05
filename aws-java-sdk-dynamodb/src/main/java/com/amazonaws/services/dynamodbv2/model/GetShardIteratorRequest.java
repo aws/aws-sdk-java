@@ -286,7 +286,6 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ShardIteratorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("shardIteratorType")
     public String getShardIteratorType() {
         return this.shardIteratorType;
     }
@@ -421,7 +420,6 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * @see ShardIteratorType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
         withShardIteratorType(shardIteratorType);
     }

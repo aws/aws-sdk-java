@@ -168,7 +168,6 @@ public class BotMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -199,7 +198,6 @@ public class BotMetadata implements Serializable, Cloneable, StructuredPojo {
      * @see Status
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(Status status) {
         withStatus(status);
     }

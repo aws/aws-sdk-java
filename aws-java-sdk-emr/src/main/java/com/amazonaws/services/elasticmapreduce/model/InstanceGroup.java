@@ -227,7 +227,6 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * @see MarketType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("market")
     public String getMarket() {
         return this.market;
     }
@@ -258,7 +257,6 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * @see MarketType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setMarket(MarketType market) {
         withMarket(market);
     }
@@ -302,7 +300,6 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceGroupType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("instanceGroupType")
     public String getInstanceGroupType() {
         return this.instanceGroupType;
     }
@@ -333,7 +330,6 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      * @see InstanceGroupType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInstanceGroupType(InstanceGroupType instanceGroupType) {
         withInstanceGroupType(instanceGroupType);
     }

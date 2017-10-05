@@ -291,7 +291,6 @@ public class HandshakeResource implements Serializable, Cloneable, StructuredPoj
      * @see HandshakeResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -462,7 +461,6 @@ public class HandshakeResource implements Serializable, Cloneable, StructuredPoj
      * @see HandshakeResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(HandshakeResourceType type) {
         withType(type);
     }

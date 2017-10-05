@@ -122,7 +122,6 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("role")
     public String getRole() {
         return this.role;
     }
@@ -153,7 +152,6 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * @see RoleType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setRole(RoleType role) {
         withRole(role);
     }
@@ -197,7 +195,6 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * @see ShareStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
     public String getStatus() {
         return this.status;
     }
@@ -228,7 +225,6 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * @see ShareStatusType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setStatus(ShareStatusType status) {
         withStatus(status);
     }

@@ -161,7 +161,6 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
      * @see DirectoryState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("state")
     public String getState() {
         return this.state;
     }
@@ -194,7 +193,6 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
      * @see DirectoryState
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setState(DirectoryState state) {
         withState(state);
     }

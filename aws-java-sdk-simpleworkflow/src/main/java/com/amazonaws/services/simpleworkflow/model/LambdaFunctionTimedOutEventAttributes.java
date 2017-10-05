@@ -167,7 +167,6 @@ public class LambdaFunctionTimedOutEventAttributes implements Serializable, Clon
      * @see LambdaFunctionTimeoutType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("timeoutType")
     public String getTimeoutType() {
         return this.timeoutType;
     }
@@ -198,7 +197,6 @@ public class LambdaFunctionTimedOutEventAttributes implements Serializable, Clon
      * @see LambdaFunctionTimeoutType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setTimeoutType(LambdaFunctionTimeoutType timeoutType) {
         withTimeoutType(timeoutType);
     }

@@ -743,7 +743,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @see ConfigurationOptionValueType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     public String getValueType() {
         return this.valueType;
     }
@@ -868,7 +867,6 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      * @see ConfigurationOptionValueType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setValueType(ConfigurationOptionValueType valueType) {
         withValueType(valueType);
     }

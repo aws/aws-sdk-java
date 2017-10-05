@@ -156,7 +156,6 @@ public class LimitExceededException extends com.amazonaws.services.inspector.mod
      * @see LimitExceededErrorCode
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setInspectorErrorCode(LimitExceededErrorCode inspectorErrorCode) {
         withInspectorErrorCode(inspectorErrorCode);
     }

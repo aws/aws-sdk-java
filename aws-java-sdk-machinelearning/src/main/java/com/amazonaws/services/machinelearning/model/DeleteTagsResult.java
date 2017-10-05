@@ -99,7 +99,6 @@ public class DeleteTagsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see TaggableResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     public String getResourceType() {
         return this.resourceType;
     }
@@ -130,7 +129,6 @@ public class DeleteTagsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * @see TaggableResourceType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setResourceType(TaggableResourceType resourceType) {
         withResourceType(resourceType);
     }

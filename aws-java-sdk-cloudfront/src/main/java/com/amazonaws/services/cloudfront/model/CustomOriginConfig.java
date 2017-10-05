@@ -178,7 +178,6 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @see OriginProtocolPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("originProtocolPolicy")
     public String getOriginProtocolPolicy() {
         return this.originProtocolPolicy;
     }
@@ -209,7 +208,6 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @see OriginProtocolPolicy
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setOriginProtocolPolicy(OriginProtocolPolicy originProtocolPolicy) {
         withOriginProtocolPolicy(originProtocolPolicy);
     }

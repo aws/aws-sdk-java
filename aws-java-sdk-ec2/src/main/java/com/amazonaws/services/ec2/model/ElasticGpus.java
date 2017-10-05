@@ -246,7 +246,6 @@ public class ElasticGpus implements Serializable, Cloneable {
      * @see ElasticGpuState
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("elasticGpuState")
     public String getElasticGpuState() {
         return this.elasticGpuState;
     }

@@ -107,7 +107,6 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
      * @see ObjectType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     public String getObjectType() {
         return this.objectType;
     }
@@ -140,7 +139,6 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
      * @see ObjectType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setObjectType(ObjectType objectType) {
         withObjectType(objectType);
     }

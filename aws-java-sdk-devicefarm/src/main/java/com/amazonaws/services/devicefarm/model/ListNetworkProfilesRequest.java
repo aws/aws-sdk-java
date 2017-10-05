@@ -108,7 +108,6 @@ public class ListNetworkProfilesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see NetworkProfileType
      */
 
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
     public String getType() {
         return this.type;
     }
@@ -139,7 +138,6 @@ public class ListNetworkProfilesRequest extends com.amazonaws.AmazonWebServiceRe
      * @see NetworkProfileType
      */
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
     public void setType(NetworkProfileType type) {
         withType(type);
     }
