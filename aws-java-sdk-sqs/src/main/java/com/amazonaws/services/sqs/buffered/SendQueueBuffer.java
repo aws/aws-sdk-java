@@ -45,6 +45,7 @@ import com.amazonaws.services.sqs.model.SendMessageBatchResult;
 import com.amazonaws.services.sqs.model.SendMessageBatchResultEntry;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
+import com.amazonaws.services.sqs.internal.RequestCopyUtils;
 
 /**
  * This class is responsible for buffering outgoing SQS requests, i.e. requests to send a message,
@@ -502,10 +503,8 @@ public class SendQueueBuffer {
 
             List<SendMessageBatchRequestEntry> entries = new ArrayList<SendMessageBatchRequestEntry>(requests.size());
             for (int i = 0, n = requests.size(); i < n; i++) {
-                entries.add(new SendMessageBatchRequestEntry().withId(Integer.toString(i))
-                        .withMessageBody(requests.get(i).getMessageBody())
-                        .withDelaySeconds(requests.get(i).getDelaySeconds())
-                        .withMessageAttributes(requests.get(i).getMessageAttributes()));
+                entries.add(RequestCopyUtils.createSendMessageBatchRequestEntryFrom(Integer.toString(i),
+                        requests.get(i)));
             }
             batchRequest.setEntries(entries);
 

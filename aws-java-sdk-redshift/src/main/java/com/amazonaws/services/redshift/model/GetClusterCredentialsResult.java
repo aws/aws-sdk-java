@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Temporary credentials with authorization to log in to an Amazon Redshift database.
+ * Temporary credentials with authorization to log on to an Amazon Redshift database.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials" target="_top">AWS API
@@ -29,9 +29,10 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     * <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an existing user name
-     * or <code>IAMA:</code> if the user was auto-created.
+     * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
+     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * credentials.
      * </p>
      */
     private String dbUser;
@@ -44,7 +45,7 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
     private String dbPassword;
     /**
      * <p>
-     * The date and time <code>DbPassword</code> expires.
+     * The date and time the password in <code>DbPassword</code> expires.
      * </p>
      */
     private java.util.Date expiration;
@@ -52,16 +53,18 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     * <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an existing user name
-     * or <code>IAMA:</code> if the user was auto-created.
+     * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
+     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * credentials.
      * </p>
      * 
      * @param dbUser
      *        A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     *        <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added
-     *        to the listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an
-     *        existing user name or <code>IAMA:</code> if the user was auto-created.
+     *        <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same
+     *        database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the
+     *        <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any
+     *        sessions created using these credentials.
      */
 
     public void setDbUser(String dbUser) {
@@ -71,15 +74,17 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     * <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an existing user name
-     * or <code>IAMA:</code> if the user was auto-created.
+     * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
+     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * credentials.
      * </p>
      * 
      * @return A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     *         <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added
-     *         to the listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an
-     *         existing user name or <code>IAMA:</code> if the user was auto-created.
+     *         <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same
+     *         database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the
+     *         <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any
+     *         sessions created using these credentials.
      */
 
     public String getDbUser() {
@@ -89,16 +94,18 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     * <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the
-     * listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an existing user name
-     * or <code>IAMA:</code> if the user was auto-created.
+     * <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database
+     * privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code>
+     * parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these
+     * credentials.
      * </p>
      * 
      * @param dbUser
      *        A database user name that is authorized to log on to the database <code>DbName</code> using the password
-     *        <code>DbPassword</code>. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added
-     *        to the listed groups for the current session. The user name is prefixed with <code>IAM:</code> for an
-     *        existing user name or <code>IAMA:</code> if the user was auto-created.
+     *        <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same
+     *        database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the
+     *        <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any
+     *        sessions created using these credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +162,11 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The date and time <code>DbPassword</code> expires.
+     * The date and time the password in <code>DbPassword</code> expires.
      * </p>
      * 
      * @param expiration
-     *        The date and time <code>DbPassword</code> expires.
+     *        The date and time the password in <code>DbPassword</code> expires.
      */
 
     public void setExpiration(java.util.Date expiration) {
@@ -168,10 +175,10 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The date and time <code>DbPassword</code> expires.
+     * The date and time the password in <code>DbPassword</code> expires.
      * </p>
      * 
-     * @return The date and time <code>DbPassword</code> expires.
+     * @return The date and time the password in <code>DbPassword</code> expires.
      */
 
     public java.util.Date getExpiration() {
@@ -180,11 +187,11 @@ public class GetClusterCredentialsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The date and time <code>DbPassword</code> expires.
+     * The date and time the password in <code>DbPassword</code> expires.
      * </p>
      * 
      * @param expiration
-     *        The date and time <code>DbPassword</code> expires.
+     *        The date and time the password in <code>DbPassword</code> expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -2462,14 +2462,26 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists descriptions of all the Amazon Redshift event notifications subscription for a customer account. If you
+     * Lists descriptions of all the Amazon Redshift event notification subscriptions for a customer account. If you
      * specify a subscription name, lists the description for that subscription.
+     * </p>
+     * <p>
+     * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all event notification
+     * subscriptions that match any combination of the specified keys and values. For example, if you have
+     * <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for
+     * tag values, all subscriptions that have any combination of those values are returned.
+     * </p>
+     * <p>
+     * If both tag keys and values are omitted from the request, subscriptions are returned regardless of whether they
+     * have tag keys or values associated with them.
      * </p>
      * 
      * @param describeEventSubscriptionsRequest
      * @return Result of the DescribeEventSubscriptions operation returned by the service.
      * @throws SubscriptionNotFoundException
      *         An Amazon Redshift event notification subscription with the specified name does not exist.
+     * @throws InvalidTagException
+     *         The tag is invalid.
      * @sample AmazonRedshift.DescribeEventSubscriptions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions"
      *      target="_top">AWS API Documentation</a>
@@ -3456,19 +3468,21 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift
+     * Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift
      * database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is
      * <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally
-     * specify one or more database user groups that the user will join at log in. By default, the temporary credentials
+     * specify one or more database user groups that the user will join at log on. By default, the temporary credentials
      * expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds
-     * (60 minutes). For more information, see Generating IAM Database User Credentials in the Amazon Redshift Cluster
-     * Management Guide.
+     * (60 minutes). For more information, see <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication
+     * to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
-     * The IAM user or role that executes GetClusterCredentials must have an IAM policy attached that allows the
-     * <code>redshift:GetClusterCredentials</code> action with access to the <code>dbuser</code> resource on the
-     * cluster. The user name specified for <code>dbuser</code> in the IAM policy and the user name specified for the
-     * <code>DbUser</code> parameter must match.
+     * The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials must have an IAM
+     * policy attached that allows access to all necessary actions and resources. For more information about
+     * permissions, see <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources"
+     * >Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
      * If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the

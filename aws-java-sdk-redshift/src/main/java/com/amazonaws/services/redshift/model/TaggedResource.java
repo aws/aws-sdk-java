@@ -91,9 +91,9 @@ public class TaggedResource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
-     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      */
     private String resourceType;
@@ -236,9 +236,9 @@ public class TaggedResource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
-     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @param resourceType
@@ -291,9 +291,10 @@ public class TaggedResource implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an
-     *        Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     *        For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     *        >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management
+     *        Guide.
      */
 
     public void setResourceType(String resourceType) {
@@ -352,9 +353,9 @@ public class TaggedResource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
-     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @return The type of resource with which the tag is associated. Valid resource types are: </p>
@@ -406,9 +407,10 @@ public class TaggedResource implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an
-     *         Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     *         For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     *         "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     *         >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management
+     *         Guide.
      */
 
     public String getResourceType() {
@@ -467,9 +469,9 @@ public class TaggedResource implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an Amazon
-     * Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     * For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     * >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @param resourceType
@@ -522,9 +524,10 @@ public class TaggedResource implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about Amazon Redshift resource types and constructing ARNs, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing an
-     *        Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide.
+     *        For more information about Amazon Redshift resource types and constructing ARNs, go to <a href=
+     *        "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions"
+     *        >Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management
+     *        Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

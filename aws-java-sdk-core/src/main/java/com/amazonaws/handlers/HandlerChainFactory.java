@@ -17,7 +17,6 @@ package com.amazonaws.handlers;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.ClassLoaderHelper;
 import com.amazonaws.util.StringUtils;
-import com.sun.org.apache.bcel.internal.util.ClassLoader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

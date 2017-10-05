@@ -1,3 +1,8 @@
+# __1.11.209__ __2017-10-05__
+## __Amazon Redshift__
+  - ### Features
+    - DescribeEventSubscriptions API supports tag keys and tag values as request parameters. 
+
 # __1.11.208__ __2017-10-04__
 ## __AWS SDK for Java__
   - ### Bugfixes

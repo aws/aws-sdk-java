@@ -53,6 +53,32 @@ public class DescribeEventSubscriptionsRequestMarshaller implements Marshaller<R
             request.addParameter("Marker", StringUtils.fromString(describeEventSubscriptionsRequest.getMarker()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeEventSubscriptionsRequest
+                .getTagKeys();
+        if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
+            int tagKeysListIndex = 1;
+
+            for (String tagKeysListValue : tagKeysList) {
+                if (tagKeysListValue != null) {
+                    request.addParameter("TagKeys.TagKey." + tagKeysListIndex, StringUtils.fromString(tagKeysListValue));
+                }
+                tagKeysListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeEventSubscriptionsRequest
+                .getTagValues();
+        if (!tagValuesList.isEmpty() || !tagValuesList.isAutoConstruct()) {
+            int tagValuesListIndex = 1;
+
+            for (String tagValuesListValue : tagValuesList) {
+                if (tagValuesListValue != null) {
+                    request.addParameter("TagValues.TagValue." + tagValuesListIndex, StringUtils.fromString(tagValuesListValue));
+                }
+                tagValuesListIndex++;
+            }
+        }
+
         return request;
     }
 

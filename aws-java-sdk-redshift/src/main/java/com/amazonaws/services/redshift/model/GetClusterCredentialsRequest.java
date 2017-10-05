@@ -38,9 +38,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a>
-     * in the Amazon Redshift Database Developer Guide.
+     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
      * Constraints:
@@ -48,12 +47,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
      * </p>
      * </li>
      * <li>
@@ -79,7 +78,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     * specified, <code>DbUser</code> can log in to any existing database.
+     * specified, <code>DbUser</code> can log on to any existing database.
      * </p>
      * <p>
      * Constraints:
@@ -92,7 +91,17 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
      * </p>
      * </li>
      * <li>
@@ -126,15 +135,48 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
     private Integer durationSeconds;
     /**
      * <p>
-     * Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.
      * </p>
      */
     private Boolean autoCreate;
     /**
      * <p>
-     * A list of the names of existing database groups that <code>DbUser</code> will join for the current session. If
-     * not specified, the new user is added only to PUBLIC.
+     * A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the
+     * current session, in addition to any group memberships for an existing user. If not specified, a new user is added
+     * only to PUBLIC.
      * </p>
+     * <p>
+     * Database group name constraints
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 64 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift
+     * Database Developer Guide.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> dbGroups;
 
@@ -148,9 +190,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a>
-     * in the Amazon Redshift Database Developer Guide.
+     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
      * Constraints:
@@ -158,12 +199,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
      * </p>
      * </li>
      * <li>
@@ -194,8 +235,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
-     *        USER</a> in the Amazon Redshift Database Developer Guide.
+     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+     *        Redshift Database Developer Guide.
      *        </p>
      *        <p>
      *        Constraints:
@@ -203,12 +244,13 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 128 alphanumeric characters or hyphens
+     *        Must be 1 to 64 alphanumeric characters or hyphens
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters.
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -244,9 +286,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a>
-     * in the Amazon Redshift Database Developer Guide.
+     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
      * Constraints:
@@ -254,12 +295,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
      * </p>
      * </li>
      * <li>
@@ -289,8 +330,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
-     *         USER</a> in the Amazon Redshift Database Developer Guide.
+     *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+     *         Redshift Database Developer Guide.
      *         </p>
      *         <p>
      *         Constraints:
@@ -298,12 +339,13 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 128 alphanumeric characters or hyphens
+     *         Must be 1 to 64 alphanumeric characters or hyphens
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain only lowercase letters.
+     *         Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *         hyphen.
      *         </p>
      *         </li>
      *         <li>
@@ -339,9 +381,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * attempt will fail because the user doesn't exist in the database.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a>
-     * in the Amazon Redshift Database Developer Guide.
+     * For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
+     * USER</a> in the Amazon Redshift Database Developer Guide.
      * </p>
      * <p>
      * Constraints:
@@ -349,12 +390,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters or hyphens
+     * Must be 1 to 64 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
      * </p>
      * </li>
      * <li>
@@ -385,8 +426,8 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE
-     *        USER</a> in the Amazon Redshift Database Developer Guide.
+     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon
+     *        Redshift Database Developer Guide.
      *        </p>
      *        <p>
      *        Constraints:
@@ -394,12 +435,13 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 128 alphanumeric characters or hyphens
+     *        Must be 1 to 64 alphanumeric characters or hyphens
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters.
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
      *        </p>
      *        </li>
      *        <li>
@@ -430,7 +472,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     * specified, <code>DbUser</code> can log in to any existing database.
+     * specified, <code>DbUser</code> can log on to any existing database.
      * </p>
      * <p>
      * Constraints:
@@ -443,7 +485,17 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
      * </p>
      * </li>
      * <li>
@@ -457,7 +509,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * 
      * @param dbName
      *        The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     *        specified, <code>DbUser</code> can log in to any existing database.</p>
+     *        specified, <code>DbUser</code> can log on to any existing database.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -469,7 +521,18 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters.
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not contain a colon ( : ) or slash ( / ).
      *        </p>
      *        </li>
      *        <li>
@@ -488,7 +551,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     * specified, <code>DbUser</code> can log in to any existing database.
+     * specified, <code>DbUser</code> can log on to any existing database.
      * </p>
      * <p>
      * Constraints:
@@ -501,7 +564,17 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
      * </p>
      * </li>
      * <li>
@@ -514,7 +587,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @return The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     *         specified, <code>DbUser</code> can log in to any existing database.</p>
+     *         specified, <code>DbUser</code> can log on to any existing database.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -526,7 +599,18 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain only lowercase letters.
+     *         Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *         hyphen.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not contain a colon ( : ) or slash ( / ).
      *         </p>
      *         </li>
      *         <li>
@@ -545,7 +629,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     * specified, <code>DbUser</code> can log in to any existing database.
+     * specified, <code>DbUser</code> can log on to any existing database.
      * </p>
      * <p>
      * Constraints:
@@ -558,7 +642,17 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Must contain only lowercase letters.
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
      * </p>
      * </li>
      * <li>
@@ -572,7 +666,7 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * 
      * @param dbName
      *        The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not
-     *        specified, <code>DbUser</code> can log in to any existing database.</p>
+     *        specified, <code>DbUser</code> can log on to any existing database.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -584,7 +678,18 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain only lowercase letters.
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not contain a colon ( : ) or slash ( / ).
      *        </p>
      *        </li>
      *        <li>
@@ -723,11 +828,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.
      * </p>
      * 
      * @param autoCreate
-     *        Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     *        Create a database user with the name specified for the user named in <code>DbUser</code> if one does not
+     *        exist.
      */
 
     public void setAutoCreate(Boolean autoCreate) {
@@ -736,10 +842,11 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.
      * </p>
      * 
-     * @return Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * @return Create a database user with the name specified for the user named in <code>DbUser</code> if one does not
+     *         exist.
      */
 
     public Boolean getAutoCreate() {
@@ -748,11 +855,12 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.
      * </p>
      * 
      * @param autoCreate
-     *        Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     *        Create a database user with the name specified for the user named in <code>DbUser</code> if one does not
+     *        exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,10 +871,11 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.
      * </p>
      * 
-     * @return Create a database user with the name specified for <code>DbUser</code> if one does not exist.
+     * @return Create a database user with the name specified for the user named in <code>DbUser</code> if one does not
+     *         exist.
      */
 
     public Boolean isAutoCreate() {
@@ -775,12 +884,78 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the names of existing database groups that <code>DbUser</code> will join for the current session. If
-     * not specified, the new user is added only to PUBLIC.
+     * A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the
+     * current session, in addition to any group memberships for an existing user. If not specified, a new user is added
+     * only to PUBLIC.
      * </p>
+     * <p>
+     * Database group name constraints
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 64 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift
+     * Database Developer Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A list of the names of existing database groups that <code>DbUser</code> will join for the current
-     *         session. If not specified, the new user is added only to PUBLIC.
+     * @return A list of the names of existing database groups that the user named in <code>DbUser</code> will join for
+     *         the current session, in addition to any group memberships for an existing user. If not specified, a new
+     *         user is added only to PUBLIC.</p>
+     *         <p>
+     *         Database group name constraints
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 64 alphanumeric characters or hyphens
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *         hyphen.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must not contain a colon ( : ) or slash ( / ).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be a reserved word. A list of reserved words can be found in <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+     *         Redshift Database Developer Guide.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getDbGroups() {
@@ -792,13 +967,79 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the names of existing database groups that <code>DbUser</code> will join for the current session. If
-     * not specified, the new user is added only to PUBLIC.
+     * A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the
+     * current session, in addition to any group memberships for an existing user. If not specified, a new user is added
+     * only to PUBLIC.
      * </p>
+     * <p>
+     * Database group name constraints
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 64 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift
+     * Database Developer Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param dbGroups
-     *        A list of the names of existing database groups that <code>DbUser</code> will join for the current
-     *        session. If not specified, the new user is added only to PUBLIC.
+     *        A list of the names of existing database groups that the user named in <code>DbUser</code> will join for
+     *        the current session, in addition to any group memberships for an existing user. If not specified, a new
+     *        user is added only to PUBLIC.</p>
+     *        <p>
+     *        Database group name constraints
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 64 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not contain a colon ( : ) or slash ( / ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word. A list of reserved words can be found in <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+     *        Redshift Database Developer Guide.
+     *        </p>
+     *        </li>
      */
 
     public void setDbGroups(java.util.Collection<String> dbGroups) {
@@ -812,9 +1053,42 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the names of existing database groups that <code>DbUser</code> will join for the current session. If
-     * not specified, the new user is added only to PUBLIC.
+     * A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the
+     * current session, in addition to any group memberships for an existing user. If not specified, a new user is added
+     * only to PUBLIC.
      * </p>
+     * <p>
+     * Database group name constraints
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 64 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift
+     * Database Developer Guide.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDbGroups(java.util.Collection)} or {@link #withDbGroups(java.util.Collection)} if you want to override
@@ -822,8 +1096,41 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param dbGroups
-     *        A list of the names of existing database groups that <code>DbUser</code> will join for the current
-     *        session. If not specified, the new user is added only to PUBLIC.
+     *        A list of the names of existing database groups that the user named in <code>DbUser</code> will join for
+     *        the current session, in addition to any group memberships for an existing user. If not specified, a new
+     *        user is added only to PUBLIC.</p>
+     *        <p>
+     *        Database group name constraints
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 64 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not contain a colon ( : ) or slash ( / ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word. A list of reserved words can be found in <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+     *        Redshift Database Developer Guide.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -839,13 +1146,79 @@ public class GetClusterCredentialsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of the names of existing database groups that <code>DbUser</code> will join for the current session. If
-     * not specified, the new user is added only to PUBLIC.
+     * A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the
+     * current session, in addition to any group memberships for an existing user. If not specified, a new user is added
+     * only to PUBLIC.
      * </p>
+     * <p>
+     * Database group name constraints
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 64 alphanumeric characters or hyphens
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must not contain a colon ( : ) or slash ( / ).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be a reserved word. A list of reserved words can be found in <a
+     * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift
+     * Database Developer Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param dbGroups
-     *        A list of the names of existing database groups that <code>DbUser</code> will join for the current
-     *        session. If not specified, the new user is added only to PUBLIC.
+     *        A list of the names of existing database groups that the user named in <code>DbUser</code> will join for
+     *        the current session, in addition to any group memberships for an existing user. If not specified, a new
+     *        user is added only to PUBLIC.</p>
+     *        <p>
+     *        Database group name constraints
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 64 alphanumeric characters or hyphens
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or
+     *        hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must not contain a colon ( : ) or slash ( / ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be a reserved word. A list of reserved words can be found in <a
+     *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon
+     *        Redshift Database Developer Guide.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
