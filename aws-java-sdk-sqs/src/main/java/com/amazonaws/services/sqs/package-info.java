@@ -25,7 +25,7 @@
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html">Standard
  * queues</a> are available in all regions. <a
  * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO queues</a> are
- * available in US West (Oregon) and US East (Ohio).
+ * available in the US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland) regions.
  * </p>
  * </note>
  * <p>
@@ -78,7 +78,7 @@
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
- * Amazon SQS Dead Letter Queues</a>
+ * Amazon SQS Dead-Letter Queues</a>
  * </p>
  * </li>
  * </ul>

@@ -239,7 +239,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
-     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and
+     * the wait time expires, the call returns successfully with an empty list of messages.
      * </p>
      */
     private Integer waitTimeSeconds;
@@ -2341,12 +2342,14 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
-     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and
+     * the wait time expires, the call returns successfully with an empty list of messages.
      * </p>
      * 
      * @param waitTimeSeconds
      *        The duration (in seconds) for which the call waits for a message to arrive in the queue before returning.
-     *        If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     *        If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are
+     *        available and the wait time expires, the call returns successfully with an empty list of messages.
      */
 
     public void setWaitTimeSeconds(Integer waitTimeSeconds) {
@@ -2356,11 +2359,13 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
-     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and
+     * the wait time expires, the call returns successfully with an empty list of messages.
      * </p>
      * 
      * @return The duration (in seconds) for which the call waits for a message to arrive in the queue before returning.
-     *         If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     *         If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are
+     *         available and the wait time expires, the call returns successfully with an empty list of messages.
      */
 
     public Integer getWaitTimeSeconds() {
@@ -2370,12 +2375,14 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
-     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and
+     * the wait time expires, the call returns successfully with an empty list of messages.
      * </p>
      * 
      * @param waitTimeSeconds
      *        The duration (in seconds) for which the call waits for a message to arrive in the queue before returning.
-     *        If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
+     *        If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are
+     *        available and the wait time expires, the call returns successfully with an empty list of messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

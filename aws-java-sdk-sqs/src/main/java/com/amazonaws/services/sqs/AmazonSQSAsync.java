@@ -38,7 +38,7 @@ import com.amazonaws.services.sqs.model.*;
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html">Standard
  * queues</a> are available in all regions. <a
  * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO queues</a> are
- * available in US West (Oregon) and US East (Ohio).
+ * available in the US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland) regions.
  * </p>
  * </note>
  * <p>
@@ -91,7 +91,7 @@ import com.amazonaws.services.sqs.model.*;
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
- * Amazon SQS Dead Letter Queues</a>
+ * Amazon SQS Dead-Letter Queues</a>
  * </p>
  * </li>
  * </ul>
@@ -223,7 +223,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * For example, you have a message and with the default visibility timeout of 5 minutes. After 3 minutes, you call
+     * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
      * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time, the timeout for the message is
      * extended by 10 minutes beyond the time of the <code>ChangeMessageVisibility</code> action. This results in a
      * total visibility timeout of 13 minutes. You can continue to call the <code>ChangeMessageVisibility</code> to
@@ -275,7 +275,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * For example, you have a message and with the default visibility timeout of 5 minutes. After 3 minutes, you call
+     * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
      * <code>ChangeMessageVisiblity</code> with a timeout of 10 minutes. At that time, the timeout for the message is
      * extended by 10 minutes beyond the time of the <code>ChangeMessageVisibility</code> action. This results in a
      * total visibility timeout of 13 minutes. You can continue to call the <code>ChangeMessageVisibility</code> to
@@ -768,8 +768,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Deletes the queue specified by the <code>QueueUrl</code>, even if the queue is empty. If the specified queue
-     * doesn't exist, Amazon SQS returns a successful response.
+     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents. If the specified
+     * queue doesn't exist, Amazon SQS returns a successful response.
      * </p>
      * <important>
      * <p>
@@ -796,8 +796,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Deletes the queue specified by the <code>QueueUrl</code>, even if the queue is empty. If the specified queue
-     * doesn't exist, Amazon SQS returns a successful response.
+     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents. If the specified
+     * queue doesn't exist, Amazon SQS returns a successful response.
      * </p>
      * <important>
      * <p>
@@ -988,13 +988,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a dead
-     * letter queue.
+     * Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a
+     * dead-letter queue.
      * </p>
      * <p>
-     * For more information about using dead letter queues, see <a
+     * For more information about using dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1008,13 +1008,13 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a dead
-     * letter queue.
+     * Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a
+     * dead-letter queue.
      * </p>
      * <p>
-     * For more information about using dead letter queues, see <a
+     * For more information about using dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1213,8 +1213,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
-     * counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the dead
-     * letter queue.
+     * counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the
+     * dead-letter queue.
      * </p>
      * <note>
      * <p>
@@ -1296,8 +1296,8 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
-     * counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the dead
-     * letter queue.
+     * counts as a failed receive. Depending on the configuration of the queue, the message might be sent to the
+     * dead-letter queue.
      * </p>
      * <note>
      * <p>

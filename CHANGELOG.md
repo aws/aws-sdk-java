@@ -1,3 +1,8 @@
+# __1.11.210__ __2017-10-06__
+## __Amazon Simple Queue Service (SQS)__
+  - ### Features
+    - Documentation updates regarding availability of FIFO queues and miscellaneous corrections.
+
 # __1.11.209__ __2017-10-05__
 ## __Amazon Redshift__
   - ### Features

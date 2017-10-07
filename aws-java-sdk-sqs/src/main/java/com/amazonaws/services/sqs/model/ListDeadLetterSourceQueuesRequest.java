@@ -28,7 +28,7 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL of a dead letter queue.
+     * The URL of a dead-letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -48,7 +48,7 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
      * (with...) methods to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of a dead letter queue.</p>
+     *        The URL of a dead-letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -58,14 +58,14 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL of a dead letter queue.
+     * The URL of a dead-letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of a dead letter queue.</p>
+     *        The URL of a dead-letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -76,13 +76,13 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL of a dead letter queue.
+     * The URL of a dead-letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of a dead letter queue.</p>
+     * @return The URL of a dead-letter queue.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -93,14 +93,14 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The URL of a dead letter queue.
+     * The URL of a dead-letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of a dead letter queue.</p>
+     *        The URL of a dead-letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
