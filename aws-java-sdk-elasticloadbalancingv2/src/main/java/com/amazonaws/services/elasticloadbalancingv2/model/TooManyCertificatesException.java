@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You've reached the limit on the number of certificates per listener.
+ * You've reached the limit on the number of certificates per load balancer.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

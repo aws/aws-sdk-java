@@ -52,7 +52,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     /**
      * Shared factory for creating XML event readers
      */
-    private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+    private static final XMLInputFactory xmlInputFactory = createXmlInputFactory();
 
     /**
      * Constructs a new response handler that will use the specified StAX
@@ -168,5 +168,17 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      */
     public boolean needsConnectionLeftOpen() {
         return false;
+    }
+
+    /**
+     * Disables certain dangerous features that attempt to automatically fetch DTDs
+     *
+     * See <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet">OWASP XXE Cheat Sheet</a>
+     */
+    private static XMLInputFactory createXmlInputFactory() {
+        XMLInputFactory factory = XMLInputFactory.newInstance();
+        factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
+        factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+        return factory;
     }
 }

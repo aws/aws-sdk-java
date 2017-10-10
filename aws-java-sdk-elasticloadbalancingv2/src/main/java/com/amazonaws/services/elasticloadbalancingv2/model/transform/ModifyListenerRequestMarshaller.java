@@ -72,6 +72,11 @@ public class ModifyListenerRequestMarshaller implements Marshaller<Request<Modif
                         request.addParameter("Certificates.member." + certificatesListIndex + ".CertificateArn",
                                 StringUtils.fromString(certificatesListValue.getCertificateArn()));
                     }
+
+                    if (certificatesListValue.getIsDefault() != null) {
+                        request.addParameter("Certificates.member." + certificatesListIndex + ".IsDefault",
+                                StringUtils.fromBoolean(certificatesListValue.getIsDefault()));
+                    }
                     certificatesListIndex++;
                 }
             }

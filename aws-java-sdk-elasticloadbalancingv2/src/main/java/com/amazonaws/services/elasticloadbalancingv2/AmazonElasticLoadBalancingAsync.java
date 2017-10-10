@@ -104,6 +104,51 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Adds the specified certificate to the specified secure listener.
+     * </p>
+     * <p>
+     * If the certificate was already added, the call is successful but the certificate is not added again.
+     * </p>
+     * <p>
+     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
+     * your listener, use <a>RemoveListenerCertificates</a>.
+     * </p>
+     * 
+     * @param addListenerCertificatesRequest
+     * @return A Java Future containing the result of the AddListenerCertificates operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.AddListenerCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddListenerCertificatesResult> addListenerCertificatesAsync(AddListenerCertificatesRequest addListenerCertificatesRequest);
+
+    /**
+     * <p>
+     * Adds the specified certificate to the specified secure listener.
+     * </p>
+     * <p>
+     * If the certificate was already added, the call is successful but the certificate is not added again.
+     * </p>
+     * <p>
+     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
+     * your listener, use <a>RemoveListenerCertificates</a>.
+     * </p>
+     * 
+     * @param addListenerCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddListenerCertificates operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.AddListenerCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddListenerCertificatesResult> addListenerCertificatesAsync(AddListenerCertificatesRequest addListenerCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<AddListenerCertificatesRequest, AddListenerCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
      * Balancers, Network Load Balancers, and your target groups.
      * </p>
@@ -653,6 +698,43 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Describes the certificates for the specified secure listener.
+     * </p>
+     * 
+     * @param describeListenerCertificatesRequest
+     * @return A Java Future containing the result of the DescribeListenerCertificates operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeListenerCertificates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeListenerCertificatesResult> describeListenerCertificatesAsync(
+            DescribeListenerCertificatesRequest describeListenerCertificatesRequest);
+
+    /**
+     * <p>
+     * Describes the certificates for the specified secure listener.
+     * </p>
+     * 
+     * @param describeListenerCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeListenerCertificates operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeListenerCertificates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeListenerCertificatesResult> describeListenerCertificatesAsync(
+            DescribeListenerCertificatesRequest describeListenerCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeListenerCertificatesRequest, DescribeListenerCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load
      * Balancer. You must specify either a load balancer or one or more listeners.
      * </p>
@@ -1184,16 +1266,18 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * By default, the load balancer routes requests to registered targets using the protocol and port number for the
-     * target group. Alternatively, you can override the port for a target when you register it.
+     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
+     * <code>running</code> state when you register it.
      * </p>
      * <p>
-     * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
-     * an EC2 instance, it must be in the <code>running</code> state when you register it.
+     * By default, the load balancer routes requests to registered targets using the protocol and port for the target
+     * group. Alternatively, you can override the port for a target when you register it. You can register each EC2
+     * instance or IP address with the same target group multiple times using different ports.
      * </p>
      * <p>
-     * Network Load Balancers do not support the following instance types as targets: C1, CC1, CC2, CG1, CG2, CR1, CS1,
-     * G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of
+     * these types by IP address.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.
@@ -1212,16 +1296,18 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * By default, the load balancer routes requests to registered targets using the protocol and port number for the
-     * target group. Alternatively, you can override the port for a target when you register it.
+     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
+     * <code>running</code> state when you register it.
      * </p>
      * <p>
-     * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
-     * an EC2 instance, it must be in the <code>running</code> state when you register it.
+     * By default, the load balancer routes requests to registered targets using the protocol and port for the target
+     * group. Alternatively, you can override the port for a target when you register it. You can register each EC2
+     * instance or IP address with the same target group multiple times using different ports.
      * </p>
      * <p>
-     * Network Load Balancers do not support the following instance types as targets: C1, CC1, CC2, CG1, CG2, CR1, CS1,
-     * G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of
+     * these types by IP address.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.
@@ -1239,6 +1325,55 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      */
     java.util.concurrent.Future<RegisterTargetsResult> registerTargetsAsync(RegisterTargetsRequest registerTargetsRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterTargetsRequest, RegisterTargetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified certificate from the specified secure listener.
+     * </p>
+     * <p>
+     * You can't remove the default certificate for a listener. To replace the default certificate, call
+     * <a>ModifyListener</a>.
+     * </p>
+     * <p>
+     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
+     * </p>
+     * 
+     * @param removeListenerCertificatesRequest
+     * @return A Java Future containing the result of the RemoveListenerCertificates operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.RemoveListenerCertificates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveListenerCertificatesResult> removeListenerCertificatesAsync(
+            RemoveListenerCertificatesRequest removeListenerCertificatesRequest);
+
+    /**
+     * <p>
+     * Removes the specified certificate from the specified secure listener.
+     * </p>
+     * <p>
+     * You can't remove the default certificate for a listener. To replace the default certificate, call
+     * <a>ModifyListener</a>.
+     * </p>
+     * <p>
+     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
+     * </p>
+     * 
+     * @param removeListenerCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveListenerCertificates operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.RemoveListenerCertificates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveListenerCertificatesResult> removeListenerCertificatesAsync(
+            RemoveListenerCertificatesRequest removeListenerCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveListenerCertificatesRequest, RemoveListenerCertificatesResult> asyncHandler);
 
     /**
      * <p>

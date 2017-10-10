@@ -48,6 +48,10 @@ public class CreateVpnGatewayRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));
         }
 
+        if (createVpnGatewayRequest.getAmazonSideAsn() != null) {
+            request.addParameter("AmazonSideAsn", StringUtils.fromLong(createVpnGatewayRequest.getAmazonSideAsn()));
+        }
+
         return request;
     }
 

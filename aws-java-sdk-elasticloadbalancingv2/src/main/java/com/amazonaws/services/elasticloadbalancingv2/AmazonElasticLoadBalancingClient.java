@@ -366,6 +366,67 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Adds the specified certificate to the specified secure listener.
+     * </p>
+     * <p>
+     * If the certificate was already added, the call is successful but the certificate is not added again.
+     * </p>
+     * <p>
+     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
+     * your listener, use <a>RemoveListenerCertificates</a>.
+     * </p>
+     * 
+     * @param addListenerCertificatesRequest
+     * @return Result of the AddListenerCertificates operation returned by the service.
+     * @throws ListenerNotFoundException
+     *         The specified listener does not exist.
+     * @throws TooManyCertificatesException
+     *         You've reached the limit on the number of certificates per load balancer.
+     * @throws CertificateNotFoundException
+     *         The specified certificate does not exist.
+     * @sample AmazonElasticLoadBalancing.AddListenerCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddListenerCertificatesResult addListenerCertificates(AddListenerCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddListenerCertificates(request);
+    }
+
+    @SdkInternalApi
+    final AddListenerCertificatesResult executeAddListenerCertificates(AddListenerCertificatesRequest addListenerCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addListenerCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddListenerCertificatesRequest> request = null;
+        Response<AddListenerCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddListenerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(addListenerCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AddListenerCertificatesResult> responseHandler = new StaxResponseHandler<AddListenerCertificatesResult>(
+                    new AddListenerCertificatesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
      * Balancers, Network Load Balancers, and your target groups.
      * </p>
@@ -455,7 +516,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyListenersException
      *         You've reached the limit on the number of listeners per load balancer.
      * @throws TooManyCertificatesException
-     *         You've reached the limit on the number of certificates per listener.
+     *         You've reached the limit on the number of certificates per load balancer.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @throws TargetGroupNotFoundException
@@ -1095,6 +1156,57 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Describes the certificates for the specified secure listener.
+     * </p>
+     * 
+     * @param describeListenerCertificatesRequest
+     * @return Result of the DescribeListenerCertificates operation returned by the service.
+     * @throws ListenerNotFoundException
+     *         The specified listener does not exist.
+     * @sample AmazonElasticLoadBalancing.DescribeListenerCertificates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeListenerCertificatesResult describeListenerCertificates(DescribeListenerCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeListenerCertificates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeListenerCertificatesResult executeDescribeListenerCertificates(DescribeListenerCertificatesRequest describeListenerCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeListenerCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeListenerCertificatesRequest> request = null;
+        Response<DescribeListenerCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeListenerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(describeListenerCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeListenerCertificatesResult> responseHandler = new StaxResponseHandler<DescribeListenerCertificatesResult>(
+                    new DescribeListenerCertificatesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load
      * Balancer. You must specify either a load balancer or one or more listeners.
      * </p>
@@ -1594,7 +1706,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyListenersException
      *         You've reached the limit on the number of listeners per load balancer.
      * @throws TooManyCertificatesException
-     *         You've reached the limit on the number of certificates per listener.
+     *         You've reached the limit on the number of certificates per load balancer.
      * @throws ListenerNotFoundException
      *         The specified listener does not exist.
      * @throws TargetGroupNotFoundException
@@ -1893,16 +2005,18 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * By default, the load balancer routes requests to registered targets using the protocol and port number for the
-     * target group. Alternatively, you can override the port for a target when you register it.
+     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
+     * <code>running</code> state when you register it.
      * </p>
      * <p>
-     * The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is
-     * an EC2 instance, it must be in the <code>running</code> state when you register it.
+     * By default, the load balancer routes requests to registered targets using the protocol and port for the target
+     * group. Alternatively, you can override the port for a target when you register it. You can register each EC2
+     * instance or IP address with the same target group multiple times using different ports.
      * </p>
      * <p>
-     * Network Load Balancers do not support the following instance types as targets: C1, CC1, CC2, CG1, CG2, CR1, CS1,
-     * G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance
+     * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of
+     * these types by IP address.
      * </p>
      * <p>
      * To remove a target from a target group, use <a>DeregisterTargets</a>.
@@ -1949,6 +2063,66 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<RegisterTargetsResult> responseHandler = new StaxResponseHandler<RegisterTargetsResult>(
                     new RegisterTargetsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified certificate from the specified secure listener.
+     * </p>
+     * <p>
+     * You can't remove the default certificate for a listener. To replace the default certificate, call
+     * <a>ModifyListener</a>.
+     * </p>
+     * <p>
+     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
+     * </p>
+     * 
+     * @param removeListenerCertificatesRequest
+     * @return Result of the RemoveListenerCertificates operation returned by the service.
+     * @throws ListenerNotFoundException
+     *         The specified listener does not exist.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AmazonElasticLoadBalancing.RemoveListenerCertificates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveListenerCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveListenerCertificatesResult removeListenerCertificates(RemoveListenerCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveListenerCertificates(request);
+    }
+
+    @SdkInternalApi
+    final RemoveListenerCertificatesResult executeRemoveListenerCertificates(RemoveListenerCertificatesRequest removeListenerCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeListenerCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveListenerCertificatesRequest> request = null;
+        Response<RemoveListenerCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveListenerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(removeListenerCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RemoveListenerCertificatesResult> responseHandler = new StaxResponseHandler<RemoveListenerCertificatesResult>(
+                    new RemoveListenerCertificatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

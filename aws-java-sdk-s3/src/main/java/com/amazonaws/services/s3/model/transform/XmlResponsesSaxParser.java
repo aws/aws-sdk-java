@@ -66,6 +66,8 @@ import org.apache.commons.logging.LogFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXNotRecognizedException;
+import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
@@ -109,6 +111,7 @@ public class XmlResponsesSaxParser {
         // Ensure we can load the XML Reader.
         try {
             xr = XMLReaderFactory.createXMLReader();
+            disableExternalResourceFetching(xr);
         } catch (SAXException e) {
             throw new SdkClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
         }
@@ -215,6 +218,20 @@ public class XmlResponsesSaxParser {
             }
             return sanitizedInputStream;
         }
+    }
+
+    /**
+     * Disables certain dangerous features that attempt to automatically fetch DTDs
+     *
+     * See <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet#XMLReader">OWASP XXE Cheat Sheet</a>
+     * @param reader the reader to disable the features on
+     * @throws SAXNotRecognizedException
+     * @throws SAXNotSupportedException
+     */
+    private void disableExternalResourceFetching(XMLReader reader) throws SAXNotRecognizedException, SAXNotSupportedException {
+        reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false);
     }
 
     /**

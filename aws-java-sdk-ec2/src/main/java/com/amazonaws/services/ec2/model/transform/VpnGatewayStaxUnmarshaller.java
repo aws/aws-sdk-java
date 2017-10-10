@@ -75,6 +75,11 @@ public class VpnGatewayStaxUnmarshaller implements Unmarshaller<VpnGateway, Stax
                     continue;
                 }
 
+                if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    vpnGateway.setAmazonSideAsn(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     vpnGateway.withTags(new ArrayList<Tag>());
                     continue;

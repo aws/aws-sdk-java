@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class StartMaintenanceRequestMarshaller {
 
     private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<List> ENGINEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineAttributes").build();
 
     private static final StartMaintenanceRequestMarshaller instance = new StartMaintenanceRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class StartMaintenanceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startMaintenanceRequest.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(startMaintenanceRequest.getEngineAttributes(), ENGINEATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

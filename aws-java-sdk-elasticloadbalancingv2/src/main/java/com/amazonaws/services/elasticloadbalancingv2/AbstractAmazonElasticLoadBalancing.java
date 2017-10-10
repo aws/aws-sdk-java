@@ -39,6 +39,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public AddListenerCertificatesResult addListenerCertificates(AddListenerCertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsResult addTags(AddTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +95,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
 
     @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeListenerCertificatesResult describeListenerCertificates(DescribeListenerCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -165,6 +175,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
 
     @Override
     public RegisterTargetsResult registerTargets(RegisterTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveListenerCertificatesResult removeListenerCertificates(RemoveListenerCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

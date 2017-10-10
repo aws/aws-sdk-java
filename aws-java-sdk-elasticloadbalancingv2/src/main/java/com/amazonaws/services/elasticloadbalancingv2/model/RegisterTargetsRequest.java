@@ -33,8 +33,7 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
     private String targetGroupArn;
     /**
      * <p>
-     * The targets. The default port for a target is the port for the target group. You can specify a port override. If
-     * a target is already registered, you can register it again using a different port.
+     * The targets.
      * </p>
      */
     private java.util.List<TargetDescription> targets;
@@ -81,12 +80,10 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The targets. The default port for a target is the port for the target group. You can specify a port override. If
-     * a target is already registered, you can register it again using a different port.
+     * The targets.
      * </p>
      * 
-     * @return The targets. The default port for a target is the port for the target group. You can specify a port
-     *         override. If a target is already registered, you can register it again using a different port.
+     * @return The targets.
      */
 
     public java.util.List<TargetDescription> getTargets() {
@@ -95,13 +92,11 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The targets. The default port for a target is the port for the target group. You can specify a port override. If
-     * a target is already registered, you can register it again using a different port.
+     * The targets.
      * </p>
      * 
      * @param targets
-     *        The targets. The default port for a target is the port for the target group. You can specify a port
-     *        override. If a target is already registered, you can register it again using a different port.
+     *        The targets.
      */
 
     public void setTargets(java.util.Collection<TargetDescription> targets) {
@@ -115,8 +110,7 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The targets. The default port for a target is the port for the target group. You can specify a port override. If
-     * a target is already registered, you can register it again using a different port.
+     * The targets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,8 +119,7 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param targets
-     *        The targets. The default port for a target is the port for the target group. You can specify a port
-     *        override. If a target is already registered, you can register it again using a different port.
+     *        The targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,13 +135,11 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The targets. The default port for a target is the port for the target group. You can specify a port override. If
-     * a target is already registered, you can register it again using a different port.
+     * The targets.
      * </p>
      * 
      * @param targets
-     *        The targets. The default port for a target is the port for the target group. You can specify a port
-     *        override. If a target is already registered, you can register it again using a different port.
+     *        The targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

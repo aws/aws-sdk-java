@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about an SSL server certificate deployed on a load balancer.
+ * Information about an SSL server certificate.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Certificate" target="_top">AWS
@@ -32,6 +32,12 @@ public class Certificate implements Serializable, Cloneable {
      * </p>
      */
     private String certificateArn;
+    /**
+     * <p>
+     * Indicates whether the certificate is the default certificate.
+     * </p>
+     */
+    private Boolean isDefault;
 
     /**
      * <p>
@@ -74,6 +80,58 @@ public class Certificate implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the certificate is the default certificate.
+     * </p>
+     * 
+     * @param isDefault
+     *        Indicates whether the certificate is the default certificate.
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the certificate is the default certificate.
+     * </p>
+     * 
+     * @return Indicates whether the certificate is the default certificate.
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the certificate is the default certificate.
+     * </p>
+     * 
+     * @param isDefault
+     *        Indicates whether the certificate is the default certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Certificate withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the certificate is the default certificate.
+     * </p>
+     * 
+     * @return Indicates whether the certificate is the default certificate.
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -85,7 +143,9 @@ public class Certificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: ").append(getCertificateArn());
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
+        if (getIsDefault() != null)
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +164,10 @@ public class Certificate implements Serializable, Cloneable {
             return false;
         if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
+        if (other.getIsDefault() == null ^ this.getIsDefault() == null)
+            return false;
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +177,7 @@ public class Certificate implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         return hashCode;
     }
 

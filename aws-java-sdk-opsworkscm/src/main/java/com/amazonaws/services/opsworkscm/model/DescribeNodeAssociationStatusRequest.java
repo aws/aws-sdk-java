@@ -25,6 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     */
     private String nodeAssociationStatusToken;
     /**
      * <p>
@@ -34,7 +39,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     private String serverName;
 
     /**
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     * 
      * @param nodeAssociationStatusToken
+     *        The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
      */
 
     public void setNodeAssociationStatusToken(String nodeAssociationStatusToken) {
@@ -42,7 +52,11 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     * 
+     * @return The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
      */
 
     public String getNodeAssociationStatusToken() {
@@ -50,7 +64,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
+     * </p>
+     * 
      * @param nodeAssociationStatusToken
+     *        The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

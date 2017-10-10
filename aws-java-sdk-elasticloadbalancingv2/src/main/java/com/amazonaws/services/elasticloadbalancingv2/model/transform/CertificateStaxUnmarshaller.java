@@ -47,6 +47,11 @@ public class CertificateStaxUnmarshaller implements Unmarshaller<Certificate, St
                     certificate.setCertificateArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("IsDefault", targetDepth)) {
+                    certificate.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return certificate;

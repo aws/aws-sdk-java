@@ -54,7 +54,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String sslPolicy;
     /**
      * <p>
-     * The SSL server certificate.
+     * The default SSL server certificate.
      * </p>
      */
     private java.util.List<Certificate> certificates;
@@ -286,10 +286,10 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate.
+     * The default SSL server certificate.
      * </p>
      * 
-     * @return The SSL server certificate.
+     * @return The default SSL server certificate.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -298,11 +298,11 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate.
+     * The default SSL server certificate.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate.
+     *        The default SSL server certificate.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -316,7 +316,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate.
+     * The default SSL server certificate.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -325,7 +325,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate.
+     *        The default SSL server certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,11 +341,11 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The SSL server certificate.
+     * The default SSL server certificate.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate.
+     *        The default SSL server certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

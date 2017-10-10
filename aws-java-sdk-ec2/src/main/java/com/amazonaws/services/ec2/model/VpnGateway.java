@@ -59,6 +59,12 @@ public class VpnGateway implements Serializable, Cloneable {
     private String vpnGatewayId;
     /**
      * <p>
+     * The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     * </p>
+     */
+    private Long amazonSideAsn;
+    /**
+     * <p>
      * Any tags assigned to the virtual private gateway.
      * </p>
      */
@@ -371,6 +377,46 @@ public class VpnGateway implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     */
+
+    public void setAmazonSideAsn(Long amazonSideAsn) {
+        this.amazonSideAsn = amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     * </p>
+     * 
+     * @return The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     */
+
+    public Long getAmazonSideAsn() {
+        return this.amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        The private Autonomous System Number (ASN) for the Amazon side of a BGP session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnGateway withAmazonSideAsn(Long amazonSideAsn) {
+        setAmazonSideAsn(amazonSideAsn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any tags assigned to the virtual private gateway.
      * </p>
      * 
@@ -463,6 +509,8 @@ public class VpnGateway implements Serializable, Cloneable {
             sb.append("VpcAttachments: ").append(getVpcAttachments()).append(",");
         if (getVpnGatewayId() != null)
             sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
+        if (getAmazonSideAsn() != null)
+            sb.append("AmazonSideAsn: ").append(getAmazonSideAsn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -499,6 +547,10 @@ public class VpnGateway implements Serializable, Cloneable {
             return false;
         if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
             return false;
+        if (other.getAmazonSideAsn() == null ^ this.getAmazonSideAsn() == null)
+            return false;
+        if (other.getAmazonSideAsn() != null && other.getAmazonSideAsn().equals(this.getAmazonSideAsn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -516,6 +568,7 @@ public class VpnGateway implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getVpcAttachments() == null) ? 0 : getVpcAttachments().hashCode());
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getAmazonSideAsn() == null) ? 0 : getAmazonSideAsn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

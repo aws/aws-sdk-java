@@ -316,6 +316,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<AddListenerCertificatesResult> addListenerCertificatesAsync(AddListenerCertificatesRequest request) {
+
+        return addListenerCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddListenerCertificatesResult> addListenerCertificatesAsync(final AddListenerCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddListenerCertificatesRequest, AddListenerCertificatesResult> asyncHandler) {
+        final AddListenerCertificatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddListenerCertificatesResult>() {
+            @Override
+            public AddListenerCertificatesResult call() throws Exception {
+                AddListenerCertificatesResult result = null;
+
+                try {
+                    result = executeAddListenerCertificates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request) {
 
         return addTagsAsync(request, null);
@@ -663,6 +696,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
                 try {
                     result = executeDescribeAccountLimits(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeListenerCertificatesResult> describeListenerCertificatesAsync(DescribeListenerCertificatesRequest request) {
+
+        return describeListenerCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeListenerCertificatesResult> describeListenerCertificatesAsync(final DescribeListenerCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeListenerCertificatesRequest, DescribeListenerCertificatesResult> asyncHandler) {
+        final DescribeListenerCertificatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeListenerCertificatesResult>() {
+            @Override
+            public DescribeListenerCertificatesResult call() throws Exception {
+                DescribeListenerCertificatesResult result = null;
+
+                try {
+                    result = executeDescribeListenerCertificates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1160,6 +1226,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
                 try {
                     result = executeRegisterTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveListenerCertificatesResult> removeListenerCertificatesAsync(RemoveListenerCertificatesRequest request) {
+
+        return removeListenerCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveListenerCertificatesResult> removeListenerCertificatesAsync(final RemoveListenerCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveListenerCertificatesRequest, RemoveListenerCertificatesResult> asyncHandler) {
+        final RemoveListenerCertificatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveListenerCertificatesResult>() {
+            @Override
+            public RemoveListenerCertificatesResult call() throws Exception {
+                RemoveListenerCertificatesResult result = null;
+
+                try {
+                    result = executeRemoveListenerCertificates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

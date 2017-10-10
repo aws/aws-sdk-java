@@ -1,3 +1,20 @@
+# __1.11.211__ __2017-10-10__
+## __AWS OpsWorks for Chef Automate__
+  - ### Features
+    - Provide engine specific information for node associations.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixed potential XXE injection security issue with XML parsers. See [OWASP XXE Cheat Sheet](https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet).
+
+## __Amazon EC2__
+  - ### Features
+    - This release includes updates to AWS Virtual Private Gateway.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Server Name Indication (SNI) is an extension to the TLS protocol by which a client indicates the hostname to connect to at the start of the TLS handshake. The load balancer can present multiple certificates through the same secure listener, which enables it to support multiple secure websites using a single secure listener. Application Load Balancers also support a smart certificate selection algorithm with SNI. If the hostname indicated by a client matches multiple certificates, the load balancer determines the best certificate to use based on multiple factors including the capabilities of the client.
+
 # __1.11.210__ __2017-10-06__
 ## __Amazon Simple Queue Service (SQS)__
   - ### Features

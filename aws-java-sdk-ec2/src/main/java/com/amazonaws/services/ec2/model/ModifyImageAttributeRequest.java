@@ -30,13 +30,14 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the attribute to modify.
+     * The name of the attribute to modify. The valid values are <code>description</code>, <code>launchPermission</code>
+     * , and <code>productCodes</code>.
      * </p>
      */
     private String attribute;
     /**
      * <p>
-     * A description for the AMI.
+     * A new description for the AMI.
      * </p>
      */
     private String description;
@@ -48,39 +49,41 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
     private String imageId;
     /**
      * <p>
-     * A launch permission modification.
+     * A new launch permission for the AMI.
      * </p>
      */
     private LaunchPermissionModifications launchPermission;
     /**
      * <p>
-     * The operation type.
+     * The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      */
     private String operationType;
     /**
      * <p>
-     * One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid when
-     * modifying the <code>productCodes</code> attribute.
+     * One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> productCodes;
     /**
      * <p>
-     * One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroups;
     /**
      * <p>
-     * One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userIds;
     /**
      * <p>
-     * The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     * attribute.
+     * The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code>
+     * parameter is <code>description</code> or <code>productCodes</code>.
      * </p>
      */
     private String value;
@@ -99,7 +102,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * @param imageId
      *        The ID of the AMI.
      * @param attribute
-     *        The name of the attribute to modify.
+     *        The name of the attribute to modify. The valid values are <code>description</code>,
+     *        <code>launchPermission</code>, and <code>productCodes</code>.
      */
     public ModifyImageAttributeRequest(String imageId, String attribute) {
         setImageId(imageId);
@@ -108,11 +112,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the attribute to modify.
+     * The name of the attribute to modify. The valid values are <code>description</code>, <code>launchPermission</code>
+     * , and <code>productCodes</code>.
      * </p>
      * 
      * @param attribute
-     *        The name of the attribute to modify.
+     *        The name of the attribute to modify. The valid values are <code>description</code>,
+     *        <code>launchPermission</code>, and <code>productCodes</code>.
      */
 
     public void setAttribute(String attribute) {
@@ -121,10 +127,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the attribute to modify.
+     * The name of the attribute to modify. The valid values are <code>description</code>, <code>launchPermission</code>
+     * , and <code>productCodes</code>.
      * </p>
      * 
-     * @return The name of the attribute to modify.
+     * @return The name of the attribute to modify. The valid values are <code>description</code>,
+     *         <code>launchPermission</code>, and <code>productCodes</code>.
      */
 
     public String getAttribute() {
@@ -133,11 +141,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the attribute to modify.
+     * The name of the attribute to modify. The valid values are <code>description</code>, <code>launchPermission</code>
+     * , and <code>productCodes</code>.
      * </p>
      * 
      * @param attribute
-     *        The name of the attribute to modify.
+     *        The name of the attribute to modify. The valid values are <code>description</code>,
+     *        <code>launchPermission</code>, and <code>productCodes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +158,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A description for the AMI.
+     * A new description for the AMI.
      * </p>
      * 
      * @param description
-     *        A description for the AMI.
+     *        A new description for the AMI.
      */
 
     public void setDescription(String description) {
@@ -161,10 +171,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A description for the AMI.
+     * A new description for the AMI.
      * </p>
      * 
-     * @return A description for the AMI.
+     * @return A new description for the AMI.
      */
 
     public String getDescription() {
@@ -173,11 +183,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A description for the AMI.
+     * A new description for the AMI.
      * </p>
      * 
      * @param description
-     *        A description for the AMI.
+     *        A new description for the AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +238,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A launch permission modification.
+     * A new launch permission for the AMI.
      * </p>
      * 
      * @param launchPermission
-     *        A launch permission modification.
+     *        A new launch permission for the AMI.
      */
 
     public void setLaunchPermission(LaunchPermissionModifications launchPermission) {
@@ -241,10 +251,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A launch permission modification.
+     * A new launch permission for the AMI.
      * </p>
      * 
-     * @return A launch permission modification.
+     * @return A new launch permission for the AMI.
      */
 
     public LaunchPermissionModifications getLaunchPermission() {
@@ -253,11 +263,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A launch permission modification.
+     * A new launch permission for the AMI.
      * </p>
      * 
      * @param launchPermission
-     *        A launch permission modification.
+     *        A new launch permission for the AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,11 +278,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The operation type.
+     * The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param operationType
-     *        The operation type.
+     *        The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @see OperationType
      */
 
@@ -282,10 +294,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The operation type.
+     * The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
-     * @return The operation type.
+     * @return The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     *         <code>launchPermission</code>.
      * @see OperationType
      */
 
@@ -295,11 +309,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The operation type.
+     * The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param operationType
-     *        The operation type.
+     *        The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -311,11 +327,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The operation type.
+     * The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param operationType
-     *        The operation type.
+     *        The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @see OperationType
      */
 
@@ -325,11 +343,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The operation type.
+     * The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param operationType
-     *        The operation type.
+     *        The operation type. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -341,12 +361,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid when
-     * modifying the <code>productCodes</code> attribute.
+     * One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * </p>
      * 
-     * @return One or more product codes. After you add a product code to an AMI, it can't be removed. This is only
-     *         valid when modifying the <code>productCodes</code> attribute.
+     * @return One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      */
 
     public java.util.List<String> getProductCodes() {
@@ -358,13 +376,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid when
-     * modifying the <code>productCodes</code> attribute.
+     * One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid
-     *        when modifying the <code>productCodes</code> attribute.
+     *        One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      */
 
     public void setProductCodes(java.util.Collection<String> productCodes) {
@@ -378,8 +394,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid when
-     * modifying the <code>productCodes</code> attribute.
+     * One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -388,8 +403,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid
-     *        when modifying the <code>productCodes</code> attribute.
+     *        One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,13 +419,11 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid when
-     * modifying the <code>productCodes</code> attribute.
+     * One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * </p>
      * 
      * @param productCodes
-     *        One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid
-     *        when modifying the <code>productCodes</code> attribute.
+     *        One or more DevPay product codes. After you add a product code to an AMI, it can't be removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,10 +434,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
-     * @return One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * @return One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     *         <code>launchPermission</code>.
      */
 
     public java.util.List<String> getUserGroups() {
@@ -437,11 +451,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param userGroups
-     *        One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     *        One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      */
 
     public void setUserGroups(java.util.Collection<String> userGroups) {
@@ -455,7 +471,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -464,7 +481,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param userGroups
-     *        One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     *        One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -480,11 +498,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param userGroups
-     *        One or more user groups. This is only valid when modifying the <code>launchPermission</code> attribute.
+     *        One or more user groups. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,11 +515,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
-     * @return One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code>
-     *         attribute.
+     * @return One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     *         <code>launchPermission</code>.
      */
 
     public java.util.List<String> getUserIds() {
@@ -511,12 +532,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param userIds
-     *        One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code>
-     *        attribute.
+     *        One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      */
 
     public void setUserIds(java.util.Collection<String> userIds) {
@@ -530,7 +552,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -539,8 +562,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param userIds
-     *        One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code>
-     *        attribute.
+     *        One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,12 +579,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code> attribute.
+     * One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     * <code>launchPermission</code>.
      * </p>
      * 
      * @param userIds
-     *        One or more AWS account IDs. This is only valid when modifying the <code>launchPermission</code>
-     *        attribute.
+     *        One or more AWS account IDs. This parameter can be used only when the <code>Attribute</code> parameter is
+     *        <code>launchPermission</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,13 +596,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     * attribute.
+     * The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code>
+     * parameter is <code>description</code> or <code>productCodes</code>.
      * </p>
      * 
      * @param value
-     *        The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     *        attribute.
+     *        The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code>
+     *        parameter is <code>description</code> or <code>productCodes</code>.
      */
 
     public void setValue(String value) {
@@ -587,12 +611,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     * attribute.
+     * The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code>
+     * parameter is <code>description</code> or <code>productCodes</code>.
      * </p>
      * 
-     * @return The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     *         attribute.
+     * @return The value of the attribute being modified. This parameter can be used only when the
+     *         <code>Attribute</code> parameter is <code>description</code> or <code>productCodes</code>.
      */
 
     public String getValue() {
@@ -601,13 +625,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     * attribute.
+     * The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code>
+     * parameter is <code>description</code> or <code>productCodes</code>.
      * </p>
      * 
      * @param value
-     *        The value of the attribute being modified. This is only valid when modifying the <code>description</code>
-     *        attribute.
+     *        The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code>
+     *        parameter is <code>description</code> or <code>productCodes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

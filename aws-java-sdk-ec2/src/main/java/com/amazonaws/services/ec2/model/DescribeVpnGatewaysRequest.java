@@ -34,6 +34,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
      * <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -107,6 +112,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
      * <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -164,6 +174,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * 
      * @return One or more filters.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
@@ -236,6 +251,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
      * <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -294,6 +314,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
@@ -368,6 +393,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
      * <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -431,6 +461,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
@@ -507,6 +542,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (
      * <code>attaching</code> | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -565,6 +605,11 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>amazon-side-asn</code> - The Autonomous System Number (ASN) for the Amazon side of the gateway.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>attachment.state</code> - The current state of the attachment between the gateway and the VPC (

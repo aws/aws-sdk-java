@@ -179,8 +179,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
      * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
      * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
-     * stack that includes the service role that you need.
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the service role that you need.
      * </p>
      */
     private String serviceRoleArn;
@@ -198,9 +198,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * "Auto Assign Public IP" enabled.
      * </p>
      * <p>
-     * For more information about supported Amazon EC2 platforms, see <a href=
-     * "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     * >Supported Platforms</a>.
+     * For more information about supported Amazon EC2 platforms, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -1312,16 +1311,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
      * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
      * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
-     * stack that includes the service role that you need.
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the service role that you need.
      * </p>
      * 
      * @param serviceRoleArn
      *        The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account.
      *        Although the AWS OpsWorks management console typically creates the service role for you, if you are using
      *        the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a
-     *        CloudFormation stack that includes the service role that you need.
+     *        https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This
+     *        template creates a CloudFormation stack that includes the service role that you need.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -1333,15 +1332,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
      * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
      * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
-     * stack that includes the service role that you need.
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the service role that you need.
      * </p>
      * 
      * @return The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account.
      *         Although the AWS OpsWorks management console typically creates the service role for you, if you are using
      *         the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     *         https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a
-     *         CloudFormation stack that includes the service role that you need.
+     *         https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This
+     *         template creates a CloudFormation stack that includes the service role that you need.
      */
 
     public String getServiceRoleArn() {
@@ -1353,16 +1352,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account. Although
      * the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or
      * API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     * https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a CloudFormation
-     * stack that includes the service role that you need.
+     * https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template
+     * creates a CloudFormation stack that includes the service role that you need.
      * </p>
      * 
      * @param serviceRoleArn
      *        The service role that the AWS OpsWorks for Chef Automate service backend uses to work with your account.
      *        Although the AWS OpsWorks management console typically creates the service role for you, if you are using
      *        the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at
-     *        https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml. This template creates a
-     *        CloudFormation stack that includes the service role that you need.
+     *        https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This
+     *        template creates a CloudFormation stack that includes the service role that you need.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1385,9 +1384,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * "Auto Assign Public IP" enabled.
      * </p>
      * <p>
-     * For more information about supported Amazon EC2 platforms, see <a href=
-     * "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     * >Supported Platforms</a>.
+     * For more information about supported Amazon EC2 platforms, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
      * @return The IDs of subnets in which to launch the server EC2 instance. </p>
@@ -1401,9 +1399,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         "Auto Assign Public IP" enabled.
      *         </p>
      *         <p>
-     *         For more information about supported Amazon EC2 platforms, see <a href=
-     *         "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     *         >Supported Platforms</a>.
+     *         For more information about supported Amazon EC2 platforms, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *         Platforms</a>.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -1424,9 +1422,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * "Auto Assign Public IP" enabled.
      * </p>
      * <p>
-     * For more information about supported Amazon EC2 platforms, see <a href=
-     * "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     * >Supported Platforms</a>.
+     * For more information about supported Amazon EC2 platforms, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
      * @param subnetIds
@@ -1441,9 +1438,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        "Auto Assign Public IP" enabled.
      *        </p>
      *        <p>
-     *        For more information about supported Amazon EC2 platforms, see <a href=
-     *        "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     *        >Supported Platforms</a>.
+     *        For more information about supported Amazon EC2 platforms, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        Platforms</a>.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -1469,9 +1466,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * "Auto Assign Public IP" enabled.
      * </p>
      * <p>
-     * For more information about supported Amazon EC2 platforms, see <a href=
-     * "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     * >Supported Platforms</a>.
+     * For more information about supported Amazon EC2 platforms, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1491,9 +1487,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        "Auto Assign Public IP" enabled.
      *        </p>
      *        <p>
-     *        For more information about supported Amazon EC2 platforms, see <a href=
-     *        "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     *        >Supported Platforms</a>.
+     *        For more information about supported Amazon EC2 platforms, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        Platforms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1521,9 +1517,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * "Auto Assign Public IP" enabled.
      * </p>
      * <p>
-     * For more information about supported Amazon EC2 platforms, see <a href=
-     * "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     * >Supported Platforms</a>.
+     * For more information about supported Amazon EC2 platforms, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
      * @param subnetIds
@@ -1538,9 +1533,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        "Auto Assign Public IP" enabled.
      *        </p>
      *        <p>
-     *        For more information about supported Amazon EC2 platforms, see <a href=
-     *        "http://docs.aws.amazon.com/https:/docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html"
-     *        >Supported Platforms</a>.
+     *        For more information about supported Amazon EC2 platforms, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     *        Platforms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

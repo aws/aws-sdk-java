@@ -39,6 +39,17 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it
+     * must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.
+     * </p>
+     * <p>
+     * Default: 64512
+     * </p>
+     */
+    private Long amazonSideAsn;
 
     /**
      * Default constructor for CreateVpnGatewayRequest object. Callers should use the setter or fluent setter (with...)
@@ -183,6 +194,73 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it
+     * must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.
+     * </p>
+     * <p>
+     * Default: 64512
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit
+     *        ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to
+     *        4294967294 range.</p>
+     *        <p>
+     *        Default: 64512
+     */
+
+    public void setAmazonSideAsn(Long amazonSideAsn) {
+        this.amazonSideAsn = amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it
+     * must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.
+     * </p>
+     * <p>
+     * Default: 64512
+     * </p>
+     * 
+     * @return A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit
+     *         ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000
+     *         to 4294967294 range.</p>
+     *         <p>
+     *         Default: 64512
+     */
+
+    public Long getAmazonSideAsn() {
+        return this.amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it
+     * must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
+     * range.
+     * </p>
+     * <p>
+     * Default: 64512
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit
+     *        ASN, it must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to
+     *        4294967294 range.</p>
+     *        <p>
+     *        Default: 64512
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnGatewayRequest withAmazonSideAsn(Long amazonSideAsn) {
+        setAmazonSideAsn(amazonSideAsn);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -207,7 +285,9 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getAmazonSideAsn() != null)
+            sb.append("AmazonSideAsn: ").append(getAmazonSideAsn());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +310,10 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getAmazonSideAsn() == null ^ this.getAmazonSideAsn() == null)
+            return false;
+        if (other.getAmazonSideAsn() != null && other.getAmazonSideAsn().equals(this.getAmazonSideAsn()) == false)
+            return false;
         return true;
     }
 
@@ -240,6 +324,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAmazonSideAsn() == null) ? 0 : getAmazonSideAsn().hashCode());
         return hashCode;
     }
 

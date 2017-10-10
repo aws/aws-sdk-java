@@ -29,7 +29,7 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      */
     private String cidrIpv6;
@@ -47,12 +47,12 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
      *        The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv6 address, use the /128 prefix.
+     *        a single IPv6 address, use the /128 prefix length.
      */
 
     public void setCidrIpv6(String cidrIpv6) {
@@ -62,11 +62,11 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @return The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *         a single IPv6 address, use the /128 prefix.
+     *         a single IPv6 address, use the /128 prefix length.
      */
 
     public String getCidrIpv6() {
@@ -76,12 +76,12 @@ public class Ipv6Range implements Serializable, Cloneable {
     /**
      * <p>
      * The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
-     * single IPv6 address, use the /128 prefix.
+     * single IPv6 address, use the /128 prefix length.
      * </p>
      * 
      * @param cidrIpv6
      *        The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv6 address, use the /128 prefix.
+     *        a single IPv6 address, use the /128 prefix length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
