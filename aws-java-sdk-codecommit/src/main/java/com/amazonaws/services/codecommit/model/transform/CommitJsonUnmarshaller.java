@@ -48,6 +48,10 @@ public class CommitJsonUnmarshaller implements Unmarshaller<Commit, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("commitId", targetDepth)) {
+                    context.nextToken();
+                    commit.setCommitId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("treeId", targetDepth)) {
                     context.nextToken();
                     commit.setTreeId(context.getUnmarshaller(String.class).unmarshall(context));

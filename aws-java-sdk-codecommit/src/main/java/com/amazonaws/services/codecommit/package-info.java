@@ -73,6 +73,11 @@
  * </li>
  * <li>
  * <p>
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBranch</a>, which returns information about a specified branch
  * </p>
  * </li>

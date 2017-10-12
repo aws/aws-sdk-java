@@ -50,17 +50,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBParameterGroupFamily.
      * </p>
      * </li>
      * </ul>
@@ -220,17 +210,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBParameterGroupFamily.
      * </p>
      * </li>
      * </ul>
@@ -243,17 +223,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match an existing DBParameterGroupFamily.
      *        </p>
      *        </li>
      */
@@ -272,17 +242,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBParameterGroupFamily.
      * </p>
      * </li>
      * </ul>
@@ -294,17 +254,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match an existing DBParameterGroupFamily.
      *         </p>
      *         </li>
      */
@@ -323,17 +273,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBParameterGroupFamily.
      * </p>
      * </li>
      * </ul>
@@ -346,17 +286,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match an existing DBParameterGroupFamily.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

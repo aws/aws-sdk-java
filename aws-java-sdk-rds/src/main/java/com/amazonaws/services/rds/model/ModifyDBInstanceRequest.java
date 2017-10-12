@@ -36,22 +36,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -175,7 +160,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetGroup</code>
@@ -193,17 +178,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing DBSecurityGroups.
      * </p>
      * </li>
      * </ul>
@@ -227,17 +202,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing VpcSecurityGroupIds.
      * </p>
      * </li>
      * </ul>
@@ -282,8 +247,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * <p>
-     * Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 30 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * <note>
      * <p>
@@ -542,20 +533,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Example: <code>mydbinstance</code>
+     * </p>
      */
     private String newDBInstanceIdentifier;
     /**
@@ -804,22 +798,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing DB instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -837,22 +816,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -865,22 +829,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing DB instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -899,22 +848,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -926,22 +860,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the identifier for an existing DB instance
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing DBInstance.
      *         </p>
      *         </li>
      */
@@ -960,22 +879,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -988,22 +892,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing DB instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1677,7 +1566,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetGroup</code>
@@ -1694,8 +1583,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetGroup</code>
@@ -1718,7 +1606,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetGroup</code>
@@ -1734,8 +1622,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens.
+     *         Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetGroup</code>
@@ -1758,7 +1645,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetGroup</code>
@@ -1775,8 +1662,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetGroup</code>
@@ -1799,17 +1685,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing DBSecurityGroups.
      * </p>
      * </li>
      * </ul>
@@ -1822,17 +1698,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match existing DBSecurityGroups.
      *         </p>
      *         </li>
      */
@@ -1855,17 +1721,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing DBSecurityGroups.
      * </p>
      * </li>
      * </ul>
@@ -1879,17 +1735,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match existing DBSecurityGroups.
      *        </p>
      *        </li>
      */
@@ -1914,17 +1760,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing DBSecurityGroups.
      * </p>
      * </li>
      * </ul>
@@ -1943,17 +1779,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match existing DBSecurityGroups.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1980,17 +1806,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing DBSecurityGroups.
      * </p>
      * </li>
      * </ul>
@@ -2004,17 +1820,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match existing DBSecurityGroups.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2043,17 +1849,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing VpcSecurityGroupIds.
      * </p>
      * </li>
      * </ul>
@@ -2073,17 +1869,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match existing VpcSecurityGroupIds.
      *         </p>
      *         </li>
      */
@@ -2113,17 +1899,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing VpcSecurityGroupIds.
      * </p>
      * </li>
      * </ul>
@@ -2144,17 +1920,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match existing VpcSecurityGroupIds.
      *        </p>
      *        </li>
      */
@@ -2186,17 +1952,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing VpcSecurityGroupIds.
      * </p>
      * </li>
      * </ul>
@@ -2222,17 +1978,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match existing VpcSecurityGroupIds.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2266,17 +2012,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match existing VpcSecurityGroupIds.
      * </p>
      * </li>
      * </ul>
@@ -2297,17 +2033,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match existing VpcSecurityGroupIds.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2494,8 +2220,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * <p>
-     * Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 30 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * <note>
      * <p>
@@ -2524,8 +2276,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: Uses existing setting
      *        </p>
      *        <p>
-     *        Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     *        alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     *        <b>MariaDB</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 41 characters.
+     *        </p>
+     *        <p>
+     *        <b>Microsoft SQL Server</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 128 characters.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 41 characters.
+     *        </p>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 30 characters.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 128 characters.
      *        </p>
      *        <note>
      *        <p>
@@ -2559,8 +2337,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * <p>
-     * Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 30 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * <note>
      * <p>
@@ -2588,8 +2392,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Default: Uses existing setting
      *         </p>
      *         <p>
-     *         Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     *         alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     *         <b>MariaDB</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 41 characters.
+     *         </p>
+     *         <p>
+     *         <b>Microsoft SQL Server</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 128 characters.
+     *         </p>
+     *         <p>
+     *         <b>MySQL</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 41 characters.
+     *         </p>
+     *         <p>
+     *         <b>Oracle</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 30 characters.
+     *         </p>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 128 characters.
      *         </p>
      *         <note>
      *         <p>
@@ -2623,8 +2453,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * <p>
-     * Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30 alphanumeric
-     * characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 30 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * <note>
      * <p>
@@ -2653,8 +2509,34 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Default: Uses existing setting
      *        </p>
      *        <p>
-     *        Constraints: Must be 8 to 41 alphanumeric characters (MySQL, MariaDB, and Amazon Aurora), 8 to 30
-     *        alphanumeric characters (Oracle), or 8 to 128 alphanumeric characters (SQL Server).
+     *        <b>MariaDB</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 41 characters.
+     *        </p>
+     *        <p>
+     *        <b>Microsoft SQL Server</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 128 characters.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 41 characters.
+     *        </p>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 30 characters.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 128 characters.
      *        </p>
      *        <note>
      *        <p>
@@ -4181,20 +4063,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Example: <code>mydbinstance</code>
+     * </p>
      * 
      * @param newDBInstanceIdentifier
      *        The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB
@@ -4207,19 +4092,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>mydbinstance</code>
      */
 
     public void setNewDBInstanceIdentifier(String newDBInstanceIdentifier) {
@@ -4239,20 +4127,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Example: <code>mydbinstance</code>
+     * </p>
      * 
      * @return The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB
      *         instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code>
@@ -4264,19 +4155,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         Must contain from 1 to 63 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter
+     *         The first character must be a letter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Cannot end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>mydbinstance</code>
      */
 
     public String getNewDBInstanceIdentifier() {
@@ -4296,20 +4190,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Cannot end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Example: <code>mydbinstance</code>
+     * </p>
      * 
      * @param newDBInstanceIdentifier
      *        The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB
@@ -4322,19 +4219,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Cannot end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>mydbinstance</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

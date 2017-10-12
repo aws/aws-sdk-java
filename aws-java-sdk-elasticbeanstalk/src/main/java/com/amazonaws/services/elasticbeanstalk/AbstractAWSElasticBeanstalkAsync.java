@@ -570,6 +570,19 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(RebuildEnvironmentRequest request) {
 
         return rebuildEnvironmentAsync(request, null);
@@ -733,6 +746,19 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     @Override
     public java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest request) {
+
+        return updateTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTagsForResourceRequest, UpdateTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

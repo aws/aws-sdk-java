@@ -218,6 +218,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RebuildEnvironmentResult rebuildEnvironment(RebuildEnvironmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -274,6 +279,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
 
     @Override
     public UpdateEnvironmentResult updateEnvironment(UpdateEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTagsForResourceResult updateTagsForResource(UpdateTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

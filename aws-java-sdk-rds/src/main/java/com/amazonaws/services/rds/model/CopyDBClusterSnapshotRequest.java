@@ -39,21 +39,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Must specify a valid system snapshot in the "available" state.
      * </p>
      * </li>
@@ -86,7 +71,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -200,21 +185,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Must specify a valid system snapshot in the "available" state.
      * </p>
      * </li>
@@ -244,21 +214,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        Must specify a valid system snapshot in the "available" state.
@@ -299,21 +254,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Must specify a valid system snapshot in the "available" state.
      * </p>
      * </li>
@@ -342,21 +282,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         Constraints:
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         Must specify a valid system snapshot in the "available" state.
@@ -397,21 +322,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Must specify a valid system snapshot in the "available" state.
      * </p>
      * </li>
@@ -441,21 +351,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        Constraints:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        Must specify a valid system snapshot in the "available" state.
@@ -496,7 +391,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -523,7 +418,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -556,7 +451,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -582,7 +477,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 63 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -615,7 +510,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -642,7 +537,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>

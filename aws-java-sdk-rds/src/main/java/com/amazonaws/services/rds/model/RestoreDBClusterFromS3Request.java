@@ -74,7 +74,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -104,17 +104,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -131,8 +121,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A DB subnet group to associate with the restored DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -179,7 +168,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -637,7 +626,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -664,7 +653,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -697,7 +686,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -723,7 +712,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 63 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -756,7 +745,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -783,7 +772,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -818,17 +807,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -842,17 +821,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing DBClusterParameterGroup.
      *        </p>
      *        </li>
      */
@@ -872,17 +841,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -895,17 +854,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match the name of an existing DBClusterParameterGroup.
      *         </p>
      *         </li>
      */
@@ -925,17 +874,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -949,17 +888,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing DBClusterParameterGroup.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1048,8 +977,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A DB subnet group to associate with the restored DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1058,8 +986,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param dBSubnetGroupName
      *        A DB subnet group to associate with the restored DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1074,8 +1001,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A DB subnet group to associate with the restored DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1083,8 +1009,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @return A DB subnet group to associate with the restored DB cluster.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -1099,8 +1024,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A DB subnet group to associate with the restored DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1109,8 +1033,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param dBSubnetGroupName
      *        A DB subnet group to associate with the restored DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1315,7 +1238,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1338,7 +1261,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -1367,7 +1290,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1389,7 +1312,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 16 alphanumeric characters.
+     *         Must be 1 to 16 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -1418,7 +1341,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1441,7 +1364,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>

@@ -37,17 +37,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -64,17 +54,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * If supplied, must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
@@ -189,17 +169,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -213,17 +183,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -243,17 +203,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -266,17 +216,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match the identifier of an existing DBInstance.
      *         </p>
      *         </li>
      */
@@ -296,17 +236,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -320,17 +250,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -352,17 +272,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * If supplied, must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
@@ -381,17 +291,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        If supplied, must match the identifier of an existing DBSnapshot.
      *        </p>
      *        </li>
      *        <li>
@@ -417,17 +317,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * If supplied, must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
@@ -445,17 +335,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         If supplied, must match the identifier of an existing DBSnapshot.
      *         </p>
      *         </li>
      *         <li>
@@ -481,17 +361,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * If supplied, must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
@@ -510,17 +380,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        If supplied, must match the identifier of an existing DBSnapshot.
      *        </p>
      *        </li>
      *        <li>

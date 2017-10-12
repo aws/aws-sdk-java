@@ -34,8 +34,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
     private String subscriptionName;
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -107,8 +106,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -137,9 +135,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source to be added. An identifier must begin with a letter and must contain
-     *        only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive
-     *        hyphens.</p>
+     *        The identifier of the event source to be added.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -172,8 +168,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -201,9 +196,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
      * </li>
      * </ul>
      * 
-     * @return The identifier of the event source to be added. An identifier must begin with a letter and must contain
-     *         only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive
-     *         hyphens.</p>
+     * @return The identifier of the event source to be added.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -236,8 +229,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier of the event source to be added. An identifier must begin with a letter and must contain only
-     * ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
+     * The identifier of the event source to be added.
      * </p>
      * <p>
      * Constraints:
@@ -266,9 +258,7 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
      * </ul>
      * 
      * @param sourceIdentifier
-     *        The identifier of the event source to be added. An identifier must begin with a letter and must contain
-     *        only ASCII letters, digits, and hyphens; it cannot end with a hyphen or contain two consecutive
-     *        hyphens.</p>
+     *        The identifier of the event source to be added.</p>
      *        <p>
      *        Constraints:
      *        </p>

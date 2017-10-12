@@ -109,6 +109,11 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBranch</a>, which returns information about a specified branch
  * </p>
  * </li>
@@ -323,6 +328,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommitRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommitRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DefaultBranchCannotBeDeletedException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaximumBranchesExceededException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class))
@@ -741,6 +749,82 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRepositoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRepositoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a branch from a repository, unless that branch is the default branch for the repository.
+     * </p>
+     * 
+     * @param deleteBranchRequest
+     *        Represents the input of a delete branch operation.
+     * @return Result of the DeleteBranch operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws InvalidBranchNameException
+     *         The specified branch name is not valid.
+     * @throws DefaultBranchCannotBeDeletedException
+     *         The specified branch is the default branch for the repository, and cannot be deleted. To delete this
+     *         branch, you must first set another branch as the default branch.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.DeleteBranch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteBranchResult deleteBranch(DeleteBranchRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBranch(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBranchResult executeDeleteBranch(DeleteBranchRequest deleteBranchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBranchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBranchRequest> request = null;
+        Response<DeleteBranchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBranchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBranchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBranchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -4016,6 +4016,61 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications you can make to your DB
+     * instance. You can use this information when you call <a>ModifyDBInstance</a>.
+     * </p>
+     * 
+     * @param describeValidDBInstanceModificationsRequest
+     * @return Result of the DescribeValidDBInstanceModifications operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonRDS.DescribeValidDBInstanceModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ValidDBInstanceModificationsMessage describeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeValidDBInstanceModifications(request);
+    }
+
+    @SdkInternalApi
+    final ValidDBInstanceModificationsMessage executeDescribeValidDBInstanceModifications(
+            DescribeValidDBInstanceModificationsRequest describeValidDBInstanceModificationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeValidDBInstanceModificationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeValidDBInstanceModificationsRequest> request = null;
+        Response<ValidDBInstanceModificationsMessage> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeValidDBInstanceModificationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeValidDBInstanceModificationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ValidDBInstanceModificationsMessage> responseHandler = new StaxResponseHandler<ValidDBInstanceModificationsMessage>(
+                    new ValidDBInstanceModificationsMessageStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Downloads all or a portion of the specified log file, up to 1 MB in size.
      * </p>
      * 
@@ -4419,7 +4474,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying
-     * these parameters and the new values in the request.
+     * these parameters and the new values in the request. To learn what modifications you can make to your DB instance,
+     * call <a>DescribeValidDBInstanceModifications</a> before you call <a>ModifyDBInstance</a>.
      * </p>
      * 
      * @param modifyDBInstanceRequest

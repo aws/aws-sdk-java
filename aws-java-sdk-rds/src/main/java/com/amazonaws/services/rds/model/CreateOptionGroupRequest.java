@@ -36,7 +36,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -86,7 +86,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -112,7 +112,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        Must be 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -144,7 +144,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -169,7 +169,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters or hyphens
+     *         Must be 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -201,7 +201,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters or hyphens
+     * Must be 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -227,7 +227,7 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters or hyphens
+     *        Must be 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>

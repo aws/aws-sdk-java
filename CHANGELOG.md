@@ -1,3 +1,24 @@
+# __1.11.213__ __2017-10-12__
+## __AWS CodeCommit__
+  - ### Features
+    - This release includes the DeleteBranch API and a change to the contents of a Commit object.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - This change includes addition of new optional parameter to an existing API
+
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Added the ability to add, delete or update Tags
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly exposes two new voices: "Matthew" (US English) and "Takumi" (Japanese)
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - You can now call DescribeValidDBInstanceModifications to learn what modifications you can make to your DB instance. You can use this information when you call ModifyDBInstance.
+
 # __1.11.212__ __2017-10-11__
 ## __Amazon EC2 Container Registry__
   - ### Features

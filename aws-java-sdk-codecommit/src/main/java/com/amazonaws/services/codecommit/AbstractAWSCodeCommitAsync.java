@@ -67,6 +67,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest request) {
+
+        return deleteBranchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBranchRequest, DeleteBranchResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest request) {
 
         return deleteRepositoryAsync(request, null);

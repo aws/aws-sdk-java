@@ -37,17 +37,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -104,17 +94,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -128,17 +108,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      */
@@ -158,17 +128,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -181,17 +141,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match an existing DBClusterIdentifier.
      *         </p>
      *         </li>
      */
@@ -211,17 +161,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -235,17 +175,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

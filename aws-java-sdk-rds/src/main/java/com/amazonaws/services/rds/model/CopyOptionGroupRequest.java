@@ -71,7 +71,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -295,7 +295,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -326,7 +326,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -363,7 +363,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -393,7 +393,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         Must contain from 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -430,7 +430,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -461,7 +461,7 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>

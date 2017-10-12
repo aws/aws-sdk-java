@@ -77,7 +77,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -107,17 +107,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -134,8 +124,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A DB subnet group to associate with this DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -182,7 +171,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -694,7 +683,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -720,7 +709,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -752,7 +741,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -777,7 +766,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 63 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -809,7 +798,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -835,7 +824,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -870,17 +859,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -894,17 +873,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing DBClusterParameterGroup.
      *        </p>
      *        </li>
      */
@@ -924,17 +893,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -947,17 +906,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         If supplied, must match the name of an existing DBClusterParameterGroup.
      *         </p>
      *         </li>
      */
@@ -977,17 +926,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * If supplied, must match the name of an existing DBClusterParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -1001,17 +940,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        If supplied, must match the name of an existing DBClusterParameterGroup.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1100,8 +1029,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A DB subnet group to associate with this DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1110,8 +1038,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param dBSubnetGroupName
      *        A DB subnet group to associate with this DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1126,8 +1053,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A DB subnet group to associate with this DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1135,8 +1061,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return A DB subnet group to associate with this DB cluster.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -1151,8 +1076,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A DB subnet group to associate with this DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1161,8 +1085,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @param dBSubnetGroupName
      *        A DB subnet group to associate with this DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1367,7 +1290,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1390,7 +1313,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -1419,7 +1342,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1441,7 +1364,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 16 alphanumeric characters.
+     *         Must be 1 to 16 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -1470,7 +1393,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1493,7 +1416,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>

@@ -36,22 +36,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing Read Replica DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Read Replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -129,22 +114,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing Read Replica DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Read Replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -160,22 +130,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing Read Replica DB instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing Read Replica DB instance.
      *        </p>
      *        </li>
      *        </ul>
@@ -197,22 +152,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing Read Replica DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Read Replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -227,22 +167,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the identifier for an existing Read Replica DB instance
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing Read Replica DB instance.
      *         </p>
      *         </li>
      *         </ul>
@@ -264,22 +189,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing Read Replica DB instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Read Replica DB instance.
      * </p>
      * </li>
      * </ul>
@@ -295,22 +205,7 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing Read Replica DB instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing Read Replica DB instance.
      *        </p>
      *        </li>
      *        </ul>

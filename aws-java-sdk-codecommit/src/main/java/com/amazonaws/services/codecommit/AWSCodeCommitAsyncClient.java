@@ -91,6 +91,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBranch</a>, which returns information about a specified branch
  * </p>
  * </li>
@@ -447,6 +452,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeCreateRepository(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest request) {
+
+        return deleteBranchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(final DeleteBranchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBranchRequest, DeleteBranchResult> asyncHandler) {
+        final DeleteBranchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBranchResult>() {
+            @Override
+            public DeleteBranchResult call() throws Exception {
+                DeleteBranchResult result = null;
+
+                try {
+                    result = executeDeleteBranch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

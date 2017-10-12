@@ -272,6 +272,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new S3SubscriptionRequiredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceBundleDeletionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyConfigurationTemplatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceTypeNotSupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyApplicationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyEnvironmentsExceptionUnmarshaller());
@@ -1980,6 +1983,64 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * pairs.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN).
+     * @throws ResourceTypeNotSupportedException
+     *         The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+     * @sample AWSElasticBeanstalk.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
+                    new ListTagsForResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a
      * specified environment and forces a restart.
      * </p>
@@ -2595,6 +2656,72 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
             StaxResponseHandler<UpdateEnvironmentResult> responseHandler = new StaxResponseHandler<UpdateEnvironmentResult>(
                     new UpdateEnvironmentResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed:
+     * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+     * </p>
+     * 
+     * @param updateTagsForResourceRequest
+     * @return Result of the UpdateTagsForResource operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws OperationInProgressException
+     *         Unable to perform the specified operation because another operation that effects an element in this
+     *         activity is already in progress.
+     * @throws TooManyTagsException
+     *         The number of tags in the resource would exceed the number of tags that each resource can have.</p>
+     *         <p>
+     *         To calculate this, the operation considers both the number of tags the resource already has and the tags
+     *         this operation would add if it succeeded.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN).
+     * @throws ResourceTypeNotSupportedException
+     *         The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.
+     * @sample AWSElasticBeanstalk.UpdateTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTagsForResourceResult updateTagsForResource(UpdateTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTagsForResourceResult executeUpdateTagsForResource(UpdateTagsForResourceRequest updateTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTagsForResourceRequest> request = null;
+        Response<UpdateTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(updateTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateTagsForResourceResult> responseHandler = new StaxResponseHandler<UpdateTagsForResourceResult>(
+                    new UpdateTagsForResourceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

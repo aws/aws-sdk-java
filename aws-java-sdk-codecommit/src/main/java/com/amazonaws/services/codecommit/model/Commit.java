@@ -30,6 +30,12 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The full SHA of the specified commit.
+     * </p>
+     */
+    private String commitId;
+    /**
+     * <p>
      * Tree information for the specified commit.
      * </p>
      */
@@ -72,6 +78,46 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String additionalData;
+
+    /**
+     * <p>
+     * The full SHA of the specified commit.
+     * </p>
+     * 
+     * @param commitId
+     *        The full SHA of the specified commit.
+     */
+
+    public void setCommitId(String commitId) {
+        this.commitId = commitId;
+    }
+
+    /**
+     * <p>
+     * The full SHA of the specified commit.
+     * </p>
+     * 
+     * @return The full SHA of the specified commit.
+     */
+
+    public String getCommitId() {
+        return this.commitId;
+    }
+
+    /**
+     * <p>
+     * The full SHA of the specified commit.
+     * </p>
+     * 
+     * @param commitId
+     *        The full SHA of the specified commit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Commit withCommitId(String commitId) {
+        setCommitId(commitId);
+        return this;
+    }
 
     /**
      * <p>
@@ -399,6 +445,8 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCommitId() != null)
+            sb.append("CommitId: ").append(getCommitId()).append(",");
         if (getTreeId() != null)
             sb.append("TreeId: ").append(getTreeId()).append(",");
         if (getParents() != null)
@@ -425,6 +473,10 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Commit == false)
             return false;
         Commit other = (Commit) obj;
+        if (other.getCommitId() == null ^ this.getCommitId() == null)
+            return false;
+        if (other.getCommitId() != null && other.getCommitId().equals(this.getCommitId()) == false)
+            return false;
         if (other.getTreeId() == null ^ this.getTreeId() == null)
             return false;
         if (other.getTreeId() != null && other.getTreeId().equals(this.getTreeId()) == false)
@@ -457,6 +509,7 @@ public class Commit implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCommitId() == null) ? 0 : getCommitId().hashCode());
         hashCode = prime * hashCode + ((getTreeId() == null) ? 0 : getTreeId().hashCode());
         hashCode = prime * hashCode + ((getParents() == null) ? 0 : getParents().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());

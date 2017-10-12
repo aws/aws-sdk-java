@@ -1244,6 +1244,21 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<ValidDBInstanceModificationsMessage> describeValidDBInstanceModificationsAsync(
+            DescribeValidDBInstanceModificationsRequest request) {
+
+        return describeValidDBInstanceModificationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidDBInstanceModificationsMessage> describeValidDBInstanceModificationsAsync(
+            DescribeValidDBInstanceModificationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeValidDBInstanceModificationsRequest, ValidDBInstanceModificationsMessage> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadDBLogFilePortionResult> downloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest request) {
 
         return downloadDBLogFilePortionAsync(request, null);

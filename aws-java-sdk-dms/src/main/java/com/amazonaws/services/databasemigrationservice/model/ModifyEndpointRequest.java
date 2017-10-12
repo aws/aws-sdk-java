@@ -84,7 +84,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String databaseName;
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an
+     * argument.
      * </p>
      */
     private String extraConnectionAttributes;
@@ -541,11 +542,13 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an
+     * argument.
      * </p>
      * 
      * @param extraConnectionAttributes
-     *        Additional attributes associated with the connection.
+     *        Additional attributes associated with the connection. To reset this parameter, pass the empty string ("")
+     *        as an argument.
      */
 
     public void setExtraConnectionAttributes(String extraConnectionAttributes) {
@@ -554,10 +557,12 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an
+     * argument.
      * </p>
      * 
-     * @return Additional attributes associated with the connection.
+     * @return Additional attributes associated with the connection. To reset this parameter, pass the empty string ("")
+     *         as an argument.
      */
 
     public String getExtraConnectionAttributes() {
@@ -566,11 +571,13 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Additional attributes associated with the connection.
+     * Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an
+     * argument.
      * </p>
      * 
      * @param extraConnectionAttributes
-     *        Additional attributes associated with the connection.
+     *        Additional attributes associated with the connection. To reset this parameter, pass the empty string ("")
+     *        as an argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

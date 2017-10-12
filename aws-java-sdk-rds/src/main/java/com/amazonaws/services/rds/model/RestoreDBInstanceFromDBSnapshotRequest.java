@@ -36,7 +36,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 numbers, letters, or hyphens
      * </p>
      * </li>
      * <li>
@@ -65,24 +65,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * </li>
+     * </ul>
      */
     private String dBSnapshotIdentifier;
     /**
@@ -128,8 +120,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The DB subnet group name to use for the new instance.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -218,10 +209,70 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * MySQL 5.6 snapshot.
      * </p>
      * <p>
-     * Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code> |
-     * <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     * Valid Values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engine;
     /**
@@ -350,7 +401,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 numbers, letters, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -375,23 +426,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must match the identifier of an existing DBSnapshot.
      *        </p>
      *        </li>
      *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the
      *        ARN of the shared DB snapshot.
+     *        </p>
+     *        </li>
      */
     public RestoreDBInstanceFromDBSnapshotRequest(String dBInstanceIdentifier, String dBSnapshotIdentifier) {
         setDBInstanceIdentifier(dBInstanceIdentifier);
@@ -408,7 +451,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 numbers, letters, or hyphens
      * </p>
      * </li>
      * <li>
@@ -434,7 +477,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 numbers, letters, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -466,7 +509,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 numbers, letters, or hyphens
      * </p>
      * </li>
      * <li>
@@ -491,7 +534,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         Must contain from 1 to 63 numbers, letters, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -523,7 +566,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 numbers, letters, or hyphens
      * </p>
      * </li>
      * <li>
@@ -549,7 +592,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 numbers, letters, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -583,24 +626,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param dBSnapshotIdentifier
      *        The identifier for the DB snapshot to restore from.</p>
@@ -610,23 +645,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must match the identifier of an existing DBSnapshot.
      *        </p>
      *        </li>
      *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the
      *        ARN of the shared DB snapshot.
+     *        </p>
+     *        </li>
      */
 
     public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
@@ -643,24 +670,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The identifier for the DB snapshot to restore from.</p>
      *         <p>
@@ -669,23 +688,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         Must match the identifier of an existing DBSnapshot.
      *         </p>
      *         </li>
      *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the
      *         ARN of the shared DB snapshot.
+     *         </p>
+     *         </li>
      */
 
     public String getDBSnapshotIdentifier() {
@@ -702,24 +713,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must match the identifier of an existing DBSnapshot.
      * </p>
      * </li>
      * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param dBSnapshotIdentifier
      *        The identifier for the DB snapshot to restore from.</p>
@@ -729,23 +732,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must match the identifier of an existing DBSnapshot.
      *        </p>
      *        </li>
      *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the
      *        ARN of the shared DB snapshot.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -990,8 +985,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The DB subnet group name to use for the new instance.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1000,8 +994,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param dBSubnetGroupName
      *        The DB subnet group name to use for the new instance.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1016,8 +1009,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The DB subnet group name to use for the new instance.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1025,8 +1017,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * 
      * @return The DB subnet group name to use for the new instance.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -1041,8 +1032,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The DB subnet group name to use for the new instance.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1051,8 +1041,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param dBSubnetGroupName
      *        The DB subnet group name to use for the new instance.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1593,10 +1582,70 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * MySQL 5.6 snapshot.
      * </p>
      * <p>
-     * Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code> |
-     * <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     * Valid Values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
      *        The database engine to use for the new instance.</p>
@@ -1608,9 +1657,69 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        from a MySQL 5.6 snapshot.
      *        </p>
      *        <p>
-     *        Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code>
-     *        | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *        <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mariadb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>postgres</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ex</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-web</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngine(String engine) {
@@ -1629,10 +1738,70 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * MySQL 5.6 snapshot.
      * </p>
      * <p>
-     * Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code> |
-     * <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     * Valid Values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The database engine to use for the new instance.</p>
      *         <p>
@@ -1643,9 +1812,69 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         from a MySQL 5.6 snapshot.
      *         </p>
      *         <p>
-     *         Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     *         <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     *         Valid Values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>aurora</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mariadb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mysql</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-ee</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>postgres</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-ee</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-se</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-ex</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-web</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngine() {
@@ -1664,10 +1893,70 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * MySQL 5.6 snapshot.
      * </p>
      * <p>
-     * Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code> |
-     * <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     * Valid Values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
      *        The database engine to use for the new instance.</p>
@@ -1679,9 +1968,69 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        from a MySQL 5.6 snapshot.
      *        </p>
      *        <p>
-     *        Valid Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se</code>
-     *        | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     *        <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mariadb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>postgres</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ex</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-web</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

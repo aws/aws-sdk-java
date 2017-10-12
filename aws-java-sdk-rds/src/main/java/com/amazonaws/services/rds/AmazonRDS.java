@@ -1763,6 +1763,25 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications you can make to your DB
+     * instance. You can use this information when you call <a>ModifyDBInstance</a>.
+     * </p>
+     * 
+     * @param describeValidDBInstanceModificationsRequest
+     * @return Result of the DescribeValidDBInstanceModifications operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonRDS.DescribeValidDBInstanceModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ValidDBInstanceModificationsMessage describeValidDBInstanceModifications(
+            DescribeValidDBInstanceModificationsRequest describeValidDBInstanceModificationsRequest);
+
+    /**
+     * <p>
      * Downloads all or a portion of the specified log file, up to 1 MB in size.
      * </p>
      * 
@@ -1959,7 +1978,8 @@ public interface AmazonRDS {
     /**
      * <p>
      * Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying
-     * these parameters and the new values in the request.
+     * these parameters and the new values in the request. To learn what modifications you can make to your DB instance,
+     * call <a>DescribeValidDBInstanceModifications</a> before you call <a>ModifyDBInstance</a>.
      * </p>
      * 
      * @param modifyDBInstanceRequest

@@ -1389,6 +1389,39 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RebuildEnvironmentResult> rebuildEnvironmentAsync(RebuildEnvironmentRequest request) {
 
         return rebuildEnvironmentAsync(request, null);
@@ -1761,6 +1794,39 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
 
                 try {
                     result = executeUpdateEnvironment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest request) {
+
+        return updateTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(final UpdateTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTagsForResourceRequest, UpdateTagsForResourceResult> asyncHandler) {
+        final UpdateTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTagsForResourceResult>() {
+            @Override
+            public UpdateTagsForResourceResult call() throws Exception {
+                UpdateTagsForResourceResult result = null;
+
+                try {
+                    result = executeUpdateTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

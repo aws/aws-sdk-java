@@ -36,7 +36,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -93,7 +93,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -134,7 +134,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -162,7 +162,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -196,7 +196,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -223,7 +223,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -257,7 +257,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -285,7 +285,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>

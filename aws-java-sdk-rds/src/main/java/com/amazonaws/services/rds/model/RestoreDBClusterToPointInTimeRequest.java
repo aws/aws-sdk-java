@@ -36,7 +36,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -88,22 +88,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing database instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -176,8 +161,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -255,7 +239,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -278,7 +262,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -307,7 +291,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -329,7 +313,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         Must contain from 1 to 63 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -358,7 +342,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -381,7 +365,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -569,22 +553,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing database instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -597,22 +566,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier of an existing database instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBCluster.
      *        </p>
      *        </li>
      */
@@ -631,22 +585,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing database instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -658,22 +597,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the identifier of an existing database instance
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing DBCluster.
      *         </p>
      *         </li>
      */
@@ -692,22 +616,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing database instance
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -720,22 +629,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier of an existing database instance
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBCluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1151,8 +1045,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1161,8 +1054,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * @param dBSubnetGroupName
      *        The DB subnet group name to use for the new DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -1177,8 +1069,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1186,8 +1077,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @return The DB subnet group name to use for the new DB cluster.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -1202,8 +1092,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The DB subnet group name to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -1212,8 +1101,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * @param dBSubnetGroupName
      *        The DB subnet group name to use for the new DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>

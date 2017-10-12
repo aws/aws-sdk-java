@@ -83,6 +83,8 @@ public enum ElasticBeanstalkActions implements Action {
     ListAvailableSolutionStacks("elasticbeanstalk:ListAvailableSolutionStacks"),
     /** Action for the ListPlatformVersions operation. */
     ListPlatformVersions("elasticbeanstalk:ListPlatformVersions"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("elasticbeanstalk:ListTagsForResource"),
     /** Action for the RebuildEnvironment operation. */
     RebuildEnvironment("elasticbeanstalk:RebuildEnvironment"),
     /** Action for the RequestEnvironmentInfo operation. */
@@ -105,6 +107,8 @@ public enum ElasticBeanstalkActions implements Action {
     UpdateConfigurationTemplate("elasticbeanstalk:UpdateConfigurationTemplate"),
     /** Action for the UpdateEnvironment operation. */
     UpdateEnvironment("elasticbeanstalk:UpdateEnvironment"),
+    /** Action for the UpdateTagsForResource operation. */
+    UpdateTagsForResource("elasticbeanstalk:UpdateTagsForResource"),
     /** Action for the ValidateConfigurationSettings operation. */
     ValidateConfigurationSettings("elasticbeanstalk:ValidateConfigurationSettings"),
 

@@ -35,7 +35,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -67,7 +67,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -95,7 +95,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -129,7 +129,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -156,7 +156,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -190,7 +190,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -218,7 +218,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters or numbers.
      *        </p>
      *        </li>
      *        <li>

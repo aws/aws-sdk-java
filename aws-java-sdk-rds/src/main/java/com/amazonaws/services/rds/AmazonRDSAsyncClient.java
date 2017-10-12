@@ -2712,6 +2712,41 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ValidDBInstanceModificationsMessage> describeValidDBInstanceModificationsAsync(
+            DescribeValidDBInstanceModificationsRequest request) {
+
+        return describeValidDBInstanceModificationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidDBInstanceModificationsMessage> describeValidDBInstanceModificationsAsync(
+            final DescribeValidDBInstanceModificationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeValidDBInstanceModificationsRequest, ValidDBInstanceModificationsMessage> asyncHandler) {
+        final DescribeValidDBInstanceModificationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidDBInstanceModificationsMessage>() {
+            @Override
+            public ValidDBInstanceModificationsMessage call() throws Exception {
+                ValidDBInstanceModificationsMessage result = null;
+
+                try {
+                    result = executeDescribeValidDBInstanceModifications(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadDBLogFilePortionResult> downloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest request) {
 
         return downloadDBLogFilePortionAsync(request, null);

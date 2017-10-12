@@ -36,17 +36,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -115,17 +105,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -138,17 +118,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      */
@@ -167,17 +137,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -189,17 +149,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing DBInstance.
      *         </p>
      *         </li>
      */
@@ -218,17 +168,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing DBInstance.
      * </p>
      * </li>
      * </ul>
@@ -241,17 +181,7 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing DBInstance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

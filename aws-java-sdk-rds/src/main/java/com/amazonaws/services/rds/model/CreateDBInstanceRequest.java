@@ -46,7 +46,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -68,7 +68,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -90,7 +90,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 63 alphanumeric characters
+     * Must contain 1 to 63 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -144,7 +144,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -165,7 +165,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -456,7 +456,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MariaDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -474,12 +479,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters.
+     * Required for SQL Server.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter.
+     * Must be 1 to 128 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
@@ -497,7 +507,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MySQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -520,7 +535,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 30 alphanumeric characters.
+     * Required for Oracle.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -543,7 +563,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 63 alphanumeric characters.
+     * Required for PostgreSQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -689,7 +714,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -1493,7 +1518,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -1768,7 +1793,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Required for MariaDB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -1786,12 +1816,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 128 alphanumeric characters.
+     *        Required for SQL Server.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter.
+     *        Must be 1 to 128 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
@@ -1809,7 +1844,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Required for MySQL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -1832,7 +1872,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 30 alphanumeric characters.
+     *        Required for Oracle.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 30 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -1855,7 +1900,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 63 alphanumeric characters.
+     *        Required for PostgreSQL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 63 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -1937,7 +1987,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1959,7 +2009,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -1981,7 +2031,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 63 alphanumeric characters
+     * Must contain 1 to 63 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -2035,7 +2085,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2063,7 +2113,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 alphanumeric characters
+     *        Must contain 1 to 64 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -2085,7 +2135,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 alphanumeric characters
+     *        Must contain 1 to 64 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -2107,7 +2157,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 63 alphanumeric characters
+     *        Must contain 1 to 63 letters, numbers, or underscores.
      *        </p>
      *        </li>
      *        <li>
@@ -2162,7 +2212,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 alphanumeric characters
+     *        Must contain 1 to 64 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -2196,7 +2246,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2218,7 +2268,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2240,7 +2290,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 63 alphanumeric characters
+     * Must contain 1 to 63 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -2294,7 +2344,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2321,7 +2371,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain 1 to 64 alphanumeric characters
+     *         Must contain 1 to 64 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -2343,7 +2393,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain 1 to 64 alphanumeric characters
+     *         Must contain 1 to 64 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -2365,7 +2415,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain 1 to 63 alphanumeric characters
+     *         Must contain 1 to 63 letters, numbers, or underscores.
      *         </p>
      *         </li>
      *         <li>
@@ -2420,7 +2470,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain 1 to 64 alphanumeric characters
+     *         Must contain 1 to 64 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -2454,7 +2504,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2476,7 +2526,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2498,7 +2548,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 63 alphanumeric characters
+     * Must contain 1 to 63 letters, numbers, or underscores.
      * </p>
      * </li>
      * <li>
@@ -2552,7 +2602,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 alphanumeric characters
+     * Must contain 1 to 64 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -2580,7 +2630,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 alphanumeric characters
+     *        Must contain 1 to 64 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -2602,7 +2652,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 alphanumeric characters
+     *        Must contain 1 to 64 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -2624,7 +2674,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 63 alphanumeric characters
+     *        Must contain 1 to 63 letters, numbers, or underscores.
      *        </p>
      *        </li>
      *        <li>
@@ -2679,7 +2729,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 alphanumeric characters
+     *        Must contain 1 to 64 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -2705,7 +2755,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -2731,7 +2781,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -2763,7 +2813,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -2788,7 +2838,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 63 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -2820,7 +2870,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 63 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -2846,7 +2896,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 63 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -4405,7 +4455,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MariaDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4423,12 +4478,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters.
+     * Required for SQL Server.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter.
+     * Must be 1 to 128 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
@@ -4446,7 +4506,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MySQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4469,7 +4534,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 30 alphanumeric characters.
+     * Required for Oracle.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4492,7 +4562,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 63 alphanumeric characters.
+     * Required for PostgreSQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4525,7 +4600,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Required for MariaDB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -4543,12 +4623,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 128 alphanumeric characters.
+     *        Required for SQL Server.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter.
+     *        Must be 1 to 128 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
@@ -4566,7 +4651,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Required for MySQL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -4589,7 +4679,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 30 alphanumeric characters.
+     *        Required for Oracle.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 30 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -4612,7 +4707,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 63 alphanumeric characters.
+     *        Required for PostgreSQL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 63 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -4651,7 +4751,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MariaDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4669,12 +4774,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters.
+     * Required for SQL Server.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter.
+     * Must be 1 to 128 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
@@ -4692,7 +4802,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MySQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4715,7 +4830,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 30 alphanumeric characters.
+     * Required for Oracle.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4738,7 +4858,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 63 alphanumeric characters.
+     * Required for PostgreSQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4770,7 +4895,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 16 alphanumeric characters.
+     *         Required for MariaDB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 16 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -4788,12 +4918,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 128 alphanumeric characters.
+     *         Required for SQL Server.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter.
+     *         Must be 1 to 128 letters or numbers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The first character must be a letter.
      *         </p>
      *         </li>
      *         <li>
@@ -4811,7 +4946,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 16 alphanumeric characters.
+     *         Required for MySQL.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 16 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -4834,7 +4974,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 30 alphanumeric characters.
+     *         Required for Oracle.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 30 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -4857,7 +5002,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 63 alphanumeric characters.
+     *         Required for PostgreSQL.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 63 letters or numbers.
      *         </p>
      *         </li>
      *         <li>
@@ -4896,7 +5046,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MariaDB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4914,12 +5069,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 128 alphanumeric characters.
+     * Required for SQL Server.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter.
+     * Must be 1 to 128 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
@@ -4937,7 +5097,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 16 alphanumeric characters.
+     * Required for MySQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 16 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4960,7 +5125,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 30 alphanumeric characters.
+     * Required for Oracle.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 30 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -4983,7 +5153,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 63 alphanumeric characters.
+     * Required for PostgreSQL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be 1 to 63 letters or numbers.
      * </p>
      * </li>
      * <li>
@@ -5016,7 +5191,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Required for MariaDB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -5034,12 +5214,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 128 alphanumeric characters.
+     *        Required for SQL Server.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter.
+     *        Must be 1 to 128 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
@@ -5057,7 +5242,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 16 alphanumeric characters.
+     *        Required for MySQL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 16 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -5080,7 +5270,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 30 alphanumeric characters.
+     *        Required for Oracle.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 30 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -5103,7 +5298,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 63 alphanumeric characters.
+     *        Required for PostgreSQL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 63 letters or numbers.
      *        </p>
      *        </li>
      *        <li>
@@ -5949,7 +6149,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -5973,7 +6173,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -6003,7 +6203,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -6026,7 +6226,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -6056,7 +6256,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -6080,7 +6280,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>

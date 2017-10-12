@@ -36,22 +36,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -68,12 +53,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter
      * </p>
      * </li>
      * <li>
@@ -253,22 +238,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -281,22 +251,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing DB cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Must match the identifier of an existing DBCluster.
      *        </p>
      *        </li>
      */
@@ -315,22 +270,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -342,22 +282,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the identifier for an existing DB cluster.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         Must match the identifier of an existing DBCluster.
      *         </p>
      *         </li>
      */
@@ -376,22 +301,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier for an existing DB cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster.
      * </p>
      * </li>
      * </ul>
@@ -404,22 +314,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier for an existing DB cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Must match the identifier of an existing DBCluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -441,12 +336,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter
      * </p>
      * </li>
      * <li>
@@ -468,12 +363,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        The first character must be a letter
      *        </p>
      *        </li>
      *        <li>
@@ -501,12 +396,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter
      * </p>
      * </li>
      * <li>
@@ -527,12 +422,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
+     *         Must contain from 1 to 63 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter
+     *         The first character must be a letter
      *         </p>
      *         </li>
      *         <li>
@@ -560,12 +455,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter
      * </p>
      * </li>
      * <li>
@@ -587,12 +482,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        The first character must be a letter
      *        </p>
      *        </li>
      *        <li>

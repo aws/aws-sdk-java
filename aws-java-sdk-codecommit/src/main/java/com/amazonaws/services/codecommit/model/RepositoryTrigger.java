@@ -50,9 +50,14 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
     private String customData;
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * The branches that will be included in the trigger configuration. If you specify an empty array, the trigger will
      * apply to all branches.
      * </p>
+     * <note>
+     * <p>
+     * While no content is required in the array, you must include the array itself.
+     * </p>
+     * </note>
      */
     private java.util.List<String> branches;
     /**
@@ -202,12 +207,20 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * The branches that will be included in the trigger configuration. If you specify an empty array, the trigger will
      * apply to all branches.
      * </p>
+     * <note>
+     * <p>
+     * While no content is required in the array, you must include the array itself.
+     * </p>
+     * </note>
      * 
-     * @return The branches that will be included in the trigger configuration. If no branches are specified, the
-     *         trigger will apply to all branches.
+     * @return The branches that will be included in the trigger configuration. If you specify an empty array, the
+     *         trigger will apply to all branches.</p> <note>
+     *         <p>
+     *         While no content is required in the array, you must include the array itself.
+     *         </p>
      */
 
     public java.util.List<String> getBranches() {
@@ -216,13 +229,21 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * The branches that will be included in the trigger configuration. If you specify an empty array, the trigger will
      * apply to all branches.
      * </p>
+     * <note>
+     * <p>
+     * While no content is required in the array, you must include the array itself.
+     * </p>
+     * </note>
      * 
      * @param branches
-     *        The branches that will be included in the trigger configuration. If no branches are specified, the trigger
-     *        will apply to all branches.
+     *        The branches that will be included in the trigger configuration. If you specify an empty array, the
+     *        trigger will apply to all branches.</p> <note>
+     *        <p>
+     *        While no content is required in the array, you must include the array itself.
+     *        </p>
      */
 
     public void setBranches(java.util.Collection<String> branches) {
@@ -236,9 +257,14 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * The branches that will be included in the trigger configuration. If you specify an empty array, the trigger will
      * apply to all branches.
      * </p>
+     * <note>
+     * <p>
+     * While no content is required in the array, you must include the array itself.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBranches(java.util.Collection)} or {@link #withBranches(java.util.Collection)} if you want to override
@@ -246,8 +272,11 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param branches
-     *        The branches that will be included in the trigger configuration. If no branches are specified, the trigger
-     *        will apply to all branches.
+     *        The branches that will be included in the trigger configuration. If you specify an empty array, the
+     *        trigger will apply to all branches.</p> <note>
+     *        <p>
+     *        While no content is required in the array, you must include the array itself.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,13 +292,21 @@ public class RepositoryTrigger implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The branches that will be included in the trigger configuration. If no branches are specified, the trigger will
+     * The branches that will be included in the trigger configuration. If you specify an empty array, the trigger will
      * apply to all branches.
      * </p>
+     * <note>
+     * <p>
+     * While no content is required in the array, you must include the array itself.
+     * </p>
+     * </note>
      * 
      * @param branches
-     *        The branches that will be included in the trigger configuration. If no branches are specified, the trigger
-     *        will apply to all branches.
+     *        The branches that will be included in the trigger configuration. If you specify an empty array, the
+     *        trigger will apply to all branches.</p> <note>
+     *        <p>
+     *        While no content is required in the array, you must include the array itself.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

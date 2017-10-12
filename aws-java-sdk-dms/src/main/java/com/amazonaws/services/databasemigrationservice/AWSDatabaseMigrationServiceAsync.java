@@ -978,6 +978,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and
      * rows deleted.
      * </p>
+     * <p>
+     * Note that the "last updated" column the DMS console only indicates the time that AWS DMS last updated the table
+     * statistics record for a table. It does not indicate the time of the last update to the table.
+     * </p>
      * 
      * @param describeTableStatisticsRequest
      * @return A Java Future containing the result of the DescribeTableStatistics operation returned by the service.
@@ -991,6 +995,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and
      * rows deleted.
+     * </p>
+     * <p>
+     * Note that the "last updated" column the DMS console only indicates the time that AWS DMS last updated the table
+     * statistics record for a table. It does not indicate the time of the last update to the table.
      * </p>
      * 
      * @param describeTableStatisticsRequest

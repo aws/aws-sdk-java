@@ -31,8 +31,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * The name for the DB subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
+     * be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -59,8 +59,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * The name for the DB subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
+     * be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -69,8 +69,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * @param dBSubnetGroupName
      *        The name for the DB subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
+     *        Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -85,8 +85,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * The name for the DB subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
+     * be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -94,8 +94,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The name for the DB subnet group. This value is stored as a lowercase string.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
+     *         Must not be default.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -110,8 +110,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * The name for the DB subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
+     * be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -120,8 +120,8 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * @param dBSubnetGroupName
      *        The name for the DB subnet group. This value is stored as a lowercase string.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
+     *        Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>

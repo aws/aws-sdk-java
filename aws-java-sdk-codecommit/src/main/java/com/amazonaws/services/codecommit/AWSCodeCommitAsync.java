@@ -86,6 +86,11 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBranch</a>, which returns information about a specified branch
  * </p>
  * </li>
@@ -278,6 +283,39 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      */
     java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(CreateRepositoryRequest createRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a branch from a repository, unless that branch is the default branch for the repository.
+     * </p>
+     * 
+     * @param deleteBranchRequest
+     *        Represents the input of a delete branch operation.
+     * @return A Java Future containing the result of the DeleteBranch operation returned by the service.
+     * @sample AWSCodeCommitAsync.DeleteBranch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest deleteBranchRequest);
+
+    /**
+     * <p>
+     * Deletes a branch from a repository, unless that branch is the default branch for the repository.
+     * </p>
+     * 
+     * @param deleteBranchRequest
+     *        Represents the input of a delete branch operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBranch operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.DeleteBranch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBranchResult> deleteBranchAsync(DeleteBranchRequest deleteBranchRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBranchRequest, DeleteBranchResult> asyncHandler);
 
     /**
      * <p>

@@ -36,17 +36,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -86,7 +76,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -113,17 +103,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -136,17 +116,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      */
@@ -165,17 +135,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -187,17 +147,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match an existing DBClusterIdentifier.
      *         </p>
      *         </li>
      */
@@ -216,17 +166,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing DBClusterIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -239,17 +179,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match an existing DBClusterIdentifier.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,7 +339,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -438,7 +368,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -474,7 +404,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -502,7 +432,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -538,7 +468,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -567,7 +497,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>

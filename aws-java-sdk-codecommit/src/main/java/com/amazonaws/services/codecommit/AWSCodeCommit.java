@@ -87,6 +87,11 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>DeleteBranch</a>, which deletes the specified branch in a repository unless it is the default branch
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBranch</a>, which returns information about a specified branch
  * </p>
  * </li>
@@ -344,6 +349,47 @@ public interface AWSCodeCommit {
      *      API Documentation</a>
      */
     CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest);
+
+    /**
+     * <p>
+     * Deletes a branch from a repository, unless that branch is the default branch for the repository.
+     * </p>
+     * 
+     * @param deleteBranchRequest
+     *        Represents the input of a delete branch operation.
+     * @return Result of the DeleteBranch operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws InvalidBranchNameException
+     *         The specified branch name is not valid.
+     * @throws DefaultBranchCannotBeDeletedException
+     *         The specified branch is the default branch for the repository, and cannot be deleted. To delete this
+     *         branch, you must first set another branch as the default branch.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.DeleteBranch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteBranch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteBranchResult deleteBranch(DeleteBranchRequest deleteBranchRequest);
 
     /**
      * <p>

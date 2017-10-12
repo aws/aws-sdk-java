@@ -28,11 +28,11 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * group.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -54,21 +54,21 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * group.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name for the DB subnet group. This value is stored as a lowercase string.</p>
+     *        The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default
+     *        subnet group. </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -80,20 +80,20 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * group.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name for the DB subnet group. This value is stored as a lowercase string.</p>
+     * @return The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the
+     *         default subnet group. </p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -105,21 +105,21 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * group.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name for the DB subnet group. This value is stored as a lowercase string.</p>
+     *        The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default
+     *        subnet group. </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>

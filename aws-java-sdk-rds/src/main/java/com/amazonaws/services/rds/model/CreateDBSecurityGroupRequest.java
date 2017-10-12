@@ -36,7 +36,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -88,7 +88,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -127,7 +127,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -158,7 +158,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -195,7 +195,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -225,7 +225,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
+     *         Must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -262,7 +262,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
+     * Must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
@@ -293,7 +293,7 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
+     *        Must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>

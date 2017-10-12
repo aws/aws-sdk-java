@@ -38,6 +38,7 @@ public enum VoiceId {
     Justin("Justin"),
     Kendra("Kendra"),
     Kimberly("Kimberly"),
+    Matthew("Matthew"),
     Salli("Salli"),
     Conchita("Conchita"),
     Enrique("Enrique"),
@@ -67,7 +68,8 @@ public enum VoiceId {
     Tatyana("Tatyana"),
     Astrid("Astrid"),
     Filiz("Filiz"),
-    Vicki("Vicki");
+    Vicki("Vicki"),
+    Takumi("Takumi");
 
     private String value;
 

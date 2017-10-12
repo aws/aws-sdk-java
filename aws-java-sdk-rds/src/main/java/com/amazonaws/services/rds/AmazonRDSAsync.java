@@ -3015,6 +3015,43 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications you can make to your DB
+     * instance. You can use this information when you call <a>ModifyDBInstance</a>.
+     * </p>
+     * 
+     * @param describeValidDBInstanceModificationsRequest
+     * @return A Java Future containing the result of the DescribeValidDBInstanceModifications operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeValidDBInstanceModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ValidDBInstanceModificationsMessage> describeValidDBInstanceModificationsAsync(
+            DescribeValidDBInstanceModificationsRequest describeValidDBInstanceModificationsRequest);
+
+    /**
+     * <p>
+     * You can call <a>DescribeValidDBInstanceModifications</a> to learn what modifications you can make to your DB
+     * instance. You can use this information when you call <a>ModifyDBInstance</a>.
+     * </p>
+     * 
+     * @param describeValidDBInstanceModificationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeValidDBInstanceModifications operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeValidDBInstanceModifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ValidDBInstanceModificationsMessage> describeValidDBInstanceModificationsAsync(
+            DescribeValidDBInstanceModificationsRequest describeValidDBInstanceModificationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeValidDBInstanceModificationsRequest, ValidDBInstanceModificationsMessage> asyncHandler);
+
+    /**
+     * <p>
      * Downloads all or a portion of the specified log file, up to 1 MB in size.
      * </p>
      * 
@@ -3346,7 +3383,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying
-     * these parameters and the new values in the request.
+     * these parameters and the new values in the request. To learn what modifications you can make to your DB instance,
+     * call <a>DescribeValidDBInstanceModifications</a> before you call <a>ModifyDBInstance</a>.
      * </p>
      * 
      * @param modifyDBInstanceRequest
@@ -3360,7 +3398,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying
-     * these parameters and the new values in the request.
+     * these parameters and the new values in the request. To learn what modifications you can make to your DB instance,
+     * call <a>DescribeValidDBInstanceModifications</a> before you call <a>ModifyDBInstance</a>.
      * </p>
      * 
      * @param modifyDBInstanceRequest

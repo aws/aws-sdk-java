@@ -39,8 +39,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -61,8 +60,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -78,8 +76,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      *        Constraints:
      *        </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -102,8 +99,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -118,8 +114,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      *         Constraints:
      *         </p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -142,8 +137,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * Constraints:
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -159,8 +153,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      *        Constraints:
      *        </p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>

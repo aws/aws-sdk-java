@@ -1348,6 +1348,45 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * pairs.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value
+     * pairs.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a
      * specified environment and forces a restart.
      * </p>
@@ -1863,6 +1902,45 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      */
     java.util.concurrent.Future<UpdateEnvironmentResult> updateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEnvironmentRequest, UpdateEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed:
+     * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+     * </p>
+     * 
+     * @param updateTagsForResourceRequest
+     * @return A Java Future containing the result of the UpdateTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.UpdateTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest updateTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed:
+     * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+     * </p>
+     * <p>
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+     * </p>
+     * 
+     * @param updateTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTagsForResource operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTagsForResourceResult> updateTagsForResourceAsync(UpdateTagsForResourceRequest updateTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTagsForResourceRequest, UpdateTagsForResourceResult> asyncHandler);
 
     /**
      * <p>

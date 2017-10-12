@@ -36,17 +36,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -66,17 +56,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -92,17 +72,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Must match the identifier of an existing DBCluster Read Replica.
      *        </p>
      *        </li>
      *        </ul>
@@ -124,17 +94,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -149,17 +109,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         Must match the identifier of an existing DBCluster Read Replica.
      *         </p>
      *         </li>
      *         </ul>
@@ -181,17 +131,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Must match the identifier of an existing DBCluster Read Replica.
      * </p>
      * </li>
      * </ul>
@@ -207,17 +147,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Must match the identifier of an existing DBCluster Read Replica.
      *        </p>
      *        </li>
      *        </ul>

@@ -37,17 +37,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing CertificateIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -93,17 +83,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing CertificateIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -117,17 +97,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match an existing CertificateIdentifier.
      *        </p>
      *        </li>
      */
@@ -147,17 +117,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing CertificateIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -170,17 +130,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match an existing CertificateIdentifier.
      *         </p>
      *         </li>
      */
@@ -200,17 +150,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match an existing CertificateIdentifier.
      * </p>
      * </li>
      * </ul>
@@ -224,17 +164,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match an existing CertificateIdentifier.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -36,17 +36,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DBParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -117,17 +107,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing DBParameterGroup.
      *        </p>
      *        </li>
      */
@@ -145,17 +125,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DBParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -168,17 +138,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing DBParameterGroup.
      *        </p>
      *        </li>
      */
@@ -197,17 +157,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DBParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -219,17 +169,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 alphanumeric characters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the name of an existing DBParameterGroup.
      *         </p>
      *         </li>
      */
@@ -248,17 +188,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 alphanumeric characters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the name of an existing DBParameterGroup.
      * </p>
      * </li>
      * </ul>
@@ -271,17 +201,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 alphanumeric characters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the name of an existing DBParameterGroup.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

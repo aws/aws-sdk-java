@@ -53,6 +53,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public DeleteBranchResult deleteBranch(DeleteBranchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

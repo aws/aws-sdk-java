@@ -79,7 +79,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -451,7 +451,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -482,7 +482,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -519,7 +519,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -549,7 +549,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         Must contain from 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -586,7 +586,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -617,7 +617,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>

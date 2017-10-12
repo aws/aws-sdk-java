@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CommitMarshaller {
 
+    private static final MarshallingInfo<String> COMMITID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("commitId").build();
     private static final MarshallingInfo<String> TREEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("treeId").build();
     private static final MarshallingInfo<List> PARENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,7 @@ public class CommitMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(commit.getCommitId(), COMMITID_BINDING);
             protocolMarshaller.marshall(commit.getTreeId(), TREEID_BINDING);
             protocolMarshaller.marshall(commit.getParents(), PARENTS_BINDING);
             protocolMarshaller.marshall(commit.getMessage(), MESSAGE_BINDING);

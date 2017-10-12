@@ -143,6 +143,8 @@ public enum RDSActions implements Action {
     DescribeReservedDBInstancesOfferings("rds:DescribeReservedDBInstancesOfferings"),
     /** Action for the DescribeSourceRegions operation. */
     DescribeSourceRegions("rds:DescribeSourceRegions"),
+    /** Action for the DescribeValidDBInstanceModifications operation. */
+    DescribeValidDBInstanceModifications("rds:DescribeValidDBInstanceModifications"),
     /** Action for the DownloadDBLogFilePortion operation. */
     DownloadDBLogFilePortion("rds:DownloadDBLogFilePortion"),
     /** Action for the FailoverDBCluster operation. */

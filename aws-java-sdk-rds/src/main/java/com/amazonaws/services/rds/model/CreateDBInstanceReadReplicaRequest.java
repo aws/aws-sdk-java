@@ -188,6 +188,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
+     * If supplied, must match the name of an existing DBSubnetGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The specified DB subnet group must be in the same AWS Region in which the operation is running.
      * </p>
      * </li>
@@ -209,10 +214,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * </li>
      * </ul>
-     * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
-     * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
@@ -1484,6 +1485,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
+     * If supplied, must match the name of an existing DBSubnetGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The specified DB subnet group must be in the same AWS Region in which the operation is running.
      * </p>
      * </li>
@@ -1506,10 +1512,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * </ul>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
-     * </p>
-     * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
@@ -1524,6 +1526,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        </li>
      *        <li>
@@ -1550,10 +1557,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        </ul>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
-     *        </p>
-     *        <p>
      *        Example: <code>mySubnetgroup</code>
      */
 
@@ -1573,6 +1576,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * </li>
      * <li>
@@ -1599,10 +1607,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * </ul>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
-     * </p>
-     * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
@@ -1616,6 +1620,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If supplied, must match the name of an existing DBSubnetGroup.
      *         </p>
      *         </li>
      *         <li>
@@ -1642,10 +1651,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         </ul>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
-     *         </p>
-     *         <p>
      *         Example: <code>mySubnetgroup</code>
      */
 
@@ -1665,6 +1670,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * </li>
      * <li>
@@ -1691,10 +1701,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * </ul>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
-     * </p>
-     * <p>
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
@@ -1709,6 +1715,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        </li>
      *        <li>
@@ -1734,10 +1745,6 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        </li>
      *        </ul>
-     *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
-     *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
      * @return Returns a reference to this object so that method calls can be chained together.

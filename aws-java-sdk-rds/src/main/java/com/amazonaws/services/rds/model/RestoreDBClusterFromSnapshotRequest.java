@@ -43,7 +43,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -76,17 +76,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Snapshot.
      * </p>
      * </li>
      * </ul>
@@ -127,8 +117,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * The name of the DB subnet group to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -282,7 +271,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -309,7 +298,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -342,7 +331,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -368,7 +357,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         Must contain from 1 to 255 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -401,7 +390,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens
+     * Must contain from 1 to 255 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -428,7 +417,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens
+     *        Must contain from 1 to 255 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -466,17 +455,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Snapshot.
      * </p>
      * </li>
      * </ul>
@@ -493,17 +472,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing Snapshot.
      *        </p>
      *        </li>
      */
@@ -526,17 +495,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Snapshot.
      * </p>
      * </li>
      * </ul>
@@ -552,17 +511,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Must match the identifier of an existing Snapshot.
      *         </p>
      *         </li>
      */
@@ -585,17 +534,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Must match the identifier of an existing Snapshot.
      * </p>
      * </li>
      * </ul>
@@ -612,17 +551,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Must match the identifier of an existing Snapshot.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -824,8 +753,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * The name of the DB subnet group to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -834,8 +762,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * @param dBSubnetGroupName
      *        The name of the DB subnet group to use for the new DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
@@ -850,8 +777,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * The name of the DB subnet group to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -859,8 +785,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * 
      * @return The name of the DB subnet group to use for the new DB cluster.</p>
      *         <p>
-     *         Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *         hyphens. Must not be default.
+     *         Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *         </p>
      *         <p>
      *         Example: <code>mySubnetgroup</code>
@@ -875,8 +800,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * The name of the DB subnet group to use for the new DB cluster.
      * </p>
      * <p>
-     * Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or hyphens.
-     * Must not be default.
+     * Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      * </p>
      * <p>
      * Example: <code>mySubnetgroup</code>
@@ -885,8 +809,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * @param dBSubnetGroupName
      *        The name of the DB subnet group to use for the new DB cluster.</p>
      *        <p>
-     *        Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores, spaces, or
-     *        hyphens. Must not be default.
+     *        Constraints: If supplied, must match the name of an existing DBSubnetGroup.
      *        </p>
      *        <p>
      *        Example: <code>mySubnetgroup</code>
