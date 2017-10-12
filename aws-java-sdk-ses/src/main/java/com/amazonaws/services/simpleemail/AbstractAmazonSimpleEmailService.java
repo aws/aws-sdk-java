@@ -74,6 +74,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public CreateTemplateResult createTemplate(CreateTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +115,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public DeleteReceiptRuleSetResult deleteReceiptRuleSet(DeleteReceiptRuleSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTemplateResult deleteTemplate(DeleteTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,6 +194,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public GetTemplateResult getTemplate(GetTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +229,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public ListTemplatesResult listTemplates(ListTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListVerifiedEmailAddressesResult listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -239,12 +259,22 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public SendBulkTemplatedEmailResult sendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendEmailResult sendEmail(SendEmailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public SendRawEmailResult sendRawEmail(SendRawEmailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendTemplatedEmailResult sendTemplatedEmail(SendTemplatedEmailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -284,6 +314,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public TestRenderTemplateResult testRenderTemplate(TestRenderTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -295,6 +330,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public UpdateReceiptRuleResult updateReceiptRule(UpdateReceiptRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTemplateResult updateTemplate(UpdateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

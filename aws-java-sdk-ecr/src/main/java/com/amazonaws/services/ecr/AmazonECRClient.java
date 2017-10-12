@@ -49,11 +49,10 @@ import com.amazonaws.services.ecr.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar
+ * Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or
- * Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage
- * images.
+ * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
+ * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
  * </p>
  */
 @ThreadSafe
@@ -85,11 +84,17 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
                                     com.amazonaws.services.ecr.model.InvalidParameterException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
                                     com.amazonaws.services.ecr.model.ServerException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withModeledClass(
                                     com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class))
@@ -114,6 +119,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withModeledClass(
                                     com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewInProgressException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class))
@@ -495,8 +503,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
-     * Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has
-     * completed. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
+     * Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and
+     * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
      * <note>
@@ -616,6 +624,64 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRepositoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRepositoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified lifecycle policy.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @sample AmazonECR.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLifecyclePolicyResult executeDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLifecyclePolicyRequest> request = null;
+        Response<DeleteLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -992,6 +1058,122 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
+     * Retrieves the specified lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @sample AmazonECR.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetLifecyclePolicyResult executeGetLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLifecyclePolicyRequest> request = null;
+        Response<GetLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the results of the specified lifecycle policy preview request.
+     * </p>
+     * 
+     * @param getLifecyclePolicyPreviewRequest
+     * @return Result of the GetLifecyclePolicyPreview operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyPreviewNotFoundException
+     *         There is no dry run for this repository.
+     * @sample AmazonECR.GetLifecyclePolicyPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetLifecyclePolicyPreviewResult getLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLifecyclePolicyPreview(request);
+    }
+
+    @SdkInternalApi
+    final GetLifecyclePolicyPreviewResult executeGetLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest getLifecyclePolicyPreviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLifecyclePolicyPreviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLifecyclePolicyPreviewRequest> request = null;
+        Response<GetLifecyclePolicyPreviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLifecyclePolicyPreviewRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLifecyclePolicyPreviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLifecyclePolicyPreviewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the repository policy for a specified repository.
      * </p>
      * 
@@ -1190,7 +1372,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @throws ImageAlreadyExistsException
-     *         The specified image has already been pushed, and there are no changes to the manifest or image tag since
+     *         The specified image has already been pushed, and there were no changes to the manifest or image tag after
      *         the last push.
      * @throws LayersNotFoundException
      *         The specified layers could not be found, or the specified layer is not valid for this repository.
@@ -1230,6 +1412,61 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
             HttpResponseHandler<AmazonWebServiceResponse<PutImageResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a lifecycle policy.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @return Result of the PutLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @sample AmazonECR.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutLifecyclePolicyResult executePutLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutLifecyclePolicyRequest> request = null;
+        Response<PutLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1285,6 +1522,68 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
             HttpResponseHandler<AmazonWebServiceResponse<SetRepositoryPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetRepositoryPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a preview of the specified lifecycle policy. This allows you to see the results before creating the
+     * lifecycle policy.
+     * </p>
+     * 
+     * @param startLifecyclePolicyPreviewRequest
+     * @return Result of the StartLifecyclePolicyPreview operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws LifecyclePolicyPreviewInProgressException
+     *         The previous lifecycle policy preview request has not completed. Please try again later.
+     * @sample AmazonECR.StartLifecyclePolicyPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartLifecyclePolicyPreviewResult startLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartLifecyclePolicyPreview(request);
+    }
+
+    @SdkInternalApi
+    final StartLifecyclePolicyPreviewResult executeStartLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest startLifecyclePolicyPreviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startLifecyclePolicyPreviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartLifecyclePolicyPreviewRequest> request = null;
+        Response<StartLifecyclePolicyPreviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartLifecyclePolicyPreviewRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startLifecyclePolicyPreviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartLifecyclePolicyPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartLifecyclePolicyPreviewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

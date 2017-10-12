@@ -21,9 +21,9 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to
- * publish email sending events. For information about using configuration sets, see the <i> <a
+ * publish email sending events. For information about using configuration sets, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.</i>
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/KinesisFirehoseDestination" target="_top">AWS

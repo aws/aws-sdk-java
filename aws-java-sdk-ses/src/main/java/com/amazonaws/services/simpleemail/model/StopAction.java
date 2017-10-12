@@ -21,9 +21,9 @@ import javax.annotation.Generated;
  * publishes a notification to Amazon Simple Notification Service (Amazon SNS).
  * </p>
  * <p>
- * For information about setting a stop action in a receipt rule, see the <i> <a
+ * For information about setting a stop action in a receipt rule, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html">Amazon SES Developer
- * Guide</a>.</i>
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/StopAction" target="_top">AWS API

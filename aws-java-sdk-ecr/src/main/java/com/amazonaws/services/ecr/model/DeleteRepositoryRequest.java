@@ -40,7 +40,7 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     private String repositoryName;
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      */
     private Boolean force;
@@ -133,11 +133,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
      * @param force
-     *        Force the deletion of the repository if it contains images.
+     *        If a repository contains images, forces the deletion.
      */
 
     public void setForce(Boolean force) {
@@ -146,10 +146,10 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
-     * @return Force the deletion of the repository if it contains images.
+     * @return If a repository contains images, forces the deletion.
      */
 
     public Boolean getForce() {
@@ -158,11 +158,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
      * @param force
-     *        Force the deletion of the repository if it contains images.
+     *        If a repository contains images, forces the deletion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +173,10 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Force the deletion of the repository if it contains images.
+     * If a repository contains images, forces the deletion.
      * </p>
      * 
-     * @return Force the deletion of the repository if it contains images.
+     * @return If a repository contains images, forces the deletion.
      */
 
     public Boolean isForce() {

@@ -31,11 +31,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar
+ * Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or
- * Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage
- * images.
+ * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
+ * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
  * </p>
  */
 @ThreadSafe
@@ -413,6 +412,39 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(final DeleteLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+        final DeleteLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLifecyclePolicyResult>() {
+            @Override
+            public DeleteLifecyclePolicyResult call() throws Exception {
+                DeleteLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeDeleteLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest request) {
 
         return deleteRepositoryAsync(request, null);
@@ -611,6 +643,72 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request) {
+
+        return getLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(final GetLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+        final GetLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecyclePolicyResult>() {
+            @Override
+            public GetLifecyclePolicyResult call() throws Exception {
+                GetLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeGetLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyPreviewResult> getLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request) {
+
+        return getLifecyclePolicyPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyPreviewResult> getLifecyclePolicyPreviewAsync(final GetLifecyclePolicyPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyPreviewRequest, GetLifecyclePolicyPreviewResult> asyncHandler) {
+        final GetLifecyclePolicyPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecyclePolicyPreviewResult>() {
+            @Override
+            public GetLifecyclePolicyPreviewResult call() throws Exception {
+                GetLifecyclePolicyPreviewResult result = null;
+
+                try {
+                    result = executeGetLifecyclePolicyPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRepositoryPolicyResult> getRepositoryPolicyAsync(GetRepositoryPolicyRequest request) {
 
         return getRepositoryPolicyAsync(request, null);
@@ -743,6 +841,39 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     }
 
     @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest request) {
+
+        return putLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(final PutLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler) {
+        final PutLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLifecyclePolicyResult>() {
+            @Override
+            public PutLifecyclePolicyResult call() throws Exception {
+                PutLifecyclePolicyResult result = null;
+
+                try {
+                    result = executePutLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(SetRepositoryPolicyRequest request) {
 
         return setRepositoryPolicyAsync(request, null);
@@ -760,6 +891,39 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
 
                 try {
                     result = executeSetRepositoryPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLifecyclePolicyPreviewResult> startLifecyclePolicyPreviewAsync(StartLifecyclePolicyPreviewRequest request) {
+
+        return startLifecyclePolicyPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLifecyclePolicyPreviewResult> startLifecyclePolicyPreviewAsync(final StartLifecyclePolicyPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartLifecyclePolicyPreviewRequest, StartLifecyclePolicyPreviewResult> asyncHandler) {
+        final StartLifecyclePolicyPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartLifecyclePolicyPreviewResult>() {
+            @Override
+            public StartLifecyclePolicyPreviewResult call() throws Exception {
+                StartLifecyclePolicyPreviewResult result = null;
+
+                try {
+                    result = executeStartLifecyclePolicyPreview(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

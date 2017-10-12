@@ -52,14 +52,14 @@ import com.amazonaws.services.simpleemail.model.transform.*;
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
  * This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple Email Service</a> (Amazon SES).
- * This documentation is intended to be used in conjunction with the <i> <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+ * This documentation is intended to be used in conjunction with the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * <note>
  * <p>
  * For a list of Amazon SES endpoints to use in service requests, see <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <i> <a
- * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions and Amazon SES</a> in the <a
+ * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * </note>
  */
@@ -258,27 +258,31 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     private void init() {
         exceptionUnmarshallers.add(new InvalidFirehoseDestinationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ConfigurationSetDoesNotExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidTrackingOptionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3ConfigurationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSNSDestinationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TrackingOptionsDoesNotExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new EventDestinationAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRenderingParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MessageRejectedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new RuleDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCloudWatchDestinationExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidConfigurationSetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RuleSetDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnsTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventDestinationDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLambdaFunctionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TemplateDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MissingRenderingAttributeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CannotDeleteExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrackingOptionsAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConfigurationSetAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTemplateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MailFromDomainNotVerifiedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConfigurationSetDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTrackingOptionsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TrackingOptionsDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EventDestinationAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RuleDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidConfigurationSetExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.simpleemail.model.AmazonSimpleEmailServiceException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -297,9 +301,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * receipt rule set and are completely independent of the source rule set.
      * </p>
      * <p>
-     * For information about setting up rule sets, see the <i> <a
+     * For information about setting up rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -366,8 +370,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * Configuration sets enable you to publish email sending events. For information about using configuration sets,
-     * see the <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
-     * SES Developer Guide</a>.</i>
+     * see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -440,9 +444,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * An event destination is the AWS service to which Amazon SES publishes the email sending events associated with a
-     * configuration set. For information about using configuration sets, see the <i> <a
+     * configuration set. For information about using configuration sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -520,11 +524,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
-     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
-     * SES-operated domain. For information about using configuration sets, see <a
+     * SES. You can configure a subdomain of your own to handle these events. For information about using configuration
+     * sets, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * Custom Domains to Handle Open and Click Tracking</a> in the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param createConfigurationSetTrackingOptionsRequest
@@ -596,9 +600,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Creates a new IP address filter.
      * </p>
      * <p>
-     * For information about setting up IP address filters, see the <i> <a
+     * For information about setting up IP address filters, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -662,9 +666,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Creates a receipt rule.
      * </p>
      * <p>
-     * For information about setting up receipt rules, see the <i> <a
+     * For information about setting up receipt rules, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -748,9 +752,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Creates an empty receipt rule set.
      * </p>
      * <p>
-     * For information about setting up receipt rule sets, see the <i> <a
+     * For information about setting up receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -811,10 +815,75 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Creates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createTemplateRequest
+     *        Represents a request to create an email template. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the CreateTemplate operation returned by the service.
+     * @throws AlreadyExistsException
+     *         Indicates that a resource could not be created because of a naming conflict.
+     * @throws InvalidTemplateException
+     *         Indicates that a template could not be created because it contained invalid JSON.
+     * @throws LimitExceededException
+     *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
+     *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
+     *         Developer Guide</a>.
+     * @sample AmazonSimpleEmailService.CreateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateTemplateResult createTemplate(CreateTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateTemplateResult executeCreateTemplate(CreateTemplateRequest createTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTemplateRequest> request = null;
+        Response<CreateTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTemplateRequestMarshaller().marshall(super.beforeMarshalling(createTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTemplateResult> responseHandler = new StaxResponseHandler<CreateTemplateResult>(
+                    new CreateTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a configuration set. Configuration sets enable you to publish email sending events. For information about
-     * using configuration sets, see the <i> <a
+     * using configuration sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -873,9 +942,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * <p>
      * Deletes a configuration set event destination. Configuration set event destinations are associated with
      * configuration sets, which enable you to publish email sending events. For information about using configuration
-     * sets, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+     * SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -941,11 +1009,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
-     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
-     * SES-operated domain. For information about using configuration sets, see <a
+     * SES. You can configure a subdomain of your own to handle these events. For information about using configuration
+     * sets, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * Custom Domains to Handle Open and Click Tracking</a> in the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
      * </p>
      * <note>
      * <p>
@@ -1068,9 +1136,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <i> <a
+     * identities. For information about using sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1128,9 +1196,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Deletes the specified IP address filter.
      * </p>
      * <p>
-     * For information about managing IP address filters, see the <i> <a
+     * For information about managing IP address filters, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1188,9 +1256,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Deletes the specified receipt rule.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <i> <a
+     * For information about managing receipt rules, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.</i>
+     * SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1255,9 +1323,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <i> <a
+     * For information about managing receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.</i>
+     * >Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1302,6 +1370,60 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleSetResult>(
                     new DeleteReceiptRuleSetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an email template.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteTemplateRequest
+     *        Represents a request to delete an email template. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DeleteTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailService.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteTemplateResult deleteTemplate(DeleteTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTemplateResult executeDeleteTemplate(DeleteTemplateRequest deleteTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTemplateRequest> request = null;
+        Response<DeleteTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTemplateResult> responseHandler = new StaxResponseHandler<DeleteTemplateResult>(
+                    new DeleteTemplateResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1367,9 +1489,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Returns the metadata and receipt rules for the receipt rule set that is currently active.
      * </p>
      * <p>
-     * For information about setting up receipt rule sets, see the <i> <a
+     * For information about setting up receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rule-set.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1425,8 +1547,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Returns the details of the specified configuration set. For information about using configuration sets, see the
-     * <i> <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1486,9 +1608,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Returns the details of the specified receipt rule.
      * </p>
      * <p>
-     * For information about setting up receipt rules, see the <i> <a
+     * For information about setting up receipt rules, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1550,9 +1672,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Returns the details of the specified receipt rule set.
      * </p>
      * <p>
-     * For information about managing receipt rule sets, see the <i> <a
+     * For information about managing receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.</i>
+     * >Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1640,9 +1762,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * at a time.
      * </p>
      * <p>
-     * For more information about creating DNS records using DKIM tokens, go to the <i> <a
+     * For more information about creating DNS records using DKIM tokens, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
@@ -1760,9 +1882,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * identities at a time.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * For more information about using notifications with Amazon SES, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param getIdentityNotificationAttributesRequest
@@ -1826,9 +1947,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <i> <a
+     * identities. For information about using sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2070,14 +2191,67 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Displays the template object (which includes the Subject line, HTML part and text part) for the template you
+     * specify.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getTemplateRequest
+     * @return Result of the GetTemplate operation returned by the service.
+     * @throws TemplateDoesNotExistException
+     *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @sample AmazonSimpleEmailService.GetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetTemplateResult getTemplate(GetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetTemplateResult executeGetTemplate(GetTemplateRequest getTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTemplateRequest> request = null;
+        Response<GetTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTemplateRequestMarshaller().marshall(super.beforeMarshalling(getTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetTemplateResult> responseHandler = new StaxResponseHandler<GetTemplateResult>(new GetTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides a list of the configuration sets associated with your Amazon SES account. For information about using
      * configuration sets, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
-     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
+     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * <p>
-     * You can execute this operation no more than once per second. This operation will return up to 50 configuration
-     * sets each time it is run. If your Amazon SES account has more than 50 configuration sets, this operation will
+     * You can execute this operation no more than once per second. This operation will return up to 1,000 configuration
+     * sets each time it is run. If your Amazon SES account has more than 1,000 configuration sets, this operation will
      * also return a NextToken element. You can then execute the <code>ListConfigurationSets</code> operation again,
      * passing the <code>NextToken</code> parameter and the value of the NextToken element to retrieve additional
      * results.
@@ -2202,9 +2376,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <i> <a
+     * identities. For information about using sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2263,9 +2437,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Lists the IP address filters associated with your AWS account.
      * </p>
      * <p>
-     * For information about managing IP address filters, see the <i> <a
+     * For information about managing IP address filters, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon SES
-     * Developer Guide</a>.</i>
+     * Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2325,9 +2499,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * <code>ListReceiptRuleSets</code> to retrieve the additional entries.
      * </p>
      * <p>
-     * For information about managing receipt rule sets, see the <i> <a
+     * For information about managing receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.</i>
+     * >Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2370,6 +2544,56 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListReceiptRuleSetsResult> responseHandler = new StaxResponseHandler<ListReceiptRuleSetsResult>(
                     new ListReceiptRuleSetsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the email templates present in your Amazon SES account.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listTemplatesRequest
+     * @return Result of the ListTemplates operation returned by the service.
+     * @sample AmazonSimpleEmailService.ListTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTemplatesResult listTemplates(ListTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListTemplatesResult executeListTemplates(ListTemplatesRequest listTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTemplatesRequest> request = null;
+        Response<ListTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTemplatesRequestMarshaller().marshall(super.beforeMarshalling(listTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListTemplatesResult> responseHandler = new StaxResponseHandler<ListTemplatesResult>(new ListTemplatesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2445,9 +2669,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
-     * identities. For information about using sending authorization, see the <i> <a
+     * identities. For information about using sending authorization, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2515,9 +2739,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <i> <a
+     * For information about managing receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.</i>
+     * >Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2585,9 +2809,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * </note>
      * <p>
-     * For information about receiving email through Amazon SES, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * For information about receiving email through Amazon SES, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2641,6 +2864,109 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Composes an email message to multiple destinations. The message body is created using an email template.
+     * </p>
+     * <p>
+     * In order to send email using the <code>SendBulkTemplatedEmail</code> operation, your call to the API must meet
+     * the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The call must refer to an existing email template. You can create email templates using the <a>CreateTemplate</a>
+     * operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The message must be sent from a verified email address or domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
+     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total size of the message, including attachments, must be less than 10 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each <code>Destination</code> parameter must include at least one recipient email address. The recipient address
+     * can be a To: address, a CC: address, or a BCC: address. If a recipient email address is invalid (that is, it is
+     * not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even
+     * if the message contains other recipients that are valid.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sendBulkTemplatedEmailRequest
+     *        Represents a request to send a templated email to multiple destinations using Amazon SES. For more
+     *        information, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the SendBulkTemplatedEmail operation returned by the service.
+     * @throws MessageRejectedException
+     *         Indicates that the action failed, and the message could not be sent. Check the error stack for more
+     *         information about what caused the error.
+     * @throws MailFromDomainNotVerifiedException
+     *         Indicates that the message could not be sent because Amazon SES could not read the MX record required to
+     *         use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings
+     *         for an identity, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
+     *         Guide</a>.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws TemplateDoesNotExistException
+     *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @sample AmazonSimpleEmailService.SendBulkTemplatedEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public SendBulkTemplatedEmailResult sendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendBulkTemplatedEmail(request);
+    }
+
+    @SdkInternalApi
+    final SendBulkTemplatedEmailResult executeSendBulkTemplatedEmail(SendBulkTemplatedEmailRequest sendBulkTemplatedEmailRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendBulkTemplatedEmailRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendBulkTemplatedEmailRequest> request = null;
+        Response<SendBulkTemplatedEmailResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendBulkTemplatedEmailRequestMarshaller().marshall(super.beforeMarshalling(sendBulkTemplatedEmailRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SendBulkTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendBulkTemplatedEmailResult>(
+                    new SendBulkTemplatedEmailResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Composes an email message and immediately queues it for sending. In order to send email using the
      * <code>SendEmail</code> operation, your message must meet the following requirements:
      * </p>
@@ -2656,7 +2982,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
      * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
-     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -2686,7 +3012,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
      * quota</i>). For more information about sending quotas in Amazon SES, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
-     * Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </important>
      * 
@@ -2768,7 +3094,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
      * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
-     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -2798,7 +3124,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
      * quota</i>). For more information about sending quotas in Amazon SES, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
-     * Sending Limits</a> in the <i>Amazon SES Developer Guide</i>.
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </important>
      * <p>
@@ -2848,7 +3174,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * specify the <code>SourceIdentityArn</code> parameter, Amazon SES will set the From and Return Path addresses to
      * the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see
      * the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
-     * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide</i>.
+     * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -2911,6 +3237,115 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Composes an email message using an email template and immediately queues it for sending.
+     * </p>
+     * <p>
+     * In order to send email using the <code>SendTemplatedEmail</code> operation, your call to the API must meet the
+     * following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The call must refer to an existing email template. You can create email templates using the <a>CreateTemplate</a>
+     * operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The message must be sent from a verified email address or domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
+     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total size of the message, including attachments, must be less than 10 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calls to the <code>SendTemplatedEmail</code> operation may only include one <code>Destination</code> parameter. A
+     * destination is a set of recipients who will receive the same version of the email. The <code>Destination</code>
+     * parameter can include up to 50 recipients, across the To:, CC: and BCC: fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Destination</code> parameter must include at least one recipient email address. The recipient address
+     * can be a To: address, a CC: address, or a BCC: address. If a recipient email address is invalid (that is, it is
+     * not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even
+     * if the message contains other recipients that are valid.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sendTemplatedEmailRequest
+     *        Represents a request to send a templated email using Amazon SES. For more information, see the <a
+     *        href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the SendTemplatedEmail operation returned by the service.
+     * @throws MessageRejectedException
+     *         Indicates that the action failed, and the message could not be sent. Check the error stack for more
+     *         information about what caused the error.
+     * @throws MailFromDomainNotVerifiedException
+     *         Indicates that the message could not be sent because Amazon SES could not read the MX record required to
+     *         use the specified MAIL FROM domain. For information about editing the custom MAIL FROM domain settings
+     *         for an identity, see the <a
+     *         href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html">Amazon SES Developer
+     *         Guide</a>.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @throws TemplateDoesNotExistException
+     *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @sample AmazonSimpleEmailService.SendTemplatedEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SendTemplatedEmailResult sendTemplatedEmail(SendTemplatedEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendTemplatedEmail(request);
+    }
+
+    @SdkInternalApi
+    final SendTemplatedEmailResult executeSendTemplatedEmail(SendTemplatedEmailRequest sendTemplatedEmailRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendTemplatedEmailRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendTemplatedEmailRequest> request = null;
+        Response<SendTemplatedEmailResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendTemplatedEmailRequestMarshaller().marshall(super.beforeMarshalling(sendTemplatedEmailRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SendTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendTemplatedEmailResult>(
+                    new SendTemplatedEmailResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets the specified receipt rule set as the active receipt rule set.
      * </p>
      * <note>
@@ -2920,9 +3355,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * </note>
      * <p>
-     * For information about managing receipt rule sets, see the <i> <a
+     * For information about managing receipt rule sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
-     * >Amazon SES Developer Guide</a>.</i>
+     * >Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3004,8 +3439,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about Easy DKIM signing, go to the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</i>
+     * For more information about Easy DKIM signing, go to the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
@@ -3070,9 +3505,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * For more information about using notifications with Amazon SES, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param setIdentityFeedbackForwardingEnabledRequest
@@ -3133,9 +3567,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about using notifications with Amazon SES, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * For more information about using notifications with Amazon SES, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param setIdentityHeadersInNotificationsEnabledRequest
@@ -3195,9 +3628,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * <p>
      * To send emails using the specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
      * settings. If you want your emails to pass Sender Policy Framework (SPF) checks, you must also add or update an
-     * SPF record. For more information, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * SPF record. For more information, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon SES Developer Guide</a>.
      * </p>
      * </important>
      * <p>
@@ -3266,9 +3698,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * You can execute this operation no more than once per second.
      * </p>
      * <p>
-     * For more information about feedback notification, see the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * For more information about feedback notification, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
@@ -3324,9 +3755,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Sets the position of the specified receipt rule in the receipt rule set.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <i> <a
+     * For information about managing receipt rules, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.</i>
+     * SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3385,11 +3816,71 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param testRenderTemplateRequest
+     * @return Result of the TestRenderTemplate operation returned by the service.
+     * @throws TemplateDoesNotExistException
+     *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws InvalidRenderingParameterException
+     *         Indicates that one or more of the replacement values you provided is invalid. This error may occur when
+     *         the TemplateData object contains invalid JSON.
+     * @throws MissingRenderingAttributeException
+     *         Indicates that one or more of the replacement values for the specified template was not specified. Ensure
+     *         that the TemplateData object contains references to all of the replacement tags in the specified
+     *         template.
+     * @sample AmazonSimpleEmailService.TestRenderTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/TestRenderTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TestRenderTemplateResult testRenderTemplate(TestRenderTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestRenderTemplate(request);
+    }
+
+    @SdkInternalApi
+    final TestRenderTemplateResult executeTestRenderTemplate(TestRenderTemplateRequest testRenderTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testRenderTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestRenderTemplateRequest> request = null;
+        Response<TestRenderTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestRenderTemplateRequestMarshaller().marshall(super.beforeMarshalling(testRenderTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TestRenderTemplateResult> responseHandler = new StaxResponseHandler<TestRenderTemplateResult>(
+                    new TestRenderTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the event destination of a configuration set. Event destinations are associated with configuration sets,
      * which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
      * Notification Service (Amazon SNS). For information about using configuration sets, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
-     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide</i>.
+     * SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * <note>
      * <p>
@@ -3467,11 +3958,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
-     * SES. You can configure a subdomain of your own to handle these events by redirecting them to the Amazon
-     * SES-operated domain. For information about using configuration sets, see <a
+     * SES. You can configure a subdomain of your own to handle these events. For information about using configuration
+     * sets, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-     * Custom Domains to Handle Open and Click Tracking</a> in the <i> <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.</i>
+     * Custom Domains to Handle Open and Click Tracking</a> in the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param updateConfigurationSetTrackingOptionsRequest
@@ -3543,9 +4034,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Updates a receipt rule.
      * </p>
      * <p>
-     * For information about managing receipt rules, see the <i> <a
+     * For information about managing receipt rules, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rules.html">Amazon
-     * SES Developer Guide</a>.</i>
+     * SES Developer Guide</a>.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3624,6 +4115,64 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Updates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateTemplateRequest
+     * @return Result of the UpdateTemplate operation returned by the service.
+     * @throws TemplateDoesNotExistException
+     *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws InvalidTemplateException
+     *         Indicates that a template could not be created because it contained invalid JSON.
+     * @sample AmazonSimpleEmailService.UpdateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateTemplateResult updateTemplate(UpdateTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTemplateResult executeUpdateTemplate(UpdateTemplateRequest updateTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTemplateRequest> request = null;
+        Response<UpdateTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTemplateRequestMarshaller().marshall(super.beforeMarshalling(updateTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateTemplateResult> responseHandler = new StaxResponseHandler<UpdateTemplateResult>(
+                    new UpdateTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's
      * identity. Using these tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by
      * Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection
@@ -3637,9 +4186,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * To enable or disable Easy DKIM signing for a domain, use the <code>SetIdentityDkimEnabled</code> operation.
      * </p>
      * <p>
-     * For more information about creating DNS records using DKIM tokens, go to the <i> <a
+     * For more information about creating DNS records using DKIM tokens, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer
-     * Guide</a>.</i>
+     * Guide</a>.
      * </p>
      * 
      * @param verifyDomainDkimRequest
@@ -3693,7 +4242,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * Adds a domain to the list of identities for your Amazon SES account and attempts to verify it. For more
      * information about verifying domains, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
-     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide</i>.
+     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

@@ -63,6 +63,11 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +98,16 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLifecyclePolicyPreviewResult getLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRepositoryPolicyResult getRepositoryPolicy(GetRepositoryPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -113,7 +128,17 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartLifecyclePolicyPreviewResult startLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

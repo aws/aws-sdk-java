@@ -27,14 +27,14 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
-     * specify a registry, the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to list images. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The repository whose image IDs are to be listed.
+     * The repository with image IDs to be listed.
      * </p>
      */
     private String repositoryName;
@@ -73,13 +73,13 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
-     * specify a registry, the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to list images. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the repository to list images in. If you do
-     *        not specify a registry, the default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository in which to list images. If
+     *        you do not specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -88,12 +88,12 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
-     * specify a registry, the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to list images. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the repository to list images in. If you do
-     *         not specify a registry, the default registry is assumed.
+     * @return The AWS account ID associated with the registry that contains the repository in which to list images. If
+     *         you do not specify a registry, the default registry is assumed.
      */
 
     public String getRegistryId() {
@@ -102,13 +102,13 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository to list images in. If you do not
-     * specify a registry, the default registry is assumed.
+     * The AWS account ID associated with the registry that contains the repository in which to list images. If you do
+     * not specify a registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the repository to list images in. If you do
-     *        not specify a registry, the default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository in which to list images. If
+     *        you do not specify a registry, the default registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The repository whose image IDs are to be listed.
+     * The repository with image IDs to be listed.
      * </p>
      * 
      * @param repositoryName
-     *        The repository whose image IDs are to be listed.
+     *        The repository with image IDs to be listed.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -132,10 +132,10 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The repository whose image IDs are to be listed.
+     * The repository with image IDs to be listed.
      * </p>
      * 
-     * @return The repository whose image IDs are to be listed.
+     * @return The repository with image IDs to be listed.
      */
 
     public String getRepositoryName() {
@@ -144,11 +144,11 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The repository whose image IDs are to be listed.
+     * The repository with image IDs to be listed.
      * </p>
      * 
      * @param repositoryName
-     *        The repository whose image IDs are to be listed.
+     *        The repository with image IDs to be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

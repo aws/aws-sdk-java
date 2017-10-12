@@ -31,9 +31,8 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      */
     private String repositoryArn;
@@ -51,13 +50,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     private String repositoryName;
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      */
     private String repositoryUri;
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -65,15 +64,14 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the
-     *        repository owner, the repository namespace, and then the repository name. For example,
+     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
+     *        repository owner, repository namespace, and repository name. For example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
 
@@ -84,14 +82,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the
-     *         repository owner, the repository namespace, and then the repository name. For example,
+     *         <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
+     *         repository owner, repository namespace, and repository name. For example,
      *         <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
 
@@ -102,15 +99,14 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the <code>arn:aws:ecr</code>
-     * namespace, followed by the region of the repository, the AWS account ID of the repository owner, the repository
-     * namespace, and then the repository name. For example,
-     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.
+     * namespace, followed by the region of the repository, AWS account ID of the repository owner, repository
+     * namespace, and repository name. For example, <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * </p>
      * 
      * @param repositoryArn
      *        The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, the AWS account ID of the
-     *        repository owner, the repository namespace, and then the repository name. For example,
+     *        <code>arn:aws:ecr</code> namespace, followed by the region of the repository, AWS account ID of the
+     *        repository owner, repository namespace, and repository name. For example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -202,11 +198,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      * 
      * @param repositoryUri
-     *        The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code>
+     *        The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
      *        operations.
      */
 
@@ -216,10 +212,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      * 
-     * @return The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code>
+     * @return The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
      *         operations.
      */
 
@@ -229,11 +225,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
      * </p>
      * 
      * @param repositoryUri
-     *        The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code>
+     *        The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
      *        operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -245,11 +241,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in JavaScript date/time format, when the repository was created.
+     *        The date and time, in JavaScript date format, when the repository was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -258,10 +254,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      * 
-     * @return The date and time, in JavaScript date/time format, when the repository was created.
+     * @return The date and time, in JavaScript date format, when the repository was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -270,11 +266,11 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in JavaScript date/time format, when the repository was created.
+     * The date and time, in JavaScript date format, when the repository was created.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in JavaScript date/time format, when the repository was created.
+     *        The date and time, in JavaScript date format, when the repository was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

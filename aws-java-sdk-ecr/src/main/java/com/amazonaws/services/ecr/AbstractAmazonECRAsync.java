@@ -92,6 +92,19 @@ public class AbstractAmazonECRAsync extends AbstractAmazonECR implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest request) {
 
         return deleteRepositoryAsync(request, null);
@@ -170,6 +183,32 @@ public class AbstractAmazonECRAsync extends AbstractAmazonECR implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request) {
+
+        return getLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyPreviewResult> getLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request) {
+
+        return getLifecyclePolicyPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyPreviewResult> getLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyPreviewRequest, GetLifecyclePolicyPreviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRepositoryPolicyResult> getRepositoryPolicyAsync(GetRepositoryPolicyRequest request) {
 
         return getRepositoryPolicyAsync(request, null);
@@ -222,6 +261,19 @@ public class AbstractAmazonECRAsync extends AbstractAmazonECR implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest request) {
+
+        return putLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(SetRepositoryPolicyRequest request) {
 
         return setRepositoryPolicyAsync(request, null);
@@ -230,6 +282,19 @@ public class AbstractAmazonECRAsync extends AbstractAmazonECR implements AmazonE
     @Override
     public java.util.concurrent.Future<SetRepositoryPolicyResult> setRepositoryPolicyAsync(SetRepositoryPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<SetRepositoryPolicyRequest, SetRepositoryPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLifecyclePolicyPreviewResult> startLifecyclePolicyPreviewAsync(StartLifecyclePolicyPreviewRequest request) {
+
+        return startLifecyclePolicyPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLifecyclePolicyPreviewResult> startLifecyclePolicyPreviewAsync(StartLifecyclePolicyPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartLifecyclePolicyPreviewRequest, StartLifecyclePolicyPreviewResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

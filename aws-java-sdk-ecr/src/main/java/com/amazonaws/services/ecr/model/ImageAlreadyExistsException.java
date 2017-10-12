@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified image has already been pushed, and there are no changes to the manifest or image tag since the last
+ * The specified image has already been pushed, and there were no changes to the manifest or image tag after the last
  * push.
  * </p>
  */

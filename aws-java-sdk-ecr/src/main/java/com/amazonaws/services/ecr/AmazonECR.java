@@ -27,11 +27,10 @@ import com.amazonaws.services.ecr.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar
+ * Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
  * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or
- * Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage
- * images.
+ * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
+ * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -174,8 +173,8 @@ public interface AmazonECR {
 
     /**
      * <p>
-     * Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has
-     * completed. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
+     * Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and
+     * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
      * <note>
@@ -234,6 +233,28 @@ public interface AmazonECR {
      *      Documentation</a>
      */
     CreateRepositoryResult createRepository(CreateRepositoryRequest createRepositoryRequest);
+
+    /**
+     * <p>
+     * Deletes the specified lifecycle policy.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @sample AmazonECR.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -388,6 +409,50 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * Retrieves the specified lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @sample AmazonECR.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the results of the specified lifecycle policy preview request.
+     * </p>
+     * 
+     * @param getLifecyclePolicyPreviewRequest
+     * @return Result of the GetLifecyclePolicyPreview operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyPreviewNotFoundException
+     *         There is no dry run for this repository.
+     * @sample AmazonECR.GetLifecyclePolicyPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetLifecyclePolicyPreviewResult getLifecyclePolicyPreview(GetLifecyclePolicyPreviewRequest getLifecyclePolicyPreviewRequest);
+
+    /**
+     * <p>
      * Retrieves the repository policy for a specified repository.
      * </p>
      * 
@@ -481,7 +546,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @throws ImageAlreadyExistsException
-     *         The specified image has already been pushed, and there are no changes to the manifest or image tag since
+     *         The specified image has already been pushed, and there were no changes to the manifest or image tag after
      *         the last push.
      * @throws LayersNotFoundException
      *         The specified layers could not be found, or the specified layer is not valid for this repository.
@@ -495,6 +560,26 @@ public interface AmazonECR {
      *      Documentation</a>
      */
     PutImageResult putImage(PutImageRequest putImageRequest);
+
+    /**
+     * <p>
+     * Creates or updates a lifecycle policy.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @return Result of the PutLifecyclePolicy operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @sample AmazonECR.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -515,6 +600,31 @@ public interface AmazonECR {
      *      Documentation</a>
      */
     SetRepositoryPolicyResult setRepositoryPolicy(SetRepositoryPolicyRequest setRepositoryPolicyRequest);
+
+    /**
+     * <p>
+     * Starts a preview of the specified lifecycle policy. This allows you to see the results before creating the
+     * lifecycle policy.
+     * </p>
+     * 
+     * @param startLifecyclePolicyPreviewRequest
+     * @return Result of the StartLifecyclePolicyPreview operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws LifecyclePolicyNotFoundException
+     *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws LifecyclePolicyPreviewInProgressException
+     *         The previous lifecycle policy preview request has not completed. Please try again later.
+     * @sample AmazonECR.StartLifecyclePolicyPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartLifecyclePolicyPreviewResult startLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest startLifecyclePolicyPreviewRequest);
 
     /**
      * <p>
