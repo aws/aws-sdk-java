@@ -63,6 +63,12 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
      * </p>
      */
     private AdvancedOptionsStatus advancedOptions;
+    /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     */
+    private LogPublishingOptionsStatus logPublishingOptions;
 
     /**
      * <p>
@@ -317,6 +323,46 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Log publishing options for the given domain.
+     */
+
+    public void setLogPublishingOptions(LogPublishingOptionsStatus logPublishingOptions) {
+        this.logPublishingOptions = logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     * 
+     * @return Log publishing options for the given domain.
+     */
+
+    public LogPublishingOptionsStatus getLogPublishingOptions() {
+        return this.logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Log publishing options for the given domain.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Log publishing options for the given domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withLogPublishingOptions(LogPublishingOptionsStatus logPublishingOptions) {
+        setLogPublishingOptions(logPublishingOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -338,7 +384,9 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getAdvancedOptions() != null)
-            sb.append("AdvancedOptions: ").append(getAdvancedOptions());
+            sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
+        if (getLogPublishingOptions() != null)
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +425,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
             return false;
+        if (other.getLogPublishingOptions() == null ^ this.getLogPublishingOptions() == null)
+            return false;
+        if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +443,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;
     }
 

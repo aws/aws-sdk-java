@@ -43,6 +43,8 @@ public class CreateElasticsearchDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<Map> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdvancedOptions").build();
+    private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
 
     private static final CreateElasticsearchDomainRequestMarshaller instance = new CreateElasticsearchDomainRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class CreateElasticsearchDomainRequestMarshaller {
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getAccessPolicies(), ACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

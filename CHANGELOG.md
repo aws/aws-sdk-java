@@ -1,3 +1,28 @@
+# __1.11.214__ __2017-10-16__
+## __AWS CloudHSM__
+  - ### Features
+    - Documentation updates for AWS CloudHSM Classic.
+
+## __AWS WAF__
+  - ### Features
+    - This release adds support for regular expressions as match conditions in rules, and support for geographical location by country of request IP address as a match condition in rules.
+
+## __AWS WAF Regional__
+  - ### Features
+    - This release adds support for regular expressions as match conditions in rules, and support for geographical location by country of request IP address as a match condition in rules.
+
+## __Amazon EC2__
+  - ### Features
+    - You can now change the tenancy of your VPC from dedicated to default with a single API operation. For more details refer to the documentation for changing VPC tenancy.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - AWS Elasticsearch adds support for enabling slow log publishing. Using slow log publishing options customers can configure and enable index/query slow log publishing of their domain to preferred AWS Cloudwatch log group.
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Adds waiters for DBSnapshotAvailable and DBSnapshotDeleted.
+
 # __1.11.213__ __2017-10-12__
 ## __AWS CodeCommit__
   - ### Features

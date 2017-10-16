@@ -55,7 +55,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other than HEADER,
- * QUERY_STRING, or URI.
+ * METHOD, QUERY_STRING, URI, or BODY.
  * </p>
  * </li>
  * <li>

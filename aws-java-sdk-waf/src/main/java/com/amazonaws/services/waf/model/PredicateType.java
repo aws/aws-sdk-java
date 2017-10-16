@@ -23,8 +23,10 @@ public enum PredicateType {
     IPMatch("IPMatch"),
     ByteMatch("ByteMatch"),
     SqlInjectionMatch("SqlInjectionMatch"),
+    GeoMatch("GeoMatch"),
     SizeConstraint("SizeConstraint"),
-    XssMatch("XssMatch");
+    XssMatch("XssMatch"),
+    RegexMatch("RegexMatch");
 
     private String value;
 

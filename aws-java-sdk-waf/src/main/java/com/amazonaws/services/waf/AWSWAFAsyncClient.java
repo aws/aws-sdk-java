@@ -282,6 +282,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGeoMatchSetResult> createGeoMatchSetAsync(CreateGeoMatchSetRequest request) {
+
+        return createGeoMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGeoMatchSetResult> createGeoMatchSetAsync(final CreateGeoMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGeoMatchSetRequest, CreateGeoMatchSetResult> asyncHandler) {
+        final CreateGeoMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGeoMatchSetResult>() {
+            @Override
+            public CreateGeoMatchSetResult call() throws Exception {
+                CreateGeoMatchSetResult result = null;
+
+                try {
+                    result = executeCreateGeoMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest request) {
 
         return createIPSetAsync(request, null);
@@ -332,6 +365,72 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeCreateRateBasedRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegexMatchSetResult> createRegexMatchSetAsync(CreateRegexMatchSetRequest request) {
+
+        return createRegexMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegexMatchSetResult> createRegexMatchSetAsync(final CreateRegexMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegexMatchSetRequest, CreateRegexMatchSetResult> asyncHandler) {
+        final CreateRegexMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegexMatchSetResult>() {
+            @Override
+            public CreateRegexMatchSetResult call() throws Exception {
+                CreateRegexMatchSetResult result = null;
+
+                try {
+                    result = executeCreateRegexMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegexPatternSetResult> createRegexPatternSetAsync(CreateRegexPatternSetRequest request) {
+
+        return createRegexPatternSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegexPatternSetResult> createRegexPatternSetAsync(final CreateRegexPatternSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRegexPatternSetRequest, CreateRegexPatternSetResult> asyncHandler) {
+        final CreateRegexPatternSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRegexPatternSetResult>() {
+            @Override
+            public CreateRegexPatternSetResult call() throws Exception {
+                CreateRegexPatternSetResult result = null;
+
+                try {
+                    result = executeCreateRegexPatternSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -546,6 +645,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGeoMatchSetResult> deleteGeoMatchSetAsync(DeleteGeoMatchSetRequest request) {
+
+        return deleteGeoMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGeoMatchSetResult> deleteGeoMatchSetAsync(final DeleteGeoMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGeoMatchSetRequest, DeleteGeoMatchSetResult> asyncHandler) {
+        final DeleteGeoMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGeoMatchSetResult>() {
+            @Override
+            public DeleteGeoMatchSetResult call() throws Exception {
+                DeleteGeoMatchSetResult result = null;
+
+                try {
+                    result = executeDeleteGeoMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest request) {
 
         return deleteIPSetAsync(request, null);
@@ -596,6 +728,72 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeDeleteRateBasedRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegexMatchSetResult> deleteRegexMatchSetAsync(DeleteRegexMatchSetRequest request) {
+
+        return deleteRegexMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegexMatchSetResult> deleteRegexMatchSetAsync(final DeleteRegexMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegexMatchSetRequest, DeleteRegexMatchSetResult> asyncHandler) {
+        final DeleteRegexMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegexMatchSetResult>() {
+            @Override
+            public DeleteRegexMatchSetResult call() throws Exception {
+                DeleteRegexMatchSetResult result = null;
+
+                try {
+                    result = executeDeleteRegexMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegexPatternSetResult> deleteRegexPatternSetAsync(DeleteRegexPatternSetRequest request) {
+
+        return deleteRegexPatternSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegexPatternSetResult> deleteRegexPatternSetAsync(final DeleteRegexPatternSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegexPatternSetRequest, DeleteRegexPatternSetResult> asyncHandler) {
+        final DeleteRegexPatternSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegexPatternSetResult>() {
+            @Override
+            public DeleteRegexPatternSetResult call() throws Exception {
+                DeleteRegexPatternSetResult result = null;
+
+                try {
+                    result = executeDeleteRegexPatternSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -876,6 +1074,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetGeoMatchSetResult> getGeoMatchSetAsync(GetGeoMatchSetRequest request) {
+
+        return getGeoMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGeoMatchSetResult> getGeoMatchSetAsync(final GetGeoMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGeoMatchSetRequest, GetGeoMatchSetResult> asyncHandler) {
+        final GetGeoMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGeoMatchSetResult>() {
+            @Override
+            public GetGeoMatchSetResult call() throws Exception {
+                GetGeoMatchSetResult result = null;
+
+                try {
+                    result = executeGetGeoMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest request) {
 
         return getIPSetAsync(request, null);
@@ -959,6 +1190,72 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeGetRateBasedRuleManagedKeys(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegexMatchSetResult> getRegexMatchSetAsync(GetRegexMatchSetRequest request) {
+
+        return getRegexMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegexMatchSetResult> getRegexMatchSetAsync(final GetRegexMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRegexMatchSetRequest, GetRegexMatchSetResult> asyncHandler) {
+        final GetRegexMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRegexMatchSetResult>() {
+            @Override
+            public GetRegexMatchSetResult call() throws Exception {
+                GetRegexMatchSetResult result = null;
+
+                try {
+                    result = executeGetRegexMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegexPatternSetResult> getRegexPatternSetAsync(GetRegexPatternSetRequest request) {
+
+        return getRegexPatternSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegexPatternSetResult> getRegexPatternSetAsync(final GetRegexPatternSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRegexPatternSetRequest, GetRegexPatternSetResult> asyncHandler) {
+        final GetRegexPatternSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRegexPatternSetResult>() {
+            @Override
+            public GetRegexPatternSetResult call() throws Exception {
+                GetRegexPatternSetResult result = null;
+
+                try {
+                    result = executeGetRegexPatternSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1206,6 +1503,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListGeoMatchSetsResult> listGeoMatchSetsAsync(ListGeoMatchSetsRequest request) {
+
+        return listGeoMatchSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGeoMatchSetsResult> listGeoMatchSetsAsync(final ListGeoMatchSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGeoMatchSetsRequest, ListGeoMatchSetsResult> asyncHandler) {
+        final ListGeoMatchSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGeoMatchSetsResult>() {
+            @Override
+            public ListGeoMatchSetsResult call() throws Exception {
+                ListGeoMatchSetsResult result = null;
+
+                try {
+                    result = executeListGeoMatchSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest request) {
 
         return listIPSetsAsync(request, null);
@@ -1256,6 +1586,72 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeListRateBasedRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegexMatchSetsResult> listRegexMatchSetsAsync(ListRegexMatchSetsRequest request) {
+
+        return listRegexMatchSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegexMatchSetsResult> listRegexMatchSetsAsync(final ListRegexMatchSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRegexMatchSetsRequest, ListRegexMatchSetsResult> asyncHandler) {
+        final ListRegexMatchSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRegexMatchSetsResult>() {
+            @Override
+            public ListRegexMatchSetsResult call() throws Exception {
+                ListRegexMatchSetsResult result = null;
+
+                try {
+                    result = executeListRegexMatchSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegexPatternSetsResult> listRegexPatternSetsAsync(ListRegexPatternSetsRequest request) {
+
+        return listRegexPatternSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegexPatternSetsResult> listRegexPatternSetsAsync(final ListRegexPatternSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRegexPatternSetsRequest, ListRegexPatternSetsResult> asyncHandler) {
+        final ListRegexPatternSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRegexPatternSetsResult>() {
+            @Override
+            public ListRegexPatternSetsResult call() throws Exception {
+                ListRegexPatternSetsResult result = null;
+
+                try {
+                    result = executeListRegexPatternSets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1470,6 +1866,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateGeoMatchSetResult> updateGeoMatchSetAsync(UpdateGeoMatchSetRequest request) {
+
+        return updateGeoMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGeoMatchSetResult> updateGeoMatchSetAsync(final UpdateGeoMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGeoMatchSetRequest, UpdateGeoMatchSetResult> asyncHandler) {
+        final UpdateGeoMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGeoMatchSetResult>() {
+            @Override
+            public UpdateGeoMatchSetResult call() throws Exception {
+                UpdateGeoMatchSetResult result = null;
+
+                try {
+                    result = executeUpdateGeoMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest request) {
 
         return updateIPSetAsync(request, null);
@@ -1520,6 +1949,72 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeUpdateRateBasedRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegexMatchSetResult> updateRegexMatchSetAsync(UpdateRegexMatchSetRequest request) {
+
+        return updateRegexMatchSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegexMatchSetResult> updateRegexMatchSetAsync(final UpdateRegexMatchSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRegexMatchSetRequest, UpdateRegexMatchSetResult> asyncHandler) {
+        final UpdateRegexMatchSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRegexMatchSetResult>() {
+            @Override
+            public UpdateRegexMatchSetResult call() throws Exception {
+                UpdateRegexMatchSetResult result = null;
+
+                try {
+                    result = executeUpdateRegexMatchSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegexPatternSetResult> updateRegexPatternSetAsync(UpdateRegexPatternSetRequest request) {
+
+        return updateRegexPatternSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRegexPatternSetResult> updateRegexPatternSetAsync(final UpdateRegexPatternSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRegexPatternSetRequest, UpdateRegexPatternSetResult> asyncHandler) {
+        final UpdateRegexPatternSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRegexPatternSetResult>() {
+            @Override
+            public UpdateRegexPatternSetResult call() throws Exception {
+                UpdateRegexPatternSetResult result = null;
+
+                try {
+                    result = executeUpdateRegexPatternSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

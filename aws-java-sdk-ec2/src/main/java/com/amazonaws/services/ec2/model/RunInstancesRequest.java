@@ -182,8 +182,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      */
     private String userData;
@@ -1469,8 +1469,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      * 
      * @param userData
@@ -1478,8 +1478,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is
-     *        performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
+     *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      */
 
     public void setUserData(String userData) {
@@ -1492,17 +1492,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      * 
      * @return The user data to make available to the instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *         Instance at Launch</a> (Linux) and <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *         >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is
-     *         performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded
-     *         text.
+     *         >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
+     *         you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      */
 
     public String getUserData() {
@@ -1515,8 +1514,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is performed
-     * for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and
+     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * </p>
      * 
      * @param userData
@@ -1524,8 +1523,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using an AWS SDK or command line tool, base64-encoding is
-     *        performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
+     *        you, and you can load the text from a file. Otherwise, you must provide base64-encoded text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

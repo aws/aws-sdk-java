@@ -60,6 +60,38 @@ public class AmazonRDSWaiters {
     }
 
     /**
+     * Builds a DBSnapshotAvailable waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeDBSnapshotsRequest> dBSnapshotAvailable() {
+
+        return new WaiterBuilder<DescribeDBSnapshotsRequest, DescribeDBSnapshotsResult>()
+                .withSdkFunction(new DescribeDBSnapshotsFunction(client))
+                .withAcceptors(new DBSnapshotAvailable.IsAvailableMatcher(), new DBSnapshotAvailable.IsDeletedMatcher(),
+                        new DBSnapshotAvailable.IsDeletingMatcher(), new DBSnapshotAvailable.IsFailedMatcher(),
+                        new DBSnapshotAvailable.IsIncompatiblerestoreMatcher(), new DBSnapshotAvailable.IsIncompatibleparametersMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a DBSnapshotDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeDBSnapshotsRequest> dBSnapshotDeleted() {
+
+        return new WaiterBuilder<DescribeDBSnapshotsRequest, DescribeDBSnapshotsResult>()
+                .withSdkFunction(new DescribeDBSnapshotsFunction(client))
+                .withAcceptors(new DBSnapshotDeleted.IsDeletedMatcher(), new DBSnapshotDeleted.IsDBSnapshotNotFoundMatcher(),
+                        new DBSnapshotDeleted.IsCreatingMatcher(), new DBSnapshotDeleted.IsModifyingMatcher(), new DBSnapshotDeleted.IsRebootingMatcher(),
+                        new DBSnapshotDeleted.IsResettingmastercredentialsMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a DBInstanceDeleted waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.

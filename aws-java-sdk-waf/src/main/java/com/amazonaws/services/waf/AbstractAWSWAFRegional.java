@@ -48,12 +48,27 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
     }
 
     @Override
+    public CreateGeoMatchSetResult createGeoMatchSet(CreateGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateIPSetResult createIPSet(CreateIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateRateBasedRuleResult createRateBasedRule(CreateRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegexMatchSetResult createRegexMatchSet(CreateRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegexPatternSetResult createRegexPatternSet(CreateRegexPatternSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,12 +103,27 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
     }
 
     @Override
+    public DeleteGeoMatchSetResult deleteGeoMatchSet(DeleteGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteRateBasedRuleResult deleteRateBasedRule(DeleteRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegexMatchSetResult deleteRegexMatchSet(DeleteRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegexPatternSetResult deleteRegexPatternSet(DeleteRegexPatternSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,6 +173,11 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
     }
 
     @Override
+    public GetGeoMatchSetResult getGeoMatchSet(GetGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIPSetResult getIPSet(GetIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +189,16 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
 
     @Override
     public GetRateBasedRuleManagedKeysResult getRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRegexMatchSetResult getRegexMatchSet(GetRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRegexPatternSetResult getRegexPatternSet(GetRegexPatternSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -198,12 +243,27 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
     }
 
     @Override
+    public ListGeoMatchSetsResult listGeoMatchSets(ListGeoMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIPSetsResult listIPSets(ListIPSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListRateBasedRulesResult listRateBasedRules(ListRateBasedRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRegexMatchSetsResult listRegexMatchSets(ListRegexMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRegexPatternSetsResult listRegexPatternSets(ListRegexPatternSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -243,12 +303,27 @@ public class AbstractAWSWAFRegional implements AWSWAFRegional {
     }
 
     @Override
+    public UpdateGeoMatchSetResult updateGeoMatchSet(UpdateGeoMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateRateBasedRuleResult updateRateBasedRule(UpdateRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRegexMatchSetResult updateRegexMatchSet(UpdateRegexMatchSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRegexPatternSetResult updateRegexPatternSet(UpdateRegexPatternSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -4335,8 +4335,9 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Returns details about the values and term of your specified Convertible Reserved Instances. When a target
-     * configuration is specified, it returns information about whether the exchange is valid and can be performed.
+     * Returns a quote and exchange information for exchanging one or more specified Convertible Reserved Instances for
+     * a new Convertible Reserved Instance. If the exchange cannot be performed, the reason is returned in the response.
+     * Use <a>AcceptReservedInstancesExchangeQuote</a> to perform the exchange.
      * </p>
      * 
      * @param getReservedInstancesExchangeQuoteRequest
@@ -4636,8 +4637,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic or EC2-VPC) of
-     * your Standard Reserved Instances. The Reserved Instances to be modified must be identical, except for
-     * Availability Zone, network platform, and instance type.
+     * your Reserved Instances. The Reserved Instances to be modified must be identical, except for Availability Zone,
+     * network platform, and instance type.
      * </p>
      * <p>
      * For more information, see <a
@@ -4869,6 +4870,31 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     ModifyVpcPeeringConnectionOptionsResult modifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest modifyVpcPeeringConnectionOptionsRequest);
+
+    /**
+     * <p>
+     * Modifies the instance tenancy attribute of the specified VPC. You can change the instance tenancy attribute of a
+     * VPC to <code>default</code> only. You cannot change the instance tenancy attribute to <code>dedicated</code>.
+     * </p>
+     * <p>
+     * After you modify the tenancy of the VPC, any new instances that you launch into the VPC have a tenancy of
+     * <code>default</code>, unless you specify otherwise during launch. The tenancy of any existing instances in the
+     * VPC is not affected.
+     * </p>
+     * <p>
+     * For more information about Dedicated Instances, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyVpcTenancyRequest
+     *        Contains the parameters for ModifyVpcTenancy.
+     * @return Result of the ModifyVpcTenancy operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcTenancy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyVpcTenancyResult modifyVpcTenancy(ModifyVpcTenancyRequest modifyVpcTenancyRequest);
 
     /**
      * <p>

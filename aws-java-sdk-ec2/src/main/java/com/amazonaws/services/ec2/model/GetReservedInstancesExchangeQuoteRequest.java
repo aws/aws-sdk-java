@@ -36,8 +36,8 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<String> reservedInstanceIds;
     /**
      * <p>
-     * The configuration requirements of the Convertible Reserved Instances to exchange for your current Convertible
-     * Reserved Instances.
+     * The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved
+     * Instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetConfigurationRequest> targetConfigurations;
@@ -117,12 +117,12 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration requirements of the Convertible Reserved Instances to exchange for your current Convertible
-     * Reserved Instances.
+     * The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved
+     * Instances.
      * </p>
      * 
-     * @return The configuration requirements of the Convertible Reserved Instances to exchange for your current
-     *         Convertible Reserved Instances.
+     * @return The configuration of the target Convertible Reserved Instance to exchange for your current Convertible
+     *         Reserved Instances.
      */
 
     public java.util.List<TargetConfigurationRequest> getTargetConfigurations() {
@@ -134,13 +134,13 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration requirements of the Convertible Reserved Instances to exchange for your current Convertible
-     * Reserved Instances.
+     * The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved
+     * Instances.
      * </p>
      * 
      * @param targetConfigurations
-     *        The configuration requirements of the Convertible Reserved Instances to exchange for your current
-     *        Convertible Reserved Instances.
+     *        The configuration of the target Convertible Reserved Instance to exchange for your current Convertible
+     *        Reserved Instances.
      */
 
     public void setTargetConfigurations(java.util.Collection<TargetConfigurationRequest> targetConfigurations) {
@@ -154,8 +154,8 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration requirements of the Convertible Reserved Instances to exchange for your current Convertible
-     * Reserved Instances.
+     * The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved
+     * Instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,8 +164,8 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
      * </p>
      * 
      * @param targetConfigurations
-     *        The configuration requirements of the Convertible Reserved Instances to exchange for your current
-     *        Convertible Reserved Instances.
+     *        The configuration of the target Convertible Reserved Instance to exchange for your current Convertible
+     *        Reserved Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,13 +181,13 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration requirements of the Convertible Reserved Instances to exchange for your current Convertible
-     * Reserved Instances.
+     * The configuration of the target Convertible Reserved Instance to exchange for your current Convertible Reserved
+     * Instances.
      * </p>
      * 
      * @param targetConfigurations
-     *        The configuration requirements of the Convertible Reserved Instances to exchange for your current
-     *        Convertible Reserved Instances.
+     *        The configuration of the target Convertible Reserved Instance to exchange for your current Convertible
+     *        Reserved Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -172,6 +172,105 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Creates an <a>GeoMatchSet</a>, which you use to specify which web requests you want to allow or block based on
+     * the country that the requests originate from. For example, if you're receiving a lot of requests from one or more
+     * countries and you want to block the requests, you can create an <code>GeoMatchSet</code> that contains those
+     * countries and then configure AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>GeoMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateGeoMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateGeoMatchSetSet</code> request to specify the countries that you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createGeoMatchSetRequest
+     * @return A Java Future containing the result of the CreateGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.CreateGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGeoMatchSetResult> createGeoMatchSetAsync(CreateGeoMatchSetRequest createGeoMatchSetRequest);
+
+    /**
+     * <p>
+     * Creates an <a>GeoMatchSet</a>, which you use to specify which web requests you want to allow or block based on
+     * the country that the requests originate from. For example, if you're receiving a lot of requests from one or more
+     * countries and you want to block the requests, you can create an <code>GeoMatchSet</code> that contains those
+     * countries and then configure AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>GeoMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateGeoMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateGeoMatchSetSet</code> request to specify the countries that you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createGeoMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.CreateGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGeoMatchSetResult> createGeoMatchSetAsync(CreateGeoMatchSetRequest createGeoMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGeoMatchSetRequest, CreateGeoMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow or block based on the IP
      * addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more
      * individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create
@@ -507,6 +606,208 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest createRateBasedRuleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRateBasedRuleRequest, CreateRateBasedRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the part of a web request
+     * that you want AWS WAF to inspect, such as the values of the <code>User-Agent</code> header or the query string.
+     * For example, you can create a <code>RegexMatchSet</code> that contains a <code>RegexMatchTuple</code> that looks
+     * for any requests with <code>User-Agent</code> headers that match a <code>RegexPatternSet</code> with pattern
+     * <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateRegexMatchSet</a> request to specify the part of the request that you want AWS WAF to inspect
+     * (for example, the header or the URI) and the value, using a <code>RegexPatternSet</code>, that you want AWS WAF
+     * to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRegexMatchSetRequest
+     * @return A Java Future containing the result of the CreateRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.CreateRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexMatchSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegexMatchSetResult> createRegexMatchSetAsync(CreateRegexMatchSetRequest createRegexMatchSetRequest);
+
+    /**
+     * <p>
+     * Creates a <a>RegexMatchSet</a>. You then use <a>UpdateRegexMatchSet</a> to identify the part of a web request
+     * that you want AWS WAF to inspect, such as the values of the <code>User-Agent</code> header or the query string.
+     * For example, you can create a <code>RegexMatchSet</code> that contains a <code>RegexMatchTuple</code> that looks
+     * for any requests with <code>User-Agent</code> headers that match a <code>RegexPatternSet</code> with pattern
+     * <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateRegexMatchSet</a> request to specify the part of the request that you want AWS WAF to inspect
+     * (for example, the header or the URI) and the value, using a <code>RegexPatternSet</code>, that you want AWS WAF
+     * to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRegexMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.CreateRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexMatchSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegexMatchSetResult> createRegexMatchSetAsync(CreateRegexMatchSetRequest createRegexMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRegexMatchSetRequest, CreateRegexMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to specify the regular
+     * expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then
+     * configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRegexPatternSetRequest
+     * @return A Java Future containing the result of the CreateRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.CreateRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegexPatternSetResult> createRegexPatternSetAsync(CreateRegexPatternSetRequest createRegexPatternSetRequest);
+
+    /**
+     * <p>
+     * Creates a <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a> to specify the regular
+     * expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then
+     * configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <code>UpdateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRegexPatternSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.CreateRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegexPatternSetResult> createRegexPatternSetAsync(CreateRegexPatternSetRequest createRegexPatternSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRegexPatternSetRequest, CreateRegexPatternSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1196,6 +1497,87 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Permanently deletes a <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any countries.
+     * </p>
+     * <p>
+     * If you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>GeoMatchSet</code> to remove any countries. For more information, see <a>UpdateGeoMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteGeoMatchSetRequest
+     * @return A Java Future containing the result of the DeleteGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.DeleteGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGeoMatchSetResult> deleteGeoMatchSetAsync(DeleteGeoMatchSetRequest deleteGeoMatchSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>GeoMatchSet</a>. You can't delete a <code>GeoMatchSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any countries.
+     * </p>
+     * <p>
+     * If you just want to remove a <code>GeoMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>GeoMatchSet</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>GeoMatchSet</code> to remove any countries. For more information, see <a>UpdateGeoMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteGeoMatchSet</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteGeoMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.DeleteGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGeoMatchSetResult> deleteGeoMatchSetAsync(DeleteGeoMatchSetRequest deleteGeoMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGeoMatchSetRequest, DeleteGeoMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes an <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's still used in any
      * <code>Rules</code> or if it still includes any IP addresses.
      * </p>
@@ -1357,6 +1739,122 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest deleteRateBasedRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRateBasedRuleRequest, DeleteRateBasedRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's still used in
+     * any <code>Rules</code> or if it still includes any <code>RegexMatchTuples</code> objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>RegexMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RegexMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RegexMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateRegexMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRegexMatchSetRequest
+     * @return A Java Future containing the result of the DeleteRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.DeleteRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexMatchSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegexMatchSetResult> deleteRegexMatchSetAsync(DeleteRegexMatchSetRequest deleteRegexMatchSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RegexMatchSet</a>. You can't delete a <code>RegexMatchSet</code> if it's still used in
+     * any <code>Rules</code> or if it still includes any <code>RegexMatchTuples</code> objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>RegexMatchSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RegexMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RegexMatchSet</code> to remove filters, if any. For more information, see
+     * <a>UpdateRegexMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRegexMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.DeleteRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexMatchSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegexMatchSetResult> deleteRegexMatchSetAsync(DeleteRegexMatchSetRequest deleteRegexMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegexMatchSetRequest, DeleteRegexMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's still used
+     * in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
+     * </p>
+     * 
+     * @param deleteRegexPatternSetRequest
+     * @return A Java Future containing the result of the DeleteRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.DeleteRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegexPatternSetResult> deleteRegexPatternSetAsync(DeleteRegexPatternSetRequest deleteRegexPatternSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code> if it's still used
+     * in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty.
+     * </p>
+     * 
+     * @param deleteRegexPatternSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.DeleteRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegexPatternSetResult> deleteRegexPatternSetAsync(DeleteRegexPatternSetRequest deleteRegexPatternSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegexPatternSetRequest, DeleteRegexPatternSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1961,6 +2459,37 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Returns the <a>GeoMatchSet</a> that is specified by <code>GeoMatchSetId</code>.
+     * </p>
+     * 
+     * @param getGeoMatchSetRequest
+     * @return A Java Future containing the result of the GetGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.GetGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGeoMatchSetResult> getGeoMatchSetAsync(GetGeoMatchSetRequest getGeoMatchSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>GeoMatchSet</a> that is specified by <code>GeoMatchSetId</code>.
+     * </p>
+     * 
+     * @param getGeoMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.GetGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGeoMatchSetResult> getGeoMatchSetAsync(GetGeoMatchSetRequest getGeoMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGeoMatchSetRequest, GetGeoMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.
      * </p>
      * 
@@ -2059,6 +2588,68 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
     java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(
             GetRateBasedRuleManagedKeysRequest getRateBasedRuleManagedKeysRequest,
             com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleManagedKeysRequest, GetRateBasedRuleManagedKeysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.
+     * </p>
+     * 
+     * @param getRegexMatchSetRequest
+     * @return A Java Future containing the result of the GetRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.GetRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRegexMatchSetResult> getRegexMatchSetAsync(GetRegexMatchSetRequest getRegexMatchSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.
+     * </p>
+     * 
+     * @param getRegexMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.GetRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRegexMatchSetResult> getRegexMatchSetAsync(GetRegexMatchSetRequest getRegexMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRegexMatchSetRequest, GetRegexMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the <a>RegexPatternSet</a> specified by <code>RegexPatternSetId</code>.
+     * </p>
+     * 
+     * @param getRegexPatternSetRequest
+     * @return A Java Future containing the result of the GetRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.GetRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRegexPatternSetResult> getRegexPatternSetAsync(GetRegexPatternSetRequest getRegexPatternSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>RegexPatternSet</a> specified by <code>RegexPatternSetId</code>.
+     * </p>
+     * 
+     * @param getRegexPatternSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.GetRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRegexPatternSetResult> getRegexPatternSetAsync(GetRegexPatternSetRequest getRegexPatternSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRegexPatternSetRequest, GetRegexPatternSetResult> asyncHandler);
 
     /**
      * <p>
@@ -2332,6 +2923,37 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Returns an array of <a>GeoMatchSetSummary</a> objects in the response.
+     * </p>
+     * 
+     * @param listGeoMatchSetsRequest
+     * @return A Java Future containing the result of the ListGeoMatchSets operation returned by the service.
+     * @sample AWSWAFRegionalAsync.ListGeoMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGeoMatchSetsResult> listGeoMatchSetsAsync(ListGeoMatchSetsRequest listGeoMatchSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>GeoMatchSetSummary</a> objects in the response.
+     * </p>
+     * 
+     * @param listGeoMatchSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGeoMatchSets operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.ListGeoMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListGeoMatchSets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGeoMatchSetsResult> listGeoMatchSetsAsync(ListGeoMatchSetsRequest listGeoMatchSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGeoMatchSetsRequest, ListGeoMatchSetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <a>IPSetSummary</a> objects in the response.
      * </p>
      * 
@@ -2391,6 +3013,68 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest listRateBasedRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRateBasedRulesRequest, ListRateBasedRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>RegexMatchSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listRegexMatchSetsRequest
+     * @return A Java Future containing the result of the ListRegexMatchSets operation returned by the service.
+     * @sample AWSWAFRegionalAsync.ListRegexMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegexMatchSetsResult> listRegexMatchSetsAsync(ListRegexMatchSetsRequest listRegexMatchSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>RegexMatchSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listRegexMatchSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRegexMatchSets operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.ListRegexMatchSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexMatchSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegexMatchSetsResult> listRegexMatchSetsAsync(ListRegexMatchSetsRequest listRegexMatchSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRegexMatchSetsRequest, ListRegexMatchSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>RegexPatternSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listRegexPatternSetsRequest
+     * @return A Java Future containing the result of the ListRegexPatternSets operation returned by the service.
+     * @sample AWSWAFRegionalAsync.ListRegexPatternSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegexPatternSetsResult> listRegexPatternSetsAsync(ListRegexPatternSetsRequest listRegexPatternSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>RegexPatternSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listRegexPatternSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRegexPatternSets operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.ListRegexPatternSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRegexPatternSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegexPatternSetsResult> listRegexPatternSetsAsync(ListRegexPatternSetsRequest listRegexPatternSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRegexPatternSetsRequest, ListRegexPatternSetsResult> asyncHandler);
 
     /**
      * <p>
@@ -2742,6 +3426,135 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<UpdateByteMatchSetResult> updateByteMatchSetAsync(UpdateByteMatchSetRequest updateByteMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateByteMatchSetRequest, UpdateByteMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
+     * <code>GeoMatchConstraint</code> object, you specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change an <code>GeoMatchConstraint</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Type</code>. The only valid value for <code>Type</code> is <code>Country</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Value</code>, which is a two character code for the country to add to the
+     * <code>GeoMatchConstraint</code> object. Valid codes are listed in <a>GeoMatchConstraint$Value</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To create and configure an <code>GeoMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Submit a <a>CreateGeoMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateGeoMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateGeoMatchSet</code> request to specify the country that you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you update an <code>GeoMatchSet</code>, you specify the country that you want to add and/or the country that
+     * you want to delete. If you want to change a country, you delete the existing country and add the new one.
+     * </p>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateGeoMatchSetRequest
+     * @return A Java Future containing the result of the UpdateGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.UpdateGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGeoMatchSetResult> updateGeoMatchSetAsync(UpdateGeoMatchSetRequest updateGeoMatchSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>GeoMatchConstraint</a> objects in an <code>GeoMatchSet</code>. For each
+     * <code>GeoMatchConstraint</code> object, you specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change an <code>GeoMatchConstraint</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Type</code>. The only valid value for <code>Type</code> is <code>Country</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Value</code>, which is a two character code for the country to add to the
+     * <code>GeoMatchConstraint</code> object. Valid codes are listed in <a>GeoMatchConstraint$Value</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To create and configure an <code>GeoMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Submit a <a>CreateGeoMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <a>UpdateGeoMatchSet</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateGeoMatchSet</code> request to specify the country that you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you update an <code>GeoMatchSet</code>, you specify the country that you want to add and/or the country that
+     * you want to delete. If you want to change a country, you delete the existing country and add the new one.
+     * </p>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateGeoMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGeoMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.UpdateGeoMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateGeoMatchSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGeoMatchSetResult> updateGeoMatchSetAsync(UpdateGeoMatchSetRequest updateGeoMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGeoMatchSetRequest, UpdateGeoMatchSetResult> asyncHandler);
 
     /**
      * <p>
@@ -3098,6 +3911,320 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest updateRateBasedRuleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRateBasedRuleRequest, UpdateRateBasedRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>. For each
+     * <code>RegexMatchSetUpdate</code> object, you specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * <code>User-Agent</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see
+     * <a>RegexPatternSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for
+     * the specified string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you can create a <code>RegexPatternSet</code> that matches any requests with <code>User-Agent</code>
+     * headers that contain the string <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+     * requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a <code>RegexMatchSet.</code> For more information, see <a>CreateRegexMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRegexMatchSet</code> request to specify the part of the request that you want AWS WAF to
+     * inspect (for example, the header or the URI) and the identifier of the <code>RegexPatternSet</code> that contain
+     * the regular expression patters you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRegexMatchSetRequest
+     * @return A Java Future containing the result of the UpdateRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.UpdateRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexMatchSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRegexMatchSetResult> updateRegexMatchSetAsync(UpdateRegexMatchSetRequest updateRegexMatchSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>. For each
+     * <code>RegexMatchSetUpdate</code> object, you specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * <code>User-Agent</code> header.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see
+     * <a>RegexPatternSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for
+     * the specified string.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you can create a <code>RegexPatternSet</code> that matches any requests with <code>User-Agent</code>
+     * headers that contain the string <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
+     * requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a <code>RegexMatchSet.</code> For more information, see <a>CreateRegexMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateRegexMatchSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRegexMatchSet</code> request to specify the part of the request that you want AWS WAF to
+     * inspect (for example, the header or the URI) and the identifier of the <code>RegexPatternSet</code> that contain
+     * the regular expression patters you want AWS WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRegexMatchSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRegexMatchSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.UpdateRegexMatchSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexMatchSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRegexMatchSetResult> updateRegexMatchSetAsync(UpdateRegexMatchSetRequest updateRegexMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRegexMatchSetRequest, UpdateRegexMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>. For each
+     * <code>RegexPatternSet</code> object, you specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The regular expression pattern that you want AWS WAF to look for. For more information, see
+     * <a>RegexPatternSet</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>. AWS WAF will
+     * match this <code>RegexPatternString</code> to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * BadBot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BadB0t
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * B@dBot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * B@dB0t
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a <code>RegexPatternSet.</code> For more information, see <a>CreateRegexPatternSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRegexPatternSet</code> request to specify the regular expression pattern that you want AWS
+     * WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRegexPatternSetRequest
+     * @return A Java Future containing the result of the UpdateRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsync.UpdateRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRegexPatternSetResult> updateRegexPatternSetAsync(UpdateRegexPatternSetRequest updateRegexPatternSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>. For each
+     * <code>RegexPatternSet</code> object, you specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
+     * object, you delete the existing object and add a new one.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The regular expression pattern that you want AWS WAF to look for. For more information, see
+     * <a>RegexPatternSet</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, you can create a <code>RegexPatternString</code> such as <code>B[a@]dB[o0]t</code>. AWS WAF will
+     * match this <code>RegexPatternString</code> to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * BadBot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BadB0t
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * B@dBot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * B@dB0t
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create a <code>RegexPatternSet.</code> For more information, see <a>CreateRegexPatternSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of
+     * an <code>UpdateRegexPatternSet</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRegexPatternSet</code> request to specify the regular expression pattern that you want AWS
+     * WAF to watch for.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRegexPatternSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRegexPatternSet operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.UpdateRegexPatternSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRegexPatternSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRegexPatternSetResult> updateRegexPatternSetAsync(UpdateRegexPatternSetRequest updateRegexPatternSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRegexPatternSetRequest, UpdateRegexPatternSetResult> asyncHandler);
 
     /**
      * <p>

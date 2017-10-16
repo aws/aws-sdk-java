@@ -65,6 +65,13 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String accessPolicies;
+    /**
+     * <p>
+     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
+     * of Elasticsearch log.
+     * </p>
+     */
+    private java.util.Map<String, LogPublishingOption> logPublishingOptions;
 
     /**
      * <p>
@@ -352,6 +359,73 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
+     * of Elasticsearch log.
+     * </p>
+     * 
+     * @return Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
+     *         given type of Elasticsearch log.
+     */
+
+    public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
+        return logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
+     * of Elasticsearch log.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
+     *        given type of Elasticsearch log.
+     */
+
+    public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
+        this.logPublishingOptions = logPublishingOptions;
+    }
+
+    /**
+     * <p>
+     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
+     * of Elasticsearch log.
+     * </p>
+     * 
+     * @param logPublishingOptions
+     *        Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
+     *        given type of Elasticsearch log.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest withLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
+        setLogPublishingOptions(logPublishingOptions);
+        return this;
+    }
+
+    public UpdateElasticsearchDomainConfigRequest addLogPublishingOptionsEntry(String key, LogPublishingOption value) {
+        if (null == this.logPublishingOptions) {
+            this.logPublishingOptions = new java.util.HashMap<String, LogPublishingOption>();
+        }
+        if (this.logPublishingOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.logPublishingOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into LogPublishingOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateElasticsearchDomainConfigRequest clearLogPublishingOptionsEntries() {
+        this.logPublishingOptions = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -373,7 +447,9 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getAccessPolicies() != null)
-            sb.append("AccessPolicies: ").append(getAccessPolicies());
+            sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
+        if (getLogPublishingOptions() != null)
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -412,6 +488,10 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
             return false;
         if (other.getAccessPolicies() != null && other.getAccessPolicies().equals(this.getAccessPolicies()) == false)
             return false;
+        if (other.getLogPublishingOptions() == null ^ this.getLogPublishingOptions() == null)
+            return false;
+        if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -426,6 +506,7 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
+        hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;
     }
 

@@ -29,10 +29,16 @@ public enum WafRegionalActions implements Action {
     AssociateWebACL("waf-regional:AssociateWebACL"),
     /** Action for the CreateByteMatchSet operation. */
     CreateByteMatchSet("waf-regional:CreateByteMatchSet"),
+    /** Action for the CreateGeoMatchSet operation. */
+    CreateGeoMatchSet("waf-regional:CreateGeoMatchSet"),
     /** Action for the CreateIPSet operation. */
     CreateIPSet("waf-regional:CreateIPSet"),
     /** Action for the CreateRateBasedRule operation. */
     CreateRateBasedRule("waf-regional:CreateRateBasedRule"),
+    /** Action for the CreateRegexMatchSet operation. */
+    CreateRegexMatchSet("waf-regional:CreateRegexMatchSet"),
+    /** Action for the CreateRegexPatternSet operation. */
+    CreateRegexPatternSet("waf-regional:CreateRegexPatternSet"),
     /** Action for the CreateRule operation. */
     CreateRule("waf-regional:CreateRule"),
     /** Action for the CreateSizeConstraintSet operation. */
@@ -45,10 +51,16 @@ public enum WafRegionalActions implements Action {
     CreateXssMatchSet("waf-regional:CreateXssMatchSet"),
     /** Action for the DeleteByteMatchSet operation. */
     DeleteByteMatchSet("waf-regional:DeleteByteMatchSet"),
+    /** Action for the DeleteGeoMatchSet operation. */
+    DeleteGeoMatchSet("waf-regional:DeleteGeoMatchSet"),
     /** Action for the DeleteIPSet operation. */
     DeleteIPSet("waf-regional:DeleteIPSet"),
     /** Action for the DeleteRateBasedRule operation. */
     DeleteRateBasedRule("waf-regional:DeleteRateBasedRule"),
+    /** Action for the DeleteRegexMatchSet operation. */
+    DeleteRegexMatchSet("waf-regional:DeleteRegexMatchSet"),
+    /** Action for the DeleteRegexPatternSet operation. */
+    DeleteRegexPatternSet("waf-regional:DeleteRegexPatternSet"),
     /** Action for the DeleteRule operation. */
     DeleteRule("waf-regional:DeleteRule"),
     /** Action for the DeleteSizeConstraintSet operation. */
@@ -67,12 +79,18 @@ public enum WafRegionalActions implements Action {
     GetChangeToken("waf-regional:GetChangeToken"),
     /** Action for the GetChangeTokenStatus operation. */
     GetChangeTokenStatus("waf-regional:GetChangeTokenStatus"),
+    /** Action for the GetGeoMatchSet operation. */
+    GetGeoMatchSet("waf-regional:GetGeoMatchSet"),
     /** Action for the GetIPSet operation. */
     GetIPSet("waf-regional:GetIPSet"),
     /** Action for the GetRateBasedRule operation. */
     GetRateBasedRule("waf-regional:GetRateBasedRule"),
     /** Action for the GetRateBasedRuleManagedKeys operation. */
     GetRateBasedRuleManagedKeys("waf-regional:GetRateBasedRuleManagedKeys"),
+    /** Action for the GetRegexMatchSet operation. */
+    GetRegexMatchSet("waf-regional:GetRegexMatchSet"),
+    /** Action for the GetRegexPatternSet operation. */
+    GetRegexPatternSet("waf-regional:GetRegexPatternSet"),
     /** Action for the GetRule operation. */
     GetRule("waf-regional:GetRule"),
     /** Action for the GetSampledRequests operation. */
@@ -89,10 +107,16 @@ public enum WafRegionalActions implements Action {
     GetXssMatchSet("waf-regional:GetXssMatchSet"),
     /** Action for the ListByteMatchSets operation. */
     ListByteMatchSets("waf-regional:ListByteMatchSets"),
+    /** Action for the ListGeoMatchSets operation. */
+    ListGeoMatchSets("waf-regional:ListGeoMatchSets"),
     /** Action for the ListIPSets operation. */
     ListIPSets("waf-regional:ListIPSets"),
     /** Action for the ListRateBasedRules operation. */
     ListRateBasedRules("waf-regional:ListRateBasedRules"),
+    /** Action for the ListRegexMatchSets operation. */
+    ListRegexMatchSets("waf-regional:ListRegexMatchSets"),
+    /** Action for the ListRegexPatternSets operation. */
+    ListRegexPatternSets("waf-regional:ListRegexPatternSets"),
     /** Action for the ListResourcesForWebACL operation. */
     ListResourcesForWebACL("waf-regional:ListResourcesForWebACL"),
     /** Action for the ListRules operation. */
@@ -107,10 +131,16 @@ public enum WafRegionalActions implements Action {
     ListXssMatchSets("waf-regional:ListXssMatchSets"),
     /** Action for the UpdateByteMatchSet operation. */
     UpdateByteMatchSet("waf-regional:UpdateByteMatchSet"),
+    /** Action for the UpdateGeoMatchSet operation. */
+    UpdateGeoMatchSet("waf-regional:UpdateGeoMatchSet"),
     /** Action for the UpdateIPSet operation. */
     UpdateIPSet("waf-regional:UpdateIPSet"),
     /** Action for the UpdateRateBasedRule operation. */
     UpdateRateBasedRule("waf-regional:UpdateRateBasedRule"),
+    /** Action for the UpdateRegexMatchSet operation. */
+    UpdateRegexMatchSet("waf-regional:UpdateRegexMatchSet"),
+    /** Action for the UpdateRegexPatternSet operation. */
+    UpdateRegexPatternSet("waf-regional:UpdateRegexPatternSet"),
     /** Action for the UpdateRule operation. */
     UpdateRule("waf-regional:UpdateRule"),
     /** Action for the UpdateSizeConstraintSet operation. */
