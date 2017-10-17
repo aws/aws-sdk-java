@@ -72,6 +72,11 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Endpoints", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Processing", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -95,6 +100,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setSnapshotOptions(SnapshotOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VPCOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setVPCOptions(VPCDerivedInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
                     context.nextToken();

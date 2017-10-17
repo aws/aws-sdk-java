@@ -479,6 +479,66 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion
+     * will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before
+     * deleting the role. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr"
+     * target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service
+     * Domains</i>.
+     * </p>
+     * 
+     * @param deleteElasticsearchServiceRoleRequest
+     * @return Result of the DeleteElasticsearchServiceRole operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DeleteElasticsearchServiceRole
+     */
+    @Override
+    public DeleteElasticsearchServiceRoleResult deleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteElasticsearchServiceRole(request);
+    }
+
+    @SdkInternalApi
+    final DeleteElasticsearchServiceRoleResult executeDeleteElasticsearchServiceRole(DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteElasticsearchServiceRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteElasticsearchServiceRoleRequest> request = null;
+        Response<DeleteElasticsearchServiceRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteElasticsearchServiceRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteElasticsearchServiceRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteElasticsearchServiceRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteElasticsearchServiceRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns domain configuration information about the specified Elasticsearch domain, including the domain ID,
      * domain endpoint, and domain ARN.
      * </p>

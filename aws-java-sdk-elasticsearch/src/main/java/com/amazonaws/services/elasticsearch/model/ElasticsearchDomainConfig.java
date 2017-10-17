@@ -57,6 +57,14 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     private SnapshotOptionsStatus snapshotOptions;
     /**
      * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     */
+    private VPCDerivedInfoStatus vPCOptions;
+    /**
+     * <p>
      * Specifies the <code>AdvancedOptions</code> for the domain. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.
@@ -272,6 +280,58 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     * 
+     * @param vPCOptions
+     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     *        target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+     */
+
+    public void setVPCOptions(VPCDerivedInfoStatus vPCOptions) {
+        this.vPCOptions = vPCOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     * 
+     * @return The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     *         target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+     */
+
+    public VPCDerivedInfoStatus getVPCOptions() {
+        return this.vPCOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank">VPC
+     * Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * </p>
+     * 
+     * @param vPCOptions
+     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+     *        target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withVPCOptions(VPCDerivedInfoStatus vPCOptions) {
+        setVPCOptions(vPCOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the <code>AdvancedOptions</code> for the domain. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.
@@ -383,6 +443,8 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
+        if (getVPCOptions() != null)
+            sb.append("VPCOptions: ").append(getVPCOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
@@ -421,6 +483,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getSnapshotOptions() != null && other.getSnapshotOptions().equals(this.getSnapshotOptions()) == false)
             return false;
+        if (other.getVPCOptions() == null ^ this.getVPCOptions() == null)
+            return false;
+        if (other.getVPCOptions() != null && other.getVPCOptions().equals(this.getVPCOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -442,6 +508,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
+        hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;

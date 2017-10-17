@@ -1,3 +1,8 @@
+# __1.11.215__ __2017-10-17__
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - This release adds support for VPC access to Amazon Elasticsearch Service.
+
 # __1.11.214__ __2017-10-16__
 ## __AWS CloudHSM__
   - ### Features

@@ -41,6 +41,8 @@ public class CreateElasticsearchDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
+    private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCOptions").build();
     private static final MarshallingInfo<Map> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -68,6 +70,7 @@ public class CreateElasticsearchDomainRequestMarshaller {
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getEBSOptions(), EBSOPTIONS_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getAccessPolicies(), ACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
+            protocolMarshaller.marshall(createElasticsearchDomainRequest.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(createElasticsearchDomainRequest.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
         } catch (Exception e) {

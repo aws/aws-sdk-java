@@ -351,6 +351,40 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteElasticsearchServiceRoleResult> deleteElasticsearchServiceRoleAsync(DeleteElasticsearchServiceRoleRequest request) {
+
+        return deleteElasticsearchServiceRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteElasticsearchServiceRoleResult> deleteElasticsearchServiceRoleAsync(
+            final DeleteElasticsearchServiceRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteElasticsearchServiceRoleRequest, DeleteElasticsearchServiceRoleResult> asyncHandler) {
+        final DeleteElasticsearchServiceRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteElasticsearchServiceRoleResult>() {
+            @Override
+            public DeleteElasticsearchServiceRoleResult call() throws Exception {
+                DeleteElasticsearchServiceRoleResult result = null;
+
+                try {
+                    result = executeDeleteElasticsearchServiceRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeElasticsearchDomainResult> describeElasticsearchDomainAsync(DescribeElasticsearchDomainRequest request) {
 
         return describeElasticsearchDomainAsync(request, null);

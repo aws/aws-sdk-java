@@ -41,6 +41,8 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocationName("Deleted").build();
     private static final MarshallingInfo<String> ENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoint").build();
+    private static final MarshallingInfo<Map> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<Boolean> PROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Processing").build();
     private static final MarshallingInfo<String> ELASTICSEARCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +55,8 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
+    private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCOptions").build();
     private static final MarshallingInfo<Map> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -80,12 +84,14 @@ public class ElasticsearchDomainStatusMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainStatus.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getDeleted(), DELETED_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEndpoint(), ENDPOINT_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getProcessing(), PROCESSING_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getElasticsearchVersion(), ELASTICSEARCHVERSION_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getElasticsearchClusterConfig(), ELASTICSEARCHCLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEBSOptions(), EBSOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getAccessPolicies(), ACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
         } catch (Exception e) {

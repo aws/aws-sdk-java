@@ -146,6 +146,47 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion
+     * will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before
+     * deleting the role. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr"
+     * target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service
+     * Domains</i>.
+     * </p>
+     * 
+     * @param deleteElasticsearchServiceRoleRequest
+     * @return A Java Future containing the result of the DeleteElasticsearchServiceRole operation returned by the
+     *         service.
+     * @sample AWSElasticsearchAsync.DeleteElasticsearchServiceRole
+     */
+    java.util.concurrent.Future<DeleteElasticsearchServiceRoleResult> deleteElasticsearchServiceRoleAsync(
+            DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest);
+
+    /**
+     * <p>
+     * Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion
+     * will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before
+     * deleting the role. See <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr"
+     * target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service
+     * Domains</i>.
+     * </p>
+     * 
+     * @param deleteElasticsearchServiceRoleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteElasticsearchServiceRole operation returned by the
+     *         service.
+     * @sample AWSElasticsearchAsyncHandler.DeleteElasticsearchServiceRole
+     */
+    java.util.concurrent.Future<DeleteElasticsearchServiceRoleResult> deleteElasticsearchServiceRoleAsync(
+            DeleteElasticsearchServiceRoleRequest deleteElasticsearchServiceRoleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteElasticsearchServiceRoleRequest, DeleteElasticsearchServiceRoleResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns domain configuration information about the specified Elasticsearch domain, including the domain ID,
      * domain endpoint, and domain ARN.
      * </p>
