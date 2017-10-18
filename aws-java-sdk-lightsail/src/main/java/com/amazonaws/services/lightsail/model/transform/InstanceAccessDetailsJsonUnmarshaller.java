@@ -64,6 +64,10 @@ public class InstanceAccessDetailsJsonUnmarshaller implements Unmarshaller<Insta
                     context.nextToken();
                     instanceAccessDetails.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("passwordData", targetDepth)) {
+                    context.nextToken();
+                    instanceAccessDetails.setPasswordData(PasswordDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("privateKey", targetDepth)) {
                     context.nextToken();
                     instanceAccessDetails.setPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));

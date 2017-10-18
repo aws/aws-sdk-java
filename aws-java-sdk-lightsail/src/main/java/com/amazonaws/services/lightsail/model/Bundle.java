@@ -72,7 +72,10 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The power of the bundle (e.g., <code>500</code>).
+     * A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power
+     * value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the
+     * bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a
+     * blueprint with a minimum power value of 500.
      * </p>
      */
     private Integer power;
@@ -88,6 +91,14 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer transferPerMonthInGb;
+    /**
+     * <p>
+     * The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only
+     * launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * </p>
+     */
+    private java.util.List<String> supportedPlatforms;
 
     /**
      * <p>
@@ -383,11 +394,17 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The power of the bundle (e.g., <code>500</code>).
+     * A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power
+     * value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the
+     * bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a
+     * blueprint with a minimum power value of 500.
      * </p>
      * 
      * @param power
-     *        The power of the bundle (e.g., <code>500</code>).
+     *        A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's
+     *        power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will
+     *        run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance
+     *        that uses a blueprint with a minimum power value of 500.
      */
 
     public void setPower(Integer power) {
@@ -396,10 +413,16 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The power of the bundle (e.g., <code>500</code>).
+     * A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power
+     * value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the
+     * bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a
+     * blueprint with a minimum power value of 500.
      * </p>
      * 
-     * @return The power of the bundle (e.g., <code>500</code>).
+     * @return A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the
+     *         bundle's power value in conjunction with a blueprint's minimum power value to determine whether the
+     *         blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to
+     *         create an instance that uses a blueprint with a minimum power value of 500.
      */
 
     public Integer getPower() {
@@ -408,11 +431,17 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The power of the bundle (e.g., <code>500</code>).
+     * A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power
+     * value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the
+     * bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a
+     * blueprint with a minimum power value of 500.
      * </p>
      * 
      * @param power
-     *        The power of the bundle (e.g., <code>500</code>).
+     *        A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's
+     *        power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will
+     *        run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance
+     *        that uses a blueprint with a minimum power value of 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,6 +531,124 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only
+     * launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * </p>
+     * 
+     * @return The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You
+     *         can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code>
+     *         platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * @see InstancePlatform
+     */
+
+    public java.util.List<String> getSupportedPlatforms() {
+        return supportedPlatforms;
+    }
+
+    /**
+     * <p>
+     * The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only
+     * launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * </p>
+     * 
+     * @param supportedPlatforms
+     *        The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can
+     *        only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     *        <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * @see InstancePlatform
+     */
+
+    public void setSupportedPlatforms(java.util.Collection<String> supportedPlatforms) {
+        if (supportedPlatforms == null) {
+            this.supportedPlatforms = null;
+            return;
+        }
+
+        this.supportedPlatforms = new java.util.ArrayList<String>(supportedPlatforms);
+    }
+
+    /**
+     * <p>
+     * The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only
+     * launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedPlatforms(java.util.Collection)} or {@link #withSupportedPlatforms(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedPlatforms
+     *        The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can
+     *        only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     *        <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstancePlatform
+     */
+
+    public Bundle withSupportedPlatforms(String... supportedPlatforms) {
+        if (this.supportedPlatforms == null) {
+            setSupportedPlatforms(new java.util.ArrayList<String>(supportedPlatforms.length));
+        }
+        for (String ele : supportedPlatforms) {
+            this.supportedPlatforms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only
+     * launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * </p>
+     * 
+     * @param supportedPlatforms
+     *        The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can
+     *        only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     *        <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstancePlatform
+     */
+
+    public Bundle withSupportedPlatforms(java.util.Collection<String> supportedPlatforms) {
+        setSupportedPlatforms(supportedPlatforms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only
+     * launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * </p>
+     * 
+     * @param supportedPlatforms
+     *        The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can
+     *        only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform.
+     *        <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstancePlatform
+     */
+
+    public Bundle withSupportedPlatforms(InstancePlatform... supportedPlatforms) {
+        java.util.ArrayList<String> supportedPlatformsCopy = new java.util.ArrayList<String>(supportedPlatforms.length);
+        for (InstancePlatform value : supportedPlatforms) {
+            supportedPlatformsCopy.add(value.toString());
+        }
+        if (getSupportedPlatforms() == null) {
+            setSupportedPlatforms(supportedPlatformsCopy);
+        } else {
+            getSupportedPlatforms().addAll(supportedPlatformsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -531,7 +678,9 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
         if (getRamSizeInGb() != null)
             sb.append("RamSizeInGb: ").append(getRamSizeInGb()).append(",");
         if (getTransferPerMonthInGb() != null)
-            sb.append("TransferPerMonthInGb: ").append(getTransferPerMonthInGb());
+            sb.append("TransferPerMonthInGb: ").append(getTransferPerMonthInGb()).append(",");
+        if (getSupportedPlatforms() != null)
+            sb.append("SupportedPlatforms: ").append(getSupportedPlatforms());
         sb.append("}");
         return sb.toString();
     }
@@ -586,6 +735,10 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTransferPerMonthInGb() != null && other.getTransferPerMonthInGb().equals(this.getTransferPerMonthInGb()) == false)
             return false;
+        if (other.getSupportedPlatforms() == null ^ this.getSupportedPlatforms() == null)
+            return false;
+        if (other.getSupportedPlatforms() != null && other.getSupportedPlatforms().equals(this.getSupportedPlatforms()) == false)
+            return false;
         return true;
     }
 
@@ -604,6 +757,7 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPower() == null) ? 0 : getPower().hashCode());
         hashCode = prime * hashCode + ((getRamSizeInGb() == null) ? 0 : getRamSizeInGb().hashCode());
         hashCode = prime * hashCode + ((getTransferPerMonthInGb() == null) ? 0 : getTransferPerMonthInGb().hashCode());
+        hashCode = prime * hashCode + ((getSupportedPlatforms() == null) ? 0 : getSupportedPlatforms().hashCode());
         return hashCode;
     }
 

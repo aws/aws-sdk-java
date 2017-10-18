@@ -67,8 +67,9 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
     private Boolean isActive;
     /**
      * <p>
-     * The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs on all
-     * instances.
+     * The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500
+     * or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates
+     * that the blueprint runs on all instance sizes.
      * </p>
      */
     private Integer minPower;
@@ -96,6 +97,12 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String licenseUrl;
+    /**
+     * <p>
+     * The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * </p>
+     */
+    private String platform;
 
     /**
      * <p>
@@ -395,13 +402,15 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs on all
-     * instances.
+     * The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500
+     * or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates
+     * that the blueprint runs on all instance sizes.
      * </p>
      * 
      * @param minPower
-     *        The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs
-     *        on all instances.
+     *        The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value
+     *        of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.
+     *        <code>0</code> indicates that the blueprint runs on all instance sizes.
      */
 
     public void setMinPower(Integer minPower) {
@@ -410,12 +419,14 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs on all
-     * instances.
+     * The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500
+     * or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates
+     * that the blueprint runs on all instance sizes.
      * </p>
      * 
-     * @return The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs
-     *         on all instances.
+     * @return The minimum bundle power required to run this blueprint. For example, you need a bundle with a power
+     *         value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.
+     *         <code>0</code> indicates that the blueprint runs on all instance sizes.
      */
 
     public Integer getMinPower() {
@@ -424,13 +435,15 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs on all
-     * instances.
+     * The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500
+     * or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates
+     * that the blueprint runs on all instance sizes.
      * </p>
      * 
      * @param minPower
-     *        The minimum machine size required to run this blueprint. <code>0</code> indicates that the blueprint runs
-     *        on all instances.
+     *        The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value
+     *        of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.
+     *        <code>0</code> indicates that the blueprint runs on all instance sizes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,6 +613,79 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * </p>
+     * 
+     * @param platform
+     *        The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * @see InstancePlatform
+     */
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    /**
+     * <p>
+     * The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * </p>
+     * 
+     * @return The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * @see InstancePlatform
+     */
+
+    public String getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * </p>
+     * 
+     * @param platform
+     *        The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstancePlatform
+     */
+
+    public Blueprint withPlatform(String platform) {
+        setPlatform(platform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * </p>
+     * 
+     * @param platform
+     *        The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * @see InstancePlatform
+     */
+
+    public void setPlatform(InstancePlatform platform) {
+        withPlatform(platform);
+    }
+
+    /**
+     * <p>
+     * The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * </p>
+     * 
+     * @param platform
+     *        The operating system platform (either Linux/Unix-based or Windows Server-based) of the blueprint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstancePlatform
+     */
+
+    public Blueprint withPlatform(InstancePlatform platform) {
+        this.platform = platform.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -631,7 +717,9 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
         if (getProductUrl() != null)
             sb.append("ProductUrl: ").append(getProductUrl()).append(",");
         if (getLicenseUrl() != null)
-            sb.append("LicenseUrl: ").append(getLicenseUrl());
+            sb.append("LicenseUrl: ").append(getLicenseUrl()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -690,6 +778,10 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLicenseUrl() != null && other.getLicenseUrl().equals(this.getLicenseUrl()) == false)
             return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
         return true;
     }
 
@@ -709,6 +801,7 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVersionCode() == null) ? 0 : getVersionCode().hashCode());
         hashCode = prime * hashCode + ((getProductUrl() == null) ? 0 : getProductUrl().hashCode());
         hashCode = prime * hashCode + ((getLicenseUrl() == null) ? 0 : getLicenseUrl().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         return hashCode;
     }
 

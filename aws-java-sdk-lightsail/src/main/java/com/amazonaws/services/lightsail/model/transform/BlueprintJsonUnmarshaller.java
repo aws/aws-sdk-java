@@ -92,6 +92,10 @@ public class BlueprintJsonUnmarshaller implements Unmarshaller<Blueprint, JsonUn
                     context.nextToken();
                     blueprint.setLicenseUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("platform", targetDepth)) {
+                    context.nextToken();
+                    blueprint.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

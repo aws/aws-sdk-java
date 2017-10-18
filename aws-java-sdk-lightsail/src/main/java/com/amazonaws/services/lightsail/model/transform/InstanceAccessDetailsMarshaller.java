@@ -35,6 +35,8 @@ public class InstanceAccessDetailsMarshaller {
             .marshallLocationName("ipAddress").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("password").build();
+    private static final MarshallingInfo<StructuredPojo> PASSWORDDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("passwordData").build();
     private static final MarshallingInfo<String> PRIVATEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privateKey").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class InstanceAccessDetailsMarshaller {
             protocolMarshaller.marshall(instanceAccessDetails.getExpiresAt(), EXPIRESAT_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(instanceAccessDetails.getPasswordData(), PASSWORDDATA_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getPrivateKey(), PRIVATEKEY_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getInstanceName(), INSTANCENAME_BINDING);

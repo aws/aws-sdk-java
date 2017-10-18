@@ -49,6 +49,8 @@ public class BlueprintMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("productUrl").build();
     private static final MarshallingInfo<String> LICENSEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseUrl").build();
+    private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("platform").build();
 
     private static final BlueprintMarshaller instance = new BlueprintMarshaller();
 
@@ -77,6 +79,7 @@ public class BlueprintMarshaller {
             protocolMarshaller.marshall(blueprint.getVersionCode(), VERSIONCODE_BINDING);
             protocolMarshaller.marshall(blueprint.getProductUrl(), PRODUCTURL_BINDING);
             protocolMarshaller.marshall(blueprint.getLicenseUrl(), LICENSEURL_BINDING);
+            protocolMarshaller.marshall(blueprint.getPlatform(), PLATFORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
