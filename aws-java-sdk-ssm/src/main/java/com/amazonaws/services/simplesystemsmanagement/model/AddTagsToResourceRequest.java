@@ -35,6 +35,13 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     * mw-01234361858c9b57b for a Maintenance Window.
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
      */
     private String resourceId;
     /**
@@ -122,9 +129,22 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     * mw-01234361858c9b57b for a Maintenance Window.
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
      * 
      * @param resourceId
-     *        The resource ID you want to tag.
+     *        The resource ID you want to tag.</p>
+     *        <p>
+     *        For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     *        mw-01234361858c9b57b for a Maintenance Window.
+     *        </p>
+     *        <p>
+     *        For the Document and Parameter values, use the name of the resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -135,8 +155,21 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     * mw-01234361858c9b57b for a Maintenance Window.
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
      * 
-     * @return The resource ID you want to tag.
+     * @return The resource ID you want to tag.</p>
+     *         <p>
+     *         For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     *         mw-01234361858c9b57b for a Maintenance Window.
+     *         </p>
+     *         <p>
+     *         For the Document and Parameter values, use the name of the resource.
      */
 
     public String getResourceId() {
@@ -147,9 +180,22 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The resource ID you want to tag.
      * </p>
+     * <p>
+     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     * mw-01234361858c9b57b for a Maintenance Window.
+     * </p>
+     * <p>
+     * For the Document and Parameter values, use the name of the resource.
+     * </p>
      * 
      * @param resourceId
-     *        The resource ID you want to tag.
+     *        The resource ID you want to tag.</p>
+     *        <p>
+     *        For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
+     *        mw-01234361858c9b57b for a Maintenance Window.
+     *        </p>
+     *        <p>
+     *        For the Document and Parameter values, use the name of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

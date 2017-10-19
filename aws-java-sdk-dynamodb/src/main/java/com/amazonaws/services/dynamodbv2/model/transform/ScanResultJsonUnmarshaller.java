@@ -13,7 +13,6 @@
 package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
-
 import java.math.*;
 
 import javax.annotation.Generated;

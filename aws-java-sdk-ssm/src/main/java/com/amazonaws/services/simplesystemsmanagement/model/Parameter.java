@@ -46,6 +46,12 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     */
+    private Long version;
 
     /**
      * <p>
@@ -201,6 +207,46 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @return The parameter version.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -216,7 +262,9 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +291,10 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         return true;
     }
 
@@ -254,6 +306,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

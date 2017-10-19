@@ -73,6 +73,12 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String allowedPattern;
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     */
+    private Long version;
 
     /**
      * <p>
@@ -403,6 +409,46 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     */
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @return The parameter version.
+     */
+
+    public Long getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The parameter version.
+     * </p>
+     * 
+     * @param version
+     *        The parameter version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withVersion(Long version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -426,7 +472,9 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getAllowedPattern() != null)
-            sb.append("AllowedPattern: ").append(getAllowedPattern());
+            sb.append("AllowedPattern: ").append(getAllowedPattern()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +517,10 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         return true;
     }
 
@@ -484,6 +536,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLastModifiedUser() == null) ? 0 : getLastModifiedUser().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

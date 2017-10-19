@@ -2,7 +2,6 @@ ${fileHeader}
 package ${transformPackage};
 
 import java.util.Map;
-import java.util.Map.Entry;
 import java.math.*;
 import java.nio.ByteBuffer;
 import javax.annotation.Generated;

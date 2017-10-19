@@ -83,7 +83,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter queue functionality of
      * the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -110,7 +110,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
      * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -153,7 +153,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -305,7 +305,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -332,7 +332,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
      *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -378,7 +378,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -572,7 +572,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter queue functionality of
      * the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -599,7 +599,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
      * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -642,7 +642,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -775,7 +775,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *         see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *         >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -802,7 +802,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
      *         43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *         >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -848,7 +848,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see
      *         <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -991,7 +991,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter queue functionality of
      * the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1018,7 +1018,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
      * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1061,7 +1061,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1195,7 +1195,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1222,7 +1222,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
      *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1268,7 +1268,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1407,7 +1407,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - The string that includes the parameters for the dead-letter queue functionality of
      * the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1434,7 +1434,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
      * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1477,7 +1477,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1611,7 +1611,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1638,7 +1638,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
      *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1684,7 +1684,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>

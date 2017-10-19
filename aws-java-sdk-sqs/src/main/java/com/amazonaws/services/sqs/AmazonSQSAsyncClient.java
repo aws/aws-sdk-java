@@ -78,7 +78,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <i>Amazon SQS Developer Guide</i>
+ * <i>Amazon Simple Queue Service Developer Guide</i>
  * </p>
  * <ul>
  * <li>
@@ -871,6 +871,62 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest request) {
+
+        return listQueueTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(final ListQueueTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
+        final ListQueueTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListQueueTagsResult>() {
+            @Override
+            public ListQueueTagsResult call() throws Exception {
+                ListQueueTagsResult result = null;
+
+                try {
+                    result = executeListQueueTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    /**
+     * Simplified method form for invoking the ListQueueTags operation.
+     *
+     * @see #listQueueTagsAsync(ListQueueTagsRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl) {
+
+        return listQueueTagsAsync(new ListQueueTagsRequest().withQueueUrl(queueUrl));
+    }
+
+    /**
+     * Simplified method form for invoking the ListQueueTags operation with an AsyncHandler.
+     *
+     * @see #listQueueTagsAsync(ListQueueTagsRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    @Override
+    public java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl,
+            com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler) {
+
+        return listQueueTagsAsync(new ListQueueTagsRequest().withQueueUrl(queueUrl), asyncHandler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest request) {
 
         return listQueuesAsync(request, null);
@@ -1259,6 +1315,118 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
             com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler) {
 
         return setQueueAttributesAsync(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(TagQueueRequest request) {
+
+        return tagQueueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(final TagQueueRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
+        final TagQueueRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagQueueResult>() {
+            @Override
+            public TagQueueResult call() throws Exception {
+                TagQueueResult result = null;
+
+                try {
+                    result = executeTagQueue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    /**
+     * Simplified method form for invoking the TagQueue operation.
+     *
+     * @see #tagQueueAsync(TagQueueRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(String queueUrl, java.util.Map<String, String> tags) {
+
+        return tagQueueAsync(new TagQueueRequest().withQueueUrl(queueUrl).withTags(tags));
+    }
+
+    /**
+     * Simplified method form for invoking the TagQueue operation with an AsyncHandler.
+     *
+     * @see #tagQueueAsync(TagQueueRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    @Override
+    public java.util.concurrent.Future<TagQueueResult> tagQueueAsync(String queueUrl, java.util.Map<String, String> tags,
+            com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler) {
+
+        return tagQueueAsync(new TagQueueRequest().withQueueUrl(queueUrl).withTags(tags), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest request) {
+
+        return untagQueueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(final UntagQueueRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
+        final UntagQueueRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagQueueResult>() {
+            @Override
+            public UntagQueueResult call() throws Exception {
+                UntagQueueResult result = null;
+
+                try {
+                    result = executeUntagQueue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    /**
+     * Simplified method form for invoking the UntagQueue operation.
+     *
+     * @see #untagQueueAsync(UntagQueueRequest)
+     */
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(String queueUrl, java.util.List<String> tagKeys) {
+
+        return untagQueueAsync(new UntagQueueRequest().withQueueUrl(queueUrl).withTagKeys(tagKeys));
+    }
+
+    /**
+     * Simplified method form for invoking the UntagQueue operation with an AsyncHandler.
+     *
+     * @see #untagQueueAsync(UntagQueueRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    @Override
+    public java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(String queueUrl, java.util.List<String> tagKeys,
+            com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler) {
+
+        return untagQueueAsync(new UntagQueueRequest().withQueueUrl(queueUrl).withTagKeys(tagKeys), asyncHandler);
     }
 
     /**

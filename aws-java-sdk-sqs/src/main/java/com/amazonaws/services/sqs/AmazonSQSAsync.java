@@ -73,7 +73,7 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * <li>
  * <p>
- * <i>Amazon SQS Developer Guide</i>
+ * <i>Amazon Simple Queue Service Developer Guide</i>
  * </p>
  * <ul>
  * <li>
@@ -123,7 +123,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * When you create a queue, you have full control access rights for the queue. Only you, the owner of the queue, can
      * grant or deny permissions to the queue. For more information about these permissions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-     * Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -131,7 +131,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <code> <a>SetQueueAttributes</a> </code> to upload your policy. For more information about writing your own
      * policy, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-     * The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
+     * The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
@@ -163,7 +163,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * When you create a queue, you have full control access rights for the queue. Only you, the owner of the queue, can
      * grant or deny permissions to the queue. For more information about these permissions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-     * Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -171,7 +171,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <code> <a>SetQueueAttributes</a> </code> to upload your policy. For more information about writing your own
      * policy, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-     * The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
+     * The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
@@ -220,7 +220,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * value is 12 hours. Thus, you can't extend the timeout of a message in an existing queue to more than a total
      * visibility timeout of 12 hours. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
@@ -272,7 +272,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * value is 12 hours. Thus, you can't extend the timeout of a message in an existing queue to more than a total
      * visibility timeout of 12 hours. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
@@ -446,7 +446,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * queue. You must either create a new FIFO queue for your application or delete your existing standard queue and
      * recreate it as a FIFO queue. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-     * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </note></li>
      * <li>
@@ -520,7 +520,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * queue. You must either create a new FIFO queue for your application or delete your existing standard queue and
      * recreate it as a FIFO queue. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-     * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </note></li>
      * <li>
@@ -934,7 +934,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For
      * more information about shared queue access, see <code> <a>AddPermission</a> </code> or see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-     * Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param getQueueUrlRequest
@@ -955,7 +955,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For
      * more information about shared queue access, see <code> <a>AddPermission</a> </code> or see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-     * Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param getQueueUrlRequest
@@ -994,7 +994,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * For more information about using dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1014,7 +1014,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * <p>
      * For more information about using dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1030,6 +1030,130 @@ public interface AmazonSQSAsync extends AmazonSQS {
     java.util.concurrent.Future<ListDeadLetterSourceQueuesResult> listDeadLetterSourceQueuesAsync(
             ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeadLetterSourceQueuesRequest, ListDeadLetterSourceQueuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listQueueTagsRequest
+     * @return A Java Future containing the result of the ListQueueTags operation returned by the service.
+     * @sample AmazonSQSAsync.ListQueueTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest listQueueTagsRequest);
+
+    /**
+     * <p>
+     * List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listQueueTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListQueueTags operation returned by the service.
+     * @sample AmazonSQSAsyncHandler.ListQueueTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(ListQueueTagsRequest listQueueTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the ListQueueTags operation.
+     *
+     * @see #listQueueTagsAsync(ListQueueTagsRequest)
+     */
+    java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl);
+
+    /**
+     * Simplified method form for invoking the ListQueueTags operation with an AsyncHandler.
+     *
+     * @see #listQueueTagsAsync(ListQueueTagsRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<ListQueueTagsResult> listQueueTagsAsync(String queueUrl,
+            com.amazonaws.handlers.AsyncHandler<ListQueueTagsRequest, ListQueueTagsResult> asyncHandler);
 
     /**
      * <p>
@@ -1153,7 +1277,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
      * parameter enables long-poll support. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS
-     * Long Polling</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of machines is sampled on a
@@ -1202,14 +1326,14 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
      * href
      * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
-     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your request. The parameter is applied to the
      * messages that Amazon SQS returns in the response. If you don't include the parameter, the overall visibility
      * timeout for the queue is used for the returned messages. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
@@ -1236,7 +1360,7 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
      * parameter enables long-poll support. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS
-     * Long Polling</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of machines is sampled on a
@@ -1285,14 +1409,14 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
      * href
      * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
-     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your request. The parameter is applied to the
      * messages that Amazon SQS returns in the response. If you don't include the parameter, the overall visibility
      * timeout for the queue is used for the returned messages. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
@@ -1639,5 +1763,253 @@ public interface AmazonSQSAsync extends AmazonSQS {
      */
     java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(String queueUrl, java.util.Map<String, String> attributes,
             com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagQueueRequest
+     * @return A Java Future containing the result of the TagQueue operation returned by the service.
+     * @sample AmazonSQSAsync.TagQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagQueueResult> tagQueueAsync(TagQueueRequest tagQueueRequest);
+
+    /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagQueueRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagQueue operation returned by the service.
+     * @sample AmazonSQSAsyncHandler.TagQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagQueueResult> tagQueueAsync(TagQueueRequest tagQueueRequest,
+            com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the TagQueue operation.
+     *
+     * @see #tagQueueAsync(TagQueueRequest)
+     */
+    java.util.concurrent.Future<TagQueueResult> tagQueueAsync(String queueUrl, java.util.Map<String, String> tags);
+
+    /**
+     * Simplified method form for invoking the TagQueue operation with an AsyncHandler.
+     *
+     * @see #tagQueueAsync(TagQueueRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<TagQueueResult> tagQueueAsync(String queueUrl, java.util.Map<String, String> tags,
+            com.amazonaws.handlers.AsyncHandler<TagQueueRequest, TagQueueResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagQueueRequest
+     * @return A Java Future containing the result of the UntagQueue operation returned by the service.
+     * @sample AmazonSQSAsync.UntagQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest untagQueueRequest);
+
+    /**
+     * <p>
+     * Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagQueueRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagQueue operation returned by the service.
+     * @sample AmazonSQSAsyncHandler.UntagQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(UntagQueueRequest untagQueueRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler);
+
+    /**
+     * Simplified method form for invoking the UntagQueue operation.
+     *
+     * @see #untagQueueAsync(UntagQueueRequest)
+     */
+    java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(String queueUrl, java.util.List<String> tagKeys);
+
+    /**
+     * Simplified method form for invoking the UntagQueue operation with an AsyncHandler.
+     *
+     * @see #untagQueueAsync(UntagQueueRequest, com.amazonaws.handlers.AsyncHandler)
+     */
+    java.util.concurrent.Future<UntagQueueResult> untagQueueAsync(String queueUrl, java.util.List<String> tagKeys,
+            com.amazonaws.handlers.AsyncHandler<UntagQueueRequest, UntagQueueResult> asyncHandler);
 
 }

@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.util.Map.Entry;
 import java.math.*;
 
 import javax.annotation.Generated;

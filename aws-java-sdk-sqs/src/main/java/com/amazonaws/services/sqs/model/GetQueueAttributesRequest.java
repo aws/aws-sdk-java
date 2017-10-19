@@ -59,7 +59,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -73,7 +73,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
      * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -126,7 +126,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality
      * of the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -148,7 +148,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -185,7 +185,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -199,7 +199,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -257,7 +257,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -271,7 +271,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
      *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -325,7 +325,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -347,7 +347,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -385,7 +385,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -399,7 +399,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      */
@@ -487,7 +487,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -501,7 +501,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
      * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -554,7 +554,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality
      * of the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -576,7 +576,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -613,7 +613,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -627,7 +627,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -652,7 +652,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *         >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -666,7 +666,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
      *         not timed-out and aren't deleted. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *         >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -720,7 +720,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *         see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *         >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -742,7 +742,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
      *         the visibility timeout, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *         >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -780,7 +780,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     *         >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -794,7 +794,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
      *         queue. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         </li>
      * @see QueueAttributeName
@@ -831,7 +831,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -845,7 +845,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
      * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -898,7 +898,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality
      * of the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -920,7 +920,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -957,7 +957,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -971,7 +971,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -997,7 +997,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1011,7 +1011,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
      *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1065,7 +1065,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1087,7 +1087,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1125,7 +1125,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1139,7 +1139,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      * @see QueueAttributeName
@@ -1178,7 +1178,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1192,7 +1192,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
      * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1245,7 +1245,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality
      * of the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1267,7 +1267,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1304,7 +1304,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1318,7 +1318,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1349,7 +1349,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1363,7 +1363,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
      *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1417,7 +1417,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1439,7 +1439,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1477,7 +1477,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1491,7 +1491,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1532,7 +1532,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1546,7 +1546,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
      * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1599,7 +1599,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality
      * of the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1621,7 +1621,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1658,7 +1658,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1672,7 +1672,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1698,7 +1698,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1712,7 +1712,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
      *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1766,7 +1766,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1788,7 +1788,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1826,7 +1826,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -1840,7 +1840,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1876,7 +1876,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For
      * more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1890,7 +1890,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
      * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1943,7 +1943,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>RedrivePolicy</code> - Returns the string that includes the parameters for dead-letter queue functionality
      * of the source queue. For more information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1965,7 +1965,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the
      * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2002,7 +2002,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     * >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2016,7 +2016,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue.
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -2042,7 +2042,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue.
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -2056,7 +2056,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
      *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
-     *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Resources Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -2110,7 +2110,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        functionality of the source queue. For more information about the redrive policy and dead-letter queues,
      *        see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -2132,7 +2132,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about
      *        the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -2170,7 +2170,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic"
-     *        >FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >FIFO Queue Logic</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -2184,7 +2184,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the
      *        queue. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        >Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

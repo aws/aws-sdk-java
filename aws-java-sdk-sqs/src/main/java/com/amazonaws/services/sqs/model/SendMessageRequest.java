@@ -73,7 +73,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue> messageAttributes;
@@ -87,7 +87,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -494,13 +494,13 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     *         >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
@@ -515,14 +515,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     *        >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
     public void setMessageAttributes(java.util.Map<String, MessageAttributeValue> messageAttributes) {
@@ -534,14 +534,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
-     *        >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        >Message Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -581,7 +581,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -659,7 +659,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -744,7 +744,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -821,7 +821,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *         deduplication interval. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -907,7 +907,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -985,7 +985,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>

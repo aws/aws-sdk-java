@@ -13,7 +13,6 @@
 package com.amazonaws.services.health.model.transform;
 
 import java.util.Map;
-
 import java.math.*;
 
 import javax.annotation.Generated;

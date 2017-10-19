@@ -60,7 +60,7 @@
  * </li>
  * <li>
  * <p>
- * <i>Amazon SQS Developer Guide</i>
+ * <i>Amazon Simple Queue Service Developer Guide</i>
  * </p>
  * <ul>
  * <li>

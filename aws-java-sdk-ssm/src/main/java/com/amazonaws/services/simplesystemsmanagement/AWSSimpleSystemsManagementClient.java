@@ -98,6 +98,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameters").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterMaxVersionLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidKeyId").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException.class))
                     .addErrorMetadata(
@@ -142,6 +145,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResourceId").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterVersionNotFound").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ResourceInUseException.class))
@@ -1184,6 +1190,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         ActivationCode do not match.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.DeleteActivation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation" target="_top">AWS API
      *      Documentation</a>
@@ -3909,6 +3917,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The query key ID is not valid.
      * @throws ParameterNotFoundException
      *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
      * @sample AWSSimpleSystemsManagement.GetParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter" target="_top">AWS API
      *      Documentation</a>
@@ -5217,6 +5227,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
      * @throws InvalidAllowedPatternException
      *         The request does not meet the regular expression requirement.
+     * @throws ParameterMaxVersionLimitExceededException
+     *         The parameter exceeded the maximum number of allowed versions.
      * @throws ParameterPatternMismatchException
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException

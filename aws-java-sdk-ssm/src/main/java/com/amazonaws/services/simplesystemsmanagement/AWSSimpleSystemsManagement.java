@@ -446,6 +446,8 @@ public interface AWSSimpleSystemsManagement {
      *         ActivationCode do not match.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.DeleteActivation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation" target="_top">AWS API
      *      Documentation</a>
@@ -1463,6 +1465,8 @@ public interface AWSSimpleSystemsManagement {
      *         The query key ID is not valid.
      * @throws ParameterNotFoundException
      *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
      * @sample AWSSimpleSystemsManagement.GetParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter" target="_top">AWS API
      *      Documentation</a>
@@ -2026,6 +2030,8 @@ public interface AWSSimpleSystemsManagement {
      *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
      * @throws InvalidAllowedPatternException
      *         The request does not meet the regular expression requirement.
+     * @throws ParameterMaxVersionLimitExceededException
+     *         The parameter exceeded the maximum number of allowed versions.
      * @throws ParameterPatternMismatchException
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException

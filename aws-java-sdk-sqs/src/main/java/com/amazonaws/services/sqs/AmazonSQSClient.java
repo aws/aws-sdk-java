@@ -96,7 +96,7 @@ import com.amazonaws.services.sqs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <i>Amazon SQS Developer Guide</i>
+ * <i>Amazon Simple Queue Service Developer Guide</i>
  * </p>
  * <ul>
  * <li>
@@ -361,7 +361,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * When you create a queue, you have full control access rights for the queue. Only you, the owner of the queue, can
      * grant or deny permissions to the queue. For more information about these permissions, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-     * Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -369,7 +369,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <code> <a>SetQueueAttributes</a> </code> to upload your policy. For more information about writing your own
      * policy, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
-     * The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
+     * The Access Policy Language</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
@@ -440,7 +440,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * value is 12 hours. Thus, you can't extend the timeout of a message in an existing queue to more than a total
      * visibility timeout of 12 hours. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
@@ -628,7 +628,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * queue. You must either create a new FIFO queue for your application or delete your existing standard queue and
      * recreate it as a FIFO queue. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
-     * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * </note></li>
      * <li>
@@ -1035,7 +1035,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For
      * more information about shared queue access, see <code> <a>AddPermission</a> </code> or see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
-     * Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param getQueueUrlRequest
@@ -1095,7 +1095,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * For more information about using dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
-     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param listDeadLetterSourceQueuesRequest
@@ -1141,6 +1141,97 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             endClientExecution(awsRequestMetrics, request, response);
         }
+    }
+
+    /**
+     * <p>
+     * List all cost allocation tags added to the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listQueueTagsRequest
+     * @return Result of the ListQueueTags operation returned by the service.
+     * @sample AmazonSQS.ListQueueTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListQueueTagsResult listQueueTags(ListQueueTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListQueueTags(request);
+    }
+
+    @SdkInternalApi
+    final ListQueueTagsResult executeListQueueTags(ListQueueTagsRequest listQueueTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listQueueTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListQueueTagsRequest> request = null;
+        Response<ListQueueTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListQueueTagsRequestMarshaller().marshall(super.beforeMarshalling(listQueueTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListQueueTagsResult> responseHandler = new StaxResponseHandler<ListQueueTagsResult>(new ListQueueTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public ListQueueTagsResult listQueueTags(String queueUrl) {
+        return listQueueTags(new ListQueueTagsRequest().withQueueUrl(queueUrl));
     }
 
     /**
@@ -1270,7 +1361,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
      * parameter enables long-poll support. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS
-     * Long Polling</a> in the <i>Amazon SQS Developer Guide</i>.
+     * Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * Short poll is the default behavior where a weighted random set of machines is sampled on a
@@ -1319,14 +1410,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
      * href
      * ="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html"
-     * >Queue and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Queue and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * You can provide the <code>VisibilityTimeout</code> parameter in your request. The parameter is applied to the
      * messages that Amazon SQS returns in the response. If you don't include the parameter, the overall visibility
      * timeout for the queue is used for the returned messages. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Visibility Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <p>
      * A message that isn't deleted or a message whose visibility isn't extended before the visibility timeout expires
@@ -1680,6 +1771,188 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     @Override
     public SetQueueAttributesResult setQueueAttributes(String queueUrl, java.util.Map<String, String> attributes) {
         return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes));
+    }
+
+    /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagQueueRequest
+     * @return Result of the TagQueue operation returned by the service.
+     * @sample AmazonSQS.TagQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagQueueResult tagQueue(TagQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagQueue(request);
+    }
+
+    @SdkInternalApi
+    final TagQueueResult executeTagQueue(TagQueueRequest tagQueueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagQueueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagQueueRequest> request = null;
+        Response<TagQueueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagQueueRequestMarshaller().marshall(super.beforeMarshalling(tagQueueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TagQueueResult> responseHandler = new StaxResponseHandler<TagQueueResult>(new TagQueueResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public TagQueueResult tagQueue(String queueUrl, java.util.Map<String, String> tags) {
+        return tagQueue(new TagQueueRequest().withQueueUrl(queueUrl).withTags(tags));
+    }
+
+    /**
+     * <p>
+     * Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tagging-queues.html">Tagging
+     * Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tagging API actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file
+     * a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+     * request</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">Limits
+     * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagQueueRequest
+     * @return Result of the UntagQueue operation returned by the service.
+     * @sample AmazonSQS.UntagQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagQueueResult untagQueue(UntagQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagQueue(request);
+    }
+
+    @SdkInternalApi
+    final UntagQueueResult executeUntagQueue(UntagQueueRequest untagQueueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagQueueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagQueueRequest> request = null;
+        Response<UntagQueueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagQueueRequestMarshaller().marshall(super.beforeMarshalling(untagQueueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UntagQueueResult> responseHandler = new StaxResponseHandler<UntagQueueResult>(new UntagQueueResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public UntagQueueResult untagQueue(String queueUrl, java.util.List<String> tagKeys) {
+        return untagQueue(new UntagQueueRequest().withQueueUrl(queueUrl).withTagKeys(tagKeys));
     }
 
     /**

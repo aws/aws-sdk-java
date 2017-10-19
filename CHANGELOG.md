@@ -1,3 +1,12 @@
+# __1.11.217__ __2017-10-19__
+## __Amazon Simple Queue Service (SQS)__
+  - ### Features
+    - Added support for tracking cost allocation by adding, updating, removing, and listing the metadata tags of Amazon SQS queues.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - EC2 Systems Manager versioning support for Parameter Store. Also support for referencing parameter versions in SSM Documents.
+
 # __1.11.216__ __2017-10-18__
 ## __Amazon Lightsail__
   - ### Features
