@@ -1,3 +1,8 @@
+# __1.11.218__ __2017-10-20__
+## __Amazon EC2__
+  - ### Features
+    - Adding pagination support for DescribeSecurityGroups for EC2 Classic and VPC Security Groups
+
 # __1.11.217__ __2017-10-19__
 ## __Amazon Simple Queue Service (SQS)__
   - ### Features

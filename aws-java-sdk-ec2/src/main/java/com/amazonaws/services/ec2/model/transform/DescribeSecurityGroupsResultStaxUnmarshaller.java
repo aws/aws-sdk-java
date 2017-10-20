@@ -55,6 +55,10 @@ public class DescribeSecurityGroupsResultStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeSecurityGroupsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSecurityGroupsResult;

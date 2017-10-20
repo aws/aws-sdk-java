@@ -31,6 +31,13 @@ public class DescribeSecurityGroupsResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SecurityGroup> securityGroups;
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -106,6 +113,52 @@ public class DescribeSecurityGroupsResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -117,7 +170,9 @@ public class DescribeSecurityGroupsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: ").append(getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +191,10 @@ public class DescribeSecurityGroupsResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +204,7 @@ public class DescribeSecurityGroupsResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

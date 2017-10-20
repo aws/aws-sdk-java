@@ -94,6 +94,14 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (describeSecurityGroupsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSecurityGroupsRequest.getNextToken()));
+        }
+
+        if (describeSecurityGroupsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSecurityGroupsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

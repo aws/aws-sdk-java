@@ -141,6 +141,19 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
+    /**
+     * <p>
+     * The token to request the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -1115,6 +1128,92 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The token to request the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to request the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to request the next page of results.
+     * </p>
+     * 
+     * @return The token to request the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to request the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to request the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * </p>
+     * 
+     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *         request with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
+     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
+     *        request with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1141,7 +1240,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
         if (getGroupIds() != null)
             sb.append("GroupIds: ").append(getGroupIds()).append(",");
         if (getGroupNames() != null)
-            sb.append("GroupNames: ").append(getGroupNames());
+            sb.append("GroupNames: ").append(getGroupNames()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -1168,6 +1271,14 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
             return false;
         if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -1179,6 +1290,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode());
         hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 
