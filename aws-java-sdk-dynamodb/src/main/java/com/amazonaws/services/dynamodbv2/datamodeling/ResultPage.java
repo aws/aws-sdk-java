@@ -1,0 +1,201 @@
+/*
+ * Copyright 2013-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.amazonaws.services.dynamodbv2.datamodeling;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ConsumedCapacity;
+
+/**
+ * Interface for a page of results.
+ */
+public interface ResultPage<T> {
+
+    /**
+     * Returns all matching items for this page of query results.
+     */
+    public List<T> getResults();
+
+    public void setResults(List<T> results);
+
+    /**
+     * Returns the last evaluated key, which can be used as the
+     * exclusiveStartKey to fetch the next page of results. Returns null if this
+     * is the last page of results.
+     *
+     * @return    The key-value pairs which map from the attribute name of each component
+     *             of the primary key to its value.
+     */
+    public Map<String,AttributeValue> getLastEvaluatedKey();
+
+    public void setLastEvaluatedKey(Map<String,AttributeValue> lastEvaluatedKey);
+
+    /**
+     * The number of items in the response. <p>If you used a
+     * filter in the request, then <i>Count</i> is the number of
+     * items returned after the filter was applied, and <i>ScannedCount</i>
+     * is the number of matching items before> the filter was applied. <p>If
+     * you did not use a filter in the request, then <i>Count</i> and
+     * <i>ScannedCount</i> are the same.
+     *
+     * @return The number of items in the response. <p>If you used a
+     *         filter in the request, then <i>Count</i> is the number of
+     *         items returned after the filter was applied, and <i>ScannedCount</i>
+     *         is the number of matching items before> the filter was applied. <p>If
+     *         you did not use a filter in the request, then <i>Count</i> and
+     *         <i>ScannedCount</i> are the same.
+     */
+    public Integer getCount();
+
+    public void setCount(Integer count);
+
+    /**
+     * The number of items evaluated, before any filter is
+     * applied. A high <i>ScannedCount</i> value with few, or no,
+     * <i>Count</i> results indicates an inefficient request operation.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+     * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * <p>If you did not use a filter in the request, then
+     * <i>ScannedCount</i> is the same as <i>Count</i>.
+     *
+     * @return The number of items evaluated, before any filter is
+     *         applied. A high <i>ScannedCount</i> value with few, or no,
+     *         <i>Count</i> results indicates an inefficient request operation.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+     *         and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         <p>If you did not use a filter in the request, then
+     *         <i>ScannedCount</i> is the same as <i>Count</i>.
+     */
+    public Integer getScannedCount();
+
+    public void setScannedCount(Integer scannedCount);
+
+    /**
+     * The capacity units consumed by an operation. The data returned
+     * includes the total provisioned throughput consumed, along with
+     * statistics for the table and any indexes involved in the operation.
+     * <i>ConsumedCapacity</i> is only returned if the request asked for it.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *
+     * @return The capacity units consumed by an operation. The data returned
+     *         includes the total provisioned throughput consumed, along with
+     *         statistics for the table and any indexes involved in the operation.
+     *         <i>ConsumedCapacity</i> is only returned if the request asked for it.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     */
+    public ConsumedCapacity getConsumedCapacity();
+
+    public void setConsumedCapacity(ConsumedCapacity consumedCapacity);
+    
+    /**
+     * Base implementation for a result page.
+     */
+    @SdkInternalApi
+    static abstract class AbstractResultPage<T> implements ResultPage<T>, Iterable<T> {
+        
+        private List<T> results;
+        private Map<String,AttributeValue> lastEvaluatedKey;
+        
+        private Integer count;
+        private Integer scannedCount;
+        private ConsumedCapacity consumedCapacity;
+        
+        @Override
+        public List<T> getResults() {
+            return results;
+        }
+        
+        @Override
+        public void setResults(List<T> results) {
+            this.results = results;
+        }
+        
+        @Override
+        public Map<String,AttributeValue> getLastEvaluatedKey() {
+            return lastEvaluatedKey;
+        }
+        
+        @Override
+        public void setLastEvaluatedKey(Map<String,AttributeValue> lastEvaluatedKey) {
+            this.lastEvaluatedKey = lastEvaluatedKey;
+        }
+        
+        @Override
+        public Integer getCount() {
+            return count;
+        }
+        
+        @Override
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+        
+        @Override
+        public Integer getScannedCount() {
+            return scannedCount;
+        }
+        
+        @Override
+        public void setScannedCount(Integer scannedCount) {
+            this.scannedCount = scannedCount;
+        }
+        
+        @Override
+        public ConsumedCapacity getConsumedCapacity() {
+            return consumedCapacity;
+        }
+        
+        @Override
+        public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
+            this.consumedCapacity = consumedCapacity;
+        }
+
+        @Override
+        public final Iterator<T> iterator() {
+            if (getResults() == null) {
+                return Collections.<T>emptyList().iterator();
+            }
+            return getResults().iterator();
+        }
+        
+        /**
+         * Returns the number of items in the result set.
+         */
+        public final int size() {
+            return getResults() == null ? 0 : getResults().size();
+        }
+        
+        /**
+         * Returns true if the last evaluated key is present, indicating a
+         * subsequent request, with the provided exclusive start key, may
+         * return more result pages.
+         */
+        public final boolean hasNextPage() {
+            return getLastEvaluatedKey() != null;
+        }
+    }
+
+}
