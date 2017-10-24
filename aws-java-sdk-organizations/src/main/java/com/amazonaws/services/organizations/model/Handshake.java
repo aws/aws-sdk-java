@@ -120,8 +120,32 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date expirationTimestamp;
     /**
      * <p>
-     * The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following
+     * handshake types are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
+     * master account to only non-member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
+     * do not receive this because those accounts were created by the organization's master account and approval is
+     * inferred.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
+     * signals the master that it can finalize the process to enable all features.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String action;
     /**
@@ -852,11 +876,58 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following
+     * handshake types are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
+     * master account to only non-member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
+     * do not receive this because those accounts were created by the organization's master account and approval is
+     * inferred.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
+     * signals the master that it can finalize the process to enable all features.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake. The
+     *        following handshake types are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
+     *        the master account to only non-member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
+     *        accounts do not receive this because those accounts were created by the organization's master account and
+     *        approval is inferred.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        account and signals the master that it can finalize the process to enable all features.
+     *        </p>
+     *        </li>
      * @see ActionType
      */
 
@@ -866,10 +937,57 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following
+     * handshake types are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
+     * master account to only non-member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
+     * do not receive this because those accounts were created by the organization's master account and approval is
+     * inferred.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
+     * signals the master that it can finalize the process to enable all features.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * @return The type of handshake, indicating what action occurs when the recipient accepts the handshake. The
+     *         following handshake types are supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent
+     *         from the master account to only non-member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     *         organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
+     *         accounts do not receive this because those accounts were created by the organization's master account and
+     *         approval is inferred.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all
+     *         member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the
+     *         master account and signals the master that it can finalize the process to enable all features.
+     *         </p>
+     *         </li>
      * @see ActionType
      */
 
@@ -879,11 +997,58 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following
+     * handshake types are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
+     * master account to only non-member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
+     * do not receive this because those accounts were created by the organization's master account and approval is
+     * inferred.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
+     * signals the master that it can finalize the process to enable all features.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake. The
+     *        following handshake types are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
+     *        the master account to only non-member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
+     *        accounts do not receive this because those accounts were created by the organization's master account and
+     *        approval is inferred.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        account and signals the master that it can finalize the process to enable all features.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */
@@ -895,11 +1060,58 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following
+     * handshake types are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
+     * master account to only non-member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
+     * do not receive this because those accounts were created by the organization's master account and approval is
+     * inferred.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
+     * signals the master that it can finalize the process to enable all features.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake. The
+     *        following handshake types are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
+     *        the master account to only non-member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
+     *        accounts do not receive this because those accounts were created by the organization's master account and
+     *        approval is inferred.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        account and signals the master that it can finalize the process to enable all features.
+     *        </p>
+     *        </li>
      * @see ActionType
      */
 
@@ -909,11 +1121,58 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     * The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following
+     * handshake types are supported:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
+     * master account to only non-member accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
+     * do not receive this because those accounts were created by the organization's master account and approval is
+     * inferred.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
+     * signals the master that it can finalize the process to enable all features.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake.
+     *        The type of handshake, indicating what action occurs when the recipient accepts the handshake. The
+     *        following handshake types are supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
+     *        the master account to only non-member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
+     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
+     *        accounts do not receive this because those accounts were created by the organization's master account and
+     *        approval is inferred.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        account and signals the master that it can finalize the process to enable all features.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionType
      */

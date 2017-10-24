@@ -248,6 +248,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("PolicyTypeAlreadyEnabledException").withModeledClass(
                                     com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withModeledClass(
+                                    com.amazonaws.services.organizations.model.AccessDeniedForDependencyException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
                                     com.amazonaws.services.organizations.model.AccessDeniedException.class))
                     .addErrorMetadata(
@@ -510,6 +513,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member
      * account.
      * </p>
+     * <p>
+     * The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
+     * permission. If you enabled all features in the organization, then the user must also have the
+     * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked
+     * role named <i>OrgsServiceLinkedRoleName</i>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -706,6 +717,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws TooManyRequestsException
      *         You've sent too many requests in too short a period of time. The limit helps protect against
      *         denial-of-service attacks. Try again later.
+     * @throws AccessDeniedForDependencyException
+     *         The operation you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> so that
+     *         Organizations can create the required service-linked role. You do not have that permission.
      * @sample AWSOrganizations.AcceptHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/AcceptHandshake" target="_top">AWS
      *      API Documentation</a>
@@ -818,7 +832,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -1264,11 +1282,21 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants administrator permissions to the new account.
-     * Principals in the master account can assume the role. AWS Organizations clones the company name and address
-     * information for the new account from the organization's master account.
+     * The user who calls the API for an invitation to join must have the <code>organizations:CreateAccount</code>
+     * permission. If you enabled all features in the organization, then the user must also have the
+     * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked
+     * role named <i>OrgsServiceLinkedRoleName</i>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The user in the master account who calls this API must also have the <code>iam:CreateRole</code> permission
+     * because AWS Organizations preconfigures the new member account with a role (named
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
+     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
+     * clones the company name and address information for the new account from the organization's master account.
+     * </p>
+     * <p/>
      * <p>
      * For more information about creating accounts, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS
@@ -1321,7 +1349,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -1616,7 +1648,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -1832,6 +1868,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws TooManyRequestsException
      *         You've sent too many requests in too short a period of time. The limit helps protect against
      *         denial-of-service attacks. Try again later.
+     * @throws AccessDeniedForDependencyException
+     *         The operation you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> so that
+     *         Organizations can create the required service-linked role. You do not have that permission.
      * @sample AWSOrganizations.CreateOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -1905,7 +1944,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -2198,7 +2241,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -4030,7 +4077,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -4320,7 +4371,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -4851,7 +4906,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -5427,7 +5486,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -7829,7 +7892,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>
@@ -8281,7 +8348,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
      *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
-     *         information about the violated limit:</p>
+     *         information about the violated limit.</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         </p>
+     *         </note>
      *         <p/>
      *         <ul>
      *         <li>

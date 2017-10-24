@@ -176,6 +176,14 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member
      * account.
      * </p>
+     * <p>
+     * The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
+     * permission. If you enabled all features in the organization, then the user must also have the
+     * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked
+     * role named <i>OrgsServiceLinkedRoleName</i>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -216,6 +224,14 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member
      * account.
+     * </p>
+     * <p>
+     * The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
+     * permission. If you enabled all features in the organization, then the user must also have the
+     * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked
+     * role named <i>OrgsServiceLinkedRoleName</i>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -438,11 +454,21 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants administrator permissions to the new account.
-     * Principals in the master account can assume the role. AWS Organizations clones the company name and address
-     * information for the new account from the organization's master account.
+     * The user who calls the API for an invitation to join must have the <code>organizations:CreateAccount</code>
+     * permission. If you enabled all features in the organization, then the user must also have the
+     * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked
+     * role named <i>OrgsServiceLinkedRoleName</i>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The user in the master account who calls this API must also have the <code>iam:CreateRole</code> permission
+     * because AWS Organizations preconfigures the new member account with a role (named
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
+     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
+     * clones the company name and address information for the new account from the organization's master account.
+     * </p>
+     * <p/>
      * <p>
      * For more information about creating accounts, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS
@@ -495,11 +521,21 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants administrator permissions to the new account.
-     * Principals in the master account can assume the role. AWS Organizations clones the company name and address
-     * information for the new account from the organization's master account.
+     * The user who calls the API for an invitation to join must have the <code>organizations:CreateAccount</code>
+     * permission. If you enabled all features in the organization, then the user must also have the
+     * <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can create the required service-linked
+     * role named <i>OrgsServiceLinkedRoleName</i>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integration_service-linked-roles"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The user in the master account who calls this API must also have the <code>iam:CreateRole</code> permission
+     * because AWS Organizations preconfigures the new member account with a role (named
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
+     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
+     * clones the company name and address information for the new account from the organization's master account.
+     * </p>
+     * <p/>
      * <p>
      * For more information about creating accounts, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS

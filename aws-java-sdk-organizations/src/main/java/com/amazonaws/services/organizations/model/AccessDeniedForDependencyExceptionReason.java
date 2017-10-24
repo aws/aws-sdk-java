@@ -18,18 +18,13 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum CreateAccountFailureReason {
+public enum AccessDeniedForDependencyExceptionReason {
 
-    ACCOUNT_LIMIT_EXCEEDED("ACCOUNT_LIMIT_EXCEEDED"),
-    EMAIL_ALREADY_EXISTS("EMAIL_ALREADY_EXISTS"),
-    INVALID_ADDRESS("INVALID_ADDRESS"),
-    INVALID_EMAIL("INVALID_EMAIL"),
-    CONCURRENT_ACCOUNT_MODIFICATION("CONCURRENT_ACCOUNT_MODIFICATION"),
-    INTERNAL_FAILURE("INTERNAL_FAILURE");
+    ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE("ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE");
 
     private String value;
 
-    private CreateAccountFailureReason(String value) {
+    private AccessDeniedForDependencyExceptionReason(String value) {
         this.value = value;
     }
 
@@ -43,17 +38,17 @@ public enum CreateAccountFailureReason {
      *
      * @param value
      *        real value
-     * @return CreateAccountFailureReason corresponding to the value
+     * @return AccessDeniedForDependencyExceptionReason corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static CreateAccountFailureReason fromValue(String value) {
+    public static AccessDeniedForDependencyExceptionReason fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (CreateAccountFailureReason enumEntry : CreateAccountFailureReason.values()) {
+        for (AccessDeniedForDependencyExceptionReason enumEntry : AccessDeniedForDependencyExceptionReason.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

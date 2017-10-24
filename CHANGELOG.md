@@ -1,3 +1,8 @@
+# __1.11.219__ __2017-10-23__
+## __AWS Organizations__
+  - ### Features
+    - This release supports integrating other AWS services with AWS Organizations through the use of an IAM service-linked role called AWSServiceRoleForOrganizations. Certain operations automatically create that role if it does not already exist.
+
 # __1.11.218__ __2017-10-20__
 ## __Amazon EC2__
   - ### Features
