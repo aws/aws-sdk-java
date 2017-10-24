@@ -31,16 +31,12 @@ public class MessageRequestMarshaller {
 
     private static final MarshallingInfo<Map> ADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Addresses").build();
-    private static final MarshallingInfo<Map> CAMPAIGN_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Campaign").build();
     private static final MarshallingInfo<Map> CONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Context").build();
     private static final MarshallingInfo<Map> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<StructuredPojo> MESSAGECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageConfiguration").build();
-    private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("RequestId").build();
 
     private static final MessageRequestMarshaller instance = new MessageRequestMarshaller();
 
@@ -59,11 +55,9 @@ public class MessageRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(messageRequest.getAddresses(), ADDRESSES_BINDING);
-            protocolMarshaller.marshall(messageRequest.getCampaign(), CAMPAIGN_BINDING);
             protocolMarshaller.marshall(messageRequest.getContext(), CONTEXT_BINDING);
             protocolMarshaller.marshall(messageRequest.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(messageRequest.getMessageConfiguration(), MESSAGECONFIGURATION_BINDING);
-            protocolMarshaller.marshall(messageRequest.getRequestId(), REQUESTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

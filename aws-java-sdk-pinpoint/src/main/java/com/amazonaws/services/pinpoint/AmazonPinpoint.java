@@ -250,6 +250,52 @@ public interface AmazonPinpoint {
     DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
 
     /**
+     * Delete an APNS VoIP channel
+     * 
+     * @param deleteApnsVoipChannelRequest
+     * @return Result of the DeleteApnsVoipChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteApnsVoipChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteApnsVoipChannelResult deleteApnsVoipChannel(DeleteApnsVoipChannelRequest deleteApnsVoipChannelRequest);
+
+    /**
+     * Delete an APNS VoIP sandbox channel
+     * 
+     * @param deleteApnsVoipSandboxChannelRequest
+     * @return Result of the DeleteApnsVoipSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteApnsVoipSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteApnsVoipSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApnsVoipSandboxChannelResult deleteApnsVoipSandboxChannel(DeleteApnsVoipSandboxChannelRequest deleteApnsVoipSandboxChannelRequest);
+
+    /**
      * Deletes an app.
      * 
      * @param deleteAppRequest
@@ -502,6 +548,52 @@ public interface AmazonPinpoint {
      *      API Documentation</a>
      */
     GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
+
+    /**
+     * Get an APNS VoIP channel
+     * 
+     * @param getApnsVoipChannelRequest
+     * @return Result of the GetApnsVoipChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetApnsVoipChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetApnsVoipChannelResult getApnsVoipChannel(GetApnsVoipChannelRequest getApnsVoipChannelRequest);
+
+    /**
+     * Get an APNS VoipSandbox channel
+     * 
+     * @param getApnsVoipSandboxChannelRequest
+     * @return Result of the GetApnsVoipSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetApnsVoipSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApnsVoipSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetApnsVoipSandboxChannelResult getApnsVoipSandboxChannel(GetApnsVoipSandboxChannelRequest getApnsVoipSandboxChannelRequest);
 
     /**
      * Returns information about an app.
@@ -760,7 +852,7 @@ public interface AmazonPinpoint {
      * Returns the event stream for an app.
      * 
      * @param getEventStreamRequest
-     *        GetEventStream Request
+     *        GetEventStreamRequest
      * @return Result of the GetEventStream operation returned by the service.
      * @throws BadRequestException
      *         Simple message object.
@@ -1124,6 +1216,52 @@ public interface AmazonPinpoint {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateApnsSandboxChannelResult updateApnsSandboxChannel(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
+
+    /**
+     * Update an APNS VoIP channel
+     * 
+     * @param updateApnsVoipChannelRequest
+     * @return Result of the UpdateApnsVoipChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateApnsVoipChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateApnsVoipChannelResult updateApnsVoipChannel(UpdateApnsVoipChannelRequest updateApnsVoipChannelRequest);
+
+    /**
+     * Update an APNS VoIP sandbox channel
+     * 
+     * @param updateApnsVoipSandboxChannelRequest
+     * @return Result of the UpdateApnsVoipSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateApnsVoipSandboxChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApnsVoipSandboxChannelResult updateApnsVoipSandboxChannel(UpdateApnsVoipSandboxChannelRequest updateApnsVoipSandboxChannelRequest);
 
     /**
      * Used to update the settings for an app.

@@ -38,6 +38,8 @@ public class DevEndpointMarshaller {
             .marshallLocationName("SubnetId").build();
     private static final MarshallingInfo<String> YARNENDPOINTADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("YarnEndpointAddress").build();
+    private static final MarshallingInfo<Integer> ZEPPELINREMOTESPARKINTERPRETERPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZeppelinRemoteSparkInterpreterPort").build();
     private static final MarshallingInfo<String> PUBLICADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicAddress").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class DevEndpointMarshaller {
             protocolMarshaller.marshall(devEndpoint.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(devEndpoint.getSubnetId(), SUBNETID_BINDING);
             protocolMarshaller.marshall(devEndpoint.getYarnEndpointAddress(), YARNENDPOINTADDRESS_BINDING);
+            protocolMarshaller.marshall(devEndpoint.getZeppelinRemoteSparkInterpreterPort(), ZEPPELINREMOTESPARKINTERPRETERPORT_BINDING);
             protocolMarshaller.marshall(devEndpoint.getPublicAddress(), PUBLICADDRESS_BINDING);
             protocolMarshaller.marshall(devEndpoint.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(devEndpoint.getNumberOfNodes(), NUMBEROFNODES_BINDING);

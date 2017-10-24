@@ -64,6 +64,10 @@ public class GCMChannelResponseJsonUnmarshaller implements Unmarshaller<GCMChann
                     context.nextToken();
                     gCMChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("HasCredential", targetDepth)) {
+                    context.nextToken();
+                    gCMChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     gCMChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));

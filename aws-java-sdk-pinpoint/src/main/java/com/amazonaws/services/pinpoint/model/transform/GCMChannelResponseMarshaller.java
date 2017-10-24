@@ -35,6 +35,8 @@ public class GCMChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Credential").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<Boolean> HASCREDENTIAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasCredential").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<Boolean> ISARCHIVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -68,6 +70,7 @@ public class GCMChannelResponseMarshaller {
             protocolMarshaller.marshall(gCMChannelResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getCredential(), CREDENTIAL_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(gCMChannelResponse.getHasCredential(), HASCREDENTIAL_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getId(), ID_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);

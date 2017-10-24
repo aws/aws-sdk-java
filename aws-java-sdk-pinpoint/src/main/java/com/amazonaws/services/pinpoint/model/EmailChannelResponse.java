@@ -34,6 +34,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     private Boolean enabled;
     /** The email address used to send emails from. */
     private String fromAddress;
+    /** If the channel is registered with a credential for authentication. */
+    private Boolean hasCredential;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
     /** The ARN of an identity verified with SES. */
@@ -195,6 +197,50 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     public EmailChannelResponse withFromAddress(String fromAddress) {
         setFromAddress(fromAddress);
         return this;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @param hasCredential
+     *        If the channel is registered with a credential for authentication.
+     */
+
+    public void setHasCredential(Boolean hasCredential) {
+        this.hasCredential = hasCredential;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @return If the channel is registered with a credential for authentication.
+     */
+
+    public Boolean getHasCredential() {
+        return this.hasCredential;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @param hasCredential
+     *        If the channel is registered with a credential for authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailChannelResponse withHasCredential(Boolean hasCredential) {
+        setHasCredential(hasCredential);
+        return this;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @return If the channel is registered with a credential for authentication.
+     */
+
+    public Boolean isHasCredential() {
+        return this.hasCredential;
     }
 
     /**
@@ -498,6 +544,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getFromAddress() != null)
             sb.append("FromAddress: ").append(getFromAddress()).append(",");
+        if (getHasCredential() != null)
+            sb.append("HasCredential: ").append(getHasCredential()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIdentity() != null)
@@ -544,6 +592,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
             return false;
         if (other.getFromAddress() != null && other.getFromAddress().equals(this.getFromAddress()) == false)
             return false;
+        if (other.getHasCredential() == null ^ this.getHasCredential() == null)
+            return false;
+        if (other.getHasCredential() != null && other.getHasCredential().equals(this.getHasCredential()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -588,6 +640,7 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getFromAddress() == null) ? 0 : getFromAddress().hashCode());
+        hashCode = prime * hashCode + ((getHasCredential() == null) ? 0 : getHasCredential().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIdentity() == null) ? 0 : getIdentity().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());

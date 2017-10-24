@@ -60,6 +60,10 @@ public class SMSChannelResponseJsonUnmarshaller implements Unmarshaller<SMSChann
                     context.nextToken();
                     sMSChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("HasCredential", targetDepth)) {
+                    context.nextToken();
+                    sMSChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     sMSChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));

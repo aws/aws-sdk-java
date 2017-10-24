@@ -64,6 +64,10 @@ public class EmailChannelResponseJsonUnmarshaller implements Unmarshaller<EmailC
                     context.nextToken();
                     emailChannelResponse.setFromAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HasCredential", targetDepth)) {
+                    context.nextToken();
+                    emailChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     emailChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));

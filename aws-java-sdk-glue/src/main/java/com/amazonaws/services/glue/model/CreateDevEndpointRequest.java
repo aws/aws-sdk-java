@@ -57,13 +57,19 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     private String publicKey;
     /**
      * <p>
-     * The number of nodes to use.
+     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      * </p>
      */
     private Integer numberOfNodes;
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      */
     private String extraPythonLibsS3Path;
@@ -306,11 +312,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of nodes to use.
+     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of nodes to use.
+     *        The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -319,10 +325,10 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of nodes to use.
+     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      * </p>
      * 
-     * @return The number of nodes to use.
+     * @return The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      */
 
     public Integer getNumberOfNodes() {
@@ -331,11 +337,11 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of nodes to use.
+     * The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of nodes to use.
+     *        The number of AWS Glue Data Processing Units (DPUs) to allocate to this DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,11 +352,22 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Multiple values must be complete paths separated by a comma.</p>
+     *        <p>
+     *        Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on
+     *        C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     *        not yet supported.
      */
 
     public void setExtraPythonLibsS3Path(String extraPythonLibsS3Path) {
@@ -359,10 +376,21 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
-     * @return Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * @return Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *         Multiple values must be complete paths separated by a comma.</p>
+     *         <p>
+     *         Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely
+     *         on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
+     *         are not yet supported.
      */
 
     public String getExtraPythonLibsS3Path() {
@@ -371,11 +399,22 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Multiple values must be complete paths separated by a comma.</p>
+     *        <p>
+     *        Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on
+     *        C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     *        not yet supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

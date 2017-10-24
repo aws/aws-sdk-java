@@ -36,7 +36,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Location of the logs for this job.
+     * This field is reserved for future use.
      * </p>
      */
     private String logUri;
@@ -125,11 +125,11 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the logs for this job.
+     * This field is reserved for future use.
      * </p>
      * 
      * @param logUri
-     *        Location of the logs for this job.
+     *        This field is reserved for future use.
      */
 
     public void setLogUri(String logUri) {
@@ -138,10 +138,10 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the logs for this job.
+     * This field is reserved for future use.
      * </p>
      * 
-     * @return Location of the logs for this job.
+     * @return This field is reserved for future use.
      */
 
     public String getLogUri() {
@@ -150,11 +150,11 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the logs for this job.
+     * This field is reserved for future use.
      * </p>
      * 
      * @param logUri
-     *        Location of the logs for this job.
+     *        This field is reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

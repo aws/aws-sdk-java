@@ -37,7 +37,7 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
     private java.util.List<String> matchCriteria;
     /**
      * <p>
-     * The type of connections to return.
+     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * </p>
      */
     private String connectionType;
@@ -122,11 +122,11 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return.
+     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of connections to return.
+     *        The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -136,10 +136,10 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return.
+     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * </p>
      * 
-     * @return The type of connections to return.
+     * @return The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -149,11 +149,11 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return.
+     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of connections to return.
+     *        The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -165,11 +165,11 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return.
+     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of connections to return.
+     *        The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

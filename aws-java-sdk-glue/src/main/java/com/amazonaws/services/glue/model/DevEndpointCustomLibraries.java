@@ -30,7 +30,13 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      */
     private String extraPythonLibsS3Path;
@@ -38,16 +44,30 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      */
     private String extraJarsS3Path;
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Multiple values must be complete paths separated by a comma.</p>
+     *        <p>
+     *        Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on
+     *        C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     *        not yet supported.
      */
 
     public void setExtraPythonLibsS3Path(String extraPythonLibsS3Path) {
@@ -56,10 +76,21 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
-     * @return Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * @return Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *         Multiple values must be complete paths separated by a comma.</p>
+     *         <p>
+     *         Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely
+     *         on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
+     *         are not yet supported.
      */
 
     public String getExtraPythonLibsS3Path() {
@@ -68,11 +99,22 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Multiple values must be complete paths separated by a comma.</p>
+     *        <p>
+     *        Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on
+     *        C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     *        not yet supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,9 +127,14 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      * 
      * @param extraJarsS3Path
-     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>
+     *        <p>
+     *        Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      */
 
     public void setExtraJarsS3Path(String extraJarsS3Path) {
@@ -98,8 +145,13 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      * 
-     * @return Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     * @return Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>
+     *         <p>
+     *         Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      */
 
     public String getExtraJarsS3Path() {
@@ -110,9 +162,14 @@ public class DevEndpointCustomLibraries implements Serializable, Cloneable, Stru
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      * 
      * @param extraJarsS3Path
-     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>
+     *        <p>
+     *        Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

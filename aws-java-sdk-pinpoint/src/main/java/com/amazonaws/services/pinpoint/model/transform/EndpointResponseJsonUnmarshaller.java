@@ -106,10 +106,6 @@ public class EndpointResponseJsonUnmarshaller implements Unmarshaller<EndpointRe
                     context.nextToken();
                     endpointResponse.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ShardId", targetDepth)) {
-                    context.nextToken();
-                    endpointResponse.setShardId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("User", targetDepth)) {
                     context.nextToken();
                     endpointResponse.setUser(EndpointUserJsonUnmarshaller.getInstance().unmarshall(context));

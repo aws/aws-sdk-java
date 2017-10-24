@@ -53,11 +53,8 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     private String imageIconUrl;
     /** The URL that points to an image used in the push notification. */
     private String imageUrl;
-    /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
-     */
-    private String jsonData;
+    /** Is this a transaction priority message or lower priority. */
+    private String priority;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
     /**
@@ -82,6 +79,11 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     private String sound;
     /** Default message substitutions. Can be overridden by individual address substitutions. */
     private java.util.Map<String, java.util.List<String>> substitutions;
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     */
+    private Integer timeToLive;
     /** The message title that displays above the message on the user's device. */
     private String title;
     /** The URL to open in the user's mobile browser. Used if the value for Action is URL. */
@@ -434,42 +436,36 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * Is this a transaction priority message or lower priority.
      * 
-     * @param jsonData
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
+     * @param priority
+     *        Is this a transaction priority message or lower priority.
      */
 
-    public void setJsonData(String jsonData) {
-        this.jsonData = jsonData;
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * Is this a transaction priority message or lower priority.
      * 
-     * @return The data payload used for a silent push. This payload is added to the notifications'
-     *         data.pinpoint.jsonBody' object
+     * @return Is this a transaction priority message or lower priority.
      */
 
-    public String getJsonData() {
-        return this.jsonData;
+    public String getPriority() {
+        return this.priority;
     }
 
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * Is this a transaction priority message or lower priority.
      * 
-     * @param jsonData
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
+     * @param priority
+     *        Is this a transaction priority message or lower priority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GCMMessage withJsonData(String jsonData) {
-        setJsonData(jsonData);
+    public GCMMessage withPriority(String priority) {
+        setPriority(priority);
         return this;
     }
 
@@ -735,6 +731,46 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * 
+     * @param timeToLive
+     *        This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     *        offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     */
+
+    public void setTimeToLive(Integer timeToLive) {
+        this.timeToLive = timeToLive;
+    }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * 
+     * @return This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     *         offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     */
+
+    public Integer getTimeToLive() {
+        return this.timeToLive;
+    }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     * offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * 
+     * @param timeToLive
+     *        This parameter specifies how long (in seconds) the message should be kept in GCM storage if the device is
+     *        offline. The maximum time to live supported is 4 weeks, and the default value is 4 weeks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMMessage withTimeToLive(Integer timeToLive) {
+        setTimeToLive(timeToLive);
+        return this;
+    }
+
+    /**
      * The message title that displays above the message on the user's device.
      * 
      * @param title
@@ -827,8 +863,8 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
         if (getImageUrl() != null)
             sb.append("ImageUrl: ").append(getImageUrl()).append(",");
-        if (getJsonData() != null)
-            sb.append("JsonData: ").append(getJsonData()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getRawContent() != null)
             sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getRestrictedPackageName() != null)
@@ -841,6 +877,8 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Sound: ").append(getSound()).append(",");
         if (getSubstitutions() != null)
             sb.append("Substitutions: ").append(getSubstitutions()).append(",");
+        if (getTimeToLive() != null)
+            sb.append("TimeToLive: ").append(getTimeToLive()).append(",");
         if (getTitle() != null)
             sb.append("Title: ").append(getTitle()).append(",");
         if (getUrl() != null)
@@ -887,9 +925,9 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageUrl() != null && other.getImageUrl().equals(this.getImageUrl()) == false)
             return false;
-        if (other.getJsonData() == null ^ this.getJsonData() == null)
+        if (other.getPriority() == null ^ this.getPriority() == null)
             return false;
-        if (other.getJsonData() != null && other.getJsonData().equals(this.getJsonData()) == false)
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
             return false;
         if (other.getRawContent() == null ^ this.getRawContent() == null)
             return false;
@@ -915,6 +953,10 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSubstitutions() != null && other.getSubstitutions().equals(this.getSubstitutions()) == false)
             return false;
+        if (other.getTimeToLive() == null ^ this.getTimeToLive() == null)
+            return false;
+        if (other.getTimeToLive() != null && other.getTimeToLive().equals(this.getTimeToLive()) == false)
+            return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
         if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
@@ -938,13 +980,14 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIconReference() == null) ? 0 : getIconReference().hashCode());
         hashCode = prime * hashCode + ((getImageIconUrl() == null) ? 0 : getImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getImageUrl() == null) ? 0 : getImageUrl().hashCode());
-        hashCode = prime * hashCode + ((getJsonData() == null) ? 0 : getJsonData().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getRestrictedPackageName() == null) ? 0 : getRestrictedPackageName().hashCode());
         hashCode = prime * hashCode + ((getSilentPush() == null) ? 0 : getSilentPush().hashCode());
         hashCode = prime * hashCode + ((getSmallImageIconUrl() == null) ? 0 : getSmallImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getSound() == null) ? 0 : getSound().hashCode());
         hashCode = prime * hashCode + ((getSubstitutions() == null) ? 0 : getSubstitutions().hashCode());
+        hashCode = prime * hashCode + ((getTimeToLive() == null) ? 0 : getTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;

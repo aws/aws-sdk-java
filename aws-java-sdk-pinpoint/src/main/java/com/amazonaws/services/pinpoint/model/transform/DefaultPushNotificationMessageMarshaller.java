@@ -35,8 +35,6 @@ public class DefaultPushNotificationMessageMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<Map> DATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Data").build();
-    private static final MarshallingInfo<String> JSONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("JsonData").build();
     private static final MarshallingInfo<Boolean> SILENTPUSH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SilentPush").build();
     private static final MarshallingInfo<Map> SUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,7 +63,6 @@ public class DefaultPushNotificationMessageMarshaller {
             protocolMarshaller.marshall(defaultPushNotificationMessage.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(defaultPushNotificationMessage.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(defaultPushNotificationMessage.getData(), DATA_BINDING);
-            protocolMarshaller.marshall(defaultPushNotificationMessage.getJsonData(), JSONDATA_BINDING);
             protocolMarshaller.marshall(defaultPushNotificationMessage.getSilentPush(), SILENTPUSH_BINDING);
             protocolMarshaller.marshall(defaultPushNotificationMessage.getSubstitutions(), SUBSTITUTIONS_BINDING);
             protocolMarshaller.marshall(defaultPushNotificationMessage.getTitle(), TITLE_BINDING);

@@ -60,6 +60,10 @@ public class ADMChannelResponseJsonUnmarshaller implements Unmarshaller<ADMChann
                     context.nextToken();
                     aDMChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("HasCredential", targetDepth)) {
+                    context.nextToken();
+                    aDMChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     aDMChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));

@@ -41,8 +41,6 @@ public class BaiduMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageIconUrl").build();
     private static final MarshallingInfo<String> IMAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageUrl").build();
-    private static final MarshallingInfo<String> JSONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("JsonData").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RawContent").build();
     private static final MarshallingInfo<Boolean> SILENTPUSH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -80,7 +78,6 @@ public class BaiduMessageMarshaller {
             protocolMarshaller.marshall(baiduMessage.getIconReference(), ICONREFERENCE_BINDING);
             protocolMarshaller.marshall(baiduMessage.getImageIconUrl(), IMAGEICONURL_BINDING);
             protocolMarshaller.marshall(baiduMessage.getImageUrl(), IMAGEURL_BINDING);
-            protocolMarshaller.marshall(baiduMessage.getJsonData(), JSONDATA_BINDING);
             protocolMarshaller.marshall(baiduMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(baiduMessage.getSilentPush(), SILENTPUSH_BINDING);
             protocolMarshaller.marshall(baiduMessage.getSmallImageIconUrl(), SMALLIMAGEICONURL_BINDING);

@@ -72,6 +72,10 @@ public class CreateDevEndpointResultJsonUnmarshaller implements Unmarshaller<Cre
                     context.nextToken();
                     createDevEndpointResult.setYarnEndpointAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ZeppelinRemoteSparkInterpreterPort", targetDepth)) {
+                    context.nextToken();
+                    createDevEndpointResult.setZeppelinRemoteSparkInterpreterPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("NumberOfNodes", targetDepth)) {
                     context.nextToken();
                     createDevEndpointResult.setNumberOfNodes(context.getUnmarshaller(Integer.class).unmarshall(context));

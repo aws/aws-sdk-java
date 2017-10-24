@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies a version of a table.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableVersion" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TableVersion implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The table in question
+     * </p>
+     */
     private Table table;
-
+    /**
+     * <p>
+     * The ID value that identifies this table version.
+     * </p>
+     */
     private String versionId;
 
     /**
+     * <p>
+     * The table in question
+     * </p>
+     * 
      * @param table
+     *        The table in question
      */
 
     public void setTable(Table table) {
@@ -38,7 +55,11 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The table in question
+     * </p>
+     * 
+     * @return The table in question
      */
 
     public Table getTable() {
@@ -46,7 +67,12 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The table in question
+     * </p>
+     * 
      * @param table
+     *        The table in question
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID value that identifies this table version.
+     * </p>
+     * 
      * @param versionId
+     *        The ID value that identifies this table version.
      */
 
     public void setVersionId(String versionId) {
@@ -64,7 +95,11 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID value that identifies this table version.
+     * </p>
+     * 
+     * @return The ID value that identifies this table version.
      */
 
     public String getVersionId() {
@@ -72,7 +107,12 @@ public class TableVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID value that identifies this table version.
+     * </p>
+     * 
      * @param versionId
+     *        The ID value that identifies this table version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

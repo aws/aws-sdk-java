@@ -68,6 +68,10 @@ public class DevEndpointJsonUnmarshaller implements Unmarshaller<DevEndpoint, Js
                     context.nextToken();
                     devEndpoint.setYarnEndpointAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ZeppelinRemoteSparkInterpreterPort", targetDepth)) {
+                    context.nextToken();
+                    devEndpoint.setZeppelinRemoteSparkInterpreterPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("PublicAddress", targetDepth)) {
                     context.nextToken();
                     devEndpoint.setPublicAddress(context.getUnmarshaller(String.class).unmarshall(context));

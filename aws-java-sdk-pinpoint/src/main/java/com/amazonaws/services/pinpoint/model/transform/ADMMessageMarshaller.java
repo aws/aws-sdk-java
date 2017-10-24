@@ -45,8 +45,6 @@ public class ADMMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageIconUrl").build();
     private static final MarshallingInfo<String> IMAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageUrl").build();
-    private static final MarshallingInfo<String> JSONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("JsonData").build();
     private static final MarshallingInfo<String> MD5_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MD5").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -88,7 +86,6 @@ public class ADMMessageMarshaller {
             protocolMarshaller.marshall(aDMMessage.getIconReference(), ICONREFERENCE_BINDING);
             protocolMarshaller.marshall(aDMMessage.getImageIconUrl(), IMAGEICONURL_BINDING);
             protocolMarshaller.marshall(aDMMessage.getImageUrl(), IMAGEURL_BINDING);
-            protocolMarshaller.marshall(aDMMessage.getJsonData(), JSONDATA_BINDING);
             protocolMarshaller.marshall(aDMMessage.getMD5(), MD5_BINDING);
             protocolMarshaller.marshall(aDMMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(aDMMessage.getSilentPush(), SILENTPUSH_BINDING);

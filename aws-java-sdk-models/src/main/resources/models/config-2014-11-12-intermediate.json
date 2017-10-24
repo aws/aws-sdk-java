@@ -35542,6 +35542,9 @@
       }, {
         "name" : "AWSAutoScalingScheduledAction",
         "value" : "AWS::AutoScaling::ScheduledAction"
+      }, {
+        "name" : "AWSCodeBuildProject",
+        "value" : "AWS::CodeBuild::Project"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

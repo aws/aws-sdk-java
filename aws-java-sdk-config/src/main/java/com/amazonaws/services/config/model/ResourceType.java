@@ -60,7 +60,8 @@ public enum ResourceType {
     AWSAutoScalingAutoScalingGroup("AWS::AutoScaling::AutoScalingGroup"),
     AWSAutoScalingLaunchConfiguration("AWS::AutoScaling::LaunchConfiguration"),
     AWSAutoScalingScalingPolicy("AWS::AutoScaling::ScalingPolicy"),
-    AWSAutoScalingScheduledAction("AWS::AutoScaling::ScheduledAction");
+    AWSAutoScalingScheduledAction("AWS::AutoScaling::ScheduledAction"),
+    AWSCodeBuildProject("AWS::CodeBuild::Project");
 
     private String value;
 

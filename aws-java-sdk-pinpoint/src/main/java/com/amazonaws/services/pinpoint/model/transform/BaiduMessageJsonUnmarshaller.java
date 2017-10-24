@@ -73,10 +73,6 @@ public class BaiduMessageJsonUnmarshaller implements Unmarshaller<BaiduMessage, 
                     context.nextToken();
                     baiduMessage.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("JsonData", targetDepth)) {
-                    context.nextToken();
-                    baiduMessage.setJsonData(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("RawContent", targetDepth)) {
                     context.nextToken();
                     baiduMessage.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));

@@ -25,7 +25,10 @@ import com.amazonaws.services.glue.model.*;
  * {@link com.amazonaws.services.glue.AbstractAWSGlueAsync} instead.
  * </p>
  * <p>
- * Defines service operations used by the GlueFrontendService
+ * <fullname>AWS Glue</fullname>
+ * <p>
+ * Defines the public endpoint for the AWS Glue service.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSGlueAsync extends AWSGlue {
@@ -184,6 +187,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<BatchGetPartitionResult> batchGetPartitionAsync(BatchGetPartitionRequest batchGetPartitionRequest,
             com.amazonaws.handlers.AsyncHandler<BatchGetPartitionRequest, BatchGetPartitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a batch of job runs for a given job.
+     * </p>
+     * 
+     * @param batchStopJobRunRequest
+     * @return A Java Future containing the result of the BatchStopJobRun operation returned by the service.
+     * @sample AWSGlueAsync.BatchStopJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStopJobRunResult> batchStopJobRunAsync(BatchStopJobRunRequest batchStopJobRunRequest);
+
+    /**
+     * <p>
+     * Stops a batch of job runs for a given job.
+     * </p>
+     * 
+     * @param batchStopJobRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchStopJobRun operation returned by the service.
+     * @sample AWSGlueAsyncHandler.BatchStopJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStopJobRunResult> batchStopJobRunAsync(BatchStopJobRunRequest batchStopJobRunRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchStopJobRunRequest, BatchStopJobRunResult> asyncHandler);
 
     /**
      * <p>

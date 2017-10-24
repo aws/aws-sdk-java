@@ -48,9 +48,17 @@ public class MessageConfigurationJsonUnmarshaller implements Unmarshaller<Messag
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ADMMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setADMMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("APNSMessage", targetDepth)) {
                     context.nextToken();
                     messageConfiguration.setAPNSMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("BaiduMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setBaiduMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("DefaultMessage", targetDepth)) {
                     context.nextToken();

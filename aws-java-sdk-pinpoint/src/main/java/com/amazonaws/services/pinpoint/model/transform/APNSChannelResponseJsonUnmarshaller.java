@@ -56,9 +56,21 @@ public class APNSChannelResponseJsonUnmarshaller implements Unmarshaller<APNSCha
                     context.nextToken();
                     aPNSChannelResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelResponse.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     aPNSChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("HasCredential", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("HasTokenKey", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelResponse.setHasTokenKey(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();

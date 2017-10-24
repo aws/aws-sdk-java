@@ -39,10 +39,17 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
     private String publicKey;
     /**
      * <p>
-     * Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the DevEndpoint.
      * </p>
      */
     private DevEndpointCustomLibraries customLibraries;
+    /**
+     * <p>
+     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
+     * otherwise.
+     * </p>
+     */
+    private Boolean updateEtlLibraries;
 
     /**
      * <p>
@@ -126,11 +133,11 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the DevEndpoint.
      * </p>
      * 
      * @param customLibraries
-     *        Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     *        Custom Python or Java libraries to be loaded in the DevEndpoint.
      */
 
     public void setCustomLibraries(DevEndpointCustomLibraries customLibraries) {
@@ -139,10 +146,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the DevEndpoint.
      * </p>
      * 
-     * @return Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     * @return Custom Python or Java libraries to be loaded in the DevEndpoint.
      */
 
     public DevEndpointCustomLibraries getCustomLibraries() {
@@ -151,17 +158,77 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     * Custom Python or Java libraries to be loaded in the DevEndpoint.
      * </p>
      * 
      * @param customLibraries
-     *        Custom Python or Java custom libraries to be loaded in the DevEndpoint.
+     *        Custom Python or Java libraries to be loaded in the DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDevEndpointRequest withCustomLibraries(DevEndpointCustomLibraries customLibraries) {
         setCustomLibraries(customLibraries);
         return this;
+    }
+
+    /**
+     * <p>
+     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
+     * otherwise.
+     * </p>
+     * 
+     * @param updateEtlLibraries
+     *        True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
+     *        False otherwise.
+     */
+
+    public void setUpdateEtlLibraries(Boolean updateEtlLibraries) {
+        this.updateEtlLibraries = updateEtlLibraries;
+    }
+
+    /**
+     * <p>
+     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
+     * otherwise.
+     * </p>
+     * 
+     * @return True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
+     *         False otherwise.
+     */
+
+    public Boolean getUpdateEtlLibraries() {
+        return this.updateEtlLibraries;
+    }
+
+    /**
+     * <p>
+     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
+     * otherwise.
+     * </p>
+     * 
+     * @param updateEtlLibraries
+     *        True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
+     *        False otherwise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDevEndpointRequest withUpdateEtlLibraries(Boolean updateEtlLibraries) {
+        setUpdateEtlLibraries(updateEtlLibraries);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or False
+     * otherwise.
+     * </p>
+     * 
+     * @return True if the list of custom libraries to be loaded in the development endpoint needs to be updated, or
+     *         False otherwise.
+     */
+
+    public Boolean isUpdateEtlLibraries() {
+        return this.updateEtlLibraries;
     }
 
     /**
@@ -180,7 +247,9 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getPublicKey() != null)
             sb.append("PublicKey: ").append(getPublicKey()).append(",");
         if (getCustomLibraries() != null)
-            sb.append("CustomLibraries: ").append(getCustomLibraries());
+            sb.append("CustomLibraries: ").append(getCustomLibraries()).append(",");
+        if (getUpdateEtlLibraries() != null)
+            sb.append("UpdateEtlLibraries: ").append(getUpdateEtlLibraries());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +276,10 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getCustomLibraries() != null && other.getCustomLibraries().equals(this.getCustomLibraries()) == false)
             return false;
+        if (other.getUpdateEtlLibraries() == null ^ this.getUpdateEtlLibraries() == null)
+            return false;
+        if (other.getUpdateEtlLibraries() != null && other.getUpdateEtlLibraries().equals(this.getUpdateEtlLibraries()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +291,7 @@ public class UpdateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
         hashCode = prime * hashCode + ((getPublicKey() == null) ? 0 : getPublicKey().hashCode());
         hashCode = prime * hashCode + ((getCustomLibraries() == null) ? 0 : getCustomLibraries().hashCode());
+        hashCode = prime * hashCode + ((getUpdateEtlLibraries() == null) ? 0 : getUpdateEtlLibraries().hashCode());
         return hashCode;
     }
 

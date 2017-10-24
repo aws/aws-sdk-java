@@ -61,7 +61,13 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private String yarnEndpointAddress;
     /**
      * <p>
-     * The number of nodes in this DevEndpoint.
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     */
+    private Integer zeppelinRemoteSparkInterpreterPort;
+    /**
+     * <p>
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      */
     private Integer numberOfNodes;
@@ -79,7 +85,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private String vpcId;
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      * </p>
      */
     private String extraPythonLibsS3Path;
@@ -374,11 +380,51 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of nodes in this DevEndpoint.
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     * 
+     * @param zeppelinRemoteSparkInterpreterPort
+     *        The Apache Zeppelin port for the remote Apache Spark interpreter.
+     */
+
+    public void setZeppelinRemoteSparkInterpreterPort(Integer zeppelinRemoteSparkInterpreterPort) {
+        this.zeppelinRemoteSparkInterpreterPort = zeppelinRemoteSparkInterpreterPort;
+    }
+
+    /**
+     * <p>
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     * 
+     * @return The Apache Zeppelin port for the remote Apache Spark interpreter.
+     */
+
+    public Integer getZeppelinRemoteSparkInterpreterPort() {
+        return this.zeppelinRemoteSparkInterpreterPort;
+    }
+
+    /**
+     * <p>
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     * 
+     * @param zeppelinRemoteSparkInterpreterPort
+     *        The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult withZeppelinRemoteSparkInterpreterPort(Integer zeppelinRemoteSparkInterpreterPort) {
+        setZeppelinRemoteSparkInterpreterPort(zeppelinRemoteSparkInterpreterPort);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of nodes in this DevEndpoint.
+     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -387,10 +433,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of nodes in this DevEndpoint.
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
-     * @return The number of nodes in this DevEndpoint.
+     * @return The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      */
 
     public Integer getNumberOfNodes() {
@@ -399,11 +445,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The number of nodes in this DevEndpoint.
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of nodes in this DevEndpoint.
+     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,11 +540,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      */
 
     public void setExtraPythonLibsS3Path(String extraPythonLibsS3Path) {
@@ -507,10 +553,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      * </p>
      * 
-     * @return Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * @return Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      */
 
     public String getExtraPythonLibsS3Path() {
@@ -519,11 +565,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that will be loaded in your DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,6 +721,8 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getYarnEndpointAddress() != null)
             sb.append("YarnEndpointAddress: ").append(getYarnEndpointAddress()).append(",");
+        if (getZeppelinRemoteSparkInterpreterPort() != null)
+            sb.append("ZeppelinRemoteSparkInterpreterPort: ").append(getZeppelinRemoteSparkInterpreterPort()).append(",");
         if (getNumberOfNodes() != null)
             sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
         if (getAvailabilityZone() != null)
@@ -727,6 +775,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getYarnEndpointAddress() != null && other.getYarnEndpointAddress().equals(this.getYarnEndpointAddress()) == false)
             return false;
+        if (other.getZeppelinRemoteSparkInterpreterPort() == null ^ this.getZeppelinRemoteSparkInterpreterPort() == null)
+            return false;
+        if (other.getZeppelinRemoteSparkInterpreterPort() != null
+                && other.getZeppelinRemoteSparkInterpreterPort().equals(this.getZeppelinRemoteSparkInterpreterPort()) == false)
+            return false;
         if (other.getNumberOfNodes() == null ^ this.getNumberOfNodes() == null)
             return false;
         if (other.getNumberOfNodes() != null && other.getNumberOfNodes().equals(this.getNumberOfNodes()) == false)
@@ -769,6 +822,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getYarnEndpointAddress() == null) ? 0 : getYarnEndpointAddress().hashCode());
+        hashCode = prime * hashCode + ((getZeppelinRemoteSparkInterpreterPort() == null) ? 0 : getZeppelinRemoteSparkInterpreterPort().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());

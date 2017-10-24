@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains a list of values defining partitions.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PartitionValueList" target="_top">AWS API
  *      Documentation</a>
@@ -25,10 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PartitionValueList implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The list of values.
+     * </p>
+     */
     private java.util.List<String> values;
 
     /**
-     * @return
+     * <p>
+     * The list of values.
+     * </p>
+     * 
+     * @return The list of values.
      */
 
     public java.util.List<String> getValues() {
@@ -36,7 +48,12 @@ public class PartitionValueList implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The list of values.
+     * </p>
+     * 
      * @param values
+     *        The list of values.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -50,12 +67,16 @@ public class PartitionValueList implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The list of values.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        The list of values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +91,12 @@ public class PartitionValueList implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The list of values.
+     * </p>
+     * 
      * @param values
+     *        The list of values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

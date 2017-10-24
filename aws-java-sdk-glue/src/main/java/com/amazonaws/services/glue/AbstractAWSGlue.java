@@ -53,6 +53,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchStopJobRunResult batchStopJobRun(BatchStopJobRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClassifierResult createClassifier(CreateClassifierRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

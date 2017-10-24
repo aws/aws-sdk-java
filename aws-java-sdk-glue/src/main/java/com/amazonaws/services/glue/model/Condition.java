@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Defines a condition under which a trigger fires.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Condition" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Condition implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A logical operator.
+     * </p>
+     */
     private String logicalOperator;
-
+    /**
+     * <p>
+     * The name of the job in question.
+     * </p>
+     */
     private String jobName;
-
+    /**
+     * <p>
+     * The condition state.
+     * </p>
+     */
     private String state;
 
     /**
+     * <p>
+     * A logical operator.
+     * </p>
+     * 
      * @param logicalOperator
+     *        A logical operator.
      * @see LogicalOperator
      */
 
@@ -41,7 +62,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A logical operator.
+     * </p>
+     * 
+     * @return A logical operator.
      * @see LogicalOperator
      */
 
@@ -50,7 +75,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A logical operator.
+     * </p>
+     * 
      * @param logicalOperator
+     *        A logical operator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogicalOperator
      */
@@ -61,7 +91,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A logical operator.
+     * </p>
+     * 
      * @param logicalOperator
+     *        A logical operator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogicalOperator
      */
@@ -72,7 +107,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the job in question.
+     * </p>
+     * 
      * @param jobName
+     *        The name of the job in question.
      */
 
     public void setJobName(String jobName) {
@@ -80,7 +120,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the job in question.
+     * </p>
+     * 
+     * @return The name of the job in question.
      */
 
     public String getJobName() {
@@ -88,7 +132,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the job in question.
+     * </p>
+     * 
      * @param jobName
+     *        The name of the job in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +147,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The condition state.
+     * </p>
+     * 
      * @param state
+     *        The condition state.
      * @see JobRunState
      */
 
@@ -107,7 +161,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The condition state.
+     * </p>
+     * 
+     * @return The condition state.
      * @see JobRunState
      */
 
@@ -116,7 +174,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The condition state.
+     * </p>
+     * 
      * @param state
+     *        The condition state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobRunState
      */
@@ -127,7 +190,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The condition state.
+     * </p>
+     * 
      * @param state
+     *        The condition state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobRunState
      */

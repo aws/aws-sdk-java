@@ -80,7 +80,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
-     * <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     * <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRemove;
@@ -721,7 +721,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
-     * <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     * <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * </p>
      * 
      * @return A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This
@@ -731,7 +731,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         <code>NumCacheNodes</code> in the request.</p>
      *         <p>
      *         For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
-     *         this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     *         this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      */
 
     public java.util.List<String> getCacheNodeIdsToRemove() {
@@ -750,7 +750,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
-     * <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     * <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * </p>
      * 
      * @param cacheNodeIdsToRemove
@@ -761,7 +761,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>NumCacheNodes</code> in the request.</p>
      *        <p>
      *        For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
-     *        this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     *        this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      */
 
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
@@ -782,7 +782,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
-     * <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     * <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -798,7 +798,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>NumCacheNodes</code> in the request.</p>
      *        <p>
      *        For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
-     *        this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     *        this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,7 +821,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
-     * <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     * <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * </p>
      * 
      * @param cacheNodeIdsToRemove
@@ -832,7 +832,7 @@ public class ModifyCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <code>NumCacheNodes</code> in the request.</p>
      *        <p>
      *        For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in
-     *        this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
+     *        this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

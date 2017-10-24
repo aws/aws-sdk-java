@@ -29,8 +29,6 @@ public class WriteEventStreamMarshaller {
 
     private static final MarshallingInfo<String> DESTINATIONSTREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationStreamArn").build();
-    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalId").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
 
@@ -51,7 +49,6 @@ public class WriteEventStreamMarshaller {
 
         try {
             protocolMarshaller.marshall(writeEventStream.getDestinationStreamArn(), DESTINATIONSTREAMARN_BINDING);
-            protocolMarshaller.marshall(writeEventStream.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(writeEventStream.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

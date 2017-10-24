@@ -59,7 +59,10 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * A cron schedule expression.
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      */
     private String schedule;
@@ -316,11 +319,17 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron schedule expression.
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        A cron schedule expression.
+     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        <code>cron(15 12 * * ? *)</code>.
      */
 
     public void setSchedule(String schedule) {
@@ -329,10 +338,16 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron schedule expression.
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
-     * @return A cron schedule expression.
+     * @return A <code>cron</code> expression used to specify the schedule (see <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *         specify: <code>cron(15 12 * * ? *)</code>.
      */
 
     public String getSchedule() {
@@ -341,11 +356,17 @@ public class Trigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron schedule expression.
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        A cron schedule expression.
+     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        <code>cron(15 12 * * ? *)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

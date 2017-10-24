@@ -57,8 +57,6 @@ public class EndpointResponseMarshaller {
             .marshallLocationName("OptOut").build();
     private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RequestId").build();
-    private static final MarshallingInfo<String> SHARDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("ShardId").build();
     private static final MarshallingInfo<StructuredPojo> USER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("User").build();
 
@@ -92,7 +90,6 @@ public class EndpointResponseMarshaller {
             protocolMarshaller.marshall(endpointResponse.getMetrics(), METRICS_BINDING);
             protocolMarshaller.marshall(endpointResponse.getOptOut(), OPTOUT_BINDING);
             protocolMarshaller.marshall(endpointResponse.getRequestId(), REQUESTID_BINDING);
-            protocolMarshaller.marshall(endpointResponse.getShardId(), SHARDID_BINDING);
             protocolMarshaller.marshall(endpointResponse.getUser(), USER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

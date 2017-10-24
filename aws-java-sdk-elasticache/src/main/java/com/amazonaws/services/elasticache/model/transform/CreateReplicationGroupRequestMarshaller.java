@@ -231,6 +231,14 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AuthToken", StringUtils.fromString(createReplicationGroupRequest.getAuthToken()));
         }
 
+        if (createReplicationGroupRequest.getTransitEncryptionEnabled() != null) {
+            request.addParameter("TransitEncryptionEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.getTransitEncryptionEnabled()));
+        }
+
+        if (createReplicationGroupRequest.getAtRestEncryptionEnabled() != null) {
+            request.addParameter("AtRestEncryptionEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.getAtRestEncryptionEnabled()));
+        }
+
         return request;
     }
 

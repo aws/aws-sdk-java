@@ -30,9 +30,9 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     * Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      */
@@ -46,16 +46,16 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     * Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param scheduleExpression
-     *        A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     *        Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      *        <code>cron(15 12 * * ? *)</code>.
      */
 
@@ -65,16 +65,16 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     * Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
-     * @return A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     *         Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
-     *         <code>cron(15 12 * * ? *)</code>.
+     * @return A <code>cron</code> expression used to specify the schedule (see <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *         specify: <code>cron(15 12 * * ? *)</code>.
      */
 
     public String getScheduleExpression() {
@@ -83,16 +83,16 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     * Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param scheduleExpression
-     *        A <code>cron</code> expression that can be used as a Cloudwatch event to schedule something (see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
-     *        Expression Syntax</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        A <code>cron</code> expression used to specify the schedule (see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      *        <code>cron(15 12 * * ? *)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

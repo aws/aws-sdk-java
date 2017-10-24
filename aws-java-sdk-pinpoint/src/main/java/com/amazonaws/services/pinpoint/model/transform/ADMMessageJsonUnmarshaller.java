@@ -81,10 +81,6 @@ public class ADMMessageJsonUnmarshaller implements Unmarshaller<ADMMessage, Json
                     context.nextToken();
                     aDMMessage.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("JsonData", targetDepth)) {
-                    context.nextToken();
-                    aDMMessage.setJsonData(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("MD5", targetDepth)) {
                     context.nextToken();
                     aDMMessage.setMD5(context.getUnmarshaller(String.class).unmarshall(context));

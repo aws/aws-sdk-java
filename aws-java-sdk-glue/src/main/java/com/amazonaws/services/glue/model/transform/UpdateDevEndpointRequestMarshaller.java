@@ -33,6 +33,8 @@ public class UpdateDevEndpointRequestMarshaller {
             .marshallLocationName("PublicKey").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMLIBRARIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomLibraries").build();
+    private static final MarshallingInfo<Boolean> UPDATEETLLIBRARIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateEtlLibraries").build();
 
     private static final UpdateDevEndpointRequestMarshaller instance = new UpdateDevEndpointRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateDevEndpointRequestMarshaller {
             protocolMarshaller.marshall(updateDevEndpointRequest.getEndpointName(), ENDPOINTNAME_BINDING);
             protocolMarshaller.marshall(updateDevEndpointRequest.getPublicKey(), PUBLICKEY_BINDING);
             protocolMarshaller.marshall(updateDevEndpointRequest.getCustomLibraries(), CUSTOMLIBRARIES_BINDING);
+            protocolMarshaller.marshall(updateDevEndpointRequest.getUpdateEtlLibraries(), UPDATEETLLIBRARIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

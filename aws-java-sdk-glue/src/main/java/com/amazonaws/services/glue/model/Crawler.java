@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a crawler program that examines a data source and uses classifiers to try to its schema. If successful, the
- * crawler records metatdata concerning the data source in the Data Catalog.
+ * Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If
+ * successful, the crawler records metatdata concerning the data source in the Data Catalog.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler" target="_top">AWS API Documentation</a>
@@ -36,7 +36,7 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The ARN of an IAM role used to access customer resources such as data in S3.
+     * The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      * </p>
      */
     private String role;
@@ -161,11 +161,11 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of an IAM role used to access customer resources such as data in S3.
+     * The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      * </p>
      * 
      * @param role
-     *        The ARN of an IAM role used to access customer resources such as data in S3.
+     *        The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      */
 
     public void setRole(String role) {
@@ -174,10 +174,10 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of an IAM role used to access customer resources such as data in S3.
+     * The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      * </p>
      * 
-     * @return The ARN of an IAM role used to access customer resources such as data in S3.
+     * @return The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      */
 
     public String getRole() {
@@ -186,11 +186,11 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of an IAM role used to access customer resources such as data in S3.
+     * The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      * </p>
      * 
      * @param role
-     *        The ARN of an IAM role used to access customer resources such as data in S3.
+     *        The IAM role (or ARN of an IAM role) used to access customer resources such as data in S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

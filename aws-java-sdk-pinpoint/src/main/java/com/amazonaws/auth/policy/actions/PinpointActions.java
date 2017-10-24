@@ -39,6 +39,10 @@ public enum PinpointActions implements Action {
     DeleteApnsChannel("pinpoint:DeleteApnsChannel"),
     /** Action for the DeleteApnsSandboxChannel operation. */
     DeleteApnsSandboxChannel("pinpoint:DeleteApnsSandboxChannel"),
+    /** Action for the DeleteApnsVoipChannel operation. */
+    DeleteApnsVoipChannel("pinpoint:DeleteApnsVoipChannel"),
+    /** Action for the DeleteApnsVoipSandboxChannel operation. */
+    DeleteApnsVoipSandboxChannel("pinpoint:DeleteApnsVoipSandboxChannel"),
     /** Action for the DeleteApp operation. */
     DeleteApp("pinpoint:DeleteApp"),
     /** Action for the DeleteBaiduChannel operation. */
@@ -61,6 +65,10 @@ public enum PinpointActions implements Action {
     GetApnsChannel("pinpoint:GetApnsChannel"),
     /** Action for the GetApnsSandboxChannel operation. */
     GetApnsSandboxChannel("pinpoint:GetApnsSandboxChannel"),
+    /** Action for the GetApnsVoipChannel operation. */
+    GetApnsVoipChannel("pinpoint:GetApnsVoipChannel"),
+    /** Action for the GetApnsVoipSandboxChannel operation. */
+    GetApnsVoipSandboxChannel("pinpoint:GetApnsVoipSandboxChannel"),
     /** Action for the GetApp operation. */
     GetApp("pinpoint:GetApp"),
     /** Action for the GetApplicationSettings operation. */
@@ -115,6 +123,10 @@ public enum PinpointActions implements Action {
     UpdateApnsChannel("pinpoint:UpdateApnsChannel"),
     /** Action for the UpdateApnsSandboxChannel operation. */
     UpdateApnsSandboxChannel("pinpoint:UpdateApnsSandboxChannel"),
+    /** Action for the UpdateApnsVoipChannel operation. */
+    UpdateApnsVoipChannel("pinpoint:UpdateApnsVoipChannel"),
+    /** Action for the UpdateApnsVoipSandboxChannel operation. */
+    UpdateApnsVoipSandboxChannel("pinpoint:UpdateApnsVoipSandboxChannel"),
     /** Action for the UpdateApplicationSettings operation. */
     UpdateApplicationSettings("pinpoint:UpdateApplicationSettings"),
     /** Action for the UpdateBaiduChannel operation. */

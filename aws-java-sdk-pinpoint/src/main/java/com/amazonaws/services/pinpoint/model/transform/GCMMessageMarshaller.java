@@ -43,8 +43,8 @@ public class GCMMessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageIconUrl").build();
     private static final MarshallingInfo<String> IMAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageUrl").build();
-    private static final MarshallingInfo<String> JSONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("JsonData").build();
+    private static final MarshallingInfo<String> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Priority").build();
     private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RawContent").build();
     private static final MarshallingInfo<String> RESTRICTEDPACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +57,8 @@ public class GCMMessageMarshaller {
             .marshallLocationName("Sound").build();
     private static final MarshallingInfo<Map> SUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Substitutions").build();
+    private static final MarshallingInfo<Integer> TIMETOLIVE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeToLive").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Title").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -85,13 +87,14 @@ public class GCMMessageMarshaller {
             protocolMarshaller.marshall(gCMMessage.getIconReference(), ICONREFERENCE_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageIconUrl(), IMAGEICONURL_BINDING);
             protocolMarshaller.marshall(gCMMessage.getImageUrl(), IMAGEURL_BINDING);
-            protocolMarshaller.marshall(gCMMessage.getJsonData(), JSONDATA_BINDING);
+            protocolMarshaller.marshall(gCMMessage.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(gCMMessage.getRestrictedPackageName(), RESTRICTEDPACKAGENAME_BINDING);
             protocolMarshaller.marshall(gCMMessage.getSilentPush(), SILENTPUSH_BINDING);
             protocolMarshaller.marshall(gCMMessage.getSmallImageIconUrl(), SMALLIMAGEICONURL_BINDING);
             protocolMarshaller.marshall(gCMMessage.getSound(), SOUND_BINDING);
             protocolMarshaller.marshall(gCMMessage.getSubstitutions(), SUBSTITUTIONS_BINDING);
+            protocolMarshaller.marshall(gCMMessage.getTimeToLive(), TIMETOLIVE_BINDING);
             protocolMarshaller.marshall(gCMMessage.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(gCMMessage.getUrl(), URL_BINDING);
         } catch (Exception e) {

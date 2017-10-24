@@ -33,8 +33,6 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
     private java.util.Map<String, String> context;
     /** Message configuration. */
     private DirectMessageConfiguration messageConfiguration;
-    /** Original request Id for which this message is delivered. */
-    private String requestId;
     /** A map of destination endpoints, with the EndpointId as the key Endpoint Message Configuration as the value. */
     private java.util.Map<String, EndpointSendConfiguration> users;
 
@@ -134,40 +132,6 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Original request Id for which this message is delivered.
-     * 
-     * @param requestId
-     *        Original request Id for which this message is delivered.
-     */
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * Original request Id for which this message is delivered.
-     * 
-     * @return Original request Id for which this message is delivered.
-     */
-
-    public String getRequestId() {
-        return this.requestId;
-    }
-
-    /**
-     * Original request Id for which this message is delivered.
-     * 
-     * @param requestId
-     *        Original request Id for which this message is delivered.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SendUsersMessageRequest withRequestId(String requestId) {
-        setRequestId(requestId);
-        return this;
-    }
-
-    /**
      * A map of destination endpoints, with the EndpointId as the key Endpoint Message Configuration as the value.
      * 
      * @return A map of destination endpoints, with the EndpointId as the key Endpoint Message Configuration as the
@@ -240,8 +204,6 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
             sb.append("Context: ").append(getContext()).append(",");
         if (getMessageConfiguration() != null)
             sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
-        if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getUsers() != null)
             sb.append("Users: ").append(getUsers());
         sb.append("}");
@@ -266,10 +228,6 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
             return false;
         if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
             return false;
-        if (other.getRequestId() == null ^ this.getRequestId() == null)
-            return false;
-        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
-            return false;
         if (other.getUsers() == null ^ this.getUsers() == null)
             return false;
         if (other.getUsers() != null && other.getUsers().equals(this.getUsers()) == false)
@@ -284,7 +242,6 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode());
         return hashCode;
     }

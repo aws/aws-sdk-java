@@ -31,8 +31,14 @@ public class APNSSandboxChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
+    private static final MarshallingInfo<String> DEFAULTAUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultAuthenticationMethod").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<Boolean> HASCREDENTIAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasCredential").build();
+    private static final MarshallingInfo<Boolean> HASTOKENKEY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasTokenKey").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<Boolean> ISARCHIVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -64,7 +70,10 @@ public class APNSSandboxChannelResponseMarshaller {
         try {
             protocolMarshaller.marshall(aPNSSandboxChannelResponse.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(aPNSSandboxChannelResponse.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(aPNSSandboxChannelResponse.getDefaultAuthenticationMethod(), DEFAULTAUTHENTICATIONMETHOD_BINDING);
             protocolMarshaller.marshall(aPNSSandboxChannelResponse.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(aPNSSandboxChannelResponse.getHasCredential(), HASCREDENTIAL_BINDING);
+            protocolMarshaller.marshall(aPNSSandboxChannelResponse.getHasTokenKey(), HASTOKENKEY_BINDING);
             protocolMarshaller.marshall(aPNSSandboxChannelResponse.getId(), ID_BINDING);
             protocolMarshaller.marshall(aPNSSandboxChannelResponse.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(aPNSSandboxChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);

@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * EmailMessage JSON Unmarshaller
+ * APNSVoipChannelRequest JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EmailMessageJsonUnmarshaller implements Unmarshaller<EmailMessage, JsonUnmarshallerContext> {
+public class APNSVoipChannelRequestJsonUnmarshaller implements Unmarshaller<APNSVoipChannelRequest, JsonUnmarshallerContext> {
 
-    public EmailMessage unmarshall(JsonUnmarshallerContext context) throws Exception {
-        EmailMessage emailMessage = new EmailMessage();
+    public APNSVoipChannelRequest unmarshall(JsonUnmarshallerContext context) throws Exception {
+        APNSVoipChannelRequest aPNSVoipChannelRequest = new APNSVoipChannelRequest();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,30 +48,37 @@ public class EmailMessageJsonUnmarshaller implements Unmarshaller<EmailMessage, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Body", targetDepth)) {
+                if (context.testExpression("BundleId", targetDepth)) {
                     context.nextToken();
-                    emailMessage.setBody(context.getUnmarshaller(String.class).unmarshall(context));
+                    aPNSVoipChannelRequest.setBundleId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("FromAddress", targetDepth)) {
+                if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
-                    emailMessage.setFromAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                    aPNSVoipChannelRequest.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("HtmlBody", targetDepth)) {
+                if (context.testExpression("DefaultAuthenticationMethod", targetDepth)) {
                     context.nextToken();
-                    emailMessage.setHtmlBody(context.getUnmarshaller(String.class).unmarshall(context));
+                    aPNSVoipChannelRequest.setDefaultAuthenticationMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Substitutions", targetDepth)) {
+                if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
-                    emailMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                    aPNSVoipChannelRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("TemplateArn", targetDepth)) {
+                if (context.testExpression("PrivateKey", targetDepth)) {
                     context.nextToken();
-                    emailMessage.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    aPNSVoipChannelRequest.setPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Title", targetDepth)) {
+                if (context.testExpression("TeamId", targetDepth)) {
                     context.nextToken();
-                    emailMessage.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                    aPNSVoipChannelRequest.setTeamId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TokenKey", targetDepth)) {
+                    context.nextToken();
+                    aPNSVoipChannelRequest.setTokenKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TokenKeyId", targetDepth)) {
+                    context.nextToken();
+                    aPNSVoipChannelRequest.setTokenKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -82,14 +89,14 @@ public class EmailMessageJsonUnmarshaller implements Unmarshaller<EmailMessage, 
             token = context.nextToken();
         }
 
-        return emailMessage;
+        return aPNSVoipChannelRequest;
     }
 
-    private static EmailMessageJsonUnmarshaller instance;
+    private static APNSVoipChannelRequestJsonUnmarshaller instance;
 
-    public static EmailMessageJsonUnmarshaller getInstance() {
+    public static APNSVoipChannelRequestJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new EmailMessageJsonUnmarshaller();
+            instance = new APNSVoipChannelRequestJsonUnmarshaller();
         return instance;
     }
 }

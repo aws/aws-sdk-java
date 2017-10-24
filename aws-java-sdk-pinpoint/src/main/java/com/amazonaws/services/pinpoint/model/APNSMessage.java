@@ -47,19 +47,21 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      */
     private String category;
     /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
+     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
+     * value of this key must not exceed 64 bytes.
      */
-    private java.util.Map<String, String> data;
+    private String collapseId;
     /**
      * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
      * object
      */
-    private String jsonData;
+    private java.util.Map<String, String> data;
     /** The URL that points to a video used in the push notification. */
     private String mediaUrl;
     /** The preferred authentication method, either "CERTIFICATE" or "TOKEN" */
     private String preferredAuthenticationMethod;
+    /** Is this a transaction priority message or lower priority. */
+    private String priority;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
     /**
@@ -80,6 +82,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      * you provide a Notification Content app extension, you can use this value to group your notifications together.
      */
     private String threadId;
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
+     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
+     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
+     * sent to APNS
+     */
+    private Integer timeToLive;
     /** The message title that displays above the message on the user's device. */
     private String title;
     /** The URL to open in the user's mobile browser. Used if the value for Action is URL. */
@@ -304,6 +313,46 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
+     * value of this key must not exceed 64 bytes.
+     * 
+     * @param collapseId
+     *        Multiple notifications with the same collapse identifier are displayed to the user as a single
+     *        notification. The value of this key must not exceed 64 bytes.
+     */
+
+    public void setCollapseId(String collapseId) {
+        this.collapseId = collapseId;
+    }
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
+     * value of this key must not exceed 64 bytes.
+     * 
+     * @return Multiple notifications with the same collapse identifier are displayed to the user as a single
+     *         notification. The value of this key must not exceed 64 bytes.
+     */
+
+    public String getCollapseId() {
+        return this.collapseId;
+    }
+
+    /**
+     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
+     * value of this key must not exceed 64 bytes.
+     * 
+     * @param collapseId
+     *        Multiple notifications with the same collapse identifier are displayed to the user as a single
+     *        notification. The value of this key must not exceed 64 bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSMessage withCollapseId(String collapseId) {
+        setCollapseId(collapseId);
+        return this;
+    }
+
+    /**
      * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
      * object
      * 
@@ -361,46 +410,6 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     public APNSMessage clearDataEntries() {
         this.data = null;
-        return this;
-    }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
-     * 
-     * @param jsonData
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
-     */
-
-    public void setJsonData(String jsonData) {
-        this.jsonData = jsonData;
-    }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
-     * 
-     * @return The data payload used for a silent push. This payload is added to the notifications'
-     *         data.pinpoint.jsonBody' object
-     */
-
-    public String getJsonData() {
-        return this.jsonData;
-    }
-
-    /**
-     * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
-     * object
-     * 
-     * @param jsonData
-     *        The data payload used for a silent push. This payload is added to the notifications'
-     *        data.pinpoint.jsonBody' object
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public APNSMessage withJsonData(String jsonData) {
-        setJsonData(jsonData);
         return this;
     }
 
@@ -469,6 +478,40 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
 
     public APNSMessage withPreferredAuthenticationMethod(String preferredAuthenticationMethod) {
         setPreferredAuthenticationMethod(preferredAuthenticationMethod);
+        return this;
+    }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     * 
+     * @param priority
+     *        Is this a transaction priority message or lower priority.
+     */
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     * 
+     * @return Is this a transaction priority message or lower priority.
+     */
+
+    public String getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     * 
+     * @param priority
+     *        Is this a transaction priority message or lower priority.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSMessage withPriority(String priority) {
+        setPriority(priority);
         return this;
     }
 
@@ -703,6 +746,58 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
+     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
+     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
+     * sent to APNS
+     * 
+     * @param timeToLive
+     *        This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
+     *        notification the first time. If the value is 0, APNS treats the notification as if it expires immediately
+     *        and does not store the notification or attempt to redeliver it. This value is converted to the expiration
+     *        field when sent to APNS
+     */
+
+    public void setTimeToLive(Integer timeToLive) {
+        this.timeToLive = timeToLive;
+    }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
+     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
+     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
+     * sent to APNS
+     * 
+     * @return This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver
+     *         the notification the first time. If the value is 0, APNS treats the notification as if it expires
+     *         immediately and does not store the notification or attempt to redeliver it. This value is converted to
+     *         the expiration field when sent to APNS
+     */
+
+    public Integer getTimeToLive() {
+        return this.timeToLive;
+    }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
+     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
+     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
+     * sent to APNS
+     * 
+     * @param timeToLive
+     *        This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
+     *        notification the first time. If the value is 0, APNS treats the notification as if it expires immediately
+     *        and does not store the notification or attempt to redeliver it. This value is converted to the expiration
+     *        field when sent to APNS
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSMessage withTimeToLive(Integer timeToLive) {
+        setTimeToLive(timeToLive);
+        return this;
+    }
+
+    /**
      * The message title that displays above the message on the user's device.
      * 
      * @param title
@@ -789,14 +884,16 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Body: ").append(getBody()).append(",");
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
+        if (getCollapseId() != null)
+            sb.append("CollapseId: ").append(getCollapseId()).append(",");
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
-        if (getJsonData() != null)
-            sb.append("JsonData: ").append(getJsonData()).append(",");
         if (getMediaUrl() != null)
             sb.append("MediaUrl: ").append(getMediaUrl()).append(",");
         if (getPreferredAuthenticationMethod() != null)
             sb.append("PreferredAuthenticationMethod: ").append(getPreferredAuthenticationMethod()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getRawContent() != null)
             sb.append("RawContent: ").append(getRawContent()).append(",");
         if (getSilentPush() != null)
@@ -807,6 +904,8 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Substitutions: ").append(getSubstitutions()).append(",");
         if (getThreadId() != null)
             sb.append("ThreadId: ").append(getThreadId()).append(",");
+        if (getTimeToLive() != null)
+            sb.append("TimeToLive: ").append(getTimeToLive()).append(",");
         if (getTitle() != null)
             sb.append("Title: ").append(getTitle()).append(",");
         if (getUrl() != null)
@@ -841,13 +940,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
             return false;
+        if (other.getCollapseId() == null ^ this.getCollapseId() == null)
+            return false;
+        if (other.getCollapseId() != null && other.getCollapseId().equals(this.getCollapseId()) == false)
+            return false;
         if (other.getData() == null ^ this.getData() == null)
             return false;
         if (other.getData() != null && other.getData().equals(this.getData()) == false)
-            return false;
-        if (other.getJsonData() == null ^ this.getJsonData() == null)
-            return false;
-        if (other.getJsonData() != null && other.getJsonData().equals(this.getJsonData()) == false)
             return false;
         if (other.getMediaUrl() == null ^ this.getMediaUrl() == null)
             return false;
@@ -857,6 +956,10 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPreferredAuthenticationMethod() != null
                 && other.getPreferredAuthenticationMethod().equals(this.getPreferredAuthenticationMethod()) == false)
+            return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
             return false;
         if (other.getRawContent() == null ^ this.getRawContent() == null)
             return false;
@@ -878,6 +981,10 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getThreadId() != null && other.getThreadId().equals(this.getThreadId()) == false)
             return false;
+        if (other.getTimeToLive() == null ^ this.getTimeToLive() == null)
+            return false;
+        if (other.getTimeToLive() != null && other.getTimeToLive().equals(this.getTimeToLive()) == false)
+            return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
         if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
@@ -898,15 +1005,17 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBadge() == null) ? 0 : getBadge().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getCollapseId() == null) ? 0 : getCollapseId().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
-        hashCode = prime * hashCode + ((getJsonData() == null) ? 0 : getJsonData().hashCode());
         hashCode = prime * hashCode + ((getMediaUrl() == null) ? 0 : getMediaUrl().hashCode());
         hashCode = prime * hashCode + ((getPreferredAuthenticationMethod() == null) ? 0 : getPreferredAuthenticationMethod().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getSilentPush() == null) ? 0 : getSilentPush().hashCode());
         hashCode = prime * hashCode + ((getSound() == null) ? 0 : getSound().hashCode());
         hashCode = prime * hashCode + ((getSubstitutions() == null) ? 0 : getSubstitutions().hashCode());
         hashCode = prime * hashCode + ((getThreadId() == null) ? 0 : getThreadId().hashCode());
+        hashCode = prime * hashCode + ((getTimeToLive() == null) ? 0 : getTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;

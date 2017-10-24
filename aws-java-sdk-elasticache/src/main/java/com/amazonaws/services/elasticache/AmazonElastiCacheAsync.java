@@ -1980,6 +1980,16 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <p>
      * When the reboot is complete, a cache cluster event is created.
      * </p>
+     * <p>
+     * Rebooting a cluster is currently supported on Memcached and Redis (cluster mode disabled) clusters. Rebooting is
+     * not supported on Redis (cluster mode enabled) clusters.
+     * </p>
+     * <p>
+     * If you make changes to parameters that require a Redis (cluster mode enabled) cluster reboot for the changes to
+     * be applied, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting a
+     * Cluster</a> for an alternate process.
+     * </p>
      * 
      * @param rebootCacheClusterRequest
      *        Represents the input of a <code>RebootCacheCluster</code> operation.
@@ -2001,6 +2011,16 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * </p>
      * <p>
      * When the reboot is complete, a cache cluster event is created.
+     * </p>
+     * <p>
+     * Rebooting a cluster is currently supported on Memcached and Redis (cluster mode disabled) clusters. Rebooting is
+     * not supported on Redis (cluster mode enabled) clusters.
+     * </p>
+     * <p>
+     * If you make changes to parameters that require a Redis (cluster mode enabled) cluster reboot for the changes to
+     * be applied, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.htm">Rebooting a
+     * Cluster</a> for an alternate process.
      * </p>
      * 
      * @param rebootCacheClusterRequest

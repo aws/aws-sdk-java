@@ -18,18 +18,35 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Defines an action to be initiated by a trigger.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Action" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Action implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of a job to be executed.
+     * </p>
+     */
     private String jobName;
-
+    /**
+     * <p>
+     * Arguments to be passed to the job.
+     * </p>
+     */
     private java.util.Map<String, String> arguments;
 
     /**
+     * <p>
+     * The name of a job to be executed.
+     * </p>
+     * 
      * @param jobName
+     *        The name of a job to be executed.
      */
 
     public void setJobName(String jobName) {
@@ -37,7 +54,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of a job to be executed.
+     * </p>
+     * 
+     * @return The name of a job to be executed.
      */
 
     public String getJobName() {
@@ -45,7 +66,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of a job to be executed.
+     * </p>
+     * 
      * @param jobName
+     *        The name of a job to be executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +81,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Arguments to be passed to the job.
+     * </p>
+     * 
+     * @return Arguments to be passed to the job.
      */
 
     public java.util.Map<String, String> getArguments() {
@@ -63,7 +93,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Arguments to be passed to the job.
+     * </p>
+     * 
      * @param arguments
+     *        Arguments to be passed to the job.
      */
 
     public void setArguments(java.util.Map<String, String> arguments) {
@@ -71,7 +106,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Arguments to be passed to the job.
+     * </p>
+     * 
      * @param arguments
+     *        Arguments to be passed to the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

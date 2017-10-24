@@ -30,8 +30,14 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     private String applicationId;
     /** When was this segment created */
     private String creationDate;
+    /** The default authentication method used for APNs. */
+    private String defaultAuthenticationMethod;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
+    /** If the channel is registered with a credential for authentication. */
+    private Boolean hasCredential;
+    /** If the channel is registered with a token key for authentication. */
+    private Boolean hasTokenKey;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
     /** Is this channel archived */
@@ -114,6 +120,40 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
+     * The default authentication method used for APNs.
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for APNs.
+     */
+
+    public void setDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        this.defaultAuthenticationMethod = defaultAuthenticationMethod;
+    }
+
+    /**
+     * The default authentication method used for APNs.
+     * 
+     * @return The default authentication method used for APNs.
+     */
+
+    public String getDefaultAuthenticationMethod() {
+        return this.defaultAuthenticationMethod;
+    }
+
+    /**
+     * The default authentication method used for APNs.
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for APNs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelResponse withDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        setDefaultAuthenticationMethod(defaultAuthenticationMethod);
+        return this;
+    }
+
+    /**
      * If the channel is enabled for sending messages.
      * 
      * @param enabled
@@ -155,6 +195,94 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
 
     public Boolean isEnabled() {
         return this.enabled;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @param hasCredential
+     *        If the channel is registered with a credential for authentication.
+     */
+
+    public void setHasCredential(Boolean hasCredential) {
+        this.hasCredential = hasCredential;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @return If the channel is registered with a credential for authentication.
+     */
+
+    public Boolean getHasCredential() {
+        return this.hasCredential;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @param hasCredential
+     *        If the channel is registered with a credential for authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelResponse withHasCredential(Boolean hasCredential) {
+        setHasCredential(hasCredential);
+        return this;
+    }
+
+    /**
+     * If the channel is registered with a credential for authentication.
+     * 
+     * @return If the channel is registered with a credential for authentication.
+     */
+
+    public Boolean isHasCredential() {
+        return this.hasCredential;
+    }
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     * 
+     * @param hasTokenKey
+     *        If the channel is registered with a token key for authentication.
+     */
+
+    public void setHasTokenKey(Boolean hasTokenKey) {
+        this.hasTokenKey = hasTokenKey;
+    }
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     * 
+     * @return If the channel is registered with a token key for authentication.
+     */
+
+    public Boolean getHasTokenKey() {
+        return this.hasTokenKey;
+    }
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     * 
+     * @param hasTokenKey
+     *        If the channel is registered with a token key for authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSSandboxChannelResponse withHasTokenKey(Boolean hasTokenKey) {
+        setHasTokenKey(hasTokenKey);
+        return this;
+    }
+
+    /**
+     * If the channel is registered with a token key for authentication.
+     * 
+     * @return If the channel is registered with a token key for authentication.
+     */
+
+    public Boolean isHasTokenKey() {
+        return this.hasTokenKey;
     }
 
     /**
@@ -386,8 +514,14 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getDefaultAuthenticationMethod() != null)
+            sb.append("DefaultAuthenticationMethod: ").append(getDefaultAuthenticationMethod()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getHasCredential() != null)
+            sb.append("HasCredential: ").append(getHasCredential()).append(",");
+        if (getHasTokenKey() != null)
+            sb.append("HasTokenKey: ").append(getHasTokenKey()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIsArchived() != null)
@@ -422,9 +556,21 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getDefaultAuthenticationMethod() == null ^ this.getDefaultAuthenticationMethod() == null)
+            return false;
+        if (other.getDefaultAuthenticationMethod() != null && other.getDefaultAuthenticationMethod().equals(this.getDefaultAuthenticationMethod()) == false)
+            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getHasCredential() == null ^ this.getHasCredential() == null)
+            return false;
+        if (other.getHasCredential() != null && other.getHasCredential().equals(this.getHasCredential()) == false)
+            return false;
+        if (other.getHasTokenKey() == null ^ this.getHasTokenKey() == null)
+            return false;
+        if (other.getHasTokenKey() != null && other.getHasTokenKey().equals(this.getHasTokenKey()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -460,7 +606,10 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getDefaultAuthenticationMethod() == null) ? 0 : getDefaultAuthenticationMethod().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getHasCredential() == null) ? 0 : getHasCredential().hashCode());
+        hashCode = prime * hashCode + ((getHasTokenKey() == null) ? 0 : getHasTokenKey().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());

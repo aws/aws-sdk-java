@@ -52,10 +52,6 @@ public class WriteEventStreamJsonUnmarshaller implements Unmarshaller<WriteEvent
                     context.nextToken();
                     writeEventStream.setDestinationStreamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ExternalId", targetDepth)) {
-                    context.nextToken();
-                    writeEventStream.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
                     writeEventStream.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

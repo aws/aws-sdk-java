@@ -35,6 +35,8 @@ public class EmailChannelResponseMarshaller {
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> FROMADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromAddress").build();
+    private static final MarshallingInfo<Boolean> HASCREDENTIAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasCredential").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> IDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +74,7 @@ public class EmailChannelResponseMarshaller {
             protocolMarshaller.marshall(emailChannelResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getFromAddress(), FROMADDRESS_BINDING);
+            protocolMarshaller.marshall(emailChannelResponse.getHasCredential(), HASCREDENTIAL_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getId(), ID_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getIdentity(), IDENTITY_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getIsArchived(), ISARCHIVED_BINDING);

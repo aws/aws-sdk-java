@@ -25,7 +25,10 @@ import java.util.concurrent.ExecutorService;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * Defines service operations used by the GlueFrontendService
+ * <fullname>AWS Glue</fullname>
+ * <p>
+ * Defines the public endpoint for the AWS Glue service.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -209,6 +212,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeBatchGetPartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopJobRunResult> batchStopJobRunAsync(BatchStopJobRunRequest request) {
+
+        return batchStopJobRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopJobRunResult> batchStopJobRunAsync(final BatchStopJobRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStopJobRunRequest, BatchStopJobRunResult> asyncHandler) {
+        final BatchStopJobRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStopJobRunResult>() {
+            @Override
+            public BatchStopJobRunResult call() throws Exception {
+                BatchStopJobRunResult result = null;
+
+                try {
+                    result = executeBatchStopJobRun(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

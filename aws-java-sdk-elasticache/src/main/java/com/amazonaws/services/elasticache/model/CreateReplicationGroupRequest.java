@@ -86,9 +86,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups is not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -98,14 +97,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 node types.
+     * Redis (cluster mode disabled): T1 and T2 cache node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Redis (cluster mode enabled): T2 node types.
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      */
     private Boolean automaticFailoverEnabled;
     /**
@@ -183,7 +183,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -193,24 +195,48 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -219,13 +245,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -242,8 +274,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      * </p>
      * </li>
      * <li>
@@ -252,6 +288,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Supported node types are available in all regions except as noted in the following table.
+     * </p>
      * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
@@ -340,8 +379,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     * accompanied by a tag value.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -353,11 +391,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
      * regardless of the number of ARNs specified here.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * </p>
@@ -368,11 +401,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
      * <code>restoring</code> while the new replication group is being created.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      */
     private String snapshotName;
     /**
@@ -460,11 +488,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
      * deleted.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -480,17 +503,27 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      */
     private String snapshotWindow;
     /**
      * <p>
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
+     * <p>
+     * This parameter is valid only if:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The line <code>requirepass</code> was added to the database configuration file.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Password constraints:
      * </p>
@@ -507,15 +540,58 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or "@".
+     * Cannot contain any of the following characters: '/', '"', or '@'.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * http://redis.io/commands/AUTH.
      * </p>
      */
     private String authToken;
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
+     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
+     * you create a cluster.
+     * </p>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     * <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in an
+     * Amazon VPC.
+     * </p>
+     * <p>
+     * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean transitEncryptionEnabled;
+    /**
+     * <p>
+     * A flag that enables encryption at rest when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To
+     * enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+     * <code>true</code> when you create the replication group.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is being
+     * created in an Amazon VPC.
+     * </p>
+     * </note>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean atRestEncryptionEnabled;
 
     /**
      * <p>
@@ -796,9 +872,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups is not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -808,14 +883,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 node types.
+     * Redis (cluster mode disabled): T1 and T2 cache node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Redis (cluster mode enabled): T2 node types.
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @param automaticFailoverEnabled
      *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
@@ -830,9 +906,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Default: false
      *        </p>
-     *        <note>
      *        <p>
-     *        ElastiCache Multi-AZ replication groups is not supported on:
+     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *        </p>
      *        <ul>
      *        <li>
@@ -842,13 +917,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 node types.
-     *        </p>
-     *        <p>
-     *        Redis (cluster mode enabled): T2 node types.
+     *        Redis (cluster mode disabled): T1 and T2 cache node types.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
+     *        </p>
+     *        </li>
      */
 
     public void setAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
@@ -870,9 +946,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups is not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -882,14 +957,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 node types.
+     * Redis (cluster mode disabled): T1 and T2 cache node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Redis (cluster mode enabled): T2 node types.
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *         primary fails.</p>
@@ -904,9 +980,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Default: false
      *         </p>
-     *         <note>
      *         <p>
-     *         ElastiCache Multi-AZ replication groups is not supported on:
+     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *         </p>
      *         <ul>
      *         <li>
@@ -916,13 +991,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Redis (cluster mode disabled): T1 and T2 node types.
-     *         </p>
-     *         <p>
-     *         Redis (cluster mode enabled): T2 node types.
+     *         Redis (cluster mode disabled): T1 and T2 cache node types.
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Redis (cluster mode enabled): T1 node types.
+     *         </p>
+     *         </li>
      */
 
     public Boolean getAutomaticFailoverEnabled() {
@@ -944,9 +1020,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups is not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -956,14 +1031,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 node types.
+     * Redis (cluster mode disabled): T1 and T2 cache node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Redis (cluster mode enabled): T2 node types.
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @param automaticFailoverEnabled
      *        Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
@@ -978,9 +1054,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Default: false
      *        </p>
-     *        <note>
      *        <p>
-     *        ElastiCache Multi-AZ replication groups is not supported on:
+     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *        </p>
      *        <ul>
      *        <li>
@@ -990,13 +1065,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Redis (cluster mode disabled): T1 and T2 node types.
-     *        </p>
-     *        <p>
-     *        Redis (cluster mode enabled): T2 node types.
+     *        Redis (cluster mode disabled): T1 and T2 cache node types.
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode enabled): T1 node types.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1020,9 +1096,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Default: false
      * </p>
-     * <note>
      * <p>
-     * ElastiCache Multi-AZ replication groups is not supported on:
+     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      * </p>
      * <ul>
      * <li>
@@ -1032,14 +1107,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis (cluster mode disabled): T1 and T2 node types.
+     * Redis (cluster mode disabled): T1 and T2 cache node types.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Redis (cluster mode enabled): T2 node types.
+     * Redis (cluster mode enabled): T1 node types.
      * </p>
      * </li>
      * </ul>
-     * </note>
      * 
      * @return Specifies whether a read-only replica is automatically promoted to read/write primary if the existing
      *         primary fails.</p>
@@ -1054,9 +1130,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Default: false
      *         </p>
-     *         <note>
      *         <p>
-     *         ElastiCache Multi-AZ replication groups is not supported on:
+     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
      *         </p>
      *         <ul>
      *         <li>
@@ -1066,13 +1141,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Redis (cluster mode disabled): T1 and T2 node types.
-     *         </p>
-     *         <p>
-     *         Redis (cluster mode enabled): T2 node types.
+     *         Redis (cluster mode disabled): T1 and T2 cache node types.
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Redis (cluster mode enabled): T1 node types.
+     *         </p>
+     *         </li>
      */
 
     public Boolean isAutomaticFailoverEnabled() {
@@ -1629,7 +1705,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -1639,24 +1717,48 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -1665,13 +1767,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -1688,8 +1796,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      * </p>
      * </li>
      * <li>
@@ -1698,6 +1810,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Supported node types are available in all regions except as noted in the following table.
+     * </p>
      * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
@@ -1711,7 +1826,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param cacheNodeType
      *        The compute and memory capacity of the nodes in the node group (shard).</p>
      *        <p>
-     *        Valid node types are as follows:
+     *        The following node types are supported by ElastiCache. Generally speaking, the current generation types
+     *        provide more memory and computational power at lower cost when compared to their equivalent previous
+     *        generation counterparts.
      *        </p>
      *        <ul>
      *        <li>
@@ -1721,23 +1838,49 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *        <code>cache.t2.medium</code>
+     *        </p>
+     *        <p>
+     *        <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     *        <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>T1 node types:</b> <code>cache.t1.micro</code>
+     *        </p>
+     *        <p>
+     *        <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        Compute optimized:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -1746,13 +1889,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      *        <code>cache.m2.4xlarge</code>
      *        </p>
      *        </li>
@@ -1770,8 +1919,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
-     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+     *        Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      *        </p>
      *        </li>
      *        <li>
@@ -1780,6 +1933,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        Supported node types are available in all regions except as noted in the following table.
+     *        </p>
      *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -1799,7 +1955,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -1809,24 +1967,48 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -1835,13 +2017,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -1858,8 +2046,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      * </p>
      * </li>
      * <li>
@@ -1868,6 +2060,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Supported node types are available in all regions except as noted in the following table.
+     * </p>
      * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
@@ -1880,7 +2075,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The compute and memory capacity of the nodes in the node group (shard).</p>
      *         <p>
-     *         Valid node types are as follows:
+     *         The following node types are supported by ElastiCache. Generally speaking, the current generation types
+     *         provide more memory and computational power at lower cost when compared to their equivalent previous
+     *         generation counterparts.
      *         </p>
      *         <ul>
      *         <li>
@@ -1890,25 +2087,49 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
-     *         <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
-     *         <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     *         <code>cache.m4.10xlarge</code>
+     *         Current generation:
+     *         </p>
+     *         <p>
+     *         <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *         <code>cache.t2.medium</code>
+     *         </p>
+     *         <p>
+     *         <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *         <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *         </p>
+     *         <p>
+     *         <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *         <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     *         <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *         Previous generation: (not recommended)
+     *         </p>
+     *         <p>
+     *         <b>T1 node types:</b> <code>cache.t1.micro</code>
+     *         </p>
+     *         <p>
+     *         <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *         <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
      *         </li>
      *         <li>
      *         <p>
-     *         Compute optimized: <code>cache.c1.xlarge</code>
+     *         Compute optimized:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Previous generation: (not recommended)
+     *         </p>
+     *         <p>
+     *         <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -1917,13 +2138,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *         Current generation:
+     *         </p>
+     *         <p>
+     *         <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *         Previous generation: (not recommended)
+     *         </p>
+     *         <p>
+     *         <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      *         <code>cache.m2.4xlarge</code>
      *         </p>
      *         </li>
@@ -1941,8 +2168,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
-     *         Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+     *         Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      *         </p>
      *         </li>
      *         <li>
@@ -1951,6 +2182,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         Supported node types are available in all regions except as noted in the following table.
+     *         </p>
      *         <p>
      *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -1970,7 +2204,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The compute and memory capacity of the nodes in the node group (shard).
      * </p>
      * <p>
-     * Valid node types are as follows:
+     * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
+     * more memory and computational power at lower cost when compared to their equivalent previous generation
+     * counterparts.
      * </p>
      * <ul>
      * <li>
@@ -1980,24 +2216,48 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
-     * <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+     * </p>
+     * <p>
+     * <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
+     * <code>cache.m3.2xlarge</code>
+     * </p>
+     * <p>
+     * <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+     * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>T1 node types:</b> <code>cache.t1.micro</code>
+     * </p>
+     * <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
+     * <code>cache.m1.xlarge</code>
      * </p>
      * </li>
      * </ul>
      * </li>
      * <li>
      * <p>
-     * Compute optimized: <code>cache.c1.xlarge</code>
+     * Compute optimized:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -2006,13 +2266,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * Current generation:
+     * </p>
+     * <p>
+     * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
+     * Previous generation: (not recommended)
+     * </p>
+     * <p>
+     * <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>
      * </p>
      * </li>
      * </ul>
@@ -2029,8 +2295,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is
-     * supported on Redis (cluster mode enabled) T2 instances.
+     * Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      * </p>
      * </li>
      * <li>
@@ -2039,6 +2309,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Supported node types are available in all regions except as noted in the following table.
+     * </p>
      * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
@@ -2052,7 +2325,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param cacheNodeType
      *        The compute and memory capacity of the nodes in the node group (shard).</p>
      *        <p>
-     *        Valid node types are as follows:
+     *        The following node types are supported by ElastiCache. Generally speaking, the current generation types
+     *        provide more memory and computational power at lower cost when compared to their equivalent previous
+     *        generation counterparts.
      *        </p>
      *        <ul>
      *        <li>
@@ -2062,23 +2337,49 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-     *        <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
+     *        <code>cache.t2.medium</code>
+     *        </p>
+     *        <p>
+     *        <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     *        <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>
+     *        </p>
+     *        <p>
+     *        <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      *        <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-     *        <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>T1 node types:</b> <code>cache.t1.micro</code>
+     *        </p>
+     *        <p>
+     *        <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     *        <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
      *        </li>
      *        <li>
      *        <p>
-     *        Compute optimized: <code>cache.c1.xlarge</code>
+     *        Compute optimized:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -2087,13 +2388,19 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+     *        Current generation:
+     *        </p>
+     *        <p>
+     *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     *        Previous generation: (not recommended)
+     *        </p>
+     *        <p>
+     *        <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      *        <code>cache.m2.4xlarge</code>
      *        </p>
      *        </li>
@@ -2111,8 +2418,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances.
-     *        Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
+     *        Redis (cluster mode disabled): Redis backup/restore is not supported on T1 and T2 instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Redis (cluster mode enabled): Backup/restore is not supported on T1 instances.
      *        </p>
      *        </li>
      *        <li>
@@ -2121,6 +2432,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        Supported node types are available in all regions except as noted in the following table.
+     *        </p>
      *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -2671,12 +2985,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     * accompanied by a tag value.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * </p>
      * 
-     * @return A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     *         accompanied by a tag value.
+     * @return A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2688,13 +3000,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     * accompanied by a tag value.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     *        accompanied by a tag value.
+     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -2708,8 +3018,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     * accompanied by a tag value.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2718,8 +3027,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     *        accompanied by a tag value.
+     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2735,13 +3043,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     * accompanied by a tag value.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key must be
-     *        accompanied by a tag value.
+     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2758,11 +3064,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
      * regardless of the number of ARNs specified here.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * </p>
@@ -2771,11 +3072,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name
      *         in the ARN cannot contain any commas. The new replication group will have the number of node groups
      *         (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured
-     *         by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
-     *         <p>
-     *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *         </p>
-     *         </note>
+     *         by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
      *         <p>
      *         Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      */
@@ -2795,11 +3092,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
      * regardless of the number of ARNs specified here.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * </p>
@@ -2809,11 +3101,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the
      *        ARN cannot contain any commas. The new replication group will have the number of node groups (console:
      *        shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by
-     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
-     *        </note>
+     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
      *        <p>
      *        Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      */
@@ -2835,11 +3123,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
      * regardless of the number of ARNs specified here.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * </p>
@@ -2854,11 +3137,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the
      *        ARN cannot contain any commas. The new replication group will have the number of node groups (console:
      *        shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by
-     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
-     *        </note>
+     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
      *        <p>
      *        Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2882,11 +3161,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
      * regardless of the number of ARNs specified here.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * </p>
@@ -2896,11 +3170,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the
      *        ARN cannot contain any commas. The new replication group will have the number of node groups (console:
      *        shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by
-     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
-     *        </note>
+     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>
      *        <p>
      *        Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2916,18 +3186,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
      * <code>restoring</code> while the new replication group is being created.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * 
      * @param snapshotName
      *        The name of a snapshot from which to restore data into the new replication group. The snapshot status
-     *        changes to <code>restoring</code> while the new replication group is being created.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
+     *        changes to <code>restoring</code> while the new replication group is being created.
      */
 
     public void setSnapshotName(String snapshotName) {
@@ -2939,17 +3201,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
      * <code>restoring</code> while the new replication group is being created.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * 
      * @return The name of a snapshot from which to restore data into the new replication group. The snapshot status
-     *         changes to <code>restoring</code> while the new replication group is being created.</p> <note>
-     *         <p>
-     *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *         </p>
+     *         changes to <code>restoring</code> while the new replication group is being created.
      */
 
     public String getSnapshotName() {
@@ -2961,18 +3215,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to
      * <code>restoring</code> while the new replication group is being created.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * 
      * @param snapshotName
      *        The name of a snapshot from which to restore data into the new replication group. The snapshot status
-     *        changes to <code>restoring</code> while the new replication group is being created.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
+     *        changes to <code>restoring</code> while the new replication group is being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3483,11 +3729,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
      * deleted.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -3495,11 +3736,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param snapshotRetentionLimit
      *        The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if
      *        you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
-     *        before being deleted.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
-     *        </note>
+     *        before being deleted.</p>
      *        <p>
      *        Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      */
@@ -3514,22 +3751,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
      * deleted.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
      * 
      * @return The number of days for which ElastiCache retains automatic snapshots before deleting them. For example,
      *         if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     *         days before being deleted.</p> <note>
-     *         <p>
-     *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *         </p>
-     *         </note>
+     *         days before being deleted.</p>
      *         <p>
      *         Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      */
@@ -3544,11 +3772,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being
      * deleted.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * <p>
      * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
@@ -3556,11 +3779,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param snapshotRetentionLimit
      *        The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if
      *        you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
-     *        before being deleted.</p> <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
-     *        </note>
+     *        before being deleted.</p>
      *        <p>
      *        Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3581,11 +3800,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * 
      * @param snapshotWindow
      *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
@@ -3595,11 +3809,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
      */
 
     public void setSnapshotWindow(String snapshotWindow) {
@@ -3616,11 +3825,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * 
      * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
      *         (shard).</p>
@@ -3629,11 +3833,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *         </p>
      */
 
     public String getSnapshotWindow() {
@@ -3650,11 +3849,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
      * </p>
-     * <note>
-     * <p>
-     * This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     * </p>
-     * </note>
      * 
      * @param snapshotWindow
      *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group
@@ -3664,11 +3858,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3681,6 +3870,21 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
+     * <p>
+     * This parameter is valid only if:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The line <code>requirepass</code> was added to the database configuration file.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Password constraints:
      * </p>
@@ -3697,16 +3901,33 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or "@".
+     * Cannot contain any of the following characters: '/', '"', or '@'.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * http://redis.io/commands/AUTH.
      * </p>
      * 
      * @param authToken
      *        <b>Reserved parameter.</b> The password used to access a password protected server.</p>
+     *        <p>
+     *        This parameter is valid only if:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was
+     *        created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The line <code>requirepass</code> was added to the database configuration file.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Password constraints:
      *        </p>
@@ -3723,12 +3944,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot contain any of the following characters: '/', '"', or "@".
+     *        Cannot contain any of the following characters: '/', '"', or '@'.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     *        http://redis.io/commands/AUTH.
      */
 
     public void setAuthToken(String authToken) {
@@ -3739,6 +3961,21 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
+     * <p>
+     * This parameter is valid only if:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The line <code>requirepass</code> was added to the database configuration file.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Password constraints:
      * </p>
@@ -3755,15 +3992,32 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or "@".
+     * Cannot contain any of the following characters: '/', '"', or '@'.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * http://redis.io/commands/AUTH.
      * </p>
      * 
      * @return <b>Reserved parameter.</b> The password used to access a password protected server.</p>
+     *         <p>
+     *         This parameter is valid only if:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was
+     *         created.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The line <code>requirepass</code> was added to the database configuration file.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Password constraints:
      *         </p>
@@ -3780,12 +4034,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot contain any of the following characters: '/', '"', or "@".
+     *         Cannot contain any of the following characters: '/', '"', or '@'.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     *         For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     *         http://redis.io/commands/AUTH.
      */
 
     public String getAuthToken() {
@@ -3796,6 +4051,21 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
+     * <p>
+     * This parameter is valid only if:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The line <code>requirepass</code> was added to the database configuration file.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Password constraints:
      * </p>
@@ -3812,16 +4082,33 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Cannot contain any of the following characters: '/', '"', or "@".
+     * Cannot contain any of the following characters: '/', '"', or '@'.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     * For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * http://redis.io/commands/AUTH.
      * </p>
      * 
      * @param authToken
      *        <b>Reserved parameter.</b> The password used to access a password protected server.</p>
+     *        <p>
+     *        This parameter is valid only if:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was
+     *        created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The line <code>requirepass</code> was added to the database configuration file.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Password constraints:
      *        </p>
@@ -3838,18 +4125,355 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot contain any of the following characters: '/', '"', or "@".
+     *        Cannot contain any of the following characters: '/', '"', or '@'.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at Redis.
+     *        For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
+     *        http://redis.io/commands/AUTH.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationGroupRequest withAuthToken(String authToken) {
         setAuthToken(authToken);
         return this;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
+     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
+     * you create a cluster.
+     * </p>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     * <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in an
+     * Amazon VPC.
+     * </p>
+     * <p>
+     * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param transitEncryptionEnabled
+     *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     *        <p>
+     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
+     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
+     *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     *        <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in
+     *        an Amazon VPC.
+     *        </p>
+     *        <p>
+     *        If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     *        </p>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setTransitEncryptionEnabled(Boolean transitEncryptionEnabled) {
+        this.transitEncryptionEnabled = transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
+     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
+     * you create a cluster.
+     * </p>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     * <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in an
+     * Amazon VPC.
+     * </p>
+     * <p>
+     * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     *         <p>
+     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
+     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
+     *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     *         <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in
+     *         an Amazon VPC.
+     *         </p>
+     *         <p>
+     *         If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     *         </p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getTransitEncryptionEnabled() {
+        return this.transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
+     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
+     * you create a cluster.
+     * </p>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     * <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in an
+     * Amazon VPC.
+     * </p>
+     * <p>
+     * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param transitEncryptionEnabled
+     *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     *        <p>
+     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
+     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
+     *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     *        <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in
+     *        an Amazon VPC.
+     *        </p>
+     *        <p>
+     *        If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     *        </p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withTransitEncryptionEnabled(Boolean transitEncryptionEnabled) {
+        setTransitEncryptionEnabled(transitEncryptionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
+     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
+     * you create a cluster.
+     * </p>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     * <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in an
+     * Amazon VPC.
+     * </p>
+     * <p>
+     * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     *         <p>
+     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
+     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
+     *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
+     *         <code>EngineVersion</code> parameter is <code>3.2.4</code> or later, and the cluster is being created in
+     *         an Amazon VPC.
+     *         </p>
+     *         <p>
+     *         If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
+     *         </p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isTransitEncryptionEnabled() {
+        return this.transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables encryption at rest when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To
+     * enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+     * <code>true</code> when you create the replication group.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is being
+     * created in an Amazon VPC.
+     * </p>
+     * </note>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param atRestEncryptionEnabled
+     *        A flag that enables encryption at rest when set to <code>true</code>.</p>
+     *        <p>
+     *        You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is
+     *        created. To enable encryption at rest on a replication group you must set
+     *        <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is
+     *        being created in an Amazon VPC.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setAtRestEncryptionEnabled(Boolean atRestEncryptionEnabled) {
+        this.atRestEncryptionEnabled = atRestEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables encryption at rest when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To
+     * enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+     * <code>true</code> when you create the replication group.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is being
+     * created in an Amazon VPC.
+     * </p>
+     * </note>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A flag that enables encryption at rest when set to <code>true</code>.</p>
+     *         <p>
+     *         You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is
+     *         created. To enable encryption at rest on a replication group you must set
+     *         <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster
+     *         is being created in an Amazon VPC.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getAtRestEncryptionEnabled() {
+        return this.atRestEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables encryption at rest when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To
+     * enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+     * <code>true</code> when you create the replication group.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is being
+     * created in an Amazon VPC.
+     * </p>
+     * </note>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param atRestEncryptionEnabled
+     *        A flag that enables encryption at rest when set to <code>true</code>.</p>
+     *        <p>
+     *        You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is
+     *        created. To enable encryption at rest on a replication group you must set
+     *        <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is
+     *        being created in an Amazon VPC.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withAtRestEncryptionEnabled(Boolean atRestEncryptionEnabled) {
+        setAtRestEncryptionEnabled(atRestEncryptionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that enables encryption at rest when set to <code>true</code>.
+     * </p>
+     * <p>
+     * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To
+     * enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+     * <code>true</code> when you create the replication group.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster is being
+     * created in an Amazon VPC.
+     * </p>
+     * </note>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A flag that enables encryption at rest when set to <code>true</code>.</p>
+     *         <p>
+     *         You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is
+     *         created. To enable encryption at rest on a replication group you must set
+     *         <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code> and the cluster
+     *         is being created in an Amazon VPC.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isAtRestEncryptionEnabled() {
+        return this.atRestEncryptionEnabled;
     }
 
     /**
@@ -3914,7 +4538,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getSnapshotWindow() != null)
             sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getAuthToken() != null)
-            sb.append("AuthToken: ").append(getAuthToken());
+            sb.append("AuthToken: ").append(getAuthToken()).append(",");
+        if (getTransitEncryptionEnabled() != null)
+            sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
+        if (getAtRestEncryptionEnabled() != null)
+            sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -4033,6 +4661,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
             return false;
+        if (other.getTransitEncryptionEnabled() == null ^ this.getTransitEncryptionEnabled() == null)
+            return false;
+        if (other.getTransitEncryptionEnabled() != null && other.getTransitEncryptionEnabled().equals(this.getTransitEncryptionEnabled()) == false)
+            return false;
+        if (other.getAtRestEncryptionEnabled() == null ^ this.getAtRestEncryptionEnabled() == null)
+            return false;
+        if (other.getAtRestEncryptionEnabled() != null && other.getAtRestEncryptionEnabled().equals(this.getAtRestEncryptionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -4067,6 +4703,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         return hashCode;
     }
 

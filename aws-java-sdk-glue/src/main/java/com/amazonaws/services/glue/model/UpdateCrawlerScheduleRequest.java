@@ -33,7 +33,10 @@ public class UpdateCrawlerScheduleRequest extends com.amazonaws.AmazonWebService
     private String crawlerName;
     /**
      * <p>
-     * Cron expression of the updated schedule.
+     * The updated <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      */
     private String schedule;
@@ -80,11 +83,17 @@ public class UpdateCrawlerScheduleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Cron expression of the updated schedule.
+     * The updated <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        Cron expression of the updated schedule.
+     *        The updated <code>cron</code> expression used to specify the schedule (see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        <code>cron(15 12 * * ? *)</code>.
      */
 
     public void setSchedule(String schedule) {
@@ -93,10 +102,16 @@ public class UpdateCrawlerScheduleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Cron expression of the updated schedule.
+     * The updated <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
-     * @return Cron expression of the updated schedule.
+     * @return The updated <code>cron</code> expression used to specify the schedule (see <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
+     *         specify: <code>cron(15 12 * * ? *)</code>.
      */
 
     public String getSchedule() {
@@ -105,11 +120,17 @@ public class UpdateCrawlerScheduleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Cron expression of the updated schedule.
+     * The updated <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for
+     * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     * <code>cron(15 12 * * ? *)</code>.
      * </p>
      * 
      * @param schedule
-     *        Cron expression of the updated schedule.
+     *        The updated <code>cron</code> expression used to specify the schedule (see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
+     *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
+     *        <code>cron(15 12 * * ? *)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

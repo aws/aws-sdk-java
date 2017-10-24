@@ -64,6 +64,10 @@ public class BaiduChannelResponseJsonUnmarshaller implements Unmarshaller<BaiduC
                     context.nextToken();
                     baiduChannelResponse.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("HasCredential", targetDepth)) {
+                    context.nextToken();
+                    baiduChannelResponse.setHasCredential(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     baiduChannelResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));

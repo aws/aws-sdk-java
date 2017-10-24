@@ -60,6 +60,12 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String yarnEndpointAddress;
     /**
      * <p>
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     */
+    private Integer zeppelinRemoteSparkInterpreterPort;
+    /**
+     * <p>
      * The public address used by this DevEndpoint.
      * </p>
      */
@@ -72,7 +78,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The number of nodes used by this DevEndpoint.
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      */
     private Integer numberOfNodes;
@@ -90,13 +96,22 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String vpcId;
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      */
     private String extraPythonLibsS3Path;
     /**
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      * </p>
      */
     private String extraJarsS3Path;
@@ -363,6 +378,46 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     * 
+     * @param zeppelinRemoteSparkInterpreterPort
+     *        The Apache Zeppelin port for the remote Apache Spark interpreter.
+     */
+
+    public void setZeppelinRemoteSparkInterpreterPort(Integer zeppelinRemoteSparkInterpreterPort) {
+        this.zeppelinRemoteSparkInterpreterPort = zeppelinRemoteSparkInterpreterPort;
+    }
+
+    /**
+     * <p>
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     * 
+     * @return The Apache Zeppelin port for the remote Apache Spark interpreter.
+     */
+
+    public Integer getZeppelinRemoteSparkInterpreterPort() {
+        return this.zeppelinRemoteSparkInterpreterPort;
+    }
+
+    /**
+     * <p>
+     * The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * </p>
+     * 
+     * @param zeppelinRemoteSparkInterpreterPort
+     *        The Apache Zeppelin port for the remote Apache Spark interpreter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevEndpoint withZeppelinRemoteSparkInterpreterPort(Integer zeppelinRemoteSparkInterpreterPort) {
+        setZeppelinRemoteSparkInterpreterPort(zeppelinRemoteSparkInterpreterPort);
+        return this;
+    }
+
+    /**
+     * <p>
      * The public address used by this DevEndpoint.
      * </p>
      * 
@@ -443,11 +498,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of nodes used by this DevEndpoint.
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of nodes used by this DevEndpoint.
+     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -456,10 +511,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of nodes used by this DevEndpoint.
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
-     * @return The number of nodes used by this DevEndpoint.
+     * @return The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      */
 
     public Integer getNumberOfNodes() {
@@ -468,11 +523,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of nodes used by this DevEndpoint.
+     * The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * </p>
      * 
      * @param numberOfNodes
-     *        The number of nodes used by this DevEndpoint.
+     *        The number of AWS Glue Data Processing Units (DPUs) allocated to this DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,11 +618,22 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Multiple values must be complete paths separated by a comma.</p>
+     *        <p>
+     *        Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on
+     *        C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     *        not yet supported.
      */
 
     public void setExtraPythonLibsS3Path(String extraPythonLibsS3Path) {
@@ -576,10 +642,21 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
-     * @return Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * @return Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *         Multiple values must be complete paths separated by a comma.</p>
+     *         <p>
+     *         Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely
+     *         on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
+     *         are not yet supported.
      */
 
     public String getExtraPythonLibsS3Path() {
@@ -588,11 +665,22 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     * Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint. Multiple
+     * values must be complete paths separated by a comma.
+     * </p>
+     * <p>
+     * Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on C
+     * extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet
+     * supported.
      * </p>
      * 
      * @param extraPythonLibsS3Path
-     *        Path to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path(s) to one or more Python libraries in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Multiple values must be complete paths separated by a comma.</p>
+     *        <p>
+     *        Please note that only pure Python libraries can currently be used on a DevEndpoint. Libraries that rely on
+     *        C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     *        not yet supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,9 +693,14 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      * 
      * @param extraJarsS3Path
-     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>
+     *        <p>
+     *        Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      */
 
     public void setExtraJarsS3Path(String extraJarsS3Path) {
@@ -618,8 +711,13 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      * 
-     * @return Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     * @return Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>
+     *         <p>
+     *         Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      */
 
     public String getExtraJarsS3Path() {
@@ -630,9 +728,14 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
      * </p>
+     * <p>
+     * Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
+     * </p>
      * 
      * @param extraJarsS3Path
-     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.
+     *        Path to one or more Java Jars in an S3 bucket that should be loaded in your DevEndpoint.</p>
+     *        <p>
+     *        Please note that only pure Java/Scala libraries can currently be used on a DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -862,6 +965,8 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getYarnEndpointAddress() != null)
             sb.append("YarnEndpointAddress: ").append(getYarnEndpointAddress()).append(",");
+        if (getZeppelinRemoteSparkInterpreterPort() != null)
+            sb.append("ZeppelinRemoteSparkInterpreterPort: ").append(getZeppelinRemoteSparkInterpreterPort()).append(",");
         if (getPublicAddress() != null)
             sb.append("PublicAddress: ").append(getPublicAddress()).append(",");
         if (getStatus() != null)
@@ -919,6 +1024,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         if (other.getYarnEndpointAddress() == null ^ this.getYarnEndpointAddress() == null)
             return false;
         if (other.getYarnEndpointAddress() != null && other.getYarnEndpointAddress().equals(this.getYarnEndpointAddress()) == false)
+            return false;
+        if (other.getZeppelinRemoteSparkInterpreterPort() == null ^ this.getZeppelinRemoteSparkInterpreterPort() == null)
+            return false;
+        if (other.getZeppelinRemoteSparkInterpreterPort() != null
+                && other.getZeppelinRemoteSparkInterpreterPort().equals(this.getZeppelinRemoteSparkInterpreterPort()) == false)
             return false;
         if (other.getPublicAddress() == null ^ this.getPublicAddress() == null)
             return false;
@@ -981,6 +1091,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getYarnEndpointAddress() == null) ? 0 : getYarnEndpointAddress().hashCode());
+        hashCode = prime * hashCode + ((getZeppelinRemoteSparkInterpreterPort() == null) ? 0 : getZeppelinRemoteSparkInterpreterPort().hashCode());
         hashCode = prime * hashCode + ((getPublicAddress() == null) ? 0 : getPublicAddress().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());

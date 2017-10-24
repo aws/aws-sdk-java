@@ -32,12 +32,6 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.Map<String, AddressConfiguration> addresses;
     /**
-     * The JSON payload used for campaign attributes. This payload is added to the notifications'
-     * data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in Android. Email
-     * will use the attribute campaign_id to save the templates.
-     */
-    private java.util.Map<String, String> campaign;
-    /**
      * A map of custom attributes to attributes to be attached to the message. This payload is added to the push
      * notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
      */
@@ -49,8 +43,6 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, EndpointSendConfiguration> endpoints;
     /** Message configuration. */
     private DirectMessageConfiguration messageConfiguration;
-    /** Original request Id for which this message is delivered. */
-    private String requestId;
 
     /**
      * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
@@ -110,73 +102,6 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
 
     public MessageRequest clearAddressesEntries() {
         this.addresses = null;
-        return this;
-    }
-
-    /**
-     * The JSON payload used for campaign attributes. This payload is added to the notifications'
-     * data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in Android. Email
-     * will use the attribute campaign_id to save the templates.
-     * 
-     * @return The JSON payload used for campaign attributes. This payload is added to the notifications'
-     *         data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in
-     *         Android. Email will use the attribute campaign_id to save the templates.
-     */
-
-    public java.util.Map<String, String> getCampaign() {
-        return campaign;
-    }
-
-    /**
-     * The JSON payload used for campaign attributes. This payload is added to the notifications'
-     * data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in Android. Email
-     * will use the attribute campaign_id to save the templates.
-     * 
-     * @param campaign
-     *        The JSON payload used for campaign attributes. This payload is added to the notifications'
-     *        data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in
-     *        Android. Email will use the attribute campaign_id to save the templates.
-     */
-
-    public void setCampaign(java.util.Map<String, String> campaign) {
-        this.campaign = campaign;
-    }
-
-    /**
-     * The JSON payload used for campaign attributes. This payload is added to the notifications'
-     * data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in Android. Email
-     * will use the attribute campaign_id to save the templates.
-     * 
-     * @param campaign
-     *        The JSON payload used for campaign attributes. This payload is added to the notifications'
-     *        data->pinpoint->campaign' object in iOS and flattened to pinpoint.campaign.{AttributeName} keys in
-     *        Android. Email will use the attribute campaign_id to save the templates.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public MessageRequest withCampaign(java.util.Map<String, String> campaign) {
-        setCampaign(campaign);
-        return this;
-    }
-
-    public MessageRequest addCampaignEntry(String key, String value) {
-        if (null == this.campaign) {
-            this.campaign = new java.util.HashMap<String, String>();
-        }
-        if (this.campaign.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.campaign.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Campaign.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public MessageRequest clearCampaignEntries() {
-        this.campaign = null;
         return this;
     }
 
@@ -337,40 +262,6 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Original request Id for which this message is delivered.
-     * 
-     * @param requestId
-     *        Original request Id for which this message is delivered.
-     */
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    /**
-     * Original request Id for which this message is delivered.
-     * 
-     * @return Original request Id for which this message is delivered.
-     */
-
-    public String getRequestId() {
-        return this.requestId;
-    }
-
-    /**
-     * Original request Id for which this message is delivered.
-     * 
-     * @param requestId
-     *        Original request Id for which this message is delivered.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public MessageRequest withRequestId(String requestId) {
-        setRequestId(requestId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -383,16 +274,12 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAddresses() != null)
             sb.append("Addresses: ").append(getAddresses()).append(",");
-        if (getCampaign() != null)
-            sb.append("Campaign: ").append(getCampaign()).append(",");
         if (getContext() != null)
             sb.append("Context: ").append(getContext()).append(",");
         if (getEndpoints() != null)
             sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getMessageConfiguration() != null)
-            sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
-        if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId());
+            sb.append("MessageConfiguration: ").append(getMessageConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -411,10 +298,6 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAddresses() != null && other.getAddresses().equals(this.getAddresses()) == false)
             return false;
-        if (other.getCampaign() == null ^ this.getCampaign() == null)
-            return false;
-        if (other.getCampaign() != null && other.getCampaign().equals(this.getCampaign()) == false)
-            return false;
         if (other.getContext() == null ^ this.getContext() == null)
             return false;
         if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
@@ -427,10 +310,6 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
             return false;
-        if (other.getRequestId() == null ^ this.getRequestId() == null)
-            return false;
-        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
-            return false;
         return true;
     }
 
@@ -440,11 +319,9 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAddresses() == null) ? 0 : getAddresses().hashCode());
-        hashCode = prime * hashCode + ((getCampaign() == null) ? 0 : getCampaign().hashCode());
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         return hashCode;
     }
 

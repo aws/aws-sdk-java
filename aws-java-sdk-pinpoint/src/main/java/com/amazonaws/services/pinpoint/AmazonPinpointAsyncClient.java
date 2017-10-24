@@ -471,6 +471,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteApnsVoipChannelResult> deleteApnsVoipChannelAsync(DeleteApnsVoipChannelRequest request) {
+
+        return deleteApnsVoipChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApnsVoipChannelResult> deleteApnsVoipChannelAsync(final DeleteApnsVoipChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApnsVoipChannelRequest, DeleteApnsVoipChannelResult> asyncHandler) {
+        final DeleteApnsVoipChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApnsVoipChannelResult>() {
+            @Override
+            public DeleteApnsVoipChannelResult call() throws Exception {
+                DeleteApnsVoipChannelResult result = null;
+
+                try {
+                    result = executeDeleteApnsVoipChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApnsVoipSandboxChannelResult> deleteApnsVoipSandboxChannelAsync(DeleteApnsVoipSandboxChannelRequest request) {
+
+        return deleteApnsVoipSandboxChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApnsVoipSandboxChannelResult> deleteApnsVoipSandboxChannelAsync(final DeleteApnsVoipSandboxChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApnsVoipSandboxChannelRequest, DeleteApnsVoipSandboxChannelResult> asyncHandler) {
+        final DeleteApnsVoipSandboxChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApnsVoipSandboxChannelResult>() {
+            @Override
+            public DeleteApnsVoipSandboxChannelResult call() throws Exception {
+                DeleteApnsVoipSandboxChannelResult result = null;
+
+                try {
+                    result = executeDeleteApnsVoipSandboxChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request) {
 
         return deleteAppAsync(request, null);
@@ -818,6 +884,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeGetApnsSandboxChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApnsVoipChannelResult> getApnsVoipChannelAsync(GetApnsVoipChannelRequest request) {
+
+        return getApnsVoipChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApnsVoipChannelResult> getApnsVoipChannelAsync(final GetApnsVoipChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetApnsVoipChannelRequest, GetApnsVoipChannelResult> asyncHandler) {
+        final GetApnsVoipChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetApnsVoipChannelResult>() {
+            @Override
+            public GetApnsVoipChannelResult call() throws Exception {
+                GetApnsVoipChannelResult result = null;
+
+                try {
+                    result = executeGetApnsVoipChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApnsVoipSandboxChannelResult> getApnsVoipSandboxChannelAsync(GetApnsVoipSandboxChannelRequest request) {
+
+        return getApnsVoipSandboxChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApnsVoipSandboxChannelResult> getApnsVoipSandboxChannelAsync(final GetApnsVoipSandboxChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetApnsVoipSandboxChannelRequest, GetApnsVoipSandboxChannelResult> asyncHandler) {
+        final GetApnsVoipSandboxChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetApnsVoipSandboxChannelResult>() {
+            @Override
+            public GetApnsVoipSandboxChannelResult call() throws Exception {
+                GetApnsVoipSandboxChannelResult result = null;
+
+                try {
+                    result = executeGetApnsVoipSandboxChannel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1709,6 +1841,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeUpdateApnsSandboxChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApnsVoipChannelResult> updateApnsVoipChannelAsync(UpdateApnsVoipChannelRequest request) {
+
+        return updateApnsVoipChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApnsVoipChannelResult> updateApnsVoipChannelAsync(final UpdateApnsVoipChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApnsVoipChannelRequest, UpdateApnsVoipChannelResult> asyncHandler) {
+        final UpdateApnsVoipChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApnsVoipChannelResult>() {
+            @Override
+            public UpdateApnsVoipChannelResult call() throws Exception {
+                UpdateApnsVoipChannelResult result = null;
+
+                try {
+                    result = executeUpdateApnsVoipChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApnsVoipSandboxChannelResult> updateApnsVoipSandboxChannelAsync(UpdateApnsVoipSandboxChannelRequest request) {
+
+        return updateApnsVoipSandboxChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApnsVoipSandboxChannelResult> updateApnsVoipSandboxChannelAsync(final UpdateApnsVoipSandboxChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApnsVoipSandboxChannelRequest, UpdateApnsVoipSandboxChannelResult> asyncHandler) {
+        final UpdateApnsVoipSandboxChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApnsVoipSandboxChannelResult>() {
+            @Override
+            public UpdateApnsVoipSandboxChannelResult call() throws Exception {
+                UpdateApnsVoipSandboxChannelResult result = null;
+
+                try {
+                    result = executeUpdateApnsVoipSandboxChannel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

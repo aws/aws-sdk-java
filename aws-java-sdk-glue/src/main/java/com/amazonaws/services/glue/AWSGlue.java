@@ -26,7 +26,10 @@ import com.amazonaws.services.glue.model.*;
  * {@link com.amazonaws.services.glue.AbstractAWSGlue} instead.
  * </p>
  * <p>
- * Defines service operations used by the GlueFrontendService
+ * <fullname>AWS Glue</fullname>
+ * <p>
+ * Defines the public endpoint for the AWS Glue service.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSGlue {
@@ -143,6 +146,25 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     BatchGetPartitionResult batchGetPartition(BatchGetPartitionRequest batchGetPartitionRequest);
+
+    /**
+     * <p>
+     * Stops a batch of job runs for a given job.
+     * </p>
+     * 
+     * @param batchStopJobRunRequest
+     * @return Result of the BatchStopJobRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.BatchStopJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchStopJobRunResult batchStopJobRun(BatchStopJobRunRequest batchStopJobRunRequest);
 
     /**
      * <p>

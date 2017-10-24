@@ -48,7 +48,10 @@ import com.amazonaws.services.glue.model.transform.*;
  * Client for accessing AWS Glue. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * Defines service operations used by the GlueFrontendService
+ * <fullname>AWS Glue</fullname>
+ * <p>
+ * Defines the public endpoint for the AWS Glue service.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -430,6 +433,60 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchGetPartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetPartitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a batch of job runs for a given job.
+     * </p>
+     * 
+     * @param batchStopJobRunRequest
+     * @return Result of the BatchStopJobRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.BatchStopJobRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchStopJobRunResult batchStopJobRun(BatchStopJobRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchStopJobRun(request);
+    }
+
+    @SdkInternalApi
+    final BatchStopJobRunResult executeBatchStopJobRun(BatchStopJobRunRequest batchStopJobRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchStopJobRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchStopJobRunRequest> request = null;
+        Response<BatchStopJobRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchStopJobRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStopJobRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchStopJobRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchStopJobRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
