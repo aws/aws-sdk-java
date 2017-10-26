@@ -49,7 +49,7 @@ public class StreamingDistribution implements Serializable, Cloneable {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      */
@@ -234,12 +234,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name that corresponds to the streaming distribution. For example:
+     *        The domain name that corresponds to the streaming distribution, for example,
      *        <code>s5c39gqb8ow64r.cloudfront.net</code>.
      */
 
@@ -249,11 +249,11 @@ public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      * 
-     * @return The domain name that corresponds to the streaming distribution. For example:
+     * @return The domain name that corresponds to the streaming distribution, for example,
      *         <code>s5c39gqb8ow64r.cloudfront.net</code>.
      */
 
@@ -263,12 +263,12 @@ public class StreamingDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the streaming distribution. For example:
+     * The domain name that corresponds to the streaming distribution, for example,
      * <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name that corresponds to the streaming distribution. For example:
+     *        The domain name that corresponds to the streaming distribution, for example,
      *        <code>s5c39gqb8ow64r.cloudfront.net</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

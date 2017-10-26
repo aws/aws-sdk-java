@@ -28,7 +28,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      */
     private String id;
@@ -58,7 +58,7 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     *        The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * @param s3CanonicalUserId
      *        The Amazon S3 canonical user ID for the origin access identity, used when giving the origin access
      *        identity read permission to an object in Amazon S3.
@@ -70,11 +70,11 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     *        The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      */
 
     public void setId(String id) {
@@ -83,10 +83,10 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      * 
-     * @return The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * @return The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      */
 
     public String getId() {
@@ -95,11 +95,11 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     * The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * </p>
      * 
      * @param id
-     *        The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.
+     *        The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

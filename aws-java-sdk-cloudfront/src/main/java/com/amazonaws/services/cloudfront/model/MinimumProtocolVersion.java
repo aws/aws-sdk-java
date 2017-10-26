@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum MinimumProtocolVersion {
 
     SSLv3("SSLv3"),
-    TLSv1("TLSv1");
+    TLSv1("TLSv1"),
+    TLSv1_2016("TLSv1_2016"),
+    TLSv11_2016("TLSv1.1_2016"),
+    TLSv12_2018("TLSv1.2_2018");
 
     private String value;
 

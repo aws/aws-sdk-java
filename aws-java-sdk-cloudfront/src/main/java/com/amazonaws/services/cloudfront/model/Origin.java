@@ -57,7 +57,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -259,7 +259,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -309,7 +309,7 @@ public class Origin implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the
+     *        If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
      *        <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
      *        </p>
      *        </li>
@@ -365,7 +365,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -414,7 +414,7 @@ public class Origin implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the
+     *         If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
      *         <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
      *         </p>
      *         </li>
@@ -470,7 +470,7 @@ public class Origin implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the <code>s3-accelerate</code>
+     * If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the <code>s3-accelerate</code>
      * endpoint for <code>DomainName</code>.
      * </p>
      * </li>
@@ -520,7 +520,7 @@ public class Origin implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If you configured Amazon S3 Transfer Acceleration for your bucket, do not specify the
+     *        If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the
      *        <code>s3-accelerate</code> endpoint for <code>DomainName</code>.
      *        </p>
      *        </li>

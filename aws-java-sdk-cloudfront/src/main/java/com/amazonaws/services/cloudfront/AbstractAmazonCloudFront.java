@@ -79,6 +79,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

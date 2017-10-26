@@ -28,33 +28,45 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function.
+     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * or $LATEST.
      * </p>
      */
     private String lambdaFunctionARN;
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. Valid values are:
+     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>viewer-request</code>
+     * <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it
+     * checks to see whether the requested object is in the edge cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>
+     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
+     * the requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>viewer-response</code>
+     * <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
+     * execute.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-response</code>
+     * <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+     * The function executes regardless of whether the object was already in the edge cache.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * </ul>
@@ -63,11 +75,13 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function.
+     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * or $LATEST.
      * </p>
      * 
      * @param lambdaFunctionARN
-     *        The ARN of the Lambda function.
+     *        The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda
+     *        alias or $LATEST.
      */
 
     public void setLambdaFunctionARN(String lambdaFunctionARN) {
@@ -76,10 +90,12 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function.
+     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * or $LATEST.
      * </p>
      * 
-     * @return The ARN of the Lambda function.
+     * @return The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a
+     *         Lambda alias or $LATEST.
      */
 
     public String getLambdaFunctionARN() {
@@ -88,11 +104,13 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the Lambda function.
+     * The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+     * or $LATEST.
      * </p>
      * 
      * @param lambdaFunctionARN
-     *        The ARN of the Lambda function.
+     *        The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda
+     *        alias or $LATEST.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,52 +121,75 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. Valid values are:
+     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>viewer-request</code>
+     * <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it
+     * checks to see whether the requested object is in the edge cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>
+     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
+     * the requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>viewer-response</code>
+     * <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
+     * execute.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-response</code>
+     * <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+     * The function executes regardless of whether the object was already in the edge cache.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. Valid values are:</p>
+     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>viewer-request</code>
+     *        <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and
+     *        before it checks to see whether the requested object is in the edge cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>
+     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>viewer-response</code>
+     *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
+     *        and before it caches the object in the response. When the requested object is in the edge cache, the
+     *        function doesn't execute.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-response</code>
+     *        <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the
+     *        viewer. The function executes regardless of whether the object was already in the edge cache.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      * @see EventType
@@ -160,51 +201,74 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. Valid values are:
+     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>viewer-request</code>
+     * <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it
+     * checks to see whether the requested object is in the edge cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>
+     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
+     * the requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>viewer-response</code>
+     * <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
+     * execute.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-response</code>
+     * <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+     * The function executes regardless of whether the object was already in the edge cache.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Specifies the event type that triggers a Lambda function invocation. Valid values are:</p>
+     * @return Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *         values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>viewer-request</code>
+     *         <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and
+     *         before it checks to see whether the requested object is in the edge cache.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>origin-request</code>
+     *         <code>origin-request</code>: The function executes only when CloudFront forwards a request to your
+     *         origin. When the requested object is in the edge cache, the function doesn't execute.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>viewer-response</code>
+     *         <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
+     *         and before it caches the object in the response. When the requested object is in the edge cache, the
+     *         function doesn't execute.
+     *         </p>
+     *         <p>
+     *         If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>origin-response</code>
+     *         <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the
+     *         viewer. The function executes regardless of whether the object was already in the edge cache.
+     *         </p>
+     *         <p>
+     *         If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *         </p>
      *         </li>
      * @see EventType
@@ -216,52 +280,75 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. Valid values are:
+     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>viewer-request</code>
+     * <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it
+     * checks to see whether the requested object is in the edge cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>
+     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
+     * the requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>viewer-response</code>
+     * <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
+     * execute.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-response</code>
+     * <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+     * The function executes regardless of whether the object was already in the edge cache.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. Valid values are:</p>
+     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>viewer-request</code>
+     *        <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and
+     *        before it checks to see whether the requested object is in the edge cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>
+     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>viewer-response</code>
+     *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
+     *        and before it caches the object in the response. When the requested object is in the edge cache, the
+     *        function doesn't execute.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-response</code>
+     *        <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the
+     *        viewer. The function executes regardless of whether the object was already in the edge cache.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -275,52 +362,75 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. Valid values are:
+     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>viewer-request</code>
+     * <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it
+     * checks to see whether the requested object is in the edge cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>
+     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
+     * the requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>viewer-response</code>
+     * <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
+     * execute.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-response</code>
+     * <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+     * The function executes regardless of whether the object was already in the edge cache.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. Valid values are:</p>
+     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>viewer-request</code>
+     *        <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and
+     *        before it checks to see whether the requested object is in the edge cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>
+     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>viewer-response</code>
+     *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
+     *        and before it caches the object in the response. When the requested object is in the edge cache, the
+     *        function doesn't execute.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-response</code>
+     *        <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the
+     *        viewer. The function executes regardless of whether the object was already in the edge cache.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      * @see EventType
@@ -332,52 +442,75 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the event type that triggers a Lambda function invocation. Valid values are:
+     * Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>viewer-request</code>
+     * <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and before it
+     * checks to see whether the requested object is in the edge cache.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>
+     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
+     * the requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>viewer-response</code>
+     * <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+     * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
+     * execute.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>origin-response</code>
+     * <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+     * The function executes regardless of whether the object was already in the edge cache.
+     * </p>
+     * <p>
+     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      * </p>
      * </li>
      * </ul>
      * 
      * @param eventType
-     *        Specifies the event type that triggers a Lambda function invocation. Valid values are:</p>
+     *        Specifies the event type that triggers a Lambda function invocation. You can specify the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>viewer-request</code>
+     *        <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer and
+     *        before it checks to see whether the requested object is in the edge cache.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>
+     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>viewer-response</code>
+     *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
+     *        and before it caches the object in the response. When the requested object is in the edge cache, the
+     *        function doesn't execute.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-response</code>
+     *        <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the
+     *        viewer. The function executes regardless of whether the object was already in the edge cache.
+     *        </p>
+     *        <p>
+     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

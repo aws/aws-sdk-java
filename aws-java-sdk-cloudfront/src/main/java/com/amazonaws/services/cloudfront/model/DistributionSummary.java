@@ -55,7 +55,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      */
     private String domainName;
@@ -73,7 +73,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     private Origins origins;
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
@@ -310,12 +310,12 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name that corresponds to the distribution. For example:
-     *        <code>d604721fxaaqy9.cloudfront.net</code>.
+     *        The domain name that corresponds to the distribution, for example,
+     *        <code>d111111abcdef8.cloudfront.net</code>.
      */
 
     public void setDomainName(String domainName) {
@@ -324,11 +324,11 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      * 
-     * @return The domain name that corresponds to the distribution. For example:
-     *         <code>d604721fxaaqy9.cloudfront.net</code>.
+     * @return The domain name that corresponds to the distribution, for example,
+     *         <code>d111111abcdef8.cloudfront.net</code>.
      */
 
     public String getDomainName() {
@@ -337,12 +337,12 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name that corresponds to the distribution. For example:
-     *        <code>d604721fxaaqy9.cloudfront.net</code>.
+     *        The domain name that corresponds to the distribution, for example,
+     *        <code>d111111abcdef8.cloudfront.net</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,15 +436,15 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do not specify a
-     *        <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
-     *        in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+     *        A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
+     *        element or if files don't match any of the values of <code>PathPattern</code> in
+     *        <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      */
 
     public void setDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
@@ -453,12 +453,12 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
      * 
-     * @return A complex type that describes the default cache behavior if you do not specify a
+     * @return A complex type that describes the default cache behavior if you don't specify a
      *         <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
      *         in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      */
@@ -469,15 +469,15 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do not specify a
-     *        <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
-     *        in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+     *        A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
+     *        element or if files don't match any of the values of <code>PathPattern</code> in
+     *        <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

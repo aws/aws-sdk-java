@@ -52,8 +52,8 @@ import com.amazonaws.services.cloudfront.model.transform.*;
  * <fullname>Amazon CloudFront</fullname>
  * <p>
  * This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who need detailed information about
- * the CloudFront API actions, data types, and errors. For detailed information about CloudFront features and their
- * associated API calls, see the <i>Amazon CloudFront Developer Guide</i>.
+ * CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the <i>Amazon
+ * CloudFront Developer Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -255,6 +255,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchInvalidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidForwardCookiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
@@ -337,13 +338,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the
      *         original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws TooManyCloudFrontOriginAccessIdentitiesException
      *         Processing your request would cause you to exceed the maximum number of origin access identities allowed.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -409,11 +411,12 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
-     *         One or more of your trusted signers do not exist.
+     *         One or more of your trusted signers don't exist.
      * @throws InvalidViewerCertificateException
      * @throws InvalidMinimumProtocolVersionException
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws TooManyDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws TooManyDistributionsException
@@ -444,7 +447,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws TooManyCertificatesException
      *         You cannot create anymore custom SSL/TLS certificates.
      * @throws InvalidLocationCodeException
@@ -528,11 +531,12 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
-     *         One or more of your trusted signers do not exist.
+     *         One or more of your trusted signers don't exist.
      * @throws InvalidViewerCertificateException
      * @throws InvalidMinimumProtocolVersionException
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws TooManyDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws TooManyDistributionsException
@@ -563,7 +567,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws TooManyCertificatesException
      *         You cannot create anymore custom SSL/TLS certificates.
      * @throws InvalidLocationCodeException
@@ -638,7 +642,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws NoSuchDistributionException
@@ -648,7 +653,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation
      *         objects.
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateInvalidation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
@@ -737,16 +742,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
-     *         One or more of your trusted signers do not exist.
+     *         One or more of your trusted signers don't exist.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws TooManyStreamingDistributionCNAMEsException
      * @throws TooManyStreamingDistributionsException
      *         Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
@@ -807,16 +813,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
-     *         One or more of your trusted signers do not exist.
+     *         One or more of your trusted signers don't exist.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws TooManyStreamingDistributionCNAMEsException
      * @throws TooManyStreamingDistributionsException
      *         Processing your request would cause you to exceed the maximum number of streaming distributions allowed.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidTaggingException
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags"
@@ -1029,6 +1036,56 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteDistributionResult> responseHandler = new StaxResponseHandler<DeleteDistributionResult>(
                     new DeleteDistributionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param deleteServiceLinkedRoleRequest
+     * @return Result of the DeleteServiceLinkedRole operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws ResourceInUseException
+     * @throws NoSuchResourceException
+     * @sample AmazonCloudFront.DeleteServiceLinkedRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServiceLinkedRole(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServiceLinkedRoleResult executeDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteServiceLinkedRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteServiceLinkedRoleRequest> request = null;
+        Response<DeleteServiceLinkedRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteServiceLinkedRoleRequestMarshaller().marshall(super.beforeMarshalling(deleteServiceLinkedRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<DeleteServiceLinkedRoleResult>(
+                    new DeleteServiceLinkedRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1976,7 +2033,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidIfMatchVersionException
      *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
@@ -1984,7 +2042,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
@@ -2120,7 +2178,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidIfMatchVersionException
      *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
@@ -2140,7 +2199,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
-     *         One or more of your trusted signers do not exist.
+     *         One or more of your trusted signers don't exist.
      * @throws InvalidViewerCertificateException
      * @throws InvalidMinimumProtocolVersionException
      * @throws InvalidRequiredProtocolException
@@ -2161,7 +2220,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyHeadersInForwardedValuesException
      * @throws InvalidHeadersForS3OriginException
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws TooManyCertificatesException
      *         You cannot create anymore custom SSL/TLS certificates.
      * @throws InvalidLocationCodeException
@@ -2237,7 +2296,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidIfMatchVersionException
      *         The <code>If-Match</code> version is missing or not valid for the distribution.
      * @throws MissingBodyException
-     *         This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+     *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
+     *         is set.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
@@ -2250,9 +2310,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyTrustedSignersException
      *         Your request contains more trusted signers than are allowed per distribution.
      * @throws TrustedSignerDoesNotExistException
-     *         One or more of your trusted signers do not exist.
+     *         One or more of your trusted signers don't exist.
      * @throws InconsistentQuantitiesException
-     *         The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>

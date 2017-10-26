@@ -40,7 +40,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      * CloudFront to distribute your content.
      * </p>
      * </li>
@@ -74,7 +74,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * <p>
      * CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      * countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     * Organization for Standardization</i> website. You can also refer to the country list in the CloudFront console,
+     * Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console,
      * which includes both country names and codes.
      * </p>
      */
@@ -102,7 +102,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *        CloudFront to distribute your content.
      *        </p>
      *        </li>
@@ -132,7 +132,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *        CloudFront to distribute your content.
      *        </p>
      *        </li>
@@ -160,7 +160,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      * CloudFront to distribute your content.
      * </p>
      * </li>
@@ -183,7 +183,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *        CloudFront to distribute your content.
      *        </p>
      *        </li>
@@ -213,7 +213,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      * CloudFront to distribute your content.
      * </p>
      * </li>
@@ -235,7 +235,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *         <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *         CloudFront to distribute your content.
      *         </p>
      *         </li>
@@ -265,7 +265,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      * CloudFront to distribute your content.
      * </p>
      * </li>
@@ -288,7 +288,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *        CloudFront to distribute your content.
      *        </p>
      *        </li>
@@ -320,7 +320,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      * CloudFront to distribute your content.
      * </p>
      * </li>
@@ -343,7 +343,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *        CloudFront to distribute your content.
      *        </p>
      *        </li>
@@ -373,7 +373,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     * <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      * CloudFront to distribute your content.
      * </p>
      * </li>
@@ -396,7 +396,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you do not want
+     *        <code>blacklist</code>: The <code>Location</code> elements specify the countries in which you don't want
      *        CloudFront to distribute your content.
      *        </p>
      *        </li>
@@ -480,7 +480,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * <p>
      * CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      * countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     * Organization for Standardization</i> website. You can also refer to the country list in the CloudFront console,
+     * Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console,
      * which includes both country names and codes.
      * </p>
      * 
@@ -495,7 +495,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *         <p>
      *         CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      *         countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     *         Organization for Standardization</i> website. You can also refer to the country list in the CloudFront
+     *         Organization for Standardization</i> website. You can also refer to the country list on the CloudFront
      *         console, which includes both country names and codes.
      */
 
@@ -519,7 +519,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * <p>
      * CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      * countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     * Organization for Standardization</i> website. You can also refer to the country list in the CloudFront console,
+     * Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console,
      * which includes both country names and codes.
      * </p>
      * 
@@ -535,7 +535,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        <p>
      *        CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      *        countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     *        Organization for Standardization</i> website. You can also refer to the country list in the CloudFront
+     *        Organization for Standardization</i> website. You can also refer to the country list on the CloudFront
      *        console, which includes both country names and codes.
      */
 
@@ -561,7 +561,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * <p>
      * CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      * countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     * Organization for Standardization</i> website. You can also refer to the country list in the CloudFront console,
+     * Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console,
      * which includes both country names and codes.
      * </p>
      * <p>
@@ -582,7 +582,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        <p>
      *        CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      *        countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     *        Organization for Standardization</i> website. You can also refer to the country list in the CloudFront
+     *        Organization for Standardization</i> website. You can also refer to the country list on the CloudFront
      *        console, which includes both country names and codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -610,7 +610,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      * <p>
      * CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      * countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     * Organization for Standardization</i> website. You can also refer to the country list in the CloudFront console,
+     * Organization for Standardization</i> website. You can also refer to the country list on the CloudFront console,
      * which includes both country names and codes.
      * </p>
      * 
@@ -626,7 +626,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      *        <p>
      *        CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the current list of
      *        countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code> code on the <i>International
-     *        Organization for Standardization</i> website. You can also refer to the country list in the CloudFront
+     *        Organization for Standardization</i> website. You can also refer to the country list on the CloudFront
      *        console, which includes both country names and codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

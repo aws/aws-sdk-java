@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One or more of your trusted signers do not exist.
+ * One or more of your trusted signers don't exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

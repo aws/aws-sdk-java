@@ -28,7 +28,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      * </p>
      */
     private String id;
@@ -55,7 +55,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      */
     private String domainName;
@@ -104,11 +104,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     *        The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      */
 
     public void setId(String id) {
@@ -117,10 +117,10 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      * </p>
      * 
-     * @return The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * @return The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      */
 
     public String getId() {
@@ -129,11 +129,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     * The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      * </p>
      * 
      * @param id
-     *        The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+     *        The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +282,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>
      *        .
      */
 
@@ -296,11 +296,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      * 
-     * @return The domain name corresponding to the distribution. For example:
-     *         <code>d604721fxaaqy9.cloudfront.net</code>.
+     * @return The domain name corresponding to the distribution, for example,
+     *         <code>d111111abcdef8.cloudfront.net</code>.
      */
 
     public String getDomainName() {
@@ -309,11 +309,11 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+     * The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
      * </p>
      * 
      * @param domainName
-     *        The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>
+     *        The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */

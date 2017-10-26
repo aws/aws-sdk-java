@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code> element
- * or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You
- * must create exactly one default cache behavior.
+ * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code> element or
+ * if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
+ * create exactly one default cache behavior.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DefaultCacheBehavior" target="_top">AWS

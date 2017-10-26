@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This operation requires a body. Ensure that the body is present and the Content-Type header is set.
+ * This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header is set.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

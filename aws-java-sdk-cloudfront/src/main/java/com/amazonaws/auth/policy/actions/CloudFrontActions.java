@@ -41,6 +41,8 @@ public enum CloudFrontActions implements Action {
     DeleteCloudFrontOriginAccessIdentity("cloudfront:DeleteCloudFrontOriginAccessIdentity"),
     /** Action for the DeleteDistribution operation. */
     DeleteDistribution("cloudfront:DeleteDistribution"),
+    /** Action for the DeleteServiceLinkedRole operation. */
+    DeleteServiceLinkedRole("cloudfront:DeleteServiceLinkedRole"),
     /** Action for the DeleteStreamingDistribution operation. */
     DeleteStreamingDistribution("cloudfront:DeleteStreamingDistribution"),
     /** Action for the GetCloudFrontOriginAccessIdentity operation. */

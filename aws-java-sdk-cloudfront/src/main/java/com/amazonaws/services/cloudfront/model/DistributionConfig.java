@@ -60,7 +60,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
-     * Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before the object
+     * Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object
      * name.
      * </p>
      * <p>
@@ -89,7 +89,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private Origins origins;
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
@@ -227,7 +227,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However,
      * if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom
      * policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your
-     * content, do not enable IPv6. If you want to restrict access to some content by IP address and not restrict access
+     * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -477,7 +477,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
-     * Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before the object
+     * Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object
      * name.
      * </p>
      * <p>
@@ -503,7 +503,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        an object in your distribution (<code>http://www.example.com/product-description.html</code>). Specifying
      *        a default root object avoids exposing the contents of your distribution.</p>
      *        <p>
-     *        Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before the
+     *        Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the
      *        object name.
      *        </p>
      *        <p>
@@ -535,7 +535,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
-     * Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before the object
+     * Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object
      * name.
      * </p>
      * <p>
@@ -560,8 +560,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         of an object in your distribution (<code>http://www.example.com/product-description.html</code>).
      *         Specifying a default root object avoids exposing the contents of your distribution.</p>
      *         <p>
-     *         Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before
-     *         the object name.
+     *         Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the
+     *         object name.
      *         </p>
      *         <p>
      *         If you don't want to specify a default root object when you create a distribution, include an empty
@@ -592,7 +592,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * object avoids exposing the contents of your distribution.
      * </p>
      * <p>
-     * Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before the object
+     * Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the object
      * name.
      * </p>
      * <p>
@@ -618,7 +618,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        an object in your distribution (<code>http://www.example.com/product-description.html</code>). Specifying
      *        a default root object avoids exposing the contents of your distribution.</p>
      *        <p>
-     *        Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code> before the
+     *        Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code> before the
      *        object name.
      *        </p>
      *        <p>
@@ -686,15 +686,15 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do not specify a
-     *        <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
-     *        in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+     *        A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
+     *        element or if files don't match any of the values of <code>PathPattern</code> in
+     *        <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      */
 
     public void setDefaultCacheBehavior(DefaultCacheBehavior defaultCacheBehavior) {
@@ -703,12 +703,12 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
      * 
-     * @return A complex type that describes the default cache behavior if you do not specify a
+     * @return A complex type that describes the default cache behavior if you don't specify a
      *         <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
      *         in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      */
@@ -719,15 +719,15 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+     * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
      * element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
      * elements. You must create exactly one default cache behavior.
      * </p>
      * 
      * @param defaultCacheBehavior
-     *        A complex type that describes the default cache behavior if you do not specify a
-     *        <code>CacheBehavior</code> element or if files don't match any of the values of <code>PathPattern</code>
-     *        in <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
+     *        A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
+     *        element or if files don't match any of the values of <code>PathPattern</code> in
+     *        <code>CacheBehavior</code> elements. You must create exactly one default cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1703,7 +1703,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However,
      * if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom
      * policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your
-     * content, do not enable IPv6. If you want to restrict access to some content by IP address and not restrict access
+     * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -1746,7 +1746,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *        However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
      *        using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that
-     *        can access your content, do not enable IPv6. If you want to restrict access to some content by IP address
+     *        can access your content, don't enable IPv6. If you want to restrict access to some content by IP address
      *        and not restrict access to other content (or restrict access but not by IP address), you can create two
      *        distributions. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -1795,7 +1795,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However,
      * if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom
      * policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your
-     * content, do not enable IPv6. If you want to restrict access to some content by IP address and not restrict access
+     * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -1837,7 +1837,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *         However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
      *         using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     *         that can access your content, do not enable IPv6. If you want to restrict access to some content by IP
+     *         that can access your content, don't enable IPv6. If you want to restrict access to some content by IP
      *         address and not restrict access to other content (or restrict access but not by IP address), you can
      *         create two distributions. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -1886,7 +1886,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However,
      * if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom
      * policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your
-     * content, do not enable IPv6. If you want to restrict access to some content by IP address and not restrict access
+     * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -1929,7 +1929,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *        However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
      *        using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that
-     *        can access your content, do not enable IPv6. If you want to restrict access to some content by IP address
+     *        can access your content, don't enable IPv6. If you want to restrict access to some content by IP address
      *        and not restrict access to other content (or restrict access but not by IP address), you can create two
      *        distributions. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -1980,7 +1980,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content. However,
      * if you're using signed URLs or signed cookies to restrict access to your content, and if you're using a custom
      * policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses that can access your
-     * content, do not enable IPv6. If you want to restrict access to some content by IP address and not restrict access
+     * content, don't enable IPv6. If you want to restrict access to some content by IP address and not restrict access
      * to other content (or restrict access but not by IP address), you can create two distributions. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"
@@ -2022,7 +2022,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *         However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
      *         using a custom policy that includes the <code>IpAddress</code> parameter to restrict the IP addresses
-     *         that can access your content, do not enable IPv6. If you want to restrict access to some content by IP
+     *         that can access your content, don't enable IPv6. If you want to restrict access to some content by IP
      *         address and not restrict access to other content (or restrict access but not by IP address), you can
      *         create two distributions. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html"

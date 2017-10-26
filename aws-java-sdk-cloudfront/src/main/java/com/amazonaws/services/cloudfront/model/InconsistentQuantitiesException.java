@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
+ * The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
