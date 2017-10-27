@@ -33,7 +33,7 @@ import com.amazonaws.event.ProgressListener;
  * -signature-version
  * </p>
  * <p>
- * Required Parameters: BucketName, Key, UploadId, PartNumber
+ * Required Parameters: BucketName, Key, UploadId, PartNumber, PartSize
  */
 public class UploadPartRequest extends AmazonWebServiceRequest implements
         SSECustomerKeyProvider, S3DataSource, Serializable {
@@ -67,7 +67,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
     private int partNumber;
 
     /** The size of this part, in bytes. */
-    private long partSize;
+    private Long partSize;
 
     /**
      * The optional, but recommended, MD5 hash of the content of this part. If
@@ -313,7 +313,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      *
      * @return the size of this part, in bytes.
      */
-    public long getPartSize() {
+    public Long getPartSize() {
         return partSize;
     }
 
@@ -323,7 +323,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      * @param partSize
      *            the size of this part, in bytes.
      */
-    public void setPartSize(long partSize) {
+    public void setPartSize(Long partSize) {
         this.partSize = partSize;
     }
 
@@ -337,7 +337,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      *
      * @return This updated UploadPartRequest object.
      */
-    public UploadPartRequest withPartSize(long partSize) {
+    public UploadPartRequest withPartSize(Long partSize) {
         this.partSize = partSize;
         return this;
     }

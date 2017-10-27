@@ -254,7 +254,7 @@ public class UploadCallable implements Callable<UploadResult> {
                 if (uploadPartRequest.getPartSize() >= Integer.MAX_VALUE) {
                     inputStream.mark(Integer.MAX_VALUE);
                 } else {
-                    inputStream.mark((int)uploadPartRequest.getPartSize());
+                    inputStream.mark(uploadPartRequest.getPartSize().intValue());
                 }
             }
             partETags.add(s3.uploadPart(uploadPartRequest).getPartETag());
