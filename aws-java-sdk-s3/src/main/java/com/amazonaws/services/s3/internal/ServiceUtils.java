@@ -302,7 +302,7 @@ public class ServiceUtils {
             }
             outputStream = new BufferedOutputStream(new FileOutputStream(
                     dstfile, appendData));
-            byte[] buffer = new byte[1024*10];
+            byte[] buffer = new byte[8192];
             int bytesRead;
             while ((bytesRead = s3Object.getObjectContent().read(buffer)) > -1) {
                 outputStream.write(buffer, 0, bytesRead);
