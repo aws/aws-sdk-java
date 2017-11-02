@@ -72,7 +72,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
@@ -481,15 +481,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Retrieves an ACM Certificate and certificate chain for the certificate specified by an ARN. The chain is an
-     * ordered list of certificates that contains the root certificate, intermediate certificates of subordinate CAs,
-     * and the ACM Certificate. The certificate and certificate chain are base64 encoded. If you want to decode the
-     * certificate chain to see the individual certificate fields, you can use OpenSSL.
+     * ordered list of certificates that contains the ACM Certificate, intermediate certificates of subordinate CAs, and
+     * the root certificate in that order. The certificate and certificate chain are base64 encoded. If you want to
+     * decode the certificate chain to see the individual certificate fields, you can use OpenSSL.
      * </p>
-     * <note>
-     * <p>
-     * Currently, ACM Certificates can be used only with Elastic Load Balancing and Amazon CloudFront.
-     * </p>
-     * </note>
      * 
      * @param getCertificateRequest
      * @return Result of the GetCertificate operation returned by the service.
@@ -555,7 +550,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * <p>
      * For more information about importing certificates into ACM, including the differences between certificates that
      * you import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html"> Importing Certificates</a> in the
      * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * <p>
@@ -572,6 +567,12 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      * <p>
      * To import a new certificate, omit the <code>CertificateArn</code> field. Include this field only when you want to
      * replace a previously imported certificate.
+     * </p>
+     * <p>
+     * When you import a certificate by using the CLI or one of the SDKs, you must specify the certificate, chain, and
+     * private key parameters as file names preceded by <code>file://</code>. For example, you can specify a certificate
+     * saved in the <code>C:\temp</code> folder as <code>C:\temp\certificate_to_import.pem</code>. If you are making an
+     * HTTP or HTTPS Query request, include these parameters as BLOBs.
      * </p>
      * <p>
      * This operation returns the <a
@@ -802,11 +803,20 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * Requests an ACM Certificate for use with other AWS services. To request an ACM Certificate, you must specify the
-     * fully qualified domain name (FQDN) for your site. You can also specify additional FQDNs if users can reach your
-     * site by using other names. For each domain name you specify, email is sent to the domain owner to request
-     * approval to issue the certificate. After receiving approval from the domain owner, the ACM Certificate is issued.
-     * For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
-     * User Guide</a>.
+     * fully qualified domain name (FQDN) for your site in the <code>DomainName</code> parameter. You can also specify
+     * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users can reach your site by using
+     * other names.
+     * </p>
+     * <p>
+     * For each domain name you specify, email is sent to the domain owner to request approval to issue the certificate.
+     * Email is sent to three registered contact addresses in the WHOIS database and to five common system
+     * administration addresses formed from the <code>DomainName</code> you enter or the optional
+     * <code>ValidationDomain</code> parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate Domain Ownership</a>.
+     * </p>
+     * <p>
+     * After receiving approval from the domain owner, the ACM Certificate is issued. For more information, see the <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * </p>
      * 
      * @param requestCertificateRequest
@@ -977,6 +987,11 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
 }

@@ -80,6 +80,10 @@ public class AssociateVirtualInterfaceResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     associateVirtualInterfaceResult.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    context.nextToken();
+                    associateVirtualInterfaceResult.setAmazonSideAsn(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     associateVirtualInterfaceResult.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class AssociateVirtualInterfaceResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     associateVirtualInterfaceResult.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    context.nextToken();
+                    associateVirtualInterfaceResult.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();

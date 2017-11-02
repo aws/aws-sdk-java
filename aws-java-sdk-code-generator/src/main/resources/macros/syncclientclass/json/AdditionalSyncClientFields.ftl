@@ -1,5 +1,5 @@
 <#macro content serviceModelRoot>
-    private final ${serviceModelRoot.metadata.protocolFactory} protocolFactory = new ${serviceModelRoot.metadata.protocolFactory}(new JsonClientMetadata()
+    private static final ${serviceModelRoot.metadata.protocolFactory} protocolFactory = new ${serviceModelRoot.metadata.protocolFactory}(new JsonClientMetadata()
         .withProtocolVersion("${serviceModelRoot.metadata.jsonVersion}")
         .withSupportsCbor(${serviceModelRoot.metadata.cborProtocol?c})
         .withSupportsIon(${serviceModelRoot.metadata.ionProtocol?c})

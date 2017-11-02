@@ -43,6 +43,19 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String virtualGatewayId;
+    /**
+     * <p>
+     * ID of the direct connect gateway that will be attached to the virtual interface.
+     * </p>
+     * <p>
+     * A direct connect gateway can be managed via the AWS Direct Connect console or the
+     * <a>CreateDirectConnectGateway</a> action.
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     */
+    private String directConnectGatewayId;
 
     /**
      * @param virtualInterfaceId
@@ -156,6 +169,85 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * ID of the direct connect gateway that will be attached to the virtual interface.
+     * </p>
+     * <p>
+     * A direct connect gateway can be managed via the AWS Direct Connect console or the
+     * <a>CreateDirectConnectGateway</a> action.
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @param directConnectGatewayId
+     *        ID of the direct connect gateway that will be attached to the virtual interface.</p>
+     *        <p>
+     *        A direct connect gateway can be managed via the AWS Direct Connect console or the
+     *        <a>CreateDirectConnectGateway</a> action.
+     *        </p>
+     *        <p>
+     *        Default: None
+     */
+
+    public void setDirectConnectGatewayId(String directConnectGatewayId) {
+        this.directConnectGatewayId = directConnectGatewayId;
+    }
+
+    /**
+     * <p>
+     * ID of the direct connect gateway that will be attached to the virtual interface.
+     * </p>
+     * <p>
+     * A direct connect gateway can be managed via the AWS Direct Connect console or the
+     * <a>CreateDirectConnectGateway</a> action.
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @return ID of the direct connect gateway that will be attached to the virtual interface.</p>
+     *         <p>
+     *         A direct connect gateway can be managed via the AWS Direct Connect console or the
+     *         <a>CreateDirectConnectGateway</a> action.
+     *         </p>
+     *         <p>
+     *         Default: None
+     */
+
+    public String getDirectConnectGatewayId() {
+        return this.directConnectGatewayId;
+    }
+
+    /**
+     * <p>
+     * ID of the direct connect gateway that will be attached to the virtual interface.
+     * </p>
+     * <p>
+     * A direct connect gateway can be managed via the AWS Direct Connect console or the
+     * <a>CreateDirectConnectGateway</a> action.
+     * </p>
+     * <p>
+     * Default: None
+     * </p>
+     * 
+     * @param directConnectGatewayId
+     *        ID of the direct connect gateway that will be attached to the virtual interface.</p>
+     *        <p>
+     *        A direct connect gateway can be managed via the AWS Direct Connect console or the
+     *        <a>CreateDirectConnectGateway</a> action.
+     *        </p>
+     *        <p>
+     *        Default: None
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfirmPrivateVirtualInterfaceRequest withDirectConnectGatewayId(String directConnectGatewayId) {
+        setDirectConnectGatewayId(directConnectGatewayId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -169,7 +261,9 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
         if (getVirtualInterfaceId() != null)
             sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId()).append(",");
         if (getVirtualGatewayId() != null)
-            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId());
+            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId()).append(",");
+        if (getDirectConnectGatewayId() != null)
+            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -192,6 +286,10 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
             return false;
+        if (other.getDirectConnectGatewayId() == null ^ this.getDirectConnectGatewayId() == null)
+            return false;
+        if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +300,7 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
 
         hashCode = prime * hashCode + ((getVirtualInterfaceId() == null) ? 0 : getVirtualInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
         return hashCode;
     }
 

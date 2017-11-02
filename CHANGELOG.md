@@ -1,3 +1,16 @@
+# __1.11.222__ __2017-11-02__
+## __AWS Certificate Manager__
+  - ### Features
+    - Documentation updates for ACM
+
+## __AWS CloudHSM V2__
+  - ### Features
+    - Minor documentation update for AWS CloudHSM (cloudhsmv2).
+
+## __AWS Direct Connect__
+  - ### Features
+    - AWS DirectConnect now provides support for Global Access for Virtual Private Cloud (VPC) via a new feature called Direct Connect Gateway. A Direct Connect Gateway will allow you to group multiple Direct Connect Private Virtual Interfaces (DX-VIF) and Private Virtual Gateways (VGW) from different AWS regions (but belonging to the same AWS Account) and pass traffic from any DX-VIF to any VPC in the grouping.
+
 # __1.11.221__ __2017-10-26__
 ## __Amazon CloudFront__
   - ### Features

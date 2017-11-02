@@ -102,7 +102,9 @@ public interface ${metadata.syncInterface} {
 </#if>
 
   <#list operations?values as operationModel>
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
     <@InterfaceMethodForOperationMacro.content metadata operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalInterfaceMethodsMacro??>

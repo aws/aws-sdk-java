@@ -80,6 +80,10 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                     context.nextToken();
                     virtualInterface.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setAmazonSideAsn(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     virtualInterface.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class VirtualInterfaceJsonUnmarshaller implements Unmarshaller<VirtualInt
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     virtualInterface.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    context.nextToken();
+                    virtualInterface.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();

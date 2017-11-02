@@ -810,6 +810,7 @@ public class AmazonHttpClient {
             if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
                 return new ClientExecutionTimeoutException();
             } else {
+                Thread.currentThread().interrupt();
                 return ae;
             }
         }

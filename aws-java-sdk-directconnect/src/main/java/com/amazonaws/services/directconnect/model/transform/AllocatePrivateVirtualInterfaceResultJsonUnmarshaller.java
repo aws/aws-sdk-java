@@ -80,6 +80,10 @@ public class AllocatePrivateVirtualInterfaceResultJsonUnmarshaller implements Un
                     context.nextToken();
                     allocatePrivateVirtualInterfaceResult.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    context.nextToken();
+                    allocatePrivateVirtualInterfaceResult.setAmazonSideAsn(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     allocatePrivateVirtualInterfaceResult.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class AllocatePrivateVirtualInterfaceResultJsonUnmarshaller implements Un
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     allocatePrivateVirtualInterfaceResult.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    context.nextToken();
+                    allocatePrivateVirtualInterfaceResult.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();

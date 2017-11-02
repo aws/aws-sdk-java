@@ -292,8 +292,9 @@ public interface AmazonDirectConnect {
      * be migrated along with their virtual interfaces using <a>AssociateHostedConnection</a>.
      * </p>
      * <p>
-     * Hosted virtual interfaces (an interface for which the owner of the connection is not the owner of physical
-     * connection) can only be reassociated by the owner of the physical connection.
+     * In order to reassociate a virtual interface to a new connection or LAG, the requester must own either the virtual
+     * interface itself or the connection to which the virtual interface is currently associated. Additionally, the
+     * requester must own the connection or LAG to which the virtual interface will be newly associated.
      * </p>
      * 
      * @param associateVirtualInterfaceRequest
@@ -341,7 +342,7 @@ public interface AmazonDirectConnect {
      * </p>
      * <p>
      * After the virtual interface owner calls this function, the virtual interface will be created and attached to the
-     * given virtual private gateway, and will be available for handling traffic.
+     * given virtual private gateway or direct connect gateway, and will be available for handling traffic.
      * </p>
      * 
      * @param confirmPrivateVirtualInterfaceRequest
@@ -428,6 +429,9 @@ public interface AmazonDirectConnect {
      * connection in one region does not provide connectivity to other regions.
      * </p>
      * <p>
+     * To find the locations for your region, use <a>DescribeLocations</a>.
+     * </p>
+     * <p>
      * You can automatically add the new connection to a link aggregation group (LAG) by specifying a LAG ID in the
      * request. This ensures that the new connection is allocated on the same AWS Direct Connect endpoint that hosts the
      * specified LAG. If there are no available ports on the endpoint, the request fails and no connection will be
@@ -448,6 +452,53 @@ public interface AmazonDirectConnect {
      *      API Documentation</a>
      */
     CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a new direct connect gateway. A direct connect gateway is an intermediate object that enables you to
+     * connect a set of virtual interfaces and virtual private gateways. direct connect gateways are global and visible
+     * in any AWS region after they are created. The virtual interfaces and virtual private gateways that are connected
+     * through a direct connect gateway can be in different regions. This enables you to connect to a VPC in any region,
+     * regardless of the region in which the virtual interfaces are located, and pass traffic between them.
+     * </p>
+     * 
+     * @param createDirectConnectGatewayRequest
+     *        Container for the parameters to the CreateDirectConnectGateway operation.
+     * @return Result of the CreateDirectConnectGateway operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.CreateDirectConnectGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDirectConnectGatewayResult createDirectConnectGateway(CreateDirectConnectGatewayRequest createDirectConnectGatewayRequest);
+
+    /**
+     * <p>
+     * Creates an association between a direct connect gateway and a virtual private gateway (VGW). The VGW must be
+     * attached to a VPC and must not be associated with another direct connect gateway.
+     * </p>
+     * 
+     * @param createDirectConnectGatewayAssociationRequest
+     *        Container for the parameters to the CreateDirectConnectGatewayAssociation operation.
+     * @return Result of the CreateDirectConnectGatewayAssociation operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.CreateDirectConnectGatewayAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDirectConnectGatewayAssociationResult createDirectConnectGatewayAssociation(
+            CreateDirectConnectGatewayAssociationRequest createDirectConnectGatewayAssociationRequest);
 
     /**
      * <p>
@@ -631,6 +682,50 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Deletes a direct connect gateway. You must first delete all virtual interfaces that are attached to the direct
+     * connect gateway and disassociate all virtual private gateways that are associated with the direct connect
+     * gateway.
+     * </p>
+     * 
+     * @param deleteDirectConnectGatewayRequest
+     *        Container for the parameters to the DeleteDirectConnectGateway operation.
+     * @return Result of the DeleteDirectConnectGateway operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DeleteDirectConnectGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGateway"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDirectConnectGatewayResult deleteDirectConnectGateway(DeleteDirectConnectGatewayRequest deleteDirectConnectGatewayRequest);
+
+    /**
+     * <p>
+     * Deletes the association between a direct connect gateway and a virtual private gateway.
+     * </p>
+     * 
+     * @param deleteDirectConnectGatewayAssociationRequest
+     *        Container for the parameters to the DeleteDirectConnectGatewayAssociation operation.
+     * @return Result of the DeleteDirectConnectGatewayAssociation operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DeleteDirectConnectGatewayAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDirectConnectGatewayAssociationResult deleteDirectConnectGatewayAssociation(
+            DeleteDirectConnectGatewayAssociationRequest deleteDirectConnectGatewayAssociationRequest);
+
+    /**
+     * <p>
      * Deletes the specified interconnect.
      * </p>
      * <note>
@@ -786,6 +881,81 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Returns a list of all direct connect gateway and virtual private gateway (VGW) associations. Either a direct
+     * connect gateway ID or a VGW ID must be provided in the request. If a direct connect gateway ID is provided, the
+     * response returns all VGWs associated with the direct connect gateway. If a VGW ID is provided, the response
+     * returns all direct connect gateways associated with the VGW. If both are provided, the response only returns the
+     * association that matches both the direct connect gateway and the VGW.
+     * </p>
+     * 
+     * @param describeDirectConnectGatewayAssociationsRequest
+     *        Container for the parameters to the DescribeDirectConnectGatewayAssociations operation.
+     * @return Result of the DescribeDirectConnectGatewayAssociations operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DescribeDirectConnectGatewayAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDirectConnectGatewayAssociationsResult describeDirectConnectGatewayAssociations(
+            DescribeDirectConnectGatewayAssociationsRequest describeDirectConnectGatewayAssociationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all direct connect gateway and virtual interface (VIF) attachments. Either a direct connect
+     * gateway ID or a VIF ID must be provided in the request. If a direct connect gateway ID is provided, the response
+     * returns all VIFs attached to the direct connect gateway. If a VIF ID is provided, the response returns all direct
+     * connect gateways attached to the VIF. If both are provided, the response only returns the attachment that matches
+     * both the direct connect gateway and the VIF.
+     * </p>
+     * 
+     * @param describeDirectConnectGatewayAttachmentsRequest
+     *        Container for the parameters to the DescribeDirectConnectGatewayAttachments operation.
+     * @return Result of the DescribeDirectConnectGatewayAttachments operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DescribeDirectConnectGatewayAttachments
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewayAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDirectConnectGatewayAttachmentsResult describeDirectConnectGatewayAttachments(
+            DescribeDirectConnectGatewayAttachmentsRequest describeDirectConnectGatewayAttachmentsRequest);
+
+    /**
+     * <p>
+     * Returns a list of direct connect gateways in your account. Deleted direct connect gateways are not returned. You
+     * can provide a direct connect gateway ID in the request to return information about the specific direct connect
+     * gateway only. Otherwise, if a direct connect gateway ID is not provided, information about all of your direct
+     * connect gateways is returned.
+     * </p>
+     * 
+     * @param describeDirectConnectGatewaysRequest
+     *        Container for the parameters to the DescribeDirectConnectGateways operation.
+     * @return Result of the DescribeDirectConnectGateways operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred during the API call. The error message will contain additional details about
+     *         the cause.
+     * @throws DirectConnectClientException
+     *         The API was called with invalid parameters. The error message will contain additional details about the
+     *         cause.
+     * @sample AmazonDirectConnect.DescribeDirectConnectGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGateways"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDirectConnectGatewaysResult describeDirectConnectGateways(DescribeDirectConnectGatewaysRequest describeDirectConnectGatewaysRequest);
+
+    /**
+     * <p>
      * Returns a list of hosted connections that have been provisioned on the given interconnect or link aggregation
      * group (LAG).
      * </p>
@@ -922,7 +1092,7 @@ public interface AmazonDirectConnect {
     /**
      * <p>
      * Returns the list of AWS Direct Connect locations in the current AWS region. These are the locations that may be
-     * selected when calling CreateConnection or CreateInterconnect.
+     * selected when calling <a>CreateConnection</a> or <a>CreateInterconnect</a>.
      * </p>
      * 
      * @param describeLocationsRequest

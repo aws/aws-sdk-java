@@ -18,7 +18,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : {
       "Activity" : [ "Type" ],
       "Comment" : [ "Status", "Visibility" ],
@@ -57,6 +57,7 @@
     "shapeModifiers" : null,
     "shapeSubstitutions" : null,
     "simpleMethods" : null,
+    "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
     "transformDirectory" : "transform",

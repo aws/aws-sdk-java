@@ -54,6 +54,12 @@ public class InstanceProfileCredentialsProviderIntegrationTest extends LogCaptor
         Thread.sleep(1000);
     }
 
+    @Test
+    public void getInstance_ReturnsSameInstance() {
+        assertEquals(InstanceProfileCredentialsProvider.getInstance(),
+                     InstanceProfileCredentialsProvider.getInstance());
+    }
+
     /** Tests that we correctly handle the metadata service returning credentials. */
     @Test
     public void testSessionCredentials() throws Exception {

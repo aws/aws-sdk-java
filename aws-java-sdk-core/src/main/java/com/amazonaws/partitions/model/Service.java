@@ -14,9 +14,9 @@
  */
 package com.amazonaws.partitions.model;
 
-import com.amazonaws.util.ValidationUtils;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -47,7 +47,10 @@ public class Service {
 
     public Service(@JsonProperty(value = "endpoints") Map<String,
             Endpoint> endpoints) {
-        this.endpoints = ValidationUtils.assertNotNull(endpoints, "endpoints");;
+        // Technically the endpoints member should never be null if the
+        // endpoints file is properly formed, but this is currently not always
+        // true. See TRE-739 for details
+        this.endpoints = endpoints == null ? Collections.<String, Endpoint>emptyMap() : endpoints;
     }
 
     /**

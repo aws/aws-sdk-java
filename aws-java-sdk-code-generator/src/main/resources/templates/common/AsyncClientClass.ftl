@@ -258,8 +258,10 @@ public class ${metadata.asyncClient} extends ${metadata.syncClient}
     }
 
   <#list operations?values as operationModel>
-    <@AsyncClientMethodForOperation.content operationModel />
-    <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@AsyncClientMethodForOperation.content operationModel />
+        <@AsyncClientMethodForOperationWithSimpleForm.content operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalClientMethodsMacro?has_content>

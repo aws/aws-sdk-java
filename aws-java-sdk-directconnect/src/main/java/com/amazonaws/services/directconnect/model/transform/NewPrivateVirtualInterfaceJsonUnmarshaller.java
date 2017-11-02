@@ -80,6 +80,10 @@ public class NewPrivateVirtualInterfaceJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     newPrivateVirtualInterface.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    context.nextToken();
+                    newPrivateVirtualInterface.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

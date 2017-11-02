@@ -80,6 +80,10 @@ public class AllocatePublicVirtualInterfaceResultJsonUnmarshaller implements Unm
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setAsn(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("amazonSideAsn", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setAmazonSideAsn(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setAuthKey(context.getUnmarshaller(String.class).unmarshall(context));
@@ -107,6 +111,10 @@ public class AllocatePublicVirtualInterfaceResultJsonUnmarshaller implements Unm
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     allocatePublicVirtualInterfaceResult.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("directConnectGatewayId", targetDepth)) {
+                    context.nextToken();
+                    allocatePublicVirtualInterfaceResult.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("routeFilterPrefixes", targetDepth)) {
                     context.nextToken();

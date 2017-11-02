@@ -34,7 +34,7 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in
-     * PEM format.
+     * PEM format and can contain a maximum of 5000 characters.
      * </p>
      */
     private String signedCert;
@@ -43,7 +43,7 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
      * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
      * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format.
+     * format and can contain a maximum of 5000 characters.
      * </p>
      */
     private String trustAnchor;
@@ -94,12 +94,12 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in
-     * PEM format.
+     * PEM format and can contain a maximum of 5000 characters.
      * </p>
      * 
      * @param signedCert
      *        The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must
-     *        be in PEM format.
+     *        be in PEM format and can contain a maximum of 5000 characters.
      */
 
     public void setSignedCert(String signedCert) {
@@ -109,11 +109,11 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in
-     * PEM format.
+     * PEM format and can contain a maximum of 5000 characters.
      * </p>
      * 
      * @return The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must
-     *         be in PEM format.
+     *         be in PEM format and can contain a maximum of 5000 characters.
      */
 
     public String getSignedCert() {
@@ -123,12 +123,12 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in
-     * PEM format.
+     * PEM format and can contain a maximum of 5000 characters.
      * </p>
      * 
      * @param signedCert
      *        The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must
-     *        be in PEM format.
+     *        be in PEM format and can contain a maximum of 5000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,14 +142,14 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
      * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
      * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format.
+     * format and can contain a maximum of 5000 characters.
      * </p>
      * 
      * @param trustAnchor
      *        The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster
      *        certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the
      *        certificate that issued the cluster certificate and ends with a root certificate. The certificate or
-     *        certificate chain must be in PEM format.
+     *        certificate chain must be in PEM format and can contain a maximum of 5000 characters.
      */
 
     public void setTrustAnchor(String trustAnchor) {
@@ -161,13 +161,13 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
      * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
      * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format.
+     * format and can contain a maximum of 5000 characters.
      * </p>
      * 
      * @return The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster
      *         certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the
      *         certificate that issued the cluster certificate and ends with a root certificate. The certificate or
-     *         certificate chain must be in PEM format.
+     *         certificate chain must be in PEM format and can contain a maximum of 5000 characters.
      */
 
     public String getTrustAnchor() {
@@ -179,14 +179,14 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
      * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
      * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format.
+     * format and can contain a maximum of 5000 characters.
      * </p>
      * 
      * @param trustAnchor
      *        The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster
      *        certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the
      *        certificate that issued the cluster certificate and ends with a root certificate. The certificate or
-     *        certificate chain must be in PEM format.
+     *        certificate chain must be in PEM format and can contain a maximum of 5000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

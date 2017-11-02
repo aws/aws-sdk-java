@@ -99,6 +99,16 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public CreateDirectConnectGatewayResult createDirectConnectGateway(CreateDirectConnectGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDirectConnectGatewayAssociationResult createDirectConnectGatewayAssociation(CreateDirectConnectGatewayAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInterconnectResult createInterconnect(CreateInterconnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -125,6 +135,16 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDirectConnectGatewayResult deleteDirectConnectGateway(DeleteDirectConnectGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDirectConnectGatewayAssociationResult deleteDirectConnectGatewayAssociation(DeleteDirectConnectGatewayAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -162,6 +182,21 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     @Override
     @Deprecated
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewayAssociationsResult describeDirectConnectGatewayAssociations(DescribeDirectConnectGatewayAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewayAttachmentsResult describeDirectConnectGatewayAttachments(DescribeDirectConnectGatewayAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewaysResult describeDirectConnectGateways(DescribeDirectConnectGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

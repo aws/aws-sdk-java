@@ -22,7 +22,9 @@ import ${metadata.packageName}.model.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface ${metadata.asyncInterface} extends ${metadata.syncInterface} {
   <#list operations?values as operationModel>
-    <@AsyncInterfaceMethodForOperationMacro.content metadata operationModel />
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@AsyncInterfaceMethodForOperationMacro.content metadata operationModel />
+    </#if>
   </#list>
 
   <#if AdditionalInterfaceMethodsMacro??>

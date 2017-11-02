@@ -44,6 +44,7 @@
     "shapeModifiers" : null,
     "shapeSubstitutions" : null,
     "simpleMethods" : null,
+    "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
     "transformDirectory" : "transform",

@@ -33,8 +33,10 @@ public class ${metadata.syncAbstractClass} implements ${metadata.syncInterface} 
 </#if>
 
   <#list operations?values as operationModel>
-    <@ClientMethodForUnsupportedOperation.content operationModel />
-    <@ClientMethodForOperationWithSimpleForm.content operationModel/>
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@ClientMethodForUnsupportedOperation.content operationModel />
+        <@ClientMethodForOperationWithSimpleForm.content operationModel/>
+    </#if>
   </#list>
 
   <#if AdditionalClientMethodsMacro?has_content>

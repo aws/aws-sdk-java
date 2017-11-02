@@ -44,6 +44,8 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
 
     private String virtualGatewayId;
 
+    private String directConnectGatewayId;
+
     /**
      * @param virtualInterfaceName
      */
@@ -276,6 +278,32 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
     }
 
     /**
+     * @param directConnectGatewayId
+     */
+
+    public void setDirectConnectGatewayId(String directConnectGatewayId) {
+        this.directConnectGatewayId = directConnectGatewayId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDirectConnectGatewayId() {
+        return this.directConnectGatewayId;
+    }
+
+    /**
+     * @param directConnectGatewayId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NewPrivateVirtualInterface withDirectConnectGatewayId(String directConnectGatewayId) {
+        setDirectConnectGatewayId(directConnectGatewayId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -301,7 +329,9 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
         if (getAddressFamily() != null)
             sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getVirtualGatewayId() != null)
-            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId());
+            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId()).append(",");
+        if (getDirectConnectGatewayId() != null)
+            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -348,6 +378,10 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
             return false;
         if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
             return false;
+        if (other.getDirectConnectGatewayId() == null ^ this.getDirectConnectGatewayId() == null)
+            return false;
+        if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +398,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
         hashCode = prime * hashCode + ((getAddressFamily() == null) ? 0 : getAddressFamily().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
         return hashCode;
     }
 

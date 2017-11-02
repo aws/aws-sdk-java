@@ -44,6 +44,8 @@ public class VirtualInterfaceMarshaller {
             .marshallLocationName("vlan").build();
     private static final MarshallingInfo<Integer> ASN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("asn").build();
+    private static final MarshallingInfo<Long> AMAZONSIDEASN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("amazonSideAsn").build();
     private static final MarshallingInfo<String> AUTHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("authKey").build();
     private static final MarshallingInfo<String> AMAZONADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,8 @@ public class VirtualInterfaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerRouterConfig").build();
     private static final MarshallingInfo<String> VIRTUALGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualGatewayId").build();
+    private static final MarshallingInfo<String> DIRECTCONNECTGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("directConnectGatewayId").build();
     private static final MarshallingInfo<List> ROUTEFILTERPREFIXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("routeFilterPrefixes").build();
     private static final MarshallingInfo<List> BGPPEERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -87,6 +91,7 @@ public class VirtualInterfaceMarshaller {
             protocolMarshaller.marshall(virtualInterface.getVirtualInterfaceName(), VIRTUALINTERFACENAME_BINDING);
             protocolMarshaller.marshall(virtualInterface.getVlan(), VLAN_BINDING);
             protocolMarshaller.marshall(virtualInterface.getAsn(), ASN_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getAmazonSideAsn(), AMAZONSIDEASN_BINDING);
             protocolMarshaller.marshall(virtualInterface.getAuthKey(), AUTHKEY_BINDING);
             protocolMarshaller.marshall(virtualInterface.getAmazonAddress(), AMAZONADDRESS_BINDING);
             protocolMarshaller.marshall(virtualInterface.getCustomerAddress(), CUSTOMERADDRESS_BINDING);
@@ -94,6 +99,7 @@ public class VirtualInterfaceMarshaller {
             protocolMarshaller.marshall(virtualInterface.getVirtualInterfaceState(), VIRTUALINTERFACESTATE_BINDING);
             protocolMarshaller.marshall(virtualInterface.getCustomerRouterConfig(), CUSTOMERROUTERCONFIG_BINDING);
             protocolMarshaller.marshall(virtualInterface.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
+            protocolMarshaller.marshall(virtualInterface.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
             protocolMarshaller.marshall(virtualInterface.getRouteFilterPrefixes(), ROUTEFILTERPREFIXES_BINDING);
             protocolMarshaller.marshall(virtualInterface.getBgpPeers(), BGPPEERS_BINDING);
         } catch (Exception e) {

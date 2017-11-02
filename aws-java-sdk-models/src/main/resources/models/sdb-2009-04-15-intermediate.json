@@ -121,6 +121,7 @@
         "methodForms" : [ [ ] ]
       }
     },
+    "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : true,
     "skipSmokeTests" : false,
     "transformDirectory" : "transform",

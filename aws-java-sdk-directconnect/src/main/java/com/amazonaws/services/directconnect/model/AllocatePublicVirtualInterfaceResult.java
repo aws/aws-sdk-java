@@ -47,6 +47,12 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
     private Integer vlan;
 
     private Integer asn;
+    /**
+     * <p>
+     * The autonomous system number (ASN) for the Amazon side of the connection.
+     * </p>
+     */
+    private Long amazonSideAsn;
 
     private String authKey;
 
@@ -65,6 +71,8 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
     private String customerRouterConfig;
 
     private String virtualGatewayId;
+
+    private String directConnectGatewayId;
 
     private com.amazonaws.internal.SdkInternalList<RouteFilterPrefix> routeFilterPrefixes;
 
@@ -289,6 +297,46 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
 
     public AllocatePublicVirtualInterfaceResult withAsn(Integer asn) {
         setAsn(asn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The autonomous system number (ASN) for the Amazon side of the connection.
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        The autonomous system number (ASN) for the Amazon side of the connection.
+     */
+
+    public void setAmazonSideAsn(Long amazonSideAsn) {
+        this.amazonSideAsn = amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * The autonomous system number (ASN) for the Amazon side of the connection.
+     * </p>
+     * 
+     * @return The autonomous system number (ASN) for the Amazon side of the connection.
+     */
+
+    public Long getAmazonSideAsn() {
+        return this.amazonSideAsn;
+    }
+
+    /**
+     * <p>
+     * The autonomous system number (ASN) for the Amazon side of the connection.
+     * </p>
+     * 
+     * @param amazonSideAsn
+     *        The autonomous system number (ASN) for the Amazon side of the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocatePublicVirtualInterfaceResult withAmazonSideAsn(Long amazonSideAsn) {
+        setAmazonSideAsn(amazonSideAsn);
         return this;
     }
 
@@ -535,6 +583,32 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * @param directConnectGatewayId
+     */
+
+    public void setDirectConnectGatewayId(String directConnectGatewayId) {
+        this.directConnectGatewayId = directConnectGatewayId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDirectConnectGatewayId() {
+        return this.directConnectGatewayId;
+    }
+
+    /**
+     * @param directConnectGatewayId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocatePublicVirtualInterfaceResult withDirectConnectGatewayId(String directConnectGatewayId) {
+        setDirectConnectGatewayId(directConnectGatewayId);
+        return this;
+    }
+
+    /**
      * @return
      */
 
@@ -671,6 +745,8 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
             sb.append("Vlan: ").append(getVlan()).append(",");
         if (getAsn() != null)
             sb.append("Asn: ").append(getAsn()).append(",");
+        if (getAmazonSideAsn() != null)
+            sb.append("AmazonSideAsn: ").append(getAmazonSideAsn()).append(",");
         if (getAuthKey() != null)
             sb.append("AuthKey: ").append(getAuthKey()).append(",");
         if (getAmazonAddress() != null)
@@ -685,6 +761,8 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
             sb.append("CustomerRouterConfig: ").append(getCustomerRouterConfig()).append(",");
         if (getVirtualGatewayId() != null)
             sb.append("VirtualGatewayId: ").append(getVirtualGatewayId()).append(",");
+        if (getDirectConnectGatewayId() != null)
+            sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId()).append(",");
         if (getRouteFilterPrefixes() != null)
             sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes()).append(",");
         if (getBgpPeers() != null)
@@ -735,6 +813,10 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getAsn() != null && other.getAsn().equals(this.getAsn()) == false)
             return false;
+        if (other.getAmazonSideAsn() == null ^ this.getAmazonSideAsn() == null)
+            return false;
+        if (other.getAmazonSideAsn() != null && other.getAmazonSideAsn().equals(this.getAmazonSideAsn()) == false)
+            return false;
         if (other.getAuthKey() == null ^ this.getAuthKey() == null)
             return false;
         if (other.getAuthKey() != null && other.getAuthKey().equals(this.getAuthKey()) == false)
@@ -763,6 +845,10 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getVirtualGatewayId() != null && other.getVirtualGatewayId().equals(this.getVirtualGatewayId()) == false)
             return false;
+        if (other.getDirectConnectGatewayId() == null ^ this.getDirectConnectGatewayId() == null)
+            return false;
+        if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
+            return false;
         if (other.getRouteFilterPrefixes() == null ^ this.getRouteFilterPrefixes() == null)
             return false;
         if (other.getRouteFilterPrefixes() != null && other.getRouteFilterPrefixes().equals(this.getRouteFilterPrefixes()) == false)
@@ -787,6 +873,7 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getVirtualInterfaceName() == null) ? 0 : getVirtualInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getVlan() == null) ? 0 : getVlan().hashCode());
         hashCode = prime * hashCode + ((getAsn() == null) ? 0 : getAsn().hashCode());
+        hashCode = prime * hashCode + ((getAmazonSideAsn() == null) ? 0 : getAmazonSideAsn().hashCode());
         hashCode = prime * hashCode + ((getAuthKey() == null) ? 0 : getAuthKey().hashCode());
         hashCode = prime * hashCode + ((getAmazonAddress() == null) ? 0 : getAmazonAddress().hashCode());
         hashCode = prime * hashCode + ((getCustomerAddress() == null) ? 0 : getCustomerAddress().hashCode());
@@ -794,6 +881,7 @@ public class AllocatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getVirtualInterfaceState() == null) ? 0 : getVirtualInterfaceState().hashCode());
         hashCode = prime * hashCode + ((getCustomerRouterConfig() == null) ? 0 : getCustomerRouterConfig().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
         hashCode = prime * hashCode + ((getRouteFilterPrefixes() == null) ? 0 : getRouteFilterPrefixes().hashCode());
         hashCode = prime * hashCode + ((getBgpPeers() == null) ? 0 : getBgpPeers().hashCode());
         return hashCode;

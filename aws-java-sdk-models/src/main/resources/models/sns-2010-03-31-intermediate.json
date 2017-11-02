@@ -166,6 +166,7 @@
         "methodForms" : [ [ "SubscriptionArn" ] ]
       }
     },
+    "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
     "transformDirectory" : "transform",

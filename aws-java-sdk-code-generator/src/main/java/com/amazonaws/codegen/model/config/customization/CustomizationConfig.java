@@ -18,8 +18,8 @@ package com.amazonaws.codegen.model.config.customization;
 import com.amazonaws.codegen.internal.Constants;
 import com.amazonaws.codegen.model.config.ConstructorFormsWrapper;
 import com.amazonaws.codegen.model.config.templates.CodeGenTemplatesConfig;
-
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -226,6 +226,12 @@ public class CustomizationConfig {
      * for enums previously shipped to maintain backwards compatibility.
      */
     private Map<String, List<String>> emitLegacyEnumSetterFor;
+
+    /**
+     * Customization to omit an operation from the client interface (and abstract class and client implementation) but still
+     * generate the input/output Java POJOs and marshaller/unmarshaller.
+     */
+    private List<String> skipClientMethodForOperations = Collections.emptyList();
 
     private CustomizationConfig(){
     }
@@ -544,4 +550,13 @@ public class CustomizationConfig {
         this.emitLegacyEnumSetterFor = emitLegacyEnumSetterFor;
         return this;
     }
+
+    public List<String> getSkipClientMethodForOperations() {
+        return skipClientMethodForOperations;
+    }
+
+    public void setSkipClientMethodForOperations(List<String> skipClientMethodForOperations) {
+        this.skipClientMethodForOperations = skipClientMethodForOperations;
+    }
+
 }

@@ -264,8 +264,10 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 <@ClientInitMethodMacro.content .data_model />
 
 <#list operations?values as operationModel>
-    <@ClientMethodForOperation.content metadata operationModel/>
-    <@ClientMethodForOperationWithSimpleForm.content operationModel />
+    <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
+        <@ClientMethodForOperation.content metadata operationModel/>
+        <@ClientMethodForOperationWithSimpleForm.content operationModel />
+    </#if>
 </#list>
 
 <#if AdditionalClientMethodsMacro?has_content>
@@ -355,6 +357,13 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         return client.execute(request, responseHandler,
                 errorResponseHandler, executionContext);
     }
+
+    <#if metadata.isJsonProtocol()>
+    @com.amazonaws.annotation.SdkInternalApi
+    static ${metadata.protocolFactory} getProtocolFactory() {
+        return protocolFactory;
+    }
+    </#if>
 
     <#if hasWaiters>
     @Override

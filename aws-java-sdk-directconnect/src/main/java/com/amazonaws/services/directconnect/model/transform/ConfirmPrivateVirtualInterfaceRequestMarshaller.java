@@ -31,6 +31,8 @@ public class ConfirmPrivateVirtualInterfaceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualInterfaceId").build();
     private static final MarshallingInfo<String> VIRTUALGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualGatewayId").build();
+    private static final MarshallingInfo<String> DIRECTCONNECTGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("directConnectGatewayId").build();
 
     private static final ConfirmPrivateVirtualInterfaceRequestMarshaller instance = new ConfirmPrivateVirtualInterfaceRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class ConfirmPrivateVirtualInterfaceRequestMarshaller {
         try {
             protocolMarshaller.marshall(confirmPrivateVirtualInterfaceRequest.getVirtualInterfaceId(), VIRTUALINTERFACEID_BINDING);
             protocolMarshaller.marshall(confirmPrivateVirtualInterfaceRequest.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
+            protocolMarshaller.marshall(confirmPrivateVirtualInterfaceRequest.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
