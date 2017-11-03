@@ -38,6 +38,8 @@ public class CreateRestApiRequestMarshaller {
             .marshallLocationName("cloneFrom").build();
     private static final MarshallingInfo<List> BINARYMEDIATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("binaryMediaTypes").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
 
     private static final CreateRestApiRequestMarshaller instance = new CreateRestApiRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateRestApiRequestMarshaller {
             protocolMarshaller.marshall(createRestApiRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getCloneFrom(), CLONEFROM_BINDING);
             protocolMarshaller.marshall(createRestApiRequest.getBinaryMediaTypes(), BINARYMEDIATYPES_BINDING);
+            protocolMarshaller.marshall(createRestApiRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

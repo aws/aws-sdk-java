@@ -1,4 +1,9 @@
-# __1.11.222__ __2017-11-02__
+# __1.11.223__ __2017-11-02__
+## __Amazon API Gateway__
+  - ### Features
+    - This release supports creating and managing Regional and Edge-Optimized API endpoints.
+
+# __1.11.222__ __2017-11-01__
 ## __AWS Certificate Manager__
   - ### Features
     - Documentation updates for ACM

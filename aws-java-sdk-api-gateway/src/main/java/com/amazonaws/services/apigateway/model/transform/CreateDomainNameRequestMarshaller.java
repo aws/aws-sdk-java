@@ -39,6 +39,12 @@ public class CreateDomainNameRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateChain").build();
     private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
+    private static final MarshallingInfo<String> REGIONALCERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalCertificateName").build();
+    private static final MarshallingInfo<String> REGIONALCERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalCertificateArn").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
 
     private static final CreateDomainNameRequestMarshaller instance = new CreateDomainNameRequestMarshaller();
 
@@ -62,6 +68,9 @@ public class CreateDomainNameRequestMarshaller {
             protocolMarshaller.marshall(createDomainNameRequest.getCertificatePrivateKey(), CERTIFICATEPRIVATEKEY_BINDING);
             protocolMarshaller.marshall(createDomainNameRequest.getCertificateChain(), CERTIFICATECHAIN_BINDING);
             protocolMarshaller.marshall(createDomainNameRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getRegionalCertificateName(), REGIONALCERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getRegionalCertificateArn(), REGIONALCERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(createDomainNameRequest.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

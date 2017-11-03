@@ -64,9 +64,25 @@ public class DomainNameJsonUnmarshaller implements Unmarshaller<DomainName, Json
                     context.nextToken();
                     domainName.setCertificateUploadDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("regionalDomainName", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateName", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("distributionDomainName", targetDepth)) {
                     context.nextToken();
                     domainName.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("endpointConfiguration", targetDepth)) {
+                    context.nextToken();
+                    domainName.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

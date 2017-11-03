@@ -56,6 +56,12 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<String> binaryMediaTypes;
+    /**
+     * <p>
+     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * </p>
+     */
+    private EndpointConfiguration endpointConfiguration;
 
     /**
      * <p>
@@ -296,6 +302,46 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * </p>
+     * 
+     * @param endpointConfiguration
+     *        The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     */
+
+    public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        this.endpointConfiguration = endpointConfiguration;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * </p>
+     * 
+     * @return The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     */
+
+    public EndpointConfiguration getEndpointConfiguration() {
+        return this.endpointConfiguration;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * </p>
+     * 
+     * @param endpointConfiguration
+     *        The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiRequest withEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        setEndpointConfiguration(endpointConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -315,7 +361,9 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getCloneFrom() != null)
             sb.append("CloneFrom: ").append(getCloneFrom()).append(",");
         if (getBinaryMediaTypes() != null)
-            sb.append("BinaryMediaTypes: ").append(getBinaryMediaTypes());
+            sb.append("BinaryMediaTypes: ").append(getBinaryMediaTypes()).append(",");
+        if (getEndpointConfiguration() != null)
+            sb.append("EndpointConfiguration: ").append(getEndpointConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +398,10 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getBinaryMediaTypes() != null && other.getBinaryMediaTypes().equals(this.getBinaryMediaTypes()) == false)
             return false;
+        if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
+            return false;
+        if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +415,7 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getCloneFrom() == null) ? 0 : getCloneFrom().hashCode());
         hashCode = prime * hashCode + ((getBinaryMediaTypes() == null) ? 0 : getBinaryMediaTypes().hashCode());
+        hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         return hashCode;
     }
 

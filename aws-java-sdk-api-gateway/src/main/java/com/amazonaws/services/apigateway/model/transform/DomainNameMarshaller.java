@@ -35,8 +35,16 @@ public class DomainNameMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
     private static final MarshallingInfo<java.util.Date> CERTIFICATEUPLOADDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateUploadDate").build();
+    private static final MarshallingInfo<String> REGIONALDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalDomainName").build();
+    private static final MarshallingInfo<String> REGIONALCERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalCertificateName").build();
+    private static final MarshallingInfo<String> REGIONALCERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionalCertificateArn").build();
     private static final MarshallingInfo<String> DISTRIBUTIONDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("distributionDomainName").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
 
     private static final DomainNameMarshaller instance = new DomainNameMarshaller();
 
@@ -58,7 +66,11 @@ public class DomainNameMarshaller {
             protocolMarshaller.marshall(domainName.getCertificateName(), CERTIFICATENAME_BINDING);
             protocolMarshaller.marshall(domainName.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(domainName.getCertificateUploadDate(), CERTIFICATEUPLOADDATE_BINDING);
+            protocolMarshaller.marshall(domainName.getRegionalDomainName(), REGIONALDOMAINNAME_BINDING);
+            protocolMarshaller.marshall(domainName.getRegionalCertificateName(), REGIONALCERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(domainName.getRegionalCertificateArn(), REGIONALCERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(domainName.getDistributionDomainName(), DISTRIBUTIONDOMAINNAME_BINDING);
+            protocolMarshaller.marshall(domainName.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

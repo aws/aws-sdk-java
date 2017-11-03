@@ -64,9 +64,25 @@ public class CreateDomainNameResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createDomainNameResult.setCertificateUploadDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("regionalDomainName", targetDepth)) {
+                    context.nextToken();
+                    createDomainNameResult.setRegionalDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateName", targetDepth)) {
+                    context.nextToken();
+                    createDomainNameResult.setRegionalCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("regionalCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    createDomainNameResult.setRegionalCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("distributionDomainName", targetDepth)) {
                     context.nextToken();
                     createDomainNameResult.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("endpointConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createDomainNameResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

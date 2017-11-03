@@ -19,11 +19,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a domain name that is contained in a simpler, more intuitive URL that can be called.
+ * Represents a custom domain name as a user-friendly host name of an API (<a>RestApi</a>).
  * </p>
- * <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Client-Side
- * Certificate</a> </div>
+ * <div class="Remarks">
+ * <p>
+ * When you deploy an API, Amazon API Gateway creates a default host name for the API. This default API host name is of
+ * the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access
+ * the API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>
+ * . When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same
+ * resource using the URL of the <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the base path
+ * mapping (<a>BasePathMapping</a>) of your API under the custom domain name.
+ * </p>
+ * </div> <div class="seeAlso"> <a
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name
+ * for an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainName implements Serializable, Cloneable, StructuredPojo {
@@ -36,29 +45,59 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
     private String domainName;
     /**
      * <p>
-     * The name of the certificate.
+     * The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      */
     private String certificateName;
     /**
      * <p>
-     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
      * </p>
      */
     private String certificateArn;
     /**
      * <p>
-     * The timestamp when the certificate was uploaded.
+     * The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.
      * </p>
      */
     private java.util.Date certificateUploadDate;
     /**
      * <p>
-     * The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
+     * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
+     * returned by Amazon API Gateway when you create a regional endpoint.
+     * </p>
+     */
+    private String regionalDomainName;
+    /**
+     * <p>
+     * The name of the certificate that will be used for validating the regional domain name.
+     * </p>
+     */
+    private String regionalCertificateName;
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     */
+    private String regionalCertificateArn;
+    /**
+     * <p>
+     * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
+     * this distribution name. For more information about CloudFront distributions, see the <a
      * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      */
     private String distributionDomainName;
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     */
+    private EndpointConfiguration endpointConfiguration;
 
     /**
      * <p>
@@ -102,11 +141,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the certificate.
+     * The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      * 
      * @param certificateName
-     *        The name of the certificate.
+     *        The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      */
 
     public void setCertificateName(String certificateName) {
@@ -115,10 +154,10 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the certificate.
+     * The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      * 
-     * @return The name of the certificate.
+     * @return The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      */
 
     public String getCertificateName() {
@@ -127,11 +166,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the certificate.
+     * The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * </p>
      * 
      * @param certificateName
-     *        The name of the certificate.
+     *        The name of the certificate that will be used by edge-optimized endpoint for this domain name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +181,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
      * </p>
      * 
      * @param certificateArn
-     *        The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     *        The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
+     *        name. AWS Certificate Manager is the only supported source.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -155,10 +196,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
      * </p>
      * 
-     * @return The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * @return The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
+     *         name. AWS Certificate Manager is the only supported source.
      */
 
     public String getCertificateArn() {
@@ -167,11 +210,13 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name.
+     * AWS Certificate Manager is the only supported source.
      * </p>
      * 
      * @param certificateArn
-     *        The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     *        The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain
+     *        name. AWS Certificate Manager is the only supported source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +227,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the certificate was uploaded.
+     * The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.
      * </p>
      * 
      * @param certificateUploadDate
-     *        The timestamp when the certificate was uploaded.
+     *        The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was
+     *        uploaded.
      */
 
     public void setCertificateUploadDate(java.util.Date certificateUploadDate) {
@@ -195,10 +241,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the certificate was uploaded.
+     * The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.
      * </p>
      * 
-     * @return The timestamp when the certificate was uploaded.
+     * @return The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was
+     *         uploaded.
      */
 
     public java.util.Date getCertificateUploadDate() {
@@ -207,11 +254,12 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the certificate was uploaded.
+     * The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.
      * </p>
      * 
      * @param certificateUploadDate
-     *        The timestamp when the certificate was uploaded.
+     *        The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was
+     *        uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,12 +270,154 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
+     * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
+     * returned by Amazon API Gateway when you create a regional endpoint.
+     * </p>
+     * 
+     * @param regionalDomainName
+     *        The domain name associated with the regional endpoint for this custom domain name. You set up this
+     *        association by adding a DNS record that points the custom domain name to this regional domain name. The
+     *        regional domain name is returned by Amazon API Gateway when you create a regional endpoint.
+     */
+
+    public void setRegionalDomainName(String regionalDomainName) {
+        this.regionalDomainName = regionalDomainName;
+    }
+
+    /**
+     * <p>
+     * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
+     * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
+     * returned by Amazon API Gateway when you create a regional endpoint.
+     * </p>
+     * 
+     * @return The domain name associated with the regional endpoint for this custom domain name. You set up this
+     *         association by adding a DNS record that points the custom domain name to this regional domain name. The
+     *         regional domain name is returned by Amazon API Gateway when you create a regional endpoint.
+     */
+
+    public String getRegionalDomainName() {
+        return this.regionalDomainName;
+    }
+
+    /**
+     * <p>
+     * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
+     * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
+     * returned by Amazon API Gateway when you create a regional endpoint.
+     * </p>
+     * 
+     * @param regionalDomainName
+     *        The domain name associated with the regional endpoint for this custom domain name. You set up this
+     *        association by adding a DNS record that points the custom domain name to this regional domain name. The
+     *        regional domain name is returned by Amazon API Gateway when you create a regional endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainName withRegionalDomainName(String regionalDomainName) {
+        setRegionalDomainName(regionalDomainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the certificate that will be used for validating the regional domain name.
+     * </p>
+     * 
+     * @param regionalCertificateName
+     *        The name of the certificate that will be used for validating the regional domain name.
+     */
+
+    public void setRegionalCertificateName(String regionalCertificateName) {
+        this.regionalCertificateName = regionalCertificateName;
+    }
+
+    /**
+     * <p>
+     * The name of the certificate that will be used for validating the regional domain name.
+     * </p>
+     * 
+     * @return The name of the certificate that will be used for validating the regional domain name.
+     */
+
+    public String getRegionalCertificateName() {
+        return this.regionalCertificateName;
+    }
+
+    /**
+     * <p>
+     * The name of the certificate that will be used for validating the regional domain name.
+     * </p>
+     * 
+     * @param regionalCertificateName
+     *        The name of the certificate that will be used for validating the regional domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainName withRegionalCertificateName(String regionalCertificateName) {
+        setRegionalCertificateName(regionalCertificateName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param regionalCertificateArn
+     *        The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
+     *        Certificate Manager is the only supported source.
+     */
+
+    public void setRegionalCertificateArn(String regionalCertificateArn) {
+        this.regionalCertificateArn = regionalCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @return The reference to an AWS-managed certificate that will be used for validating the regional domain name.
+     *         AWS Certificate Manager is the only supported source.
+     */
+
+    public String getRegionalCertificateArn() {
+        return this.regionalCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
+     * Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param regionalCertificateArn
+     *        The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS
+     *        Certificate Manager is the only supported source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainName withRegionalCertificateArn(String regionalCertificateArn) {
+        setRegionalCertificateArn(regionalCertificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
+     * this distribution name. For more information about CloudFront distributions, see the <a
      * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @param distributionDomainName
-     *        The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     *        The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     *        edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
+     *        name to this distribution name. For more information about CloudFront distributions, see the <a
      *        href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
      *        documentation</a>.
      */
@@ -238,11 +428,15 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
+     * this distribution name. For more information about CloudFront distributions, see the <a
      * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
-     * @return The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     * @return The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     *         edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
+     *         name to this distribution name. For more information about CloudFront distributions, see the <a
      *         href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
      *         documentation</a>.
      */
@@ -253,12 +447,16 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     * The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     * edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to
+     * this distribution name. For more information about CloudFront distributions, see the <a
      * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront documentation</a>.
      * </p>
      * 
      * @param distributionDomainName
-     *        The domain name of the Amazon CloudFront distribution. For more information, see the <a
+     *        The domain name of the Amazon CloudFront distribution associated with this custom domain name for an
+     *        edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain
+     *        name to this distribution name. For more information about CloudFront distributions, see the <a
      *        href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon CloudFront
      *        documentation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -266,6 +464,46 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
 
     public DomainName withDistributionDomainName(String distributionDomainName) {
         setDistributionDomainName(distributionDomainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     * 
+     * @param endpointConfiguration
+     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     */
+
+    public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        this.endpointConfiguration = endpointConfiguration;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     * 
+     * @return The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     */
+
+    public EndpointConfiguration getEndpointConfiguration() {
+        return this.endpointConfiguration;
+    }
+
+    /**
+     * <p>
+     * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * </p>
+     * 
+     * @param endpointConfiguration
+     *        The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainName withEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        setEndpointConfiguration(endpointConfiguration);
         return this;
     }
 
@@ -288,8 +526,16 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateUploadDate() != null)
             sb.append("CertificateUploadDate: ").append(getCertificateUploadDate()).append(",");
+        if (getRegionalDomainName() != null)
+            sb.append("RegionalDomainName: ").append(getRegionalDomainName()).append(",");
+        if (getRegionalCertificateName() != null)
+            sb.append("RegionalCertificateName: ").append(getRegionalCertificateName()).append(",");
+        if (getRegionalCertificateArn() != null)
+            sb.append("RegionalCertificateArn: ").append(getRegionalCertificateArn()).append(",");
         if (getDistributionDomainName() != null)
-            sb.append("DistributionDomainName: ").append(getDistributionDomainName());
+            sb.append("DistributionDomainName: ").append(getDistributionDomainName()).append(",");
+        if (getEndpointConfiguration() != null)
+            sb.append("EndpointConfiguration: ").append(getEndpointConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -320,9 +566,25 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCertificateUploadDate() != null && other.getCertificateUploadDate().equals(this.getCertificateUploadDate()) == false)
             return false;
+        if (other.getRegionalDomainName() == null ^ this.getRegionalDomainName() == null)
+            return false;
+        if (other.getRegionalDomainName() != null && other.getRegionalDomainName().equals(this.getRegionalDomainName()) == false)
+            return false;
+        if (other.getRegionalCertificateName() == null ^ this.getRegionalCertificateName() == null)
+            return false;
+        if (other.getRegionalCertificateName() != null && other.getRegionalCertificateName().equals(this.getRegionalCertificateName()) == false)
+            return false;
+        if (other.getRegionalCertificateArn() == null ^ this.getRegionalCertificateArn() == null)
+            return false;
+        if (other.getRegionalCertificateArn() != null && other.getRegionalCertificateArn().equals(this.getRegionalCertificateArn()) == false)
+            return false;
         if (other.getDistributionDomainName() == null ^ this.getDistributionDomainName() == null)
             return false;
         if (other.getDistributionDomainName() != null && other.getDistributionDomainName().equals(this.getDistributionDomainName()) == false)
+            return false;
+        if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
+            return false;
+        if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
             return false;
         return true;
     }
@@ -336,7 +598,11 @@ public class DomainName implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCertificateName() == null) ? 0 : getCertificateName().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateUploadDate() == null) ? 0 : getCertificateUploadDate().hashCode());
+        hashCode = prime * hashCode + ((getRegionalDomainName() == null) ? 0 : getRegionalDomainName().hashCode());
+        hashCode = prime * hashCode + ((getRegionalCertificateName() == null) ? 0 : getRegionalCertificateName().hashCode());
+        hashCode = prime * hashCode + ((getRegionalCertificateArn() == null) ? 0 : getRegionalCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionDomainName() == null) ? 0 : getDistributionDomainName().hashCode());
+        hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         return hashCode;
     }
 
