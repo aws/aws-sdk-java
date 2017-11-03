@@ -115,7 +115,7 @@ class AddWaiters {
      */
     private Process executeToAstProcess(String argument) throws IOException {
         try {
-            Process p = new ProcessBuilder("python3.4", codeGenBinDirectory + "/jp-to-ast.py", argument).start();
+            Process p = new ProcessBuilder("python", codeGenBinDirectory + "/jp-to-ast.py", argument).start();
             p.waitFor();
             return p;
         } catch (InterruptedException e) {

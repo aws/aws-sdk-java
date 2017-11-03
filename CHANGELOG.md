@@ -1,3 +1,8 @@
+# __1.11.224__ __2017-11-03__
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon ECS users can now add devices to their containers and enable init process in containers through the use of docker's 'devices' and 'init' features. These fields can be specified under linuxParameters in ContainerDefinition in the Task Definition Template. 
+
 # __1.11.223__ __2017-11-02__
 ## __Amazon API Gateway__
   - ### Features

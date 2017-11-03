@@ -36,10 +36,14 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> add;
@@ -47,10 +51,14 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> drop;
@@ -59,19 +67,26 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * 
      * @return The Linux capabilities for the container that have been added to the default configuration provided by
      *         Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
+     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>.</p>
+     *         <p>
+     *         Valid values:
+     *         <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      */
 
     public java.util.List<String> getAdd() {
@@ -85,19 +100,27 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * 
      * @param add
      *        The Linux capabilities for the container that have been added to the default configuration provided by
      *        Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        Valid values:
+     *        <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      */
 
     public void setAdd(java.util.Collection<String> add) {
@@ -113,10 +136,14 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,10 +154,14 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param add
      *        The Linux capabilities for the container that have been added to the default configuration provided by
      *        Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        Valid values:
+     *        <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,19 +179,27 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * 
      * @param add
      *        The Linux capabilities for the container that have been added to the default configuration provided by
      *        Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        Valid values:
+     *        <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,19 +212,26 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * 
      * @return The Linux capabilities for the container that have been removed from the default configuration provided
      *         by Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
+     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>.</p>
+     *         <p>
+     *         Valid values:
+     *         <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      */
 
     public java.util.List<String> getDrop() {
@@ -199,19 +245,27 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * 
      * @param drop
      *        The Linux capabilities for the container that have been removed from the default configuration provided by
      *        Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        Valid values:
+     *        <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      */
 
     public void setDrop(java.util.Collection<String> drop) {
@@ -227,10 +281,14 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,10 +299,14 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param drop
      *        The Linux capabilities for the container that have been removed from the default configuration provided by
      *        Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        Valid values:
+     *        <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,19 +324,27 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * Valid values:
+     * <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * </p>
      * 
      * @param drop
      *        The Linux capabilities for the container that have been removed from the default configuration provided by
      *        Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
-     *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p>
+     *        <p>
+     *        Valid values:
+     *        <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN" | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER" | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" | "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID" | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" | "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME" | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

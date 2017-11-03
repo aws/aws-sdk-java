@@ -52,6 +52,14 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
                     context.nextToken();
                     linuxParameters.setCapabilities(KernelCapabilitiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("devices", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setDevices(new ListUnmarshaller<Device>(DeviceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("initProcessEnabled", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setInitProcessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

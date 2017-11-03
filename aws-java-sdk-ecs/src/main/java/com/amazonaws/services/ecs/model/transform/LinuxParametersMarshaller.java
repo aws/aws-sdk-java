@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class LinuxParametersMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> CAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capabilities").build();
+    private static final MarshallingInfo<List> DEVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("devices").build();
+    private static final MarshallingInfo<Boolean> INITPROCESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initProcessEnabled").build();
 
     private static final LinuxParametersMarshaller instance = new LinuxParametersMarshaller();
 
@@ -47,6 +52,8 @@ public class LinuxParametersMarshaller {
 
         try {
             protocolMarshaller.marshall(linuxParameters.getCapabilities(), CAPABILITIES_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getDevices(), DEVICES_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getInitProcessEnabled(), INITPROCESSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
