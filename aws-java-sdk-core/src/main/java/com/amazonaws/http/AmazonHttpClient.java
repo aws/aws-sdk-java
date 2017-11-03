@@ -529,6 +529,8 @@ public class AmazonHttpClient {
 
                 @Override
                 public T handle(HttpResponse response) throws Exception {
+                    String warning = "There's no custom error handler set. Specify it in client's requestExecutionBuilder.";
+                    log.warn(warning);
                     return null;
                 }
 
