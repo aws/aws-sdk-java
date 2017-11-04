@@ -68,6 +68,9 @@ public class ServiceUtils {
     public static final boolean OVERWRITE_MODE = false;
 
     private static final SkipMd5CheckStrategy skipMd5CheckStrategy = SkipMd5CheckStrategy.INSTANCE;
+    
+    // Preferred buffer size of JVM's native FileOutputStream.write() implementation.
+    private static final int DEFAULT_BUFFER_SIZE = 8192;
 
     @Deprecated
     protected static final DateUtils dateUtils = new DateUtils();
@@ -302,7 +305,7 @@ public class ServiceUtils {
             }
             outputStream = new BufferedOutputStream(new FileOutputStream(
                     dstfile, appendData));
-            byte[] buffer = new byte[8192];
+            byte[] buffer = new byte[DEFAULT_BUFFER_SIZE];
             int bytesRead;
             while ((bytesRead = s3Object.getObjectContent().read(buffer)) > -1) {
                 outputStream.write(buffer, 0, bytesRead);
