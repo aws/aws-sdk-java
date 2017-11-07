@@ -193,8 +193,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
-     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
-     * the <code>KmsKeyId</code> parameter.
+     * key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the
+     * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
@@ -1292,8 +1292,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
-     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
-     * the <code>KmsKeyId</code> parameter.
+     * key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the
+     * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
@@ -1325,7 +1325,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </p>
      *        <p>
      *        You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than
-     *        the KMS key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key
+     *        the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key
      *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
@@ -1364,8 +1364,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
-     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
-     * the <code>KmsKeyId</code> parameter.
+     * key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the
+     * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
@@ -1396,7 +1396,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </p>
      *         <p>
      *         You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than
-     *         the KMS key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key
+     *         the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key
      *         identified by the <code>KmsKeyId</code> parameter.
      *         </p>
      *         <p>
@@ -1435,8 +1435,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
-     * key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key identified by
-     * the <code>KmsKeyId</code> parameter.
+     * key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the
+     * <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:
@@ -1468,7 +1468,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </p>
      *        <p>
      *        You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than
-     *        the KMS key used to encrypt the source DB cluster. The new DB cluster will be encrypted with the KMS key
+     *        the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key
      *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>

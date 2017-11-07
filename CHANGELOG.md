@@ -1,4 +1,13 @@
-# __1.11.225__ __2017-11-07__
+# __1.11.226__ __2017-11-07__
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - DescribeOrderableDBInstanceOptions now returns the minimum and maximum allowed values for storage size, total provisioned IOPS, and provisioned IOPS per GiB for a DB instance.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Added a new limit related to Network Load Balancers on the number of targets per load balancer per AZ.
+
+# __1.11.225__ __2017-11-06__
 ## __AWS Key Management Service (KMS)__
   - ### Features
     - Documentation updates for AWS KMS. 

@@ -20,7 +20,7 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 
 class TopicConfigurationStaxUnmarshaller extends NotificationConfigurationStaxUnmarshaller<TopicConfiguration> {
 
-    private static TopicConfigurationStaxUnmarshaller instance = new TopicConfigurationStaxUnmarshaller();
+    private static final TopicConfigurationStaxUnmarshaller instance = new TopicConfigurationStaxUnmarshaller();
 
     public static TopicConfigurationStaxUnmarshaller getInstance() {
         return instance;

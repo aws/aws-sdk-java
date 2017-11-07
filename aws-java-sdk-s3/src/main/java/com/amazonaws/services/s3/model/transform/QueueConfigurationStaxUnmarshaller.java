@@ -20,7 +20,7 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 
 class QueueConfigurationStaxUnmarshaller extends NotificationConfigurationStaxUnmarshaller<QueueConfiguration> {
 
-    private static QueueConfigurationStaxUnmarshaller instance = new QueueConfigurationStaxUnmarshaller();
+    private static final QueueConfigurationStaxUnmarshaller instance = new QueueConfigurationStaxUnmarshaller();
 
     public static QueueConfigurationStaxUnmarshaller getInstance() {
         return instance;

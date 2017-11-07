@@ -119,6 +119,36 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     orderableDBInstanceOption.setSupportsPerformanceInsights(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("MinStorageSize", targetDepth)) {
+                    orderableDBInstanceOption.setMinStorageSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxStorageSize", targetDepth)) {
+                    orderableDBInstanceOption.setMaxStorageSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinIopsPerDbInstance", targetDepth)) {
+                    orderableDBInstanceOption.setMinIopsPerDbInstance(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxIopsPerDbInstance", targetDepth)) {
+                    orderableDBInstanceOption.setMaxIopsPerDbInstance(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinIopsPerGib", targetDepth)) {
+                    orderableDBInstanceOption.setMinIopsPerGib(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxIopsPerGib", targetDepth)) {
+                    orderableDBInstanceOption.setMaxIopsPerGib(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return orderableDBInstanceOption;

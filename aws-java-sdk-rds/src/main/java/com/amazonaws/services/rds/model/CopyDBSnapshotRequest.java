@@ -149,8 +149,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
      * </p>
      * <p>
      * For example, if you copy an encrypted DB snapshot from the us-west-2 region to the us-east-1 region, then you
@@ -919,8 +919,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
      * </p>
      * <p>
      * For example, if you copy an encrypted DB snapshot from the us-west-2 region to the us-east-1 region, then you
@@ -970,7 +970,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This AWS
+     *        <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS
      *        Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned
      *        URL.
      *        </p>
@@ -1028,8 +1028,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
      * </p>
      * <p>
      * For example, if you copy an encrypted DB snapshot from the us-west-2 region to the us-east-1 region, then you
@@ -1078,8 +1078,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This
-     *         AWS Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this
+     *         <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS
+     *         Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this
      *         presigned URL.
      *         </p>
      *         <p>
@@ -1136,8 +1136,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This AWS Region
-     * is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS Region is
+     * the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned URL.
      * </p>
      * <p>
      * For example, if you copy an encrypted DB snapshot from the us-west-2 region to the us-east-1 region, then you
@@ -1187,7 +1187,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will be copied to. This AWS
+     *        <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot is copied to. This AWS
      *        Region is the same one where the <code>CopyDBSnapshot</code> action is called that contains this presigned
      *        URL.
      *        </p>

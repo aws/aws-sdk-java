@@ -46,6 +46,8 @@ import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketEncryptionRequest;
+import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
@@ -68,6 +70,8 @@ import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketEncryptionRequest;
+import com.amazonaws.services.s3.model.GetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -124,6 +128,8 @@ import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketEncryptionRequest;
+import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -5127,6 +5133,64 @@ public interface AmazonS3 extends S3DirectSpi {
     public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations(
             ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes the server-side encryption configuration from the bucket.
+     *
+     * @return A {@link DeleteBucketEncryptionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">AWS API Documentation</a>
+     */
+    DeleteBucketEncryptionResult deleteBucketEncryption(String bucketName)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Deletes the server-side encryption configuration from the bucket.
+     *
+     * @return A {@link DeleteBucketEncryptionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketEncryption">AWS API Documentation</a>
+     */
+    DeleteBucketEncryptionResult deleteBucketEncryption(DeleteBucketEncryptionRequest request)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Returns the server-side encryption configuration of a bucket.
+     *
+     * @param bucketName Name of the bucket to retrieve encryption configuration for.
+     * @return A {@link GetBucketEncryptionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">AWS API Documentation</a>
+     */
+    GetBucketEncryptionResult getBucketEncryption(String bucketName)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Returns the server-side encryption configuration of a bucket.
+     *
+     * @return A {@link GetBucketEncryptionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketEncryption">AWS API Documentation</a>
+     */
+    GetBucketEncryptionResult getBucketEncryption(GetBucketEncryptionRequest request)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Creates a new server-side encryption configuration (or replaces an existing one, if present).
+     *
+     * @param setBucketEncryptionRequest The request object for setting the bucket encryption configuration.
+     *
+     * @return A {@link SetBucketEncryptionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption">AWS API Documentation</a>
+     */
+    SetBucketEncryptionResult setBucketEncryption(SetBucketEncryptionRequest setBucketEncryptionRequest)
+        throws AmazonServiceException, SdkClientException;
 
     /**
      * Shuts down this client object, releasing any resources that might be held

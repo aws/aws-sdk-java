@@ -146,8 +146,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
-     * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then reconnect to the reader endpoint.
+     * your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you
+     * can then reconnect to the reader endpoint.
      * </p>
      */
     private String readerEndpoint;
@@ -838,8 +838,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
-     * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then reconnect to the reader endpoint.
+     * your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you
+     * can then reconnect to the reader endpoint.
      * </p>
      * 
      * @param readerEndpoint
@@ -850,8 +850,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary
-     *        instance, your connection will be dropped. To continue sending your read workload to other Aurora Replicas
-     *        in the cluster, you can then reconnect to the reader endpoint.
+     *        instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in
+     *        the cluster, you can then reconnect to the reader endpoint.
      */
 
     public void setReaderEndpoint(String readerEndpoint) {
@@ -867,8 +867,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
-     * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then reconnect to the reader endpoint.
+     * your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you
+     * can then reconnect to the reader endpoint.
      * </p>
      * 
      * @return The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances connections
@@ -878,8 +878,8 @@ public class DBCluster implements Serializable, Cloneable {
      *         cluster. </p>
      *         <p>
      *         If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary
-     *         instance, your connection will be dropped. To continue sending your read workload to other Aurora
-     *         Replicas in the cluster, you can then reconnect to the reader endpoint.
+     *         instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in
+     *         the cluster, you can then reconnect to the reader endpoint.
      */
 
     public String getReaderEndpoint() {
@@ -895,8 +895,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary instance,
-     * your connection will be dropped. To continue sending your read workload to other Aurora Replicas in the cluster,
-     * you can then reconnect to the reader endpoint.
+     * your connection is dropped. To continue sending your read workload to other Aurora Replicas in the cluster, you
+     * can then reconnect to the reader endpoint.
      * </p>
      * 
      * @param readerEndpoint
@@ -907,8 +907,8 @@ public class DBCluster implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If a failover occurs, and the Aurora Replica that you are connected to is promoted to be the primary
-     *        instance, your connection will be dropped. To continue sending your read workload to other Aurora Replicas
-     *        in the cluster, you can then reconnect to the reader endpoint.
+     *        instance, your connection is dropped. To continue sending your read workload to other Aurora Replicas in
+     *        the cluster, you can then reconnect to the reader endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

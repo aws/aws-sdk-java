@@ -21,6 +21,8 @@ import com.amazonaws.services.s3.model.*;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -2157,6 +2159,10 @@ public class XmlResponsesSaxParser {
         private String currentRuleId;
         private ReplicationRule currentRule;
         private ReplicationDestinationConfig destinationConfig;
+        private AccessControlTranslation accessControlTranslation;
+        private EncryptionConfiguration encryptionConfiguration;
+        private SourceSelectionCriteria sourceSelectionCriteria;
+        private SseKmsEncryptedObjects sseKmsEncryptedObjects;
         private static final String REPLICATION_CONFIG = "ReplicationConfiguration";
         private static final String ROLE = "Role";
         private static final String RULE = "Rule";
@@ -2166,6 +2172,13 @@ public class XmlResponsesSaxParser {
         private static final String STATUS = "Status";
         private static final String BUCKET = "Bucket";
         private static final String STORAGECLASS = "StorageClass";
+        private static final String ACCOUNT = "Account";
+        private static final String ACCESS_CONTROL_TRANSLATION = "AccessControlTranslation";
+        private static final String OWNER = "Owner";
+        private static final String ENCRYPTION_CONFIGURATION = "EncryptionConfiguration";
+        private static final String REPLICA_KMS_KEY_ID = "ReplicaKmsKeyID";
+        private static final String SOURCE_SELECTION_CRITERIA = "SourceSelectionCriteria";
+        private static final String SSE_KMS_ENCRYPTED_OBJECTS = "SseKmsEncryptedObjects";
 
         public BucketReplicationConfiguration getConfiguration() {
             return bucketReplicationConfiguration;
@@ -2182,6 +2195,18 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE)) {
                 if (name.equals(DESTINATION)) {
                     destinationConfig = new ReplicationDestinationConfig();
+                } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
+                    sourceSelectionCriteria = new SourceSelectionCriteria();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
+                if (name.equals(ACCESS_CONTROL_TRANSLATION)) {
+                    accessControlTranslation = new AccessControlTranslation();
+                } else if (name.equals(ENCRYPTION_CONFIGURATION)) {
+                    encryptionConfiguration = new EncryptionConfiguration();
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
+                if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
+                    sseKmsEncryptedObjects = new SseKmsEncryptedObjects();
                 }
             }
         }
@@ -2195,6 +2220,9 @@ public class XmlResponsesSaxParser {
                     currentRule = null;
                     currentRuleId = null;
                     destinationConfig = null;
+                    sseKmsEncryptedObjects = null;
+                    accessControlTranslation = null;
+                    encryptionConfiguration = null;
                 } else if (name.equals(ROLE)) {
                     bucketReplicationConfiguration.setRoleARN(getText());
                 }
@@ -2203,6 +2231,8 @@ public class XmlResponsesSaxParser {
                     currentRuleId = getText();
                 } else if (name.equals(PREFIX)) {
                     currentRule.setPrefix(getText());
+                } else if (name.equals(SOURCE_SELECTION_CRITERIA)) {
+                    currentRule.setSourceSelectionCriteria(sourceSelectionCriteria);
                 } else {
                     if (name.equals(STATUS)) {
                         currentRule.setStatus(getText());
@@ -2211,11 +2241,33 @@ public class XmlResponsesSaxParser {
                         currentRule.setDestinationConfig(destinationConfig);
                     }
                 }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
+                if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
+                    sourceSelectionCriteria.setSseKmsEncryptedObjects(sseKmsEncryptedObjects);
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, SSE_KMS_ENCRYPTED_OBJECTS)) {
+                if (name.equals(STATUS)) {
+                    sseKmsEncryptedObjects.setStatus(getText());
+                }
             } else if (in(REPLICATION_CONFIG, RULE, DESTINATION)) {
                 if (name.equals(BUCKET)) {
                     destinationConfig.setBucketARN(getText());
                 } else if (name.equals(STORAGECLASS)) {
                     destinationConfig.setStorageClass(getText());
+                } else if (name.equals(ACCOUNT)) {
+                    destinationConfig.setAccount(getText());
+                } else if (name.equals(ACCESS_CONTROL_TRANSLATION)) {
+                    destinationConfig.setAccessControlTranslation(accessControlTranslation);
+                } else if (name.equals(ENCRYPTION_CONFIGURATION)) {
+                    destinationConfig.setEncryptionConfiguration(encryptionConfiguration);
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION, ACCESS_CONTROL_TRANSLATION)) {
+                if (name.equals(OWNER)) {
+                    accessControlTranslation.setOwner(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, DESTINATION, ENCRYPTION_CONFIGURATION)) {
+                if (name.equals(REPLICA_KMS_KEY_ID)) {
+                    encryptionConfiguration.setReplicaKmsKeyID(getText());
                 }
             }
         }
@@ -3424,6 +3476,8 @@ public class XmlResponsesSaxParser {
   */
     public static class GetBucketInventoryConfigurationHandler extends AbstractHandler {
 
+        public static final String SSE_S3 = "SSE-S3";
+        public static final String SSE_KMS = "SSE-KMS";
         private final GetBucketInventoryConfigurationResult result = new GetBucketInventoryConfigurationResult();
         private final InventoryConfiguration configuration = new InventoryConfiguration();
 
@@ -3508,7 +3562,13 @@ public class XmlResponsesSaxParser {
                 } else if (name.equals("Prefix")) {
                     s3BucketDestination.setPrefix(getText());
                 }
-
+            } else if (in("InventoryConfiguration", "Destination", "S3BucketDestination", "Encryption")) {
+                if (name.equals(SSE_S3)) {
+                    s3BucketDestination.setEncryption(new ServerSideEncryptionS3());
+                } else if (name.equals(SSE_KMS)) {
+                    ServerSideEncryptionKMS kmsEncryption = new ServerSideEncryptionKMS().withKeyId(getText());
+                    s3BucketDestination.setEncryption(kmsEncryption);
+                }
             } else if (in("InventoryConfiguration", "Filter")) {
                 if (name.equals("Prefix")) {
                     filter.setPredicate(new InventoryPrefixPredicate(getText()));

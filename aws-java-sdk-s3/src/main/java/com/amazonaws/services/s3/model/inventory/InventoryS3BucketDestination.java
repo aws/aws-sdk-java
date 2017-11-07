@@ -30,6 +30,8 @@ public class InventoryS3BucketDestination implements Serializable {
 
     private String prefix;
 
+    private InventoryEncryption encryption;
+
     /**
      * Returns the account ID that owns the destination bucket.
      */
@@ -140,6 +142,33 @@ public class InventoryS3BucketDestination implements Serializable {
      */
     public InventoryS3BucketDestination withPrefix(String prefix) {
         setPrefix(prefix);
+        return this;
+    }
+
+    /**
+     * @return The type of encryption to use to protect the inventory contents. Will be null if encryption is not enabled.
+     */
+    public InventoryEncryption getEncryption() {
+        return encryption;
+    }
+
+    /**
+     * Set the type of encryption to use to protect the inventory contents.
+     *
+     * @param encryption Encryption to use. See {@link ServerSideEncryptionS3} and {@link ServerSideEncryptionKMS}.
+     */
+    public void setEncryption(InventoryEncryption encryption) {
+        this.encryption = encryption;
+    }
+
+    /**
+     * Set the type of encryption to use to protect the inventory contents.
+     *
+     * @param encryption Encryption to use. See {@link ServerSideEncryptionS3} and {@link ServerSideEncryptionKMS}.
+     * @return This object for method chaining.
+     */
+    public InventoryS3BucketDestination withEncryption(InventoryEncryption encryption) {
+        setEncryption(encryption);
         return this;
     }
 }

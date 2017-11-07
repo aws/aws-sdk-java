@@ -353,12 +353,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer allocatedStorage;
     /**
      * <p>
-     * The compute and memory capacity of the DB instance. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      */
     private String dBInstanceClass;
@@ -654,8 +653,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
-     * Availability Zones, see <a
+     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -706,7 +705,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine will be used.
+     * DBParameterGroup for the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -1039,6 +1038,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.19</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -1055,6 +1059,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.37</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.35</code> (supported in all AWS regions)
@@ -1080,6 +1089,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.5.57</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.5.54</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -1098,6 +1112,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 12c</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
@@ -1143,6 +1162,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -1205,22 +1229,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     * <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -1228,8 +1252,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -1304,8 +1327,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -1494,9 +1517,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
-
+    /**
+     * <p>
+     * True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     */
     private Boolean enablePerformanceInsights;
-
+    /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     */
     private String performanceInsightsKMSKeyId;
 
     /**
@@ -1698,16 +1730,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        </li>
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance. Note that not all instance classes are available in
-     *        all regions for all DB engines.</p>
-     *        <p>
-     *        Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *        |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
-     *        db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge
-     *        | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
+     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide.
      * @param engine
-     *        The name of the database engine to be used for this instance.
-     *        </p>
+     *        The name of the database engine to be used for this instance. </p>
      *        <p>
      *        Not every database engine is available for every AWS Region.
      *        </p>
@@ -3925,20 +3954,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance. Note that not all instance classes are available in
-     *        all regions for all DB engines.</p>
-     *        <p>
-     *        Valid Values:
-     *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
+     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -3947,19 +3975,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * 
-     * @return The compute and memory capacity of the DB instance. Note that not all instance classes are available in
-     *         all regions for all DB engines.</p>
-     *         <p>
-     *         Valid Values:
-     *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * @return The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
+     *         instance classes are available in all regions, or for all database engines. For the full list of DB
+     *         instance classes, and availability for your engine, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *         Class</a> in the Amazon RDS User Guide.
      */
 
     public String getDBInstanceClass() {
@@ -3968,20 +3995,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance. Note that not all instance classes are available in
-     *        all regions for all DB engines.</p>
-     *        <p>
-     *        Valid Values:
-     *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
+     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5827,8 +5853,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
-     * Availability Zones, see <a
+     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -5844,7 +5870,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     *        The EC2 Availability Zone that the database instance is created in. For information on regions and
      *        Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
@@ -5865,8 +5891,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
-     * Availability Zones, see <a
+     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -5881,7 +5907,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
      * </p>
      * 
-     * @return The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     * @return The EC2 Availability Zone that the database instance is created in. For information on regions and
      *         Availability Zones, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>. </p>
@@ -5903,8 +5929,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in. For information on regions and
-     * Availability Zones, see <a
+     * The EC2 Availability Zone that the database instance is created in. For information on regions and Availability
+     * Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -5920,7 +5946,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance will be created in. For information on regions and
+     *        The EC2 Availability Zone that the database instance is created in. For information on regions and
      *        Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
@@ -6141,7 +6167,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine will be used.
+     * DBParameterGroup for the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -6166,7 +6192,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBParameterGroupName
      *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default DBParameterGroup for the specified engine will be used.</p>
+     *        default DBParameterGroup for the specified engine is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -6195,7 +6221,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine will be used.
+     * DBParameterGroup for the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -6219,7 +6245,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @return The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *         default DBParameterGroup for the specified engine will be used.</p>
+     *         default DBParameterGroup for the specified engine is used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -6248,7 +6274,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine will be used.
+     * DBParameterGroup for the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -6273,7 +6299,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBParameterGroupName
      *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default DBParameterGroup for the specified engine will be used.</p>
+     *        default DBParameterGroup for the specified engine is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -7425,6 +7451,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.19</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -7441,6 +7472,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.37</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.35</code> (supported in all AWS regions)
@@ -7466,6 +7502,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.5.57</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.5.54</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -7484,6 +7525,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 12c</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
@@ -7529,6 +7575,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -7591,22 +7642,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     * <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -7759,6 +7810,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>5.7.19</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>5.7.17</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -7775,6 +7831,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.6.37</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>5.6.35</code> (supported in all AWS regions)
@@ -7800,6 +7861,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>5.5.57</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>5.5.54</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -7818,6 +7884,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle 12c</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     *        us-gov-west-1)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -7871,6 +7943,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle 11g</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -7933,22 +8010,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     *        <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     *        <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     *        <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     *        <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      *        </p>
      *        </li>
      */
@@ -8107,6 +8184,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.19</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -8123,6 +8205,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.37</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.35</code> (supported in all AWS regions)
@@ -8148,6 +8235,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.5.57</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.5.54</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -8166,6 +8258,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 12c</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
@@ -8211,6 +8308,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -8273,22 +8375,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     * <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -8440,6 +8542,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>5.7.19</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>5.7.17</code> (supported in all AWS regions)
      *         </p>
      *         </li>
@@ -8456,6 +8563,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p/>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>5.6.37</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>5.6.35</code> (supported in all AWS regions)
@@ -8481,6 +8593,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>5.5.57</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>5.5.54</code> (supported in all AWS regions)
      *         </p>
      *         </li>
@@ -8499,6 +8616,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>Oracle 12c</b>
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     *         us-gov-west-1)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -8552,6 +8675,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>Oracle 11g</b>
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -8614,22 +8742,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     *         <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     *         <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     *         <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     *         <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      *         </p>
      *         </li>
      */
@@ -8788,6 +8916,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.19</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -8804,6 +8937,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.37</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.35</code> (supported in all AWS regions)
@@ -8829,6 +8967,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.5.57</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.5.54</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -8847,6 +8990,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 12c</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
@@ -8892,6 +9040,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -8954,22 +9107,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     * <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     * <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     * <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      * </p>
      * </li>
      * </ul>
@@ -9122,6 +9275,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>5.7.19</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>5.7.17</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -9138,6 +9296,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.6.37</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>5.6.35</code> (supported in all AWS regions)
@@ -9163,6 +9326,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>5.5.57</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>5.5.54</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -9181,6 +9349,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle 12c</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>12.1.0.2.v9</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     *        us-gov-west-1)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>12.1.0.2.v8</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
@@ -9234,6 +9408,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle 11g</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v13</code> (supported for EE, SE1, and SE, in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>11.2.0.4.v12</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -9296,22 +9475,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.6.x:</b> <code> 9.6.1 | 9.6.2 | 9.6.3</code>
+     *        <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.5.x:</b> <code>9.5.6 | 9.5.4 | 9.5.2</code>
+     *        <b>Version 9.5.x:</b> <code> 9.5.9 | 9.5.7 | 9.5.6 | 9.5.4 | 9.5.2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.4.x:</b> <code>9.4.11 | 9.4.9 | 9.4.7</code>
+     *        <b>Version 9.4.x:</b> <code> 9.4.14 | 9.4.12 | 9.4.11 | 9.4.9 | 9.4.7</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 9.3.x:</b> <code>9.3.16 | 9.3.14 | 9.3.12</code>
+     *        <b>Version 9.3.x:</b> <code> 9.3.19 | 9.3.17 | 9.3.16 | 9.3.14 | 9.3.12</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -9324,16 +9503,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically to the DB instance during the
-     *        maintenance window.</p>
+     *        Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     *        window.</p>
      *        <p>
      *        Default: <code>true</code>
      */
@@ -9344,15 +9522,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied automatically to the DB instance during the
-     *         maintenance window.</p>
+     * @return Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -9363,16 +9540,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically to the DB instance during the
-     *        maintenance window.</p>
+     *        Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     *        window.</p>
      *        <p>
      *        Default: <code>true</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -9385,15 +9561,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied automatically to the DB instance during the
-     *         maintenance window.</p>
+     * @return Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: <code>true</code>
      */
@@ -9703,8 +9878,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @param publiclyAccessible
@@ -9729,8 +9904,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
-     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
+     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -9761,8 +9936,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
@@ -9786,9 +9961,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
-     *         private.
+     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
+     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -9819,8 +9993,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @param publiclyAccessible
@@ -9845,8 +10019,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
-     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
+     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -9879,8 +10053,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
@@ -9904,9 +10078,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
-     *         private.
+     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
+     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -11217,7 +11390,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     * 
      * @param enablePerformanceInsights
+     *        True to enable Performance Insights for the DB instance; otherwise false.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -11225,7 +11403,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     * 
+     * @return True to enable Performance Insights for the DB instance; otherwise false.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -11233,7 +11415,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     * 
      * @param enablePerformanceInsights
+     *        True to enable Performance Insights for the DB instance; otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -11243,7 +11430,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * True to enable Performance Insights for the DB instance; otherwise false.
+     * </p>
+     * 
+     * @return True to enable Performance Insights for the DB instance; otherwise false.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -11251,7 +11442,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
      * @param performanceInsightsKMSKeyId
+     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -11259,7 +11457,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
+     * @return The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -11267,7 +11471,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
      * @param performanceInsightsKMSKeyId
+     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

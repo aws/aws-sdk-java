@@ -477,7 +477,7 @@ public class SendQueueBuffer {
         @Override
         protected boolean isOkToAdd(SendMessageRequest request) {
             return (requests.size() < config.getMaxBatchSize())
-                    && ((request.getMessageBody().getBytes().length + batchSizeBytes) < config.getMaxBatchSizeBytes());
+                    && ((request.getMessageBody().getBytes().length + batchSizeBytes) <= config.getMaxBatchSizeBytes());
         }
 
         @Override

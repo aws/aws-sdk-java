@@ -28,7 +28,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
@@ -44,14 +44,14 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * </p>
      * 
      * @param sourceType
-     *        The type of source that will be generating the events.</p>
+     *        The type of source that is generating the events.</p>
      *        <p>
      *        Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      */
@@ -62,13 +62,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * </p>
      * 
-     * @return The type of source that will be generating the events.</p>
+     * @return The type of source that is generating the events.</p>
      *         <p>
      *         Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      */
@@ -79,14 +79,14 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of source that will be generating the events.
+     * The type of source that is generating the events.
      * </p>
      * <p>
      * Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * </p>
      * 
      * @param sourceType
-     *        The type of source that will be generating the events.</p>
+     *        The type of source that is generating the events.</p>
      *        <p>
      *        Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -28,7 +28,7 @@ import com.amazonaws.transform.Unmarshaller;
 public class BucketNotificationConfigurationStaxUnmarshaller implements
         Unmarshaller<BucketNotificationConfiguration, InputStream> {
 
-    private static BucketNotificationConfigurationStaxUnmarshaller instance = new BucketNotificationConfigurationStaxUnmarshaller();
+    private static final BucketNotificationConfigurationStaxUnmarshaller instance = new BucketNotificationConfigurationStaxUnmarshaller();
 
     public static BucketNotificationConfigurationStaxUnmarshaller getInstance() {
         return instance;

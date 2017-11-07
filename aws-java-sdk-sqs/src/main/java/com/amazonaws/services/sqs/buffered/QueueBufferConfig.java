@@ -25,7 +25,7 @@ public class QueueBufferConfig {
     private int maxBatchSize;
 
     /** Updated as the service now supports messages of size max 256 KiB. */
-    public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024 - 1;
+    public static final long SERVICE_MAX_BATCH_SIZE_BYTES = 256 * 1024;
 
     /**
      * The maximum time (milliseconds) a send batch is held open for additional outbound requests.

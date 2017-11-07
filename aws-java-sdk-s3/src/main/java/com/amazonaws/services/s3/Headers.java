@@ -226,4 +226,6 @@ public interface Headers {
     public static final String S3_TAGGING_COUNT = "x-amz-tagging-count";
 
     public static final String TAGGING_DIRECTIVE = "x-amz-tagging-directive";
+
+    public static final String REMOVE_SELF_BUCKET_ACCESS = "x-amz-confirm-remove-self-bucket-access";
 }

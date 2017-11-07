@@ -81,12 +81,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String sourceDBInstanceIdentifier;
     /**
      * <p>
-     * The compute and memory capacity of the Read Replica. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
@@ -95,7 +94,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String dBInstanceClass;
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the Read Replica will be created in.
+     * The Amazon EC2 Availability Zone that the Read Replica is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -119,8 +118,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Integer port;
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance
@@ -136,8 +134,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Integer iops;
     /**
      * <p>
-     * The option group the DB instance will be associated with. If omitted, the default option group for the engine
-     * specified will be used.
+     * The option group the DB instance is associated with. If omitted, the default option group for the engine
+     * specified is used.
      * </p>
      */
     private String optionGroupName;
@@ -165,8 +163,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -174,8 +172,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC associated with
-     * the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     * subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -203,12 +201,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     * Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     * Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      * </p>
      * </li>
      * </ul>
@@ -307,9 +305,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This AWS
-     * Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS Region is
+     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
+     * URL.
      * </p>
      * <p>
      * For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in the
@@ -375,9 +373,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
-
+    /**
+     * <p>
+     * True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     */
     private Boolean enablePerformanceInsights;
-
+    /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     */
     private String performanceInsightsKMSKeyId;
     /** The region where the source instance is located. */
     private String sourceRegion;
@@ -779,24 +786,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The compute and memory capacity of the Read Replica. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Read Replica. Note that not all instance classes are available in
-     *        all regions for all DB engines.</p>
-     *        <p>
-     *        Valid Values:
-     *        <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *        </p>
+     *        The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB
+     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide. </p>
      *        <p>
      *        Default: Inherits from the source DB instance.
      */
@@ -807,23 +812,21 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The compute and memory capacity of the Read Replica. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
      * </p>
      * 
-     * @return The compute and memory capacity of the Read Replica. Note that not all instance classes are available in
-     *         all regions for all DB engines.</p>
-     *         <p>
-     *         Valid Values:
-     *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *         </p>
+     * @return The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB
+     *         instance classes are available in all regions, or for all database engines. For the full list of DB
+     *         instance classes, and availability for your engine, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *         Class</a> in the Amazon RDS User Guide. </p>
      *         <p>
      *         Default: Inherits from the source DB instance.
      */
@@ -834,24 +837,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The compute and memory capacity of the Read Replica. Note that not all instance classes are available in all
-     * regions for all DB engines.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB instance
+     * classes are available in all regions, or for all database engines. For the full list of DB instance classes, and
+     * availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Read Replica. Note that not all instance classes are available in
-     *        all regions for all DB engines.</p>
-     *        <p>
-     *        Valid Values:
-     *        <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *        </p>
+     *        The compute and memory capacity of the Read Replica, for example, <code>db.m4.large</code>. Not all DB
+     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide. </p>
      *        <p>
      *        Default: Inherits from the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -864,7 +865,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the Read Replica will be created in.
+     * The Amazon EC2 Availability Zone that the Read Replica is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -874,7 +875,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone that the Read Replica will be created in.</p>
+     *        The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
@@ -888,7 +889,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the Read Replica will be created in.
+     * The Amazon EC2 Availability Zone that the Read Replica is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -897,7 +898,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Example: <code>us-east-1d</code>
      * </p>
      * 
-     * @return The Amazon EC2 Availability Zone that the Read Replica will be created in.</p>
+     * @return The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *         </p>
@@ -911,7 +912,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the Read Replica will be created in.
+     * The Amazon EC2 Availability Zone that the Read Replica is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -921,7 +922,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone that the Read Replica will be created in.</p>
+     *        The Amazon EC2 Availability Zone that the Read Replica is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
@@ -1010,16 +1011,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically to the Read Replica during the
-     *        maintenance window.</p>
+     *        Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance
+     *        window.</p>
      *        <p>
      *        Default: Inherits from the source DB instance
      */
@@ -1030,15 +1030,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied automatically to the Read Replica during the
-     *         maintenance window.</p>
+     * @return Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: Inherits from the source DB instance
      */
@@ -1049,16 +1048,15 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades will be applied automatically to the Read Replica during the
-     *        maintenance window.</p>
+     *        Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance
+     *        window.</p>
      *        <p>
      *        Default: Inherits from the source DB instance
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1071,15 +1069,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance
-     * window.
+     * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
      * Default: Inherits from the source DB instance
      * </p>
      * 
-     * @return Indicates that minor engine upgrades will be applied automatically to the Read Replica during the
-     *         maintenance window.</p>
+     * @return Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance
+     *         window.</p>
      *         <p>
      *         Default: Inherits from the source DB instance
      */
@@ -1136,13 +1133,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance will be associated with. If omitted, the default option group for the engine
-     * specified will be used.
+     * The option group the DB instance is associated with. If omitted, the default option group for the engine
+     * specified is used.
      * </p>
      * 
      * @param optionGroupName
-     *        The option group the DB instance will be associated with. If omitted, the default option group for the
-     *        engine specified will be used.
+     *        The option group the DB instance is associated with. If omitted, the default option group for the engine
+     *        specified is used.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1151,12 +1148,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance will be associated with. If omitted, the default option group for the engine
-     * specified will be used.
+     * The option group the DB instance is associated with. If omitted, the default option group for the engine
+     * specified is used.
      * </p>
      * 
-     * @return The option group the DB instance will be associated with. If omitted, the default option group for the
-     *         engine specified will be used.
+     * @return The option group the DB instance is associated with. If omitted, the default option group for the engine
+     *         specified is used.
      */
 
     public String getOptionGroupName() {
@@ -1165,13 +1162,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance will be associated with. If omitted, the default option group for the engine
-     * specified will be used.
+     * The option group the DB instance is associated with. If omitted, the default option group for the engine
+     * specified is used.
      * </p>
      * 
      * @param optionGroupName
-     *        The option group the DB instance will be associated with. If omitted, the default option group for the
-     *        engine specified will be used.
+     *        The option group the DB instance is associated with. If omitted, the default option group for the engine
+     *        specified is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1204,8 +1201,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @param publiclyAccessible
@@ -1230,8 +1227,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
-     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
+     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1262,8 +1259,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
@@ -1287,9 +1284,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
-     *         private.
+     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
+     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1320,8 +1316,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @param publiclyAccessible
@@ -1346,8 +1342,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
-     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
+     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1380,8 +1376,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
@@ -1405,9 +1401,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
-     *         private.
+     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
+     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -1471,8 +1466,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC associated with
-     * the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     * subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -1500,12 +1495,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     * Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     * Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      * </p>
      * </li>
      * </ul>
@@ -1516,8 +1511,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC associated
-     *        with the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a
+     *        Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with
+     *        the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a
      *        VPC.</p>
      *        <p>
      *        Constraints:
@@ -1545,12 +1540,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     *        Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     *        Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      *        </p>
      *        </li>
      *        </ul>
@@ -1566,8 +1561,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC associated with
-     * the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     * subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -1595,12 +1590,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     * Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     * Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      * </p>
      * </li>
      * </ul>
@@ -1610,9 +1605,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC
-     *         associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance is not
-     *         created in a VPC.</p>
+     * @return Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated
+     *         with the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in
+     *         a VPC.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1639,12 +1634,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     *         Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     *         Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      *         </p>
      *         </li>
      *         </ul>
@@ -1660,8 +1655,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC associated with
-     * the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
+     * Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB
+     * subnet group. If no DB subnet group is specified, then the new DB instance is not created in a VPC.
      * </p>
      * <p>
      * Constraints:
@@ -1689,12 +1684,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     * Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     * Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      * </p>
      * </li>
      * </ul>
@@ -1705,8 +1700,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        Specifies a DB subnet group for the DB instance. The new DB instance will be created in the VPC associated
-     *        with the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a
+     *        Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with
+     *        the DB subnet group. If no DB subnet group is specified, then the new DB instance is not created in a
      *        VPC.</p>
      *        <p>
      *        Constraints:
@@ -1734,12 +1729,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify DB subnet groups from the same VPC. All these Read Replicas will be created in the same VPC.
+     *        Specify DB subnet groups from the same VPC. All these Read Replicas are created in the same VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Not specify a DB subnet group. All these Read Replicas will be created outside of any VPC.
+     *        Not specify a DB subnet group. All these Read Replicas are created outside of any VPC.
      *        </p>
      *        </li>
      *        </ul>
@@ -2219,9 +2214,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This AWS
-     * Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS Region is
+     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
+     * URL.
      * </p>
      * <p>
      * For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in the
@@ -2273,9 +2268,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This
-     *        AWS Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that
-     *        contains this presigned URL.
+     *        <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS
+     *        Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains
+     *        this presigned URL.
      *        </p>
      *        <p>
      *        For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in
@@ -2332,9 +2327,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This AWS
-     * Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS Region is
+     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
+     * URL.
      * </p>
      * <p>
      * For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in the
@@ -2385,9 +2380,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This
-     *         AWS Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that
-     *         contains this presigned URL.
+     *         <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS
+     *         Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains
+     *         this presigned URL.
      *         </p>
      *         <p>
      *         For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in
@@ -2444,9 +2439,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This AWS
-     * Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this
-     * presigned URL.
+     * <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS Region is
+     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
+     * URL.
      * </p>
      * <p>
      * For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in the
@@ -2498,9 +2493,9 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica will be created in. This
-     *        AWS Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that
-     *        contains this presigned URL.
+     *        <code>DestinationRegion</code> - The AWS Region that the encrypted Read Replica is created in. This AWS
+     *        Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains
+     *        this presigned URL.
      *        </p>
      *        <p>
      *        For example, if you create an encrypted DB instance in the us-west-1 region, from a source DB instance in
@@ -2782,7 +2777,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     * 
      * @param enablePerformanceInsights
+     *        True to enable Performance Insights for the read replica; otherwise false.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -2790,7 +2790,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     * 
+     * @return True to enable Performance Insights for the read replica; otherwise false.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -2798,7 +2802,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     * 
      * @param enablePerformanceInsights
+     *        True to enable Performance Insights for the read replica; otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2808,7 +2817,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * True to enable Performance Insights for the read replica; otherwise false.
+     * </p>
+     * 
+     * @return True to enable Performance Insights for the read replica; otherwise false.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -2816,7 +2829,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
      * @param performanceInsightsKMSKeyId
+     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -2824,7 +2844,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
+     * @return The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -2832,7 +2858,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * </p>
+     * 
      * @param performanceInsightsKMSKeyId
+     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

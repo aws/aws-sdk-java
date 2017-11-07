@@ -110,11 +110,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     private Boolean useLatestRestorableTime;
     /**
      * <p>
-     * The compute and memory capacity of the Amazon RDS DB instance.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
+     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: The same DBInstanceClass as the original DB instance.
@@ -135,7 +135,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     private Integer port;
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
+     * The EC2 Availability Zone that the database instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
@@ -194,15 +194,14 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      */
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -984,22 +983,22 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The compute and memory capacity of the Amazon RDS DB instance.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
+     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: The same DBInstanceClass as the original DB instance.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Amazon RDS DB instance.</p>
-     *        <p>
-     *        Valid Values:
-     *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *        </p>
+     *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
+     *        all DB instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide. </p>
      *        <p>
      *        Default: The same DBInstanceClass as the original DB instance.
      */
@@ -1010,21 +1009,21 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The compute and memory capacity of the Amazon RDS DB instance.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
+     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: The same DBInstanceClass as the original DB instance.
      * </p>
      * 
-     * @return The compute and memory capacity of the Amazon RDS DB instance.</p>
-     *         <p>
-     *         Valid Values:
-     *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *         </p>
+     * @return The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
+     *         all DB instance classes are available in all regions, or for all database engines. For the full list of
+     *         DB instance classes, and availability for your engine, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *         Class</a> in the Amazon RDS User Guide. </p>
      *         <p>
      *         Default: The same DBInstanceClass as the original DB instance.
      */
@@ -1035,22 +1034,22 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The compute and memory capacity of the Amazon RDS DB instance.
-     * </p>
-     * <p>
-     * Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
+     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * classes, and availability for your engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the Amazon RDS User Guide.
      * </p>
      * <p>
      * Default: The same DBInstanceClass as the original DB instance.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the Amazon RDS DB instance.</p>
-     *        <p>
-     *        Valid Values:
-     *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
-     *        </p>
+     *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
+     *        all DB instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes, and availability for your engine, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the Amazon RDS User Guide. </p>
      *        <p>
      *        Default: The same DBInstanceClass as the original DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1136,7 +1135,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
+     * The EC2 Availability Zone that the database instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
@@ -1149,7 +1148,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance will be created in.</p>
+     *        The EC2 Availability Zone that the database instance is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
@@ -1166,7 +1165,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
+     * The EC2 Availability Zone that the database instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
@@ -1178,7 +1177,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Example: <code>us-east-1a</code>
      * </p>
      * 
-     * @return The EC2 Availability Zone that the database instance will be created in.</p>
+     * @return The EC2 Availability Zone that the database instance is created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone.
      *         </p>
@@ -1195,7 +1194,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance will be created in.
+     * The EC2 Availability Zone that the database instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
@@ -1208,7 +1207,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance will be created in.</p>
+     *        The EC2 Availability Zone that the database instance is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
@@ -1402,8 +1401,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @param publiclyAccessible
@@ -1428,8 +1427,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
-     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
+     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1460,8 +1459,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
@@ -1485,9 +1484,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
-     *         private.
+     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
+     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1518,8 +1516,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @param publiclyAccessible
@@ -1544,8 +1542,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        </ul>
      *        <p>
      *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as
-     *        part of the request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
+     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1578,8 +1576,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </ul>
      * <p>
      * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance will be private.
+     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
+     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
@@ -1603,9 +1601,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         </ul>
      *         <p>
      *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance will be publicly accessible. If a specific DB subnet group has been specified
-     *         as part of the request and the PubliclyAccessible value has not been set, the DB instance will be
-     *         private.
+     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
+     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -1614,13 +1611,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version upgrades will be applied automatically to the DB instance during the
-     *        maintenance window.
+     *        Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *        window.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1629,12 +1625,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
-     * @return Indicates that minor version upgrades will be applied automatically to the DB instance during the
-     *         maintenance window.
+     * @return Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *         window.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -1643,13 +1638,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version upgrades will be applied automatically to the DB instance during the
-     *        maintenance window.
+     *        Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *        window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1660,12 +1654,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance
-     * window.
+     * Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window.
      * </p>
      * 
-     * @return Indicates that minor version upgrades will be applied automatically to the DB instance during the
-     *         maintenance window.
+     * @return Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance
+     *         window.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {

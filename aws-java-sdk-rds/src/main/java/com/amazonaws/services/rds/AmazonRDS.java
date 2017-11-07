@@ -321,10 +321,9 @@ public interface AmazonRDS {
      * <li>
      * <p>
      * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
-     * <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region where the DB cluster snapshot
-     * will be copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API
-     * action that can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be
-     * copied.
+     * <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region where the DB cluster snapshot is
+     * copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
+     * that can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
      * </p>
      * <p>
      * The pre-signed URL request must contain the following parameter values:
@@ -851,10 +850,10 @@ public interface AmazonRDS {
      * </p>
      * <p>
      * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
-     * myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a
-     * SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for
-     * all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified
-     * of events generated from all RDS sources belonging to your customer account.
+     * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
+     * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
+     * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
+     * events generated from all RDS sources belonging to your customer account.
      * </p>
      * 
      * @param createEventSubscriptionRequest
@@ -2250,8 +2249,8 @@ public interface AmazonRDS {
      * Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any
      * modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a
      * momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot will be conducted through a failover. An Amazon RDS event
-     * is created when the reboot is completed.
+     * configured for MultiAZ, it is possible that the reboot is conducted through a failover. An Amazon RDS event is
+     * created when the reboot is completed.
      * </p>
      * <p>
      * If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other

@@ -22,7 +22,7 @@ import com.amazonaws.transform.Unmarshaller;
 
 class S3KeyFilterStaxUnmarshaller implements Unmarshaller<S3KeyFilter, StaxUnmarshallerContext> {
 
-    private static S3KeyFilterStaxUnmarshaller instance = new S3KeyFilterStaxUnmarshaller();
+    private static final S3KeyFilterStaxUnmarshaller instance = new S3KeyFilterStaxUnmarshaller();
 
     public static S3KeyFilterStaxUnmarshaller getInstance() {
         return instance;

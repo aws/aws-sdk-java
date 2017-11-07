@@ -23,7 +23,7 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.StringStaxUnmarshalle
 
 class FilterRuleStaxUnmarshaller implements Unmarshaller<FilterRule, StaxUnmarshallerContext> {
 
-    private static FilterRuleStaxUnmarshaller instance = new FilterRuleStaxUnmarshaller();
+    private static final FilterRuleStaxUnmarshaller instance = new FilterRuleStaxUnmarshaller();
 
     public static FilterRuleStaxUnmarshaller getInstance() {
         return instance;

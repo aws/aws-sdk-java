@@ -40,7 +40,7 @@ import com.amazonaws.transform.Unmarshaller;
 class LambdaConfigurationStaxUnmarshaller implements
         Unmarshaller<Entry<String, NotificationConfiguration>, StaxUnmarshallerContext> {
 
-    private static LambdaConfigurationStaxUnmarshaller instance = new LambdaConfigurationStaxUnmarshaller();
+    private static final LambdaConfigurationStaxUnmarshaller instance = new LambdaConfigurationStaxUnmarshaller();
 
     public static LambdaConfigurationStaxUnmarshaller getInstance() {
         return instance;

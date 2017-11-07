@@ -39,6 +39,8 @@ public class ReplicationRule implements Serializable {
      */
     private ReplicationDestinationConfig destinationConfig;
 
+    private SourceSelectionCriteria sourceSelectionCriteria;
+
     /**
      * Returns the prefix associated with the replication rule.
      */
@@ -163,6 +165,33 @@ public class ReplicationRule implements Serializable {
     public ReplicationRule withDestinationConfig(
             ReplicationDestinationConfig destinationConfig) {
         setDestinationConfig(destinationConfig);
+        return this;
+    }
+
+    /**
+     * @return Container for filters that define which source objects should be replicated.
+     */
+    public SourceSelectionCriteria getSourceSelectionCriteria() {
+        return sourceSelectionCriteria;
+    }
+
+    /**
+     * Sets the container for filters that define which source objects should be replicated.
+     *
+     * @param sourceSelectionCriteria New source selection criteria
+     */
+    public void setSourceSelectionCriteria(SourceSelectionCriteria sourceSelectionCriteria) {
+        this.sourceSelectionCriteria = sourceSelectionCriteria;
+    }
+
+    /**
+     * Sets the container for filters that define which source objects should be replicated.
+     *
+     * @param sourceSelectionCriteria New source selection criteria
+     * @return This object for method chaining.
+     */
+    public ReplicationRule withSourceSelectionCriteria(SourceSelectionCriteria sourceSelectionCriteria) {
+        setSourceSelectionCriteria(sourceSelectionCriteria);
         return this;
     }
 

@@ -99,7 +99,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> will be used.
+     * <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -321,7 +321,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
@@ -851,7 +851,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> will be used.
+     * <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -866,7 +866,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        <code>default.aurora5.6</code> will be used. </p>
+     *        <code>default.aurora5.6</code> is used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -885,7 +885,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> will be used.
+     * <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -899,7 +899,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The name of the DB cluster parameter group to associate with this DB cluster. If this argument is
-     *         omitted, <code>default.aurora5.6</code> will be used. </p>
+     *         omitted, <code>default.aurora5.6</code> is used. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -918,7 +918,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     * <code>default.aurora5.6</code> will be used.
+     * <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -933,7 +933,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        <code>default.aurora5.6</code> will be used. </p>
+     *        <code>default.aurora5.6</code> is used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2294,7 +2294,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
@@ -2336,7 +2336,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
-     *        called in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     *        called in the source AWS Region where the DB cluster is replicated from. You only need to specify
      *        <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
      *        cluster.</p>
      *        <p>
@@ -2385,7 +2385,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
@@ -2426,7 +2426,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to
-     *         be called in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     *         be called in the source AWS Region where the DB cluster is replicated from. You only need to specify
      *         <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
      *         cluster.</p>
      *         <p>
@@ -2475,7 +2475,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster is replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
@@ -2517,7 +2517,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
-     *        called in the source AWS Region where the DB cluster will be replicated from. You only need to specify
+     *        called in the source AWS Region where the DB cluster is replicated from. You only need to specify
      *        <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
      *        cluster.</p>
      *        <p>

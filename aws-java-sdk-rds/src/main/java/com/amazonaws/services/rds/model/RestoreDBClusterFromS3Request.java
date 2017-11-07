@@ -96,7 +96,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> will be used.
+     * omitted, <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -799,7 +799,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> will be used.
+     * omitted, <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -814,7 +814,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *        omitted, <code>default.aurora5.6</code> will be used. </p>
+     *        omitted, <code>default.aurora5.6</code> is used. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -833,7 +833,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> will be used.
+     * omitted, <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -847,7 +847,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *         omitted, <code>default.aurora5.6</code> will be used. </p>
+     *         omitted, <code>default.aurora5.6</code> is used. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -866,7 +866,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> will be used.
+     * omitted, <code>default.aurora5.6</code> is used.
      * </p>
      * <p>
      * Constraints:
@@ -881,7 +881,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *        omitted, <code>default.aurora5.6</code> will be used. </p>
+     *        omitted, <code>default.aurora5.6</code> is used. </p>
      *        <p>
      *        Constraints:
      *        </p>

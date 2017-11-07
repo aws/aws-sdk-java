@@ -18,6 +18,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.model.AccessControlTranslation;
 import com.amazonaws.services.s3.model.BucketAccelerateConfiguration;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
@@ -44,6 +45,10 @@ import com.amazonaws.services.s3.model.ReplicationRule;
 import com.amazonaws.services.s3.model.RoutingRule;
 import com.amazonaws.services.s3.model.RoutingRuleCondition;
 import com.amazonaws.services.s3.model.S3KeyFilter;
+import com.amazonaws.services.s3.model.ServerSideEncryptionByDefault;
+import com.amazonaws.services.s3.model.ServerSideEncryptionConfiguration;
+import com.amazonaws.services.s3.model.ServerSideEncryptionRule;
+import com.amazonaws.services.s3.model.SseKmsEncryptedObjects;
 import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.TopicConfiguration;
@@ -60,11 +65,14 @@ import com.amazonaws.services.s3.model.analytics.StorageClassAnalysis;
 import com.amazonaws.services.s3.model.analytics.StorageClassAnalysisDataExport;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryDestination;
+import com.amazonaws.services.s3.model.inventory.InventoryEncryption;
 import com.amazonaws.services.s3.model.inventory.InventoryFilter;
 import com.amazonaws.services.s3.model.inventory.InventoryFilterPredicate;
 import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
 import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
 import com.amazonaws.services.s3.model.inventory.InventorySchedule;
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
+import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleAndOperator;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilterPredicate;
@@ -275,12 +283,40 @@ public class BucketConfigurationXmlFactory {
             xml.start("Prefix").value(rule.getPrefix()).end();
             xml.start("Status").value(rule.getStatus()).end();
 
+            if (rule.getSourceSelectionCriteria() != null) {
+                xml.start("SourceSelectionCriteria");
+                SseKmsEncryptedObjects sseKmsEncryptedObjects = rule.getSourceSelectionCriteria().getSseKmsEncryptedObjects();
+                if (sseKmsEncryptedObjects != null) {
+                    xml.start("SseKmsEncryptedObjects");
+                    addParameterIfNotNull(xml, "Status", sseKmsEncryptedObjects.getStatus());
+                    xml.end();
+                }
+                xml.end();
+            }
+
             final ReplicationDestinationConfig config = rule.getDestinationConfig();
             xml.start("Destination");
             xml.start("Bucket").value(config.getBucketARN()).end();
+
+            addParameterIfNotNull(xml, "Account", config.getAccount());
+
             if (config.getStorageClass() != null) {
                 xml.start("StorageClass").value(config.getStorageClass()).end();
             }
+
+            final AccessControlTranslation accessControlTranslation = config.getAccessControlTranslation();
+            if (accessControlTranslation != null) {
+                xml.start("AccessControlTranslation");
+                addParameterIfNotNull(xml, "Owner", accessControlTranslation.getOwner());
+                xml.end();
+            }
+            if (config.getEncryptionConfiguration() != null) {
+                xml.start("EncryptionConfiguration");
+                addParameterIfNotNull(xml, "ReplicaKmsKeyID",
+                                      config.getEncryptionConfiguration().getReplicaKmsKeyID());
+                xml.end();
+            }
+
             xml.end();
 
             xml.end();
@@ -580,6 +616,28 @@ public class BucketConfigurationXmlFactory {
         predicate.accept(new LifecyclePredicateVisitorImpl(xml));
     }
 
+    public byte[] convertToXmlByteArray(ServerSideEncryptionConfiguration sseConfig) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("ServerSideEncryptionConfiguration", "xmlns", Constants.XML_NAMESPACE);
+        for (ServerSideEncryptionRule rule : sseConfig.getRules()) {
+            xml.start("Rule");
+            writeServerSideEncryptionByDefault(xml, rule.getApplyServerSideEncryptionByDefault());
+            xml.end();
+        }
+        xml.end();
+        return xml.getBytes();
+    }
+
+    private void writeServerSideEncryptionByDefault(XmlWriter xml, ServerSideEncryptionByDefault sseByDefault) {
+        if (sseByDefault == null) {
+            return;
+        }
+        xml.start("ApplyServerSideEncryptionByDefault");
+        addParameterIfNotNull(xml, "SSEAlgorithm", sseByDefault.getSSEAlgorithm());
+        addParameterIfNotNull(xml, "KMSMasterKeyID", sseByDefault.getKMSMasterKeyID());
+        xml.end();
+    }
+
     private class LifecyclePredicateVisitorImpl implements LifecyclePredicateVisitor {
         private final XmlWriter xml;
 
@@ -795,9 +853,25 @@ public class BucketConfigurationXmlFactory {
             addParameterIfNotNull(xml, "Bucket", s3BucketDestination.getBucketArn());
             addParameterIfNotNull(xml, "Prefix", s3BucketDestination.getPrefix());
             addParameterIfNotNull(xml, "Format", s3BucketDestination.getFormat());
+            writeInventoryEncryption(xml, s3BucketDestination.getEncryption());
             xml.end(); // </S3BucketDestination>
         }
         xml.end(); // </Destination>
+    }
+
+    private void writeInventoryEncryption(XmlWriter xml, InventoryEncryption encryption) {
+        if (encryption == null) {
+            return;
+        }
+        xml.start("Encryption");
+        if (encryption instanceof ServerSideEncryptionS3) {
+            xml.start("SSE-S3").end();
+        } else if (encryption instanceof ServerSideEncryptionKMS) {
+            xml.start("SSE-KMS");
+            addParameterIfNotNull(xml, "KeyId", ((ServerSideEncryptionKMS) encryption).getKeyId());
+            xml.end();
+        }
+        xml.end();
     }
 
     private void writeInventoryFilter(XmlWriter xml, InventoryFilter inventoryFilter) {

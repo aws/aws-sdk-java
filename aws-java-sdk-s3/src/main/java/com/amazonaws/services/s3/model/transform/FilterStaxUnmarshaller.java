@@ -22,7 +22,7 @@ import com.amazonaws.transform.Unmarshaller;
 
 class FilterStaxUnmarshaller implements Unmarshaller<Filter, StaxUnmarshallerContext> {
 
-    private static FilterStaxUnmarshaller instance = new FilterStaxUnmarshaller();
+    private static final FilterStaxUnmarshaller instance = new FilterStaxUnmarshaller();
 
     public static FilterStaxUnmarshaller getInstance() {
         return instance;

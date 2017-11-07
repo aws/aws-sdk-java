@@ -1091,6 +1091,31 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public DeleteBucketEncryptionResult deleteBucketEncryption(String bucketName) throws SdkClientException {
+        return deleteBucketEncryption(new DeleteBucketEncryptionRequest().withBucketName(bucketName));
+    }
+
+    @Override
+    public DeleteBucketEncryptionResult deleteBucketEncryption(DeleteBucketEncryptionRequest request) throws SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public GetBucketEncryptionResult getBucketEncryption(String bucketName) throws SdkClientException {
+        return getBucketEncryption(new GetBucketEncryptionRequest().withBucketName(bucketName));
+    }
+
+    @Override
+    public GetBucketEncryptionResult getBucketEncryption(GetBucketEncryptionRequest request) throws SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public SetBucketEncryptionResult setBucketEncryption(SetBucketEncryptionRequest request) throws SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public void shutdown() {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }

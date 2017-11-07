@@ -204,6 +204,28 @@ public class Unmarshallers {
     }
 
     /**
+     * Unmarshaller for the DeleteBucketEncryption XML response.
+     */
+    public static final class DeleteBucketEncryptionUnmarshaller
+        implements Unmarshaller<DeleteBucketEncryptionResult, InputStream> {
+        public DeleteBucketEncryptionResult unmarshall(InputStream in) {
+            // DeleteBucketEncryption has no output shape
+            return new DeleteBucketEncryptionResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketEncryption XML response.
+     */
+    public static final class SetBucketEncryptionUnmarshaller
+        implements Unmarshaller<SetBucketEncryptionResult, InputStream> {
+        public SetBucketEncryptionResult unmarshall(InputStream in) {
+            // SetBucketEncryption has no output shape
+            return new SetBucketEncryptionResult();
+        }
+    }
+
+    /**
      * Unmarshaller for the a direct InputStream response.
      */
     public static final class InputStreamUnmarshaller implements
