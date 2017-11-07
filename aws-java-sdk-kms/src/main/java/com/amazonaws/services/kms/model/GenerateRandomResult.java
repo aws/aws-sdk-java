@@ -25,14 +25,16 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string.
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      */
     private java.nio.ByteBuffer plaintext;
 
     /**
      * <p>
-     * The random byte string.
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -46,7 +48,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The random byte string.
+     *        The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *        it is not encoded.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -55,7 +58,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string.
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -65,7 +69,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * {@code position}.
      * </p>
      * 
-     * @return The random byte string.
+     * @return The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *         it is not encoded.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -74,7 +79,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string.
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -88,7 +94,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The random byte string.
+     *        The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *        it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

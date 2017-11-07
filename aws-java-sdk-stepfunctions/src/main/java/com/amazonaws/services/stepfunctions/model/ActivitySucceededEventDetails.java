@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about an activity which successfully terminated during an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivitySucceededEventDetails"
  *      target="_top">AWS API Documentation</a>

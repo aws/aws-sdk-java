@@ -34,7 +34,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 1000.
+     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
+     * the default.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -103,7 +104,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 1000.
+     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
+     * the default.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -112,7 +114,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param maxResults
      *        The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     *        further pages of results. The default is 100 and the maximum allowed page size is 1000.</p>
+     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means
+     *        to use the default.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -125,7 +128,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 1000.
+     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
+     * the default.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -133,7 +137,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @return The maximum number of results that will be returned per call. <code>nextToken</code> can be used to
-     *         obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p>
+     *         obtain further pages of results. The default is 100 and the maximum allowed page size is 100. A value of
+     *         0 means to use the default.</p>
      *         <p>
      *         This is an upper limit only; the actual number of results returned per call may be fewer than the
      *         specified maximum.
@@ -146,7 +151,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     * further pages of results. The default is 100 and the maximum allowed page size is 1000.
+     * further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means to use
+     * the default.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -155,7 +161,8 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param maxResults
      *        The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain
-     *        further pages of results. The default is 100 and the maximum allowed page size is 1000.</p>
+     *        further pages of results. The default is 100 and the maximum allowed page size is 100. A value of 0 means
+     *        to use the default.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.

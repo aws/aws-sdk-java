@@ -417,7 +417,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Cancels the deletion of a customer master key (CMK). When this operation is successful, the CMK is set to the
-     * <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>.
+     * <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>. You cannot perform this operation on a CMK in
+     * a different AWS account.
      * </p>
      * <p>
      * For more information about scheduling and canceling deletion of a CMK, see <a
@@ -484,17 +485,30 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Creates a display name for a customer master key. An alias can be used to identify a key and should be unique.
-     * The console enforces a one-to-one mapping between the alias and a key. An alias name can contain only
-     * alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word
-     * "alias" followed by a forward slash (alias/). An alias that begins with "aws" after the forward slash
-     * (alias/aws...) is reserved by Amazon Web Services (AWS).
+     * Creates a display name for a customer master key (CMK). You can use an alias to identify a CMK in selected
+     * operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
      * </p>
      * <p>
-     * The alias and the key it is mapped to must be in the same AWS account and the same region.
+     * Each CMK can have multiple aliases, but each alias points to only one CMK. The alias name must be unique in the
+     * AWS account and region. To simplify code that runs in multiple regions, use the same alias name, but point it to
+     * a different CMK in each region.
      * </p>
      * <p>
-     * To map an alias to a different key, call <a>UpdateAlias</a>.
+     * Because an alias is not a property of a CMK, you can delete and change the aliases of a CMK without affecting the
+     * CMK. Also, aliases do not appear in the response from the <a>DescribeKey</a> operation. To get the aliases of all
+     * CMKs, use the <a>ListAliases</a> operation.
+     * </p>
+     * <p>
+     * An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>). The alias
+     * name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). Alias names
+     * cannot begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services (AWS).
+     * </p>
+     * <p>
+     * The alias and the CMK it is mapped to must be in the same AWS account and the same region. You cannot perform
+     * this operation on an alias in a different AWS account.
+     * </p>
+     * <p>
+     * To map an existing alias to a different CMK, call <a>UpdateAlias</a>.
      * </p>
      * 
      * @param createAliasRequest
@@ -562,11 +576,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Adds a grant to a key to specify who can use the key and under what conditions. Grants are alternate permission
-     * mechanisms to key policies.
+     * Adds a grant to a customer master key (CMK). The grant specifies who can use the CMK and under what conditions.
+     * When setting permissions, grants are an alternative to key policies.
      * </p>
      * <p>
-     * For more information about grants, see <a
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN in the value of the KeyId
+     * parameter. For more information about grants, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a> in the <i>AWS Key Management
      * Service Developer Guide</i>.
      * </p>
@@ -638,7 +653,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Creates a customer master key (CMK).
+     * Creates a customer master key (CMK) in the caller's AWS account.
      * </p>
      * <p>
      * You can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but CMKs are more commonly used to
@@ -658,6 +673,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You cannot use this operation to create a CMK in a different AWS account.
+     * </p>
      * 
      * @param createKeyRequest
      * @return Result of the CreateKey operation returned by the service.
@@ -727,7 +745,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by using any of the following
-     * functions:
+     * operations:
      * </p>
      * <ul>
      * <li>
@@ -762,7 +780,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws DisabledException
      *         The request was rejected because the specified CMK is not enabled.
      * @throws InvalidCiphertextException
-     *         The request was rejected because the specified ciphertext has been corrupted or is otherwise invalid.
+     *         The request was rejected because the specified ciphertext, or additional authenticated data incorporated
+     *         into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.
      * @throws KeyUnavailableException
      *         The request was rejected because the specified CMK was not available. The request can be retried.
      * @throws DependencyTimeoutException
@@ -820,7 +839,17 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.
+     * Deletes the specified alias. You cannot perform this operation on an alias in a different AWS account.
+     * </p>
+     * <p>
+     * Because an alias is not a property of a CMK, you can delete and change the aliases of a CMK without affecting the
+     * CMK. Also, aliases do not appear in the response from the <a>DescribeKey</a> operation. To get the aliases of all
+     * CMKs, use the <a>ListAliases</a> operation.
+     * </p>
+     * <p>
+     * Each CMK can have multiple aliases. To change the alias of a CMK, use <a>DeleteAlias</a> to delete the current
+     * alias and <a>CreateAlias</a> to create a new alias. To associate an existing alias with a different customer
+     * master key (CMK), call <a>UpdateAlias</a>.
      * </p>
      * 
      * @param deleteAliasRequest
@@ -880,10 +909,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Deletes key material that you previously imported and makes the specified customer master key (CMK) unusable. For
-     * more information about importing key material into AWS KMS, see <a
+     * Deletes key material that you previously imported. This operation makes the specified customer master key (CMK)
+     * unusable. For more information about importing key material into AWS KMS, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
-     * <i>AWS Key Management Service Developer Guide</i>.
+     * <i>AWS Key Management Service Developer Guide</i>. You cannot perform this operation on a CMK in a different AWS
+     * account.
      * </p>
      * <p>
      * When the specified CMK is in the <code>PendingDeletion</code> state, this operation does not change the CMK's
@@ -958,7 +988,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Provides detailed information about the specified customer master key.
+     * Provides detailed information about the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN or alias ARN in the value of
+     * the KeyId parameter.
      * </p>
      * 
      * @param describeKeyRequest
@@ -1015,7 +1049,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Sets the state of a customer master key (CMK) to disabled, thereby preventing its use for cryptographic
-     * operations. For more information about how key state affects the use of a CMK, see <a
+     * operations. You cannot perform this operation on a CMK in a different AWS account.
+     * </p>
+     * <p>
+     * For more information about how key state affects the use of a CMK, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
      * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -1079,7 +1116,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Disables rotation of the specified key.
+     * Disables automatic rotation of the key material for the specified customer master key (CMK). You cannot perform
+     * this operation on a CMK in a different AWS account.
      * </p>
      * 
      * @param disableKeyRotationRequest
@@ -1146,7 +1184,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Marks a key as enabled, thereby permitting its use.
+     * Sets the state of a customer master key (CMK) to enabled, thereby permitting its use for cryptographic
+     * operations. You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * 
      * @param enableKeyRequest
@@ -1212,7 +1251,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Enables rotation of the specified customer master key.
+     * Enables automatic rotation of the key material for the specified customer master key (CMK). You cannot perform
+     * this operation on a CMK in a different AWS account.
      * </p>
      * 
      * @param enableKeyRotationRequest
@@ -1279,19 +1319,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code> function has two
-     * primary use cases:
+     * Encrypts plaintext into ciphertext by using a customer master key (CMK). The <code>Encrypt</code> operation has
+     * two primary use cases:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or other sensitive customer
-     * information.
+     * You can encrypt up to 4 kilobytes (4096 bytes) of arbitrary data such as an RSA key, a database password, or
+     * other sensitive information.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you are moving encrypted data from one region to another, you can use this API to encrypt in the new region
+     * To move encrypted data from one AWS region to another, you can use this operation to encrypt in the new region
      * the plaintext data key that was used to encrypt the data in the original region. This provides you with an
      * encrypted copy of the data key that can be decrypted in the new region and used there to decrypt the encrypted
      * data.
@@ -1299,15 +1339,18 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * </ul>
      * <p>
-     * Unless you are moving encrypted data from one region to another, you don't use this function to encrypt a
-     * generated data key within a region. You retrieve data keys already encrypted by calling the
-     * <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be encrypted
-     * again by calling <code>Encrypt</code>.
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN or alias ARN in the value of
+     * the KeyId parameter.
      * </p>
      * <p>
-     * If you want to encrypt data locally in your application, you can use the <code>GenerateDataKey</code> function to
-     * return a plaintext data encryption key and a copy of the key encrypted under the customer master key (CMK) of
-     * your choosing.
+     * Unless you are moving encrypted data from one region to another, you don't use this operation to encrypt a
+     * generated data key within a region. To get data keys that are already encrypted, call the <a>GenerateDataKey</a>
+     * or <a>GenerateDataKeyWithoutPlaintext</a> operation. Data keys don't need to be encrypted again by calling
+     * <code>Encrypt</code>.
+     * </p>
+     * <p>
+     * To encrypt data locally in your application, use the <a>GenerateDataKey</a> operation to return a plaintext data
+     * encryption key and a copy of the key encrypted under the CMK of your choosing.
      * </p>
      * 
      * @param encryptRequest
@@ -1381,7 +1424,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * You must specify the customer master key (CMK) under which to generate the data key. You must also specify the
      * length of the data key using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field. You must
      * specify one field or the other, but not both. For common key lengths (128-bit and 256-bit symmetric keys), we
-     * recommend that you use <code>KeySpec</code>.
+     * recommend that you use <code>KeySpec</code>. To perform this operation on a CMK in a different AWS account,
+     * specify the key ARN or alias ARN in the value of the KeyId parameter.
      * </p>
      * <p>
      * This operation returns a plaintext copy of the data key in the <code>Plaintext</code> field of the response, and
@@ -1394,7 +1438,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <ol>
      * <li>
      * <p>
-     * Use this operation (<code>GenerateDataKey</code>) to retrieve a data encryption key.
+     * Use this operation (<code>GenerateDataKey</code>) to get a data encryption key.
      * </p>
      * </li>
      * <li>
@@ -1505,6 +1549,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Returns a data encryption key encrypted under a customer master key (CMK). This operation is identical to
      * <a>GenerateDataKey</a> but returns only the encrypted copy of the data key.
+     * </p>
+     * <p>
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN or alias ARN in the value of
+     * the KeyId parameter.
      * </p>
      * <p>
      * This operation is useful in a system that has multiple components with different degrees of trust. For example,
@@ -1647,7 +1695,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Retrieves a policy attached to the specified key.
+     * Gets a key policy attached to the specified customer master key (CMK). You cannot perform this operation on a CMK
+     * in a different AWS account.
      * </p>
      * 
      * @param getKeyPolicyRequest
@@ -1709,7 +1758,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Retrieves a Boolean value that indicates whether key rotation is enabled for the specified key.
+     * Gets a Boolean value that indicates whether automatic rotation of the key material is enabled for the specified
+     * customer master key (CMK).
+     * </p>
+     * <p>
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN in the value of the KeyId
+     * parameter.
      * </p>
      * 
      * @param getKeyRotationStatusRequest
@@ -1782,13 +1836,14 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * You must specify the key ID of the customer master key (CMK) into which you will import key material. This CMK's
      * <code>Origin</code> must be <code>EXTERNAL</code>. You must also specify the wrapping algorithm and type of
-     * wrapping key (public key) that you will use to encrypt the key material.
+     * wrapping key (public key) that you will use to encrypt the key material. You cannot perform this operation on a
+     * CMK in a different AWS account.
      * </p>
      * <p>
      * This operation returns a public key and an import token. Use the public key to encrypt the key material. Store
      * the import token to send with a subsequent <a>ImportKeyMaterial</a> request. The public key and import token from
-     * the same response must be used together. These items are valid for 24 hours, after which they cannot be used for
-     * a subsequent <a>ImportKeyMaterial</a> request. To retrieve new ones, send another
+     * the same response must be used together. These items are valid for 24 hours. When they expire, they cannot be
+     * used for a subsequent <a>ImportKeyMaterial</a> request. To get new ones, send another
      * <code>GetParametersForImport</code> request.
      * </p>
      * 
@@ -1855,27 +1910,55 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Imports key material into an AWS KMS customer master key (CMK) from your existing key management infrastructure.
-     * For more information about importing key material into AWS KMS, see <a
+     * Imports key material into an existing AWS KMS customer master key (CMK) that was created without key material.
+     * You cannot perform this operation on a CMK in a different AWS account. For more information about creating CMKs
+     * with no key material and then importing key material, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * You must specify the key ID of the CMK to import the key material into. This CMK's <code>Origin</code> must be
-     * <code>EXTERNAL</code>. You must also send an import token and the encrypted key material. Send the import token
-     * that you received in the same <a>GetParametersForImport</a> response that contained the public key that you used
-     * to encrypt the key material. You must also specify whether the key material expires and if so, when. When the key
-     * material expires, AWS KMS deletes the key material and the CMK becomes unusable. To use the CMK again, you can
-     * reimport the same key material. If you set an expiration date, you can change it only by reimporting the same key
-     * material and specifying a new expiration date.
+     * Before using this operation, call <a>GetParametersForImport</a>. Its response includes a public key and an import
+     * token. Use the public key to encrypt the key material. Then, submit the import token from the same
+     * <code>GetParametersForImport</code> response.
      * </p>
      * <p>
-     * When this operation is successful, the specified CMK's key state changes to <code>Enabled</code>, and you can use
-     * the CMK.
+     * When calling this operation, you must specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key ID or key ARN of a CMK with no key material. Its <code>Origin</code> must be <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * After you successfully import key material into a CMK, you can reimport the same key material into that CMK, but
-     * you cannot import different key material.
+     * To create a CMK with no key material, call <a>CreateKey</a> and set the value of its <code>Origin</code>
+     * parameter to <code>EXTERNAL</code>. To get the <code>Origin</code> of a CMK, call <a>DescribeKey</a>.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The encrypted key material. To get the public key to encrypt the key material, call
+     * <a>GetParametersForImport</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The import token that <a>GetParametersForImport</a> returned. This token and the public key used to encrypt the
+     * key material must have come from the same response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Whether the key material expires and if so, when. If you set an expiration date, you can change it only by
+     * reimporting the same key material and specifying a new expiration date. If the key material expires, AWS KMS
+     * deletes the key material and the CMK becomes unusable. To use the CMK again, you must reimport the same key
+     * material.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When this operation is successful, the CMK's key state changes from <code>PendingImport</code> to
+     * <code>Enabled</code>, and you can use the CMK. After you successfully import key material into a CMK, you can
+     * reimport the same key material into that CMK, but you cannot import different key material.
      * </p>
      * 
      * @param importKeyMaterialRequest
@@ -1898,14 +1981,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
      *         Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @throws InvalidCiphertextException
-     *         The request was rejected because the specified ciphertext has been corrupted or is otherwise invalid.
+     *         The request was rejected because the specified ciphertext, or additional authenticated data incorporated
+     *         into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.
      * @throws IncorrectKeyMaterialException
      *         The request was rejected because the provided key material is invalid or is not the same key material
      *         that was previously imported into this customer master key (CMK).
      * @throws ExpiredImportTokenException
      *         The request was rejected because the provided import token is expired. Use <a>GetParametersForImport</a>
-     *         to retrieve a new import token and public key, use the new public key to encrypt the key material, and
-     *         then try the request again.
+     *         to get a new import token and public key, use the new public key to encrypt the key material, and then
+     *         try the request again.
      * @throws InvalidImportTokenException
      *         The request was rejected because the provided import token is invalid or is associated with a different
      *         customer master key (CMK).
@@ -1952,7 +2036,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Lists all of the key aliases in the account.
+     * Gets a list of all aliases in the caller's AWS account and region. You cannot list aliases in other accounts. For
+     * more information about aliases, see <a>CreateAlias</a>.
+     * </p>
+     * <p>
+     * The response might include several aliases that do not have a <code>TargetKeyId</code> field because they are not
+     * associated with a CMK. These are predefined aliases that are reserved for CMKs managed by AWS services. If an
+     * alias is not associated with a CMK, the alias does not count against the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias limit</a> for your
+     * account.
      * </p>
      * 
      * @param listAliasesRequest
@@ -2012,7 +2104,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * List the grants for a specified key.
+     * Gets a list of all grants for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN in the value of the KeyId
+     * parameter.
      * </p>
      * 
      * @param listGrantsRequest
@@ -2077,7 +2173,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Retrieves a list of policies attached to a key.
+     * Gets the names of the key policies that are attached to a customer master key (CMK). This operation is designed
+     * to get policy names that you can use in a <a>GetKeyPolicy</a> operation. However, the only valid policy name is
+     * <code>default</code>. You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * 
      * @param listKeyPoliciesRequest
@@ -2139,7 +2237,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Lists the customer master keys.
+     * Gets a list of all customer master keys (CMKs) in the caller's AWS account and region.
      * </p>
      * 
      * @param listKeysRequest
@@ -2200,6 +2298,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Returns a list of all tags for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * 
      * @param listResourceTagsRequest
@@ -2318,7 +2419,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Attaches a key policy to the specified customer master key (CMK).
+     * Attaches a key policy to the specified customer master key (CMK). You cannot perform this operation on a CMK in a
+     * different AWS account.
      * </p>
      * <p>
      * For more information about key policies, see <a
@@ -2399,6 +2501,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * the encryption context of a ciphertext.
      * </p>
      * <p>
+     * You can reencrypt data using CMKs in different AWS accounts.
+     * </p>
+     * <p>
      * Unlike other operations, <code>ReEncrypt</code> is authorized twice, once as <code>ReEncryptFrom</code> on the
      * source CMK and once as <code>ReEncryptTo</code> on the destination CMK. We recommend that you include the
      * <code>"kms:ReEncrypt*"</code> permission in your <a
@@ -2415,7 +2520,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws DisabledException
      *         The request was rejected because the specified CMK is not enabled.
      * @throws InvalidCiphertextException
-     *         The request was rejected because the specified ciphertext has been corrupted or is otherwise invalid.
+     *         The request was rejected because the specified ciphertext, or additional authenticated data incorporated
+     *         into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.
      * @throws KeyUnavailableException
      *         The request was rejected because the specified CMK was not available. The request can be retried.
      * @throws DependencyTimeoutException
@@ -2567,7 +2673,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Revokes a grant. You can revoke a grant to actively deny operations that depend on it.
+     * Revokes the specified grant for the specified customer master key (CMK). You can revoke a grant to actively deny
+     * operations that depend on it.
+     * </p>
+     * <p>
+     * To perform this operation on a CMK in a different AWS account, specify the key ARN in the value of the KeyId
+     * parameter.
      * </p>
      * 
      * @param revokeGrantRequest
@@ -2636,6 +2747,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * operation is successful, the state of the CMK changes to <code>PendingDeletion</code>. Before the waiting period
      * ends, you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the waiting period ends, AWS
      * KMS deletes the CMK and all AWS KMS data associated with it, including all aliases that refer to it.
+     * </p>
+     * <p>
+     * You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * <important>
      * <p>
@@ -2709,7 +2823,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified customer master key (CMK).
+     * Adds or overwrites one or more tags for the specified customer master key (CMK). You cannot perform this
+     * operation on a CMK in a different AWS account.
      * </p>
      * <p>
      * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
@@ -2720,6 +2835,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <code>Purpose</code> and tag value is <code>Test</code>. If you send a <code>TagResource</code> request for this
      * CMK with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it does not create a second tag.
      * Instead, the original tag is overwritten with the new tag value.
+     * </p>
+     * <p>
+     * For information about the rules that apply to tag keys and tag values, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+     * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2785,7 +2905,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Removes the specified tag or tags from the specified customer master key (CMK).
+     * Removes the specified tag or tags from the specified customer master key (CMK). You cannot perform this operation
+     * on a CMK in a different AWS account.
      * </p>
      * <p>
      * To remove a tag, you specify the tag key for each tag to remove. You do not specify the tag value. To overwrite
@@ -2851,19 +2972,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Updates an alias to map it to a different key.
+     * Associates an existing alias with a different customer master key (CMK). Each CMK can have multiple aliases, but
+     * the aliases must be unique within the account and region. You cannot perform this operation on an alias in a
+     * different AWS account.
      * </p>
      * <p>
-     * An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped from an existing key
-     * without changing the properties of the key.
+     * This operation works only on existing aliases. To change the alias of a CMK to a new value, use
+     * <a>CreateAlias</a> to create a new alias and <a>DeleteAlias</a> to delete the old alias.
+     * </p>
+     * <p>
+     * Because an alias is not a property of a CMK, you can create, update, and delete the aliases of a CMK without
+     * affecting the CMK. Also, aliases do not appear in the response from the <a>DescribeKey</a> operation. To get the
+     * aliases of all CMKs in the account, use the <a>ListAliases</a> operation.
      * </p>
      * <p>
      * An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An
-     * alias must start with the word "alias" followed by a forward slash (alias/). An alias that begins with "aws"
-     * after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS).
-     * </p>
-     * <p>
-     * The alias and the key it is mapped to must be in the same AWS account and the same region.
+     * alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>). The alias
+     * name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). Alias names
+     * cannot begin with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services (AWS).
      * </p>
      * 
      * @param updateAliasRequest
@@ -2923,7 +3049,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Updates the description of a customer master key (CMK).
+     * Updates the description of a customer master key (CMK). To see the decription of a CMK, use <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * You cannot perform this operation on a CMK in a different AWS account.
      * </p>
      * 
      * @param updateKeyDescriptionRequest

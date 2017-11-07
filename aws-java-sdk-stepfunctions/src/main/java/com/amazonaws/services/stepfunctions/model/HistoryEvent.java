@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about the events of an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEvent" target="_top">AWS API
  *      Documentation</a>
@@ -27,7 +30,7 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date the event occurred.
      * </p>
      */
     private java.util.Date timestamp;
@@ -51,7 +54,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private Long previousEventId;
 
     private ActivityFailedEventDetails activityFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about an activity schedule event which failed during an execution.
+     * </p>
+     */
     private ActivityScheduleFailedEventDetails activityScheduleFailedEventDetails;
 
     private ActivityScheduledEventDetails activityScheduledEventDetails;
@@ -77,9 +84,17 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private LambdaFunctionScheduleFailedEventDetails lambdaFunctionScheduleFailedEventDetails;
 
     private LambdaFunctionScheduledEventDetails lambdaFunctionScheduledEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a lambda function which failed to start during an execution.
+     * </p>
+     */
     private LambdaFunctionStartFailedEventDetails lambdaFunctionStartFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a lambda function which terminated successfully during an execution.
+     * </p>
+     */
     private LambdaFunctionSucceededEventDetails lambdaFunctionSucceededEventDetails;
 
     private LambdaFunctionTimedOutEventDetails lambdaFunctionTimedOutEventDetails;
@@ -90,11 +105,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date the event occurred.
      * </p>
      * 
      * @param timestamp
-     *        The date the event occured.
+     *        The date the event occurred.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -103,10 +118,10 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date the event occurred.
      * </p>
      * 
-     * @return The date the event occured.
+     * @return The date the event occurred.
      */
 
     public java.util.Date getTimestamp() {
@@ -115,11 +130,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date the event occured.
+     * The date the event occurred.
      * </p>
      * 
      * @param timestamp
-     *        The date the event occured.
+     *        The date the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,7 +323,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about an activity schedule event which failed during an execution.
+     * </p>
+     * 
      * @param activityScheduleFailedEventDetails
+     *        Contains details about an activity schedule event which failed during an execution.
      */
 
     public void setActivityScheduleFailedEventDetails(ActivityScheduleFailedEventDetails activityScheduleFailedEventDetails) {
@@ -316,7 +336,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about an activity schedule event which failed during an execution.
+     * </p>
+     * 
+     * @return Contains details about an activity schedule event which failed during an execution.
      */
 
     public ActivityScheduleFailedEventDetails getActivityScheduleFailedEventDetails() {
@@ -324,7 +348,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about an activity schedule event which failed during an execution.
+     * </p>
+     * 
      * @param activityScheduleFailedEventDetails
+     *        Contains details about an activity schedule event which failed during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -646,7 +675,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function which failed to start during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionStartFailedEventDetails
+     *        Contains details about a lambda function which failed to start during an execution.
      */
 
     public void setLambdaFunctionStartFailedEventDetails(LambdaFunctionStartFailedEventDetails lambdaFunctionStartFailedEventDetails) {
@@ -654,7 +688,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a lambda function which failed to start during an execution.
+     * </p>
+     * 
+     * @return Contains details about a lambda function which failed to start during an execution.
      */
 
     public LambdaFunctionStartFailedEventDetails getLambdaFunctionStartFailedEventDetails() {
@@ -662,7 +700,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function which failed to start during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionStartFailedEventDetails
+     *        Contains details about a lambda function which failed to start during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -672,7 +715,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function which terminated successfully during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionSucceededEventDetails
+     *        Contains details about a lambda function which terminated successfully during an execution.
      */
 
     public void setLambdaFunctionSucceededEventDetails(LambdaFunctionSucceededEventDetails lambdaFunctionSucceededEventDetails) {
@@ -680,7 +728,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a lambda function which terminated successfully during an execution.
+     * </p>
+     * 
+     * @return Contains details about a lambda function which terminated successfully during an execution.
      */
 
     public LambdaFunctionSucceededEventDetails getLambdaFunctionSucceededEventDetails() {
@@ -688,7 +740,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a lambda function which terminated successfully during an execution.
+     * </p>
+     * 
      * @param lambdaFunctionSucceededEventDetails
+     *        Contains details about a lambda function which terminated successfully during an execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

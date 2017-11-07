@@ -27,21 +27,24 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption key.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or ARN of
-     * an alias that refers to the CMK. Examples:
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -55,6 +58,10 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      */
     private String keyId;
     /**
@@ -97,21 +104,24 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption key.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or ARN of
-     * an alias that refers to the CMK. Examples:
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -125,22 +135,31 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+     *        The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption
+     *        key.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or
-     *        ARN of an alias that refers to the CMK. Examples:
+     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
+     *        or alias ARN.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -153,6 +172,10 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *        and alias ARN, use <a>ListAliases</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -161,21 +184,24 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption key.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or ARN of
-     * an alias that refers to the CMK. Examples:
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -189,21 +215,30 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      * 
-     * @return The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+     * @return The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption
+     *         key.</p>
      *         <p>
-     *         A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name
-     *         or ARN of an alias that refers to the CMK. Examples:
+     *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *         alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key
+     *         ARN or alias ARN.
+     *         </p>
+     *         <p>
+     *         For example:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -216,6 +251,10 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      *         Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *         and alias ARN, use <a>ListAliases</a>.
      */
 
     public String getKeyId() {
@@ -224,21 +263,24 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier of the CMK under which to generate and encrypt the data encryption key.
+     * The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption key.
      * </p>
      * <p>
-     * A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or ARN of
-     * an alias that refers to the CMK. Examples:
+     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
+     * prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -252,22 +294,31 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
+     * alias ARN, use <a>ListAliases</a>.
+     * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK under which to generate and encrypt the data encryption key.</p>
+     *        The identifier of the customer master key (CMK) under which to generate and encrypt the data encryption
+     *        key.</p>
      *        <p>
-     *        A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK, or the alias name or
-     *        ARN of an alias that refers to the CMK. Examples:
+     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
+     *        or alias ARN.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -280,6 +331,10 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
+     *        and alias ARN, use <a>ListAliases</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

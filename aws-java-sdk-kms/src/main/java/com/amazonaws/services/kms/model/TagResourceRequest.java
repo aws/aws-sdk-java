@@ -27,13 +27,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A unique identifier for the CMK you are tagging.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -42,6 +47,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String keyId;
     /**
@@ -53,13 +61,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A unique identifier for the CMK you are tagging.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -68,14 +81,22 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name
-     *        (ARN) of the CMK. Examples:</p>
+     *        A unique identifier for the CMK you are tagging.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -83,6 +104,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -91,13 +115,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A unique identifier for the CMK you are tagging.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -106,13 +135,21 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
-     * @return A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource
-     *         Name (ARN) of the CMK. Examples:</p>
+     * @return A unique identifier for the CMK you are tagging.</p>
+     *         <p>
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -120,6 +157,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getKeyId() {
@@ -128,13 +168,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name (ARN)
-     * of the CMK. Examples:
+     * A unique identifier for the CMK you are tagging.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
@@ -143,14 +188,22 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the CMK you are tagging. You can use the unique key ID or the Amazon Resource Name
-     *        (ARN) of the CMK. Examples:</p>
+     *        A unique identifier for the CMK you are tagging.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -158,6 +211,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

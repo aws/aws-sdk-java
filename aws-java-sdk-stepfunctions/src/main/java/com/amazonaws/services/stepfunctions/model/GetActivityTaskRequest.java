@@ -27,13 +27,14 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using
+     * <a>CreateActivity</a>.)
      * </p>
      */
     private String activityArn;
     /**
      * <p>
-     * An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
      * used when it is logged in the execution history.
      * </p>
      */
@@ -41,11 +42,13 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using
+     * <a>CreateActivity</a>.)
      * </p>
      * 
      * @param activityArn
-     *        The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     *        The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
+     *        using <a>CreateActivity</a>.)
      */
 
     public void setActivityArn(String activityArn) {
@@ -54,10 +57,12 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using
+     * <a>CreateActivity</a>.)
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     * @return The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
+     *         using <a>CreateActivity</a>.)
      */
 
     public String getActivityArn() {
@@ -66,11 +71,13 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     * The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using
+     * <a>CreateActivity</a>.)
      * </p>
      * 
      * @param activityArn
-     *        The Amazon Resource Name (ARN) of the activity to retrieve tasks from.
+     *        The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
+     *        using <a>CreateActivity</a>.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,12 +88,12 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
      * used when it is logged in the execution history.
      * </p>
      * 
      * @param workerName
-     *        An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name
+     *        You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name
      *        will be used when it is logged in the execution history.
      */
 
@@ -96,11 +103,11 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
      * used when it is logged in the execution history.
      * </p>
      * 
-     * @return An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name
+     * @return You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name
      *         will be used when it is logged in the execution history.
      */
 
@@ -110,12 +117,12 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
      * used when it is logged in the execution history.
      * </p>
      * 
      * @param workerName
-     *        An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name
+     *        You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name
      *        will be used when it is logged in the execution history.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

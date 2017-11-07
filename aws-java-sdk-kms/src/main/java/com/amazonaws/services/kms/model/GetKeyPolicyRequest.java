@@ -27,63 +27,87 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String keyId;
     /**
      * <p>
-     * String that contains the name of the policy. Currently, this must be "default". Policy names can be discovered by
-     * calling <a>ListKeyPolicies</a>.
+     * Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key policies,
+     * use <a>ListKeyPolicies</a>.
      * </p>
      */
     private String policyName;
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *        fully specified ARN to a key.</p>
+     *        A unique identifier for the customer master key (CMK).</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -92,35 +116,51 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
-     * @return A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *         fully specified ARN to a key.</p>
+     * @return A unique identifier for the customer master key (CMK).</p>
+     *         <p>
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getKeyId() {
@@ -129,36 +169,52 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the customer master key (CMK).
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *        fully specified ARN to a key.</p>
+     *        A unique identifier for the customer master key (CMK).</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,13 +225,13 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * String that contains the name of the policy. Currently, this must be "default". Policy names can be discovered by
-     * calling <a>ListKeyPolicies</a>.
+     * Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key policies,
+     * use <a>ListKeyPolicies</a>.
      * </p>
      * 
      * @param policyName
-     *        String that contains the name of the policy. Currently, this must be "default". Policy names can be
-     *        discovered by calling <a>ListKeyPolicies</a>.
+     *        Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key
+     *        policies, use <a>ListKeyPolicies</a>.
      */
 
     public void setPolicyName(String policyName) {
@@ -184,12 +240,12 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * String that contains the name of the policy. Currently, this must be "default". Policy names can be discovered by
-     * calling <a>ListKeyPolicies</a>.
+     * Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key policies,
+     * use <a>ListKeyPolicies</a>.
      * </p>
      * 
-     * @return String that contains the name of the policy. Currently, this must be "default". Policy names can be
-     *         discovered by calling <a>ListKeyPolicies</a>.
+     * @return Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key
+     *         policies, use <a>ListKeyPolicies</a>.
      */
 
     public String getPolicyName() {
@@ -198,13 +254,13 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * String that contains the name of the policy. Currently, this must be "default". Policy names can be discovered by
-     * calling <a>ListKeyPolicies</a>.
+     * Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key policies,
+     * use <a>ListKeyPolicies</a>.
      * </p>
      * 
      * @param policyName
-     *        String that contains the name of the policy. Currently, this must be "default". Policy names can be
-     *        discovered by calling <a>ListKeyPolicies</a>.
+     *        Specifies the name of the policy. The only valid name is <code>default</code>. To get the names of key
+     *        policies, use <a>ListKeyPolicies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

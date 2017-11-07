@@ -27,31 +27,34 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the CMK.
+     * A unique identifier for the customer master key (CMK).
      * </p>
      * <p>
-     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String keyId;
     /**
      * <p>
-     * The name of the key policy.
-     * </p>
-     * <p>
-     * This value must be <code>default</code>.
+     * The name of the key policy. The only valid value is <code>default</code>.
      * </p>
      */
     private String policyName;
@@ -85,7 +88,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      */
     private String policy;
@@ -116,40 +119,52 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the CMK.
+     * A unique identifier for the customer master key (CMK).
      * </p>
      * <p>
-     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the CMK.</p>
+     *        A unique identifier for the customer master key (CMK).</p>
      *        <p>
-     *        Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setKeyId(String keyId) {
@@ -158,39 +173,51 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the CMK.
+     * A unique identifier for the customer master key (CMK).
      * </p>
      * <p>
-     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
-     * @return A unique identifier for the CMK.</p>
+     * @return A unique identifier for the customer master key (CMK).</p>
      *         <p>
-     *         Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getKeyId() {
@@ -199,40 +226,52 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier for the CMK.
+     * A unique identifier for the customer master key (CMK).
      * </p>
      * <p>
-     * Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param keyId
-     *        A unique identifier for the CMK.</p>
+     *        A unique identifier for the customer master key (CMK).</p>
      *        <p>
-     *        Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example:
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,16 +282,11 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the key policy.
-     * </p>
-     * <p>
-     * This value must be <code>default</code>.
+     * The name of the key policy. The only valid value is <code>default</code>.
      * </p>
      * 
      * @param policyName
-     *        The name of the key policy.</p>
-     *        <p>
-     *        This value must be <code>default</code>.
+     *        The name of the key policy. The only valid value is <code>default</code>.
      */
 
     public void setPolicyName(String policyName) {
@@ -261,15 +295,10 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the key policy.
-     * </p>
-     * <p>
-     * This value must be <code>default</code>.
+     * The name of the key policy. The only valid value is <code>default</code>.
      * </p>
      * 
-     * @return The name of the key policy.</p>
-     *         <p>
-     *         This value must be <code>default</code>.
+     * @return The name of the key policy. The only valid value is <code>default</code>.
      */
 
     public String getPolicyName() {
@@ -278,16 +307,11 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the key policy.
-     * </p>
-     * <p>
-     * This value must be <code>default</code>.
+     * The name of the key policy. The only valid value is <code>default</code>.
      * </p>
      * 
      * @param policyName
-     *        The name of the key policy.</p>
-     *        <p>
-     *        This value must be <code>default</code>.
+     *        The name of the key policy. The only valid value is <code>default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,7 +350,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      * 
      * @param policy
@@ -357,7 +381,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        The policy size limit is 32 KiB (32768 bytes).
+     *        The policy size limit is 32 kilobytes (32768 bytes).
      */
 
     public void setPolicy(String policy) {
@@ -394,7 +418,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      * 
      * @return The key policy to attach to the CMK.</p>
@@ -424,7 +448,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         The policy size limit is 32 KiB (32768 bytes).
+     *         The policy size limit is 32 kilobytes (32768 bytes).
      */
 
     public String getPolicy() {
@@ -461,7 +485,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      * 
      * @param policy
@@ -492,7 +516,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        The policy size limit is 32 KiB (32768 bytes).
+     *        The policy size limit is 32 kilobytes (32768 bytes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

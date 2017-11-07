@@ -22,6 +22,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag
  * values can be empty (null) strings.
  * </p>
+ * <p>
+ * For information about the rules that apply to tag keys and tag values, see <a
+ * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag
+ * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Tag" target="_top">AWS API Documentation</a>
  */

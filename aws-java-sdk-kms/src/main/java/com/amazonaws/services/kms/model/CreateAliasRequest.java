@@ -34,21 +34,29 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String aliasName;
     /**
      * <p>
-     * An identifier of the key for which you are creating the alias. This value cannot be another alias but can be a
-     * globally unique identifier or a fully specified ARN to a key.
+     * Identifies the CMK for which you are creating the alias. This value cannot be an alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      */
     private String targetKeyId;
 
@@ -100,36 +108,52 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An identifier of the key for which you are creating the alias. This value cannot be another alias but can be a
-     * globally unique identifier or a fully specified ARN to a key.
+     * Identifies the CMK for which you are creating the alias. This value cannot be an alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param targetKeyId
-     *        An identifier of the key for which you are creating the alias. This value cannot be another alias but can
-     *        be a globally unique identifier or a fully specified ARN to a key.</p>
+     *        Identifies the CMK for which you are creating the alias. This value cannot be an alias.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public void setTargetKeyId(String targetKeyId) {
@@ -138,35 +162,51 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An identifier of the key for which you are creating the alias. This value cannot be another alias but can be a
-     * globally unique identifier or a fully specified ARN to a key.
+     * Identifies the CMK for which you are creating the alias. This value cannot be an alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
-     * @return An identifier of the key for which you are creating the alias. This value cannot be another alias but can
-     *         be a globally unique identifier or a fully specified ARN to a key.</p>
+     * @return Identifies the CMK for which you are creating the alias. This value cannot be an alias.</p>
+     *         <p>
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      */
 
     public String getTargetKeyId() {
@@ -175,36 +215,52 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An identifier of the key for which you are creating the alias. This value cannot be another alias but can be a
-     * globally unique identifier or a fully specified ARN to a key.
+     * Identifies the CMK for which you are creating the alias. This value cannot be an alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
      * 
      * @param targetKeyId
-     *        An identifier of the key for which you are creating the alias. This value cannot be another alias but can
-     *        be a globally unique identifier or a fully specified ARN to a key.</p>
+     *        Identifies the CMK for which you are creating the alias. This value cannot be an alias.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

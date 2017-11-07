@@ -39,6 +39,36 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
@@ -61,7 +91,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date stopDate;
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      */
     private String input;
@@ -156,9 +186,68 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution.
+     *        The name of the execution.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        whitespace
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -169,8 +258,67 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the execution.
+     * @return The name of the execution.</p>
+     *         <p>
+     *         A name must <i>not</i> contain:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         whitespace
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         brackets <code>&lt; &gt; { } [ ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         wildcard characters <code>? *</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -181,9 +329,68 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution.
+     *        The name of the execution.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        whitespace
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,11 +554,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      * 
      * @param input
-     *        The JSON input data of the execution.
+     *        The string that contains the JSON input data of the execution.
      */
 
     public void setInput(String input) {
@@ -360,10 +567,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      * 
-     * @return The JSON input data of the execution.
+     * @return The string that contains the JSON input data of the execution.
      */
 
     public String getInput() {
@@ -372,11 +579,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON input data of the execution.
+     * The string that contains the JSON input data of the execution.
      * </p>
      * 
      * @param input
-     *        The JSON input data of the execution.
+     *        The string that contains the JSON input data of the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

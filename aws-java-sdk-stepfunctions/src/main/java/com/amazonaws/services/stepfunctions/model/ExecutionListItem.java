@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionListItem" target="_top">AWS API
  *      Documentation</a>
@@ -41,6 +44,36 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
@@ -146,9 +179,68 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution.
+     *        The name of the execution.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        whitespace
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -159,8 +251,67 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the execution.
+     * @return The name of the execution.</p>
+     *         <p>
+     *         A name must <i>not</i> contain:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         whitespace
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         brackets <code>&lt; &gt; { } [ ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         wildcard characters <code>? *</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -171,9 +322,68 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The name of the execution.
      * </p>
+     * <p>
+     * A name must <i>not</i> contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * whitespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * brackets <code>&lt; &gt; { } [ ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * wildcard characters <code>? *</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of the execution.
+     *        The name of the execution.</p>
+     *        <p>
+     *        A name must <i>not</i> contain:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        whitespace
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        brackets <code>&lt; &gt; { } [ ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        wildcard characters <code>? *</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

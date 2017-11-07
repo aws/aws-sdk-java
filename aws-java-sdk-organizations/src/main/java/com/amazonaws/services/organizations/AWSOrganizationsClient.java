@@ -1292,11 +1292,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * The user in the master account who calls this API must also have the <code>iam:CreateRole</code> permission
      * because AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
-     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
-     * clones the company name and address information for the new account from the organization's master account.
+     * <code>OrganizationAccountAccessRole</code>) that grants users in the master account administrator permissions in
+     * the new member account. Principals in the master account can assume the role. AWS Organizations clones the
+     * company name and address information for the new account from the organization's master account.
      * </p>
-     * <p/>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
      * <p>
      * For more information about creating accounts, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS
@@ -1321,11 +1323,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
      * Billing Information and Tools</a>.
      * </p>
-     * </note>
-     * <p>
-     * This operation can be called only from the organization's master account.
-     * </p>
-     * <important>
+     * </note> <important>
      * <p>
      * If you get an exception that indicates that you exceeded your account limits for the organization or that you
      * can"t add an account because your organization is still initializing, please contact <a href="
@@ -5914,6 +5912,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * you get a list of all the accounts in only that OU, and not in any child OUs. To get a list of all accounts in
      * the organization, use the <a>ListAccounts</a> operation.
      * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
      * 
      * @param listAccountsForParentRequest
      * @return Result of the ListAccountsForParent operation returned by the service.
@@ -6070,6 +6071,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Lists all of the OUs or accounts that are contained in the specified parent OU or root. This operation, along
      * with <a>ListParents</a> enables you to traverse the tree structure that makes up this root.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
      * </p>
      * 
      * @param listChildrenRequest

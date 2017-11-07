@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.225-SNAPSHOT</version>
+    <version>1.11.225</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-pricing</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-mobile</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -770,6 +776,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Pricing</title>
+                                  <packages>com.amazonaws.services.pricing*</packages>
+                              </group>
                               <group>
                                   <title>AWS Mobile</title>
                                   <packages>com.amazonaws.services.mobile*</packages>

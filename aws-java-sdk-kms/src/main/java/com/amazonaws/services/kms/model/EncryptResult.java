@@ -24,7 +24,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
@@ -37,7 +38,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -51,8 +53,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not
-     *        encoded.
+     *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *        it is not encoded.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -61,7 +63,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -71,8 +74,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * {@code position}.
      * </p>
      * 
-     * @return The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not
-     *         encoded.
+     * @return The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     *         Otherwise, it is not encoded.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -81,7 +84,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -95,8 +99,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted plaintext. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not
-     *        encoded.
+     *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *        it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

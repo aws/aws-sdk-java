@@ -1,3 +1,24 @@
+# __1.11.225__ __2017-11-07__
+## __AWS Key Management Service (KMS)__
+  - ### Features
+    - Documentation updates for AWS KMS. 
+
+## __AWS Organizations__
+  - ### Features
+    - This release updates permission statements for several API operations, and corrects some other minor errors.
+
+## __AWS Pricing__
+  - ### Features
+    - This is the initial release of AWS Price List Service.
+
+## __AWS Step Functions__
+  - ### Features
+    - Documentation update.
+
+## __Amazon EC2__
+  - ### Features
+    - You are now able to create and launch EC2 C5 instances, the next generation of EC2's compute-optimized instances, in us-east-1, us-west-2 and eu-west-1. C5 instances offer up to 72 vCPUs, 144 GiB of DDR4 instance memory, 25 Gbps in Network bandwidth and improved EBS and Networking bandwidth on smaller instance sizes to deliver improved performance for compute-intensive workloads.
+
 # __1.11.224__ __2017-11-03__
 ## __Amazon EC2 Container Service__
   - ### Features

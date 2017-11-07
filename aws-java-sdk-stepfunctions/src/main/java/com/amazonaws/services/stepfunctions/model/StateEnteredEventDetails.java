@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains details about a state entered during an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateEnteredEventDetails" target="_top">AWS
  *      API Documentation</a>
@@ -33,7 +36,7 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
     private String name;
     /**
      * <p>
-     * The JSON input data to the state.
+     * The string that contains the JSON input data for the state.
      * </p>
      */
     private String input;
@@ -80,11 +83,11 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The JSON input data to the state.
+     * The string that contains the JSON input data for the state.
      * </p>
      * 
      * @param input
-     *        The JSON input data to the state.
+     *        The string that contains the JSON input data for the state.
      */
 
     public void setInput(String input) {
@@ -93,10 +96,10 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The JSON input data to the state.
+     * The string that contains the JSON input data for the state.
      * </p>
      * 
-     * @return The JSON input data to the state.
+     * @return The string that contains the JSON input data for the state.
      */
 
     public String getInput() {
@@ -105,11 +108,11 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The JSON input data to the state.
+     * The string that contains the JSON input data for the state.
      * </p>
      * 
      * @param input
-     *        The JSON input data to the state.
+     *        The string that contains the JSON input data for the state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

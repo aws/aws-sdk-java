@@ -46,7 +46,7 @@ public class GetParametersForImportResult extends com.amazonaws.AmazonWebService
      * <p>
      * The time at which the import token and public key are no longer valid. After this time, you cannot use them to
      * make an <a>ImportKeyMaterial</a> request and you must send another <code>GetParametersForImport</code> request to
-     * retrieve new ones.
+     * get new ones.
      * </p>
      */
     private java.util.Date parametersValidTo;
@@ -235,13 +235,13 @@ public class GetParametersForImportResult extends com.amazonaws.AmazonWebService
      * <p>
      * The time at which the import token and public key are no longer valid. After this time, you cannot use them to
      * make an <a>ImportKeyMaterial</a> request and you must send another <code>GetParametersForImport</code> request to
-     * retrieve new ones.
+     * get new ones.
      * </p>
      * 
      * @param parametersValidTo
      *        The time at which the import token and public key are no longer valid. After this time, you cannot use
      *        them to make an <a>ImportKeyMaterial</a> request and you must send another
-     *        <code>GetParametersForImport</code> request to retrieve new ones.
+     *        <code>GetParametersForImport</code> request to get new ones.
      */
 
     public void setParametersValidTo(java.util.Date parametersValidTo) {
@@ -252,12 +252,12 @@ public class GetParametersForImportResult extends com.amazonaws.AmazonWebService
      * <p>
      * The time at which the import token and public key are no longer valid. After this time, you cannot use them to
      * make an <a>ImportKeyMaterial</a> request and you must send another <code>GetParametersForImport</code> request to
-     * retrieve new ones.
+     * get new ones.
      * </p>
      * 
      * @return The time at which the import token and public key are no longer valid. After this time, you cannot use
      *         them to make an <a>ImportKeyMaterial</a> request and you must send another
-     *         <code>GetParametersForImport</code> request to retrieve new ones.
+     *         <code>GetParametersForImport</code> request to get new ones.
      */
 
     public java.util.Date getParametersValidTo() {
@@ -268,13 +268,13 @@ public class GetParametersForImportResult extends com.amazonaws.AmazonWebService
      * <p>
      * The time at which the import token and public key are no longer valid. After this time, you cannot use them to
      * make an <a>ImportKeyMaterial</a> request and you must send another <code>GetParametersForImport</code> request to
-     * retrieve new ones.
+     * get new ones.
      * </p>
      * 
      * @param parametersValidTo
      *        The time at which the import token and public key are no longer valid. After this time, you cannot use
      *        them to make an <a>ImportKeyMaterial</a> request and you must send another
-     *        <code>GetParametersForImport</code> request to retrieve new ones.
+     *        <code>GetParametersForImport</code> request to get new ones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

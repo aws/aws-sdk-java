@@ -31,8 +31,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String keyId;
     /**
      * <p>
-     * Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you
-     * didn't have permission to use it.
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      */
     private java.nio.ByteBuffer plaintext;
@@ -85,8 +85,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you
-     * didn't have permission to use it.
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -100,8 +100,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param plaintext
-     *        Decrypted plaintext data. This value may not be returned if the customer master key is not available or if
-     *        you didn't have permission to use it.
+     *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     *        Otherwise, it is not encoded.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -110,8 +110,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you
-     * didn't have permission to use it.
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -121,8 +121,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * {@code position}.
      * </p>
      * 
-     * @return Decrypted plaintext data. This value may not be returned if the customer master key is not available or
-     *         if you didn't have permission to use it.
+     * @return Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     *         Otherwise, it is not encoded.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -131,8 +131,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Decrypted plaintext data. This value may not be returned if the customer master key is not available or if you
-     * didn't have permission to use it.
+     * Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -146,8 +146,8 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param plaintext
-     *        Decrypted plaintext data. This value may not be returned if the customer master key is not available or if
-     *        you didn't have permission to use it.
+     *        Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     *        Otherwise, it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

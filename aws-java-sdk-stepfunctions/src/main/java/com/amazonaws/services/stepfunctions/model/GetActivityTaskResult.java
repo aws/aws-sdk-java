@@ -33,7 +33,7 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
     private String taskToken;
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      */
     private String input;
@@ -92,11 +92,11 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      * 
      * @param input
-     *        The JSON input data for the task.
+     *        The string that contains the JSON input data for the task.
      */
 
     public void setInput(String input) {
@@ -105,10 +105,10 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      * 
-     * @return The JSON input data for the task.
+     * @return The string that contains the JSON input data for the task.
      */
 
     public String getInput() {
@@ -117,11 +117,11 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The JSON input data for the task.
+     * The string that contains the JSON input data for the task.
      * </p>
      * 
      * @param input
-     *        The JSON input data for the task.
+     *        The string that contains the JSON input data for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

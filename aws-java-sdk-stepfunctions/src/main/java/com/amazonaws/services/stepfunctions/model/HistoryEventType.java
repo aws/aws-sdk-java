@@ -43,12 +43,18 @@ public enum HistoryEventType {
     LambdaFunctionTimedOut("LambdaFunctionTimedOut"),
     SucceedStateEntered("SucceedStateEntered"),
     SucceedStateExited("SucceedStateExited"),
+    TaskStateAborted("TaskStateAborted"),
     TaskStateEntered("TaskStateEntered"),
     TaskStateExited("TaskStateExited"),
     PassStateEntered("PassStateEntered"),
     PassStateExited("PassStateExited"),
+    ParallelStateAborted("ParallelStateAborted"),
     ParallelStateEntered("ParallelStateEntered"),
     ParallelStateExited("ParallelStateExited"),
+    ParallelStateFailed("ParallelStateFailed"),
+    ParallelStateStarted("ParallelStateStarted"),
+    ParallelStateSucceeded("ParallelStateSucceeded"),
+    WaitStateAborted("WaitStateAborted"),
     WaitStateEntered("WaitStateEntered"),
     WaitStateExited("WaitStateExited");
 

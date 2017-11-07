@@ -60,7 +60,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      */
     private String policy;
@@ -169,7 +169,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      * 
      * @param policy
@@ -206,7 +206,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        The policy size limit is 32 KiB (32768 bytes).
+     *        The policy size limit is 32 kilobytes (32768 bytes).
      */
 
     public void setPolicy(String policy) {
@@ -248,7 +248,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      * 
      * @return The key policy to attach to the CMK.</p>
@@ -283,7 +283,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         Default Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
      *         <p>
-     *         The policy size limit is 32 KiB (32768 bytes).
+     *         The policy size limit is 32 kilobytes (32768 bytes).
      */
 
     public String getPolicy() {
@@ -325,7 +325,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * The policy size limit is 32 KiB (32768 bytes).
+     * The policy size limit is 32 kilobytes (32768 bytes).
      * </p>
      * 
      * @param policy
@@ -362,7 +362,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        The policy size limit is 32 KiB (32768 bytes).
+     *        The policy size limit is 32 kilobytes (32768 bytes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,23 +34,31 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String aliasName;
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key to be mapped to the alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      */
     private String targetKeyId;
@@ -103,42 +111,58 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key to be mapped to the alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key to be mapped to the alias. This value can be a globally
-     *        unique identifier or the fully specified ARN of a key.</p>
+     *        Unique identifier of the customer master key to be mapped to the alias.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     *        </p>
+     *        <p>
+     *        To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      */
 
     public void setTargetKeyId(String targetKeyId) {
@@ -147,42 +171,57 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key to be mapped to the alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return Unique identifier of the customer master key to be mapped to the alias. This value can be a globally
-     *         unique identifier or the fully specified ARN of a key.</p>
+     * @return Unique identifier of the customer master key to be mapped to the alias.</p>
+     *         <p>
+     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         You can call <a>ListAliases</a> to verify that the alias is mapped to the correct
-     *         <code>TargetKeyId</code>.
+     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     *         </p>
+     *         <p>
+     *         To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      */
 
     public String getTargetKeyId() {
@@ -191,42 +230,58 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the customer master key to be mapped to the alias. This value can be a globally unique
-     * identifier or the fully specified ARN of a key.
+     * Unique identifier of the customer master key to be mapped to the alias.
+     * </p>
+     * <p>
+     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * </p>
+     * <p>
+     * For example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     * </p>
+     * <p>
+     * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
      * @param targetKeyId
-     *        Unique identifier of the customer master key to be mapped to the alias. This value can be a globally
-     *        unique identifier or the fully specified ARN of a key.</p>
+     *        Unique identifier of the customer master key to be mapped to the alias.</p>
+     *        <p>
+     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        You can call <a>ListAliases</a> to verify that the alias is mapped to the correct <code>TargetKeyId</code>.
+     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
+     *        </p>
+     *        <p>
+     *        To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
