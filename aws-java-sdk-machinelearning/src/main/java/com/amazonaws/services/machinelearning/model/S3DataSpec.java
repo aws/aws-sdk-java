@@ -126,11 +126,11 @@ public class S3DataSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Datasource for evaluation:
-     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}}</code>
      * </p>
      * <p>
      * Datasource for training:
-     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}, "complement":"true"}}</code>
      * </p>
      * </li>
      * </ul>
@@ -330,11 +330,11 @@ public class S3DataSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Datasource for evaluation:
-     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}}}</code>
      * </p>
      * <p>
      * Datasource for training:
-     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}, "complement":"true"}}</code>
      * </p>
      * </li>
      * </ul>
@@ -433,11 +433,11 @@ public class S3DataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        Datasource for evaluation:
-     *        <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+     *        <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}}</code>
      *        </p>
      *        <p>
      *        Datasource for training:
-     *        <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+     *        <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}, "complement":"true"}}</code>
      *        </p>
      *        </li>
      */
@@ -540,11 +540,11 @@ public class S3DataSpec implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Datasource for evaluation:
-     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}}}</code>
      * </p>
      * <p>
      * Datasource for training:
-     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}, "complement":"true"}}</code>
      * </p>
      * </li>
      * </ul>
@@ -642,11 +642,11 @@ public class S3DataSpec implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         Datasource for evaluation:
-     *         <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code>
+     *         <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}}</code>
      *         </p>
      *         <p>
      *         Datasource for training:
-     *         <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
+     *         <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random", "strategyParams": {"randomSeed":"s3://my_s3_path/bucket/file.csv"}, "complement":"true"}}</code>
      *         </p>
      *         </li>
      */
