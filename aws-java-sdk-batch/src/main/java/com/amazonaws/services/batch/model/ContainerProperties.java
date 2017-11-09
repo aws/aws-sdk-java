@@ -128,7 +128,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * We do not recommend using plain text environment variables for sensitive information, such as credential data.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      */
     private java.util.List<KeyValuePair> environment;
     /**
@@ -822,7 +827,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * We do not recommend using plain text environment variables for sensitive information, such as credential data.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @return The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create a
@@ -833,6 +843,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         <p>
      *         We do not recommend using plain text environment variables for sensitive information, such as credential
      *         data.
+     *         </p>
+     *         </important> <note>
+     *         <p>
+     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *         variables that are set by the AWS Batch service.
      *         </p>
      */
 
@@ -852,7 +867,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * We do not recommend using plain text environment variables for sensitive information, such as credential data.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
      *        The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a
@@ -864,6 +884,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <p>
      *        We do not recommend using plain text environment variables for sensitive information, such as credential
      *        data.
+     *        </p>
+     *        </important> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
      *        </p>
      */
 
@@ -888,7 +913,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * We do not recommend using plain text environment variables for sensitive information, such as credential data.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnvironment(java.util.Collection)} or {@link #withEnvironment(java.util.Collection)} if you want to
@@ -905,6 +935,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <p>
      *        We do not recommend using plain text environment variables for sensitive information, such as credential
      *        data.
+     *        </p>
+     *        </important> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -931,7 +966,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <p>
      * We do not recommend using plain text environment variables for sensitive information, such as credential data.
      * </p>
-     * </important>
+     * </important> <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
      *        The environment variables to pass to a container. This parameter maps to <code>Env</code> in the <a
@@ -943,6 +983,11 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        <p>
      *        We do not recommend using plain text environment variables for sensitive information, such as credential
      *        data.
+     *        </p>
+     *        </important> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

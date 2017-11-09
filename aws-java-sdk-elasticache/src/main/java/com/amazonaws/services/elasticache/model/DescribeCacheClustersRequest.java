@@ -30,7 +30,7 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      */
@@ -75,13 +75,13 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      * 
      * @param cacheClusterId
      *        The user-supplied cluster identifier. If this parameter is specified, only information about that specific
-     *        cache cluster is returned. This parameter isn't case sensitive.
+     *        cluster is returned. This parameter isn't case sensitive.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -90,12 +90,12 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      * 
      * @return The user-supplied cluster identifier. If this parameter is specified, only information about that
-     *         specific cache cluster is returned. This parameter isn't case sensitive.
+     *         specific cluster is returned. This parameter isn't case sensitive.
      */
 
     public String getCacheClusterId() {
@@ -104,13 +104,13 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific cache
+     * The user-supplied cluster identifier. If this parameter is specified, only information about that specific
      * cluster is returned. This parameter isn't case sensitive.
      * </p>
      * 
      * @param cacheClusterId
      *        The user-supplied cluster identifier. If this parameter is specified, only information about that specific
-     *        cache cluster is returned. This parameter isn't case sensitive.
+     *        cluster is returned. This parameter isn't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

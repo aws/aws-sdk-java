@@ -32,7 +32,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     * <i>cluster</i> and <i>snapshot</i>.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -53,7 +54,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     * <i>cluster</i> and <i>snapshot</i>.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -64,7 +66,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param resourceName
      *        The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      *        <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     *        <i>cluster</i> and <i>snapshot</i>.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -79,7 +82,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     * <i>cluster</i> and <i>snapshot</i>.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -89,7 +93,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      *         <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     *         <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     *         <i>cluster</i> and <i>snapshot</i>.</p>
      *         <p>
      *         For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -104,7 +109,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     * <i>cluster</i> and <i>snapshot</i>.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -115,7 +121,8 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param resourceName
      *        The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example
      *        <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+     *        <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are
+     *        <i>cluster</i> and <i>snapshot</i>.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names

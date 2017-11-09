@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the maximum of 15 node groups (shards) in a single
- * replication group.
+ * The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a
+ * single replication group. The default maximum is 15
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

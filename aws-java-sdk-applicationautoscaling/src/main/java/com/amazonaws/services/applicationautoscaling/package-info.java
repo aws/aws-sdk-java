@@ -13,9 +13,9 @@
 
 /**
  * <p>
- * With Application Auto Scaling, you can automatically scale your AWS resources. The experience similar to that of <a
- * href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish the
- * following tasks:
+ * With Application Auto Scaling, you can automatically scale your AWS resources. The experience is similar to that of
+ * <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish
+ * the following tasks:
  * </p>
  * <ul>
  * <li>

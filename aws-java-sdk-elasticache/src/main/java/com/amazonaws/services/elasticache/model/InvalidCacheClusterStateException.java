@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested cache cluster is not in the <code>available</code> state.
+ * The requested cluster is not in the <code>available</code> state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

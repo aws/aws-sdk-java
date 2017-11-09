@@ -45,11 +45,6 @@ public class DescribeVpcEndpointsResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describeVpcEndpointsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("vpcEndpointSet", targetDepth)) {
                     describeVpcEndpointsResult.withVpcEndpoints(new ArrayList<VpcEndpoint>());
                     continue;
@@ -60,6 +55,10 @@ public class DescribeVpcEndpointsResultStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeVpcEndpointsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVpcEndpointsResult;

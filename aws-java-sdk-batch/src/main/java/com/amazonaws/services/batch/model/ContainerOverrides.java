@@ -53,6 +53,12 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      */
     private java.util.List<KeyValuePair> environment;
 
@@ -226,10 +232,20 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @return The environment variables to send to the container. You can add new environment variables, which are
      *         added to the container at launch, or you can override the existing environment variables from the Docker
-     *         image or the job definition.
+     *         image or the job definition.</p> <note>
+     *         <p>
+     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *         variables that are set by the AWS Batch service.
+     *         </p>
      */
 
     public java.util.List<KeyValuePair> getEnvironment() {
@@ -242,11 +258,21 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
      *        The environment variables to send to the container. You can add new environment variables, which are added
      *        to the container at launch, or you can override the existing environment variables from the Docker image
-     *        or the job definition.
+     *        or the job definition.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      */
 
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
@@ -264,6 +290,12 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnvironment(java.util.Collection)} or {@link #withEnvironment(java.util.Collection)} if you want to
@@ -273,7 +305,11 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * @param environment
      *        The environment variables to send to the container. You can add new environment variables, which are added
      *        to the container at launch, or you can override the existing environment variables from the Docker image
-     *        or the job definition.
+     *        or the job definition.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,11 +329,21 @@ public class ContainerOverrides implements Serializable, Cloneable, StructuredPo
      * container at launch, or you can override the existing environment variables from the Docker image or the job
      * definition.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
      *        The environment variables to send to the container. You can add new environment variables, which are added
      *        to the container at launch, or you can override the existing environment variables from the Docker image
-     *        or the job definition.
+     *        or the job definition.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,11 @@ public class ReplicationGroupPendingModifiedValuesStaxUnmarshaller implements Un
                     replicationGroupPendingModifiedValues.setAutomaticFailoverStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Resharding", targetDepth)) {
+                    replicationGroupPendingModifiedValues.setResharding(ReshardingStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroupPendingModifiedValues;

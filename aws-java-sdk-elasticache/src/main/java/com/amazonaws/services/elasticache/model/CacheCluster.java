@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains all of the attributes of a specific cache cluster.
+ * Contains all of the attributes of a specific cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheCluster" target="_top">AWS API
@@ -28,8 +28,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache
-     * cluster.
+     * The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      * </p>
      */
     private String cacheClusterId;
@@ -52,7 +51,7 @@ public class CacheCluster implements Serializable, Cloneable {
     private String clientDownloadLandingPage;
     /**
      * <p>
-     * The name of the compute and memory capacity node type for the cache cluster.
+     * The name of the compute and memory capacity node type for the cluster.
      * </p>
      * <p>
      * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
@@ -161,9 +160,6 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -176,28 +172,27 @@ public class CacheCluster implements Serializable, Cloneable {
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * The version of the cache engine that is used in this cache cluster.
+     * The version of the cache engine that is used in this cluster.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <code>available</code>,
-     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
-     * <code>snapshotting</code>.
+     * The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>,
+     * <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>,
+     * <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.
      * </p>
      */
     private String cacheClusterStatus;
     /**
      * <p>
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
@@ -207,14 +202,14 @@ public class CacheCluster implements Serializable, Cloneable {
     private Integer numCacheNodes;
     /**
      * <p>
-     * The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes are
-     * located in different Availability Zones.
+     * The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in
+     * different Availability Zones.
      * </p>
      */
     private String preferredAvailabilityZone;
     /**
      * <p>
-     * The date and time when the cache cluster was created.
+     * The date and time when the cluster was created.
      * </p>
      */
     private java.util.Date cacheClusterCreateTime;
@@ -291,13 +286,13 @@ public class CacheCluster implements Serializable, Cloneable {
     private CacheParameterGroupStatus cacheParameterGroup;
     /**
      * <p>
-     * The name of the cache subnet group associated with the cache cluster.
+     * The name of the cache subnet group associated with the cluster.
      * </p>
      */
     private String cacheSubnetGroupName;
     /**
      * <p>
-     * A list of cache nodes that are members of the cache cluster.
+     * A list of cache nodes that are members of the cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CacheNode> cacheNodes;
@@ -309,22 +304,22 @@ public class CacheCluster implements Serializable, Cloneable {
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * A list of VPC Security Groups associated with the cache cluster.
+     * A list of VPC Security Groups associated with the cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SecurityGroupMembership> securityGroups;
     /**
      * <p>
-     * The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not
-     * associated with any replication group.
+     * The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with
+     * any replication group.
      * </p>
      */
     private String replicationGroupId;
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -335,7 +330,7 @@ public class CacheCluster implements Serializable, Cloneable {
     private Integer snapshotRetentionLimit;
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
@@ -382,13 +377,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache
-     * cluster.
+     * The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache
-     *        cluster.
+     *        The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -397,12 +390,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache
-     * cluster.
+     * The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      * </p>
      * 
-     * @return The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a
-     *         cache cluster.
+     * @return The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      */
 
     public String getCacheClusterId() {
@@ -411,13 +402,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache
-     * cluster.
+     * The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The user-supplied identifier of the cache cluster. This identifier is a unique key that identifies a cache
-     *        cluster.
+     *        The user-supplied identifier of the cluster. This identifier is a unique key that identifies a cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,7 +524,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the compute and memory capacity node type for the cache cluster.
+     * The name of the compute and memory capacity node type for the cluster.
      * </p>
      * <p>
      * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
@@ -644,9 +633,6 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -657,7 +643,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param cacheNodeType
-     *        The name of the compute and memory capacity node type for the cache cluster.</p>
+     *        The name of the compute and memory capacity node type for the cluster.</p>
      *        <p>
      *        The following node types are supported by ElastiCache. Generally speaking, the current generation types
      *        provide more memory and computational power at lower cost when compared to their equivalent previous
@@ -767,9 +753,6 @@ public class CacheCluster implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported node types are available in all regions except as noted in the following table.
-     *        </p>
-     *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
      *        either <a href=
@@ -785,7 +768,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the compute and memory capacity node type for the cache cluster.
+     * The name of the compute and memory capacity node type for the cluster.
      * </p>
      * <p>
      * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
@@ -894,9 +877,6 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -906,7 +886,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * >Cache Node Type-Specific Parameters for Redis</a>.
      * </p>
      * 
-     * @return The name of the compute and memory capacity node type for the cache cluster.</p>
+     * @return The name of the compute and memory capacity node type for the cluster.</p>
      *         <p>
      *         The following node types are supported by ElastiCache. Generally speaking, the current generation types
      *         provide more memory and computational power at lower cost when compared to their equivalent previous
@@ -1016,9 +996,6 @@ public class CacheCluster implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         Supported node types are available in all regions except as noted in the following table.
-     *         </p>
-     *         <p>
      *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
      *         either <a href=
@@ -1034,7 +1011,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the compute and memory capacity node type for the cache cluster.
+     * The name of the compute and memory capacity node type for the cluster.
      * </p>
      * <p>
      * The following node types are supported by ElastiCache. Generally speaking, the current generation types provide
@@ -1143,9 +1120,6 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -1156,7 +1130,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param cacheNodeType
-     *        The name of the compute and memory capacity node type for the cache cluster.</p>
+     *        The name of the compute and memory capacity node type for the cluster.</p>
      *        <p>
      *        The following node types are supported by ElastiCache. Generally speaking, the current generation types
      *        provide more memory and computational power at lower cost when compared to their equivalent previous
@@ -1266,9 +1240,6 @@ public class CacheCluster implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported node types are available in all regions except as noted in the following table.
-     *        </p>
-     *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
      *        either <a href=
@@ -1286,12 +1257,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache
-     *        cluster.
+     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      */
 
     public void setEngine(String engine) {
@@ -1300,11 +1270,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      * </p>
      * 
-     * @return The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache
-     *         cluster.
+     * @return The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      */
 
     public String getEngine() {
@@ -1313,12 +1282,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache cluster.
+     * The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cache
-     *        cluster.
+     *        The name of the cache engine (<code>memcached</code> or <code>redis</code>) to be used for this cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1329,11 +1297,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the cache engine that is used in this cache cluster.
+     * The version of the cache engine that is used in this cluster.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the cache engine that is used in this cache cluster.
+     *        The version of the cache engine that is used in this cluster.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1342,10 +1310,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the cache engine that is used in this cache cluster.
+     * The version of the cache engine that is used in this cluster.
      * </p>
      * 
-     * @return The version of the cache engine that is used in this cache cluster.
+     * @return The version of the cache engine that is used in this cluster.
      */
 
     public String getEngineVersion() {
@@ -1354,11 +1322,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of the cache engine that is used in this cache cluster.
+     * The version of the cache engine that is used in this cluster.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the cache engine that is used in this cache cluster.
+     *        The version of the cache engine that is used in this cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1369,16 +1337,15 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <code>available</code>,
-     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
-     * <code>snapshotting</code>.
+     * The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>,
+     * <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>,
+     * <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.
      * </p>
      * 
      * @param cacheClusterStatus
-     *        The current state of this cache cluster, one of the following values: <code>available</code>,
+     *        The current state of this cluster, one of the following values: <code>available</code>,
      *        <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     *        <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     *        <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or
      *        <code>snapshotting</code>.
      */
 
@@ -1388,15 +1355,14 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <code>available</code>,
-     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
-     * <code>snapshotting</code>.
+     * The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>,
+     * <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>,
+     * <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.
      * </p>
      * 
-     * @return The current state of this cache cluster, one of the following values: <code>available</code>,
+     * @return The current state of this cluster, one of the following values: <code>available</code>,
      *         <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     *         <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     *         <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or
      *         <code>snapshotting</code>.
      */
 
@@ -1406,16 +1372,15 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of this cache cluster, one of the following values: <code>available</code>,
-     * <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     * <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
-     * <code>snapshotting</code>.
+     * The current state of this cluster, one of the following values: <code>available</code>, <code>creating</code>,
+     * <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>, <code>modifying</code>,
+     * <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or <code>snapshotting</code>.
      * </p>
      * 
      * @param cacheClusterStatus
-     *        The current state of this cache cluster, one of the following values: <code>available</code>,
+     *        The current state of this cluster, one of the following values: <code>available</code>,
      *        <code>creating</code>, <code>deleted</code>, <code>deleting</code>, <code>incompatible-network</code>,
-     *        <code>modifying</code>, <code>rebooting cache cluster nodes</code>, <code>restore-failed</code>, or
+     *        <code>modifying</code>, <code>rebooting cluster nodes</code>, <code>restore-failed</code>, or
      *        <code>snapshotting</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1427,7 +1392,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
@@ -1435,7 +1400,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param numCacheNodes
-     *        The number of cache nodes in the cache cluster.</p>
+     *        The number of cache nodes in the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
      *        between 1 and 20.
@@ -1447,14 +1412,14 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
      * and 20.
      * </p>
      * 
-     * @return The number of cache nodes in the cache cluster.</p>
+     * @return The number of cache nodes in the cluster.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
      *         between 1 and 20.
@@ -1466,7 +1431,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of cache nodes in the cache cluster.
+     * The number of cache nodes in the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
@@ -1474,7 +1439,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param numCacheNodes
-     *        The number of cache nodes in the cache cluster.</p>
+     *        The number of cache nodes in the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
      *        between 1 and 20.
@@ -1488,13 +1453,13 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes are
-     * located in different Availability Zones.
+     * The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in
+     * different Availability Zones.
      * </p>
      * 
      * @param preferredAvailabilityZone
-     *        The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes
-     *        are located in different Availability Zones.
+     *        The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are
+     *        located in different Availability Zones.
      */
 
     public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
@@ -1503,12 +1468,12 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes are
-     * located in different Availability Zones.
+     * The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in
+     * different Availability Zones.
      * </p>
      * 
-     * @return The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes
-     *         are located in different Availability Zones.
+     * @return The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are
+     *         located in different Availability Zones.
      */
 
     public String getPreferredAvailabilityZone() {
@@ -1517,13 +1482,13 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes are
-     * located in different Availability Zones.
+     * The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are located in
+     * different Availability Zones.
      * </p>
      * 
      * @param preferredAvailabilityZone
-     *        The name of the Availability Zone in which the cache cluster is located or "Multiple" if the cache nodes
-     *        are located in different Availability Zones.
+     *        The name of the Availability Zone in which the cluster is located or "Multiple" if the cache nodes are
+     *        located in different Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1534,11 +1499,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the cache cluster was created.
+     * The date and time when the cluster was created.
      * </p>
      * 
      * @param cacheClusterCreateTime
-     *        The date and time when the cache cluster was created.
+     *        The date and time when the cluster was created.
      */
 
     public void setCacheClusterCreateTime(java.util.Date cacheClusterCreateTime) {
@@ -1547,10 +1512,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the cache cluster was created.
+     * The date and time when the cluster was created.
      * </p>
      * 
-     * @return The date and time when the cache cluster was created.
+     * @return The date and time when the cluster was created.
      */
 
     public java.util.Date getCacheClusterCreateTime() {
@@ -1559,11 +1524,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time when the cache cluster was created.
+     * The date and time when the cluster was created.
      * </p>
      * 
      * @param cacheClusterCreateTime
-     *        The date and time when the cache cluster was created.
+     *        The date and time when the cluster was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2063,11 +2028,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache subnet group associated with the cache cluster.
+     * The name of the cache subnet group associated with the cluster.
      * </p>
      * 
      * @param cacheSubnetGroupName
-     *        The name of the cache subnet group associated with the cache cluster.
+     *        The name of the cache subnet group associated with the cluster.
      */
 
     public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
@@ -2076,10 +2041,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache subnet group associated with the cache cluster.
+     * The name of the cache subnet group associated with the cluster.
      * </p>
      * 
-     * @return The name of the cache subnet group associated with the cache cluster.
+     * @return The name of the cache subnet group associated with the cluster.
      */
 
     public String getCacheSubnetGroupName() {
@@ -2088,11 +2053,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the cache subnet group associated with the cache cluster.
+     * The name of the cache subnet group associated with the cluster.
      * </p>
      * 
      * @param cacheSubnetGroupName
-     *        The name of the cache subnet group associated with the cache cluster.
+     *        The name of the cache subnet group associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2103,10 +2068,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache nodes that are members of the cache cluster.
+     * A list of cache nodes that are members of the cluster.
      * </p>
      * 
-     * @return A list of cache nodes that are members of the cache cluster.
+     * @return A list of cache nodes that are members of the cluster.
      */
 
     public java.util.List<CacheNode> getCacheNodes() {
@@ -2118,11 +2083,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache nodes that are members of the cache cluster.
+     * A list of cache nodes that are members of the cluster.
      * </p>
      * 
      * @param cacheNodes
-     *        A list of cache nodes that are members of the cache cluster.
+     *        A list of cache nodes that are members of the cluster.
      */
 
     public void setCacheNodes(java.util.Collection<CacheNode> cacheNodes) {
@@ -2136,7 +2101,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache nodes that are members of the cache cluster.
+     * A list of cache nodes that are members of the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2145,7 +2110,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param cacheNodes
-     *        A list of cache nodes that are members of the cache cluster.
+     *        A list of cache nodes that are members of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2161,11 +2126,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache nodes that are members of the cache cluster.
+     * A list of cache nodes that are members of the cluster.
      * </p>
      * 
      * @param cacheNodes
-     *        A list of cache nodes that are members of the cache cluster.
+     *        A list of cache nodes that are members of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2228,10 +2193,10 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VPC Security Groups associated with the cache cluster.
+     * A list of VPC Security Groups associated with the cluster.
      * </p>
      * 
-     * @return A list of VPC Security Groups associated with the cache cluster.
+     * @return A list of VPC Security Groups associated with the cluster.
      */
 
     public java.util.List<SecurityGroupMembership> getSecurityGroups() {
@@ -2243,11 +2208,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VPC Security Groups associated with the cache cluster.
+     * A list of VPC Security Groups associated with the cluster.
      * </p>
      * 
      * @param securityGroups
-     *        A list of VPC Security Groups associated with the cache cluster.
+     *        A list of VPC Security Groups associated with the cluster.
      */
 
     public void setSecurityGroups(java.util.Collection<SecurityGroupMembership> securityGroups) {
@@ -2261,7 +2226,7 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VPC Security Groups associated with the cache cluster.
+     * A list of VPC Security Groups associated with the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2270,7 +2235,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroups
-     *        A list of VPC Security Groups associated with the cache cluster.
+     *        A list of VPC Security Groups associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2286,11 +2251,11 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of VPC Security Groups associated with the cache cluster.
+     * A list of VPC Security Groups associated with the cluster.
      * </p>
      * 
      * @param securityGroups
-     *        A list of VPC Security Groups associated with the cache cluster.
+     *        A list of VPC Security Groups associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2301,13 +2266,13 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not
-     * associated with any replication group.
+     * The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with
+     * any replication group.
      * </p>
      * 
      * @param replicationGroupId
-     *        The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is
-     *        not associated with any replication group.
+     *        The replication group to which this cluster belongs. If this field is empty, the cluster is not associated
+     *        with any replication group.
      */
 
     public void setReplicationGroupId(String replicationGroupId) {
@@ -2316,12 +2281,12 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not
-     * associated with any replication group.
+     * The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with
+     * any replication group.
      * </p>
      * 
-     * @return The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is
-     *         not associated with any replication group.
+     * @return The replication group to which this cluster belongs. If this field is empty, the cluster is not
+     *         associated with any replication group.
      */
 
     public String getReplicationGroupId() {
@@ -2330,13 +2295,13 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is not
-     * associated with any replication group.
+     * The replication group to which this cluster belongs. If this field is empty, the cluster is not associated with
+     * any replication group.
      * </p>
      * 
      * @param replicationGroupId
-     *        The replication group to which this cache cluster belongs. If this field is empty, the cache cluster is
-     *        not associated with any replication group.
+     *        The replication group to which this cluster belongs. If this field is empty, the cluster is not associated
+     *        with any replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2347,9 +2312,9 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -2358,9 +2323,9 @@ public class CacheCluster implements Serializable, Cloneable {
      * </important>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
-     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     *        retained for 5 days before being deleted.</p> <important>
+     *        The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For
+     *        example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained
+     *        for 5 days before being deleted.</p> <important>
      *        <p>
      *        If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *        </p>
@@ -2372,9 +2337,9 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -2382,9 +2347,9 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * </important>
      * 
-     * @return The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
-     *         For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     *         retained for 5 days before being deleted.</p> <important>
+     * @return The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For
+     *         example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained
+     *         for 5 days before being deleted.</p> <important>
      *         <p>
      *         If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *         </p>
@@ -2396,9 +2361,9 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -2407,9 +2372,9 @@ public class CacheCluster implements Serializable, Cloneable {
      * </important>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
-     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     *        retained for 5 days before being deleted.</p> <important>
+     *        The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For
+     *        example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained
+     *        for 5 days before being deleted.</p> <important>
      *        <p>
      *        If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
      *        </p>
@@ -2423,15 +2388,14 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
-     *        cluster.</p>
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
      *        <p>
      *        Example: <code>05:00-09:00</code>
      */
@@ -2442,13 +2406,13 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * 
-     * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
+     * @return The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your
      *         cluster.</p>
      *         <p>
      *         Example: <code>05:00-09:00</code>
@@ -2460,15 +2424,14 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache cluster.
+     * The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.
      * </p>
      * <p>
      * Example: <code>05:00-09:00</code>
      * </p>
      * 
      * @param snapshotWindow
-     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cache
-     *        cluster.</p>
+     *        The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster.</p>
      *        <p>
      *        Example: <code>05:00-09:00</code>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -34,7 +34,7 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
     private String marker;
     /**
      * <p>
-     * A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     * A list of clusters. Each item in the list contains detailed information about one cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CacheCluster> cacheClusters;
@@ -81,10 +81,10 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     * A list of clusters. Each item in the list contains detailed information about one cluster.
      * </p>
      * 
-     * @return A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     * @return A list of clusters. Each item in the list contains detailed information about one cluster.
      */
 
     public java.util.List<CacheCluster> getCacheClusters() {
@@ -96,11 +96,11 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     * A list of clusters. Each item in the list contains detailed information about one cluster.
      * </p>
      * 
      * @param cacheClusters
-     *        A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     *        A list of clusters. Each item in the list contains detailed information about one cluster.
      */
 
     public void setCacheClusters(java.util.Collection<CacheCluster> cacheClusters) {
@@ -114,7 +114,7 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     * A list of clusters. Each item in the list contains detailed information about one cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param cacheClusters
-     *        A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     *        A list of clusters. Each item in the list contains detailed information about one cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     * A list of clusters. Each item in the list contains detailed information about one cluster.
      * </p>
      * 
      * @param cacheClusters
-     *        A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
+     *        A list of clusters. Each item in the list contains detailed information about one cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

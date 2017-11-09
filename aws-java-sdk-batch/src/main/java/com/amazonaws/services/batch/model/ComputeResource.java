@@ -54,7 +54,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private Integer desiredvCpus;
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      */
     private java.util.List<String> instanceTypes;
@@ -309,10 +312,17 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
-     * @return The instances types that may launched.
+     * @return The instances types that may be launched. You can specify instance families to launch any instance type
+     *         within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific
+     *         sizes within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *         instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
+     *         job queues.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -321,11 +331,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
-     *        The instances types that may launched.
+     *        The instances types that may be launched. You can specify instance families to launch any instance type
+     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
+     *        job queues.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -339,7 +356,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -348,7 +368,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param instanceTypes
-     *        The instances types that may launched.
+     *        The instances types that may be launched. You can specify instance families to launch any instance type
+     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
+     *        job queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,11 +388,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The instances types that may launched.
+     * The instances types that may be launched. You can specify instance families to launch any instance type within
+     * those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes within a
+     * family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick instance types (from
+     * the latest C, M, and R instance families) on the fly that match the demand of your job queues.
      * </p>
      * 
      * @param instanceTypes
-     *        The instances types that may launched.
+     *        The instances types that may be launched. You can specify instance families to launch any instance type
+     *        within those families (for example, <code>c4</code> or <code>p3</code>), or you can specify specific sizes
+     *        within a family (such as <code>c4.8xlarge</code>). You can also choose <code>optimal</code> to pick
+     *        instance types (from the latest C, M, and R instance families) on the fly that match the demand of your
+     *        job queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

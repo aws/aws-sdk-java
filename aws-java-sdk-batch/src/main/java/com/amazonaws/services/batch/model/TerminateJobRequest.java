@@ -27,7 +27,7 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Job IDs to be terminated. Up to 100 jobs can be specified.
+     * The AWS Batch job ID of the job to terminate.
      * </p>
      */
     private String jobId;
@@ -41,11 +41,11 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Job IDs to be terminated. Up to 100 jobs can be specified.
+     * The AWS Batch job ID of the job to terminate.
      * </p>
      * 
      * @param jobId
-     *        Job IDs to be terminated. Up to 100 jobs can be specified.
+     *        The AWS Batch job ID of the job to terminate.
      */
 
     public void setJobId(String jobId) {
@@ -54,10 +54,10 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Job IDs to be terminated. Up to 100 jobs can be specified.
+     * The AWS Batch job ID of the job to terminate.
      * </p>
      * 
-     * @return Job IDs to be terminated. Up to 100 jobs can be specified.
+     * @return The AWS Batch job ID of the job to terminate.
      */
 
     public String getJobId() {
@@ -66,11 +66,11 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Job IDs to be terminated. Up to 100 jobs can be specified.
+     * The AWS Batch job ID of the job to terminate.
      * </p>
      * 
      * @param jobId
-     *        Job IDs to be terminated. Up to 100 jobs can be specified.
+     *        The AWS Batch job ID of the job to terminate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

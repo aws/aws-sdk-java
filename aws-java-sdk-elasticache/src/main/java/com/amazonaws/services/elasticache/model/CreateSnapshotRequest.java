@@ -36,7 +36,7 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     private String replicationGroupId;
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     * The identifier of an existing cluster. The snapshot is created from this cluster.
      * </p>
      */
     private String cacheClusterId;
@@ -89,11 +89,11 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     * The identifier of an existing cluster. The snapshot is created from this cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     *        The identifier of an existing cluster. The snapshot is created from this cluster.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -102,10 +102,10 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     * The identifier of an existing cluster. The snapshot is created from this cluster.
      * </p>
      * 
-     * @return The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     * @return The identifier of an existing cluster. The snapshot is created from this cluster.
      */
 
     public String getCacheClusterId() {
@@ -114,11 +114,11 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     * The identifier of an existing cluster. The snapshot is created from this cluster.
      * </p>
      * 
      * @param cacheClusterId
-     *        The identifier of an existing cache cluster. The snapshot is created from this cache cluster.
+     *        The identifier of an existing cluster. The snapshot is created from this cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

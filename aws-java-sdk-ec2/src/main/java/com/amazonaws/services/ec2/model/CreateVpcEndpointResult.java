@@ -27,56 +27,16 @@ public class CreateVpcEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * Information about the endpoint.
      * </p>
      */
     private VpcEndpoint vpcEndpoint;
-
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
      * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
      */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVpcEndpointResult withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
+    private String clientToken;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class CreateVpcEndpointResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointResult withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -129,10 +129,10 @@ public class CreateVpcEndpointResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getVpcEndpoint() != null)
-            sb.append("VpcEndpoint: ").append(getVpcEndpoint());
+            sb.append("VpcEndpoint: ").append(getVpcEndpoint()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -147,13 +147,13 @@ public class CreateVpcEndpointResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof CreateVpcEndpointResult == false)
             return false;
         CreateVpcEndpointResult other = (CreateVpcEndpointResult) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getVpcEndpoint() == null ^ this.getVpcEndpoint() == null)
             return false;
         if (other.getVpcEndpoint() != null && other.getVpcEndpoint().equals(this.getVpcEndpoint()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -163,8 +163,8 @@ public class CreateVpcEndpointResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpoint() == null) ? 0 : getVpcEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

@@ -30,9 +30,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
-     * up to.
+     * The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to
+     * identify the current node type of this cluster and from that to create a list of node types you can scale up to.
      * </p>
      * <important>
      * <p>
@@ -57,9 +56,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
-     * up to.
+     * The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to
+     * identify the current node type of this cluster and from that to create a list of node types you can scale up to.
      * </p>
      * <important>
      * <p>
@@ -68,9 +66,9 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </important>
      * 
      * @param cacheClusterId
-     *        The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
-     *        cluster id to identify the current node type of this cluster and from that to create a list of node types
-     *        you can scale up to.</p> <important>
+     *        The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
+     *        id to identify the current node type of this cluster and from that to create a list of node types you can
+     *        scale up to.</p> <important>
      *        <p>
      *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
      *        .
@@ -83,9 +81,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
-     * up to.
+     * The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to
+     * identify the current node type of this cluster and from that to create a list of node types you can scale up to.
      * </p>
      * <important>
      * <p>
@@ -93,7 +90,7 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </p>
      * </important>
      * 
-     * @return The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
+     * @return The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the
      *         cluster id to identify the current node type of this cluster and from that to create a list of node types
      *         you can scale up to.</p> <important>
      *         <p>
@@ -108,9 +105,8 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
-     * id to identify the current node type of this cluster and from that to create a list of node types you can scale
-     * up to.
+     * The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to
+     * identify the current node type of this cluster and from that to create a list of node types you can scale up to.
      * </p>
      * <important>
      * <p>
@@ -119,9 +115,9 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
      * </important>
      * 
      * @param cacheClusterId
-     *        The name of the cache cluster you want to scale up to a larger node instanced type. ElastiCache uses the
-     *        cluster id to identify the current node type of this cluster and from that to create a list of node types
-     *        you can scale up to.</p> <important>
+     *        The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster
+     *        id to identify the current node type of this cluster and from that to create a list of node types you can
+     *        scale up to.</p> <important>
      *        <p>
      *        You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>
      *        .

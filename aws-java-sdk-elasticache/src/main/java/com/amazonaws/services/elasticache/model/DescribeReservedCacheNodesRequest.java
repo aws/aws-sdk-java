@@ -154,9 +154,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -421,9 +418,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -544,9 +538,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        Supported node types are available in all regions except as noted in the following table.
-     *        </p>
      *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -673,9 +664,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -795,9 +783,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *         </p>
      *         </li>
      *         </ul>
-     *         <p>
-     *         Supported node types are available in all regions except as noted in the following table.
-     *         </p>
      *         <p>
      *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -924,9 +909,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -1047,9 +1029,6 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        Supported node types are available in all regions except as noted in the following table.
-     *        </p>
      *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and

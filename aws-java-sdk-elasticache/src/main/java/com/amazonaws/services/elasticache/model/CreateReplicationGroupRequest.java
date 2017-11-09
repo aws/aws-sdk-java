@@ -62,8 +62,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String replicationGroupDescription;
     /**
      * <p>
-     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <code>available</code>.
+     * The identifier of the cluster that serves as the primary for this replication group. This cluster must already
+     * exist and have a status of <code>available</code>.
      * </p>
      * <p>
      * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
@@ -128,7 +128,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Integer numCacheClusters;
     /**
      * <p>
-     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
      * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
      * the first AZ in the list.
      * </p>
@@ -138,7 +138,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
+     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
      * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
@@ -289,9 +289,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -304,21 +301,21 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine to be used for the cache clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group.
      * </p>
      */
     private String engine;
     /**
      * <p>
-     * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
+     * The version number of the cache engine to be used for the clusters in this replication group. To view the
      * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cache cluster
-     * or replication group and create it anew with the earlier engine version.
+     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or
+     * replication group and create it anew with the earlier engine version.
      * </p>
      */
     private String engineVersion;
@@ -379,7 +376,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not have
+     * to be accompanied by a tag value.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -405,9 +403,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String snapshotName;
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
@@ -471,7 +469,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * The Amazon SNS topic owner must be the same as the cluster owner.
      * </p>
      * </note>
      */
@@ -489,7 +487,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * deleted.
      * </p>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cluster).
      * </p>
      */
     private Integer snapshotRetentionLimit;
@@ -792,8 +790,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <code>available</code>.
+     * The identifier of the cluster that serves as the primary for this replication group. This cluster must already
+     * exist and have a status of <code>available</code>.
      * </p>
      * <p>
      * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
@@ -801,8 +799,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param primaryClusterId
-     *        The identifier of the cache cluster that serves as the primary for this replication group. This cache
-     *        cluster must already exist and have a status of <code>available</code>.</p>
+     *        The identifier of the cluster that serves as the primary for this replication group. This cluster must
+     *        already exist and have a status of <code>available</code>.</p>
      *        <p>
      *        This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
      *        <code>ReplicasPerNodeGroup</code> is specified.
@@ -814,16 +812,16 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <code>available</code>.
+     * The identifier of the cluster that serves as the primary for this replication group. This cluster must already
+     * exist and have a status of <code>available</code>.
      * </p>
      * <p>
      * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
      * <code>ReplicasPerNodeGroup</code> is specified.
      * </p>
      * 
-     * @return The identifier of the cache cluster that serves as the primary for this replication group. This cache
-     *         cluster must already exist and have a status of <code>available</code>.</p>
+     * @return The identifier of the cluster that serves as the primary for this replication group. This cluster must
+     *         already exist and have a status of <code>available</code>.</p>
      *         <p>
      *         This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
      *         <code>ReplicasPerNodeGroup</code> is specified.
@@ -835,8 +833,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the cache cluster that serves as the primary for this replication group. This cache cluster
-     * must already exist and have a status of <code>available</code>.
+     * The identifier of the cluster that serves as the primary for this replication group. This cluster must already
+     * exist and have a status of <code>available</code>.
      * </p>
      * <p>
      * This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
@@ -844,8 +842,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param primaryClusterId
-     *        The identifier of the cache cluster that serves as the primary for this replication group. This cache
-     *        cluster must already exist and have a status of <code>available</code>.</p>
+     *        The identifier of the cluster that serves as the primary for this replication group. This cluster must
+     *        already exist and have a status of <code>available</code>.</p>
      *        <p>
      *        This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or
      *        <code>ReplicasPerNodeGroup</code> is specified.
@@ -1266,7 +1264,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
      * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
      * the first AZ in the list.
      * </p>
@@ -1276,7 +1274,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
+     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
      * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
@@ -1287,17 +1285,17 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Default: system chosen Availability Zones.
      * </p>
      * 
-     * @return A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order
-     *         of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster
-     *         is created in the first AZ in the list.</p>
+     * @return A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
+     *         Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *         created in the first AZ in the list.</p>
      *         <p>
      *         This parameter is not used if there is more than one node group (shard). You should use
      *         <code>NodeGroupConfiguration</code> instead.
      *         </p>
      *         <note>
      *         <p>
-     *         If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *         clusters in Availability Zones associated with the subnets in the selected subnet group.
+     *         If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters
+     *         in Availability Zones associated with the subnets in the selected subnet group.
      *         </p>
      *         <p>
      *         The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
@@ -1316,7 +1314,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
      * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
      * the first AZ in the list.
      * </p>
@@ -1326,7 +1324,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
+     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
      * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
@@ -1338,8 +1336,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param preferredCacheClusterAZs
-     *        A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of
-     *        the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *        A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
+     *        Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
      *        created in the first AZ in the list.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
@@ -1347,8 +1345,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *        clusters in Availability Zones associated with the subnets in the selected subnet group.
+     *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
+     *        Availability Zones associated with the subnets in the selected subnet group.
      *        </p>
      *        <p>
      *        The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
@@ -1369,7 +1367,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
      * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
      * the first AZ in the list.
      * </p>
@@ -1379,7 +1377,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
+     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
      * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
@@ -1396,8 +1394,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param preferredCacheClusterAZs
-     *        A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of
-     *        the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *        A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
+     *        Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
      *        created in the first AZ in the list.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
@@ -1405,8 +1403,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *        clusters in Availability Zones associated with the subnets in the selected subnet group.
+     *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
+     *        Availability Zones associated with the subnets in the selected subnet group.
      *        </p>
      *        <p>
      *        The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
@@ -1429,7 +1427,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of the
+     * A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
      * Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in
      * the first AZ in the list.
      * </p>
@@ -1439,7 +1437,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache clusters in
+     * If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
      * Availability Zones associated with the subnets in the selected subnet group.
      * </p>
      * <p>
@@ -1451,8 +1449,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param preferredCacheClusterAZs
-     *        A list of EC2 Availability Zones in which the replication group's cache clusters are created. The order of
-     *        the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
+     *        A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the
+     *        Availability Zones in the list is the order in which clusters are allocated. The primary cluster is
      *        created in the first AZ in the list.</p>
      *        <p>
      *        This parameter is not used if there is more than one node group (shard). You should use
@@ -1460,8 +1458,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate cache
-     *        clusters in Availability Zones associated with the subnets in the selected subnet group.
+     *        If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in
+     *        Availability Zones associated with the subnets in the selected subnet group.
      *        </p>
      *        <p>
      *        The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.
@@ -1811,9 +1809,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -1933,9 +1928,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        Supported node types are available in all regions except as noted in the following table.
-     *        </p>
      *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -2061,9 +2053,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -2182,9 +2171,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </li>
      *         </ul>
-     *         <p>
-     *         Supported node types are available in all regions except as noted in the following table.
-     *         </p>
      *         <p>
      *         For a complete listing of node types and specifications, see <a
      *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
@@ -2310,9 +2296,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * Supported node types are available in all regions except as noted in the following table.
-     * </p>
-     * <p>
      * For a complete listing of node types and specifications, see <a
      * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
      * <a href=
@@ -2433,9 +2416,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        </ul>
      *        <p>
-     *        Supported node types are available in all regions except as noted in the following table.
-     *        </p>
-     *        <p>
      *        For a complete listing of node types and specifications, see <a
      *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
      *        either <a href=
@@ -2453,11 +2433,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the cache clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the cache clusters in this replication group.
+     *        The name of the cache engine to be used for the clusters in this replication group.
      */
 
     public void setEngine(String engine) {
@@ -2466,10 +2446,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the cache clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group.
      * </p>
      * 
-     * @return The name of the cache engine to be used for the cache clusters in this replication group.
+     * @return The name of the cache engine to be used for the clusters in this replication group.
      */
 
     public String getEngine() {
@@ -2478,11 +2458,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the cache clusters in this replication group.
+     * The name of the cache engine to be used for the clusters in this replication group.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the cache clusters in this replication group.
+     *        The name of the cache engine to be used for the clusters in this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2493,26 +2473,26 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
+     * The version number of the cache engine to be used for the clusters in this replication group. To view the
      * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cache cluster
-     * or replication group and create it anew with the earlier engine version.
+     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or
+     * replication group and create it anew with the earlier engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the cache engine to be used for the cache clusters in this replication group. To
-     *        view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+     *        The version number of the cache engine to be used for the clusters in this replication group. To view the
+     *        supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade
      *        to an earlier engine version. If you want to use an earlier engine version, you must delete the existing
-     *        cache cluster or replication group and create it anew with the earlier engine version.
+     *        cluster or replication group and create it anew with the earlier engine version.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -2521,25 +2501,25 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
+     * The version number of the cache engine to be used for the clusters in this replication group. To view the
      * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cache cluster
-     * or replication group and create it anew with the earlier engine version.
+     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or
+     * replication group and create it anew with the earlier engine version.
      * </p>
      * 
-     * @return The version number of the cache engine to be used for the cache clusters in this replication group. To
-     *         view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+     * @return The version number of the cache engine to be used for the clusters in this replication group. To view the
+     *         supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
      *         <p>
      *         <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      *         >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade
      *         to an earlier engine version. If you want to use an earlier engine version, you must delete the existing
-     *         cache cluster or replication group and create it anew with the earlier engine version.
+     *         cluster or replication group and create it anew with the earlier engine version.
      */
 
     public String getEngineVersion() {
@@ -2548,26 +2528,26 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The version number of the cache engine to be used for the cache clusters in this replication group. To view the
+     * The version number of the cache engine to be used for the clusters in this replication group. To view the
      * supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      * >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an
-     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cache cluster
-     * or replication group and create it anew with the earlier engine version.
+     * earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or
+     * replication group and create it anew with the earlier engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the cache engine to be used for the cache clusters in this replication group. To
-     *        view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+     *        The version number of the cache engine to be used for the clusters in this replication group. To view the
+     *        supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade
      *        to an earlier engine version. If you want to use an earlier engine version, you must delete the existing
-     *        cache cluster or replication group and create it anew with the earlier engine version.
+     *        cluster or replication group and create it anew with the earlier engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2985,10 +2965,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not have
+     * to be accompanied by a tag value.
      * </p>
      * 
-     * @return A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     * @return A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does
+     *         not have to be accompanied by a tag value.
      */
 
     public java.util.List<Tag> getTags() {
@@ -3000,11 +2982,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not have
+     * to be accompanied by a tag value.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not
+     *        have to be accompanied by a tag value.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -3018,7 +3002,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not have
+     * to be accompanied by a tag value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3027,7 +3012,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not
+     *        have to be accompanied by a tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3043,11 +3029,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     * A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not have
+     * to be accompanied by a tag value.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair.
+     *        A list of cost allocation tags to be added to this resource. A tag is a key-value pair. A tag key does not
+     *        have to be accompanied by a tag value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3229,9 +3217,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
@@ -3282,9 +3270,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period. Valid values for <code>ddd</code> are:</p>
      *        <p>
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
@@ -3340,9 +3328,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
@@ -3392,9 +3380,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
-     * @return Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *         specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period. Valid values for <code>ddd</code> are:</p>
      *         <p>
      *         Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
      *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
@@ -3450,9 +3438,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the weekly time range during which maintenance on the cache cluster is performed. It is specified as a
-     * range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period. Valid values for <code>ddd</code> are:
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * Valid values for <code>ddd</code> are:
      * </p>
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
@@ -3503,9 +3491,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Specifies the weekly time range during which maintenance on the cache cluster is performed. It is
-     *        specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period. Valid values for <code>ddd</code> are:</p>
      *        <p>
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
@@ -3608,7 +3596,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * The Amazon SNS topic owner must be the same as the cluster owner.
      * </p>
      * </note>
      * 
@@ -3616,7 +3604,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
      *        notifications are sent.</p> <note>
      *        <p>
-     *        The Amazon SNS topic owner must be the same as the cache cluster owner.
+     *        The Amazon SNS topic owner must be the same as the cluster owner.
      *        </p>
      */
 
@@ -3631,14 +3619,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * The Amazon SNS topic owner must be the same as the cluster owner.
      * </p>
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
      *         notifications are sent.</p> <note>
      *         <p>
-     *         The Amazon SNS topic owner must be the same as the cache cluster owner.
+     *         The Amazon SNS topic owner must be the same as the cluster owner.
      *         </p>
      */
 
@@ -3653,7 +3641,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * The Amazon SNS topic owner must be the same as the cache cluster owner.
+     * The Amazon SNS topic owner must be the same as the cluster owner.
      * </p>
      * </note>
      * 
@@ -3661,7 +3649,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which
      *        notifications are sent.</p> <note>
      *        <p>
-     *        The Amazon SNS topic owner must be the same as the cache cluster owner.
+     *        The Amazon SNS topic owner must be the same as the cluster owner.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3730,7 +3718,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * deleted.
      * </p>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cluster).
      * </p>
      * 
      * @param snapshotRetentionLimit
@@ -3738,7 +3726,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
      *        before being deleted.</p>
      *        <p>
-     *        Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     *        Default: 0 (i.e., automatic backups are disabled for this cluster).
      */
 
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -3752,14 +3740,14 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * deleted.
      * </p>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cluster).
      * </p>
      * 
      * @return The number of days for which ElastiCache retains automatic snapshots before deleting them. For example,
      *         if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
      *         days before being deleted.</p>
      *         <p>
-     *         Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     *         Default: 0 (i.e., automatic backups are disabled for this cluster).
      */
 
     public Integer getSnapshotRetentionLimit() {
@@ -3773,7 +3761,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * deleted.
      * </p>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cluster).
      * </p>
      * 
      * @param snapshotRetentionLimit
@@ -3781,7 +3769,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
      *        before being deleted.</p>
      *        <p>
-     *        Default: 0 (i.e., automatic backups are disabled for this cache cluster).
+     *        Default: 0 (i.e., automatic backups are disabled for this cluster).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

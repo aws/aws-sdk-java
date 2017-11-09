@@ -28,8 +28,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
+     * Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation.
      * </p>
      */
     private Boolean encrypted;
@@ -92,13 +93,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
+     * Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *        instances that support Amazon EBS encryption.
+     *        Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
+     *        support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an
+     *        encryption value. This is because only blank volumes can be encrypted on creation.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -107,12 +110,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
+     * Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *         instances that support Amazon EBS encryption.
+     * @return Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
+     *         support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an
+     *         encryption value. This is because only blank volumes can be encrypted on creation.
      */
 
     public Boolean getEncrypted() {
@@ -121,13 +126,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
+     * Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *        instances that support Amazon EBS encryption.
+     *        Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
+     *        support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an
+     *        encryption value. This is because only blank volumes can be encrypted on creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,12 +145,14 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to instances
-     * that support Amazon EBS encryption.
+     * Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support
+     * Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation.
      * </p>
      * 
-     * @return Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes may only be attached to
-     *         instances that support Amazon EBS encryption.
+     * @return Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that
+     *         support Amazon EBS encryption. If you are creating a volume from a snapshot, you can't specify an
+     *         encryption value. This is because only blank volumes can be encrypted on creation.
      */
 
     public Boolean isEncrypted() {

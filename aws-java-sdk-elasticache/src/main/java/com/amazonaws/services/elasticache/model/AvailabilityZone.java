@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Availability Zone in which the cache cluster is launched.
+ * Describes an Availability Zone in which the cluster is launched.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AvailabilityZone" target="_top">AWS API

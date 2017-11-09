@@ -29,16 +29,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
-     * <important>
-     * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
-     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
-     * using this action.
-     * </p>
-     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
@@ -315,24 +309,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
-     * <important>
-     * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
-     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
-     * using this action.
-     * </p>
-     * </important>
      * 
-     * @return The block device mapping.</p> <important>
-     *         <p>
-     *         Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
-     *         error. This is because only blank volumes can be encrypted on start, and these are not created from a
-     *         snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
-     *         status cannot be changed using this action.
-     *         </p>
+     * @return One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *         This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *         it is not blank and its encryption status is used for the volume encryption status.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -344,25 +328,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
-     * <important>
-     * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
-     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
-     * using this action.
-     * </p>
-     * </important>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping.</p> <important>
-     *        <p>
-     *        Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
-     *        error. This is because only blank volumes can be encrypted on start, and these are not created from a
-     *        snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
-     *        status cannot be changed using this action.
-     *        </p>
+     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *        it is not blank and its encryption status is used for the volume encryption status.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -376,16 +350,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
-     * <important>
-     * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
-     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
-     * using this action.
-     * </p>
-     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
@@ -393,13 +361,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping.</p> <important>
-     *        <p>
-     *        Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
-     *        error. This is because only blank volumes can be encrypted on start, and these are not created from a
-     *        snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
-     *        status cannot be changed using this action.
-     *        </p>
+     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *        it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,25 +379,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The block device mapping.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
-     * <important>
-     * <p>
-     * Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not created from a snapshot. If a
-     * snapshot is the basis for the volume, it contains data by definition and its encryption status cannot be changed
-     * using this action.
-     * </p>
-     * </important>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping.</p> <important>
-     *        <p>
-     *        Supplying both a snapshot ID and an encryption value as arguments for block-device mapping results in an
-     *        error. This is because only blank volumes can be encrypted on start, and these are not created from a
-     *        snapshot. If a snapshot is the basis for the volume, it contains data by definition and its encryption
-     *        status cannot be changed using this action.
-     *        </p>
+     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *        it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

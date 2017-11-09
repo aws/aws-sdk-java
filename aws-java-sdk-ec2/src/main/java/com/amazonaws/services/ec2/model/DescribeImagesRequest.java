@@ -178,6 +178,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel
+     * 82599 VF interface is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
      * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
      * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
@@ -450,6 +456,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel
+     * 82599 VF interface is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
      * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
      * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
@@ -616,6 +628,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <li>
      *         <p>
      *         <code>state-reason-message</code> - The message for the state change.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with
+     *         the Intel 82599 VF interface is enabled.
      *         </p>
      *         </li>
      *         <li>
@@ -799,6 +817,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel
+     * 82599 VF interface is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
      * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
      * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
@@ -966,6 +990,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>state-reason-message</code> - The message for the state change.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with
+     *        the Intel 82599 VF interface is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -1151,6 +1181,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel
+     * 82599 VF interface is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
      * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
      * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
@@ -1323,6 +1359,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>state-reason-message</code> - The message for the state change.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with
+     *        the Intel 82599 VF interface is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -1510,6 +1552,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
+     * <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with the Intel
+     * 82599 VF interface is enabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
      * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
      * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
@@ -1677,6 +1725,12 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>state-reason-message</code> - The message for the state change.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sriov-net-support</code> - A value of <code>simple</code> indicates that enhanced networking with
+     *        the Intel 82599 VF interface is enabled.
      *        </p>
      *        </li>
      *        <li>

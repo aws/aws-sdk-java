@@ -68,6 +68,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      */
     private java.util.List<KeyValuePair> environment;
     /**
@@ -122,7 +128,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String containerInstanceArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      */
     private String taskArn;
@@ -439,8 +446,18 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
-     * @return The environment variables to pass to a container.
+     * @return The environment variables to pass to a container.</p> <note>
+     *         <p>
+     *         Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *         variables that are set by the AWS Batch service.
+     *         </p>
      */
 
     public java.util.List<KeyValuePair> getEnvironment() {
@@ -451,9 +468,19 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
-     *        The environment variables to pass to a container.
+     *        The environment variables to pass to a container.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      */
 
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
@@ -469,6 +496,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnvironment(java.util.Collection)} or {@link #withEnvironment(java.util.Collection)} if you want to
@@ -476,7 +509,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param environment
-     *        The environment variables to pass to a container.
+     *        The environment variables to pass to a container.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,9 +531,19 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The environment variables to pass to a container.
      * </p>
+     * <note>
+     * <p>
+     * Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     * variables that are set by the AWS Batch service.
+     * </p>
+     * </note>
      * 
      * @param environment
-     *        The environment variables to pass to a container.
+     *        The environment variables to pass to a container.</p> <note>
+     *        <p>
+     *        Environment variables must not start with <code>AWS_BATCH</code>; this naming convention is reserved for
+     *        variables that are set by the AWS Batch service.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -925,11 +972,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *        container attempt receives a task ARN when they reach the <code>STARTING</code> status.
      */
 
     public void setTaskArn(String taskArn) {
@@ -938,10 +987,12 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * @return The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *         container attempt receives a task ARN when they reach the <code>STARTING</code> status.
      */
 
     public String getTaskArn() {
@@ -950,11 +1001,13 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each container
+     * attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job. Each
+     *        container attempt receives a task ARN when they reach the <code>STARTING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

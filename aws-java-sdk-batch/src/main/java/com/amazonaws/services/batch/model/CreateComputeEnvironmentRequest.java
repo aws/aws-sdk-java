@@ -27,8 +27,8 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-     * allowed.
+     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      */
     private String computeEnvironmentName;
@@ -74,12 +74,12 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-     * allowed.
+     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and
+     *        The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
      *        underscores are allowed.
      */
 
@@ -89,11 +89,11 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-     * allowed.
+     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
-     * @return The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and
+     * @return The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
      *         underscores are allowed.
      */
 
@@ -103,12 +103,12 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
-     * allowed.
+     * The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and
+     *        The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
      *        underscores are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -20,10 +20,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum State {
 
+    PendingAcceptance("PendingAcceptance"),
     Pending("Pending"),
     Available("Available"),
     Deleting("Deleting"),
-    Deleted("Deleted");
+    Deleted("Deleted"),
+    Rejected("Rejected"),
+    Failed("Failed"),
+    Expired("Expired");
 
     private String value;
 

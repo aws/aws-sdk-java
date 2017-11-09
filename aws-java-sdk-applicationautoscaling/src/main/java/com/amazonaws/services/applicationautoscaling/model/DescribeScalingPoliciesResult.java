@@ -25,7 +25,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      */
     private java.util.List<ScalingPolicy> scalingPolicies;
@@ -39,10 +39,10 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * 
-     * @return A list of scaling policy objects.
+     * @return Information about the scaling policies.
      */
 
     public java.util.List<ScalingPolicy> getScalingPolicies() {
@@ -51,11 +51,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * 
      * @param scalingPolicies
-     *        A list of scaling policy objects.
+     *        Information about the scaling policies.
      */
 
     public void setScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
@@ -69,7 +69,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param scalingPolicies
-     *        A list of scaling policy objects.
+     *        Information about the scaling policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of scaling policy objects.
+     * Information about the scaling policies.
      * </p>
      * 
      * @param scalingPolicies
-     *        A list of scaling policy objects.
+     *        Information about the scaling policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

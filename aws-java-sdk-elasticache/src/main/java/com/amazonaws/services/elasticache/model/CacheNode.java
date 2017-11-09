@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's
+ * Represents an individual cache node within a cluster. Each cache node runs its own instance of the cluster's
  * protocol-compliant caching software - either Memcached or Redis.
  * </p>
  * <p>
@@ -126,9 +126,6 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * Supported node types are available in all regions except as noted in the following table.
- * </p>
- * <p>
  * For a complete listing of node types and specifications, see <a
  * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a
  * href=
@@ -178,7 +175,7 @@ public class CacheNode implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is
-     * not associated with a primary cache cluster.
+     * not associated with a primary cluster.
      * </p>
      */
     private String sourceCacheNodeId;
@@ -398,12 +395,12 @@ public class CacheNode implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is
-     * not associated with a primary cache cluster.
+     * not associated with a primary cluster.
      * </p>
      * 
      * @param sourceCacheNodeId
      *        The ID of the primary node to which this read replica node is synchronized. If this field is empty, this
-     *        node is not associated with a primary cache cluster.
+     *        node is not associated with a primary cluster.
      */
 
     public void setSourceCacheNodeId(String sourceCacheNodeId) {
@@ -413,11 +410,11 @@ public class CacheNode implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is
-     * not associated with a primary cache cluster.
+     * not associated with a primary cluster.
      * </p>
      * 
      * @return The ID of the primary node to which this read replica node is synchronized. If this field is empty, this
-     *         node is not associated with a primary cache cluster.
+     *         node is not associated with a primary cluster.
      */
 
     public String getSourceCacheNodeId() {
@@ -427,12 +424,12 @@ public class CacheNode implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the primary node to which this read replica node is synchronized. If this field is empty, this node is
-     * not associated with a primary cache cluster.
+     * not associated with a primary cluster.
      * </p>
      * 
      * @param sourceCacheNodeId
      *        The ID of the primary node to which this read replica node is synchronized. If this field is empty, this
-     *        node is not associated with a primary cache cluster.
+     *        node is not associated with a primary cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,8 +40,16 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createVpcEndpointRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointRequest.getClientToken()));
+        if (createVpcEndpointRequest.getVpcEndpointType() != null) {
+            request.addParameter("VpcEndpointType", StringUtils.fromString(createVpcEndpointRequest.getVpcEndpointType()));
+        }
+
+        if (createVpcEndpointRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createVpcEndpointRequest.getVpcId()));
+        }
+
+        if (createVpcEndpointRequest.getServiceName() != null) {
+            request.addParameter("ServiceName", StringUtils.fromString(createVpcEndpointRequest.getServiceName()));
         }
 
         if (createVpcEndpointRequest.getPolicyDocument() != null) {
@@ -61,12 +69,39 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
-        if (createVpcEndpointRequest.getServiceName() != null) {
-            request.addParameter("ServiceName", StringUtils.fromString(createVpcEndpointRequest.getServiceName()));
+        com.amazonaws.internal.SdkInternalList<String> createVpcEndpointRequestSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) createVpcEndpointRequest
+                .getSubnetIds();
+        if (!createVpcEndpointRequestSubnetIdsList.isEmpty() || !createVpcEndpointRequestSubnetIdsList.isAutoConstruct()) {
+            int subnetIdsListIndex = 1;
+
+            for (String createVpcEndpointRequestSubnetIdsListValue : createVpcEndpointRequestSubnetIdsList) {
+                if (createVpcEndpointRequestSubnetIdsListValue != null) {
+                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(createVpcEndpointRequestSubnetIdsListValue));
+                }
+                subnetIdsListIndex++;
+            }
         }
 
-        if (createVpcEndpointRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(createVpcEndpointRequest.getVpcId()));
+        com.amazonaws.internal.SdkInternalList<String> createVpcEndpointRequestSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createVpcEndpointRequest
+                .getSecurityGroupIds();
+        if (!createVpcEndpointRequestSecurityGroupIdsList.isEmpty() || !createVpcEndpointRequestSecurityGroupIdsList.isAutoConstruct()) {
+            int securityGroupIdsListIndex = 1;
+
+            for (String createVpcEndpointRequestSecurityGroupIdsListValue : createVpcEndpointRequestSecurityGroupIdsList) {
+                if (createVpcEndpointRequestSecurityGroupIdsListValue != null) {
+                    request.addParameter("SecurityGroupId." + securityGroupIdsListIndex,
+                            StringUtils.fromString(createVpcEndpointRequestSecurityGroupIdsListValue));
+                }
+                securityGroupIdsListIndex++;
+            }
+        }
+
+        if (createVpcEndpointRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointRequest.getClientToken()));
+        }
+
+        if (createVpcEndpointRequest.getPrivateDnsEnabled() != null) {
+            request.addParameter("PrivateDnsEnabled", StringUtils.fromBoolean(createVpcEndpointRequest.getPrivateDnsEnabled()));
         }
 
         return request;

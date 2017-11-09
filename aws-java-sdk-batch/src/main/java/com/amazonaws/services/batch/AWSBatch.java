@@ -105,10 +105,10 @@ public interface AWSBatch {
 
     /**
      * <p>
-     * Cancels jobs in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
+     * Cancels a job in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
      * <code>RUNNABLE</code> state are cancelled. Jobs that have progressed to <code>STARTING</code> or
-     * <code>RUNNING</code> are not cancelled (but the API operation still succeeds, even if no jobs are cancelled);
-     * these jobs must be terminated with the <a>TerminateJob</a> operation.
+     * <code>RUNNING</code> are not cancelled (but the API operation still succeeds, even if no job is cancelled); these
+     * jobs must be terminated with the <a>TerminateJob</a> operation.
      * </p>
      * 
      * @param cancelJobRequest
@@ -400,7 +400,7 @@ public interface AWSBatch {
 
     /**
      * <p>
-     * Terminates jobs in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are
+     * Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are
      * terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the
      * <code>STARTING</code> state are cancelled.
      * </p>

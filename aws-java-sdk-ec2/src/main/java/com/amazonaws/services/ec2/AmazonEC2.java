@@ -1571,12 +1571,18 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create a private connection
-     * between your VPC and another AWS service in your account. You can specify an endpoint policy to attach to the
-     * endpoint that will control access to the service from your VPC. You can also specify the VPC route tables that
-     * use the endpoint.
+     * between your VPC and another AWS service in your account. You can create a gateway endpoint or an interface
+     * endpoint.
      * </p>
      * <p>
-     * Use <a>DescribeVpcEndpointServices</a> to get a list of supported AWS services.
+     * A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service.
+     * You can specify the VPC route tables that use the endpoint, and you can optionally specify an endpoint policy to
+     * attach to the endpoint that will control access to the service from your VPC.
+     * </p>
+     * <p>
+     * An interface endpoint is a network interface in your subnet with a private IP address that serves as an entry
+     * point for traffic destined to the AWS service. You can specify the subnets in which to create an endpoint, and
+     * the security groups to associate with the network interface.
      * </p>
      * 
      * @param createVpcEndpointRequest
@@ -2064,8 +2070,9 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more specified VPC endpoints. Deleting the endpoint also deletes the endpoint routes in the route
-     * tables that were associated with the endpoint.
+     * Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes the endpoint routes in the
+     * route tables that were associated with the endpoint. Deleting an interface endpoint deletes the endpoint network
+     * interfaces.
      * </p>
      * 
      * @param deleteVpcEndpointsRequest
@@ -2425,7 +2432,7 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
      * </p>
      * 
      * @param describeElasticGpusRequest
@@ -4818,8 +4825,10 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Modifies attributes of a specified VPC endpoint. You can modify the policy associated with the endpoint, and you
-     * can add and remove route tables associated with the endpoint.
+     * Modifies attributes of a specified VPC endpoint. The attributes that you can modify depend on the type of VPC
+     * endpoint (interface or gateway). For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC Endpoints</a> in the
+     * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyVpcEndpointRequest

@@ -34,7 +34,7 @@ public class DeleteCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * The specified cache security group must not be associated with any cache clusters.
+     * The specified cache security group must not be associated with any clusters.
      * </p>
      * </note>
      */
@@ -54,7 +54,7 @@ public class DeleteCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * @param cacheParameterGroupName
      *        The name of the cache parameter group to delete.</p> <note>
      *        <p>
-     *        The specified cache security group must not be associated with any cache clusters.
+     *        The specified cache security group must not be associated with any clusters.
      *        </p>
      */
     public DeleteCacheParameterGroupRequest(String cacheParameterGroupName) {
@@ -67,14 +67,14 @@ public class DeleteCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * The specified cache security group must not be associated with any cache clusters.
+     * The specified cache security group must not be associated with any clusters.
      * </p>
      * </note>
      * 
      * @param cacheParameterGroupName
      *        The name of the cache parameter group to delete.</p> <note>
      *        <p>
-     *        The specified cache security group must not be associated with any cache clusters.
+     *        The specified cache security group must not be associated with any clusters.
      *        </p>
      */
 
@@ -88,13 +88,13 @@ public class DeleteCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * The specified cache security group must not be associated with any cache clusters.
+     * The specified cache security group must not be associated with any clusters.
      * </p>
      * </note>
      * 
      * @return The name of the cache parameter group to delete.</p> <note>
      *         <p>
-     *         The specified cache security group must not be associated with any cache clusters.
+     *         The specified cache security group must not be associated with any clusters.
      *         </p>
      */
 
@@ -108,14 +108,14 @@ public class DeleteCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * The specified cache security group must not be associated with any cache clusters.
+     * The specified cache security group must not be associated with any clusters.
      * </p>
      * </note>
      * 
      * @param cacheParameterGroupName
      *        The name of the cache parameter group to delete.</p> <note>
      *        <p>
-     *        The specified cache security group must not be associated with any cache clusters.
+     *        The specified cache security group must not be associated with any clusters.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

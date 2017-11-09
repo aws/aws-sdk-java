@@ -43,6 +43,11 @@ public class AbstractAWSApplicationAutoScaling implements AWSApplicationAutoScal
     }
 
     @Override
+    public DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,7 +68,17 @@ public class AbstractAWSApplicationAutoScaling implements AWSApplicationAutoScal
     }
 
     @Override
+    public DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutScheduledActionResult putScheduledAction(PutScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

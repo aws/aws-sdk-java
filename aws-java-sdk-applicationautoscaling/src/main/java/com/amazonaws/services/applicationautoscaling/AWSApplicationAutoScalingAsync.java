@@ -26,9 +26,9 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </p>
  * <p>
  * <p>
- * With Application Auto Scaling, you can automatically scale your AWS resources. The experience similar to that of <a
- * href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish the
- * following tasks:
+ * With Application Auto Scaling, you can automatically scale your AWS resources. The experience is similar to that of
+ * <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish
+ * the following tasks:
  * </p>
  * <ul>
  * <li>
@@ -140,6 +140,37 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      */
     java.util.concurrent.Future<DeleteScalingPolicyResult> deleteScalingPolicyAsync(DeleteScalingPolicyRequest deleteScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteScalingPolicyRequest, DeleteScalingPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified Application Auto Scaling scheduled action.
+     * </p>
+     * 
+     * @param deleteScheduledActionRequest
+     * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsync.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Application Auto Scaling scheduled action.
+     * </p>
+     * 
+     * @param deleteScheduledActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsyncHandler.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest deleteScheduledActionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler);
 
     /**
      * <p>
@@ -284,7 +315,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
-     * Provides descriptive information about the scaling policies in the specified namespace.
+     * Describes the scaling policies for the specified service namespace.
      * </p>
      * <p>
      * You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>, and
@@ -305,7 +336,7 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
 
     /**
      * <p>
-     * Provides descriptive information about the scaling policies in the specified namespace.
+     * Describes the scaling policies for the specified service namespace.
      * </p>
      * <p>
      * You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>, and
@@ -328,6 +359,53 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      */
     java.util.concurrent.Future<DescribeScalingPoliciesResult> describeScalingPoliciesAsync(DescribeScalingPoliciesRequest describeScalingPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPoliciesRequest, DescribeScalingPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the scheduled actions for the specified service namespace.
+     * </p>
+     * <p>
+     * You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>, and
+     * <code>ScheduledActionNames</code> parameters.
+     * </p>
+     * <p>
+     * To create a scheduled action or update an existing one, see <a>PutScheduledAction</a>. If you are no longer using
+     * a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
+     * </p>
+     * 
+     * @param describeScheduledActionsRequest
+     * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsync.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest);
+
+    /**
+     * <p>
+     * Describes the scheduled actions for the specified service namespace.
+     * </p>
+     * <p>
+     * You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>, and
+     * <code>ScheduledActionNames</code> parameters.
+     * </p>
+     * <p>
+     * To create a scheduled action or update an existing one, see <a>PutScheduledAction</a>. If you are no longer using
+     * a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
+     * </p>
+     * 
+     * @param describeScheduledActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsyncHandler.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeScheduledActionsResult> describeScheduledActionsAsync(DescribeScheduledActionsRequest describeScheduledActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeScheduledActionsRequest, DescribeScheduledActionsResult> asyncHandler);
 
     /**
      * <p>
@@ -385,6 +463,65 @@ public interface AWSApplicationAutoScalingAsync extends AWSApplicationAutoScalin
      */
     java.util.concurrent.Future<PutScalingPolicyResult> putScalingPolicyAsync(PutScalingPolicyRequest putScalingPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutScalingPolicyRequest, PutScalingPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates a scheduled action for an Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
+     * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
+     * without first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * </p>
+     * <p>
+     * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
+     * end times, the old values are deleted. Any other parameters that you don't specify are not changed by this update
+     * request.
+     * </p>
+     * <p>
+     * You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are no longer using a scheduled
+     * action, you can delete it using <a>DeleteScheduledAction</a>.
+     * </p>
+     * 
+     * @param putScheduledActionRequest
+     * @return A Java Future containing the result of the PutScheduledAction operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsync.PutScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutScheduledActionResult> putScheduledActionAsync(PutScheduledActionRequest putScheduledActionRequest);
+
+    /**
+     * <p>
+     * Creates or updates a scheduled action for an Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
+     * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
+     * without first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * </p>
+     * <p>
+     * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
+     * end times, the old values are deleted. Any other parameters that you don't specify are not changed by this update
+     * request.
+     * </p>
+     * <p>
+     * You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are no longer using a scheduled
+     * action, you can delete it using <a>DeleteScheduledAction</a>.
+     * </p>
+     * 
+     * @param putScheduledActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutScheduledAction operation returned by the service.
+     * @sample AWSApplicationAutoScalingAsyncHandler.PutScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutScheduledActionResult> putScheduledActionAsync(PutScheduledActionRequest putScheduledActionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutScheduledActionRequest, PutScheduledActionResult> asyncHandler);
 
     /**
      * <p>

@@ -30,6 +30,12 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
+     * One or more endpoint IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> vpcEndpointIds;
+    /**
+     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -73,12 +79,79 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * One or more endpoint IDs.
      * </p>
+     * 
+     * @return One or more endpoint IDs.
      */
-    private com.amazonaws.internal.SdkInternalList<String> vpcEndpointIds;
+
+    public java.util.List<String> getVpcEndpointIds() {
+        if (vpcEndpointIds == null) {
+            vpcEndpointIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpcEndpointIds;
+    }
+
+    /**
+     * <p>
+     * One or more endpoint IDs.
+     * </p>
+     * 
+     * @param vpcEndpointIds
+     *        One or more endpoint IDs.
+     */
+
+    public void setVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
+        if (vpcEndpointIds == null) {
+            this.vpcEndpointIds = null;
+            return;
+        }
+
+        this.vpcEndpointIds = new com.amazonaws.internal.SdkInternalList<String>(vpcEndpointIds);
+    }
+
+    /**
+     * <p>
+     * One or more endpoint IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcEndpointIds(java.util.Collection)} or {@link #withVpcEndpointIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param vpcEndpointIds
+     *        One or more endpoint IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointsRequest withVpcEndpointIds(String... vpcEndpointIds) {
+        if (this.vpcEndpointIds == null) {
+            setVpcEndpointIds(new com.amazonaws.internal.SdkInternalList<String>(vpcEndpointIds.length));
+        }
+        for (String ele : vpcEndpointIds) {
+            this.vpcEndpointIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more endpoint IDs.
+     * </p>
+     * 
+     * @param vpcEndpointIds
+     *        One or more endpoint IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointsRequest withVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
+        setVpcEndpointIds(vpcEndpointIds);
+        return this;
+    }
 
     /**
      * <p>
@@ -435,79 +508,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p>
-     * One or more endpoint IDs.
-     * </p>
-     * 
-     * @return One or more endpoint IDs.
-     */
-
-    public java.util.List<String> getVpcEndpointIds() {
-        if (vpcEndpointIds == null) {
-            vpcEndpointIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return vpcEndpointIds;
-    }
-
-    /**
-     * <p>
-     * One or more endpoint IDs.
-     * </p>
-     * 
-     * @param vpcEndpointIds
-     *        One or more endpoint IDs.
-     */
-
-    public void setVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
-        if (vpcEndpointIds == null) {
-            this.vpcEndpointIds = null;
-            return;
-        }
-
-        this.vpcEndpointIds = new com.amazonaws.internal.SdkInternalList<String>(vpcEndpointIds);
-    }
-
-    /**
-     * <p>
-     * One or more endpoint IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVpcEndpointIds(java.util.Collection)} or {@link #withVpcEndpointIds(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param vpcEndpointIds
-     *        One or more endpoint IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcEndpointsRequest withVpcEndpointIds(String... vpcEndpointIds) {
-        if (this.vpcEndpointIds == null) {
-            setVpcEndpointIds(new com.amazonaws.internal.SdkInternalList<String>(vpcEndpointIds.length));
-        }
-        for (String ele : vpcEndpointIds) {
-            this.vpcEndpointIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more endpoint IDs.
-     * </p>
-     * 
-     * @param vpcEndpointIds
-     *        One or more endpoint IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcEndpointsRequest withVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
-        setVpcEndpointIds(vpcEndpointIds);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -529,14 +529,14 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getVpcEndpointIds() != null)
+            sb.append("VpcEndpointIds: ").append(getVpcEndpointIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getVpcEndpointIds() != null)
-            sb.append("VpcEndpointIds: ").append(getVpcEndpointIds());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -551,6 +551,10 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
         if (obj instanceof DescribeVpcEndpointsRequest == false)
             return false;
         DescribeVpcEndpointsRequest other = (DescribeVpcEndpointsRequest) obj;
+        if (other.getVpcEndpointIds() == null ^ this.getVpcEndpointIds() == null)
+            return false;
+        if (other.getVpcEndpointIds() != null && other.getVpcEndpointIds().equals(this.getVpcEndpointIds()) == false)
+            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
@@ -563,10 +567,6 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getVpcEndpointIds() == null ^ this.getVpcEndpointIds() == null)
-            return false;
-        if (other.getVpcEndpointIds() != null && other.getVpcEndpointIds().equals(this.getVpcEndpointIds()) == false)
-            return false;
         return true;
     }
 
@@ -575,10 +575,10 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getVpcEndpointIds() == null) ? 0 : getVpcEndpointIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getVpcEndpointIds() == null) ? 0 : getVpcEndpointIds().hashCode());
         return hashCode;
     }
 

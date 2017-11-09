@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request cannot be processed because it would exceed the allowed number of cache clusters per customer.
+ * The request cannot be processed because it would exceed the allowed number of clusters per customer.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

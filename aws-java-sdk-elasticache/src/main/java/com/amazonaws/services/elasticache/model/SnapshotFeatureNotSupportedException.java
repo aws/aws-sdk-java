@@ -21,12 +21,12 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * Creating a snapshot of a Redis cache cluster running on a <code>cache.t1.micro</code> cache node.
+ * Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.
  * </p>
  * </li>
  * <li>
  * <p>
- * Creating a snapshot of a cache cluster that is running Memcached rather than Redis.
+ * Creating a snapshot of a cluster that is running Memcached rather than Redis.
  * </p>
  * </li>
  * </ul>

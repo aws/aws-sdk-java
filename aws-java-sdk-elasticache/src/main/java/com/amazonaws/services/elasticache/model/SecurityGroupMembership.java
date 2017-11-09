@@ -35,7 +35,7 @@ public class SecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The status of the cache security group membership. The status changes whenever a cache security group is
-     * modified, or when the cache security groups assigned to a cache cluster are modified.
+     * modified, or when the cache security groups assigned to a cluster are modified.
      * </p>
      */
     private String status;
@@ -83,12 +83,12 @@ public class SecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The status of the cache security group membership. The status changes whenever a cache security group is
-     * modified, or when the cache security groups assigned to a cache cluster are modified.
+     * modified, or when the cache security groups assigned to a cluster are modified.
      * </p>
      * 
      * @param status
      *        The status of the cache security group membership. The status changes whenever a cache security group is
-     *        modified, or when the cache security groups assigned to a cache cluster are modified.
+     *        modified, or when the cache security groups assigned to a cluster are modified.
      */
 
     public void setStatus(String status) {
@@ -98,11 +98,11 @@ public class SecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The status of the cache security group membership. The status changes whenever a cache security group is
-     * modified, or when the cache security groups assigned to a cache cluster are modified.
+     * modified, or when the cache security groups assigned to a cluster are modified.
      * </p>
      * 
      * @return The status of the cache security group membership. The status changes whenever a cache security group is
-     *         modified, or when the cache security groups assigned to a cache cluster are modified.
+     *         modified, or when the cache security groups assigned to a cluster are modified.
      */
 
     public String getStatus() {
@@ -112,12 +112,12 @@ public class SecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The status of the cache security group membership. The status changes whenever a cache security group is
-     * modified, or when the cache security groups assigned to a cache cluster are modified.
+     * modified, or when the cache security groups assigned to a cluster are modified.
      * </p>
      * 
      * @param status
      *        The status of the cache security group membership. The status changes whenever a cache security group is
-     *        modified, or when the cache security groups assigned to a cache cluster are modified.
+     *        modified, or when the cache security groups assigned to a cluster are modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

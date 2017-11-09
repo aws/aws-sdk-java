@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested cache cluster ID does not refer to an existing cache cluster.
+ * The requested cluster ID does not refer to an existing cluster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

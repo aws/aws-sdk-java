@@ -27,7 +27,7 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      */
     private String jobId;
@@ -41,11 +41,11 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      * 
      * @param jobId
-     *        A list of up to 100 job IDs to cancel.
+     *        The AWS Batch job ID of the job to cancel.
      */
 
     public void setJobId(String jobId) {
@@ -54,10 +54,10 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      * 
-     * @return A list of up to 100 job IDs to cancel.
+     * @return The AWS Batch job ID of the job to cancel.
      */
 
     public String getJobId() {
@@ -66,11 +66,11 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of up to 100 job IDs to cancel.
+     * The AWS Batch job ID of the job to cancel.
      * </p>
      * 
      * @param jobId
-     *        A list of up to 100 job IDs to cancel.
+     *        The AWS Batch job ID of the job to cancel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

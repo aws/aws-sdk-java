@@ -34,7 +34,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String replicationGroupId;
     /**
      * <p>
-     * The description of the replication group.
+     * The user supplied description of the replication group.
      * </p>
      */
     private String description;
@@ -54,19 +54,21 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private ReplicationGroupPendingModifiedValues pendingModifiedValues;
     /**
      * <p>
-     * The names of all the cache clusters that are part of this replication group.
+     * The identifiers of all the nodes that are part of this replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> memberClusters;
     /**
      * <p>
-     * A single element list with information about the nodes in the replication group.
+     * A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a
+     * single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+     * node group (shard).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NodeGroup> nodeGroups;
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group.
+     * The cluster ID that is used as the daily snapshot source for the replication group.
      * </p>
      */
     private String snapshottingClusterId;
@@ -98,16 +100,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String automaticFailover;
     /**
      * <p>
-     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      * replication group.
      * </p>
      */
     private Endpoint configurationEndpoint;
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -229,11 +231,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the replication group.
+     * The user supplied description of the replication group.
      * </p>
      * 
      * @param description
-     *        The description of the replication group.
+     *        The user supplied description of the replication group.
      */
 
     public void setDescription(String description) {
@@ -242,10 +244,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the replication group.
+     * The user supplied description of the replication group.
      * </p>
      * 
-     * @return The description of the replication group.
+     * @return The user supplied description of the replication group.
      */
 
     public String getDescription() {
@@ -254,11 +256,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the replication group.
+     * The user supplied description of the replication group.
      * </p>
      * 
      * @param description
-     *        The description of the replication group.
+     *        The user supplied description of the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,10 +363,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of all the cache clusters that are part of this replication group.
+     * The identifiers of all the nodes that are part of this replication group.
      * </p>
      * 
-     * @return The names of all the cache clusters that are part of this replication group.
+     * @return The identifiers of all the nodes that are part of this replication group.
      */
 
     public java.util.List<String> getMemberClusters() {
@@ -376,11 +378,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of all the cache clusters that are part of this replication group.
+     * The identifiers of all the nodes that are part of this replication group.
      * </p>
      * 
      * @param memberClusters
-     *        The names of all the cache clusters that are part of this replication group.
+     *        The identifiers of all the nodes that are part of this replication group.
      */
 
     public void setMemberClusters(java.util.Collection<String> memberClusters) {
@@ -394,7 +396,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of all the cache clusters that are part of this replication group.
+     * The identifiers of all the nodes that are part of this replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -403,7 +405,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param memberClusters
-     *        The names of all the cache clusters that are part of this replication group.
+     *        The identifiers of all the nodes that are part of this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,11 +421,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The names of all the cache clusters that are part of this replication group.
+     * The identifiers of all the nodes that are part of this replication group.
      * </p>
      * 
      * @param memberClusters
-     *        The names of all the cache clusters that are part of this replication group.
+     *        The identifiers of all the nodes that are part of this replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,10 +436,14 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A single element list with information about the nodes in the replication group.
+     * A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a
+     * single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+     * node group (shard).
      * </p>
      * 
-     * @return A single element list with information about the nodes in the replication group.
+     * @return A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups,
+     *         this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an
+     *         entry for each node group (shard).
      */
 
     public java.util.List<NodeGroup> getNodeGroups() {
@@ -449,11 +455,15 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A single element list with information about the nodes in the replication group.
+     * A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a
+     * single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+     * node group (shard).
      * </p>
      * 
      * @param nodeGroups
-     *        A single element list with information about the nodes in the replication group.
+     *        A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups,
+     *        this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an
+     *        entry for each node group (shard).
      */
 
     public void setNodeGroups(java.util.Collection<NodeGroup> nodeGroups) {
@@ -467,7 +477,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A single element list with information about the nodes in the replication group.
+     * A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a
+     * single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+     * node group (shard).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -476,7 +488,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param nodeGroups
-     *        A single element list with information about the nodes in the replication group.
+     *        A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups,
+     *        this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an
+     *        entry for each node group (shard).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,11 +506,15 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A single element list with information about the nodes in the replication group.
+     * A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups, this is a
+     * single-element list. For Redis (cluster mode enabled) replication groups, the list contains an entry for each
+     * node group (shard).
      * </p>
      * 
      * @param nodeGroups
-     *        A single element list with information about the nodes in the replication group.
+     *        A list of node groups in this replication group. For Redis (cluster mode disabled) replication groups,
+     *        this is a single-element list. For Redis (cluster mode enabled) replication groups, the list contains an
+     *        entry for each node group (shard).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +525,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group.
+     * The cluster ID that is used as the daily snapshot source for the replication group.
      * </p>
      * 
      * @param snapshottingClusterId
-     *        The cache cluster ID that is used as the daily snapshot source for the replication group.
+     *        The cluster ID that is used as the daily snapshot source for the replication group.
      */
 
     public void setSnapshottingClusterId(String snapshottingClusterId) {
@@ -520,10 +538,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group.
+     * The cluster ID that is used as the daily snapshot source for the replication group.
      * </p>
      * 
-     * @return The cache cluster ID that is used as the daily snapshot source for the replication group.
+     * @return The cluster ID that is used as the daily snapshot source for the replication group.
      */
 
     public String getSnapshottingClusterId() {
@@ -532,11 +550,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group.
+     * The cluster ID that is used as the daily snapshot source for the replication group.
      * </p>
      * 
      * @param snapshottingClusterId
-     *        The cache cluster ID that is used as the daily snapshot source for the replication group.
+     *        The cluster ID that is used as the daily snapshot source for the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -815,12 +833,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      * replication group.
      * </p>
      * 
      * @param configurationEndpoint
-     *        The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     *        The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      *        replication group.
      */
 
@@ -830,11 +848,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      * replication group.
      * </p>
      * 
-     * @return The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * @return The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      *         replication group.
      */
 
@@ -844,12 +862,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     * The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      * replication group.
      * </p>
      * 
      * @param configurationEndpoint
-     *        The configuration endpoint for this replicaiton group. Use the configuration endpoint to connect to this
+     *        The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
      *        replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -861,9 +879,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -872,9 +890,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </important>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
-     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     *        retained for 5 days before being deleted.</p> <important>
+     *        The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For
+     *        example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained
+     *        for 5 days before being deleted.</p> <important>
      *        <p>
      *        If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      *        </p>
@@ -886,9 +904,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -896,9 +914,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * </important>
      * 
-     * @return The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
-     *         For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     *         retained for 5 days before being deleted.</p> <important>
+     * @return The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For
+     *         example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained
+     *         for 5 days before being deleted.</p> <important>
      *         <p>
      *         If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      *         </p>
@@ -910,9 +928,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them. For
-     * example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5
-     * days before being deleted.
+     * The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example,
+     * if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days
+     * before being deleted.
      * </p>
      * <important>
      * <p>
@@ -921,9 +939,9 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </important>
      * 
      * @param snapshotRetentionLimit
-     *        The number of days for which ElastiCache retains automatic cache cluster snapshots before deleting them.
-     *        For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
-     *        retained for 5 days before being deleted.</p> <important>
+     *        The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For
+     *        example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained
+     *        for 5 days before being deleted.</p> <important>
      *        <p>
      *        If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.
      *        </p>

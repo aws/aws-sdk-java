@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual
- * Private Cloud (Amazon VPC) and used with ElastiCache.
+ * Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private
+ * Cloud (Amazon VPC) and used with ElastiCache.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Subnet" target="_top">AWS API

@@ -40,6 +40,18 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifyVpcEndpointRequest.getVpcEndpointId() != null) {
+            request.addParameter("VpcEndpointId", StringUtils.fromString(modifyVpcEndpointRequest.getVpcEndpointId()));
+        }
+
+        if (modifyVpcEndpointRequest.getResetPolicy() != null) {
+            request.addParameter("ResetPolicy", StringUtils.fromBoolean(modifyVpcEndpointRequest.getResetPolicy()));
+        }
+
+        if (modifyVpcEndpointRequest.getPolicyDocument() != null) {
+            request.addParameter("PolicyDocument", StringUtils.fromString(modifyVpcEndpointRequest.getPolicyDocument()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestAddRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
                 .getAddRouteTableIds();
         if (!modifyVpcEndpointRequestAddRouteTableIdsList.isEmpty() || !modifyVpcEndpointRequestAddRouteTableIdsList.isAutoConstruct()) {
@@ -52,10 +64,6 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
                 }
                 addRouteTableIdsListIndex++;
             }
-        }
-
-        if (modifyVpcEndpointRequest.getPolicyDocument() != null) {
-            request.addParameter("PolicyDocument", StringUtils.fromString(modifyVpcEndpointRequest.getPolicyDocument()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestRemoveRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
@@ -72,12 +80,62 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
             }
         }
 
-        if (modifyVpcEndpointRequest.getResetPolicy() != null) {
-            request.addParameter("ResetPolicy", StringUtils.fromBoolean(modifyVpcEndpointRequest.getResetPolicy()));
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestAddSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
+                .getAddSubnetIds();
+        if (!modifyVpcEndpointRequestAddSubnetIdsList.isEmpty() || !modifyVpcEndpointRequestAddSubnetIdsList.isAutoConstruct()) {
+            int addSubnetIdsListIndex = 1;
+
+            for (String modifyVpcEndpointRequestAddSubnetIdsListValue : modifyVpcEndpointRequestAddSubnetIdsList) {
+                if (modifyVpcEndpointRequestAddSubnetIdsListValue != null) {
+                    request.addParameter("AddSubnetId." + addSubnetIdsListIndex, StringUtils.fromString(modifyVpcEndpointRequestAddSubnetIdsListValue));
+                }
+                addSubnetIdsListIndex++;
+            }
         }
 
-        if (modifyVpcEndpointRequest.getVpcEndpointId() != null) {
-            request.addParameter("VpcEndpointId", StringUtils.fromString(modifyVpcEndpointRequest.getVpcEndpointId()));
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestRemoveSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
+                .getRemoveSubnetIds();
+        if (!modifyVpcEndpointRequestRemoveSubnetIdsList.isEmpty() || !modifyVpcEndpointRequestRemoveSubnetIdsList.isAutoConstruct()) {
+            int removeSubnetIdsListIndex = 1;
+
+            for (String modifyVpcEndpointRequestRemoveSubnetIdsListValue : modifyVpcEndpointRequestRemoveSubnetIdsList) {
+                if (modifyVpcEndpointRequestRemoveSubnetIdsListValue != null) {
+                    request.addParameter("RemoveSubnetId." + removeSubnetIdsListIndex, StringUtils.fromString(modifyVpcEndpointRequestRemoveSubnetIdsListValue));
+                }
+                removeSubnetIdsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestAddSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
+                .getAddSecurityGroupIds();
+        if (!modifyVpcEndpointRequestAddSecurityGroupIdsList.isEmpty() || !modifyVpcEndpointRequestAddSecurityGroupIdsList.isAutoConstruct()) {
+            int addSecurityGroupIdsListIndex = 1;
+
+            for (String modifyVpcEndpointRequestAddSecurityGroupIdsListValue : modifyVpcEndpointRequestAddSecurityGroupIdsList) {
+                if (modifyVpcEndpointRequestAddSecurityGroupIdsListValue != null) {
+                    request.addParameter("AddSecurityGroupId." + addSecurityGroupIdsListIndex,
+                            StringUtils.fromString(modifyVpcEndpointRequestAddSecurityGroupIdsListValue));
+                }
+                addSecurityGroupIdsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestRemoveSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
+                .getRemoveSecurityGroupIds();
+        if (!modifyVpcEndpointRequestRemoveSecurityGroupIdsList.isEmpty() || !modifyVpcEndpointRequestRemoveSecurityGroupIdsList.isAutoConstruct()) {
+            int removeSecurityGroupIdsListIndex = 1;
+
+            for (String modifyVpcEndpointRequestRemoveSecurityGroupIdsListValue : modifyVpcEndpointRequestRemoveSecurityGroupIdsList) {
+                if (modifyVpcEndpointRequestRemoveSecurityGroupIdsListValue != null) {
+                    request.addParameter("RemoveSecurityGroupId." + removeSecurityGroupIdsListIndex,
+                            StringUtils.fromString(modifyVpcEndpointRequestRemoveSecurityGroupIdsListValue));
+                }
+                removeSecurityGroupIdsListIndex++;
+            }
+        }
+
+        if (modifyVpcEndpointRequest.getPrivateDnsEnabled() != null) {
+            request.addParameter("PrivateDnsEnabled", StringUtils.fromBoolean(modifyVpcEndpointRequest.getPrivateDnsEnabled()));
         }
 
         return request;

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents a cache cluster's status within a particular cache security group.
+ * Represents a cluster's status within a particular cache security group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSecurityGroupMembership"
@@ -35,7 +35,7 @@ public class CacheSecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The membership status in the cache security group. The status changes when a cache security group is modified, or
-     * when the cache security groups assigned to a cache cluster are modified.
+     * when the cache security groups assigned to a cluster are modified.
      * </p>
      */
     private String status;
@@ -83,12 +83,12 @@ public class CacheSecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The membership status in the cache security group. The status changes when a cache security group is modified, or
-     * when the cache security groups assigned to a cache cluster are modified.
+     * when the cache security groups assigned to a cluster are modified.
      * </p>
      * 
      * @param status
      *        The membership status in the cache security group. The status changes when a cache security group is
-     *        modified, or when the cache security groups assigned to a cache cluster are modified.
+     *        modified, or when the cache security groups assigned to a cluster are modified.
      */
 
     public void setStatus(String status) {
@@ -98,11 +98,11 @@ public class CacheSecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The membership status in the cache security group. The status changes when a cache security group is modified, or
-     * when the cache security groups assigned to a cache cluster are modified.
+     * when the cache security groups assigned to a cluster are modified.
      * </p>
      * 
      * @return The membership status in the cache security group. The status changes when a cache security group is
-     *         modified, or when the cache security groups assigned to a cache cluster are modified.
+     *         modified, or when the cache security groups assigned to a cluster are modified.
      */
 
     public String getStatus() {
@@ -112,12 +112,12 @@ public class CacheSecurityGroupMembership implements Serializable, Cloneable {
     /**
      * <p>
      * The membership status in the cache security group. The status changes when a cache security group is modified, or
-     * when the cache security groups assigned to a cache cluster are modified.
+     * when the cache security groups assigned to a cluster are modified.
      * </p>
      * 
      * @param status
      *        The membership status in the cache security group. The status changes when a cache security group is
-     *        modified, or when the cache security groups assigned to a cache cluster are modified.
+     *        modified, or when the cache security groups assigned to a cluster are modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

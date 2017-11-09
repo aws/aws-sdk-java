@@ -41,7 +41,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String addressingType;
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -279,10 +281,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
      * 
-     * @return One or more block device mapping entries.
+     * @return One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *         This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *         it is not blank and its encryption status is used for the volume encryption status.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -294,11 +300,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *        it is not blank and its encryption status is used for the volume encryption status.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -312,7 +322,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -321,7 +333,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *        it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,11 +351,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more block device mapping entries.
+     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
+     * and its encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries.
+     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
+     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
+     *        it is not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

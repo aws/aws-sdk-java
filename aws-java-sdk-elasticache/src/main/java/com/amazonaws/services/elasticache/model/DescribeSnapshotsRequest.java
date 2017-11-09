@@ -38,7 +38,7 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific
-     * cache cluster are described.
+     * cluster are described.
      * </p>
      */
     private String cacheClusterId;
@@ -134,12 +134,12 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific
-     * cache cluster are described.
+     * cluster are described.
      * </p>
      * 
      * @param cacheClusterId
      *        A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that
-     *        specific cache cluster are described.
+     *        specific cluster are described.
      */
 
     public void setCacheClusterId(String cacheClusterId) {
@@ -149,11 +149,11 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific
-     * cache cluster are described.
+     * cluster are described.
      * </p>
      * 
      * @return A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that
-     *         specific cache cluster are described.
+     *         specific cluster are described.
      */
 
     public String getCacheClusterId() {
@@ -163,12 +163,12 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific
-     * cache cluster are described.
+     * cluster are described.
      * </p>
      * 
      * @param cacheClusterId
      *        A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that
-     *        specific cache cluster are described.
+     *        specific cluster are described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

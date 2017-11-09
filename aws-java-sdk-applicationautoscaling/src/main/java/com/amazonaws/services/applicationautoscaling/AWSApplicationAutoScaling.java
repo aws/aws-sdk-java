@@ -27,9 +27,9 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </p>
  * <p>
  * <p>
- * With Application Auto Scaling, you can automatically scale your AWS resources. The experience similar to that of <a
- * href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish the
- * following tasks:
+ * With Application Auto Scaling, you can automatically scale your AWS resources. The experience is similar to that of
+ * <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>. You can use Application Auto Scaling to accomplish
+ * the following tasks:
  * </p>
  * <ul>
  * <li>
@@ -191,6 +191,32 @@ public interface AWSApplicationAutoScaling {
 
     /**
      * <p>
+     * Deletes the specified Application Auto Scaling scheduled action.
+     * </p>
+     * 
+     * @param deleteScheduledActionRequest
+     * @return Result of the DeleteScheduledAction operation returned by the service.
+     * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the available parameters for the API request.
+     * @throws ObjectNotFoundException
+     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
+     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
+     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
+     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
+     *         that is to be deleted or deregistered cannot be found.
+     * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
+     *         Scaling resource that already has a pending update.
+     * @throws InternalServiceException
+     *         The service encountered an internal error.
+     * @sample AWSApplicationAutoScaling.DeleteScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteScheduledActionResult deleteScheduledAction(DeleteScheduledActionRequest deleteScheduledActionRequest);
+
+    /**
+     * <p>
      * Deregisters a scalable target.
      * </p>
      * <p>
@@ -284,7 +310,7 @@ public interface AWSApplicationAutoScaling {
 
     /**
      * <p>
-     * Provides descriptive information about the scaling policies in the specified namespace.
+     * Describes the scaling policies for the specified service namespace.
      * </p>
      * <p>
      * You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>, and
@@ -317,6 +343,36 @@ public interface AWSApplicationAutoScaling {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest);
+
+    /**
+     * <p>
+     * Describes the scheduled actions for the specified service namespace.
+     * </p>
+     * <p>
+     * You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>, and
+     * <code>ScheduledActionNames</code> parameters.
+     * </p>
+     * <p>
+     * To create a scheduled action or update an existing one, see <a>PutScheduledAction</a>. If you are no longer using
+     * a scheduled action, you can delete it using <a>DeleteScheduledAction</a>.
+     * </p>
+     * 
+     * @param describeScheduledActionsRequest
+     * @return Result of the DescribeScheduledActions operation returned by the service.
+     * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the available parameters for the API request.
+     * @throws InvalidNextTokenException
+     *         The next token supplied was invalid.
+     * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
+     *         Scaling resource that already has a pending update.
+     * @throws InternalServiceException
+     *         The service encountered an internal error.
+     * @sample AWSApplicationAutoScaling.DescribeScheduledActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeScheduledActionsResult describeScheduledActions(DescribeScheduledActionsRequest describeScheduledActionsRequest);
 
     /**
      * <p>
@@ -367,6 +423,51 @@ public interface AWSApplicationAutoScaling {
      *      target="_top">AWS API Documentation</a>
      */
     PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a scheduled action for an Application Auto Scaling scalable target.
+     * </p>
+     * <p>
+     * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
+     * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
+     * without first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * </p>
+     * <p>
+     * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
+     * end times, the old values are deleted. Any other parameters that you don't specify are not changed by this update
+     * request.
+     * </p>
+     * <p>
+     * You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are no longer using a scheduled
+     * action, you can delete it using <a>DeleteScheduledAction</a>.
+     * </p>
+     * 
+     * @param putScheduledActionRequest
+     * @return Result of the PutScheduledAction operation returned by the service.
+     * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the available parameters for the API request.
+     * @throws LimitExceededException
+     *         Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+     *         Auto Scaling Limits</a>.
+     * @throws ObjectNotFoundException
+     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
+     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
+     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
+     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
+     *         that is to be deleted or deregistered cannot be found.
+     * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
+     *         Scaling resource that already has a pending update.
+     * @throws InternalServiceException
+     *         The service encountered an internal error.
+     * @sample AWSApplicationAutoScaling.PutScheduledAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScheduledAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutScheduledActionResult putScheduledAction(PutScheduledActionRequest putScheduledActionRequest);
 
     /**
      * <p>

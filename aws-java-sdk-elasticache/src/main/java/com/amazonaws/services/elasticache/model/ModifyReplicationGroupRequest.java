@@ -50,8 +50,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String primaryClusterId;
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
-     * be set for Redis (cluster mode enabled) replication groups.
+     * The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set
+     * for Redis (cluster mode enabled) replication groups.
      * </p>
      */
     private String snapshottingClusterId;
@@ -91,8 +91,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running outside of an Amazon
-     * Virtual Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -101,11 +101,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNames;
     /**
      * <p>
-     * Specifies the VPC Security Groups associated with the cache clusters in the replication group.
+     * Specifies the VPC Security Groups associated with the clusters in the replication group.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual
-     * Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private
+     * Cloud (Amazon VPC).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -208,7 +208,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean applyImmediately;
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the cache clusters in the replication group.
+     * The upgraded version of the cache engine to be run on the clusters in the replication group.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -396,13 +396,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
-     * be set for Redis (cluster mode enabled) replication groups.
+     * The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set
+     * for Redis (cluster mode enabled) replication groups.
      * </p>
      * 
      * @param snapshottingClusterId
-     *        The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter
-     *        cannot be set for Redis (cluster mode enabled) replication groups.
+     *        The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
+     *        be set for Redis (cluster mode enabled) replication groups.
      */
 
     public void setSnapshottingClusterId(String snapshottingClusterId) {
@@ -411,12 +411,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
-     * be set for Redis (cluster mode enabled) replication groups.
+     * The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set
+     * for Redis (cluster mode enabled) replication groups.
      * </p>
      * 
-     * @return The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter
-     *         cannot be set for Redis (cluster mode enabled) replication groups.
+     * @return The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
+     *         be set for Redis (cluster mode enabled) replication groups.
      */
 
     public String getSnapshottingClusterId() {
@@ -425,13 +425,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
-     * be set for Redis (cluster mode enabled) replication groups.
+     * The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set
+     * for Redis (cluster mode enabled) replication groups.
      * </p>
      * 
      * @param snapshottingClusterId
-     *        The cache cluster ID that is used as the daily snapshot source for the replication group. This parameter
-     *        cannot be set for Redis (cluster mode enabled) replication groups.
+     *        The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot
+     *        be set for Redis (cluster mode enabled) replication groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -686,8 +686,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running outside of an Amazon
-     * Virtual Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -696,8 +696,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @return A list of cache security group names to authorize for the clusters in this replication group. This change
      *         is asynchronously applied as soon as possible.</p>
      *         <p>
-     *         This parameter can be used only with replication group containing cache clusters running outside of an
-     *         Amazon Virtual Private Cloud (Amazon VPC).
+     *         This parameter can be used only with replication group containing clusters running outside of an Amazon
+     *         Virtual Private Cloud (Amazon VPC).
      *         </p>
      *         <p>
      *         Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -716,8 +716,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running outside of an Amazon
-     * Virtual Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -727,8 +727,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        A list of cache security group names to authorize for the clusters in this replication group. This change
      *        is asynchronously applied as soon as possible.</p>
      *        <p>
-     *        This parameter can be used only with replication group containing cache clusters running outside of an
-     *        Amazon Virtual Private Cloud (Amazon VPC).
+     *        This parameter can be used only with replication group containing clusters running outside of an Amazon
+     *        Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -749,8 +749,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running outside of an Amazon
-     * Virtual Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -765,8 +765,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        A list of cache security group names to authorize for the clusters in this replication group. This change
      *        is asynchronously applied as soon as possible.</p>
      *        <p>
-     *        This parameter can be used only with replication group containing cache clusters running outside of an
-     *        Amazon Virtual Private Cloud (Amazon VPC).
+     *        This parameter can be used only with replication group containing clusters running outside of an Amazon
+     *        Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -789,8 +789,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * asynchronously applied as soon as possible.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running outside of an Amazon
-     * Virtual Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -800,8 +800,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        A list of cache security group names to authorize for the clusters in this replication group. This change
      *        is asynchronously applied as soon as possible.</p>
      *        <p>
-     *        This parameter can be used only with replication group containing cache clusters running outside of an
-     *        Amazon Virtual Private Cloud (Amazon VPC).
+     *        This parameter can be used only with replication group containing clusters running outside of an Amazon
+     *        Virtual Private Cloud (Amazon VPC).
      *        </p>
      *        <p>
      *        Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
@@ -815,17 +815,17 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the VPC Security Groups associated with the cache clusters in the replication group.
+     * Specifies the VPC Security Groups associated with the clusters in the replication group.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual
-     * Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private
+     * Cloud (Amazon VPC).
      * </p>
      * 
-     * @return Specifies the VPC Security Groups associated with the cache clusters in the replication group.</p>
+     * @return Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
      *         <p>
-     *         This parameter can be used only with replication group containing cache clusters running in an Amazon
-     *         Virtual Private Cloud (Amazon VPC).
+     *         This parameter can be used only with replication group containing clusters running in an Amazon Virtual
+     *         Private Cloud (Amazon VPC).
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -837,18 +837,18 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the VPC Security Groups associated with the cache clusters in the replication group.
+     * Specifies the VPC Security Groups associated with the clusters in the replication group.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual
-     * Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private
+     * Cloud (Amazon VPC).
      * </p>
      * 
      * @param securityGroupIds
-     *        Specifies the VPC Security Groups associated with the cache clusters in the replication group.</p>
+     *        Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
      *        <p>
-     *        This parameter can be used only with replication group containing cache clusters running in an Amazon
-     *        Virtual Private Cloud (Amazon VPC).
+     *        This parameter can be used only with replication group containing clusters running in an Amazon Virtual
+     *        Private Cloud (Amazon VPC).
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -862,11 +862,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the VPC Security Groups associated with the cache clusters in the replication group.
+     * Specifies the VPC Security Groups associated with the clusters in the replication group.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual
-     * Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private
+     * Cloud (Amazon VPC).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -875,10 +875,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param securityGroupIds
-     *        Specifies the VPC Security Groups associated with the cache clusters in the replication group.</p>
+     *        Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
      *        <p>
-     *        This parameter can be used only with replication group containing cache clusters running in an Amazon
-     *        Virtual Private Cloud (Amazon VPC).
+     *        This parameter can be used only with replication group containing clusters running in an Amazon Virtual
+     *        Private Cloud (Amazon VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -894,18 +894,18 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the VPC Security Groups associated with the cache clusters in the replication group.
+     * Specifies the VPC Security Groups associated with the clusters in the replication group.
      * </p>
      * <p>
-     * This parameter can be used only with replication group containing cache clusters running in an Amazon Virtual
-     * Private Cloud (Amazon VPC).
+     * This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private
+     * Cloud (Amazon VPC).
      * </p>
      * 
      * @param securityGroupIds
-     *        Specifies the VPC Security Groups associated with the cache clusters in the replication group.</p>
+     *        Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
      *        <p>
-     *        This parameter can be used only with replication group containing cache clusters running in an Amazon
-     *        Virtual Private Cloud (Amazon VPC).
+     *        This parameter can be used only with replication group containing clusters running in an Amazon Virtual
+     *        Private Cloud (Amazon VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1541,7 +1541,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the cache clusters in the replication group.
+     * The upgraded version of the cache engine to be run on the clusters in the replication group.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -1552,7 +1552,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param engineVersion
-     *        The upgraded version of the cache engine to be run on the cache clusters in the replication group.</p>
+     *        The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
@@ -1567,7 +1567,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the cache clusters in the replication group.
+     * The upgraded version of the cache engine to be run on the clusters in the replication group.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -1577,7 +1577,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * engine version.
      * </p>
      * 
-     * @return The upgraded version of the cache engine to be run on the cache clusters in the replication group.</p>
+     * @return The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
      *         <p>
      *         <b>Important:</b> You can upgrade to a newer engine version (see <a href=
      *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
@@ -1592,7 +1592,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the cache clusters in the replication group.
+     * The upgraded version of the cache engine to be run on the clusters in the replication group.
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
@@ -1603,7 +1603,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param engineVersion
-     *        The upgraded version of the cache engine to be run on the cache clusters in the replication group.</p>
+     *        The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"

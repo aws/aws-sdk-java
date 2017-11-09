@@ -91,6 +91,8 @@ public enum ElastiCacheActions implements Action {
     ModifyCacheSubnetGroup("elasticache:ModifyCacheSubnetGroup"),
     /** Action for the ModifyReplicationGroup operation. */
     ModifyReplicationGroup("elasticache:ModifyReplicationGroup"),
+    /** Action for the ModifyReplicationGroupShardConfiguration operation. */
+    ModifyReplicationGroupShardConfiguration("elasticache:ModifyReplicationGroupShardConfiguration"),
     /** Action for the PurchaseReservedCacheNodesOffering operation. */
     PurchaseReservedCacheNodesOffering("elasticache:PurchaseReservedCacheNodesOffering"),
     /** Action for the RebootCacheCluster operation. */

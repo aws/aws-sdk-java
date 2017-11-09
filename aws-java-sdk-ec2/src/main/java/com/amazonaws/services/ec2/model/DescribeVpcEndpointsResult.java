@@ -27,63 +27,17 @@ public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Information about the endpoints.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<VpcEndpoint> vpcEndpoints;
+    /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no additional items to return, the string is
      * empty.
      * </p>
      */
     private String nextToken;
-    /**
-     * <p>
-     * Information about the endpoints.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<VpcEndpoint> vpcEndpoints;
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcEndpointsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
 
     /**
      * <p>
@@ -159,6 +113,52 @@ public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcEndpointsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -169,10 +169,10 @@ public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getVpcEndpoints() != null)
-            sb.append("VpcEndpoints: ").append(getVpcEndpoints());
+            sb.append("VpcEndpoints: ").append(getVpcEndpoints()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +187,13 @@ public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DescribeVpcEndpointsResult == false)
             return false;
         DescribeVpcEndpointsResult other = (DescribeVpcEndpointsResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getVpcEndpoints() == null ^ this.getVpcEndpoints() == null)
             return false;
         if (other.getVpcEndpoints() != null && other.getVpcEndpoints().equals(this.getVpcEndpoints()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpoints() == null) ? 0 : getVpcEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

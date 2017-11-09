@@ -1,3 +1,20 @@
+# __1.11.227__ __2017-11-08__
+## __AWS Batch__
+  - ### Features
+    - Documentation updates for AWS Batch.
+
+## __Amazon EC2__
+  - ### Features
+    - AWS PrivateLink for Amazon Services - Customers can now privately access Amazon services from their Amazon Virtual Private Cloud (VPC), without using public IPs, and without requiring the traffic to traverse across the Internet.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - This release adds online resharding for ElastiCache for Redis offering, providing the ability to add and remove shards from a running cluster. Developers can now dynamically scale-out or scale-in their Redis cluster workloads to adapt to changes in demand. ElastiCache will resize the cluster by adding or removing shards and redistribute hash slots uniformly across the new shard configuration, all while the cluster continues to stay online and serves requests.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Application Auto Scaling customers are now able to schedule adjustments to their MinCapacity and MaxCapacity, which makes it possible to pre-provision adequate capacity for anticipated demand and then reduce the provisioned capacity as demand lulls.
+
 # __1.11.226__ __2017-11-07__
 ## __Amazon Relational Database Service (RDS)__
   - ### Features

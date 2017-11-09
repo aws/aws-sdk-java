@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the allowed node types you can use to modify your cache cluster or replication group.
+ * Represents the allowed node types you can use to modify your cluster or replication group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications"
@@ -29,7 +29,7 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A string list, each element of which specifies a cache node type which you can use to scale your cache cluster or
+     * A string list, each element of which specifies a cache node type which you can use to scale your cluster or
      * replication group.
      * </p>
      * <p>
@@ -41,7 +41,7 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A string list, each element of which specifies a cache node type which you can use to scale your cache cluster or
+     * A string list, each element of which specifies a cache node type which you can use to scale your cluster or
      * replication group.
      * </p>
      * <p>
@@ -49,8 +49,8 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
      * <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.
      * </p>
      * 
-     * @return A string list, each element of which specifies a cache node type which you can use to scale your cache
-     *         cluster or replication group.</p>
+     * @return A string list, each element of which specifies a cache node type which you can use to scale your cluster
+     *         or replication group.</p>
      *         <p>
      *         When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      *         <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code>
@@ -66,7 +66,7 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A string list, each element of which specifies a cache node type which you can use to scale your cache cluster or
+     * A string list, each element of which specifies a cache node type which you can use to scale your cluster or
      * replication group.
      * </p>
      * <p>
@@ -75,8 +75,8 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param scaleUpModifications
-     *        A string list, each element of which specifies a cache node type which you can use to scale your cache
-     *        cluster or replication group.</p>
+     *        A string list, each element of which specifies a cache node type which you can use to scale your cluster
+     *        or replication group.</p>
      *        <p>
      *        When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      *        <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code>
@@ -94,7 +94,7 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A string list, each element of which specifies a cache node type which you can use to scale your cache cluster or
+     * A string list, each element of which specifies a cache node type which you can use to scale your cluster or
      * replication group.
      * </p>
      * <p>
@@ -108,8 +108,8 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param scaleUpModifications
-     *        A string list, each element of which specifies a cache node type which you can use to scale your cache
-     *        cluster or replication group.</p>
+     *        A string list, each element of which specifies a cache node type which you can use to scale your cluster
+     *        or replication group.</p>
      *        <p>
      *        When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      *        <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code>
@@ -129,7 +129,7 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A string list, each element of which specifies a cache node type which you can use to scale your cache cluster or
+     * A string list, each element of which specifies a cache node type which you can use to scale your cluster or
      * replication group.
      * </p>
      * <p>
@@ -138,8 +138,8 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param scaleUpModifications
-     *        A string list, each element of which specifies a cache node type which you can use to scale your cache
-     *        cluster or replication group.</p>
+     *        A string list, each element of which specifies a cache node type which you can use to scale your cluster
+     *        or replication group.</p>
      *        <p>
      *        When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or
      *        <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code>

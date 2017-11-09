@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A group of settings that are applied to the cache cluster in the future, or that are currently being applied.
+ * A group of settings that are applied to the cluster in the future, or that are currently being applied.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PendingModifiedValues" target="_top">AWS
@@ -28,7 +28,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
@@ -38,27 +38,27 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private Integer numCacheNodes;
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a
-     * numeric identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRemove;
     /**
      * <p>
-     * The new cache engine version that the cache cluster runs.
+     * The new cache engine version that the cluster runs.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group is scaled to.
+     * The cache node type that this cluster or replication group is scaled to.
      * </p>
      */
     private String cacheNodeType;
 
     /**
      * <p>
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
@@ -66,7 +66,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param numCacheNodes
-     *        The new number of cache nodes for the cache cluster.</p>
+     *        The new number of cache nodes for the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
      *        between 1 and 20.
@@ -78,14 +78,14 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
      * and 20.
      * </p>
      * 
-     * @return The new number of cache nodes for the cache cluster.</p>
+     * @return The new number of cache nodes for the cluster.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
      *         between 1 and 20.
@@ -97,7 +97,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new number of cache nodes for the cache cluster.
+     * The new number of cache nodes for the cluster.
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
@@ -105,7 +105,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param numCacheNodes
-     *        The new number of cache nodes for the cache cluster.</p>
+     *        The new number of cache nodes for the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
      *        between 1 and 20.
@@ -119,12 +119,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a
-     * numeric identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).
      * </p>
      * 
-     * @return A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is
-     *         a numeric identifier (0001, 0002, etc.).
+     * @return A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
+     *         numeric identifier (0001, 0002, etc.).
      */
 
     public java.util.List<String> getCacheNodeIdsToRemove() {
@@ -136,13 +136,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a
-     * numeric identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeIdsToRemove
-     *        A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is
-     *        a numeric identifier (0001, 0002, etc.).
+     *        A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
+     *        numeric identifier (0001, 0002, etc.).
      */
 
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
@@ -156,8 +156,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a
-     * numeric identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -166,8 +166,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param cacheNodeIdsToRemove
-     *        A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is
-     *        a numeric identifier (0001, 0002, etc.).
+     *        A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
+     *        numeric identifier (0001, 0002, etc.).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,13 +183,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is a
-     * numeric identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
+     * identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeIdsToRemove
-     *        A list of cache node IDs that are being removed (or will be removed) from the cache cluster. A node ID is
-     *        a numeric identifier (0001, 0002, etc.).
+     *        A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
+     *        numeric identifier (0001, 0002, etc.).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new cache engine version that the cache cluster runs.
+     * The new cache engine version that the cluster runs.
      * </p>
      * 
      * @param engineVersion
-     *        The new cache engine version that the cache cluster runs.
+     *        The new cache engine version that the cluster runs.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -213,10 +213,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new cache engine version that the cache cluster runs.
+     * The new cache engine version that the cluster runs.
      * </p>
      * 
-     * @return The new cache engine version that the cache cluster runs.
+     * @return The new cache engine version that the cluster runs.
      */
 
     public String getEngineVersion() {
@@ -225,11 +225,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new cache engine version that the cache cluster runs.
+     * The new cache engine version that the cluster runs.
      * </p>
      * 
      * @param engineVersion
-     *        The new cache engine version that the cache cluster runs.
+     *        The new cache engine version that the cluster runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +240,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group is scaled to.
+     * The cache node type that this cluster or replication group is scaled to.
      * </p>
      * 
      * @param cacheNodeType
-     *        The cache node type that this cache cluster or replication group is scaled to.
+     *        The cache node type that this cluster or replication group is scaled to.
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -253,10 +253,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group is scaled to.
+     * The cache node type that this cluster or replication group is scaled to.
      * </p>
      * 
-     * @return The cache node type that this cache cluster or replication group is scaled to.
+     * @return The cache node type that this cluster or replication group is scaled to.
      */
 
     public String getCacheNodeType() {
@@ -265,11 +265,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type that this cache cluster or replication group is scaled to.
+     * The cache node type that this cluster or replication group is scaled to.
      * </p>
      * 
      * @param cacheNodeType
-     *        The cache node type that this cache cluster or replication group is scaled to.
+     *        The cache node type that this cluster or replication group is scaled to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
