@@ -138,7 +138,7 @@ public class Image implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      */
     private String rootDeviceName;
@@ -1178,11 +1178,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     *        The device name of the root device volume (for example, <code>/dev/sda1</code>).
      */
 
     public void setRootDeviceName(String rootDeviceName) {
@@ -1191,10 +1191,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
-     * @return The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * @return The device name of the root device volume (for example, <code>/dev/sda1</code>).
      */
 
     public String getRootDeviceName() {
@@ -1203,11 +1203,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The device name of the root device (for example, <code>/dev/sda1</code> or <code>/dev/xvda</code>).
+     *        The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

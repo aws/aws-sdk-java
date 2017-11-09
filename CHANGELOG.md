@@ -1,3 +1,12 @@
+# __1.11.228__ __2017-11-09__
+## __Amazon DynamoDB__
+  - ### Bugfixes
+    - When using the Dynamo DB documents API, a query spec can now be reused for multiple queries.
+
+## __Amazon EC2__
+  - ### Features
+    - Introduces the following features: 1. Create a default subnet in an Availability Zone if no default subnet exists. 2. Spot Fleet integrates with Elastic Load Balancing to enable you to attach one or more load balancers to a Spot Fleet request. When you attach the load balancer, it automatically registers the instance in the Spot Fleet to the load balancers which distributes incoming traffic across the instances. 
+
 # __1.11.227__ __2017-11-08__
 ## __AWS Batch__
   - ### Features

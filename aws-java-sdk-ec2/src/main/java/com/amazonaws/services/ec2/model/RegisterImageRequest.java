@@ -97,7 +97,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String ramdiskId;
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      */
     private String rootDeviceName;
@@ -716,11 +716,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     *        The device name of the root device volume (for example, <code>/dev/sda1</code>).
      */
 
     public void setRootDeviceName(String rootDeviceName) {
@@ -729,10 +729,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
-     * @return The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     * @return The device name of the root device volume (for example, <code>/dev/sda1</code>).
      */
 
     public String getRootDeviceName() {
@@ -741,11 +741,11 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
      * @param rootDeviceName
-     *        The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
+     *        The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

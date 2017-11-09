@@ -28,7 +28,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      */
     private String deviceName;
@@ -61,11 +61,11 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public void setDeviceName(String deviceName) {
@@ -74,10 +74,10 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public String getDeviceName() {
@@ -86,11 +86,11 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

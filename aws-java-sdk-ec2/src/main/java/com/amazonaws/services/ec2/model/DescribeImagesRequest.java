@@ -52,8 +52,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     * example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
@@ -151,7 +151,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
@@ -330,8 +330,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     * example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
@@ -429,7 +429,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
@@ -504,8 +504,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         </li>
      *         <li>
      *         <p>
-     *         <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     *         <code>/dev/sdh</code>).
+     *         <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping
+     *         (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -605,7 +605,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         </li>
      *         <li>
      *         <p>
-     *         <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     *         <code>root-device-name</code> - The device name of the root device volume (for example,
+     *         <code>/dev/sda1</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -691,8 +692,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     * example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
@@ -790,7 +791,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
@@ -866,8 +867,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     *        <code>/dev/sdh</code>).
+     *        <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     *        example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -967,7 +968,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     *        <code>root-device-name</code> - The device name of the root device volume (for example,
+     *        <code>/dev/sda1</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1055,8 +1057,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     * example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
@@ -1154,7 +1156,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
@@ -1235,8 +1237,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     *        <code>/dev/sdh</code>).
+     *        <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     *        example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1336,7 +1338,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     *        <code>root-device-name</code> - The device name of the root device volume (for example,
+     *        <code>/dev/sda1</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1426,8 +1429,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     * example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
@@ -1525,7 +1528,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     * <code>root-device-name</code> - The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * </li>
      * <li>
@@ -1601,8 +1604,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>block-device-mapping.device-name</code> - The device name for the EBS volume (for example,
-     *        <code>/dev/sdh</code>).
+     *        <code>block-device-mapping.device-name</code> - The device name specified in the block device mapping (for
+     *        example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1702,7 +1705,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>root-device-name</code> - The name of the root device volume (for example, <code>/dev/sda1</code>).
+     *        <code>root-device-name</code> - The device name of the root device volume (for example,
+     *        <code>/dev/sda1</code>).
      *        </p>
      *        </li>
      *        <li>

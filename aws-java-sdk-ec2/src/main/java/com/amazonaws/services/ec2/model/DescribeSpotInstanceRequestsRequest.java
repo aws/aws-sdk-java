@@ -65,30 +65,30 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume is
-     * deleted on instance termination.
+     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is deleted on
+     * instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping
+     * (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS volume.
+     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code> for
-     * General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
+     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
      * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
@@ -294,30 +294,30 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume is
-     * deleted on instance termination.
+     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is deleted on
+     * instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping
+     * (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS volume.
+     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code> for
-     * General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
+     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
      * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
@@ -512,32 +512,31 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume
-     *         is deleted on instance termination.
+     *         <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is
+     *         deleted on instance termination.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for
-     *         example, <code>/dev/sdh</code>).
+     *         <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device
+     *         mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS
-     *         volume.
+     *         <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     *         <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume:
-     *         <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for
-     *         Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *         <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
+     *         General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *         HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *         </p>
      *         </li>
      *         <li>
@@ -745,30 +744,30 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume is
-     * deleted on instance termination.
+     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is deleted on
+     * instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping
+     * (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS volume.
+     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code> for
-     * General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
+     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
      * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
@@ -964,32 +963,31 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume
-     *        is deleted on instance termination.
+     *        <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is
+     *        deleted on instance termination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for
-     *        example, <code>/dev/sdh</code>).
+     *        <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device
+     *        mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS
-     *        volume.
+     *        <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     *        <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code>
-     *        for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *        Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *        <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
+     *        General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *        HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *        </p>
      *        </li>
      *        <li>
@@ -1199,30 +1197,30 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume is
-     * deleted on instance termination.
+     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is deleted on
+     * instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping
+     * (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS volume.
+     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code> for
-     * General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
+     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
      * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
@@ -1423,32 +1421,31 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume
-     *        is deleted on instance termination.
+     *        <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is
+     *        deleted on instance termination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for
-     *        example, <code>/dev/sdh</code>).
+     *        <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device
+     *        mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS
-     *        volume.
+     *        <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     *        <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code>
-     *        for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *        Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *        <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
+     *        General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *        HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *        </p>
      *        </li>
      *        <li>
@@ -1660,30 +1657,30 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume is
-     * deleted on instance termination.
+     * <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is deleted on
+     * instance termination.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for example,
-     * <code>/dev/sdh</code>).
+     * <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device mapping
+     * (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS volume.
+     * <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     * <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code> for
-     * General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
+     * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
+     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
      * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
@@ -1879,32 +1876,31 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the Amazon EBS volume
-     *        is deleted on instance termination.
+     *        <code>launch.block-device-mapping.delete-on-termination</code> - Indicates whether the EBS volume is
+     *        deleted on instance termination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.device-name</code> - The device name for the Amazon EBS volume (for
-     *        example, <code>/dev/sdh</code>).
+     *        <code>launch.block-device-mapping.device-name</code> - The device name for the volume in the block device
+     *        mapping (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot used for the Amazon EBS
-     *        volume.
+     *        <code>launch.block-device-mapping.snapshot-id</code> - The ID of the snapshot for the EBS volume.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.volume-size</code> - The size of the Amazon EBS volume, in GiB.
+     *        <code>launch.block-device-mapping.volume-size</code> - The size of the EBS volume, in GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>launch.block-device-mapping.volume-type</code> - The type of the Amazon EBS volume: <code>gp2</code>
-     *        for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
-     *        Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *        <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
+     *        General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
+     *        HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *        </p>
      *        </li>
      *        <li>

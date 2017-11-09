@@ -214,6 +214,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateDefaultSubnetResult createDefaultSubnet(CreateDefaultSubnetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDefaultVpcResult createDefaultVpc(CreateDefaultVpcRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

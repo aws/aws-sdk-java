@@ -28,7 +28,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      */
     private String deviceName;
@@ -48,7 +48,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -61,11 +61,11 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public void setDeviceName(String deviceName) {
@@ -74,10 +74,10 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public String getDeviceName() {
@@ -86,11 +86,11 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,7 +183,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -195,7 +195,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code>
-     *        and <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type.
+     *        and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
      *        After you connect to the instance, you must mount the volume.</p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -211,7 +211,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -222,7 +222,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * 
      * @return The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0.
      *         An instance type with two available instance store volumes can specify mappings for
-     *         <code>ephemeral0</code> and <code>ephemeral1</code>.The number of available instance store volumes
+     *         <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance store volumes
      *         depends on the instance type. After you connect to the instance, you must mount the volume.</p>
      *         <p>
      *         Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for
@@ -238,7 +238,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
      * </p>
      * <p>
@@ -250,7 +250,7 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with two available instance store volumes can specify mappings for <code>ephemeral0</code>
-     *        and <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type.
+     *        and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
      *        After you connect to the instance, you must mount the volume.</p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the

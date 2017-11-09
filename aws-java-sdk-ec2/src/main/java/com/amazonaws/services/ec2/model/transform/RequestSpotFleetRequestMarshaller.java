@@ -457,6 +457,49 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                 request.addParameter("SpotFleetRequestConfig.InstanceInterruptionBehavior",
                         StringUtils.fromString(spotFleetRequestConfig.getInstanceInterruptionBehavior()));
             }
+
+            LoadBalancersConfig loadBalancersConfig = spotFleetRequestConfig.getLoadBalancersConfig();
+            if (loadBalancersConfig != null) {
+
+                ClassicLoadBalancersConfig classicLoadBalancersConfig = loadBalancersConfig.getClassicLoadBalancersConfig();
+                if (classicLoadBalancersConfig != null) {
+
+                    com.amazonaws.internal.SdkInternalList<ClassicLoadBalancer> classicLoadBalancersConfigClassicLoadBalancersList = (com.amazonaws.internal.SdkInternalList<ClassicLoadBalancer>) classicLoadBalancersConfig
+                            .getClassicLoadBalancers();
+                    if (!classicLoadBalancersConfigClassicLoadBalancersList.isEmpty() || !classicLoadBalancersConfigClassicLoadBalancersList.isAutoConstruct()) {
+                        int classicLoadBalancersListIndex = 1;
+
+                        for (ClassicLoadBalancer classicLoadBalancersConfigClassicLoadBalancersListValue : classicLoadBalancersConfigClassicLoadBalancersList) {
+
+                            if (classicLoadBalancersConfigClassicLoadBalancersListValue.getName() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LoadBalancersConfig.ClassicLoadBalancersConfig.ClassicLoadBalancers."
+                                        + classicLoadBalancersListIndex + ".Name",
+                                        StringUtils.fromString(classicLoadBalancersConfigClassicLoadBalancersListValue.getName()));
+                            }
+                            classicLoadBalancersListIndex++;
+                        }
+                    }
+                }
+
+                TargetGroupsConfig targetGroupsConfig = loadBalancersConfig.getTargetGroupsConfig();
+                if (targetGroupsConfig != null) {
+
+                    com.amazonaws.internal.SdkInternalList<TargetGroup> targetGroupsConfigTargetGroupsList = (com.amazonaws.internal.SdkInternalList<TargetGroup>) targetGroupsConfig
+                            .getTargetGroups();
+                    if (!targetGroupsConfigTargetGroupsList.isEmpty() || !targetGroupsConfigTargetGroupsList.isAutoConstruct()) {
+                        int targetGroupsListIndex = 1;
+
+                        for (TargetGroup targetGroupsConfigTargetGroupsListValue : targetGroupsConfigTargetGroupsList) {
+
+                            if (targetGroupsConfigTargetGroupsListValue.getArn() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LoadBalancersConfig.TargetGroupsConfig.TargetGroups." + targetGroupsListIndex
+                                        + ".Arn", StringUtils.fromString(targetGroupsConfigTargetGroupsListValue.getArn()));
+                            }
+                            targetGroupsListIndex++;
+                        }
+                    }
+                }
+            }
         }
 
         return request;

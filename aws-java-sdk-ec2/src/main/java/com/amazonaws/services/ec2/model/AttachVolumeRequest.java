@@ -29,7 +29,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      */
     private String device;
@@ -62,7 +62,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param instanceId
      *        The ID of the instance.
      * @param device
-     *        The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
     public AttachVolumeRequest(String volumeId, String instanceId, String device) {
         setVolumeId(volumeId);
@@ -72,11 +72,11 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param device
-     *        The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public void setDevice(String device) {
@@ -85,10 +85,10 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
-     * @return The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      */
 
     public String getDevice() {
@@ -97,11 +97,11 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * </p>
      * 
      * @param device
-     *        The device name to expose to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     *        The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

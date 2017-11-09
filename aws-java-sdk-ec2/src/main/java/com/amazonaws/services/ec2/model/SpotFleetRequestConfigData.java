@@ -127,6 +127,17 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      */
     private String instanceInterruptionBehavior;
+    /**
+     * <p>
+     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
+     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * </p>
+     * <p>
+     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * </p>
+     */
+    private LoadBalancersConfig loadBalancersConfig;
 
     /**
      * <p>
@@ -1009,6 +1020,73 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
+     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * </p>
+     * <p>
+     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * </p>
+     * 
+     * @param loadBalancersConfig
+     *        One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet
+     *        registers the running Spot instances with the specified Classic Load Balancers and target groups.</p>
+     *        <p>
+     *        With Network Load Balancers, Spot fleet cannot register instances that have the following instance types:
+     *        C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     */
+
+    public void setLoadBalancersConfig(LoadBalancersConfig loadBalancersConfig) {
+        this.loadBalancersConfig = loadBalancersConfig;
+    }
+
+    /**
+     * <p>
+     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
+     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * </p>
+     * <p>
+     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * </p>
+     * 
+     * @return One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet
+     *         registers the running Spot instances with the specified Classic Load Balancers and target groups.</p>
+     *         <p>
+     *         With Network Load Balancers, Spot fleet cannot register instances that have the following instance types:
+     *         C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     */
+
+    public LoadBalancersConfig getLoadBalancersConfig() {
+        return this.loadBalancersConfig;
+    }
+
+    /**
+     * <p>
+     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
+     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * </p>
+     * <p>
+     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * </p>
+     * 
+     * @param loadBalancersConfig
+     *        One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet
+     *        registers the running Spot instances with the specified Classic Load Balancers and target groups.</p>
+     *        <p>
+     *        With Network Load Balancers, Spot fleet cannot register instances that have the following instance types:
+     *        C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetRequestConfigData withLoadBalancersConfig(LoadBalancersConfig loadBalancersConfig) {
+        setLoadBalancersConfig(loadBalancersConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1046,7 +1124,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         if (getReplaceUnhealthyInstances() != null)
             sb.append("ReplaceUnhealthyInstances: ").append(getReplaceUnhealthyInstances()).append(",");
         if (getInstanceInterruptionBehavior() != null)
-            sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior());
+            sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior()).append(",");
+        if (getLoadBalancersConfig() != null)
+            sb.append("LoadBalancersConfig: ").append(getLoadBalancersConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1119,6 +1199,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             return false;
         if (other.getInstanceInterruptionBehavior() != null && other.getInstanceInterruptionBehavior().equals(this.getInstanceInterruptionBehavior()) == false)
             return false;
+        if (other.getLoadBalancersConfig() == null ^ this.getLoadBalancersConfig() == null)
+            return false;
+        if (other.getLoadBalancersConfig() != null && other.getLoadBalancersConfig().equals(this.getLoadBalancersConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1141,6 +1225,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
         hashCode = prime * hashCode + ((getReplaceUnhealthyInstances() == null) ? 0 : getReplaceUnhealthyInstances().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
+        hashCode = prime * hashCode + ((getLoadBalancersConfig() == null) ? 0 : getLoadBalancersConfig().hashCode());
         return hashCode;
     }
 

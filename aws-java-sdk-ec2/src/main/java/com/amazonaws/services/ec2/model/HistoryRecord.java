@@ -39,17 +39,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - Indicates an error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     * <code>instanceChange</code> - An instance was launched or terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Information</code> - An informational event.
      * </p>
      * </li>
      * </ul>
@@ -110,17 +115,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - Indicates an error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     * <code>instanceChange</code> - An instance was launched or terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Information</code> - An informational event.
      * </p>
      * </li>
      * </ul>
@@ -130,18 +140,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - Indicates an error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet
-     *        request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     *        <code>instanceChange</code> - An instance was launched or terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Information</code> - An informational event.
      *        </p>
      *        </li>
      * @see EventType
@@ -158,17 +172,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - Indicates an error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     * <code>instanceChange</code> - An instance was launched or terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Information</code> - An informational event.
      * </p>
      * </li>
      * </ul>
@@ -177,18 +196,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>error</code> - Indicates an error with the Spot fleet request.
+     *         <code>error</code> - An error with the Spot fleet request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet
-     *         request.
+     *         <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     *         <code>instanceChange</code> - An instance was launched or terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Information</code> - An informational event.
      *         </p>
      *         </li>
      * @see EventType
@@ -205,17 +228,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - Indicates an error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     * <code>instanceChange</code> - An instance was launched or terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Information</code> - An informational event.
      * </p>
      * </li>
      * </ul>
@@ -225,18 +253,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - Indicates an error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet
-     *        request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     *        <code>instanceChange</code> - An instance was launched or terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Information</code> - An informational event.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -255,17 +287,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - Indicates an error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     * <code>instanceChange</code> - An instance was launched or terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Information</code> - An informational event.
      * </p>
      * </li>
      * </ul>
@@ -275,18 +312,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - Indicates an error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet
-     *        request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     *        <code>instanceChange</code> - An instance was launched or terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Information</code> - An informational event.
      *        </p>
      *        </li>
      * @see EventType
@@ -303,17 +344,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>error</code> - Indicates an error with the Spot fleet request.
+     * <code>error</code> - An error with the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet request.
+     * <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     * <code>instanceChange</code> - An instance was launched or terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Information</code> - An informational event.
      * </p>
      * </li>
      * </ul>
@@ -323,18 +369,22 @@ public class HistoryRecord implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>error</code> - Indicates an error with the Spot fleet request.
+     *        <code>error</code> - An error with the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>fleetRequestChange</code> - Indicates a change in the status or configuration of the Spot fleet
-     *        request.
+     *        <code>fleetRequestChange</code> - A change in the status or configuration of the Spot fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instanceChange</code> - Indicates that an instance was launched or terminated.
+     *        <code>instanceChange</code> - An instance was launched or terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Information</code> - An informational event.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

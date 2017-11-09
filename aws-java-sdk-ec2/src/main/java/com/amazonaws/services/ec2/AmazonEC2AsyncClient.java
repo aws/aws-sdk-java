@@ -1376,6 +1376,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDefaultSubnetResult> createDefaultSubnetAsync(CreateDefaultSubnetRequest request) {
+
+        return createDefaultSubnetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDefaultSubnetResult> createDefaultSubnetAsync(final CreateDefaultSubnetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDefaultSubnetRequest, CreateDefaultSubnetResult> asyncHandler) {
+        final CreateDefaultSubnetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDefaultSubnetResult>() {
+            @Override
+            public CreateDefaultSubnetResult call() throws Exception {
+                CreateDefaultSubnetResult result = null;
+
+                try {
+                    result = executeCreateDefaultSubnet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDefaultVpcResult> createDefaultVpcAsync(CreateDefaultVpcRequest request) {
 
         return createDefaultVpcAsync(request, null);
