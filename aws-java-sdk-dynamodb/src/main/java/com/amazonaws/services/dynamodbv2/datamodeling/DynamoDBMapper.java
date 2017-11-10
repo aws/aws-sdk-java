@@ -24,6 +24,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.Batch
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.BatchWriteRetryStrategy;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.SaveBehavior;
+import com.amazonaws.services.dynamodbv2.document.Attribute;
 import com.amazonaws.services.dynamodbv2.model.AttributeAction;
 import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
@@ -488,6 +489,72 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
     }
 
     @Override
+    public <T> void increment(T object, DynamoDBMapperConfig config) {
+        final DynamoDBMapperConfig finalConfig = mergeConfig(config);
+
+        @SuppressWarnings("unchecked")
+        Class<T> clazz = (Class<T>) object.getClass();
+        String tableName = getTableName(clazz, object, finalConfig);
+
+        final DynamoDBMapperTableModel<T> model = getTableModel(clazz, finalConfig);
+        SaveObjectHandler saveObjectHandler = this.new SaveObjectHandler(clazz, object,
+                tableName, finalConfig, null) {
+
+            @Override
+            protected void onPrimaryKeyAttributeValue(String attributeName,
+                                                      AttributeValue keyAttributeValue) {
+                /* Put it in the key collection which is later used in the updateItem request. */
+                getPrimaryKeyAttributeValues().put(attributeName, keyAttributeValue);
+            }
+
+
+            @Override
+            protected void onNonKeyAttribute(String attributeName,
+                                             AttributeValue currentValue) {
+                // don't write out any attributes that we're not incrementing, the intent here is that
+                // the model of the incremented object be effectively empty with the exception of the
+                // attributes we're incrementing and the key value
+            }
+
+            @Override
+            protected void onNullNonKeyAttribute(String attributeName) {
+                // ignore all null attributes, don't overwrite them here
+            }
+
+            @Override
+            protected void executeLowLevelRequest() {
+                UpdateItemResult updateItemResult = doUpdateItem();
+
+                // The UpdateItem request is specified to return ALL_NEW
+                // attributes of the affected item. So if the returned
+                // UpdateItemResult does not include any ReturnedAttributes,
+                // it indicates the UpdateItem failed silently (e.g. the
+                // key-only-put nightmare -
+                // https://forums.aws.amazon.com/thread.jspa?threadID=86798&tstart=25),
+                // in which case we should re-send a PutItem
+                // request instead.
+                if (updateItemResult.getAttributes() == null
+                        || updateItemResult.getAttributes().isEmpty()) {
+                    // Before we proceed with PutItem, we need to put all
+                    // the key attributes (prepared for the
+                    // UpdateItemRequest) into the AttributeValueUpdates
+                    // collection.
+                    for (String keyAttributeName : getPrimaryKeyAttributeValues().keySet()) {
+                        getAttributeValueUpdates().put(keyAttributeName,
+                                new AttributeValueUpdate()
+                                        .withValue(getPrimaryKeyAttributeValues().get(keyAttributeName))
+                                        .withAction("PUT"));
+                    }
+
+                    doPutItem();
+                }
+            }
+        };
+
+        saveObjectHandler.execute();
+    }
+
+    @Override
     public <T extends Object> void save(T object,
                                         DynamoDBSaveExpression saveExpression,
                                         final DynamoDBMapperConfig config) {
@@ -664,7 +731,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
          * @param object            The model object to be saved.
          * @param clazz             The domain class of the object.
          * @param tableName         The table name.
-         * @param saveConifg        The mapper configuration used for this save.
+         * @param saveConfig        The mapper configuration used for this save.
          * @param saveExpression    The save expression, including the user-provided conditions and an optional logic operator.
          */
         public SaveObjectHandler(
@@ -717,6 +784,12 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
                         );
                     }
                     onPrimaryKeyAttributeValue(field.name(), newAttributeValue);
+                } else if (field.autoIncrementor()) {
+                    if (SaveBehavior.APPEND_SET == saveConfig.getSaveBehavior()) {
+                        // when we call save rather than increment we need to be certain that we're just adding the value rather
+                        // than setting the value to the value stored in the domain model
+                        onAutoIncremented(field, model.field(field.name()).getAndConvert(this.object));
+                    }
                 } else {
                     AttributeValue currentValue = field.convert(field.get(object));
                     if ( currentValue != null ) {
@@ -891,6 +964,25 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             AttributeValue value = field.convert(field.generate(field.get(object)));
             updateValues.put(field.name(),  new AttributeValueUpdate().withAction("PUT").withValue(value));
             inMemoryUpdates.add(new ValueUpdate(field, value, object));
+        }
+
+        /**
+         * Defines the value we're going to increment by to the update routine.  The intent here is we always perform
+         * an add operation rather than a PUT
+         *
+         * @param field
+         *      The field whose model we're applying the add operation onto
+         * @param incrValue
+         *      The value that originates from the object we're interrogating for use in incrementing the value
+         */
+        private void onAutoIncremented(DynamoDBMapperFieldModel<Object, Object> field, AttributeValue incrValue) {
+            if (null != incrValue) {
+                updateValues.put(field.name(),
+                        new AttributeValueUpdate()
+                                .withAction(AttributeAction.ADD)
+                                .withValue(incrValue));
+                inMemoryUpdates.add(new ValueUpdate(field, incrValue, object));
+            }
         }
 
         /**

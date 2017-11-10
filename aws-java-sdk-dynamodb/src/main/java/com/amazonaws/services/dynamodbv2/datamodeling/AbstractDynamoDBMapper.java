@@ -18,6 +18,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper.FailedBatch
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
+import com.amazonaws.services.kms.model.UnsupportedOperationException;
 import com.amazonaws.services.s3.model.Region;
 
 import java.util.Arrays;
@@ -121,6 +122,22 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     @Override
     public <T> void save(T object) {
         save(object, (DynamoDBSaveExpression)null, config);
+    }
+
+    @Override
+    public <T> void increment(T object) {
+        // By default we apply an append behavior here since we simply want to add the values rather than apply them as raw
+        // values.  In the save method we disallow the persistence of incremental values @DynamoDBAtomicIncrementor attributes
+        // unless the save behavior is APPEND_SET this way the value can never be squashed
+        increment(object,
+                config.merge(
+                        DynamoDBMapperConfig.builder().withSaveBehavior(DynamoDBMapperConfig.SaveBehavior.APPEND_SET).build())
+        );
+    }
+
+    @Override
+    public <T> void increment(T object, DynamoDBMapperConfig config) {
+        throw new UnsupportedOperationException("operation not supported in " + getClass());
     }
 
     @Override

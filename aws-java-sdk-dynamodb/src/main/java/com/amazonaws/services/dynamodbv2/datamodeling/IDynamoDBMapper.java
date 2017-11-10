@@ -687,4 +687,15 @@ public interface IDynamoDBMapper {
      */
     DeleteTableRequest generateDeleteTableRequest(Class<?> clazz);
 
+    /**
+     * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
+     * see @com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAtomicIncrementor
+     */
+    <T extends Object> void increment(T object);
+
+    /**
+     * Increments the object given into DynamoDB, using the default configuration\ for any attributes that are
+     * Atomic incrementors
+     */
+    <T> void increment(T object, DynamoDBMapperConfig config);
 }

@@ -21,7 +21,6 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
-import com.amazonaws.util.StringUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
@@ -381,6 +380,11 @@ final class StandardAnnotationMaps {
                 }
             }
             return Collections.<String>emptyList();
+        }
+
+        @Override
+        public boolean autoIncrementor() {
+            return null != actualOf(DynamoDBAtomicIncrementor.class);
         }
     }
 

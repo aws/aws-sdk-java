@@ -597,7 +597,7 @@
                               &lt;/script&gt;
                               &lt;!-- Script for Syntax Highlighter END --&gt;
                           &lt;/div&gt;
-                          
+
                           &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript"&gt;&lt;/script&gt;
                           &lt;script&gt;
                           jQuery(function ($) {
@@ -1134,7 +1134,7 @@
                               &lt;/script&gt;
                               &lt;!-- Script for Syntax Highlighter END --&gt;
                           &lt;/div&gt;
-                          
+
                           &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript"&gt;&lt;/script&gt;
                           &lt;script&gt;
                           jQuery(function ($) {
@@ -1667,7 +1667,7 @@
                               &lt;/script&gt;
                               &lt;!-- Script for Syntax Highlighter END --&gt;
                           &lt;/div&gt;
-                          
+
                           &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript"&gt;&lt;/script&gt;
                           &lt;script&gt;
                           jQuery(function ($) {
