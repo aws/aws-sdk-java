@@ -146,7 +146,9 @@
     <module>aws-java-sdk-bundle</module>
 </modules>
   <scm>
-    <url>https://github.com/aws/aws-sdk-java.git</url>
+    <connection>scm:git:https://github.com/aws/aws-sdk-java.git</connection>
+    <developerConnection>scm:git:git@github.com:aws/aws-sdk-java.git</developerConnection>
+    <url>https://github.com/aws/aws-sdk-java</url>
   </scm>
   <properties>
       <awsjavasdk.version>${project.version}</awsjavasdk.version>
