@@ -693,5 +693,29 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <id>owasp</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <version>1.4.4</version>
+            <configuration>
+              <failBuildOnCVSS>1</failBuildOnCVSS>
+              <suppressionFile>dependency-check-maven-plugin-suppressions.xml</suppressionFile>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+              </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 </project>
