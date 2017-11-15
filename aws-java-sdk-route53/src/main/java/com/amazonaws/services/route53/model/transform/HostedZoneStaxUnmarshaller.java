@@ -67,6 +67,11 @@ public class HostedZoneStaxUnmarshaller implements Unmarshaller<HostedZone, Stax
                     hostedZone.setResourceRecordSetCount(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LinkedService", targetDepth)) {
+                    hostedZone.setLinkedService(LinkedServiceStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return hostedZone;

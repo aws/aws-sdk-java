@@ -61,6 +61,23 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private DeploymentConfiguration deploymentConfiguration;
+    /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
+     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
+     * the network configuration, this does not trigger a new service deployment.
+     * </p>
+     * </note>
+     */
+    private NetworkConfiguration networkConfiguration;
 
     /**
      * <p>
@@ -299,6 +316,106 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
+     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
+     * the network configuration, this does not trigger a new service deployment.
+     * </p>
+     * </note>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for the service. This parameter is required for task definitions that use the
+     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        for other network modes. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
+     *        For example, if your network configuration change is to keep the existing subnets and simply add another
+     *        subnet to the network configuration, this does not trigger a new service deployment.
+     *        </p>
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
+     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
+     * the network configuration, this does not trigger a new service deployment.
+     * </p>
+     * </note>
+     * 
+     * @return The network configuration for the service. This parameter is required for task definitions that use the
+     *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *         for other network modes. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> <note>
+     *         <p>
+     *         Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
+     *         For example, if your network configuration change is to keep the existing subnets and simply add another
+     *         subnet to the network configuration, this does not trigger a new service deployment.
+     *         </p>
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
+     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
+     * the network configuration, this does not trigger a new service deployment.
+     * </p>
+     * </note>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for the service. This parameter is required for task definitions that use the
+     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        for other network modes. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
+     *        For example, if your network configuration change is to keep the existing subnets and simply add another
+     *        subnet to the network configuration, this does not trigger a new service deployment.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -318,7 +435,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTaskDefinition() != null)
             sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getDeploymentConfiguration() != null)
-            sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration());
+            sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -353,6 +472,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDeploymentConfiguration() != null && other.getDeploymentConfiguration().equals(this.getDeploymentConfiguration()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -366,6 +489,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }
 

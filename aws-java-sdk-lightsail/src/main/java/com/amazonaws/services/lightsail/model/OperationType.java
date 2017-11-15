@@ -38,7 +38,14 @@ public enum OperationType {
     DeleteDomain("DeleteDomain"),
     CreateInstanceSnapshot("CreateInstanceSnapshot"),
     DeleteInstanceSnapshot("DeleteInstanceSnapshot"),
-    CreateInstancesFromSnapshot("CreateInstancesFromSnapshot");
+    CreateInstancesFromSnapshot("CreateInstancesFromSnapshot"),
+    CreateDisk("CreateDisk"),
+    DeleteDisk("DeleteDisk"),
+    AttachDisk("AttachDisk"),
+    DetachDisk("DetachDisk"),
+    CreateDiskSnapshot("CreateDiskSnapshot"),
+    DeleteDiskSnapshot("DeleteDiskSnapshot"),
+    CreateDiskFromSnapshot("CreateDiskFromSnapshot");
 
     private String value;
 

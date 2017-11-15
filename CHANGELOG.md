@@ -1,3 +1,20 @@
+# __1.11.229__ __2017-11-15__
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Added new mode for Task Networking in ECS, called awsvpc mode. Mode configuration parameters to be passed in via awsvpcConfiguration. Updated APIs now use/show this new mode - RegisterTaskDefinition, CreateService, UpdateService, RunTask, StartTask.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Lightsail now supports attached block storage, which allows you to scale your applications and protect application data with additional SSD-backed storage disks. This feature allows Lightsail customers to attach secure storage disks to their Lightsail instances and manage their attached disks, including creating and deleting disks, attaching and detaching disks from instances, and backing up disks via snapshot.
+
+## __Amazon Route 53__
+  - ### Features
+    - When a Route 53 health check or hosted zone is created by a linked AWS service, the object now includes information about the service that created it. Hosted zones or health checks that are created by a linked service can't be updated or deleted using Route 53.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - EC2 Systems Manager GetInventory API adds support for aggregation.
+
 # __1.11.228__ __2017-11-09__
 ## __Amazon DynamoDB__
   - ### Bugfixes

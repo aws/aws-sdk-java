@@ -80,6 +80,10 @@ public class InstanceSnapshotJsonUnmarshaller implements Unmarshaller<InstanceSn
                     context.nextToken();
                     instanceSnapshot.setProgress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("fromAttachedDisks", targetDepth)) {
+                    context.nextToken();
+                    instanceSnapshot.setFromAttachedDisks(new ListUnmarshaller<Disk>(DiskJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("fromInstanceName", targetDepth)) {
                     context.nextToken();
                     instanceSnapshot.setFromInstanceName(context.getUnmarshaller(String.class).unmarshall(context));

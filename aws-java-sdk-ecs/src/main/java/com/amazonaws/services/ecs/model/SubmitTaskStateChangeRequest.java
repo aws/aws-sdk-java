@@ -49,6 +49,18 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String reason;
+    /**
+     * <p>
+     * Any containers associated with the state change request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ContainerStateChange> containers;
+    /**
+     * <p>
+     * Any attachments associated with the state change request.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AttachmentStateChange> attachments;
 
     /**
      * <p>
@@ -211,6 +223,152 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Any containers associated with the state change request.
+     * </p>
+     * 
+     * @return Any containers associated with the state change request.
+     */
+
+    public java.util.List<ContainerStateChange> getContainers() {
+        if (containers == null) {
+            containers = new com.amazonaws.internal.SdkInternalList<ContainerStateChange>();
+        }
+        return containers;
+    }
+
+    /**
+     * <p>
+     * Any containers associated with the state change request.
+     * </p>
+     * 
+     * @param containers
+     *        Any containers associated with the state change request.
+     */
+
+    public void setContainers(java.util.Collection<ContainerStateChange> containers) {
+        if (containers == null) {
+            this.containers = null;
+            return;
+        }
+
+        this.containers = new com.amazonaws.internal.SdkInternalList<ContainerStateChange>(containers);
+    }
+
+    /**
+     * <p>
+     * Any containers associated with the state change request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContainers(java.util.Collection)} or {@link #withContainers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param containers
+     *        Any containers associated with the state change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitTaskStateChangeRequest withContainers(ContainerStateChange... containers) {
+        if (this.containers == null) {
+            setContainers(new com.amazonaws.internal.SdkInternalList<ContainerStateChange>(containers.length));
+        }
+        for (ContainerStateChange ele : containers) {
+            this.containers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any containers associated with the state change request.
+     * </p>
+     * 
+     * @param containers
+     *        Any containers associated with the state change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitTaskStateChangeRequest withContainers(java.util.Collection<ContainerStateChange> containers) {
+        setContainers(containers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any attachments associated with the state change request.
+     * </p>
+     * 
+     * @return Any attachments associated with the state change request.
+     */
+
+    public java.util.List<AttachmentStateChange> getAttachments() {
+        if (attachments == null) {
+            attachments = new com.amazonaws.internal.SdkInternalList<AttachmentStateChange>();
+        }
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * Any attachments associated with the state change request.
+     * </p>
+     * 
+     * @param attachments
+     *        Any attachments associated with the state change request.
+     */
+
+    public void setAttachments(java.util.Collection<AttachmentStateChange> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new com.amazonaws.internal.SdkInternalList<AttachmentStateChange>(attachments);
+    }
+
+    /**
+     * <p>
+     * Any attachments associated with the state change request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        Any attachments associated with the state change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitTaskStateChangeRequest withAttachments(AttachmentStateChange... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new com.amazonaws.internal.SdkInternalList<AttachmentStateChange>(attachments.length));
+        }
+        for (AttachmentStateChange ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any attachments associated with the state change request.
+     * </p>
+     * 
+     * @param attachments
+     *        Any attachments associated with the state change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitTaskStateChangeRequest withAttachments(java.util.Collection<AttachmentStateChange> attachments) {
+        setAttachments(attachments);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -228,7 +386,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getReason() != null)
-            sb.append("Reason: ").append(getReason());
+            sb.append("Reason: ").append(getReason()).append(",");
+        if (getContainers() != null)
+            sb.append("Containers: ").append(getContainers()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +421,14 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getContainers() == null ^ this.getContainers() == null)
+            return false;
+        if (other.getContainers() != null && other.getContainers().equals(this.getContainers()) == false)
+            return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
         return true;
     }
 
@@ -271,6 +441,8 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         return hashCode;
     }
 

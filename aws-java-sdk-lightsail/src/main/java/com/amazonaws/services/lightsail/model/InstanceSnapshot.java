@@ -37,7 +37,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      */
     private String arn;
@@ -80,6 +80,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     private String progress;
     /**
      * <p>
+     * An array of disk objects containing information about all block storage disks.
+     * </p>
+     */
+    private java.util.List<Disk> fromAttachedDisks;
+    /**
+     * <p>
      * The instance from which the snapshot was created.
      * </p>
      */
@@ -87,7 +93,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      */
     private String fromInstanceArn;
@@ -154,12 +160,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
      *        ).
      */
 
@@ -170,11 +176,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     *         <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
+     *         <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
      *         ).
      */
 
@@ -185,12 +191,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the snapshot (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>
      *        ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -517,6 +523,76 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * An array of disk objects containing information about all block storage disks.
+     * </p>
+     * 
+     * @return An array of disk objects containing information about all block storage disks.
+     */
+
+    public java.util.List<Disk> getFromAttachedDisks() {
+        return fromAttachedDisks;
+    }
+
+    /**
+     * <p>
+     * An array of disk objects containing information about all block storage disks.
+     * </p>
+     * 
+     * @param fromAttachedDisks
+     *        An array of disk objects containing information about all block storage disks.
+     */
+
+    public void setFromAttachedDisks(java.util.Collection<Disk> fromAttachedDisks) {
+        if (fromAttachedDisks == null) {
+            this.fromAttachedDisks = null;
+            return;
+        }
+
+        this.fromAttachedDisks = new java.util.ArrayList<Disk>(fromAttachedDisks);
+    }
+
+    /**
+     * <p>
+     * An array of disk objects containing information about all block storage disks.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFromAttachedDisks(java.util.Collection)} or {@link #withFromAttachedDisks(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param fromAttachedDisks
+     *        An array of disk objects containing information about all block storage disks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSnapshot withFromAttachedDisks(Disk... fromAttachedDisks) {
+        if (this.fromAttachedDisks == null) {
+            setFromAttachedDisks(new java.util.ArrayList<Disk>(fromAttachedDisks.length));
+        }
+        for (Disk ele : fromAttachedDisks) {
+            this.fromAttachedDisks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of disk objects containing information about all block storage disks.
+     * </p>
+     * 
+     * @param fromAttachedDisks
+     *        An array of disk objects containing information about all block storage disks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSnapshot withFromAttachedDisks(java.util.Collection<Disk> fromAttachedDisks) {
+        setFromAttachedDisks(fromAttachedDisks);
+        return this;
+    }
+
+    /**
+     * <p>
      * The instance from which the snapshot was created.
      * </p>
      * 
@@ -558,12 +634,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      * 
      * @param fromInstanceArn
      *        The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      */
 
     public void setFromInstanceArn(String fromInstanceArn) {
@@ -573,11 +649,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     *         <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     *         <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      */
 
     public String getFromInstanceArn() {
@@ -587,12 +663,12 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * </p>
      * 
      * @param fromInstanceArn
      *        The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -754,6 +830,8 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
             sb.append("State: ").append(getState()).append(",");
         if (getProgress() != null)
             sb.append("Progress: ").append(getProgress()).append(",");
+        if (getFromAttachedDisks() != null)
+            sb.append("FromAttachedDisks: ").append(getFromAttachedDisks()).append(",");
         if (getFromInstanceName() != null)
             sb.append("FromInstanceName: ").append(getFromInstanceName()).append(",");
         if (getFromInstanceArn() != null)
@@ -810,6 +888,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
+        if (other.getFromAttachedDisks() == null ^ this.getFromAttachedDisks() == null)
+            return false;
+        if (other.getFromAttachedDisks() != null && other.getFromAttachedDisks().equals(this.getFromAttachedDisks()) == false)
+            return false;
         if (other.getFromInstanceName() == null ^ this.getFromInstanceName() == null)
             return false;
         if (other.getFromInstanceName() != null && other.getFromInstanceName().equals(this.getFromInstanceName()) == false)
@@ -846,6 +928,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getFromAttachedDisks() == null) ? 0 : getFromAttachedDisks().hashCode());
         hashCode = prime * hashCode + ((getFromInstanceName() == null) ? 0 : getFromInstanceName().hashCode());
         hashCode = prime * hashCode + ((getFromInstanceArn() == null) ? 0 : getFromInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getFromBlueprintId() == null) ? 0 : getFromBlueprintId().hashCode());

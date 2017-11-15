@@ -64,8 +64,7 @@ public class MetricAdmin implements MetricAdminMBean {
     }
     @Override
     public String getRegion() {
-        Regions region = AwsSdkMetrics.getRegion();
-        return region == null ? null : region.getName();
+        return AwsSdkMetrics.getRegionName();
     }
     @Override
     public void setRegion(String region) {

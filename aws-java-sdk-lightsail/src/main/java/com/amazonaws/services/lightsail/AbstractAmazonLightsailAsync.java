@@ -41,6 +41,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<AttachDiskResult> attachDiskAsync(AttachDiskRequest request) {
+
+        return attachDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachDiskResult> attachDiskAsync(AttachDiskRequest request,
+            com.amazonaws.handlers.AsyncHandler<AttachDiskRequest, AttachDiskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachStaticIpResult> attachStaticIpAsync(AttachStaticIpRequest request) {
 
         return attachStaticIpAsync(request, null);
@@ -62,6 +75,45 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<CloseInstancePublicPortsResult> closeInstancePublicPortsAsync(CloseInstancePublicPortsRequest request,
             com.amazonaws.handlers.AsyncHandler<CloseInstancePublicPortsRequest, CloseInstancePublicPortsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskResult> createDiskAsync(CreateDiskRequest request) {
+
+        return createDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskResult> createDiskAsync(CreateDiskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDiskRequest, CreateDiskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskFromSnapshotResult> createDiskFromSnapshotAsync(CreateDiskFromSnapshotRequest request) {
+
+        return createDiskFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskFromSnapshotResult> createDiskFromSnapshotAsync(CreateDiskFromSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDiskFromSnapshotRequest, CreateDiskFromSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskSnapshotResult> createDiskSnapshotAsync(CreateDiskSnapshotRequest request) {
+
+        return createDiskSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskSnapshotResult> createDiskSnapshotAsync(CreateDiskSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDiskSnapshotRequest, CreateDiskSnapshotResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +197,32 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(DeleteDiskRequest request) {
+
+        return deleteDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(DeleteDiskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDiskRequest, DeleteDiskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDiskSnapshotResult> deleteDiskSnapshotAsync(DeleteDiskSnapshotRequest request) {
+
+        return deleteDiskSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDiskSnapshotResult> deleteDiskSnapshotAsync(DeleteDiskSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDiskSnapshotRequest, DeleteDiskSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
 
         return deleteDomainAsync(request, null);
@@ -210,6 +288,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<DetachDiskResult> detachDiskAsync(DetachDiskRequest request) {
+
+        return detachDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachDiskResult> detachDiskAsync(DetachDiskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetachDiskRequest, DetachDiskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachStaticIpResult> detachStaticIpAsync(DetachStaticIpRequest request) {
 
         return detachStaticIpAsync(request, null);
@@ -270,6 +361,58 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<GetBundlesResult> getBundlesAsync(GetBundlesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBundlesRequest, GetBundlesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskResult> getDiskAsync(GetDiskRequest request) {
+
+        return getDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskResult> getDiskAsync(GetDiskRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDiskRequest, GetDiskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotResult> getDiskSnapshotAsync(GetDiskSnapshotRequest request) {
+
+        return getDiskSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotResult> getDiskSnapshotAsync(GetDiskSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDiskSnapshotRequest, GetDiskSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotsResult> getDiskSnapshotsAsync(GetDiskSnapshotsRequest request) {
+
+        return getDiskSnapshotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotsResult> getDiskSnapshotsAsync(GetDiskSnapshotsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDiskSnapshotsRequest, GetDiskSnapshotsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisksResult> getDisksAsync(GetDisksRequest request) {
+
+        return getDisksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisksResult> getDisksAsync(GetDisksRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDisksRequest, GetDisksResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

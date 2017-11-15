@@ -27,13 +27,20 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the parameter that you want to add to the system.
+     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
+     * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
+     * <note>
+     * <p>
+     * The maximum length constraint listed below includes capacity for additional system attributes that are not part
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * </p>
+     * </note>
      */
     private String name;
     /**
      * <p>
-     * Information about the parameter that you want to add to the system
+     * Information about the parameter that you want to add to the system.
      * </p>
      */
     private String description;
@@ -72,11 +79,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the parameter that you want to add to the system.
+     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
+     * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
+     * <note>
+     * <p>
+     * The maximum length constraint listed below includes capacity for additional system attributes that are not part
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name of the parameter that you want to add to the system.
+     *        The fully qualified name of the parameter that you want to add to the system. The fully qualified name
+     *        includes the complete hierarchy of the parameter path and name. For example:
+     *        <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     *        <p>
+     *        The maximum length constraint listed below includes capacity for additional system attributes that are not
+     *        part of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -85,10 +105,23 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the parameter that you want to add to the system.
+     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
+     * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
+     * <note>
+     * <p>
+     * The maximum length constraint listed below includes capacity for additional system attributes that are not part
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * </p>
+     * </note>
      * 
-     * @return The name of the parameter that you want to add to the system.
+     * @return The fully qualified name of the parameter that you want to add to the system. The fully qualified name
+     *         includes the complete hierarchy of the parameter path and name. For example:
+     *         <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     *         <p>
+     *         The maximum length constraint listed below includes capacity for additional system attributes that are
+     *         not part of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     *         </p>
      */
 
     public String getName() {
@@ -97,11 +130,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the parameter that you want to add to the system.
+     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
+     * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
+     * <note>
+     * <p>
+     * The maximum length constraint listed below includes capacity for additional system attributes that are not part
+     * of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name of the parameter that you want to add to the system.
+     *        The fully qualified name of the parameter that you want to add to the system. The fully qualified name
+     *        includes the complete hierarchy of the parameter path and name. For example:
+     *        <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
+     *        <p>
+     *        The maximum length constraint listed below includes capacity for additional system attributes that are not
+     *        part of the name. The maximum length for the fully qualified parameter name is 1011 characters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +158,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about the parameter that you want to add to the system
+     * Information about the parameter that you want to add to the system.
      * </p>
      * 
      * @param description
-     *        Information about the parameter that you want to add to the system
+     *        Information about the parameter that you want to add to the system.
      */
 
     public void setDescription(String description) {
@@ -125,10 +171,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about the parameter that you want to add to the system
+     * Information about the parameter that you want to add to the system.
      * </p>
      * 
-     * @return Information about the parameter that you want to add to the system
+     * @return Information about the parameter that you want to add to the system.
      */
 
     public String getDescription() {
@@ -137,11 +183,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about the parameter that you want to add to the system
+     * Information about the parameter that you want to add to the system.
      * </p>
      * 
      * @param description
-     *        Information about the parameter that you want to add to the system
+     *        Information about the parameter that you want to add to the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

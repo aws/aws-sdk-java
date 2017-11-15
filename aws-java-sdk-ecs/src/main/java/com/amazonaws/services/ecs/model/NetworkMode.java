@@ -22,6 +22,7 @@ public enum NetworkMode {
 
     Bridge("bridge"),
     Host("host"),
+    Awsvpc("awsvpc"),
     None("none");
 
     private String value;

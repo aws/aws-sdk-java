@@ -80,6 +80,10 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                     context.nextToken();
                     deployment.setUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("networkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deployment.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

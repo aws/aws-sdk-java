@@ -30,7 +30,7 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     * The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      * </p>
      */
     private String zoneName;
@@ -43,11 +43,11 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     * The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      * </p>
      * 
      * @param zoneName
-     *        The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     *        The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      */
 
     public void setZoneName(String zoneName) {
@@ -56,10 +56,10 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     * The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      * </p>
      * 
-     * @return The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     * @return The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      */
 
     public String getZoneName() {
@@ -68,11 +68,11 @@ public class AvailabilityZone implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     * The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      * </p>
      * 
      * @param zoneName
-     *        The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).
+     *        The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

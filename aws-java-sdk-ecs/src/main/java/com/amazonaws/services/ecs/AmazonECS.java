@@ -109,6 +109,16 @@ public interface AmazonECS {
      * launch your first container instance. However, you can create your own cluster with a unique name with the
      * <code>CreateCluster</code> action.
      * </p>
+     * <note>
+     * <p>
+     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the service-linked role for
+     * your account so that required resources in other AWS services can be managed on your behalf. However, if the IAM
+     * user that makes the call does not have permissions to create the service-linked role, it is not created. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param createClusterRequest
      * @return Result of the CreateCluster operation returned by the service.
@@ -1152,7 +1162,8 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Modifies the desired count, deployment configuration, or task definition used in a service.
+     * Modifies the desired count, deployment configuration, network configuration, or task definition used in a
+     * service.
      * </p>
      * <p>
      * You can add to or subtract from the number of instantiations of a task definition in a service by specifying the

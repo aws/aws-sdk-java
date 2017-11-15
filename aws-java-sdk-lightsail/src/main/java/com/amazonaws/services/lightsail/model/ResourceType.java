@@ -25,7 +25,9 @@ public enum ResourceType {
     KeyPair("KeyPair"),
     InstanceSnapshot("InstanceSnapshot"),
     Domain("Domain"),
-    PeeredVpc("PeeredVpc");
+    PeeredVpc("PeeredVpc"),
+    Disk("Disk"),
+    DiskSnapshot("DiskSnapshot");
 
     private String value;
 

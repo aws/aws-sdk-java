@@ -127,6 +127,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date registeredAt;
+    /**
+     * <p>
+     * The Elastic Network Interfaces associated with the container instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
 
     /**
      * <p>
@@ -945,6 +951,79 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Elastic Network Interfaces associated with the container instance.
+     * </p>
+     * 
+     * @return The Elastic Network Interfaces associated with the container instance.
+     */
+
+    public java.util.List<Attachment> getAttachments() {
+        if (attachments == null) {
+            attachments = new com.amazonaws.internal.SdkInternalList<Attachment>();
+        }
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * The Elastic Network Interfaces associated with the container instance.
+     * </p>
+     * 
+     * @param attachments
+     *        The Elastic Network Interfaces associated with the container instance.
+     */
+
+    public void setAttachments(java.util.Collection<Attachment> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new com.amazonaws.internal.SdkInternalList<Attachment>(attachments);
+    }
+
+    /**
+     * <p>
+     * The Elastic Network Interfaces associated with the container instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        The Elastic Network Interfaces associated with the container instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerInstance withAttachments(Attachment... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new com.amazonaws.internal.SdkInternalList<Attachment>(attachments.length));
+        }
+        for (Attachment ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elastic Network Interfaces associated with the container instance.
+     * </p>
+     * 
+     * @param attachments
+     *        The Elastic Network Interfaces associated with the container instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerInstance withAttachments(java.util.Collection<Attachment> attachments) {
+        setAttachments(attachments);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -980,7 +1059,9 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getRegisteredAt() != null)
-            sb.append("RegisteredAt: ").append(getRegisteredAt());
+            sb.append("RegisteredAt: ").append(getRegisteredAt()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments());
         sb.append("}");
         return sb.toString();
     }
@@ -1047,6 +1128,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRegisteredAt() != null && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
             return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
         return true;
     }
 
@@ -1068,6 +1153,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getAgentUpdateStatus() == null) ? 0 : getAgentUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         return hashCode;
     }
 

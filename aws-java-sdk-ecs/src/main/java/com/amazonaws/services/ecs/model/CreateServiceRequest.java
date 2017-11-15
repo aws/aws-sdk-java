@@ -83,10 +83,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load
-     * balancer on your behalf. This parameter is required if you are using a load balancer with your service. If you
-     * specify the <code>role</code> parameter, you must also specify a load balancer object with the
-     * <code>loadBalancers</code> parameter.
+     * balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and
+     * your task definition does not use the <code>awsvpc</code> network mode. If you specify the <code>role</code>
+     * parameter, you must also specify a load balancer object with the <code>loadBalancers</code> parameter.
      * </p>
+     * <important>
+     * <p>
+     * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
+     * service unless you specify a role here. The service-linked role is required if your task definition uses the
+     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
@@ -118,6 +127,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
+    /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
 
     /**
      * <p>
@@ -539,10 +558,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load
-     * balancer on your behalf. This parameter is required if you are using a load balancer with your service. If you
-     * specify the <code>role</code> parameter, you must also specify a load balancer object with the
-     * <code>loadBalancers</code> parameter.
+     * balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and
+     * your task definition does not use the <code>awsvpc</code> network mode. If you specify the <code>role</code>
+     * parameter, you must also specify a load balancer object with the <code>loadBalancers</code> parameter.
      * </p>
+     * <important>
+     * <p>
+     * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
+     * service unless you specify a role here. The service-linked role is required if your task definition uses the
+     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
@@ -554,9 +582,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param role
      *        The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
-     *        load balancer on your behalf. This parameter is required if you are using a load balancer with your
-     *        service. If you specify the <code>role</code> parameter, you must also specify a load balancer object with
-     *        the <code>loadBalancers</code> parameter.</p>
+     *        load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your
+     *        service and your task definition does not use the <code>awsvpc</code> network mode. If you specify the
+     *        <code>role</code> parameter, you must also specify a load balancer object with the
+     *        <code>loadBalancers</code> parameter.</p> <important>
+     *        <p>
+     *        If your account has already created the Amazon ECS service-linked role, that role is used by default for
+     *        your service unless you specify a role here. The service-linked role is required if your task definition
+     *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        </p>
+     *        </important>
      *        <p>
      *        If your specified role has a path other than <code>/</code>, then you must either specify the full role
      *        ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name
@@ -573,10 +611,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load
-     * balancer on your behalf. This parameter is required if you are using a load balancer with your service. If you
-     * specify the <code>role</code> parameter, you must also specify a load balancer object with the
-     * <code>loadBalancers</code> parameter.
+     * balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and
+     * your task definition does not use the <code>awsvpc</code> network mode. If you specify the <code>role</code>
+     * parameter, you must also specify a load balancer object with the <code>loadBalancers</code> parameter.
      * </p>
+     * <important>
+     * <p>
+     * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
+     * service unless you specify a role here. The service-linked role is required if your task definition uses the
+     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
@@ -587,9 +634,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
-     *         load balancer on your behalf. This parameter is required if you are using a load balancer with your
-     *         service. If you specify the <code>role</code> parameter, you must also specify a load balancer object
-     *         with the <code>loadBalancers</code> parameter.</p>
+     *         load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your
+     *         service and your task definition does not use the <code>awsvpc</code> network mode. If you specify the
+     *         <code>role</code> parameter, you must also specify a load balancer object with the
+     *         <code>loadBalancers</code> parameter.</p> <important>
+     *         <p>
+     *         If your account has already created the Amazon ECS service-linked role, that role is used by default for
+     *         your service unless you specify a role here. The service-linked role is required if your task definition
+     *         uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         </p>
+     *         </important>
      *         <p>
      *         If your specified role has a path other than <code>/</code>, then you must either specify the full role
      *         ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name
@@ -606,10 +663,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load
-     * balancer on your behalf. This parameter is required if you are using a load balancer with your service. If you
-     * specify the <code>role</code> parameter, you must also specify a load balancer object with the
-     * <code>loadBalancers</code> parameter.
+     * balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and
+     * your task definition does not use the <code>awsvpc</code> network mode. If you specify the <code>role</code>
+     * parameter, you must also specify a load balancer object with the <code>loadBalancers</code> parameter.
      * </p>
+     * <important>
+     * <p>
+     * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
+     * service unless you specify a role here. The service-linked role is required if your task definition uses the
+     * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
@@ -621,9 +687,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param role
      *        The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
-     *        load balancer on your behalf. This parameter is required if you are using a load balancer with your
-     *        service. If you specify the <code>role</code> parameter, you must also specify a load balancer object with
-     *        the <code>loadBalancers</code> parameter.</p>
+     *        load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your
+     *        service and your task definition does not use the <code>awsvpc</code> network mode. If you specify the
+     *        <code>role</code> parameter, you must also specify a load balancer object with the
+     *        <code>loadBalancers</code> parameter.</p> <important>
+     *        <p>
+     *        If your account has already created the Amazon ECS service-linked role, that role is used by default for
+     *        your service unless you specify a role here. The service-linked role is required if your task definition
+     *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        </p>
+     *        </important>
      *        <p>
      *        If your specified role has a path other than <code>/</code>, then you must either specify the full role
      *        ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name
@@ -852,6 +928,70 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for the service. This parameter is required for task definitions that use the
+     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        for other network modes. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The network configuration for the service. This parameter is required for task definitions that use the
+     *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *         for other network modes. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for the service. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for the service. This parameter is required for task definitions that use the
+     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        for other network modes. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -881,7 +1021,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPlacementConstraints() != null)
             sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
         if (getPlacementStrategy() != null)
-            sb.append("PlacementStrategy: ").append(getPlacementStrategy());
+            sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -936,6 +1078,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -954,6 +1100,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }
 

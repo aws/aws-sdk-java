@@ -63,6 +63,13 @@ public class HostedZone implements Serializable, Cloneable {
      * </p>
      */
     private Long resourceRecordSetCount;
+    /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     */
+    private LinkedService linkedService;
 
     /**
      * Default constructor for HostedZone object. Callers should use the setter or fluent setter (with...) methods to
@@ -332,6 +339,52 @@ public class HostedZone implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     * 
+     * @param linkedService
+     *        If the hosted zone was created by another service, the service that created the hosted zone. When a hosted
+     *        zone is created by another service, you can't edit or delete it using Amazon Route 53.
+     */
+
+    public void setLinkedService(LinkedService linkedService) {
+        this.linkedService = linkedService;
+    }
+
+    /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     * 
+     * @return If the hosted zone was created by another service, the service that created the hosted zone. When a
+     *         hosted zone is created by another service, you can't edit or delete it using Amazon Route 53.
+     */
+
+    public LinkedService getLinkedService() {
+        return this.linkedService;
+    }
+
+    /**
+     * <p>
+     * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
+     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     * 
+     * @param linkedService
+     *        If the hosted zone was created by another service, the service that created the hosted zone. When a hosted
+     *        zone is created by another service, you can't edit or delete it using Amazon Route 53.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostedZone withLinkedService(LinkedService linkedService) {
+        setLinkedService(linkedService);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -351,7 +404,9 @@ public class HostedZone implements Serializable, Cloneable {
         if (getConfig() != null)
             sb.append("Config: ").append(getConfig()).append(",");
         if (getResourceRecordSetCount() != null)
-            sb.append("ResourceRecordSetCount: ").append(getResourceRecordSetCount());
+            sb.append("ResourceRecordSetCount: ").append(getResourceRecordSetCount()).append(",");
+        if (getLinkedService() != null)
+            sb.append("LinkedService: ").append(getLinkedService());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +441,10 @@ public class HostedZone implements Serializable, Cloneable {
             return false;
         if (other.getResourceRecordSetCount() != null && other.getResourceRecordSetCount().equals(this.getResourceRecordSetCount()) == false)
             return false;
+        if (other.getLinkedService() == null ^ this.getLinkedService() == null)
+            return false;
+        if (other.getLinkedService() != null && other.getLinkedService().equals(this.getLinkedService()) == false)
+            return false;
         return true;
     }
 
@@ -399,6 +458,7 @@ public class HostedZone implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
         hashCode = prime * hashCode + ((getConfig() == null) ? 0 : getConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceRecordSetCount() == null) ? 0 : getResourceRecordSetCount().hashCode());
+        hashCode = prime * hashCode + ((getLinkedService() == null) ? 0 : getLinkedService().hashCode());
         return hashCode;
     }
 

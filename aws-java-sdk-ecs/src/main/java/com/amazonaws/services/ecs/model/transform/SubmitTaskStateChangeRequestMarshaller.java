@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,10 @@ public class SubmitTaskStateChangeRequestMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("reason").build();
+    private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("containers").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attachments").build();
 
     private static final SubmitTaskStateChangeRequestMarshaller instance = new SubmitTaskStateChangeRequestMarshaller();
 
@@ -56,6 +61,8 @@ public class SubmitTaskStateChangeRequestMarshaller {
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getTask(), TASK_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(submitTaskStateChangeRequest.getContainers(), CONTAINERS_BINDING);
+            protocolMarshaller.marshall(submitTaskStateChangeRequest.getAttachments(), ATTACHMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

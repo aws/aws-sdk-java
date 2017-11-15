@@ -42,8 +42,7 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
     private String baselineName;
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * </p>
      */
     private String operatingSystem;
@@ -143,13 +142,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * @see OperatingSystem
      */
 
@@ -159,12 +156,10 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * </p>
      * 
-     * @return Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     *         AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @return Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * @see OperatingSystem
      */
 
@@ -174,13 +169,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */
@@ -192,13 +185,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * @see OperatingSystem
      */
 
@@ -208,13 +199,11 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * </p>
      * 
      * @param operatingSystem
-     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
-     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     *        Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperatingSystem
      */

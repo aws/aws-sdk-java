@@ -56,7 +56,7 @@ import java.util.List;
  */
 public abstract class SdkSyncClientBuilder<Subclass extends SdkSyncClientBuilder, TypeToBuild> {
 
-    private static final String USER_AGENT_PREFIX = "apig-java";
+    private static final String USER_AGENT_PREFIX = "aws-apig-java";
     private static final String UA_NAME_VERSION_SEPERATOR = "/";
 
     private AWSCredentialsProvider iamCredentials;

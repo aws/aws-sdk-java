@@ -76,6 +76,10 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                     context.nextToken();
                     container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("networkInterfaces", targetDepth)) {
+                    context.nextToken();
+                    container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

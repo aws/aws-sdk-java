@@ -66,7 +66,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private Boolean isTerminal;
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      * </p>
      */
     private String operationDetails;
@@ -388,11 +388,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param operationDetails
-     *        Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     *        Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      */
 
     public void setOperationDetails(String operationDetails) {
@@ -401,10 +401,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      * </p>
      * 
-     * @return Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     * @return Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      */
 
     public String getOperationDetails() {
@@ -413,11 +413,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     * Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param operationDetails
-     *        Details about the operation (e.g., <code>Debian-1GB-Virginia-1</code>).
+     *        Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

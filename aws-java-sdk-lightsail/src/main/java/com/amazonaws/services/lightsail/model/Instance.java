@@ -30,14 +30,14 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      */
     private String name;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      */
     private String arn;
@@ -141,11 +141,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param name
-     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public void setName(String name) {
@@ -154,10 +154,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
-     * @return The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * @return The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      */
 
     public String getName() {
@@ -166,11 +166,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     * The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * </p>
      * 
      * @param name
-     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Virginia-1</code>).
+     *        The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,12 +182,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the instance (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      */
 
     public void setArn(String arn) {
@@ -197,11 +197,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the instance (e.g.,
-     *         <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     *         <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      */
 
     public String getArn() {
@@ -211,12 +211,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the instance (e.g.,
-     *        <code>arn:aws:lightsail:us-east-1:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
+     *        <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

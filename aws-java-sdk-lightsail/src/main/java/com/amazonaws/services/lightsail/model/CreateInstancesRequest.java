@@ -34,7 +34,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> instanceNames;
     /**
      * <p>
-     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code> (case
+     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
      * sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
@@ -170,14 +170,14 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code> (case
+     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
      * sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code>
+     *        The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code>
      *        (case sensitive). You can get a list of availability zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
@@ -189,13 +189,13 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code> (case
+     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
      * sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
      * 
-     * @return The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code>
+     * @return The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code>
      *         (case sensitive). You can get a list of availability zones by using the <a
      *         href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      *         operation. Be sure to add the <code>include availability zones</code> parameter to your request.
@@ -207,14 +207,14 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code> (case
+     * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
      * sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code>
+     *        The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code>
      *        (case sensitive). You can get a list of availability zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.

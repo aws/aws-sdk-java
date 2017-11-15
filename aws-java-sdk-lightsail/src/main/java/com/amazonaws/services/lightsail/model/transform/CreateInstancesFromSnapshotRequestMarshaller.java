@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -30,6 +31,8 @@ public class CreateInstancesFromSnapshotRequestMarshaller {
 
     private static final MarshallingInfo<List> INSTANCENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("instanceNames").build();
+    private static final MarshallingInfo<Map> ATTACHEDDISKMAPPING_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachedDiskMapping").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
     private static final MarshallingInfo<String> INSTANCESNAPSHOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +61,7 @@ public class CreateInstancesFromSnapshotRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getInstanceNames(), INSTANCENAMES_BINDING);
+            protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getAttachedDiskMapping(), ATTACHEDDISKMAPPING_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getInstanceSnapshotName(), INSTANCESNAPSHOTNAME_BINDING);
             protocolMarshaller.marshall(createInstancesFromSnapshotRequest.getBundleId(), BUNDLEID_BINDING);

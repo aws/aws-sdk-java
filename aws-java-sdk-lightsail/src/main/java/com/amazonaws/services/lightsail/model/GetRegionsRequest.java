@@ -28,7 +28,7 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      */
     private Boolean includeAvailabilityZones;
@@ -36,12 +36,12 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @param includeAvailabilityZones
      *        A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *        Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *        Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      */
 
     public void setIncludeAvailabilityZones(Boolean includeAvailabilityZones) {
@@ -51,11 +51,11 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @return A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *         Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *         Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      */
 
     public Boolean getIncludeAvailabilityZones() {
@@ -65,12 +65,12 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @param includeAvailabilityZones
      *        A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *        Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *        Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,11 +82,11 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability
-     * Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     * Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      * </p>
      * 
      * @return A Boolean value indicating whether to also include Availability Zones in your get regions request.
-     *         Availability Zones are indicated with a letter: e.g., <code>us-east-1a</code>.
+     *         Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.
      */
 
     public Boolean isIncludeAvailabilityZones() {

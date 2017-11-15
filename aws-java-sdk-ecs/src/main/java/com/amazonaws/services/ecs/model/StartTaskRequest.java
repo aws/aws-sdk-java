@@ -84,6 +84,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String group;
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
 
     /**
      * <p>
@@ -491,6 +498,52 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        by using the <code>awsvpc</code> networking mode.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @return The VPC subnet and security group configuration for tasks that receive their own Elastic Network
+     *         Interface by using the <code>awsvpc</code> networking mode.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        by using the <code>awsvpc</code> networking mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -512,7 +565,9 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getStartedBy() != null)
             sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getGroup() != null)
-            sb.append("Group: ").append(getGroup());
+            sb.append("Group: ").append(getGroup()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -551,6 +606,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -565,6 +624,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getContainerInstances() == null) ? 0 : getContainerInstances().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }
 

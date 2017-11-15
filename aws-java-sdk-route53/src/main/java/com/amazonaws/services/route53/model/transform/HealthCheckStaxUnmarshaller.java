@@ -53,6 +53,11 @@ public class HealthCheckStaxUnmarshaller implements Unmarshaller<HealthCheck, St
                     continue;
                 }
 
+                if (context.testExpression("LinkedService", targetDepth)) {
+                    healthCheck.setLinkedService(LinkedServiceStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HealthCheckConfig", targetDepth)) {
                     healthCheck.setHealthCheckConfig(HealthCheckConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

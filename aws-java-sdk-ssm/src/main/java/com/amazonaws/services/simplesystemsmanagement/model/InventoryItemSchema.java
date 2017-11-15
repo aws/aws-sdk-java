@@ -48,6 +48,12 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InventoryItemAttribute> attributes;
+    /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     */
+    private String displayName;
 
     /**
      * <p>
@@ -215,6 +221,46 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     * 
+     * @param displayName
+     *        The alias name of the inventory type. The alias name is used for display purposes.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     * 
+     * @return The alias name of the inventory type. The alias name is used for display purposes.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The alias name of the inventory type. The alias name is used for display purposes.
+     * </p>
+     * 
+     * @param displayName
+     *        The alias name of the inventory type. The alias name is used for display purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryItemSchema withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -230,7 +276,9 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -257,6 +305,10 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
         return true;
     }
 
@@ -268,6 +320,7 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         return hashCode;
     }
 

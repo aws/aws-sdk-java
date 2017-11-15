@@ -135,6 +135,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
 
     /**
      * <p>
@@ -1016,6 +1023,52 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        by using the <code>awsvpc</code> networking mode.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @return The VPC subnet and security group configuration for tasks that receive their own Elastic Network
+     *         Interface by using the <code>awsvpc</code> networking mode.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        by using the <code>awsvpc</code> networking mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1057,7 +1110,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getPlacementConstraints() != null)
             sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
         if (getPlacementStrategy() != null)
-            sb.append("PlacementStrategy: ").append(getPlacementStrategy());
+            sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1136,6 +1191,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1160,6 +1219,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }
 

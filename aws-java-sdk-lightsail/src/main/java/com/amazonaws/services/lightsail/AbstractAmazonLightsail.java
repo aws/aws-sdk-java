@@ -43,12 +43,32 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public AttachDiskResult attachDisk(AttachDiskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachStaticIpResult attachStaticIp(AttachStaticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDiskResult createDisk(CreateDiskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDiskFromSnapshotResult createDiskFromSnapshot(CreateDiskFromSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDiskSnapshotResult createDiskSnapshot(CreateDiskSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,6 +103,16 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public DeleteDiskResult deleteDisk(DeleteDiskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDiskSnapshotResult deleteDiskSnapshot(DeleteDiskSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDomainResult deleteDomain(DeleteDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,6 +138,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public DetachDiskResult detachDisk(DetachDiskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetachStaticIpResult detachStaticIp(DetachStaticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +164,26 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public GetBundlesResult getBundles(GetBundlesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDiskResult getDisk(GetDiskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDiskSnapshotResult getDiskSnapshot(GetDiskSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDiskSnapshotsResult getDiskSnapshots(GetDiskSnapshotsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDisksResult getDisks(GetDisksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

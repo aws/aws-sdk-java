@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the hard disk (an SSD).
+ * Describes a system disk or an block storage disk.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk.
+     * The unique name of the disk.
      * </p>
      */
     private String name;
@@ -55,13 +55,13 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The region and Availability Zone where the disk is located.
+     * The AWS Region and Availability Zone where the disk is located.
      * </p>
      */
     private ResourceLocation location;
     /**
      * <p>
-     * The resource type of the disk.
+     * The Lightsail resource type (e.g., <code>Disk</code>).
      * </p>
      */
     private String resourceType;
@@ -71,12 +71,6 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer sizeInGb;
-    /**
-     * <p>
-     * The number of GB in use by the disk.
-     * </p>
-     */
-    private Integer gbInUse;
     /**
      * <p>
      * A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).
@@ -97,6 +91,12 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
     private String path;
     /**
      * <p>
+     * Describes the status of the disk.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
      * The resources to which the disk is attached.
      * </p>
      */
@@ -109,18 +109,37 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
     private Boolean isAttached;
     /**
      * <p>
-     * The attachment state of the disk.
+     * (Deprecated) The attachment state of the disk.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
+     * </p>
+     * </note>
      */
+    @Deprecated
     private String attachmentState;
+    /**
+     * <p>
+     * (Deprecated) The number of GB in use by the disk.
+     * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * </p>
+     * </note>
+     */
+    @Deprecated
+    private Integer gbInUse;
 
     /**
      * <p>
-     * The name of the disk.
+     * The unique name of the disk.
      * </p>
      * 
      * @param name
-     *        The name of the disk.
+     *        The unique name of the disk.
      */
 
     public void setName(String name) {
@@ -129,10 +148,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk.
+     * The unique name of the disk.
      * </p>
      * 
-     * @return The name of the disk.
+     * @return The unique name of the disk.
      */
 
     public String getName() {
@@ -141,11 +160,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk.
+     * The unique name of the disk.
      * </p>
      * 
      * @param name
-     *        The name of the disk.
+     *        The unique name of the disk.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +304,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region and Availability Zone where the disk is located.
+     * The AWS Region and Availability Zone where the disk is located.
      * </p>
      * 
      * @param location
-     *        The region and Availability Zone where the disk is located.
+     *        The AWS Region and Availability Zone where the disk is located.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -298,10 +317,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region and Availability Zone where the disk is located.
+     * The AWS Region and Availability Zone where the disk is located.
      * </p>
      * 
-     * @return The region and Availability Zone where the disk is located.
+     * @return The AWS Region and Availability Zone where the disk is located.
      */
 
     public ResourceLocation getLocation() {
@@ -310,11 +329,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region and Availability Zone where the disk is located.
+     * The AWS Region and Availability Zone where the disk is located.
      * </p>
      * 
      * @param location
-     *        The region and Availability Zone where the disk is located.
+     *        The AWS Region and Availability Zone where the disk is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +344,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type of the disk.
+     * The Lightsail resource type (e.g., <code>Disk</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type of the disk.
+     *        The Lightsail resource type (e.g., <code>Disk</code>).
      * @see ResourceType
      */
 
@@ -339,10 +358,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type of the disk.
+     * The Lightsail resource type (e.g., <code>Disk</code>).
      * </p>
      * 
-     * @return The resource type of the disk.
+     * @return The Lightsail resource type (e.g., <code>Disk</code>).
      * @see ResourceType
      */
 
@@ -352,11 +371,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type of the disk.
+     * The Lightsail resource type (e.g., <code>Disk</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type of the disk.
+     *        The Lightsail resource type (e.g., <code>Disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -368,11 +387,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type of the disk.
+     * The Lightsail resource type (e.g., <code>Disk</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type of the disk.
+     *        The Lightsail resource type (e.g., <code>Disk</code>).
      * @see ResourceType
      */
 
@@ -382,11 +401,11 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type of the disk.
+     * The Lightsail resource type (e.g., <code>Disk</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type of the disk.
+     *        The Lightsail resource type (e.g., <code>Disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -433,46 +452,6 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     public Disk withSizeInGb(Integer sizeInGb) {
         setSizeInGb(sizeInGb);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The number of GB in use by the disk.
-     * </p>
-     * 
-     * @param gbInUse
-     *        The number of GB in use by the disk.
-     */
-
-    public void setGbInUse(Integer gbInUse) {
-        this.gbInUse = gbInUse;
-    }
-
-    /**
-     * <p>
-     * The number of GB in use by the disk.
-     * </p>
-     * 
-     * @return The number of GB in use by the disk.
-     */
-
-    public Integer getGbInUse() {
-        return this.gbInUse;
-    }
-
-    /**
-     * <p>
-     * The number of GB in use by the disk.
-     * </p>
-     * 
-     * @param gbInUse
-     *        The number of GB in use by the disk.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Disk withGbInUse(Integer gbInUse) {
-        setGbInUse(gbInUse);
         return this;
     }
 
@@ -610,6 +589,79 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Describes the status of the disk.
+     * </p>
+     * 
+     * @param state
+     *        Describes the status of the disk.
+     * @see DiskState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the disk.
+     * </p>
+     * 
+     * @return Describes the status of the disk.
+     * @see DiskState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the disk.
+     * </p>
+     * 
+     * @param state
+     *        Describes the status of the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DiskState
+     */
+
+    public Disk withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the disk.
+     * </p>
+     * 
+     * @param state
+     *        Describes the status of the disk.
+     * @see DiskState
+     */
+
+    public void setState(DiskState state) {
+        withState(state);
+    }
+
+    /**
+     * <p>
+     * Describes the status of the disk.
+     * </p>
+     * 
+     * @param state
+     *        Describes the status of the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DiskState
+     */
+
+    public Disk withState(DiskState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The resources to which the disk is attached.
      * </p>
      * 
@@ -702,41 +754,141 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The attachment state of the disk.
+     * (Deprecated) The attachment state of the disk.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
+     * </p>
+     * </note>
      * 
      * @param attachmentState
-     *        The attachment state of the disk.
+     *        (Deprecated) The attachment state of the disk.</p> <note>
+     *        <p>
+     *        In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in
+     *        the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code>
+     *        instead.
+     *        </p>
      */
-
+    @Deprecated
     public void setAttachmentState(String attachmentState) {
         this.attachmentState = attachmentState;
     }
 
     /**
      * <p>
-     * The attachment state of the disk.
+     * (Deprecated) The attachment state of the disk.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
+     * </p>
+     * </note>
      * 
-     * @return The attachment state of the disk.
+     * @return (Deprecated) The attachment state of the disk.</p> <note>
+     *         <p>
+     *         In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in
+     *         the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code>
+     *         instead.
+     *         </p>
      */
-
+    @Deprecated
     public String getAttachmentState() {
         return this.attachmentState;
     }
 
     /**
      * <p>
-     * The attachment state of the disk.
+     * (Deprecated) The attachment state of the disk.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in the API
+     * response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.
+     * </p>
+     * </note>
      * 
      * @param attachmentState
-     *        The attachment state of the disk.
+     *        (Deprecated) The attachment state of the disk.</p> <note>
+     *        <p>
+     *        In releases prior to November 9, 2017, this parameter returned <code>attached</code> for system disks in
+     *        the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code>
+     *        instead.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Disk withAttachmentState(String attachmentState) {
         setAttachmentState(attachmentState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Deprecated) The number of GB in use by the disk.
+     * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param gbInUse
+     *        (Deprecated) The number of GB in use by the disk.</p> <note>
+     *        <p>
+     *        In releases prior to November 9, 2017, this parameter was not included in the API response. It is now
+     *        deprecated.
+     *        </p>
+     */
+    @Deprecated
+    public void setGbInUse(Integer gbInUse) {
+        this.gbInUse = gbInUse;
+    }
+
+    /**
+     * <p>
+     * (Deprecated) The number of GB in use by the disk.
+     * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * </p>
+     * </note>
+     * 
+     * @return (Deprecated) The number of GB in use by the disk.</p> <note>
+     *         <p>
+     *         In releases prior to November 9, 2017, this parameter was not included in the API response. It is now
+     *         deprecated.
+     *         </p>
+     */
+    @Deprecated
+    public Integer getGbInUse() {
+        return this.gbInUse;
+    }
+
+    /**
+     * <p>
+     * (Deprecated) The number of GB in use by the disk.
+     * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 9, 2017, this parameter was not included in the API response. It is now deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param gbInUse
+     *        (Deprecated) The number of GB in use by the disk.</p> <note>
+     *        <p>
+     *        In releases prior to November 9, 2017, this parameter was not included in the API response. It is now
+     *        deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public Disk withGbInUse(Integer gbInUse) {
+        setGbInUse(gbInUse);
         return this;
     }
 
@@ -765,20 +917,22 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getSizeInGb() != null)
             sb.append("SizeInGb: ").append(getSizeInGb()).append(",");
-        if (getGbInUse() != null)
-            sb.append("GbInUse: ").append(getGbInUse()).append(",");
         if (getIsSystemDisk() != null)
             sb.append("IsSystemDisk: ").append(getIsSystemDisk()).append(",");
         if (getIops() != null)
             sb.append("Iops: ").append(getIops()).append(",");
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
         if (getAttachedTo() != null)
             sb.append("AttachedTo: ").append(getAttachedTo()).append(",");
         if (getIsAttached() != null)
             sb.append("IsAttached: ").append(getIsAttached()).append(",");
         if (getAttachmentState() != null)
-            sb.append("AttachmentState: ").append(getAttachmentState());
+            sb.append("AttachmentState: ").append(getAttachmentState()).append(",");
+        if (getGbInUse() != null)
+            sb.append("GbInUse: ").append(getGbInUse());
         sb.append("}");
         return sb.toString();
     }
@@ -821,10 +975,6 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSizeInGb() != null && other.getSizeInGb().equals(this.getSizeInGb()) == false)
             return false;
-        if (other.getGbInUse() == null ^ this.getGbInUse() == null)
-            return false;
-        if (other.getGbInUse() != null && other.getGbInUse().equals(this.getGbInUse()) == false)
-            return false;
         if (other.getIsSystemDisk() == null ^ this.getIsSystemDisk() == null)
             return false;
         if (other.getIsSystemDisk() != null && other.getIsSystemDisk().equals(this.getIsSystemDisk()) == false)
@@ -837,6 +987,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         if (other.getAttachedTo() == null ^ this.getAttachedTo() == null)
             return false;
         if (other.getAttachedTo() != null && other.getAttachedTo().equals(this.getAttachedTo()) == false)
@@ -848,6 +1002,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
         if (other.getAttachmentState() == null ^ this.getAttachmentState() == null)
             return false;
         if (other.getAttachmentState() != null && other.getAttachmentState().equals(this.getAttachmentState()) == false)
+            return false;
+        if (other.getGbInUse() == null ^ this.getGbInUse() == null)
+            return false;
+        if (other.getGbInUse() != null && other.getGbInUse().equals(this.getGbInUse()) == false)
             return false;
         return true;
     }
@@ -864,13 +1022,14 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getSizeInGb() == null) ? 0 : getSizeInGb().hashCode());
-        hashCode = prime * hashCode + ((getGbInUse() == null) ? 0 : getGbInUse().hashCode());
         hashCode = prime * hashCode + ((getIsSystemDisk() == null) ? 0 : getIsSystemDisk().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getAttachedTo() == null) ? 0 : getAttachedTo().hashCode());
         hashCode = prime * hashCode + ((getIsAttached() == null) ? 0 : getIsAttached().hashCode());
         hashCode = prime * hashCode + ((getAttachmentState() == null) ? 0 : getAttachmentState().hashCode());
+        hashCode = prime * hashCode + ((getGbInUse() == null) ? 0 : getGbInUse().hashCode());
         return hashCode;
     }
 

@@ -54,6 +54,8 @@ public class ContainerInstanceMarshaller {
             .marshallLocationName("attributes").build();
     private static final MarshallingInfo<java.util.Date> REGISTEREDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredAt").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attachments").build();
 
     private static final ContainerInstanceMarshaller instance = new ContainerInstanceMarshaller();
 
@@ -84,6 +86,7 @@ public class ContainerInstanceMarshaller {
             protocolMarshaller.marshall(containerInstance.getAgentUpdateStatus(), AGENTUPDATESTATUS_BINDING);
             protocolMarshaller.marshall(containerInstance.getAttributes(), ATTRIBUTES_BINDING);
             protocolMarshaller.marshall(containerInstance.getRegisteredAt(), REGISTEREDAT_BINDING);
+            protocolMarshaller.marshall(containerInstance.getAttachments(), ATTACHMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

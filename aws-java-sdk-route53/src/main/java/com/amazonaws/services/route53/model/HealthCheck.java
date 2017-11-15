@@ -42,6 +42,13 @@ public class HealthCheck implements Serializable, Cloneable {
     private String callerReference;
     /**
      * <p>
+     * If the health check was created by another service, the service that created the health check. When a health
+     * check is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     */
+    private LinkedService linkedService;
+    /**
+     * <p>
      * A complex type that contains detailed information about one health check.
      * </p>
      */
@@ -150,6 +157,52 @@ public class HealthCheck implements Serializable, Cloneable {
 
     public HealthCheck withCallerReference(String callerReference) {
         setCallerReference(callerReference);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the health check was created by another service, the service that created the health check. When a health
+     * check is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     * 
+     * @param linkedService
+     *        If the health check was created by another service, the service that created the health check. When a
+     *        health check is created by another service, you can't edit or delete it using Amazon Route 53.
+     */
+
+    public void setLinkedService(LinkedService linkedService) {
+        this.linkedService = linkedService;
+    }
+
+    /**
+     * <p>
+     * If the health check was created by another service, the service that created the health check. When a health
+     * check is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     * 
+     * @return If the health check was created by another service, the service that created the health check. When a
+     *         health check is created by another service, you can't edit or delete it using Amazon Route 53.
+     */
+
+    public LinkedService getLinkedService() {
+        return this.linkedService;
+    }
+
+    /**
+     * <p>
+     * If the health check was created by another service, the service that created the health check. When a health
+     * check is created by another service, you can't edit or delete it using Amazon Route 53.
+     * </p>
+     * 
+     * @param linkedService
+     *        If the health check was created by another service, the service that created the health check. When a
+     *        health check is created by another service, you can't edit or delete it using Amazon Route 53.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HealthCheck withLinkedService(LinkedService linkedService) {
+        setLinkedService(linkedService);
         return this;
     }
 
@@ -300,6 +353,8 @@ public class HealthCheck implements Serializable, Cloneable {
             sb.append("Id: ").append(getId()).append(",");
         if (getCallerReference() != null)
             sb.append("CallerReference: ").append(getCallerReference()).append(",");
+        if (getLinkedService() != null)
+            sb.append("LinkedService: ").append(getLinkedService()).append(",");
         if (getHealthCheckConfig() != null)
             sb.append("HealthCheckConfig: ").append(getHealthCheckConfig()).append(",");
         if (getHealthCheckVersion() != null)
@@ -328,6 +383,10 @@ public class HealthCheck implements Serializable, Cloneable {
             return false;
         if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false)
             return false;
+        if (other.getLinkedService() == null ^ this.getLinkedService() == null)
+            return false;
+        if (other.getLinkedService() != null && other.getLinkedService().equals(this.getLinkedService()) == false)
+            return false;
         if (other.getHealthCheckConfig() == null ^ this.getHealthCheckConfig() == null)
             return false;
         if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false)
@@ -350,6 +409,7 @@ public class HealthCheck implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode());
+        hashCode = prime * hashCode + ((getLinkedService() == null) ? 0 : getLinkedService().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckVersion() == null) ? 0 : getHealthCheckVersion().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchAlarmConfiguration() == null) ? 0 : getCloudWatchAlarmConfiguration().hashCode());

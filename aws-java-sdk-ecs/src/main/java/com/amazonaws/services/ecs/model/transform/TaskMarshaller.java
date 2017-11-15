@@ -58,6 +58,8 @@ public class TaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stoppedAt").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("group").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attachments").build();
 
     private static final TaskMarshaller instance = new TaskMarshaller();
 
@@ -90,6 +92,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(task.getStoppedAt(), STOPPEDAT_BINDING);
             protocolMarshaller.marshall(task.getGroup(), GROUP_BINDING);
+            protocolMarshaller.marshall(task.getAttachments(), ATTACHMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

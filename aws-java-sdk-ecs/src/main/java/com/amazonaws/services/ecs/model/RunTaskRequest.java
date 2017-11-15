@@ -96,6 +96,16 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PlacementStrategy> placementStrategy;
+    /**
+     * <p>
+     * The network configuration for the task. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
 
     /**
      * <p>
@@ -626,6 +636,70 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * The network configuration for the task. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for the task. This parameter is required for task definitions that use the
+     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        for other network modes. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for the task. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The network configuration for the task. This parameter is required for task definitions that use the
+     *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *         for other network modes. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The network configuration for the task. This parameter is required for task definitions that use the
+     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * other network modes. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
+     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The network configuration for the task. This parameter is required for task definitions that use the
+     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        for other network modes. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunTaskRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -651,7 +725,9 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getPlacementConstraints() != null)
             sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
         if (getPlacementStrategy() != null)
-            sb.append("PlacementStrategy: ").append(getPlacementStrategy());
+            sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -698,6 +774,10 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getPlacementStrategy() != null && other.getPlacementStrategy().equals(this.getPlacementStrategy()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -714,6 +794,7 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }
 

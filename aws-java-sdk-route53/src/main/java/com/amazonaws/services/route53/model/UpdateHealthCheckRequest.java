@@ -365,8 +365,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     private String insufficientDataHealthStatus;
     /**
      * <p>
-     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
-     * default value. Valid values for <code>ResetElement</code> include the following:
+     * A complex type that contains one <code>ResettableElementName</code> element for each element that you want to
+     * reset to the default value. Valid values for <code>ResettableElementName</code> include the following:
      * </p>
      * <ul>
      * <li>
@@ -2751,8 +2751,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
-     * default value. Valid values for <code>ResetElement</code> include the following:
+     * A complex type that contains one <code>ResettableElementName</code> element for each element that you want to
+     * reset to the default value. Valid values for <code>ResettableElementName</code> include the following:
      * </p>
      * <ul>
      * <li>
@@ -2779,8 +2779,9 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * 
-     * @return A complex type that contains one <code>ResetElement</code> element for each element that you want to
-     *         reset to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     * @return A complex type that contains one <code>ResettableElementName</code> element for each element that you
+     *         want to reset to the default value. Valid values for <code>ResettableElementName</code> include the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2817,8 +2818,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
-     * default value. Valid values for <code>ResetElement</code> include the following:
+     * A complex type that contains one <code>ResettableElementName</code> element for each element that you want to
+     * reset to the default value. Valid values for <code>ResettableElementName</code> include the following:
      * </p>
      * <ul>
      * <li>
@@ -2846,8 +2847,9 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param resetElements
-     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
-     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        A complex type that contains one <code>ResettableElementName</code> element for each element that you want
+     *        to reset to the default value. Valid values for <code>ResettableElementName</code> include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2885,8 +2887,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
-     * default value. Valid values for <code>ResetElement</code> include the following:
+     * A complex type that contains one <code>ResettableElementName</code> element for each element that you want to
+     * reset to the default value. Valid values for <code>ResettableElementName</code> include the following:
      * </p>
      * <ul>
      * <li>
@@ -2919,8 +2921,9 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param resetElements
-     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
-     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        A complex type that contains one <code>ResettableElementName</code> element for each element that you want
+     *        to reset to the default value. Valid values for <code>ResettableElementName</code> include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2960,8 +2963,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
-     * default value. Valid values for <code>ResetElement</code> include the following:
+     * A complex type that contains one <code>ResettableElementName</code> element for each element that you want to
+     * reset to the default value. Valid values for <code>ResettableElementName</code> include the following:
      * </p>
      * <ul>
      * <li>
@@ -2989,8 +2992,9 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param resetElements
-     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
-     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        A complex type that contains one <code>ResettableElementName</code> element for each element that you want
+     *        to reset to the default value. Valid values for <code>ResettableElementName</code> include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -3025,8 +3029,8 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A complex type that contains one <code>ResetElement</code> element for each element that you want to reset to the
-     * default value. Valid values for <code>ResetElement</code> include the following:
+     * A complex type that contains one <code>ResettableElementName</code> element for each element that you want to
+     * reset to the default value. Valid values for <code>ResettableElementName</code> include the following:
      * </p>
      * <ul>
      * <li>
@@ -3054,8 +3058,9 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param resetElements
-     *        A complex type that contains one <code>ResetElement</code> element for each element that you want to reset
-     *        to the default value. Valid values for <code>ResetElement</code> include the following:</p>
+     *        A complex type that contains one <code>ResettableElementName</code> element for each element that you want
+     *        to reset to the default value. Valid values for <code>ResettableElementName</code> include the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>

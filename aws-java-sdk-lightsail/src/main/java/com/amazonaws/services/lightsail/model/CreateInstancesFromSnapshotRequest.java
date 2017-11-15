@@ -33,8 +33,14 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     private java.util.List<String> instanceNames;
     /**
      * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<DiskMap>> attachedDiskMapping;
+    /**
+     * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
@@ -148,15 +154,76 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     * 
+     * @return An object containing information about one or more disk mappings.
+     */
+
+    public java.util.Map<String, java.util.List<DiskMap>> getAttachedDiskMapping() {
+        return attachedDiskMapping;
+    }
+
+    /**
+     * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     * 
+     * @param attachedDiskMapping
+     *        An object containing information about one or more disk mappings.
+     */
+
+    public void setAttachedDiskMapping(java.util.Map<String, java.util.List<DiskMap>> attachedDiskMapping) {
+        this.attachedDiskMapping = attachedDiskMapping;
+    }
+
+    /**
+     * <p>
+     * An object containing information about one or more disk mappings.
+     * </p>
+     * 
+     * @param attachedDiskMapping
+     *        An object containing information about one or more disk mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesFromSnapshotRequest withAttachedDiskMapping(java.util.Map<String, java.util.List<DiskMap>> attachedDiskMapping) {
+        setAttachedDiskMapping(attachedDiskMapping);
+        return this;
+    }
+
+    public CreateInstancesFromSnapshotRequest addAttachedDiskMappingEntry(String key, java.util.List<DiskMap> value) {
+        if (null == this.attachedDiskMapping) {
+            this.attachedDiskMapping = new java.util.HashMap<String, java.util.List<DiskMap>>();
+        }
+        if (this.attachedDiskMapping.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attachedDiskMapping.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AttachedDiskMapping.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesFromSnapshotRequest clearAttachedDiskMappingEntries() {
+        this.attachedDiskMapping = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where you want to create your instances. Use the following formatting:
-     *        <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     *        <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      */
@@ -168,13 +235,13 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
      * 
      * @return The Availability Zone where you want to create your instances. Use the following formatting:
-     *         <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     *         <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      *         href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      *         operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      */
@@ -186,14 +253,14 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The Availability Zone where you want to create your instances. Use the following formatting:
-     * <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     * <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where you want to create your instances. Use the following formatting:
-     *        <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a
+     *        <code>us-east-2a</code> (case sensitive). You can get a list of availability zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
      *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -437,6 +504,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         sb.append("{");
         if (getInstanceNames() != null)
             sb.append("InstanceNames: ").append(getInstanceNames()).append(",");
+        if (getAttachedDiskMapping() != null)
+            sb.append("AttachedDiskMapping: ").append(getAttachedDiskMapping()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getInstanceSnapshotName() != null)
@@ -464,6 +533,10 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         if (other.getInstanceNames() == null ^ this.getInstanceNames() == null)
             return false;
         if (other.getInstanceNames() != null && other.getInstanceNames().equals(this.getInstanceNames()) == false)
+            return false;
+        if (other.getAttachedDiskMapping() == null ^ this.getAttachedDiskMapping() == null)
+            return false;
+        if (other.getAttachedDiskMapping() != null && other.getAttachedDiskMapping().equals(this.getAttachedDiskMapping()) == false)
             return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
@@ -494,6 +567,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceNames() == null) ? 0 : getInstanceNames().hashCode());
+        hashCode = prime * hashCode + ((getAttachedDiskMapping() == null) ? 0 : getAttachedDiskMapping().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getInstanceSnapshotName() == null) ? 0 : getInstanceSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());

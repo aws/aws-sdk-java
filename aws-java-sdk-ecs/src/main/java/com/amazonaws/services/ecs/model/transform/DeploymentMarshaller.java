@@ -43,6 +43,8 @@ public class DeploymentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
 
     private static final DeploymentMarshaller instance = new DeploymentMarshaller();
 
@@ -68,6 +70,7 @@ public class DeploymentMarshaller {
             protocolMarshaller.marshall(deployment.getRunningCount(), RUNNINGCOUNT_BINDING);
             protocolMarshaller.marshall(deployment.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(deployment.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(deployment.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

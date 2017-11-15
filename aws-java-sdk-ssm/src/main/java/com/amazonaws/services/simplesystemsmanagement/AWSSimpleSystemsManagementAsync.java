@@ -390,8 +390,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation
      * that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the
-     * Amazon S3 bucket. To check the status of the sync, use the <a
-     * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.
+     * Amazon S3 bucket. To check the status of the sync, use the <a>ListResourceDataSync</a>.
      * </p>
      * <p>
      * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
@@ -414,8 +413,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation
      * that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the
-     * Amazon S3 bucket. To check the status of the sync, use the <a
-     * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.
+     * Amazon S3 bucket. To check the status of the sync, use the <a>ListResourceDataSync</a>.
      * </p>
      * <p>
      * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
@@ -888,7 +886,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the associations for the specified Systems Manager document or instance.
+     * Describes the association for the specified target or instance. If you created the association by using the
+     * <code>Targets</code> parameter, then you must retrieve the association by using the association ID. If you
+     * created the association by specifying an instance ID and a Systems Manager document, then you retrieve the
+     * association by specifying the document name and the instance ID.
      * </p>
      * 
      * @param describeAssociationRequest
@@ -901,7 +902,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the associations for the specified Systems Manager document or instance.
+     * Describes the association for the specified target or instance. If you created the association by using the
+     * <code>Targets</code> parameter, then you must retrieve the association by using the association ID. If you
+     * created the association by specifying an instance ID and a Systems Manager document, then you retrieve the
+     * association by specifying the document name and the instance ID.
      * </p>
      * 
      * @param describeAssociationRequest

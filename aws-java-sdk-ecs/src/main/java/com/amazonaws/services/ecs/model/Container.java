@@ -71,6 +71,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkBinding> networkBindings;
+    /**
+     * <p>
+     * The network interfaces associated with the container.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<NetworkInterface> networkInterfaces;
 
     /**
      * <p>
@@ -392,6 +398,79 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The network interfaces associated with the container.
+     * </p>
+     * 
+     * @return The network interfaces associated with the container.
+     */
+
+    public java.util.List<NetworkInterface> getNetworkInterfaces() {
+        if (networkInterfaces == null) {
+            networkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>();
+        }
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the container.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the container.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<NetworkInterface>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the container.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withNetworkInterfaces(NetworkInterface... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<NetworkInterface>(networkInterfaces.length));
+        }
+        for (NetworkInterface ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network interfaces associated with the container.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        The network interfaces associated with the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -415,7 +494,9 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
         if (getNetworkBindings() != null)
-            sb.append("NetworkBindings: ").append(getNetworkBindings());
+            sb.append("NetworkBindings: ").append(getNetworkBindings()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
         sb.append("}");
         return sb.toString();
     }
@@ -458,6 +539,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkBindings() != null && other.getNetworkBindings().equals(this.getNetworkBindings()) == false)
             return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
         return true;
     }
 
@@ -473,6 +558,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getNetworkBindings() == null) ? 0 : getNetworkBindings().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         return hashCode;
     }
 

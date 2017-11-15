@@ -40,6 +40,8 @@ public class StartTaskRequestMarshaller {
             .marshallLocationName("startedBy").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("group").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
 
     private static final StartTaskRequestMarshaller instance = new StartTaskRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class StartTaskRequestMarshaller {
             protocolMarshaller.marshall(startTaskRequest.getContainerInstances(), CONTAINERINSTANCES_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getGroup(), GROUP_BINDING);
+            protocolMarshaller.marshall(startTaskRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

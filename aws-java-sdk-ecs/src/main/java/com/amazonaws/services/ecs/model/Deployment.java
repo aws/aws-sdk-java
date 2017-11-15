@@ -78,6 +78,13 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     */
+    private NetworkConfiguration networkConfiguration;
 
     /**
      * <p>
@@ -415,6 +422,52 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        by using the <code>awsvpc</code> networking mode.
+     */
+
+    public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @return The VPC subnet and security group configuration for tasks that receive their own Elastic Network
+     *         Interface by using the <code>awsvpc</code> networking mode.
+     */
+
+    public NetworkConfiguration getNetworkConfiguration() {
+        return this.networkConfiguration;
+    }
+
+    /**
+     * <p>
+     * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
+     * using the <code>awsvpc</code> networking mode.
+     * </p>
+     * 
+     * @param networkConfiguration
+     *        The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface
+     *        by using the <code>awsvpc</code> networking mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
+        setNetworkConfiguration(networkConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -440,7 +493,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getNetworkConfiguration() != null)
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +542,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
+            return false;
+        if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -503,6 +562,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }
 

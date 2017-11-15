@@ -123,6 +123,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String group;
+    /**
+     * <p>
+     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
 
     /**
      * <p>
@@ -797,6 +803,83 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * </p>
+     * 
+     * @return The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *         mode.
+     */
+
+    public java.util.List<Attachment> getAttachments() {
+        if (attachments == null) {
+            attachments = new com.amazonaws.internal.SdkInternalList<Attachment>();
+        }
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * </p>
+     * 
+     * @param attachments
+     *        The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *        mode.
+     */
+
+    public void setAttachments(java.util.Collection<Attachment> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new com.amazonaws.internal.SdkInternalList<Attachment>(attachments);
+    }
+
+    /**
+     * <p>
+     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *        mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withAttachments(Attachment... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new com.amazonaws.internal.SdkInternalList<Attachment>(attachments.length));
+        }
+        for (Attachment ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network mode.
+     * </p>
+     * 
+     * @param attachments
+     *        The Elastic Network Adapter associated with the task if the task uses the <code>awsvpc</code> network
+     *        mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withAttachments(java.util.Collection<Attachment> attachments) {
+        setAttachments(attachments);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -836,7 +919,9 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (getStoppedAt() != null)
             sb.append("StoppedAt: ").append(getStoppedAt()).append(",");
         if (getGroup() != null)
-            sb.append("Group: ").append(getGroup());
+            sb.append("Group: ").append(getGroup()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments());
         sb.append("}");
         return sb.toString();
     }
@@ -911,6 +996,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
             return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
         return true;
     }
 
@@ -934,6 +1023,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         return hashCode;
     }
 

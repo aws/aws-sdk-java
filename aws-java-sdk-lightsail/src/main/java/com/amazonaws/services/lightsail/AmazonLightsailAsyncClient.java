@@ -291,6 +291,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AttachDiskResult> attachDiskAsync(AttachDiskRequest request) {
+
+        return attachDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachDiskResult> attachDiskAsync(final AttachDiskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachDiskRequest, AttachDiskResult> asyncHandler) {
+        final AttachDiskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachDiskResult>() {
+            @Override
+            public AttachDiskResult call() throws Exception {
+                AttachDiskResult result = null;
+
+                try {
+                    result = executeAttachDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachStaticIpResult> attachStaticIpAsync(AttachStaticIpRequest request) {
 
         return attachStaticIpAsync(request, null);
@@ -341,6 +374,105 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeCloseInstancePublicPorts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskResult> createDiskAsync(CreateDiskRequest request) {
+
+        return createDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskResult> createDiskAsync(final CreateDiskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDiskRequest, CreateDiskResult> asyncHandler) {
+        final CreateDiskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDiskResult>() {
+            @Override
+            public CreateDiskResult call() throws Exception {
+                CreateDiskResult result = null;
+
+                try {
+                    result = executeCreateDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskFromSnapshotResult> createDiskFromSnapshotAsync(CreateDiskFromSnapshotRequest request) {
+
+        return createDiskFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskFromSnapshotResult> createDiskFromSnapshotAsync(final CreateDiskFromSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDiskFromSnapshotRequest, CreateDiskFromSnapshotResult> asyncHandler) {
+        final CreateDiskFromSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDiskFromSnapshotResult>() {
+            @Override
+            public CreateDiskFromSnapshotResult call() throws Exception {
+                CreateDiskFromSnapshotResult result = null;
+
+                try {
+                    result = executeCreateDiskFromSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskSnapshotResult> createDiskSnapshotAsync(CreateDiskSnapshotRequest request) {
+
+        return createDiskSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDiskSnapshotResult> createDiskSnapshotAsync(final CreateDiskSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDiskSnapshotRequest, CreateDiskSnapshotResult> asyncHandler) {
+        final CreateDiskSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDiskSnapshotResult>() {
+            @Override
+            public CreateDiskSnapshotResult call() throws Exception {
+                CreateDiskSnapshotResult result = null;
+
+                try {
+                    result = executeCreateDiskSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -555,6 +687,72 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(DeleteDiskRequest request) {
+
+        return deleteDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDiskResult> deleteDiskAsync(final DeleteDiskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDiskRequest, DeleteDiskResult> asyncHandler) {
+        final DeleteDiskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDiskResult>() {
+            @Override
+            public DeleteDiskResult call() throws Exception {
+                DeleteDiskResult result = null;
+
+                try {
+                    result = executeDeleteDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDiskSnapshotResult> deleteDiskSnapshotAsync(DeleteDiskSnapshotRequest request) {
+
+        return deleteDiskSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDiskSnapshotResult> deleteDiskSnapshotAsync(final DeleteDiskSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDiskSnapshotRequest, DeleteDiskSnapshotResult> asyncHandler) {
+        final DeleteDiskSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDiskSnapshotResult>() {
+            @Override
+            public DeleteDiskSnapshotResult call() throws Exception {
+                DeleteDiskSnapshotResult result = null;
+
+                try {
+                    result = executeDeleteDiskSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
 
         return deleteDomainAsync(request, null);
@@ -720,6 +918,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DetachDiskResult> detachDiskAsync(DetachDiskRequest request) {
+
+        return detachDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachDiskResult> detachDiskAsync(final DetachDiskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachDiskRequest, DetachDiskResult> asyncHandler) {
+        final DetachDiskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetachDiskResult>() {
+            @Override
+            public DetachDiskResult call() throws Exception {
+                DetachDiskResult result = null;
+
+                try {
+                    result = executeDetachDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachStaticIpResult> detachStaticIpAsync(DetachStaticIpRequest request) {
 
         return detachStaticIpAsync(request, null);
@@ -869,6 +1100,138 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeGetBundles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskResult> getDiskAsync(GetDiskRequest request) {
+
+        return getDiskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskResult> getDiskAsync(final GetDiskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDiskRequest, GetDiskResult> asyncHandler) {
+        final GetDiskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDiskResult>() {
+            @Override
+            public GetDiskResult call() throws Exception {
+                GetDiskResult result = null;
+
+                try {
+                    result = executeGetDisk(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotResult> getDiskSnapshotAsync(GetDiskSnapshotRequest request) {
+
+        return getDiskSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotResult> getDiskSnapshotAsync(final GetDiskSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDiskSnapshotRequest, GetDiskSnapshotResult> asyncHandler) {
+        final GetDiskSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDiskSnapshotResult>() {
+            @Override
+            public GetDiskSnapshotResult call() throws Exception {
+                GetDiskSnapshotResult result = null;
+
+                try {
+                    result = executeGetDiskSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotsResult> getDiskSnapshotsAsync(GetDiskSnapshotsRequest request) {
+
+        return getDiskSnapshotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiskSnapshotsResult> getDiskSnapshotsAsync(final GetDiskSnapshotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDiskSnapshotsRequest, GetDiskSnapshotsResult> asyncHandler) {
+        final GetDiskSnapshotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDiskSnapshotsResult>() {
+            @Override
+            public GetDiskSnapshotsResult call() throws Exception {
+                GetDiskSnapshotsResult result = null;
+
+                try {
+                    result = executeGetDiskSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisksResult> getDisksAsync(GetDisksRequest request) {
+
+        return getDisksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDisksResult> getDisksAsync(final GetDisksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDisksRequest, GetDisksResult> asyncHandler) {
+        final GetDisksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDisksResult>() {
+            @Override
+            public GetDisksResult call() throws Exception {
+                GetDisksResult result = null;
+
+                try {
+                    result = executeGetDisks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

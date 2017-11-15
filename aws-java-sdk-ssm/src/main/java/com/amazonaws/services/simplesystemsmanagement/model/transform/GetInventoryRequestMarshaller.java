@@ -30,6 +30,8 @@ public class GetInventoryRequestMarshaller {
 
     private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Filters").build();
+    private static final MarshallingInfo<List> AGGREGATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Aggregators").build();
     private static final MarshallingInfo<List> RESULTATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultAttributes").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class GetInventoryRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getInventoryRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(getInventoryRequest.getAggregators(), AGGREGATORS_BINDING);
             protocolMarshaller.marshall(getInventoryRequest.getResultAttributes(), RESULTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(getInventoryRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getInventoryRequest.getMaxResults(), MAXRESULTS_BINDING);

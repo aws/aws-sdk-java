@@ -141,6 +141,40 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the
+     * specified disk name.
+     * </p>
+     * 
+     * @param attachDiskRequest
+     * @return Result of the AttachDisk operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachDisk
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AttachDiskResult attachDisk(AttachDiskRequest attachDiskRequest);
+
+    /**
+     * <p>
      * Attaches a static IP address to a specific Amazon Lightsail instance.
      * </p>
      * 
@@ -204,6 +238,123 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     CloseInstancePublicPortsResult closeInstancePublicPorts(CloseInstancePublicPortsRequest closeInstancePublicPortsRequest);
+
+    /**
+     * <p>
+     * Creates a block storage disk that can be attached to a Lightsail instance in the same Availability Zone (e.g.,
+     * <code>us-east-2a</code>). The disk is created in the regional endpoint that you send the HTTP request to. For
+     * more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
+     * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * 
+     * @param createDiskRequest
+     * @return Result of the CreateDisk operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateDisk
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDiskResult createDisk(CreateDiskRequest createDiskRequest);
+
+    /**
+     * <p>
+     * Creates a block storage disk from a disk snapshot that can be attached to a Lightsail instance in the same
+     * Availability Zone (e.g., <code>us-east-2a</code>). The disk is created in the regional endpoint that you send the
+     * HTTP request to. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
+     * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * 
+     * @param createDiskFromSnapshotRequest
+     * @return Result of the CreateDiskFromSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateDiskFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDiskFromSnapshotResult createDiskFromSnapshot(CreateDiskFromSnapshotRequest createDiskFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a snapshot of a block storage disk. You can use snapshots for backups, to make copies of disks, and to
+     * save data before shutting down a Lightsail instance.
+     * </p>
+     * <p>
+     * You can take a snapshot of an attached disk that is in use; however, snapshots only capture data that has been
+     * written to your disk at the time the snapshot command is issued. This may exclude any data that has been cached
+     * by any applications or the operating system. If you can pause any file systems on the disk long enough to take a
+     * snapshot, your snapshot should be complete. Nevertheless, if you cannot pause all file writes to the disk, you
+     * should unmount the disk from within the Lightsail instance, issue the create disk snapshot command, and then
+     * remount the disk to ensure a consistent and complete snapshot. You may remount and use your disk while the
+     * snapshot status is pending.
+     * </p>
+     * 
+     * @param createDiskSnapshotRequest
+     * @return Result of the CreateDiskSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateDiskSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateDiskSnapshotResult createDiskSnapshot(CreateDiskSnapshotRequest createDiskSnapshotRequest);
 
     /**
      * <p>
@@ -408,6 +559,84 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Deletes the specified block storage disk. The disk must be in the <code>available</code> state (not attached to a
+     * Lightsail instance).
+     * </p>
+     * <note>
+     * <p>
+     * The disk may remain in the <code>deleting</code> state for several minutes.
+     * </p>
+     * </note>
+     * 
+     * @param deleteDiskRequest
+     * @return Result of the DeleteDisk operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteDisk
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDiskResult deleteDisk(DeleteDiskRequest deleteDiskRequest);
+
+    /**
+     * <p>
+     * Deletes the specified disk snapshot.
+     * </p>
+     * <p>
+     * When you make periodic snapshots of a disk, the snapshots are incremental, and only the blocks on the device that
+     * have changed since your last snapshot are saved in the new snapshot. When you delete a snapshot, only the data
+     * not needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all
+     * active snapshots will have access to all the information needed to restore the disk.
+     * </p>
+     * 
+     * @param deleteDiskSnapshotRequest
+     * @return Result of the DeleteDiskSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteDiskSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteDiskSnapshotResult deleteDiskSnapshot(DeleteDiskSnapshotRequest deleteDiskSnapshotRequest);
+
+    /**
+     * <p>
      * Deletes the specified domain recordset and all of its domain records.
      * </p>
      * 
@@ -570,6 +799,40 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest);
+
+    /**
+     * <p>
+     * Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the
+     * device within your operating system before stopping the instance and detaching the disk.
+     * </p>
+     * 
+     * @param detachDiskRequest
+     * @return Result of the DetachDisk operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DetachDisk
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DetachDiskResult detachDisk(DetachDiskRequest detachDiskRequest);
 
     /**
      * <p>
@@ -738,6 +1001,146 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     GetBundlesResult getBundles(GetBundlesRequest getBundlesRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific block storage disk.
+     * </p>
+     * 
+     * @param getDiskRequest
+     * @return Result of the GetDisk operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDisk
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDiskResult getDisk(GetDiskRequest getDiskRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific block storage disk snapshot.
+     * </p>
+     * 
+     * @param getDiskSnapshotRequest
+     * @return Result of the GetDiskSnapshot operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDiskSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDiskSnapshotResult getDiskSnapshot(GetDiskSnapshotRequest getDiskSnapshotRequest);
+
+    /**
+     * <p>
+     * Returns information about all block storage disk snapshots in your AWS account and region.
+     * </p>
+     * <p>
+     * If you are describing a long list of disk snapshots, you can paginate the output to make the list more
+     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
+     * </p>
+     * 
+     * @param getDiskSnapshotsRequest
+     * @return Result of the GetDiskSnapshots operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDiskSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDiskSnapshotsResult getDiskSnapshots(GetDiskSnapshotsRequest getDiskSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about all block storage disks in your AWS account and region.
+     * </p>
+     * <p>
+     * If you are describing a long list of disks, you can paginate the output to make the list more manageable. You can
+     * use the pageToken and nextPageToken values to retrieve the next items in the list.
+     * </p>
+     * 
+     * @param getDisksRequest
+     * @return Result of the GetDisks operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDisks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDisksResult getDisks(GetDisksRequest getDisksRequest);
 
     /**
      * <p>

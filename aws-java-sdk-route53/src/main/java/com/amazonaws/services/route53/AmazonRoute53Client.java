@@ -958,7 +958,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <li>
      * <p>
      * Create a CloudWatch Logs resource policy, and give it the permissions that Amazon Route 53 needs to create log
-     * streams and to to send query logs to log streams. For the value of <code>Resource</code>, specify the ARN for the
+     * streams and to send query logs to log streams. For the value of <code>Resource</code>, specify the ARN for the
      * log group that you created in the previous step. To use the same resource policy for all the CloudWatch Logs log
      * groups that you created for query logging configurations, replace the hosted zone name with <code>*</code>, for
      * example:
