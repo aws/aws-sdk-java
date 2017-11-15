@@ -1254,6 +1254,43 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Returns the email sending status of the Amazon SES account.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getAccountSendingEnabledRequest
+     * @return A Java Future containing the result of the GetAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.GetAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountSendingEnabledResult> getAccountSendingEnabledAsync(GetAccountSendingEnabledRequest getAccountSendingEnabledRequest);
+
+    /**
+     * <p>
+     * Returns the email sending status of the Amazon SES account.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getAccountSendingEnabledRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.GetAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountSendingEnabledResult> getAccountSendingEnabledAsync(GetAccountSendingEnabledRequest getAccountSendingEnabledRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountSendingEnabledRequest, GetAccountSendingEnabledResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also
      * returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified
      * that these tokens have been published.
@@ -3489,6 +3526,53 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Enables or disables email sending across your entire Amazon SES account. You can use this operation in
+     * conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account when
+     * reputation metrics (such as your bounce on complaint rate) reach certain thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateAccountSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for your entire Amazon SES
+     *        account.
+     * @return A Java Future containing the result of the UpdateAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.UpdateAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountSendingEnabledResult> updateAccountSendingEnabledAsync(
+            UpdateAccountSendingEnabledRequest updateAccountSendingEnabledRequest);
+
+    /**
+     * <p>
+     * Enables or disables email sending across your entire Amazon SES account. You can use this operation in
+     * conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account when
+     * reputation metrics (such as your bounce on complaint rate) reach certain thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateAccountSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for your entire Amazon SES
+     *        account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.UpdateAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountSendingEnabledResult> updateAccountSendingEnabledAsync(
+            UpdateAccountSendingEnabledRequest updateAccountSendingEnabledRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountSendingEnabledRequest, UpdateAccountSendingEnabledResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the event destination of a configuration set. Event destinations are associated with configuration sets,
      * which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
      * Notification Service (Amazon SNS). For information about using configuration sets, see <a
@@ -3555,6 +3639,104 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set.
+     * Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using
+     * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a certain threshold.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetReputationMetricsEnabledRequest
+     *        Represents a request to modify the reputation metric publishing settings for a configuration set.
+     * @return A Java Future containing the result of the UpdateConfigurationSetReputationMetricsEnabled operation
+     *         returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.UpdateConfigurationSetReputationMetricsEnabled
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetReputationMetricsEnabledResult> updateConfigurationSetReputationMetricsEnabledAsync(
+            UpdateConfigurationSetReputationMetricsEnabledRequest updateConfigurationSetReputationMetricsEnabledRequest);
+
+    /**
+     * <p>
+     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set.
+     * Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using
+     * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a certain threshold.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetReputationMetricsEnabledRequest
+     *        Represents a request to modify the reputation metric publishing settings for a configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConfigurationSetReputationMetricsEnabled operation
+     *         returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.UpdateConfigurationSetReputationMetricsEnabled
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetReputationMetricsEnabledResult> updateConfigurationSetReputationMetricsEnabledAsync(
+            UpdateConfigurationSetReputationMetricsEnabledRequest updateConfigurationSetReputationMetricsEnabledRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetReputationMetricsEnabledRequest, UpdateConfigurationSetReputationMetricsEnabledResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables or disables email sending for messages sent using a specific configuration set. You can use this
+     * operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set
+     * when the reputation metrics for that configuration set (such as your bounce on complaint rate) reach certain
+     * thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for a specific configuration set.
+     * @return A Java Future containing the result of the UpdateConfigurationSetSendingEnabled operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceAsync.UpdateConfigurationSetSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetSendingEnabledResult> updateConfigurationSetSendingEnabledAsync(
+            UpdateConfigurationSetSendingEnabledRequest updateConfigurationSetSendingEnabledRequest);
+
+    /**
+     * <p>
+     * Enables or disables email sending for messages sent using a specific configuration set. You can use this
+     * operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set
+     * when the reputation metrics for that configuration set (such as your bounce on complaint rate) reach certain
+     * thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for a specific configuration set.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConfigurationSetSendingEnabled operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.UpdateConfigurationSetSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfigurationSetSendingEnabledResult> updateConfigurationSetSendingEnabledAsync(
+            UpdateConfigurationSetSendingEnabledRequest updateConfigurationSetSendingEnabledRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetSendingEnabledRequest, UpdateConfigurationSetSendingEnabledResult> asyncHandler);
 
     /**
      * <p>

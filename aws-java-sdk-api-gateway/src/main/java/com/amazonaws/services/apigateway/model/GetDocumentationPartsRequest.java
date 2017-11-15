@@ -62,6 +62,14 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Integer limit;
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     */
+    private String locationStatus;
 
     /**
      * <p>
@@ -337,6 +345,99 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @see LocationStatusType
+     */
+
+    public void setLocationStatus(String locationStatus) {
+        this.locationStatus = locationStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @return The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *         retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *         <a>DocumentationPart</a> resources without content.
+     * @see LocationStatusType
+     */
+
+    public String getLocationStatus() {
+        return this.locationStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationStatusType
+     */
+
+    public GetDocumentationPartsRequest withLocationStatus(String locationStatus) {
+        setLocationStatus(locationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @see LocationStatusType
+     */
+
+    public void setLocationStatus(LocationStatusType locationStatus) {
+        withLocationStatus(locationStatus);
+    }
+
+    /**
+     * <p>
+     * The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving
+     * <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a>
+     * resources without content.
+     * </p>
+     * 
+     * @param locationStatus
+     *        The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for
+     *        retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for
+     *        <a>DocumentationPart</a> resources without content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationStatusType
+     */
+
+    public GetDocumentationPartsRequest withLocationStatus(LocationStatusType locationStatus) {
+        this.locationStatus = locationStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -358,7 +459,9 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: ").append(getLimit());
+            sb.append("Limit: ").append(getLimit()).append(",");
+        if (getLocationStatus() != null)
+            sb.append("LocationStatus: ").append(getLocationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +500,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getLocationStatus() == null ^ this.getLocationStatus() == null)
+            return false;
+        if (other.getLocationStatus() != null && other.getLocationStatus().equals(this.getLocationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +518,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getLocationStatus() == null) ? 0 : getLocationStatus().hashCode());
         return hashCode;
     }
 

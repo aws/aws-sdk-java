@@ -73,6 +73,11 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public DescribeStateMachineForExecutionResult describeStateMachineForExecution(DescribeStateMachineForExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetActivityTaskResult getActivityTask(GetActivityTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +124,11 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
 
     @Override
     public StopExecutionResult stopExecution(StopExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStateMachineResult updateStateMachine(UpdateStateMachineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

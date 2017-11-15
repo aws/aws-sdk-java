@@ -79,7 +79,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private String status;
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      */
     private java.util.Date startDate;
@@ -99,6 +99,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      */
     private String output;
 
@@ -474,11 +479,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
      * @param startDate
-     *        The date the execution was started.
+     *        The date the execution is started.
      */
 
     public void setStartDate(java.util.Date startDate) {
@@ -487,10 +492,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
-     * @return The date the execution was started.
+     * @return The date the execution is started.
      */
 
     public java.util.Date getStartDate() {
@@ -499,11 +504,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
      * @param startDate
-     *        The date the execution was started.
+     *        The date the execution is started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -596,9 +601,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      * 
      * @param output
-     *        The JSON output data of the execution.
+     *        The JSON output data of the execution.</p> <note>
+     *        <p>
+     *        This field is set only if the execution succeeds. If the execution fails, this field is null.
+     *        </p>
      */
 
     public void setOutput(String output) {
@@ -609,8 +622,16 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      * 
-     * @return The JSON output data of the execution.
+     * @return The JSON output data of the execution.</p> <note>
+     *         <p>
+     *         This field is set only if the execution succeeds. If the execution fails, this field is null.
+     *         </p>
      */
 
     public String getOutput() {
@@ -621,9 +642,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The JSON output data of the execution.
      * </p>
+     * <note>
+     * <p>
+     * This field is set only if the execution succeeds. If the execution fails, this field is null.
+     * </p>
+     * </note>
      * 
      * @param output
-     *        The JSON output data of the execution.
+     *        The JSON output data of the execution.</p> <note>
+     *        <p>
+     *        This field is set only if the execution succeeds. If the execution fails, this field is null.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -69,6 +69,8 @@ public enum SimpleEmailServiceActions implements Action {
     DescribeReceiptRule("ses:DescribeReceiptRule"),
     /** Action for the DescribeReceiptRuleSet operation. */
     DescribeReceiptRuleSet("ses:DescribeReceiptRuleSet"),
+    /** Action for the GetAccountSendingEnabled operation. */
+    GetAccountSendingEnabled("ses:GetAccountSendingEnabled"),
     /** Action for the GetIdentityDkimAttributes operation. */
     GetIdentityDkimAttributes("ses:GetIdentityDkimAttributes"),
     /** Action for the GetIdentityMailFromDomainAttributes operation. */
@@ -129,8 +131,14 @@ public enum SimpleEmailServiceActions implements Action {
     SetReceiptRulePosition("ses:SetReceiptRulePosition"),
     /** Action for the TestRenderTemplate operation. */
     TestRenderTemplate("ses:TestRenderTemplate"),
+    /** Action for the UpdateAccountSendingEnabled operation. */
+    UpdateAccountSendingEnabled("ses:UpdateAccountSendingEnabled"),
     /** Action for the UpdateConfigurationSetEventDestination operation. */
     UpdateConfigurationSetEventDestination("ses:UpdateConfigurationSetEventDestination"),
+    /** Action for the UpdateConfigurationSetReputationMetricsEnabled operation. */
+    UpdateConfigurationSetReputationMetricsEnabled("ses:UpdateConfigurationSetReputationMetricsEnabled"),
+    /** Action for the UpdateConfigurationSetSendingEnabled operation. */
+    UpdateConfigurationSetSendingEnabled("ses:UpdateConfigurationSetSendingEnabled"),
     /** Action for the UpdateConfigurationSetTrackingOptions operation. */
     UpdateConfigurationSetTrackingOptions("ses:UpdateConfigurationSetTrackingOptions"),
     /** Action for the UpdateReceiptRule operation. */

@@ -70,6 +70,16 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
     private String regionalDomainName;
     /**
      * <p>
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     */
+    private String regionalHostedZoneId;
+    /**
+     * <p>
      * The name of the certificate that will be used for validating the regional domain name.
      * </p>
      */
@@ -90,6 +100,17 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String distributionDomainName;
+    /**
+     * <p>
+     * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     */
+    private String distributionHostedZoneId;
     /**
      * <p>
      * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
@@ -320,6 +341,73 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     * 
+     * @param regionalHostedZoneId
+     *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        >Set up a Regional Custom Domain Name</a> and <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints
+     *        for API Gateway</a>.
+     */
+
+    public void setRegionalHostedZoneId(String regionalHostedZoneId) {
+        this.regionalHostedZoneId = regionalHostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     * 
+     * @return The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *         >Set up a Regional Custom Domain Name</a> and <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
+     *         Endpoints for API Gateway</a>.
+     */
+
+    public String getRegionalHostedZoneId() {
+        return this.regionalHostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     * 
+     * @param regionalHostedZoneId
+     *        The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        >Set up a Regional Custom Domain Name</a> and <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints
+     *        for API Gateway</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainNameResult withRegionalHostedZoneId(String regionalHostedZoneId) {
+        setRegionalHostedZoneId(regionalHostedZoneId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the certificate that will be used for validating the regional domain name.
      * </p>
      * 
@@ -467,6 +555,76 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     * 
+     * @param distributionHostedZoneId
+     *        The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        >Set up a Regional Custom Domain Name</a> and <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints
+     *        for API Gateway</a>.
+     */
+
+    public void setDistributionHostedZoneId(String distributionHostedZoneId) {
+        this.distributionHostedZoneId = distributionHostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     * 
+     * @return The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     *         <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *         >Set up a Regional Custom Domain Name</a> and <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and
+     *         Endpoints for API Gateway</a>.
+     */
+
+    public String getDistributionHostedZoneId() {
+        return this.distributionHostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     * <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     * >Set up a Regional Custom Domain Name</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for
+     * API Gateway</a>.
+     * </p>
+     * 
+     * @param distributionHostedZoneId
+     *        The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is
+     *        <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html"
+     *        >Set up a Regional Custom Domain Name</a> and <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints
+     *        for API Gateway</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainNameResult withDistributionHostedZoneId(String distributionHostedZoneId) {
+        setDistributionHostedZoneId(distributionHostedZoneId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.
      * </p>
      * 
@@ -526,12 +684,16 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("CertificateUploadDate: ").append(getCertificateUploadDate()).append(",");
         if (getRegionalDomainName() != null)
             sb.append("RegionalDomainName: ").append(getRegionalDomainName()).append(",");
+        if (getRegionalHostedZoneId() != null)
+            sb.append("RegionalHostedZoneId: ").append(getRegionalHostedZoneId()).append(",");
         if (getRegionalCertificateName() != null)
             sb.append("RegionalCertificateName: ").append(getRegionalCertificateName()).append(",");
         if (getRegionalCertificateArn() != null)
             sb.append("RegionalCertificateArn: ").append(getRegionalCertificateArn()).append(",");
         if (getDistributionDomainName() != null)
             sb.append("DistributionDomainName: ").append(getDistributionDomainName()).append(",");
+        if (getDistributionHostedZoneId() != null)
+            sb.append("DistributionHostedZoneId: ").append(getDistributionHostedZoneId()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration());
         sb.append("}");
@@ -568,6 +730,10 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getRegionalDomainName() != null && other.getRegionalDomainName().equals(this.getRegionalDomainName()) == false)
             return false;
+        if (other.getRegionalHostedZoneId() == null ^ this.getRegionalHostedZoneId() == null)
+            return false;
+        if (other.getRegionalHostedZoneId() != null && other.getRegionalHostedZoneId().equals(this.getRegionalHostedZoneId()) == false)
+            return false;
         if (other.getRegionalCertificateName() == null ^ this.getRegionalCertificateName() == null)
             return false;
         if (other.getRegionalCertificateName() != null && other.getRegionalCertificateName().equals(this.getRegionalCertificateName()) == false)
@@ -579,6 +745,10 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
         if (other.getDistributionDomainName() == null ^ this.getDistributionDomainName() == null)
             return false;
         if (other.getDistributionDomainName() != null && other.getDistributionDomainName().equals(this.getDistributionDomainName()) == false)
+            return false;
+        if (other.getDistributionHostedZoneId() == null ^ this.getDistributionHostedZoneId() == null)
+            return false;
+        if (other.getDistributionHostedZoneId() != null && other.getDistributionHostedZoneId().equals(this.getDistributionHostedZoneId()) == false)
             return false;
         if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
             return false;
@@ -597,9 +767,11 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateUploadDate() == null) ? 0 : getCertificateUploadDate().hashCode());
         hashCode = prime * hashCode + ((getRegionalDomainName() == null) ? 0 : getRegionalDomainName().hashCode());
+        hashCode = prime * hashCode + ((getRegionalHostedZoneId() == null) ? 0 : getRegionalHostedZoneId().hashCode());
         hashCode = prime * hashCode + ((getRegionalCertificateName() == null) ? 0 : getRegionalCertificateName().hashCode());
         hashCode = prime * hashCode + ((getRegionalCertificateArn() == null) ? 0 : getRegionalCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionDomainName() == null) ? 0 : getDistributionDomainName().hashCode());
+        hashCode = prime * hashCode + ((getDistributionHostedZoneId() == null) ? 0 : getDistributionHostedZoneId().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         return hashCode;
     }

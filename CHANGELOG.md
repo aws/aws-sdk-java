@@ -1,4 +1,21 @@
-# __1.11.229__ __2017-11-15__
+# __1.11.230__ __2017-11-15__
+## __AWS Step Functions__
+  - ### Features
+    - You can now use the UpdateStateMachine API to update your state machine definition and role ARN. Existing executions will continue to use the previous definition and role ARN. You can use the DescribeStateMachineForExecution API to determine which state machine definition and role ARN is associated with an execution
+
+## __Amazon API Gateway__
+  - ### Features
+    - 1. Extended GetDocumentationParts operation to support retrieving documentation parts resources without contents.  2. Added hosted zone ID in the custom domain response.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds Korean language support with new female voice - "Seoyeon" and new Indian English female voice - "Aditi"
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - SES launches Configuration Set Reputation Metrics and Email Pausing Today, two features that build upon the capabilities of the reputation dashboard. The first is the ability to export reputation metrics for individual configuration sets. The second is the ability to temporarily pause email sending, either at the configuration set level, or across your entire Amazon SES account.
+
+# __1.11.229__ __2017-11-14__
 ## __Amazon EC2 Container Service__
   - ### Features
     - Added new mode for Task Networking in ECS, called awsvpc mode. Mode configuration parameters to be passed in via awsvpcConfiguration. Updated APIs now use/show this new mode - RegisterTaskDefinition, CreateService, UpdateService, RunTask, StartTask.

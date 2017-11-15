@@ -31,7 +31,7 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
     private String executionArn;
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      */
     private java.util.Date startDate;
@@ -78,11 +78,11 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
      * @param startDate
-     *        The date the execution was started.
+     *        The date the execution is started.
      */
 
     public void setStartDate(java.util.Date startDate) {
@@ -91,10 +91,10 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
-     * @return The date the execution was started.
+     * @return The date the execution is started.
      */
 
     public java.util.Date getStartDate() {
@@ -103,11 +103,11 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date the execution was started.
+     * The date the execution is started.
      * </p>
      * 
      * @param startDate
-     *        The date the execution was started.
+     *        The date the execution is started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

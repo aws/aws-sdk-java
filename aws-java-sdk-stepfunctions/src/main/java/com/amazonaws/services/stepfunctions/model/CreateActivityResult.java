@@ -31,7 +31,7 @@ public class CreateActivityResult extends com.amazonaws.AmazonWebServiceResult<c
     private String activityArn;
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -78,11 +78,11 @@ public class CreateActivityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the activity was created.
+     *        The date the activity is created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -91,10 +91,10 @@ public class CreateActivityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      * 
-     * @return The date the activity was created.
+     * @return The date the activity is created.
      */
 
     public java.util.Date getCreationDate() {
@@ -103,11 +103,11 @@ public class CreateActivityResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The date the activity was created.
+     * The date the activity is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the activity was created.
+     *        The date the activity is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

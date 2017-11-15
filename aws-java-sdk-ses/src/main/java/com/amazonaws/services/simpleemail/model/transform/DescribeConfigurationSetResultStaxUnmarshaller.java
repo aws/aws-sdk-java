@@ -64,6 +64,11 @@ public class DescribeConfigurationSetResultStaxUnmarshaller implements Unmarshal
                     describeConfigurationSetResult.setTrackingOptions(TrackingOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ReputationOptions", targetDepth)) {
+                    describeConfigurationSetResult.setReputationOptions(ReputationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeConfigurationSetResult;

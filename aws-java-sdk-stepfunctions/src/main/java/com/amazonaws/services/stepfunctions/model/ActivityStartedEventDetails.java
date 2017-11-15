@@ -30,7 +30,7 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      */
@@ -38,12 +38,12 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      * 
      * @param workerName
-     *        The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     *        The name of the worker that the task is assigned to. These names are provided by the workers when calling
      *        <a>GetActivityTask</a>.
      */
 
@@ -53,12 +53,12 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      * 
-     * @return The name of the worker that the task was assigned to. These names are provided by the workers when
-     *         calling <a>GetActivityTask</a>.
+     * @return The name of the worker that the task is assigned to. These names are provided by the workers when calling
+     *         <a>GetActivityTask</a>.
      */
 
     public String getWorkerName() {
@@ -67,12 +67,12 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     * The name of the worker that the task is assigned to. These names are provided by the workers when calling
      * <a>GetActivityTask</a>.
      * </p>
      * 
      * @param workerName
-     *        The name of the worker that the task was assigned to. These names are provided by the workers when calling
+     *        The name of the worker that the task is assigned to. These names are provided by the workers when calling
      *        <a>GetActivityTask</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

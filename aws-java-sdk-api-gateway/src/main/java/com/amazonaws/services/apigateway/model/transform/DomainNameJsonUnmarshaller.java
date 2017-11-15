@@ -68,6 +68,10 @@ public class DomainNameJsonUnmarshaller implements Unmarshaller<DomainName, Json
                     context.nextToken();
                     domainName.setRegionalDomainName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("regionalHostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    domainName.setRegionalHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("regionalCertificateName", targetDepth)) {
                     context.nextToken();
                     domainName.setRegionalCertificateName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +83,10 @@ public class DomainNameJsonUnmarshaller implements Unmarshaller<DomainName, Json
                 if (context.testExpression("distributionDomainName", targetDepth)) {
                     context.nextToken();
                     domainName.setDistributionDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("distributionHostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    domainName.setDistributionHostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("endpointConfiguration", targetDepth)) {
                     context.nextToken();

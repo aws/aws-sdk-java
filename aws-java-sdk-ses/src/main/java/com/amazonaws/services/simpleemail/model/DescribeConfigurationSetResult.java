@@ -47,6 +47,12 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private TrackingOptions trackingOptions;
+    /**
+     * <p>
+     * An object that represents the reputation settings for the configuration set.
+     * </p>
+     */
+    private ReputationOptions reputationOptions;
 
     /**
      * <p>
@@ -202,6 +208,46 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * An object that represents the reputation settings for the configuration set.
+     * </p>
+     * 
+     * @param reputationOptions
+     *        An object that represents the reputation settings for the configuration set.
+     */
+
+    public void setReputationOptions(ReputationOptions reputationOptions) {
+        this.reputationOptions = reputationOptions;
+    }
+
+    /**
+     * <p>
+     * An object that represents the reputation settings for the configuration set.
+     * </p>
+     * 
+     * @return An object that represents the reputation settings for the configuration set.
+     */
+
+    public ReputationOptions getReputationOptions() {
+        return this.reputationOptions;
+    }
+
+    /**
+     * <p>
+     * An object that represents the reputation settings for the configuration set.
+     * </p>
+     * 
+     * @param reputationOptions
+     *        An object that represents the reputation settings for the configuration set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationSetResult withReputationOptions(ReputationOptions reputationOptions) {
+        setReputationOptions(reputationOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -217,7 +263,9 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
         if (getEventDestinations() != null)
             sb.append("EventDestinations: ").append(getEventDestinations()).append(",");
         if (getTrackingOptions() != null)
-            sb.append("TrackingOptions: ").append(getTrackingOptions());
+            sb.append("TrackingOptions: ").append(getTrackingOptions()).append(",");
+        if (getReputationOptions() != null)
+            sb.append("ReputationOptions: ").append(getReputationOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +292,10 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTrackingOptions() != null && other.getTrackingOptions().equals(this.getTrackingOptions()) == false)
             return false;
+        if (other.getReputationOptions() == null ^ this.getReputationOptions() == null)
+            return false;
+        if (other.getReputationOptions() != null && other.getReputationOptions().equals(this.getReputationOptions()) == false)
+            return false;
         return true;
     }
 
@@ -255,6 +307,7 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getConfigurationSet() == null) ? 0 : getConfigurationSet().hashCode());
         hashCode = prime * hashCode + ((getEventDestinations() == null) ? 0 : getEventDestinations().hashCode());
         hashCode = prime * hashCode + ((getTrackingOptions() == null) ? 0 : getTrackingOptions().hashCode());
+        hashCode = prime * hashCode + ((getReputationOptions() == null) ? 0 : getReputationOptions().hashCode());
         return hashCode;
     }
 

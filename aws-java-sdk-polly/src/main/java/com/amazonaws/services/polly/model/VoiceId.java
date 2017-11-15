@@ -69,7 +69,9 @@ public enum VoiceId {
     Astrid("Astrid"),
     Filiz("Filiz"),
     Vicki("Vicki"),
-    Takumi("Takumi");
+    Takumi("Takumi"),
+    Seoyeon("Seoyeon"),
+    Aditi("Aditi");
 
     private String value;
 

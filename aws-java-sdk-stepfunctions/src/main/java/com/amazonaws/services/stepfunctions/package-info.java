@@ -21,8 +21,8 @@
  * You can use Step Functions to build applications from individual components, each of which performs a discrete
  * function, or <i>task</i>, allowing you to scale and change applications quickly. Step Functions provides a console
  * that helps visualize the components of your application as a series of steps. Step Functions automatically triggers
- * and tracks each step, and retries steps when there are errors, so your application executes in order and as expected,
- * every time. Step Functions logs the state of each step, so you can diagnose and debug problems quickly.
+ * and tracks each step, and retries steps when there are errors, so your application executes predictably and in the
+ * right order every time. Step Functions logs the state of each step, so you can quickly diagnose and debug any issues.
  * </p>
  * <p>
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.

@@ -34,6 +34,7 @@ public enum LanguageCode {
     FrFR("fr-FR"),
     IsIS("is-IS"),
     ItIT("it-IT"),
+    KoKR("ko-KR"),
     JaJP("ja-JP"),
     NbNO("nb-NO"),
     NlNL("nl-NL"),

@@ -263,9 +263,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new InvalidRenderingParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MessageRejectedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCloudWatchDestinationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AccountSendingPausedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RuleSetDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnsTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ConfigurationSetSendingPausedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventDestinationDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLambdaFunctionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TemplateDoesNotExistExceptionUnmarshaller());
@@ -1731,6 +1733,57 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Returns the email sending status of the Amazon SES account.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getAccountSendingEnabledRequest
+     * @return Result of the GetAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailService.GetAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabled" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAccountSendingEnabledResult getAccountSendingEnabled(GetAccountSendingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountSendingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountSendingEnabledResult executeGetAccountSendingEnabled(GetAccountSendingEnabledRequest getAccountSendingEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccountSendingEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccountSendingEnabledRequest> request = null;
+        Response<GetAccountSendingEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccountSendingEnabledRequestMarshaller().marshall(super.beforeMarshalling(getAccountSendingEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<GetAccountSendingEnabledResult>(
+                    new GetAccountSendingEnabledResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also
      * returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified
      * that these tokens have been published.
@@ -2924,6 +2977,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Indicates that the configuration set does not exist.
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendBulkTemplatedEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail" target="_top">AWS
      *      API Documentation</a>
@@ -3032,6 +3096,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Guide</a>.
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendEmail" target="_top">AWS API
      *      Documentation</a>
@@ -3195,6 +3270,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Guide</a>.
      * @throws ConfigurationSetDoesNotExistException
      *         Indicates that the configuration set does not exist.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendRawEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendRawEmail" target="_top">AWS API
      *      Documentation</a>
@@ -3303,6 +3389,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *         Indicates that the configuration set does not exist.
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
+     * @throws ConfigurationSetSendingPausedException
+     *         Indicates that email sending is disabled for the configuration set.</p>
+     *         <p>
+     *         You can enable or disable email sending for a configuration set using
+     *         <a>UpdateConfigurationSetSendingEnabled</a>.
+     * @throws AccountSendingPausedException
+     *         Indicates that email sending is disabled for your entire Amazon SES account.
+     *         </p>
+     *         <p>
+     *         You can enable or disable email sending for your Amazon SES account using
+     *         <a>UpdateAccountSendingEnabled</a>.
      * @sample AmazonSimpleEmailService.SendTemplatedEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendTemplatedEmail" target="_top">AWS API
      *      Documentation</a>
@@ -3876,6 +3973,61 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Enables or disables email sending across your entire Amazon SES account. You can use this operation in
+     * conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account when
+     * reputation metrics (such as your bounce on complaint rate) reach certain thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateAccountSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for your entire Amazon SES
+     *        account.
+     * @return Result of the UpdateAccountSendingEnabled operation returned by the service.
+     * @sample AmazonSimpleEmailService.UpdateAccountSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateAccountSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountSendingEnabledResult updateAccountSendingEnabled(UpdateAccountSendingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountSendingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountSendingEnabledResult executeUpdateAccountSendingEnabled(UpdateAccountSendingEnabledRequest updateAccountSendingEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountSendingEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountSendingEnabledRequest> request = null;
+        Response<UpdateAccountSendingEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountSendingEnabledRequestMarshaller().marshall(super.beforeMarshalling(updateAccountSendingEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateAccountSendingEnabledResult>(
+                    new UpdateAccountSendingEnabledResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the event destination of a configuration set. Event destinations are associated with configuration sets,
      * which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple
      * Notification Service (Amazon SNS). For information about using configuration sets, see <a
@@ -3942,6 +4094,125 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetEventDestinationResult>(
                     new UpdateConfigurationSetEventDestinationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set.
+     * Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using
+     * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a certain threshold.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetReputationMetricsEnabledRequest
+     *        Represents a request to modify the reputation metric publishing settings for a configuration set.
+     * @return Result of the UpdateConfigurationSetReputationMetricsEnabled operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetReputationMetricsEnabled
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetReputationMetricsEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateConfigurationSetReputationMetricsEnabledResult updateConfigurationSetReputationMetricsEnabled(
+            UpdateConfigurationSetReputationMetricsEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationSetReputationMetricsEnabled(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationSetReputationMetricsEnabledResult executeUpdateConfigurationSetReputationMetricsEnabled(
+            UpdateConfigurationSetReputationMetricsEnabledRequest updateConfigurationSetReputationMetricsEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConfigurationSetReputationMetricsEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfigurationSetReputationMetricsEnabledRequest> request = null;
+        Response<UpdateConfigurationSetReputationMetricsEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfigurationSetReputationMetricsEnabledRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateConfigurationSetReputationMetricsEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult>(
+                    new UpdateConfigurationSetReputationMetricsEnabledResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables or disables email sending for messages sent using a specific configuration set. You can use this
+     * operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set
+     * when the reputation metrics for that configuration set (such as your bounce on complaint rate) reach certain
+     * thresholds.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateConfigurationSetSendingEnabledRequest
+     *        Represents a request to enable or disable the email sending capabilities for a specific configuration set.
+     * @return Result of the UpdateConfigurationSetSendingEnabled operation returned by the service.
+     * @throws ConfigurationSetDoesNotExistException
+     *         Indicates that the configuration set does not exist.
+     * @sample AmazonSimpleEmailService.UpdateConfigurationSetSendingEnabled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetSendingEnabled"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateConfigurationSetSendingEnabledResult updateConfigurationSetSendingEnabled(UpdateConfigurationSetSendingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationSetSendingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationSetSendingEnabledResult executeUpdateConfigurationSetSendingEnabled(
+            UpdateConfigurationSetSendingEnabledRequest updateConfigurationSetSendingEnabledRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConfigurationSetSendingEnabledRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfigurationSetSendingEnabledRequest> request = null;
+        Response<UpdateConfigurationSetSendingEnabledResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfigurationSetSendingEnabledRequestMarshaller().marshall(super
+                        .beforeMarshalling(updateConfigurationSetSendingEnabledRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult>(
+                    new UpdateConfigurationSetSendingEnabledResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

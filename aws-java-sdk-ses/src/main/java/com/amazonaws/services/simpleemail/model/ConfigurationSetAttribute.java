@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ConfigurationSetAttribute {
 
     EventDestinations("eventDestinations"),
-    TrackingOptions("trackingOptions");
+    TrackingOptions("trackingOptions"),
+    ReputationOptions("reputationOptions");
 
     private String value;
 

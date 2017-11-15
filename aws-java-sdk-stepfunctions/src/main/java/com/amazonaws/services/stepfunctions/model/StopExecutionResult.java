@@ -25,18 +25,18 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      */
     private java.util.Date stopDate;
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      * 
      * @param stopDate
-     *        The date the execution was stopped.
+     *        The date the execution is stopped.
      */
 
     public void setStopDate(java.util.Date stopDate) {
@@ -45,10 +45,10 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      * 
-     * @return The date the execution was stopped.
+     * @return The date the execution is stopped.
      */
 
     public java.util.Date getStopDate() {
@@ -57,11 +57,11 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date the execution was stopped.
+     * The date the execution is stopped.
      * </p>
      * 
      * @param stopDate
-     *        The date the execution was stopped.
+     *        The date the execution is stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

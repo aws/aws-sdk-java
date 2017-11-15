@@ -29,6 +29,8 @@ public enum BulkEmailStatus {
     AccountThrottled("AccountThrottled"),
     AccountDailyQuotaExceeded("AccountDailyQuotaExceeded"),
     InvalidSendingPoolName("InvalidSendingPoolName"),
+    AccountSendingPaused("AccountSendingPaused"),
+    ConfigurationSetSendingPaused("ConfigurationSetSendingPaused"),
     InvalidParameterValue("InvalidParameterValue"),
     TransientFailure("TransientFailure"),
     Failed("Failed");

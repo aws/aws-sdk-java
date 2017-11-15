@@ -1997,6 +1997,9 @@
         "name" : "ItIT",
         "value" : "it-IT"
       }, {
+        "name" : "KoKR",
+        "value" : "ko-KR"
+      }, {
         "name" : "JaJP",
         "value" : "ja-JP"
       }, {
@@ -7411,6 +7414,12 @@
       }, {
         "name" : "Takumi",
         "value" : "Takumi"
+      }, {
+        "name" : "Seoyeon",
+        "value" : "Seoyeon"
+      }, {
+        "name" : "Aditi",
+        "value" : "Aditi"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

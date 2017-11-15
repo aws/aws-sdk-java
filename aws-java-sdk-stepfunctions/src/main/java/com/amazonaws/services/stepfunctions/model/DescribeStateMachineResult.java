@@ -86,7 +86,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     private String roleArn;
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -509,11 +509,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the state machine was created.
+     *        The date the state machine is created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -522,10 +522,10 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      * 
-     * @return The date the state machine was created.
+     * @return The date the state machine is created.
      */
 
     public java.util.Date getCreationDate() {
@@ -534,11 +534,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date the state machine was created.
+     * The date the state machine is created.
      * </p>
      * 
      * @param creationDate
-     *        The date the state machine was created.
+     *        The date the state machine is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

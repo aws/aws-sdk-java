@@ -57,8 +57,8 @@ import com.amazonaws.services.stepfunctions.model.transform.*;
  * You can use Step Functions to build applications from individual components, each of which performs a discrete
  * function, or <i>task</i>, allowing you to scale and change applications quickly. Step Functions provides a console
  * that helps visualize the components of your application as a series of steps. Step Functions automatically triggers
- * and tracks each step, and retries steps when there are errors, so your application executes in order and as expected,
- * every time. Step Functions logs the state of each step, so you can diagnose and debug problems quickly.
+ * and tracks each step, and retries steps when there are errors, so your application executes predictably and in the
+ * right order every time. Step Functions logs the state of each step, so you can quickly diagnose and debug any issues.
  * </p>
  * <p>
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
@@ -134,6 +134,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExecutionAlreadyExists").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameter").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.MissingRequiredParameterException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class))
@@ -326,10 +329,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Creates an activity. An Activity is a task which you write, in any language and hosted on any machine which has
-     * access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> and
-     * respond using <code>SendTask*</code> API calls. This function lets Step Functions know the existence of your
-     * activity and returns an identifier for use in a state machine and when polling from the activity.
+     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
+     * which has access to AWS Step Functions. Activities must poll Step Functions using the
+     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
+     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
+     * polling from the activity.
      * </p>
      * 
      * @param createActivityRequest
@@ -383,7 +387,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     /**
      * <p>
      * Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code>
-     * states), determine which states to transition to next (<code>Choice</code> states), stop an execution with an
+     * states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
@@ -496,10 +500,15 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Deletes a state machine. This is an asynchronous operation-- it sets the state machine's status to "DELETING" and
-     * begins the delete process. Each state machine execution will be deleted the next time it makes a state
-     * transition. After all executions have completed or been deleted, the state machine itself will be deleted.
+     * Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to
+     * <code>DELETING</code> and begins the deletion process. Each state machine execution is deleted the next time it
+     * makes a state transition.
      * </p>
+     * <note>
+     * <p>
+     * The state machine itself is deleted after all executions are completed or deleted.
+     * </p>
+     * </note>
      * 
      * @param deleteStateMachineRequest
      * @return Result of the DeleteStateMachine operation returned by the service.
@@ -704,11 +713,66 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Describes the state machine associated with a specific execution.
+     * </p>
+     * 
+     * @param describeStateMachineForExecutionRequest
+     * @return Result of the DescribeStateMachineForExecution operation returned by the service.
+     * @throws ExecutionDoesNotExistException
+     *         The specified execution does not exist.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @sample AWSStepFunctions.DescribeStateMachineForExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeStateMachineForExecutionResult describeStateMachineForExecution(DescribeStateMachineForExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStateMachineForExecution(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStateMachineForExecutionResult executeDescribeStateMachineForExecution(
+            DescribeStateMachineForExecutionRequest describeStateMachineForExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStateMachineForExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStateMachineForExecutionRequest> request = null;
+        Response<DescribeStateMachineForExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStateMachineForExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeStateMachineForExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStateMachineForExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeStateMachineForExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a
      * running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds
      * as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the
      * service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the
-     * poll will return a <code>taskToken</code> with a null string.
+     * poll returns a <code>taskToken</code> with a null string.
      * </p>
      * <important>
      * <p>
@@ -770,8 +834,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Returns the history of the specified execution as a list of events. By default, the results are returned in
      * ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get
-     * the latest events first. The results may be split into multiple pages. To retrieve subsequent pages, make the
-     * call again using the <code>nextToken</code> returned by the previous call.
+     * the latest events first.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -825,8 +893,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the existing activities. The results may be split into multiple pages. To retrieve subsequent pages, make
-     * the call again using the <code>nextToken</code> returned by the previous call.
+     * Lists the existing activities.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listActivitiesRequest
@@ -876,9 +948,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria. The results may be split into multiple
-     * pages. To retrieve subsequent pages, make the call again using the <code>nextToken</code> returned by the
-     * previous call.
+     * Lists the executions of a state machine that meet the filtering criteria.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listExecutionsRequest
@@ -932,8 +1007,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the existing state machines. The results may be split into multiple pages. To retrieve subsequent pages,
-     * make the call again using the <code>nextToken</code> returned by the previous call.
+     * Lists the existing state machines.
+     * </p>
+     * <p>
+     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
+     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
+     * arguments unchanged.
      * </p>
      * 
      * @param listStateMachinesRequest
@@ -1038,7 +1117,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * Used by workers to report to the service that the task represented by the specified <code>taskToken</code> is
      * still making progress. This action resets the <code>Heartbeat</code> clock. The <code>Heartbeat</code> threshold
      * is specified in the state machine's Amazon States Language definition. This action does not in itself create an
-     * event in the execution history. However, if the task times out, the execution history will contain an
+     * event in the execution history. However, if the task times out, the execution history contains an
      * <code>ActivityTimedOut</code> event.
      * </p>
      * <note>
@@ -1262,6 +1341,75 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<StopExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * </p>
+     * <note>
+     * <p>
+     * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
+     * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
+     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
+     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
+     * error.
+     * </p>
+     * </note>
+     * 
+     * @param updateStateMachineRequest
+     * @return Result of the UpdateStateMachine operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws InvalidDefinitionException
+     *         The provided Amazon States Language definition is invalid.
+     * @throws MissingRequiredParameterException
+     *         Request is missing a required parameter. This error occurs if both <code>definition</code> and
+     *         <code>roleArn</code> are not specified.
+     * @throws StateMachineDeletingException
+     *         The specified state machine is being deleted.
+     * @throws StateMachineDoesNotExistException
+     *         The specified state machine does not exist.
+     * @sample AWSStepFunctions.UpdateStateMachine
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateStateMachineResult updateStateMachine(UpdateStateMachineRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStateMachine(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStateMachineResult executeUpdateStateMachine(UpdateStateMachineRequest updateStateMachineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateStateMachineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateStateMachineRequest> request = null;
+        Response<UpdateStateMachineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStateMachineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateStateMachineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateStateMachineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -34,8 +34,8 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
     private String activityArn;
     /**
      * <p>
-     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
-     * used when it is logged in the execution history.
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used
+     * when it is logged in the execution history.
      * </p>
      */
     private String workerName;
@@ -88,13 +88,13 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
-     * used when it is logged in the execution history.
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used
+     * when it is logged in the execution history.
      * </p>
      * 
      * @param workerName
      *        You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name
-     *        will be used when it is logged in the execution history.
+     *        is used when it is logged in the execution history.
      */
 
     public void setWorkerName(String workerName) {
@@ -103,12 +103,12 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
-     * used when it is logged in the execution history.
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used
+     * when it is logged in the execution history.
      * </p>
      * 
      * @return You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name
-     *         will be used when it is logged in the execution history.
+     *         is used when it is logged in the execution history.
      */
 
     public String getWorkerName() {
@@ -117,13 +117,13 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name will be
-     * used when it is logged in the execution history.
+     * You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used
+     * when it is logged in the execution history.
      * </p>
      * 
      * @param workerName
      *        You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name
-     *        will be used when it is logged in the execution history.
+     *        is used when it is logged in the execution history.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
