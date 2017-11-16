@@ -1819,8 +1819,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                         seenOne = true;
                     else
                         granteeString.append(", ");
-                    granteeString.append(grantee.getTypeIdentifier()).append("=").append("\"")
-                            .append(grantee.getIdentifier()).append("\"");
+                    granteeString.append(grantee.getTypeIdentifier()).append("=")
+                            .append(grantee.getIdentifier());
                 }
                 request.addHeader(permission.getHeaderName(), granteeString.toString());
             }
