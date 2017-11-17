@@ -18,6 +18,11 @@ import javax.annotation.Generated;
  * <p>
  * The requested operation would violate the constraint identified in the reason code.
  * </p>
+ * <note>
+ * <p>
+ * Some of the reasons in the following list might not be applicable to this specific API or operation:
+ * </p>
+ * </note>
  * <ul>
  * <li>
  * <p>

@@ -108,6 +108,10 @@ public class CrawlerJsonUnmarshaller implements Unmarshaller<Crawler, JsonUnmars
                     context.nextToken();
                     crawler.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("Configuration", targetDepth)) {
+                    context.nextToken();
+                    crawler.setConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

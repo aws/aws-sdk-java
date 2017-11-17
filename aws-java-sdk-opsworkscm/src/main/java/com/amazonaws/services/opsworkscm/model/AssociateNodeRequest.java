@@ -33,7 +33,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String serverName;
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the node.
      * </p>
      */
     private String nodeName;
@@ -42,7 +42,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Engine attributes used for associating the node.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a AssociateNode request:</b>
+     * <b>Attributes accepted in a AssociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -55,6 +55,16 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
      * <code>chef-client</code> agent to access the Chef API.
+     * </p>
+     * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
      * </p>
      * </li>
      * </ul>
@@ -103,11 +113,11 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the node.
      * </p>
      * 
      * @param nodeName
-     *        The name of the Chef client node.
+     *        The name of the node.
      */
 
     public void setNodeName(String nodeName) {
@@ -116,10 +126,10 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the node.
      * </p>
      * 
-     * @return The name of the Chef client node.
+     * @return The name of the node.
      */
 
     public String getNodeName() {
@@ -128,11 +138,11 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the Chef client node.
+     * The name of the node.
      * </p>
      * 
      * @param nodeName
-     *        The name of the Chef client node.
+     *        The name of the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,7 +156,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Engine attributes used for associating the node.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a AssociateNode request:</b>
+     * <b>Attributes accepted in a AssociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -162,10 +172,20 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Engine attributes used for associating the node. </p>
      *         <p class="title">
-     *         <b>Attributes accepted in a AssociateNode request:</b>
+     *         <b>Attributes accepted in a AssociateNode request for Chef</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -180,6 +200,17 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>chef-client</code> agent to access the Chef API.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p class="title">
+     *         <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the
+     *         node.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<EngineAttribute> getEngineAttributes() {
@@ -191,7 +222,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Engine attributes used for associating the node.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a AssociateNode request:</b>
+     * <b>Attributes accepted in a AssociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -207,11 +238,21 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineAttributes
      *        Engine attributes used for associating the node. </p>
      *        <p class="title">
-     *        <b>Attributes accepted in a AssociateNode request:</b>
+     *        <b>Attributes accepted in a AssociateNode request for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -224,6 +265,17 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
      *        <code>chef-client</code> agent to access the Chef API.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the
+     *        node.
      *        </p>
      *        </li>
      */
@@ -242,7 +294,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Engine attributes used for associating the node.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a AssociateNode request:</b>
+     * <b>Attributes accepted in a AssociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -258,6 +310,16 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEngineAttributes(java.util.Collection)} or {@link #withEngineAttributes(java.util.Collection)} if you
@@ -267,7 +329,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param engineAttributes
      *        Engine attributes used for associating the node. </p>
      *        <p class="title">
-     *        <b>Attributes accepted in a AssociateNode request:</b>
+     *        <b>Attributes accepted in a AssociateNode request for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -280,6 +342,17 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
      *        <code>chef-client</code> agent to access the Chef API.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the
+     *        node.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -300,7 +373,7 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Engine attributes used for associating the node.
      * </p>
      * <p class="title">
-     * <b>Attributes accepted in a AssociateNode request:</b>
+     * <b>Attributes accepted in a AssociateNode request for Chef</b>
      * </p>
      * <ul>
      * <li>
@@ -316,11 +389,21 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the node.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineAttributes
      *        Engine attributes used for associating the node. </p>
      *        <p class="title">
-     *        <b>Attributes accepted in a AssociateNode request:</b>
+     *        <b>Attributes accepted in a AssociateNode request for Chef</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -333,6 +416,17 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
      *        <code>chef-client</code> agent to access the Chef API.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attributes accepted in a AssociateNode request for Puppet</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR) that is created by the
+     *        node.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

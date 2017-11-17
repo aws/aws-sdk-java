@@ -24,18 +24,18 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A python script to perform the mapping.
+     * A Python script to perform the mapping.
      * </p>
      */
     private String pythonScript;
 
     /**
      * <p>
-     * A python script to perform the mapping.
+     * A Python script to perform the mapping.
      * </p>
      * 
      * @param pythonScript
-     *        A python script to perform the mapping.
+     *        A Python script to perform the mapping.
      */
 
     public void setPythonScript(String pythonScript) {
@@ -44,10 +44,10 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A python script to perform the mapping.
+     * A Python script to perform the mapping.
      * </p>
      * 
-     * @return A python script to perform the mapping.
+     * @return A Python script to perform the mapping.
      */
 
     public String getPythonScript() {
@@ -56,11 +56,11 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A python script to perform the mapping.
+     * A Python script to perform the mapping.
      * </p>
      * 
      * @param pythonScript
-     *        A python script to perform the mapping.
+     *        A Python script to perform the mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

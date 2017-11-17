@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies crawler targets.
+ * Specifies data stores to crawl.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlerTargets" target="_top">AWS API
@@ -30,7 +30,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies targets in AWS S3.
+     * Specifies Amazon S3 targets.
      * </p>
      */
     private java.util.List<S3Target> s3Targets;
@@ -43,10 +43,10 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies targets in AWS S3.
+     * Specifies Amazon S3 targets.
      * </p>
      * 
-     * @return Specifies targets in AWS S3.
+     * @return Specifies Amazon S3 targets.
      */
 
     public java.util.List<S3Target> getS3Targets() {
@@ -55,11 +55,11 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies targets in AWS S3.
+     * Specifies Amazon S3 targets.
      * </p>
      * 
      * @param s3Targets
-     *        Specifies targets in AWS S3.
+     *        Specifies Amazon S3 targets.
      */
 
     public void setS3Targets(java.util.Collection<S3Target> s3Targets) {
@@ -73,7 +73,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies targets in AWS S3.
+     * Specifies Amazon S3 targets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param s3Targets
-     *        Specifies targets in AWS S3.
+     *        Specifies Amazon S3 targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies targets in AWS S3.
+     * Specifies Amazon S3 targets.
      * </p>
      * 
      * @param s3Targets
-     *        Specifies targets in AWS S3.
+     *        Specifies Amazon S3 targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

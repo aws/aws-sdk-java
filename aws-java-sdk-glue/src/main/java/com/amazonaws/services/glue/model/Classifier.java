@@ -19,10 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Classifiers are written in Python and triggered during a Crawl Task. You can write your own Classifiers to best
- * categorize your data sources and specify the appropriate schemas to use for them. A Classifier first checks whether a
- * given file is in a format it can handle, and then, if so, creates a schema in the form of a <code>StructType</code>
- * object that matches that data format.
+ * Classifiers are written in Python and triggered during a crawl task. You can write your own classifiers to best
+ * categorize your data sources and specify the appropriate schemas to use for them. A classifier checks whether a given
+ * file is in a format it can handle, and if it is, the classifier creates a schema in the form of a
+ * <code>StructType</code> object that matches that data format.
+ * </p>
+ * <p>
+ * A classifier can be either a <code>grok</code> classifier or an XML classifier, specified in one or the other field
+ * of the <code>Classifier</code> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Classifier" target="_top">AWS API
@@ -33,18 +37,24 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A GrokClassifier object.
+     * A <code>GrokClassifier</code> object.
      * </p>
      */
     private GrokClassifier grokClassifier;
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object.
+     * </p>
+     */
+    private XMLClassifier xMLClassifier;
 
     /**
      * <p>
-     * A GrokClassifier object.
+     * A <code>GrokClassifier</code> object.
      * </p>
      * 
      * @param grokClassifier
-     *        A GrokClassifier object.
+     *        A <code>GrokClassifier</code> object.
      */
 
     public void setGrokClassifier(GrokClassifier grokClassifier) {
@@ -53,10 +63,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A GrokClassifier object.
+     * A <code>GrokClassifier</code> object.
      * </p>
      * 
-     * @return A GrokClassifier object.
+     * @return A <code>GrokClassifier</code> object.
      */
 
     public GrokClassifier getGrokClassifier() {
@@ -65,16 +75,56 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A GrokClassifier object.
+     * A <code>GrokClassifier</code> object.
      * </p>
      * 
      * @param grokClassifier
-     *        A GrokClassifier object.
+     *        A <code>GrokClassifier</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Classifier withGrokClassifier(GrokClassifier grokClassifier) {
         setGrokClassifier(grokClassifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object.
+     * </p>
+     * 
+     * @param xMLClassifier
+     *        An <code>XMLClassifier</code> object.
+     */
+
+    public void setXMLClassifier(XMLClassifier xMLClassifier) {
+        this.xMLClassifier = xMLClassifier;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object.
+     * </p>
+     * 
+     * @return An <code>XMLClassifier</code> object.
+     */
+
+    public XMLClassifier getXMLClassifier() {
+        return this.xMLClassifier;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object.
+     * </p>
+     * 
+     * @param xMLClassifier
+     *        An <code>XMLClassifier</code> object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Classifier withXMLClassifier(XMLClassifier xMLClassifier) {
+        setXMLClassifier(xMLClassifier);
         return this;
     }
 
@@ -90,7 +140,9 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGrokClassifier() != null)
-            sb.append("GrokClassifier: ").append(getGrokClassifier());
+            sb.append("GrokClassifier: ").append(getGrokClassifier()).append(",");
+        if (getXMLClassifier() != null)
+            sb.append("XMLClassifier: ").append(getXMLClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -109,6 +161,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGrokClassifier() != null && other.getGrokClassifier().equals(this.getGrokClassifier()) == false)
             return false;
+        if (other.getXMLClassifier() == null ^ this.getXMLClassifier() == null)
+            return false;
+        if (other.getXMLClassifier() != null && other.getXMLClassifier().equals(this.getXMLClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -118,6 +174,7 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
+        hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
         return hashCode;
     }
 

@@ -1655,6 +1655,55 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Gets the specified limit for the current account, for example, the maximum number of health checks that you can
+     * create using the account.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getAccountLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return A Java Future containing the result of the GetAccountLimit operation returned by the service.
+     * @sample AmazonRoute53Async.GetAccountLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest getAccountLimitRequest);
+
+    /**
+     * <p>
+     * Gets the specified limit for the current account, for example, the maximum number of health checks that you can
+     * create using the account.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getAccountLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountLimit operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.GetAccountLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest getAccountLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountLimitRequest, GetAccountLimitResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the current status of a change batch request. The status is one of the following values:
      * </p>
      * <ul>
@@ -2086,6 +2135,55 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can
+     * create in the hosted zone.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getHostedZoneLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return A Java Future containing the result of the GetHostedZoneLimit operation returned by the service.
+     * @sample AmazonRoute53Async.GetHostedZoneLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest getHostedZoneLimitRequest);
+
+    /**
+     * <p>
+     * Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can
+     * create in the hosted zone.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getHostedZoneLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetHostedZoneLimit operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.GetHostedZoneLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneLimit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest getHostedZoneLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHostedZoneLimitRequest, GetHostedZoneLimitResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a specified configuration for DNS query logging.
      * </p>
      * <p>
@@ -2157,6 +2255,57 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest getReusableDelegationSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the maximum number of hosted zones that you can associate with the specified reusable delegation set.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getReusableDelegationSetLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @return A Java Future containing the result of the GetReusableDelegationSetLimit operation returned by the
+     *         service.
+     * @sample AmazonRoute53Async.GetReusableDelegationSetLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(
+            GetReusableDelegationSetLimitRequest getReusableDelegationSetLimitRequest);
+
+    /**
+     * <p>
+     * Gets the maximum number of hosted zones that you can associate with the specified reusable delegation set.
+     * </p>
+     * <p>
+     * For the default limit, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon
+     * Route 53 Developer Guide</i>. To request a higher limit, <a href=
+     * "https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-route53"
+     * >open a case</a>.
+     * </p>
+     * 
+     * @param getReusableDelegationSetLimitRequest
+     *        A complex type that contains information about the request to create a hosted zone.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReusableDelegationSetLimit operation returned by the
+     *         service.
+     * @sample AmazonRoute53AsyncHandler.GetReusableDelegationSetLimit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimit"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(
+            GetReusableDelegationSetLimitRequest getReusableDelegationSetLimitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetLimitRequest, GetReusableDelegationSetLimitResult> asyncHandler);
 
     /**
      * <p>

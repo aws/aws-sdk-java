@@ -25,18 +25,18 @@ public class GetCrawlerResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      */
     private Crawler crawler;
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      * 
      * @param crawler
-     *        The metadata for the specified <code>Crawler</code>.
+     *        The metadata for the specified crawler.
      */
 
     public void setCrawler(Crawler crawler) {
@@ -45,10 +45,10 @@ public class GetCrawlerResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      * 
-     * @return The metadata for the specified <code>Crawler</code>.
+     * @return The metadata for the specified crawler.
      */
 
     public Crawler getCrawler() {
@@ -57,11 +57,11 @@ public class GetCrawlerResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The metadata for the specified <code>Crawler</code>.
+     * The metadata for the specified crawler.
      * </p>
      * 
      * @param crawler
-     *        The metadata for the specified <code>Crawler</code>.
+     *        The metadata for the specified crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,24 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A grok classifier to create.
+     * A <code>GrokClassifier</code> object specifying the classifier to create.
      * </p>
      */
     private CreateGrokClassifierRequest grokClassifier;
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object specifying the classifier to create.
+     * </p>
+     */
+    private CreateXMLClassifierRequest xMLClassifier;
 
     /**
      * <p>
-     * A grok classifier to create.
+     * A <code>GrokClassifier</code> object specifying the classifier to create.
      * </p>
      * 
      * @param grokClassifier
-     *        A grok classifier to create.
+     *        A <code>GrokClassifier</code> object specifying the classifier to create.
      */
 
     public void setGrokClassifier(CreateGrokClassifierRequest grokClassifier) {
@@ -47,10 +53,10 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A grok classifier to create.
+     * A <code>GrokClassifier</code> object specifying the classifier to create.
      * </p>
      * 
-     * @return A grok classifier to create.
+     * @return A <code>GrokClassifier</code> object specifying the classifier to create.
      */
 
     public CreateGrokClassifierRequest getGrokClassifier() {
@@ -59,16 +65,56 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A grok classifier to create.
+     * A <code>GrokClassifier</code> object specifying the classifier to create.
      * </p>
      * 
      * @param grokClassifier
-     *        A grok classifier to create.
+     *        A <code>GrokClassifier</code> object specifying the classifier to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateClassifierRequest withGrokClassifier(CreateGrokClassifierRequest grokClassifier) {
         setGrokClassifier(grokClassifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object specifying the classifier to create.
+     * </p>
+     * 
+     * @param xMLClassifier
+     *        An <code>XMLClassifier</code> object specifying the classifier to create.
+     */
+
+    public void setXMLClassifier(CreateXMLClassifierRequest xMLClassifier) {
+        this.xMLClassifier = xMLClassifier;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object specifying the classifier to create.
+     * </p>
+     * 
+     * @return An <code>XMLClassifier</code> object specifying the classifier to create.
+     */
+
+    public CreateXMLClassifierRequest getXMLClassifier() {
+        return this.xMLClassifier;
+    }
+
+    /**
+     * <p>
+     * An <code>XMLClassifier</code> object specifying the classifier to create.
+     * </p>
+     * 
+     * @param xMLClassifier
+     *        An <code>XMLClassifier</code> object specifying the classifier to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClassifierRequest withXMLClassifier(CreateXMLClassifierRequest xMLClassifier) {
+        setXMLClassifier(xMLClassifier);
         return this;
     }
 
@@ -84,7 +130,9 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGrokClassifier() != null)
-            sb.append("GrokClassifier: ").append(getGrokClassifier());
+            sb.append("GrokClassifier: ").append(getGrokClassifier()).append(",");
+        if (getXMLClassifier() != null)
+            sb.append("XMLClassifier: ").append(getXMLClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +151,10 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getGrokClassifier() != null && other.getGrokClassifier().equals(this.getGrokClassifier()) == false)
             return false;
+        if (other.getXMLClassifier() == null ^ this.getXMLClassifier() == null)
+            return false;
+        if (other.getXMLClassifier() != null && other.getXMLClassifier().equals(this.getXMLClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +164,7 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
+        hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
         return hashCode;
     }
 

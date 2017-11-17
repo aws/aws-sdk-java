@@ -61,8 +61,12 @@ public enum OrganizationsActions implements Action {
     DescribePolicy("organizations:DescribePolicy"),
     /** Action for the DetachPolicy operation. */
     DetachPolicy("organizations:DetachPolicy"),
+    /** Action for the DisableAWSServiceAccess operation. */
+    DisableAWSServiceAccess("organizations:DisableAWSServiceAccess"),
     /** Action for the DisablePolicyType operation. */
     DisablePolicyType("organizations:DisablePolicyType"),
+    /** Action for the EnableAWSServiceAccess operation. */
+    EnableAWSServiceAccess("organizations:EnableAWSServiceAccess"),
     /** Action for the EnableAllFeatures operation. */
     EnableAllFeatures("organizations:EnableAllFeatures"),
     /** Action for the EnablePolicyType operation. */
@@ -71,6 +75,8 @@ public enum OrganizationsActions implements Action {
     InviteAccountToOrganization("organizations:InviteAccountToOrganization"),
     /** Action for the LeaveOrganization operation. */
     LeaveOrganization("organizations:LeaveOrganization"),
+    /** Action for the ListAWSServiceAccessForOrganization operation. */
+    ListAWSServiceAccessForOrganization("organizations:ListAWSServiceAccessForOrganization"),
     /** Action for the ListAccounts operation. */
     ListAccounts("organizations:ListAccounts"),
     /** Action for the ListAccountsForParent operation. */

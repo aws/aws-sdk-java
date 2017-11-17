@@ -42,7 +42,7 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
     private Double timeLeftSeconds;
     /**
      * <p>
-     * True if the crawler is estimating its
+     * True if the crawler is still estimating how long it will take to complete this run.
      * </p>
      */
     private Boolean stillEstimating;
@@ -60,19 +60,19 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
     private Double medianRuntimeSeconds;
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables created by this crawler.
      * </p>
      */
     private Integer tablesCreated;
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables updated by this crawler.
      * </p>
      */
     private Integer tablesUpdated;
     /**
      * <p>
-     * A list of the tables deleted by this crawler.
+     * The number of tables deleted by this crawler.
      * </p>
      */
     private Integer tablesDeleted;
@@ -159,11 +159,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if the crawler is estimating its
+     * True if the crawler is still estimating how long it will take to complete this run.
      * </p>
      * 
      * @param stillEstimating
-     *        True if the crawler is estimating its
+     *        True if the crawler is still estimating how long it will take to complete this run.
      */
 
     public void setStillEstimating(Boolean stillEstimating) {
@@ -172,10 +172,10 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if the crawler is estimating its
+     * True if the crawler is still estimating how long it will take to complete this run.
      * </p>
      * 
-     * @return True if the crawler is estimating its
+     * @return True if the crawler is still estimating how long it will take to complete this run.
      */
 
     public Boolean getStillEstimating() {
@@ -184,11 +184,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if the crawler is estimating its
+     * True if the crawler is still estimating how long it will take to complete this run.
      * </p>
      * 
      * @param stillEstimating
-     *        True if the crawler is estimating its
+     *        True if the crawler is still estimating how long it will take to complete this run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,10 +199,10 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if the crawler is estimating its
+     * True if the crawler is still estimating how long it will take to complete this run.
      * </p>
      * 
-     * @return True if the crawler is estimating its
+     * @return True if the crawler is still estimating how long it will take to complete this run.
      */
 
     public Boolean isStillEstimating() {
@@ -291,11 +291,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables created by this crawler.
      * </p>
      * 
      * @param tablesCreated
-     *        A list of the tables created by this crawler.
+     *        The number of tables created by this crawler.
      */
 
     public void setTablesCreated(Integer tablesCreated) {
@@ -304,10 +304,10 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables created by this crawler.
      * </p>
      * 
-     * @return A list of the tables created by this crawler.
+     * @return The number of tables created by this crawler.
      */
 
     public Integer getTablesCreated() {
@@ -316,11 +316,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables created by this crawler.
      * </p>
      * 
      * @param tablesCreated
-     *        A list of the tables created by this crawler.
+     *        The number of tables created by this crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,11 +331,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables updated by this crawler.
      * </p>
      * 
      * @param tablesUpdated
-     *        A list of the tables created by this crawler.
+     *        The number of tables updated by this crawler.
      */
 
     public void setTablesUpdated(Integer tablesUpdated) {
@@ -344,10 +344,10 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables updated by this crawler.
      * </p>
      * 
-     * @return A list of the tables created by this crawler.
+     * @return The number of tables updated by this crawler.
      */
 
     public Integer getTablesUpdated() {
@@ -356,11 +356,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables created by this crawler.
+     * The number of tables updated by this crawler.
      * </p>
      * 
      * @param tablesUpdated
-     *        A list of the tables created by this crawler.
+     *        The number of tables updated by this crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,11 +371,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables deleted by this crawler.
+     * The number of tables deleted by this crawler.
      * </p>
      * 
      * @param tablesDeleted
-     *        A list of the tables deleted by this crawler.
+     *        The number of tables deleted by this crawler.
      */
 
     public void setTablesDeleted(Integer tablesDeleted) {
@@ -384,10 +384,10 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables deleted by this crawler.
+     * The number of tables deleted by this crawler.
      * </p>
      * 
-     * @return A list of the tables deleted by this crawler.
+     * @return The number of tables deleted by this crawler.
      */
 
     public Integer getTablesDeleted() {
@@ -396,11 +396,11 @@ public class CrawlerMetrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of the tables deleted by this crawler.
+     * The number of tables deleted by this crawler.
      * </p>
      * 
      * @param tablesDeleted
-     *        A list of the tables deleted by this crawler.
+     *        The number of tables deleted by this crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

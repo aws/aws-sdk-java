@@ -52,6 +52,10 @@ public class ClassifierJsonUnmarshaller implements Unmarshaller<Classifier, Json
                     context.nextToken();
                     classifier.setGrokClassifier(GrokClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("XMLClassifier", targetDepth)) {
+                    context.nextToken();
+                    classifier.setXMLClassifier(XMLClassifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

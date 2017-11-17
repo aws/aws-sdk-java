@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.opsworkscm.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.opsworkscm.waiters.AWSOpsWorksCMWaiters;
 
 /**
  * Abstract implementation of {@code AWSOpsWorksCM}. Convenient method forms pass through to the corresponding overload
@@ -119,6 +120,11 @@ public class AbstractAWSOpsWorksCM implements AWSOpsWorksCM {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSOpsWorksCMWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

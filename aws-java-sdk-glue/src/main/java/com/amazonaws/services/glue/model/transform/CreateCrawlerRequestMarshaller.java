@@ -46,6 +46,8 @@ public class CreateCrawlerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TablePrefix").build();
     private static final MarshallingInfo<StructuredPojo> SCHEMACHANGEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaChangePolicy").build();
+    private static final MarshallingInfo<String> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
 
     private static final CreateCrawlerRequestMarshaller instance = new CreateCrawlerRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateCrawlerRequestMarshaller {
             protocolMarshaller.marshall(createCrawlerRequest.getClassifiers(), CLASSIFIERS_BINDING);
             protocolMarshaller.marshall(createCrawlerRequest.getTablePrefix(), TABLEPREFIX_BINDING);
             protocolMarshaller.marshall(createCrawlerRequest.getSchemaChangePolicy(), SCHEMACHANGEPOLICY_BINDING);
+            protocolMarshaller.marshall(createCrawlerRequest.getConfiguration(), CONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

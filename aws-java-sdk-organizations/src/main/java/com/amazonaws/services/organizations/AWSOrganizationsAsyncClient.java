@@ -96,10 +96,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * We welcome your feedback. Send your comments to <a
  * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a> or post your feedback and
- * questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
- * forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your
- * forum user ID. For more information about the AWS support forums, see <a
- * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+ * questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support forum</a>.
+ * For more information about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
+ * Help</a>.
  * </p>
  * <p>
  * <b>Endpoint to Call When Using the CLI or the AWS API</b>
@@ -969,6 +968,39 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAWSServiceAccessResult> disableAWSServiceAccessAsync(DisableAWSServiceAccessRequest request) {
+
+        return disableAWSServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAWSServiceAccessResult> disableAWSServiceAccessAsync(final DisableAWSServiceAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableAWSServiceAccessRequest, DisableAWSServiceAccessResult> asyncHandler) {
+        final DisableAWSServiceAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableAWSServiceAccessResult>() {
+            @Override
+            public DisableAWSServiceAccessResult call() throws Exception {
+                DisableAWSServiceAccessResult result = null;
+
+                try {
+                    result = executeDisableAWSServiceAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisablePolicyTypeResult> disablePolicyTypeAsync(DisablePolicyTypeRequest request) {
 
         return disablePolicyTypeAsync(request, null);
@@ -986,6 +1018,39 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
 
                 try {
                     result = executeDisablePolicyType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAWSServiceAccessResult> enableAWSServiceAccessAsync(EnableAWSServiceAccessRequest request) {
+
+        return enableAWSServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAWSServiceAccessResult> enableAWSServiceAccessAsync(final EnableAWSServiceAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableAWSServiceAccessRequest, EnableAWSServiceAccessResult> asyncHandler) {
+        final EnableAWSServiceAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableAWSServiceAccessResult>() {
+            @Override
+            public EnableAWSServiceAccessResult call() throws Exception {
+                EnableAWSServiceAccessResult result = null;
+
+                try {
+                    result = executeEnableAWSServiceAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1118,6 +1183,41 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
 
                 try {
                     result = executeLeaveOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAWSServiceAccessForOrganizationResult> listAWSServiceAccessForOrganizationAsync(
+            ListAWSServiceAccessForOrganizationRequest request) {
+
+        return listAWSServiceAccessForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAWSServiceAccessForOrganizationResult> listAWSServiceAccessForOrganizationAsync(
+            final ListAWSServiceAccessForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAWSServiceAccessForOrganizationRequest, ListAWSServiceAccessForOrganizationResult> asyncHandler) {
+        final ListAWSServiceAccessForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAWSServiceAccessForOrganizationResult>() {
+            @Override
+            public ListAWSServiceAccessForOrganizationResult call() throws Exception {
+                ListAWSServiceAccessForOrganizationResult result = null;
+
+                try {
+                    result = executeListAWSServiceAccessForOrganization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -279,6 +279,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest request) {
+
+        return getAccountLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccountLimitResult> getAccountLimitAsync(GetAccountLimitRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccountLimitRequest, GetAccountLimitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetChangeResult> getChangeAsync(GetChangeRequest request) {
 
         return getChangeAsync(request, null);
@@ -490,6 +503,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest request) {
+
+        return getHostedZoneLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostedZoneLimitResult> getHostedZoneLimitAsync(GetHostedZoneLimitRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetHostedZoneLimitRequest, GetHostedZoneLimitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetQueryLoggingConfigResult> getQueryLoggingConfigAsync(GetQueryLoggingConfigRequest request) {
 
         return getQueryLoggingConfigAsync(request, null);
@@ -511,6 +537,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     @Override
     public java.util.concurrent.Future<GetReusableDelegationSetResult> getReusableDelegationSetAsync(GetReusableDelegationSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetRequest, GetReusableDelegationSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(GetReusableDelegationSetLimitRequest request) {
+
+        return getReusableDelegationSetLimitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReusableDelegationSetLimitResult> getReusableDelegationSetLimitAsync(GetReusableDelegationSetLimitRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetReusableDelegationSetLimitRequest, GetReusableDelegationSetLimitResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum MetricType {
 
     DynamoDBReadCapacityUtilization("DynamoDBReadCapacityUtilization"),
-    DynamoDBWriteCapacityUtilization("DynamoDBWriteCapacityUtilization");
+    DynamoDBWriteCapacityUtilization("DynamoDBWriteCapacityUtilization"),
+    RDSReaderAverageCPUUtilization("RDSReaderAverageCPUUtilization"),
+    RDSReaderAverageDatabaseConnections("RDSReaderAverageDatabaseConnections");
 
     private String value;
 

@@ -128,7 +128,17 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public DisableAWSServiceAccessResult disableAWSServiceAccess(DisableAWSServiceAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisablePolicyTypeResult disablePolicyType(DisablePolicyTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableAWSServiceAccessResult enableAWSServiceAccess(EnableAWSServiceAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +159,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
 
     @Override
     public LeaveOrganizationResult leaveOrganization(LeaveOrganizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAWSServiceAccessForOrganizationResult listAWSServiceAccessForOrganization(ListAWSServiceAccessForOrganizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

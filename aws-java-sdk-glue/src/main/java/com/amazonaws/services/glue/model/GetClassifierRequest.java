@@ -27,18 +27,18 @@ public class GetClassifierRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the <code>Classifier</code> to retrieve.
+     * Name of the classifier to retrieve.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Name of the <code>Classifier</code> to retrieve.
+     * Name of the classifier to retrieve.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Classifier</code> to retrieve.
+     *        Name of the classifier to retrieve.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class GetClassifierRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the <code>Classifier</code> to retrieve.
+     * Name of the classifier to retrieve.
      * </p>
      * 
-     * @return Name of the <code>Classifier</code> to retrieve.
+     * @return Name of the classifier to retrieve.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class GetClassifierRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the <code>Classifier</code> to retrieve.
+     * Name of the classifier to retrieve.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Classifier</code> to retrieve.
+     *        Name of the classifier to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

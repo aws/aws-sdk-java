@@ -36,7 +36,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<CodeGenNodeArg> jdbc;
     /**
      * <p>
-     * An AWS S3 location.
+     * An Amazon S3 location.
      * </p>
      */
     private java.util.List<CodeGenNodeArg> s3;
@@ -113,10 +113,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS S3 location.
+     * An Amazon S3 location.
      * </p>
      * 
-     * @return An AWS S3 location.
+     * @return An Amazon S3 location.
      */
 
     public java.util.List<CodeGenNodeArg> getS3() {
@@ -125,11 +125,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS S3 location.
+     * An Amazon S3 location.
      * </p>
      * 
      * @param s3
-     *        An AWS S3 location.
+     *        An Amazon S3 location.
      */
 
     public void setS3(java.util.Collection<CodeGenNodeArg> s3) {
@@ -143,7 +143,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS S3 location.
+     * An Amazon S3 location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +152,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param s3
-     *        An AWS S3 location.
+     *        An Amazon S3 location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An AWS S3 location.
+     * An Amazon S3 location.
      * </p>
      * 
      * @param s3
-     *        An AWS S3 location.
+     *        An Amazon S3 location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

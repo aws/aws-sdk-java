@@ -27,6 +27,11 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Contains the response to a <code>DescribeServers</code> request.
      * </p>
+     * <p>
+     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.
+     * </p>
      */
     private java.util.List<Server> servers;
     /**
@@ -45,8 +50,17 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Contains the response to a <code>DescribeServers</code> request.
      * </p>
+     * <p>
+     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.
+     * </p>
      * 
-     * @return Contains the response to a <code>DescribeServers</code> request.
+     * @return Contains the response to a <code>DescribeServers</code> request.</p>
+     *         <p>
+     *         <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     *         PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     *         number 8140. The CA certificate is also used to sign node certificates.
      */
 
     public java.util.List<Server> getServers() {
@@ -57,9 +71,18 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Contains the response to a <code>DescribeServers</code> request.
      * </p>
+     * <p>
+     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.
+     * </p>
      * 
      * @param servers
-     *        Contains the response to a <code>DescribeServers</code> request.
+     *        Contains the response to a <code>DescribeServers</code> request.</p>
+     *        <p>
+     *        <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     *        PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     *        number 8140. The CA certificate is also used to sign node certificates.
      */
 
     public void setServers(java.util.Collection<Server> servers) {
@@ -76,13 +99,22 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * Contains the response to a <code>DescribeServers</code> request.
      * </p>
      * <p>
+     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setServers(java.util.Collection)} or {@link #withServers(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param servers
-     *        Contains the response to a <code>DescribeServers</code> request.
+     *        Contains the response to a <code>DescribeServers</code> request.</p>
+     *        <p>
+     *        <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     *        PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     *        number 8140. The CA certificate is also used to sign node certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,9 +132,18 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * Contains the response to a <code>DescribeServers</code> request.
      * </p>
+     * <p>
+     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.
+     * </p>
      * 
      * @param servers
-     *        Contains the response to a <code>DescribeServers</code> request.
+     *        Contains the response to a <code>DescribeServers</code> request.</p>
+     *        <p>
+     *        <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
+     *        PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     *        number 8140. The CA certificate is also used to sign node certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

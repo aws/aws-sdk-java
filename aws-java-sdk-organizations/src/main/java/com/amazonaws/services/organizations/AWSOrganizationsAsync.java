@@ -91,10 +91,9 @@ import com.amazonaws.services.organizations.model.*;
  * <p>
  * We welcome your feedback. Send your comments to <a
  * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a> or post your feedback and
- * questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
- * forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your
- * forum user ID. For more information about the AWS support forums, see <a
- * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+ * questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support forum</a>.
+ * For more information about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
+ * Help</a>.
  * </p>
  * <p>
  * <b>Endpoint to Call When Using the CLI or the AWS API</b>
@@ -464,9 +463,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * The user in the master account who calls this API must also have the <code>iam:CreateRole</code> permission
      * because AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code>) that grants users in the master account administrator permissions in
-     * the new member account. Principals in the master account can assume the role. AWS Organizations clones the
-     * company name and address information for the new account from the organization's master account.
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
+     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
+     * clones the company name and address information for the new account from the organization's master account.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -495,7 +494,11 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
      * Billing Information and Tools</a>.
      * </p>
-     * </note> <important>
+     * </note>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * <important>
      * <p>
      * If you get an exception that indicates that you exceeded your account limits for the organization or that you
      * can"t add an account because your organization is still initializing, please contact <a href="
@@ -529,9 +532,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * The user in the master account who calls this API must also have the <code>iam:CreateRole</code> permission
      * because AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code>) that grants users in the master account administrator permissions in
-     * the new member account. Principals in the master account can assume the role. AWS Organizations clones the
-     * company name and address information for the new account from the organization's master account.
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
+     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
+     * clones the company name and address information for the new account from the organization's master account.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -560,7 +563,11 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
      * Billing Information and Tools</a>.
      * </p>
-     * </note> <important>
+     * </note>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * <important>
      * <p>
      * If you get an exception that indicates that you exceeded your account limits for the organization or that you
      * can"t add an account because your organization is still initializing, please contact <a href="
@@ -1207,6 +1214,95 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
+     * Disables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>) with
+     * AWS Organizations. When you disable integration, the specified service no longer can create a <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in
+     * <i>new</i> accounts in your organization. This means the service can't perform operations on your behalf on any
+     * new accounts in your organization. The service can still perform operations in older accounts until the service
+     * completes its clean-up from AWS Organizations.
+     * </p>
+     * <p/>
+     * <important>
+     * <p>
+     * We recommend that you disable integration between AWS Organizations and the specified AWS service by using the
+     * console or commands that are provided by the specified service. Doing so ensures that the other service is aware
+     * that it can clean up any resources that are required only for the integration. How the service cleans up its
+     * resources in the organization's accounts depends on that service. For more information, see the documentation for
+     * the other AWS service.
+     * </p>
+     * </important>
+     * <p>
+     * After you perform the <code>DisableAWSServiceAccess</code> operation, the specified service can no longer perform
+     * operations in your organization's accounts unless the operations are explicitly permitted by the IAM policies
+     * that are attached to your roles.
+     * </p>
+     * <p>
+     * For more information about integrating other services with AWS Organizations, including the list of services that
+     * work with Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS
+     * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param disableAWSServiceAccessRequest
+     * @return A Java Future containing the result of the DisableAWSServiceAccess operation returned by the service.
+     * @sample AWSOrganizationsAsync.DisableAWSServiceAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAWSServiceAccessResult> disableAWSServiceAccessAsync(DisableAWSServiceAccessRequest disableAWSServiceAccessRequest);
+
+    /**
+     * <p>
+     * Disables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>) with
+     * AWS Organizations. When you disable integration, the specified service no longer can create a <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in
+     * <i>new</i> accounts in your organization. This means the service can't perform operations on your behalf on any
+     * new accounts in your organization. The service can still perform operations in older accounts until the service
+     * completes its clean-up from AWS Organizations.
+     * </p>
+     * <p/>
+     * <important>
+     * <p>
+     * We recommend that you disable integration between AWS Organizations and the specified AWS service by using the
+     * console or commands that are provided by the specified service. Doing so ensures that the other service is aware
+     * that it can clean up any resources that are required only for the integration. How the service cleans up its
+     * resources in the organization's accounts depends on that service. For more information, see the documentation for
+     * the other AWS service.
+     * </p>
+     * </important>
+     * <p>
+     * After you perform the <code>DisableAWSServiceAccess</code> operation, the specified service can no longer perform
+     * operations in your organization's accounts unless the operations are explicitly permitted by the IAM policies
+     * that are attached to your roles.
+     * </p>
+     * <p>
+     * For more information about integrating other services with AWS Organizations, including the list of services that
+     * work with Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS
+     * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param disableAWSServiceAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableAWSServiceAccess operation returned by the service.
+     * @sample AWSOrganizationsAsyncHandler.DisableAWSServiceAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAWSServiceAccessResult> disableAWSServiceAccessAsync(DisableAWSServiceAccessRequest disableAWSServiceAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableAWSServiceAccessRequest, DisableAWSServiceAccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables an organizational control policy type in a root. A policy of a certain type can be attached to entities
      * in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach
      * policies of the specified type to that root or to any OU or account in that root. You can undo this by using the
@@ -1247,6 +1343,85 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      */
     java.util.concurrent.Future<DisablePolicyTypeResult> disablePolicyTypeAsync(DisablePolicyTypeRequest disablePolicyTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DisablePolicyTypeRequest, DisablePolicyTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>) with
+     * AWS Organizations. When you enable integration, you allow the specified service to create a <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in
+     * all the accounts in your organization. This allows the service to perform operations on your behalf in your
+     * organization and its accounts.
+     * </p>
+     * <important>
+     * <p>
+     * We recommend that you enable integration between AWS Organizations and the specified AWS service by using the
+     * console or commands that are provided by the specified service. Doing so ensures that the service is aware that
+     * it can create the resources that are required for the integration. How the service creates those resources in the
+     * organization's accounts depends on that service. For more information, see the documentation for the other AWS
+     * service.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about enabling services to integrate with AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS
+     * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account and only if the organization has <a
+     * href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
+     * features</a>.
+     * </p>
+     * 
+     * @param enableAWSServiceAccessRequest
+     * @return A Java Future containing the result of the EnableAWSServiceAccess operation returned by the service.
+     * @sample AWSOrganizationsAsync.EnableAWSServiceAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAWSServiceAccessResult> enableAWSServiceAccessAsync(EnableAWSServiceAccessRequest enableAWSServiceAccessRequest);
+
+    /**
+     * <p>
+     * Enables the integration of an AWS service (the service that is specified by <code>ServicePrincipal</code>) with
+     * AWS Organizations. When you enable integration, you allow the specified service to create a <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in
+     * all the accounts in your organization. This allows the service to perform operations on your behalf in your
+     * organization and its accounts.
+     * </p>
+     * <important>
+     * <p>
+     * We recommend that you enable integration between AWS Organizations and the specified AWS service by using the
+     * console or commands that are provided by the specified service. Doing so ensures that the service is aware that
+     * it can create the resources that are required for the integration. How the service creates those resources in the
+     * organization's accounts depends on that service. For more information, see the documentation for the other AWS
+     * service.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about enabling services to integrate with AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS
+     * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account and only if the organization has <a
+     * href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
+     * features</a>.
+     * </p>
+     * 
+     * @param enableAWSServiceAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableAWSServiceAccess operation returned by the service.
+     * @sample AWSOrganizationsAsyncHandler.EnableAWSServiceAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAWSServiceAccessResult> enableAWSServiceAccessAsync(EnableAWSServiceAccessRequest enableAWSServiceAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableAWSServiceAccessRequest, EnableAWSServiceAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -1557,6 +1732,65 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      */
     java.util.concurrent.Future<LeaveOrganizationResult> leaveOrganizationAsync(LeaveOrganizationRequest leaveOrganizationRequest,
             com.amazonaws.handlers.AsyncHandler<LeaveOrganizationRequest, LeaveOrganizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the AWS services that you enabled to integrate with your organization. After a service on this
+     * list creates the resources that it requires for the integration, it can perform operations on your organization
+     * and its accounts.
+     * </p>
+     * <p>
+     * For more information about integrating other services with AWS Organizations, including the list of services that
+     * currently work with Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS
+     * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param listAWSServiceAccessForOrganizationRequest
+     * @return A Java Future containing the result of the ListAWSServiceAccessForOrganization operation returned by the
+     *         service.
+     * @sample AWSOrganizationsAsync.ListAWSServiceAccessForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAWSServiceAccessForOrganizationResult> listAWSServiceAccessForOrganizationAsync(
+            ListAWSServiceAccessForOrganizationRequest listAWSServiceAccessForOrganizationRequest);
+
+    /**
+     * <p>
+     * Returns a list of the AWS services that you enabled to integrate with your organization. After a service on this
+     * list creates the resources that it requires for the integration, it can perform operations on your organization
+     * and its accounts.
+     * </p>
+     * <p>
+     * For more information about integrating other services with AWS Organizations, including the list of services that
+     * currently work with Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Integrating AWS
+     * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's master account.
+     * </p>
+     * 
+     * @param listAWSServiceAccessForOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAWSServiceAccessForOrganization operation returned by the
+     *         service.
+     * @sample AWSOrganizationsAsyncHandler.ListAWSServiceAccessForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAWSServiceAccessForOrganizationResult> listAWSServiceAccessForOrganizationAsync(
+            ListAWSServiceAccessForOrganizationRequest listAWSServiceAccessForOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAWSServiceAccessForOrganizationRequest, ListAWSServiceAccessForOrganizationResult> asyncHandler);
 
     /**
      * <p>

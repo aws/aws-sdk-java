@@ -36,7 +36,7 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      */
     private String errorMessage;
@@ -126,11 +126,11 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      * 
      * @param errorMessage
-     *        Error information about the last crawl, if an error occurred.
+     *        If an error occurred, the error information about the last crawl.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -139,10 +139,10 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      * 
-     * @return Error information about the last crawl, if an error occurred.
+     * @return If an error occurred, the error information about the last crawl.
      */
 
     public String getErrorMessage() {
@@ -151,11 +151,11 @@ public class LastCrawlInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error information about the last crawl, if an error occurred.
+     * If an error occurred, the error information about the last crawl.
      * </p>
      * 
      * @param errorMessage
-     *        Error information about the last crawl, if an error occurred.
+     *        If an error occurred, the error information about the last crawl.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

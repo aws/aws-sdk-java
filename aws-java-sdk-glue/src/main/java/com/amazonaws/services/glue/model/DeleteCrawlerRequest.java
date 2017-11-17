@@ -27,18 +27,18 @@ public class DeleteCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to remove.
+     * Name of the crawler to remove.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to remove.
+     * Name of the crawler to remove.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Crawler</code> to remove.
+     *        Name of the crawler to remove.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class DeleteCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to remove.
+     * Name of the crawler to remove.
      * </p>
      * 
-     * @return Name of the <code>Crawler</code> to remove.
+     * @return Name of the crawler to remove.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class DeleteCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the <code>Crawler</code> to remove.
+     * Name of the crawler to remove.
      * </p>
      * 
      * @param name
-     *        Name of the <code>Crawler</code> to remove.
+     *        Name of the crawler to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

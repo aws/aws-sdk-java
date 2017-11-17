@@ -19,6 +19,11 @@ import javax.annotation.Generated;
  * The requested operation failed because you provided invalid values for one or more of the request parameters. This
  * exception includes a reason that contains additional information about the violated limit:
  * </p>
+ * <note>
+ * <p>
+ * Some of the reasons in the following list might not be applicable to this specific API or operation:
+ * </p>
+ * </note>
  * <ul>
  * <li>
  * <p>

@@ -165,8 +165,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      */
     private String toolsVersion;
@@ -1192,13 +1191,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      * 
      * @param toolsVersion
-     *        The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the
-     *        backup is created.
+     *        The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      */
 
     public void setToolsVersion(String toolsVersion) {
@@ -1207,12 +1204,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      * 
-     * @return The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the
-     *         backup is created.
+     * @return The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is
+     *         created.
      */
 
     public String getToolsVersion() {
@@ -1221,13 +1217,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the backup is
-     * created.
+     * The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * </p>
      * 
      * @param toolsVersion
-     *        The version of AWS OpsWorks for Chef Automate-specific tools that is obtained from the server when the
-     *        backup is created.
+     *        The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -24,7 +24,8 @@ public enum ServiceNamespace {
     Elasticmapreduce("elasticmapreduce"),
     Ec2("ec2"),
     Appstream("appstream"),
-    Dynamodb("dynamodb");
+    Dynamodb("dynamodb"),
+    Rds("rds");
 
     private String value;
 

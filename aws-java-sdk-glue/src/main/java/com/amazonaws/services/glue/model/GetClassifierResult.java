@@ -25,18 +25,18 @@ public class GetClassifierResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      */
     private Classifier classifier;
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      * 
      * @param classifier
-     *        The requested <code>Classifier</code>.
+     *        The requested classifier.
      */
 
     public void setClassifier(Classifier classifier) {
@@ -45,10 +45,10 @@ public class GetClassifierResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      * 
-     * @return The requested <code>Classifier</code>.
+     * @return The requested classifier.
      */
 
     public Classifier getClassifier() {
@@ -57,11 +57,11 @@ public class GetClassifierResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The requested <code>Classifier</code>.
+     * The requested classifier.
      * </p>
      * 
      * @param classifier
-     *        The requested <code>Classifier</code>.
+     *        The requested classifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,26 +27,26 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the new <code>Crawler</code>.
+     * Name of the new crawler.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * The Glue <code>Database</code> where results will be stored, such as:
+     * The AWS Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      */
     private String databaseName;
     /**
      * <p>
-     * A description of the new <code>Crawler</code>.
+     * A description of the new crawler.
      * </p>
      */
     private String description;
@@ -67,15 +67,14 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String schedule;
     /**
      * <p>
-     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
-     * included in a crawl, but these custom classifiers always override the default classifiers for a given
-     * classification.
+     * A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in a
+     * crawl, but these custom classifiers always override the default classifiers for a given classification.
      * </p>
      */
     private java.util.List<String> classifiers;
     /**
      * <p>
-     * The table prefix used for catalog tables created.
+     * The table prefix used for catalog tables that are created.
      * </p>
      */
     private String tablePrefix;
@@ -85,14 +84,26 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private SchemaChangePolicy schemaChangePolicy;
+    /**
+     * <p>
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition.
+     * </p>
+     */
+    private String configuration;
 
     /**
      * <p>
-     * Name of the new <code>Crawler</code>.
+     * Name of the new crawler.
      * </p>
      * 
      * @param name
-     *        Name of the new <code>Crawler</code>.
+     *        Name of the new crawler.
      */
 
     public void setName(String name) {
@@ -101,10 +112,10 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the new <code>Crawler</code>.
+     * Name of the new crawler.
      * </p>
      * 
-     * @return Name of the new <code>Crawler</code>.
+     * @return Name of the new crawler.
      */
 
     public String getName() {
@@ -113,11 +124,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name of the new <code>Crawler</code>.
+     * Name of the new crawler.
      * </p>
      * 
      * @param name
-     *        Name of the new <code>Crawler</code>.
+     *        Name of the new crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +139,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      * </p>
      * 
      * @param role
-     *        The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     *        The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      */
 
     public void setRole(String role) {
@@ -141,10 +152,10 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      * </p>
      * 
-     * @return The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     * @return The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      */
 
     public String getRole() {
@@ -153,11 +164,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     * The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      * </p>
      * 
      * @param role
-     *        The IAM role (or ARN of an IAM role) used by the new <code>Crawler</code> to access customer resources.
+     *        The IAM role (or ARN of an IAM role) used by the new crawler to access customer resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,12 +179,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Glue <code>Database</code> where results will be stored, such as:
+     * The AWS Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
      * @param databaseName
-     *        The Glue <code>Database</code> where results will be stored, such as:
+     *        The AWS Glue database where results are written, such as:
      *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      */
 
@@ -183,11 +194,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Glue <code>Database</code> where results will be stored, such as:
+     * The AWS Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
-     * @return The Glue <code>Database</code> where results will be stored, such as:
+     * @return The AWS Glue database where results are written, such as:
      *         <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      */
 
@@ -197,12 +208,12 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Glue <code>Database</code> where results will be stored, such as:
+     * The AWS Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * </p>
      * 
      * @param databaseName
-     *        The Glue <code>Database</code> where results will be stored, such as:
+     *        The AWS Glue database where results are written, such as:
      *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -214,11 +225,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A description of the new <code>Crawler</code>.
+     * A description of the new crawler.
      * </p>
      * 
      * @param description
-     *        A description of the new <code>Crawler</code>.
+     *        A description of the new crawler.
      */
 
     public void setDescription(String description) {
@@ -227,10 +238,10 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A description of the new <code>Crawler</code>.
+     * A description of the new crawler.
      * </p>
      * 
-     * @return A description of the new <code>Crawler</code>.
+     * @return A description of the new crawler.
      */
 
     public String getDescription() {
@@ -239,11 +250,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A description of the new <code>Crawler</code>.
+     * A description of the new crawler.
      * </p>
      * 
      * @param description
-     *        A description of the new <code>Crawler</code>.
+     *        A description of the new crawler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,14 +363,13 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
-     * included in a crawl, but these custom classifiers always override the default classifiers for a given
-     * classification.
+     * A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in a
+     * crawl, but these custom classifiers always override the default classifiers for a given classification.
      * </p>
      * 
-     * @return A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
-     *         classifiers are included in a crawl, but these custom classifiers always override the default classifiers
-     *         for a given classification.
+     * @return A list of custom classifiers that the user has registered. By default, all AWS classifiers are included
+     *         in a crawl, but these custom classifiers always override the default classifiers for a given
+     *         classification.
      */
 
     public java.util.List<String> getClassifiers() {
@@ -368,15 +378,13 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
-     * included in a crawl, but these custom classifiers always override the default classifiers for a given
-     * classification.
+     * A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in a
+     * crawl, but these custom classifiers always override the default classifiers for a given classification.
      * </p>
      * 
      * @param classifiers
-     *        A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
-     *        classifiers are included in a crawl, but these custom classifiers always override the default classifiers
-     *        for a given classification.
+     *        A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in
+     *        a crawl, but these custom classifiers always override the default classifiers for a given classification.
      */
 
     public void setClassifiers(java.util.Collection<String> classifiers) {
@@ -390,9 +398,8 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
-     * included in a crawl, but these custom classifiers always override the default classifiers for a given
-     * classification.
+     * A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in a
+     * crawl, but these custom classifiers always override the default classifiers for a given classification.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -401,9 +408,8 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param classifiers
-     *        A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
-     *        classifiers are included in a crawl, but these custom classifiers always override the default classifiers
-     *        for a given classification.
+     *        A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in
+     *        a crawl, but these custom classifiers always override the default classifiers for a given classification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,15 +425,13 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
-     * included in a crawl, but these custom classifiers always override the default classifiers for a given
-     * classification.
+     * A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in a
+     * crawl, but these custom classifiers always override the default classifiers for a given classification.
      * </p>
      * 
      * @param classifiers
-     *        A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
-     *        classifiers are included in a crawl, but these custom classifiers always override the default classifiers
-     *        for a given classification.
+     *        A list of custom classifiers that the user has registered. By default, all AWS classifiers are included in
+     *        a crawl, but these custom classifiers always override the default classifiers for a given classification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,11 +442,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The table prefix used for catalog tables created.
+     * The table prefix used for catalog tables that are created.
      * </p>
      * 
      * @param tablePrefix
-     *        The table prefix used for catalog tables created.
+     *        The table prefix used for catalog tables that are created.
      */
 
     public void setTablePrefix(String tablePrefix) {
@@ -451,10 +455,10 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The table prefix used for catalog tables created.
+     * The table prefix used for catalog tables that are created.
      * </p>
      * 
-     * @return The table prefix used for catalog tables created.
+     * @return The table prefix used for catalog tables that are created.
      */
 
     public String getTablePrefix() {
@@ -463,11 +467,11 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The table prefix used for catalog tables created.
+     * The table prefix used for catalog tables that are created.
      * </p>
      * 
      * @param tablePrefix
-     *        The table prefix used for catalog tables created.
+     *        The table prefix used for catalog tables that are created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,6 +521,79 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition.
+     * </p>
+     * 
+     * @param configuration
+     *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *        Crawler's behavior.</p>
+     *        <p>
+     *        You can use this field to force partitions to inherit metadata such as classification, input format,
+     *        output format, serde information, and schema from their parent table, rather than detect this information
+     *        separately for each partition.
+     */
+
+    public void setConfiguration(String configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition.
+     * </p>
+     * 
+     * @return Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *         Crawler's behavior.</p>
+     *         <p>
+     *         You can use this field to force partitions to inherit metadata such as classification, input format,
+     *         output format, serde information, and schema from their parent table, rather than detect this information
+     *         separately for each partition.
+     */
+
+    public String getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * Crawler configuration information. This versioned JSON string allows users to specify aspects of a Crawler's
+     * behavior.
+     * </p>
+     * <p>
+     * You can use this field to force partitions to inherit metadata such as classification, input format, output
+     * format, serde information, and schema from their parent table, rather than detect this information separately for
+     * each partition.
+     * </p>
+     * 
+     * @param configuration
+     *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
+     *        Crawler's behavior.</p>
+     *        <p>
+     *        You can use this field to force partitions to inherit metadata such as classification, input format,
+     *        output format, serde information, and schema from their parent table, rather than detect this information
+     *        separately for each partition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCrawlerRequest withConfiguration(String configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -544,7 +621,9 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getTablePrefix() != null)
             sb.append("TablePrefix: ").append(getTablePrefix()).append(",");
         if (getSchemaChangePolicy() != null)
-            sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy());
+            sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -595,6 +674,10 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSchemaChangePolicy() != null && other.getSchemaChangePolicy().equals(this.getSchemaChangePolicy()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -612,6 +695,7 @@ public class CreateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClassifiers() == null) ? 0 : getClassifiers().hashCode());
         hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());
         hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

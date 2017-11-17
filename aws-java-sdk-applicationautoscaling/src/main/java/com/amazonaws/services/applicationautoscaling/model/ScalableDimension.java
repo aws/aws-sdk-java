@@ -27,7 +27,8 @@ public enum ScalableDimension {
     DynamodbTableReadCapacityUnits("dynamodb:table:ReadCapacityUnits"),
     DynamodbTableWriteCapacityUnits("dynamodb:table:WriteCapacityUnits"),
     DynamodbIndexReadCapacityUnits("dynamodb:index:ReadCapacityUnits"),
-    DynamodbIndexWriteCapacityUnits("dynamodb:index:WriteCapacityUnits");
+    DynamodbIndexWriteCapacityUnits("dynamodb:index:WriteCapacityUnits"),
+    RdsClusterReadReplicaCount("rds:cluster:ReadReplicaCount");
 
     private String value;
 

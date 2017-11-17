@@ -499,7 +499,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Creates a <code>Classifier</code> in the user's account.
+     * Creates a classifier in the user's account. This may be either a <code>GrokClassifier</code> or an
+     * <code>XMLClassifier</code>.
      * </p>
      * 
      * @param createClassifierRequest
@@ -607,8 +608,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Creates a new <code>Crawler</code> with specified targets, role, configuration, and optional schedule. At least
-     * one crawl target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.
+     * Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl
+     * target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.
      * </p>
      * 
      * @param createCrawlerRequest
@@ -1138,7 +1139,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Removes a <code>Classifier</code> from the metadata store.
+     * Removes a classifier from the Data Catalog.
      * </p>
      * 
      * @param deleteClassifierRequest
@@ -1242,8 +1243,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Removes a specified <code>Crawler</code> from the metadata store, unless the <code>Crawler</code> state is
-     * <code>RUNNING</code>.
+     * Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.
      * </p>
      * 
      * @param deleteCrawlerRequest
@@ -1742,7 +1742,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieve a <code>Classifier</code> by name.
+     * Retrieve a classifier by name.
      * </p>
      * 
      * @param getClassifierRequest
@@ -1794,7 +1794,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Lists all Classifier objects in the metadata store.
+     * Lists all classifier objects in the Data Catalog.
      * </p>
      * 
      * @param getClassifiersRequest
@@ -1948,7 +1948,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for a specified <code>Crawler</code>.
+     * Retrieves metadata for a specified crawler.
      * </p>
      * 
      * @param getCrawlerRequest
@@ -2050,7 +2050,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for all <code>Crawlers</code> defined in the customer account.
+     * Retrieves metadata for all crawlers defined in the customer account.
      * </p>
      * 
      * @param getCrawlersRequest
@@ -2611,6 +2611,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
      * @sample AWSGlue.GetMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping" target="_top">AWS API
      *      Documentation</a>
@@ -3323,8 +3325,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Starts a crawl using the specified <code>Crawler</code>, regardless of what is scheduled. If the
-     * <code>Crawler</code> is already running, does nothing.
+     * Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running,
+     * does nothing.
      * </p>
      * 
      * @param startCrawlerRequest
@@ -3557,7 +3559,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * If the specified <code>Crawler</code> is running, stops the crawl.
+     * If the specified crawler is running, stops the crawl.
      * </p>
      * 
      * @param stopCrawlerRequest
@@ -3726,7 +3728,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing <code>Classifier</code>.
+     * Modifies an existing classifier (either a <code>GrokClassifier</code> or an <code>XMLClassifier</code>).
      * </p>
      * 
      * @param updateClassifierRequest
@@ -3836,8 +3838,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Updates a <code>Crawler</code>. If a <code>Crawler</code> is running, you must stop it using
-     * <code>StopCrawler</code> before updating it.
+     * Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.
      * </p>
      * 
      * @param updateCrawlerRequest
@@ -3895,7 +3896,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Updates the schedule of a crawler using a Cron expression.
+     * Updates the schedule of a crawler using a <code>cron</code> expression.
      * </p>
      * 
      * @param updateCrawlerScheduleRequest

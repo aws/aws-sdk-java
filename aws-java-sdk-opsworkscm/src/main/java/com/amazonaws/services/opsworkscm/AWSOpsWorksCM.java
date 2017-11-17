@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.opsworkscm.model.*;
+import com.amazonaws.services.opsworkscm.waiters.AWSOpsWorksCMWaiters;
 
 /**
  * Interface for accessing OpsWorksCM.
@@ -26,9 +27,9 @@ import com.amazonaws.services.opsworkscm.model.*;
  * {@link com.amazonaws.services.opsworkscm.AbstractAWSOpsWorksCM} instead.
  * </p>
  * <p>
- * <fullname>AWS OpsWorks for Chef Automate</fullname>
+ * <fullname>AWS OpsWorks CM</fullname>
  * <p>
- * AWS OpsWorks for Chef Automate is a service that runs and manages configuration management servers.
+ * AWS OpsWorks for configuration management (CM) is a service that runs and manages configuration management servers.
  * </p>
  * <p>
  * <b>Glossary of terms</b>
@@ -36,37 +37,37 @@ import com.amazonaws.services.opsworkscm.model.*;
  * <ul>
  * <li>
  * <p>
- * <b>Server</b>: A configuration management server that can be highly-available. The configuration manager runs on your
- * instances by using various AWS services, such as Amazon Elastic Compute Cloud (EC2), and potentially Amazon
- * Relational Database Service (RDS). A server is a generic abstraction over the configuration manager that you want to
- * use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start or stop servers. After you create
- * servers, they continue to run until they are deleted.
+ * <b>Server</b>: A configuration management server that can be highly-available. The configuration management server
+ * runs on an Amazon Elastic Compute Cloud (EC2) instance, and may use various other AWS services, such as Amazon
+ * Relational Database Service (RDS) and Elastic Load Balancing. A server is a generic abstraction over the
+ * configuration manager that you want to use, much like Amazon RDS. In AWS OpsWorks CM, you do not start or stop
+ * servers. After you create servers, they continue to run until they are deleted.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Engine</b>: The specific configuration manager that you want to use (such as <code>Chef</code>) is the engine.
+ * <b>Engine</b>: The engine is the specific configuration manager that you want to use. Valid values in this release
+ * include <code>Chef</code> and <code>Puppet</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Backup</b>: This is an application-level backup of the data that the configuration manager stores. A backup
- * creates a .tar.gz file that is stored in an Amazon Simple Storage Service (S3) bucket in your account. AWS OpsWorks
- * for Chef Automate creates the S3 bucket when you launch the first instance. A backup maintains a snapshot of all of a
- * server's important attributes at the time of the backup.
+ * <b>Backup</b>: This is an application-level backup of the data that the configuration manager stores. AWS OpsWorks CM
+ * creates an S3 bucket for backups when you launch the first server. A backup maintains a snapshot of a server's
+ * configuration-related attributes at the time the backup starts.
  * </p>
  * </li>
  * <li>
  * <p>
  * <b>Events</b>: Events are always related to a server. Events are written during server creation, when health checks
- * run, when backups are created, etc. When you delete a server, the server's events are also deleted.
+ * run, when backups are created, when system maintenance is performed, etc. When you delete a server, the server's
+ * events are also deleted.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>AccountAttributes</b>: Every account has attributes that are assigned in the AWS OpsWorks for Chef Automate
- * database. These attributes store information about configuration limits (servers, backups, etc.) and your customer
- * account.
+ * <b>Account attributes</b>: Every account has attributes that are assigned in the AWS OpsWorks CM database. These
+ * attributes store information about configuration limits (servers, backups, etc.) and your customer account.
  * </p>
  * </li>
  * </ul>
@@ -74,8 +75,8 @@ import com.amazonaws.services.opsworkscm.model.*;
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must connect to one of the following
- * endpoints. Chef servers can only be accessed or managed within the endpoint in which they are created.
+ * AWS OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Your
+ * servers can only be accessed or managed within the endpoint in which they are created.
  * </p>
  * <ul>
  * <li>
@@ -165,8 +166,23 @@ public interface AWSOpsWorksCM {
 
     /**
      * <p>
-     * Associates a new node with the Chef server. This command is an alternative to <code>knife bootstrap</code>. For
-     * more information about how to disassociate a node, see <a>DisassociateNode</a>.
+     * Associates a new node with the server. For more information about how to disassociate a node, see
+     * <a>DisassociateNode</a>.
+     * </p>
+     * <p>
+     * On a Chef server: This command is an alternative to <code>knife bootstrap</code>.
+     * </p>
+     * <p>
+     * Example (Chef):
+     * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default" "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code>
+     * </p>
+     * <p>
+     * On a Puppet server, this command is an alternative to the <code>puppet cert sign</code> command that signs a
+     * Puppet node CSR.
+     * </p>
+     * <p>
+     * Example (Chef):
+     * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
      * </p>
      * <p>
      * A node can can only be associated with servers that are in a <code>HEALTHY</code> state. Otherwise, an
@@ -174,10 +190,6 @@ public interface AWSOpsWorksCM {
      * does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. The
      * AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation templates, or the
      * user data of a server's instance.
-     * </p>
-     * <p>
-     * Example:
-     * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>MyOrganization</i>,Value=default" "Name=<i>Chef_node_public_key</i>,Value=<i>Public_key_contents</i>"</code>
      * </p>
      * 
      * @param associateNodeRequest
@@ -246,13 +258,20 @@ public interface AWSOpsWorksCM {
      * </p>
      * <p>
      * If you do not specify a security group by adding the <code>SecurityGroupIds</code> parameter, AWS OpsWorks
-     * creates a new security group. The default security group opens the Chef server to the world on TCP port 443. If a
-     * KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.
+     * creates a new security group.
      * </p>
      * <p>
-     * By default, the Chef Server is accessible from any IP address. We recommend that you update your security group
-     * rules to allow access from known IP addresses and address ranges only. To edit security group rules, open
-     * Security Groups in the navigation pane of the EC2 management console.
+     * <i>Chef Automate:</i> The default security group opens the Chef server to the world on TCP port 443. If a KeyName
+     * is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.
+     * </p>
+     * <p>
+     * <i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143, and 8170.
+     * If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.
+     * </p>
+     * <p>
+     * By default, your server is accessible from any IP address. We recommend that you update your security group rules
+     * to allow access from known IP addresses and address ranges only. To edit security group rules, open Security
+     * Groups in the navigation pane of the EC2 management console.
      * </p>
      * 
      * @param createServerRequest
@@ -297,7 +316,7 @@ public interface AWSOpsWorksCM {
 
     /**
      * <p>
-     * Deletes the server and the underlying AWS CloudFormation stack (including the server's EC2 instance). When you
+     * Deletes the server and the underlying AWS CloudFormation stacks (including the server's EC2 instance). When you
      * run this command, the server state is updated to <code>DELETING</code>. After the server is deleted, it is no
      * longer returned by <code>DescribeServer</code> requests. If the AWS CloudFormation stack cannot be deleted, the
      * server cannot be deleted.
@@ -421,7 +440,7 @@ public interface AWSOpsWorksCM {
     /**
      * <p>
      * Lists all configuration management servers that are identified with your account. Only the stored results from
-     * Amazon DynamoDB are returned. AWS OpsWorks for Chef Automate does not query other services.
+     * Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services.
      * </p>
      * <p>
      * This operation is synchronous.
@@ -447,9 +466,9 @@ public interface AWSOpsWorksCM {
 
     /**
      * <p>
-     * Disassociates a node from a Chef server, and removes the node from the Chef server's managed nodes. After a node
-     * is disassociated, the node key pair is no longer valid for accessing the Chef API. For more information about how
-     * to associate a node, see <a>AssociateNode</a>.
+     * Disassociates a node from an AWS OpsWorks CM server, and removes the node from the server's managed nodes. After
+     * a node is disassociated, the node key pair is no longer valid for accessing the configuration manager's API. For
+     * more information about how to associate a node, see <a>AssociateNode</a>.
      * </p>
      * <p>
      * A node can can only be disassociated from a server that is in a <code>HEALTHY</code> state. Otherwise, an
@@ -552,8 +571,10 @@ public interface AWSOpsWorksCM {
     /**
      * <p>
      * Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code> state when
-     * this operation is in progress. Only one update can occur at a time. You can use this command to reset the Chef
-     * server's private key (<code>CHEF_PIVOTAL_KEY</code>).
+     * this operation is in progress. Only one update can occur at a time. You can use this command to reset a Chef
+     * server's private key (<code>CHEF_PIVOTAL_KEY</code>), a Chef server's admin password (
+     * <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>), or a Puppet server's admin password (
+     * <code>PUPPET_ADMIN_PASSWORD</code>).
      * </p>
      * <p>
      * This operation is asynchronous.
@@ -601,5 +622,7 @@ public interface AWSOpsWorksCM {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSOpsWorksCMWaiters waiters();
 
 }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a crawler target in AWS S3.
+ * Specifies a data store in Amazon S3.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Target" target="_top">AWS API
@@ -30,24 +30,25 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the S3 target.
+     * The path to the Amazon S3 target.
      * </p>
      */
     private String path;
     /**
      * <p>
-     * A list of S3 objects to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      */
     private java.util.List<String> exclusions;
 
     /**
      * <p>
-     * The path to the S3 target.
+     * The path to the Amazon S3 target.
      * </p>
      * 
      * @param path
-     *        The path to the S3 target.
+     *        The path to the Amazon S3 target.
      */
 
     public void setPath(String path) {
@@ -56,10 +57,10 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the S3 target.
+     * The path to the Amazon S3 target.
      * </p>
      * 
-     * @return The path to the S3 target.
+     * @return The path to the Amazon S3 target.
      */
 
     public String getPath() {
@@ -68,11 +69,11 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the S3 target.
+     * The path to the Amazon S3 target.
      * </p>
      * 
      * @param path
-     *        The path to the S3 target.
+     *        The path to the Amazon S3 target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +84,12 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of S3 objects to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
-     * @return A list of S3 objects to exclude from the crawl.
+     * @return A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public java.util.List<String> getExclusions() {
@@ -95,11 +98,13 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of S3 objects to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
-     *        A list of S3 objects to exclude from the crawl.
+     *        A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public void setExclusions(java.util.Collection<String> exclusions) {
@@ -113,7 +118,8 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of S3 objects to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +128,8 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param exclusions
-     *        A list of S3 objects to exclude from the crawl.
+     *        A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +145,13 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of S3 objects to exclude from the crawl.
+     * A list of glob patterns used to exclude from the crawl. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
-     *        A list of S3 objects to exclude from the crawl.
+     *        A list of glob patterns used to exclude from the crawl. For more information, see <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

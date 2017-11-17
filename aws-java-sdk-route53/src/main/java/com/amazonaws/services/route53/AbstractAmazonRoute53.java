@@ -134,6 +134,11 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public GetAccountLimitResult getAccountLimit(GetAccountLimitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetChangeResult getChange(GetChangeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,12 +204,22 @@ public class AbstractAmazonRoute53 implements AmazonRoute53 {
     }
 
     @Override
+    public GetHostedZoneLimitResult getHostedZoneLimit(GetHostedZoneLimitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetQueryLoggingConfigResult getQueryLoggingConfig(GetQueryLoggingConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReusableDelegationSetLimitResult getReusableDelegationSetLimit(GetReusableDelegationSetLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

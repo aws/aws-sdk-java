@@ -1,3 +1,28 @@
+# __1.11.231__ __2017-11-16__
+## __AWS Glue__
+  - ### Features
+    - API update for AWS Glue. New crawler configuration attribute enables customers to specify crawler behavior. New XML classifier enables classification of XML data.
+
+## __AWS OpsWorks for Chef Automate__
+  - ### Features
+    - Documentation updates for OpsWorks-cm: a new feature, OpsWorks for Puppet Enterprise, that allows users to create and manage OpsWorks-hosted Puppet Enterprise servers.
+
+## __AWS Organizations__
+  - ### Features
+    - This release adds APIs that you can use to enable and disable integration with AWS services designed to work with AWS Organizations. This integration allows the AWS service to perform operations on your behalf on all of the accounts in your organization. Although you can use these APIs yourself, we recommend that you instead use the commands provided in the other AWS service to enable integration with AWS Organizations.
+
+## __Amazon EC2__
+  - ### Features
+    - You are now able to create and launch EC2 x1e smaller instance sizes
+
+## __Amazon Route 53__
+  - ### Features
+    - You can use Route 53's GetAccountLimit/GetHostedZoneLimit/GetReusableDelegationSetLimit APIs to view your current limits (including custom set limits) on Route 53 resources such as hosted zones and health checks. These APIs also return the number of each resource you're currently using to enable comparison against your current limits.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Application Auto Scaling now supports automatic scaling of Amazon Aurora replicas
+
 # __1.11.230__ __2017-11-15__
 ## __AWS Step Functions__
   - ### Features

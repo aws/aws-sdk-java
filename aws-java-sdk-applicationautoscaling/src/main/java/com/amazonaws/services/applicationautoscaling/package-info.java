@@ -73,6 +73,13 @@
  * Capacity Automatically with DynamoDB Auto Scaling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Aurora Replicas. For more information, see <a
+ * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Application
+ * Auto Scaling with an Amazon Aurora DB Cluster</a>.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * For a list of supported regions, see <a

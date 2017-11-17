@@ -262,6 +262,19 @@ public class AbstractAWSOrganizationsAsync extends AbstractAWSOrganizations impl
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAWSServiceAccessResult> disableAWSServiceAccessAsync(DisableAWSServiceAccessRequest request) {
+
+        return disableAWSServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAWSServiceAccessResult> disableAWSServiceAccessAsync(DisableAWSServiceAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableAWSServiceAccessRequest, DisableAWSServiceAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisablePolicyTypeResult> disablePolicyTypeAsync(DisablePolicyTypeRequest request) {
 
         return disablePolicyTypeAsync(request, null);
@@ -270,6 +283,19 @@ public class AbstractAWSOrganizationsAsync extends AbstractAWSOrganizations impl
     @Override
     public java.util.concurrent.Future<DisablePolicyTypeResult> disablePolicyTypeAsync(DisablePolicyTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DisablePolicyTypeRequest, DisablePolicyTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAWSServiceAccessResult> enableAWSServiceAccessAsync(EnableAWSServiceAccessRequest request) {
+
+        return enableAWSServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAWSServiceAccessResult> enableAWSServiceAccessAsync(EnableAWSServiceAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableAWSServiceAccessRequest, EnableAWSServiceAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -322,6 +348,21 @@ public class AbstractAWSOrganizationsAsync extends AbstractAWSOrganizations impl
     @Override
     public java.util.concurrent.Future<LeaveOrganizationResult> leaveOrganizationAsync(LeaveOrganizationRequest request,
             com.amazonaws.handlers.AsyncHandler<LeaveOrganizationRequest, LeaveOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAWSServiceAccessForOrganizationResult> listAWSServiceAccessForOrganizationAsync(
+            ListAWSServiceAccessForOrganizationRequest request) {
+
+        return listAWSServiceAccessForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAWSServiceAccessForOrganizationResult> listAWSServiceAccessForOrganizationAsync(
+            ListAWSServiceAccessForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAWSServiceAccessForOrganizationRequest, ListAWSServiceAccessForOrganizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

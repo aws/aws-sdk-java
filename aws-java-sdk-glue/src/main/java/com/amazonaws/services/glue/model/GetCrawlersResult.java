@@ -25,7 +25,7 @@ public class GetCrawlersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of <code>Crawler</code> metadata.
+     * A list of crawler metadata.
      * </p>
      */
     private java.util.List<Crawler> crawlers;
@@ -38,10 +38,10 @@ public class GetCrawlersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of <code>Crawler</code> metadata.
+     * A list of crawler metadata.
      * </p>
      * 
-     * @return A list of <code>Crawler</code> metadata.
+     * @return A list of crawler metadata.
      */
 
     public java.util.List<Crawler> getCrawlers() {
@@ -50,11 +50,11 @@ public class GetCrawlersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of <code>Crawler</code> metadata.
+     * A list of crawler metadata.
      * </p>
      * 
      * @param crawlers
-     *        A list of <code>Crawler</code> metadata.
+     *        A list of crawler metadata.
      */
 
     public void setCrawlers(java.util.Collection<Crawler> crawlers) {
@@ -68,7 +68,7 @@ public class GetCrawlersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of <code>Crawler</code> metadata.
+     * A list of crawler metadata.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetCrawlersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param crawlers
-     *        A list of <code>Crawler</code> metadata.
+     *        A list of crawler metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetCrawlersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of <code>Crawler</code> metadata.
+     * A list of crawler metadata.
      * </p>
      * 
      * @param crawlers
-     *        A list of <code>Crawler</code> metadata.
+     *        A list of crawler metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
