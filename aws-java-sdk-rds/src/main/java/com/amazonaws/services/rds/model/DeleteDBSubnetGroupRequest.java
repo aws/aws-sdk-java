@@ -32,7 +32,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
@@ -53,7 +53,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
@@ -69,7 +69,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * @param dBSubnetGroupName
      *        The name of the database subnet group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default subnet group.
+     *        You can't delete the default subnet group.
      *        </p>
      *        </note>
      *        <p>
@@ -92,7 +92,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
@@ -107,7 +107,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The name of the database subnet group to delete.</p> <note>
      *         <p>
-     *         You cannot delete the default subnet group.
+     *         You can't delete the default subnet group.
      *         </p>
      *         </note>
      *         <p>
@@ -130,7 +130,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default subnet group.
+     * You can't delete the default subnet group.
      * </p>
      * </note>
      * <p>
@@ -146,7 +146,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * @param dBSubnetGroupName
      *        The name of the database subnet group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default subnet group.
+     *        You can't delete the default subnet group.
      *        </p>
      *        </note>
      *        <p>

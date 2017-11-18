@@ -98,7 +98,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The Amazon Resource Number (ARN) for the certificate.
+     * The Amazon Resource Name (ARN) for the certificate.
      * </p>
      */
     private String certificateArn;
@@ -674,11 +674,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) for the certificate.
+     * The Amazon Resource Name (ARN) for the certificate.
      * </p>
      * 
      * @param certificateArn
-     *        The Amazon Resource Number (ARN) for the certificate.
+     *        The Amazon Resource Name (ARN) for the certificate.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -687,10 +687,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) for the certificate.
+     * The Amazon Resource Name (ARN) for the certificate.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) for the certificate.
+     * @return The Amazon Resource Name (ARN) for the certificate.
      */
 
     public String getCertificateArn() {
@@ -699,11 +699,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) for the certificate.
+     * The Amazon Resource Name (ARN) for the certificate.
      * </p>
      * 
      * @param certificateArn
-     *        The Amazon Resource Number (ARN) for the certificate.
+     *        The Amazon Resource Name (ARN) for the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,18 +28,18 @@ public class StopReplicationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Number(ARN) of the replication task to be stopped.
+     * The Amazon Resource Name(ARN) of the replication task to be stopped.
      * </p>
      */
     private String replicationTaskArn;
 
     /**
      * <p>
-     * The Amazon Resource Number(ARN) of the replication task to be stopped.
+     * The Amazon Resource Name(ARN) of the replication task to be stopped.
      * </p>
      * 
      * @param replicationTaskArn
-     *        The Amazon Resource Number(ARN) of the replication task to be stopped.
+     *        The Amazon Resource Name(ARN) of the replication task to be stopped.
      */
 
     public void setReplicationTaskArn(String replicationTaskArn) {
@@ -48,10 +48,10 @@ public class StopReplicationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Number(ARN) of the replication task to be stopped.
+     * The Amazon Resource Name(ARN) of the replication task to be stopped.
      * </p>
      * 
-     * @return The Amazon Resource Number(ARN) of the replication task to be stopped.
+     * @return The Amazon Resource Name(ARN) of the replication task to be stopped.
      */
 
     public String getReplicationTaskArn() {
@@ -60,11 +60,11 @@ public class StopReplicationTaskRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Number(ARN) of the replication task to be stopped.
+     * The Amazon Resource Name(ARN) of the replication task to be stopped.
      * </p>
      * 
      * @param replicationTaskArn
-     *        The Amazon Resource Number(ARN) of the replication task to be stopped.
+     *        The Amazon Resource Name(ARN) of the replication task to be stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

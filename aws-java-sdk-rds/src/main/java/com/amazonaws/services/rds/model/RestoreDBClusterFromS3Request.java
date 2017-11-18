@@ -65,7 +65,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String databaseName;
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -133,7 +133,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for the restored DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      */
     private String engine;
@@ -199,8 +199,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A value that indicates that the restored DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. An option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. An option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      */
     private String optionGroupName;
@@ -210,8 +210,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -226,7 +226,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -250,13 +250,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -273,7 +273,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -290,8 +290,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String kmsKeyId;
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -617,7 +617,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -645,7 +645,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
+     *        The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
      *        case-sensitive.</p>
      *        <p>
      *        Constraints:
@@ -677,7 +677,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -704,8 +704,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Example: <code>my-cluster1</code>
      * </p>
      * 
-     * @return The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
-     *         case-sensitive.</p>
+     * @return The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is
+     *         isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -736,7 +736,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
+     * The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
      * case-sensitive.
      * </p>
      * <p>
@@ -764,7 +764,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to create from the source data in the S3 bucket. This parameter is isn't
+     *        The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter is isn't
      *        case-sensitive.</p>
      *        <p>
      *        Constraints:
@@ -1050,13 +1050,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for the restored DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for the restored DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>
+     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      */
 
     public void setEngine(String engine) {
@@ -1068,12 +1068,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for the restored DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      * 
      * @return The name of the database engine to be used for the restored DB cluster.</p>
      *         <p>
-     *         Valid Values: <code>aurora</code>
+     *         Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      */
 
     public String getEngine() {
@@ -1085,13 +1085,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for the restored DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for the restored DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>
+     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1451,15 +1451,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A value that indicates that the restored DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. An option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. An option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @param optionGroupName
      *        A value that indicates that the restored DB cluster should be associated with the specified option
      *        group.</p>
      *        <p>
-     *        Permanent options cannot be removed from an option group. An option group cannot be removed from a DB
+     *        Permanent options can't be removed from an option group. An option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
      */
 
@@ -1472,14 +1472,14 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A value that indicates that the restored DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. An option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. An option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @return A value that indicates that the restored DB cluster should be associated with the specified option
      *         group.</p>
      *         <p>
-     *         Permanent options cannot be removed from an option group. An option group cannot be removed from a DB
+     *         Permanent options can't be removed from an option group. An option group can't be removed from a DB
      *         cluster once it is associated with a DB cluster.
      */
 
@@ -1492,15 +1492,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * A value that indicates that the restored DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. An option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. An option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @param optionGroupName
      *        A value that indicates that the restored DB cluster should be associated with the specified option
      *        group.</p>
      *        <p>
-     *        Permanent options cannot be removed from an option group. An option group cannot be removed from a DB
+     *        Permanent options can't be removed from an option group. An option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1516,8 +1516,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1532,7 +1532,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1551,8 +1551,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1567,7 +1567,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -1592,8 +1592,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1608,7 +1608,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1626,8 +1626,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @return The daily time range during which automated backups are created if automated backups are enabled using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *         time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *         see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1642,7 +1642,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Times should be in Universal Coordinated Time (UTC).
+     *         Must be in Universal Coordinated Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -1667,8 +1667,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1683,7 +1683,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1702,8 +1702,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1718,7 +1718,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -1747,13 +1747,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1765,13 +1765,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -1789,13 +1789,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1806,13 +1806,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
-     *         a random day of the week. To see the time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         occurring on a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
-     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *         </p>
      *         <p>
      *         Constraints: Minimum 30-minute window.
@@ -1830,13 +1830,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1848,13 +1848,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -1975,7 +1975,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -1990,7 +1990,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
      *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
@@ -2009,7 +2009,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -2023,7 +2023,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Region.
      * </p>
      * 
-     * @return The KMS key identifier for an encrypted DB cluster.</p>
+     * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
      *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -2042,7 +2042,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -2057,7 +2057,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
      *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
@@ -2078,16 +2078,16 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -2098,15 +2098,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -2117,16 +2117,16 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2139,15 +2139,15 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */

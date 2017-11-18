@@ -28,8 +28,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on regions
-     * and Availability Zones, see <a
+     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on AWS
+     * Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -136,7 +136,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      */
     private String engine;
@@ -202,8 +202,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates that the DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      */
     private String optionGroupName;
@@ -213,8 +213,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -229,7 +229,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -253,13 +253,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -283,7 +283,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -334,9 +334,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
+     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -348,8 +348,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
+     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
      * </ul>
@@ -364,8 +365,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preSignedUrl;
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -377,14 +378,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on regions
-     * and Availability Zones, see <a
+     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on AWS
+     * Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @return A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on
-     *         regions and Availability Zones, see <a
+     *         AWS Regions and Availability Zones, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>.
      */
@@ -398,15 +399,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on regions
-     * and Availability Zones, see <a
+     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on AWS
+     * Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @param availabilityZones
      *        A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on
-     *        regions and Availability Zones, see <a
+     *        AWS Regions and Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      */
@@ -422,8 +423,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on regions
-     * and Availability Zones, see <a
+     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on AWS
+     * Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -435,7 +436,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param availabilityZones
      *        A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on
-     *        regions and Availability Zones, see <a
+     *        AWS Regions and Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -453,15 +454,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on regions
-     * and Availability Zones, see <a
+     * A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on AWS
+     * Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @param availabilityZones
      *        A list of EC2 Availability Zones that instances in the DB cluster can be created in. For information on
-     *        regions and Availability Zones, see <a
+     *        AWS Regions and Availability Zones, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1102,13 +1103,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>
+     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      */
 
     public void setEngine(String engine) {
@@ -1120,12 +1121,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      * 
      * @return The name of the database engine to be used for this DB cluster.</p>
      *         <p>
-     *         Valid Values: <code>aurora</code>
+     *         Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      */
 
     public String getEngine() {
@@ -1137,13 +1138,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>
+     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>
+     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1503,14 +1504,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates that the DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group.</p>
      *        <p>
-     *        Permanent options cannot be removed from an option group. The option group cannot be removed from a DB
+     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
      */
 
@@ -1523,13 +1524,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates that the DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @return A value that indicates that the DB cluster should be associated with the specified option group.</p>
      *         <p>
-     *         Permanent options cannot be removed from an option group. The option group cannot be removed from a DB
+     *         Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *         cluster once it is associated with a DB cluster.
      */
 
@@ -1542,14 +1543,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates that the DB cluster should be associated with the specified option group.
      * </p>
      * <p>
-     * Permanent options cannot be removed from an option group. The option group cannot be removed from a DB cluster
-     * once it is associated with a DB cluster.
+     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
+     * it is associated with a DB cluster.
      * </p>
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group.</p>
      *        <p>
-     *        Permanent options cannot be removed from an option group. The option group cannot be removed from a DB
+     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
      *        cluster once it is associated with a DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1565,8 +1566,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1581,7 +1582,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1600,8 +1601,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1616,7 +1617,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -1641,8 +1642,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1657,7 +1658,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1675,8 +1676,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The daily time range during which automated backups are created if automated backups are enabled using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *         time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *         see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1691,7 +1692,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         Times should be in Universal Coordinated Time (UTC).
+     *         Must be in Universal Coordinated Time (UTC).
      *         </p>
      *         </li>
      *         <li>
@@ -1716,8 +1717,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
-     * blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
+     * time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1732,7 +1733,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Coordinated Time (UTC).
+     * Must be in Universal Coordinated Time (UTC).
      * </p>
      * </li>
      * <li>
@@ -1751,8 +1752,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
-     *        time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
+     *        see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1767,7 +1768,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Coordinated Time (UTC).
+     *        Must be in Universal Coordinated Time (UTC).
      *        </p>
      *        </li>
      *        <li>
@@ -1796,13 +1797,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1814,13 +1815,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -1838,13 +1839,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1855,13 +1856,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
-     *         a random day of the week. To see the time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         occurring on a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
-     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *         </p>
      *         <p>
      *         Constraints: Minimum 30-minute window.
@@ -1879,13 +1880,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
-     * day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      * </p>
      * <p>
      * Constraints: Minimum 30-minute window.
@@ -1897,13 +1898,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
-     *        random day of the week. To see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
-     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
      *        </p>
      *        <p>
      *        Constraints: Minimum 30-minute window.
@@ -2070,7 +2071,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -2105,7 +2106,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
      *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
@@ -2144,7 +2145,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -2178,7 +2179,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * AWS Region.
      * </p>
      * 
-     * @return The KMS key identifier for an encrypted DB cluster.</p>
+     * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
      *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -2217,7 +2218,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
@@ -2252,7 +2253,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier for an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
      *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
@@ -2307,9 +2308,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
+     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -2321,8 +2322,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
+     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
      * </ul>
@@ -2349,8 +2351,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     *        the destination AWS Region. This should refer to the same KMS key for both the
+     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
+     *        cluster in the destination AWS Region. This should refer to the same KMS key for both the
      *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
      *        in the pre-signed URL.
      *        </p>
@@ -2364,7 +2366,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
      *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     *        example, if you are copying an encrypted DB cluster from the us-west-2 region, then your
+     *        example, if you are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
      *        <code>ReplicationSourceIdentifier</code> would look like Example:
      *        <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      *        </p>
@@ -2398,9 +2400,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
+     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -2412,8 +2414,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
+     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
      * </ul>
@@ -2439,8 +2442,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     *         in the destination AWS Region. This should refer to the same KMS key for both the
+     *         <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
+     *         cluster in the destination AWS Region. This should refer to the same KMS key for both the
      *         <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action
      *         contained in the pre-signed URL.
      *         </p>
@@ -2454,7 +2457,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
      *         copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     *         example, if you are copying an encrypted DB cluster from the us-west-2 region, then your
+     *         example, if you are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
      *         <code>ReplicationSourceIdentifier</code> would look like Example:
      *         <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      *         </p>
@@ -2488,9 +2491,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
+     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -2502,8 +2505,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
-     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
+     * are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
+     * <code>ReplicationSourceIdentifier</code> would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
      * </ul>
@@ -2530,8 +2534,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     *        the destination AWS Region. This should refer to the same KMS key for both the
+     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
+     *        cluster in the destination AWS Region. This should refer to the same KMS key for both the
      *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
      *        in the pre-signed URL.
      *        </p>
@@ -2545,7 +2549,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
      *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     *        example, if you are copying an encrypted DB cluster from the us-west-2 region, then your
+     *        example, if you are copying an encrypted DB cluster from the us-west-2 AWS Region, then your
      *        <code>ReplicationSourceIdentifier</code> would look like Example:
      *        <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      *        </p>
@@ -2567,16 +2571,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -2587,15 +2591,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -2606,16 +2610,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2628,15 +2632,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */

@@ -80,7 +80,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -104,14 +104,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Integer port;
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
@@ -135,8 +135,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      */
     private Boolean multiAZ;
@@ -221,6 +221,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -299,8 +304,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The name of the option group to be used for the restored DB instance.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      */
     private String optionGroupName;
@@ -317,19 +322,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      */
     private String tdeCredentialArn;
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      */
     private String tdeCredentialPassword;
@@ -341,8 +346,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String domain;
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default
-     * is false.
+     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
+     * default is false.
      * </p>
      */
     private Boolean copyTagsToSnapshot;
@@ -354,7 +359,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private String domainIAMRoleName;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -753,7 +758,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -764,8 +769,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
-     *        all DB instance classes are available in all regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
+     *        of DB instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide. </p>
      *        <p>
@@ -779,7 +784,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -789,8 +794,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @return The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
-     *         all DB instance classes are available in all regions, or for all database engines. For the full list of
-     *         DB instance classes, and availability for your engine, see <a
+     *         all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
+     *         of DB instance classes, and availability for your engine, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the Amazon RDS User Guide. </p>
      *         <p>
@@ -804,7 +809,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -815,8 +820,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
-     *        all DB instance classes are available in all regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
+     *        of DB instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide. </p>
      *        <p>
@@ -904,26 +909,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance is created in.</p>
+     *        The EC2 Availability Zone that the DB instance is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
      *        <p>
-     *        Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *        <code>true</code>.
      *        </p>
      *        <p>
@@ -936,25 +941,25 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
      * </p>
      * 
-     * @return The EC2 Availability Zone that the database instance is created in.</p>
+     * @return The EC2 Availability Zone that the DB instance is created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone.
      *         </p>
      *         <p>
-     *         Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *         <code>true</code>.
      *         </p>
      *         <p>
@@ -967,26 +972,26 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The EC2 Availability Zone that the database instance is created in.
+     * The EC2 Availability Zone that the DB instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * <p>
      * Example: <code>us-east-1a</code>
      * </p>
      * 
      * @param availabilityZone
-     *        The EC2 Availability Zone that the database instance is created in.</p>
+     *        The EC2 Availability Zone that the DB instance is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone.
      *        </p>
      *        <p>
-     *        Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *        <code>true</code>.
      *        </p>
      *        <p>
@@ -1077,14 +1082,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
      * @param multiAZ
      *        Specifies if the DB instance is a Multi-AZ deployment.</p>
      *        <p>
-     *        Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *        <code>true</code>.
      */
 
@@ -1097,13 +1102,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
      * @return Specifies if the DB instance is a Multi-AZ deployment.</p>
      *         <p>
-     *         Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *         <code>true</code>.
      */
 
@@ -1116,14 +1121,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
      * @param multiAZ
      *        Specifies if the DB instance is a Multi-AZ deployment.</p>
      *        <p>
-     *        Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *        Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1138,13 +1143,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies if the DB instance is a Multi-AZ deployment.
      * </p>
      * <p>
-     * Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * <code>true</code>.
+     * Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to <code>true</code>
+     * .
      * </p>
      * 
      * @return Specifies if the DB instance is a Multi-AZ deployment.</p>
      *         <p>
-     *         Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         Constraint: You can't specify the AvailabilityZone parameter if the MultiAZ parameter is set to
      *         <code>true</code>.
      */
 
@@ -1605,6 +1610,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -1676,6 +1686,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1761,6 +1776,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -1831,6 +1851,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         <code>aurora</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>aurora-postgresql</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1916,6 +1941,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -1987,6 +2017,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-postgresql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2160,15 +2195,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The name of the option group to be used for the restored DB instance.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
      *        The name of the option group to be used for the restored DB instance.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      */
 
@@ -2181,14 +2216,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The name of the option group to be used for the restored DB instance.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @return The name of the option group to be used for the restored DB instance.</p>
      *         <p>
-     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *         option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *         option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *         instance
      */
 
@@ -2201,15 +2236,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * The name of the option group to be used for the restored DB instance.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
      *        The name of the option group to be used for the restored DB instance.</p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2285,7 +2320,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -2297,7 +2332,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      */
 
     public void setStorageType(String storageType) {
@@ -2315,7 +2350,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
@@ -2326,7 +2361,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *         </p>
      *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
      *         <code>standard</code>
      */
 
@@ -2345,7 +2380,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -2357,7 +2392,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2368,11 +2403,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public void setTdeCredentialArn(String tdeCredentialArn) {
@@ -2381,10 +2416,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
-     * @return The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * @return The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public String getTdeCredentialArn() {
@@ -2393,11 +2428,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2408,11 +2443,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to access the device.
+     *        The password for the given ARN from the key store in order to access the device.
      */
 
     public void setTdeCredentialPassword(String tdeCredentialPassword) {
@@ -2421,10 +2456,10 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
-     * @return The password for the given ARN from the Key Store in order to access the device.
+     * @return The password for the given ARN from the key store in order to access the device.
      */
 
     public String getTdeCredentialPassword() {
@@ -2433,11 +2468,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to access the device.
+     *        The password for the given ARN from the key store in order to access the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2488,13 +2523,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default
-     * is false.
+     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
+     * default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The
-     *        default is false.
+     *        True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
+     *        The default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2503,12 +2538,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default
-     * is false.
+     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
+     * default is false.
      * </p>
      * 
-     * @return True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The
-     *         default is false.
+     * @return True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
+     *         The default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2517,13 +2552,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default
-     * is false.
+     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
+     * default is false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The
-     *        default is false.
+     *        True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
+     *        The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2534,12 +2569,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The default
-     * is false.
+     * True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false. The
+     * default is false.
      * </p>
      * 
-     * @return True to copy all tags from the restored DB instance to snapshots of the DB instance; otherwise false. The
-     *         default is false.
+     * @return True to copy all tags from the restored DB instance to snapshots of the DB instance, and otherwise false.
+     *         The default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -2588,7 +2623,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -2616,7 +2651,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
@@ -2648,7 +2683,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -2675,7 +2710,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
@@ -2707,7 +2742,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -2735,7 +2770,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
@@ -2769,7 +2804,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -2796,7 +2831,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines

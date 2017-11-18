@@ -9187,11 +9187,23 @@
         "name" : "DynamoDBWriteCapacityUtilization",
         "value" : "DynamoDBWriteCapacityUtilization"
       }, {
+        "name" : "ALBRequestCountPerTarget",
+        "value" : "ALBRequestCountPerTarget"
+      }, {
         "name" : "RDSReaderAverageCPUUtilization",
         "value" : "RDSReaderAverageCPUUtilization"
       }, {
         "name" : "RDSReaderAverageDatabaseConnections",
         "value" : "RDSReaderAverageDatabaseConnections"
+      }, {
+        "name" : "EC2SpotFleetRequestAverageCPUUtilization",
+        "value" : "EC2SpotFleetRequestAverageCPUUtilization"
+      }, {
+        "name" : "EC2SpotFleetRequestAverageNetworkIn",
+        "value" : "EC2SpotFleetRequestAverageNetworkIn"
+      }, {
+        "name" : "EC2SpotFleetRequestAverageNetworkOut",
+        "value" : "EC2SpotFleetRequestAverageNetworkOut"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -9323,11 +9335,11 @@
         "c2jName" : "PredefinedMetricType",
         "c2jShape" : "MetricType",
         "deprecated" : false,
-        "documentation" : "<p>The metric type.</p>",
+        "documentation" : "<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>",
         "enumType" : "MetricType",
-        "fluentSetterDocumentation" : "/**<p>The metric type.</p>\n@param predefinedMetricType The metric type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
+        "fluentSetterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@param predefinedMetricType The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
         "fluentSetterMethodName" : "withPredefinedMetricType",
-        "getterDocumentation" : "/**<p>The metric type.</p>\n@return The metric type.\n@see MetricType*/",
+        "getterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@return The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@see MetricType*/",
         "getterMethodName" : "getPredefinedMetricType",
         "getterModel" : {
           "returnType" : "String",
@@ -9359,7 +9371,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "PredefinedMetricType",
-        "setterDocumentation" : "/**<p>The metric type.</p>\n@param predefinedMetricType The metric type.\n@see MetricType*/",
+        "setterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@param predefinedMetricType The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@see MetricType*/",
         "setterMethodName" : "setPredefinedMetricType",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -9372,12 +9384,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The metric type.</p>\n@param predefinedMetricType The metric type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
+        "varargSetterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@param predefinedMetricType The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "predefinedMetricType",
           "variableType" : "String",
-          "documentation" : "<p>The metric type.</p>",
+          "documentation" : "<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9386,11 +9398,11 @@
         "c2jName" : "ResourceLabel",
         "c2jShape" : "ResourceLabel",
         "deprecated" : false,
-        "documentation" : "<p>Reserved for future use.</p>",
+        "documentation" : "<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param resourceLabel Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@param resourceLabel Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withResourceLabel",
-        "getterDocumentation" : "/**<p>Reserved for future use.</p>\n@return Reserved for future use.*/",
+        "getterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@return Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>*/",
         "getterMethodName" : "getResourceLabel",
         "getterModel" : {
           "returnType" : "String",
@@ -9422,7 +9434,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ResourceLabel",
-        "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param resourceLabel Reserved for future use.*/",
+        "setterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@param resourceLabel Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>*/",
         "setterMethodName" : "setResourceLabel",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -9435,12 +9447,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param resourceLabel Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@param resourceLabel Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "resourceLabel",
           "variableType" : "String",
-          "documentation" : "<p>Reserved for future use.</p>",
+          "documentation" : "<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9451,11 +9463,11 @@
           "c2jName" : "PredefinedMetricType",
           "c2jShape" : "MetricType",
           "deprecated" : false,
-          "documentation" : "<p>The metric type.</p>",
+          "documentation" : "<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>",
           "enumType" : "MetricType",
-          "fluentSetterDocumentation" : "/**<p>The metric type.</p>\n@param predefinedMetricType The metric type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
+          "fluentSetterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@param predefinedMetricType The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
           "fluentSetterMethodName" : "withPredefinedMetricType",
-          "getterDocumentation" : "/**<p>The metric type.</p>\n@return The metric type.\n@see MetricType*/",
+          "getterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@return The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@see MetricType*/",
           "getterMethodName" : "getPredefinedMetricType",
           "getterModel" : {
             "returnType" : "String",
@@ -9487,7 +9499,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "PredefinedMetricType",
-          "setterDocumentation" : "/**<p>The metric type.</p>\n@param predefinedMetricType The metric type.\n@see MetricType*/",
+          "setterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@param predefinedMetricType The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@see MetricType*/",
           "setterMethodName" : "setPredefinedMetricType",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -9500,12 +9512,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The metric type.</p>\n@param predefinedMetricType The metric type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
+          "varargSetterDocumentation" : "/**<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>\n@param predefinedMetricType The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "predefinedMetricType",
             "variableType" : "String",
-            "documentation" : "<p>The metric type.</p>",
+            "documentation" : "<p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Spot fleet requests.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9515,11 +9527,11 @@
           "c2jName" : "ResourceLabel",
           "c2jShape" : "ResourceLabel",
           "deprecated" : false,
-          "documentation" : "<p>Reserved for future use.</p>",
+          "documentation" : "<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param resourceLabel Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@param resourceLabel Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withResourceLabel",
-          "getterDocumentation" : "/**<p>Reserved for future use.</p>\n@return Reserved for future use.*/",
+          "getterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@return Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>*/",
           "getterMethodName" : "getResourceLabel",
           "getterModel" : {
             "returnType" : "String",
@@ -9551,7 +9563,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ResourceLabel",
-          "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param resourceLabel Reserved for future use.*/",
+          "setterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@param resourceLabel Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>*/",
           "setterMethodName" : "setResourceLabel",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -9564,12 +9576,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param resourceLabel Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>\n@param resourceLabel Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "resourceLabel",
             "variableType" : "String",
-            "documentation" : "<p>Reserved for future use.</p>",
+            "documentation" : "<p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Spot fleet request.</p> <p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</p> </li> <li> <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

@@ -41,7 +41,7 @@ import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
  * Amazon Aurora database server. These capabilities mean that the code, applications, and tools you already use today
  * with your existing databases work with Amazon RDS without modification. Amazon RDS automatically backs up your
  * database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can scale your
- * database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web
+ * DB instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web
  * Services, there are no up-front investments, and you pay only for the resources you use.
  * </p>
  * <p>
@@ -251,9 +251,8 @@ public interface AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * You cannot authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in
-     * another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in
-     * another.
+     * You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in another.
+     * You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.
      * </p>
      * </note>
      * <p>
@@ -314,8 +313,8 @@ public interface AmazonRDS {
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the key to use to encrypt the copy
-     * of the DB cluster snapshot in the destination AWS Region.
+     * <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the
+     * copy of the DB cluster snapshot in the destination AWS Region.
      * </p>
      * </li>
      * <li>
@@ -345,7 +344,7 @@ public interface AmazonRDS {
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
      * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 region, then your
+     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
      * <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
      * </p>
@@ -437,7 +436,7 @@ public interface AmazonRDS {
      * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB snapshot copy.
      * </p>
      * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS Region to another.
+     * You can't copy an encrypted, shared DB snapshot from one AWS Region to another.
      * </p>
      * <p>
      * For more information about copying snapshots, see <a
@@ -898,7 +897,7 @@ public interface AmazonRDS {
     /**
      * <p>
      * The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all
-     * automated backups for that DB cluster are deleted and cannot be recovered. Manual DB cluster snapshots of the
+     * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
      * </p>
      * <p/>
@@ -928,7 +927,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted cannot be associated
+     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
      * with any DB clusters.
      * </p>
      * <p>
@@ -980,13 +979,13 @@ public interface AmazonRDS {
     /**
      * <p>
      * The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all
-     * automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance
-     * to be deleted by <code>DeleteDBInstance</code> are not deleted.
+     * automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to
+     * be deleted by <code>DeleteDBInstance</code> are not deleted.
      * </p>
      * <p>
      * If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB
      * snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this
-     * operation. The action cannot be canceled or reverted once submitted.
+     * operation. The action can't be canceled or reverted once submitted.
      * </p>
      * <p>
      * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
@@ -994,7 +993,7 @@ public interface AmazonRDS {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if both of
+     * If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
      * the following conditions are true:
      * </p>
      * <ul>
@@ -1035,7 +1034,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB
+     * Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB
      * instances.
      * </p>
      * 
@@ -1748,7 +1747,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the source AWS regions where the current AWS Region can create a Read Replica or copy a DB
+     * Returns a list of the source AWS Regions where the current AWS Region can create a Read Replica or copy a DB
      * snapshot from. This API action supports pagination.
      * </p>
      * 
@@ -2137,9 +2136,9 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers
-     * using this call; to change source identifiers for a subscription, use the
-     * <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.
+     * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
+     * this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and
+     * <a>RemoveSourceIdentifierFromSubscription</a> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -2631,6 +2630,60 @@ public interface AmazonRDS {
      *      target="_top">AWS API Documentation</a>
      */
     DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest);
+
+    /**
+     * <p>
+     * Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can
+     * create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then
+     * restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into
+     * an Amazon RDS MySQL DB Instance</a>.
+     * </p>
+     * 
+     * @param restoreDBInstanceFromS3Request
+     * @return Result of the RestoreDBInstanceFromS3 operation returned by the service.
+     * @throws DBInstanceAlreadyExistsException
+     *         User already has a DB instance with the given identifier.
+     * @throws InsufficientDBInstanceCapacityException
+     *         Specified DB instance class is not available in the specified Availability Zone.
+     * @throws DBParameterGroupNotFoundException
+     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     * @throws DBSecurityGroupNotFoundException
+     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     * @throws InstanceQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB instances.
+     * @throws StorageQuotaExceededException
+     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     * @throws DBSubnetGroupNotFoundException
+     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Availability Zone.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws InvalidVPCNetworkStateException
+     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     * @throws InvalidS3BucketException
+     *         The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized to access the
+     *         specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and
+     *         try again.
+     * @throws ProvisionedIopsNotAvailableInAZException
+     *         Provisioned IOPS not available in the specified Availability Zone.
+     * @throws OptionGroupNotFoundException
+     *         The specified option group could not be found.
+     * @throws StorageTypeNotSupportedException
+     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     * @throws AuthorizationNotFoundException
+     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         <p>
+     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     * @throws KMSKeyNotAccessibleException
+     *         Error accessing KMS key.
+     * @sample AmazonRDS.RestoreDBInstanceFromS3
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DBInstance restoreDBInstanceFromS3(RestoreDBInstanceFromS3Request restoreDBInstanceFromS3Request);
 
     /**
      * <p>

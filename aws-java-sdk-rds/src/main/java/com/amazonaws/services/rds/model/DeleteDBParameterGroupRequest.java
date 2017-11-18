@@ -41,7 +41,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB parameter group
+     * You can't delete a default DB parameter group
      * </p>
      * </li>
      * <li>
@@ -77,7 +77,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        You cannot delete a default DB parameter group
+     *        You can't delete a default DB parameter group
      *        </p>
      *        </li>
      *        <li>
@@ -105,7 +105,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB parameter group
+     * You can't delete a default DB parameter group
      * </p>
      * </li>
      * <li>
@@ -128,7 +128,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        You cannot delete a default DB parameter group
+     *        You can't delete a default DB parameter group
      *        </p>
      *        </li>
      *        <li>
@@ -157,7 +157,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB parameter group
+     * You can't delete a default DB parameter group
      * </p>
      * </li>
      * <li>
@@ -179,7 +179,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         You cannot delete a default DB parameter group
+     *         You can't delete a default DB parameter group
      *         </p>
      *         </li>
      *         <li>
@@ -208,7 +208,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB parameter group
+     * You can't delete a default DB parameter group
      * </p>
      * </li>
      * <li>
@@ -231,7 +231,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        You cannot delete a default DB parameter group
+     *        You can't delete a default DB parameter group
      *        </p>
      *        </li>
      *        <li>

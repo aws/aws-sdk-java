@@ -571,6 +571,22 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns the task assessment results from Amazon S3. This action always returns the latest results.
+     * </p>
+     * 
+     * @param describeReplicationTaskAssessmentResultsRequest
+     * @return Result of the DescribeReplicationTaskAssessmentResults operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationTaskAssessmentResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReplicationTaskAssessmentResultsResult describeReplicationTaskAssessmentResults(
+            DescribeReplicationTaskAssessmentResultsRequest describeReplicationTaskAssessmentResultsRequest);
+
+    /**
+     * <p>
      * Returns information about replication tasks for your account in the current region.
      * </p>
      * 
@@ -858,6 +874,23 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     StartReplicationTaskResult startReplicationTask(StartReplicationTaskRequest startReplicationTaskRequest);
+
+    /**
+     * <p>
+     * Starts the replication task assessment for unsupported data types in the source database.
+     * </p>
+     * 
+     * @param startReplicationTaskAssessmentRequest
+     * @return Result of the StartReplicationTaskAssessment operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.StartReplicationTaskAssessment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartReplicationTaskAssessmentResult startReplicationTaskAssessment(StartReplicationTaskAssessmentRequest startReplicationTaskAssessmentRequest);
 
     /**
      * <p>

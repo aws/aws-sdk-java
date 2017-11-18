@@ -911,6 +911,41 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Returns the task assessment results from Amazon S3. This action always returns the latest results.
+     * </p>
+     * 
+     * @param describeReplicationTaskAssessmentResultsRequest
+     * @return A Java Future containing the result of the DescribeReplicationTaskAssessmentResults operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplicationTaskAssessmentResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTaskAssessmentResultsResult> describeReplicationTaskAssessmentResultsAsync(
+            DescribeReplicationTaskAssessmentResultsRequest describeReplicationTaskAssessmentResultsRequest);
+
+    /**
+     * <p>
+     * Returns the task assessment results from Amazon S3. This action always returns the latest results.
+     * </p>
+     * 
+     * @param describeReplicationTaskAssessmentResultsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplicationTaskAssessmentResults operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplicationTaskAssessmentResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTaskAssessmentResultsResult> describeReplicationTaskAssessmentResultsAsync(
+            DescribeReplicationTaskAssessmentResultsRequest describeReplicationTaskAssessmentResultsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskAssessmentResultsRequest, DescribeReplicationTaskAssessmentResultsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about replication tasks for your account in the current region.
      * </p>
      * 
@@ -1394,6 +1429,41 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<StartReplicationTaskResult> startReplicationTaskAsync(StartReplicationTaskRequest startReplicationTaskRequest,
             com.amazonaws.handlers.AsyncHandler<StartReplicationTaskRequest, StartReplicationTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the replication task assessment for unsupported data types in the source database.
+     * </p>
+     * 
+     * @param startReplicationTaskAssessmentRequest
+     * @return A Java Future containing the result of the StartReplicationTaskAssessment operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.StartReplicationTaskAssessment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationTaskAssessmentResult> startReplicationTaskAssessmentAsync(
+            StartReplicationTaskAssessmentRequest startReplicationTaskAssessmentRequest);
+
+    /**
+     * <p>
+     * Starts the replication task assessment for unsupported data types in the source database.
+     * </p>
+     * 
+     * @param startReplicationTaskAssessmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartReplicationTaskAssessment operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.StartReplicationTaskAssessment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationTaskAssessmentResult> startReplicationTaskAssessmentAsync(
+            StartReplicationTaskAssessmentRequest startReplicationTaskAssessmentRequest,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationTaskAssessmentRequest, StartReplicationTaskAssessmentResult> asyncHandler);
 
     /**
      * <p>

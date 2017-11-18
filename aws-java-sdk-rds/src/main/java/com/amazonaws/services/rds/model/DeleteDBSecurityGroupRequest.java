@@ -32,7 +32,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -77,7 +77,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * @param dBSecurityGroupName
      *        The name of the DB security group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default DB security group.
+     *        You can't delete the default DB security group.
      *        </p>
      *        </note>
      *        <p>
@@ -115,7 +115,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -147,7 +147,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * @param dBSecurityGroupName
      *        The name of the DB security group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default DB security group.
+     *        You can't delete the default DB security group.
      *        </p>
      *        </note>
      *        <p>
@@ -186,7 +186,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -217,7 +217,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @return The name of the DB security group to delete.</p> <note>
      *         <p>
-     *         You cannot delete the default DB security group.
+     *         You can't delete the default DB security group.
      *         </p>
      *         </note>
      *         <p>
@@ -256,7 +256,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * You cannot delete the default DB security group.
+     * You can't delete the default DB security group.
      * </p>
      * </note>
      * <p>
@@ -288,7 +288,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
      * @param dBSecurityGroupName
      *        The name of the DB security group to delete.</p> <note>
      *        <p>
-     *        You cannot delete the default DB security group.
+     *        You can't delete the default DB security group.
      *        </p>
      *        </note>
      *        <p>

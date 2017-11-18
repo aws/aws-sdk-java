@@ -32,7 +32,7 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      */
@@ -44,14 +44,14 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      * 
      * @param optionGroupName
      *        The name of the option group to be deleted.</p> <note>
      *        <p>
-     *        You cannot delete default option groups.
+     *        You can't delete default option groups.
      *        </p>
      */
 
@@ -65,13 +65,13 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      * 
      * @return The name of the option group to be deleted.</p> <note>
      *         <p>
-     *         You cannot delete default option groups.
+     *         You can't delete default option groups.
      *         </p>
      */
 
@@ -85,14 +85,14 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * You cannot delete default option groups.
+     * You can't delete default option groups.
      * </p>
      * </note>
      * 
      * @param optionGroupName
      *        The name of the option group to be deleted.</p> <note>
      *        <p>
-     *        You cannot delete default option groups.
+     *        You can't delete default option groups.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

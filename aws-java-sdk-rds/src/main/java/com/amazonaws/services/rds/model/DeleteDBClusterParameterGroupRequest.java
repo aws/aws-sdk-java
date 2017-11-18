@@ -41,7 +41,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB cluster parameter group.
+     * You can't delete a default DB cluster parameter group.
      * </p>
      * </li>
      * <li>
@@ -68,7 +68,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB cluster parameter group.
+     * You can't delete a default DB cluster parameter group.
      * </p>
      * </li>
      * <li>
@@ -91,7 +91,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        You cannot delete a default DB cluster parameter group.
+     *        You can't delete a default DB cluster parameter group.
      *        </p>
      *        </li>
      *        <li>
@@ -120,7 +120,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB cluster parameter group.
+     * You can't delete a default DB cluster parameter group.
      * </p>
      * </li>
      * <li>
@@ -142,7 +142,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         You cannot delete a default DB cluster parameter group.
+     *         You can't delete a default DB cluster parameter group.
      *         </p>
      *         </li>
      *         <li>
@@ -171,7 +171,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * You cannot delete a default DB cluster parameter group.
+     * You can't delete a default DB cluster parameter group.
      * </p>
      * </li>
      * <li>
@@ -194,7 +194,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        You cannot delete a default DB cluster parameter group.
+     *        You can't delete a default DB cluster parameter group.
      *        </p>
      *        </li>
      *        <li>

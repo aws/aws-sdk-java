@@ -22,8 +22,12 @@ public enum MetricType {
 
     DynamoDBReadCapacityUtilization("DynamoDBReadCapacityUtilization"),
     DynamoDBWriteCapacityUtilization("DynamoDBWriteCapacityUtilization"),
+    ALBRequestCountPerTarget("ALBRequestCountPerTarget"),
     RDSReaderAverageCPUUtilization("RDSReaderAverageCPUUtilization"),
-    RDSReaderAverageDatabaseConnections("RDSReaderAverageDatabaseConnections");
+    RDSReaderAverageDatabaseConnections("RDSReaderAverageDatabaseConnections"),
+    EC2SpotFleetRequestAverageCPUUtilization("EC2SpotFleetRequestAverageCPUUtilization"),
+    EC2SpotFleetRequestAverageNetworkIn("EC2SpotFleetRequestAverageNetworkIn"),
+    EC2SpotFleetRequestAverageNetworkOut("EC2SpotFleetRequestAverageNetworkOut");
 
     private String value;
 

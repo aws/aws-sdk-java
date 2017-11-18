@@ -92,6 +92,22 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
                     context.nextToken();
                     tableStatistics.setTableState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ValidationPendingRecords", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationPendingRecords(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationFailedRecords", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationFailedRecords(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationSuspendedRecords", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationSuspendedRecords(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationState", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setValidationState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -17,30 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details of an Amazon RDS DB subnet group.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateDBSubnetGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ModifyDBSubnetGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeDBSubnetGroups</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBSubnetGroup</a>
- * </p>
- * </li>
- * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.
  * </p>

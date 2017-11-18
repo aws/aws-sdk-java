@@ -569,6 +569,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBInstance restoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

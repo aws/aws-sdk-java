@@ -150,7 +150,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     * snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -178,8 +179,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String kmsKeyId;
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1049,7 +1050,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     * snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -1075,7 +1077,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
      *        snapshot.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
@@ -1107,7 +1109,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     * snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -1132,7 +1135,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * </ul>
      * 
-     * @return The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     * @return The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
      *         snapshot.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
@@ -1164,7 +1167,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     * snapshot.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -1190,7 +1194,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
      *        snapshot.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
@@ -1224,16 +1228,16 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -1244,15 +1248,15 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1263,16 +1267,16 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1285,15 +1289,15 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */

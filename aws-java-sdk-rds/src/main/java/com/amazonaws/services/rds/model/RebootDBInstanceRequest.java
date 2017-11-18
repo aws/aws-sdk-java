@@ -47,7 +47,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * When <code>true</code>, the reboot is conducted through a MultiAZ failover.
      * </p>
      * <p>
-     * Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      */
     private Boolean forceFailover;
@@ -181,13 +181,13 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * When <code>true</code>, the reboot is conducted through a MultiAZ failover.
      * </p>
      * <p>
-     * Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      * 
      * @param forceFailover
      *        When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
      *        <p>
-     *        Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     *        Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      */
 
     public void setForceFailover(Boolean forceFailover) {
@@ -199,12 +199,12 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * When <code>true</code>, the reboot is conducted through a MultiAZ failover.
      * </p>
      * <p>
-     * Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      * 
      * @return When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
      *         <p>
-     *         Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     *         Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      */
 
     public Boolean getForceFailover() {
@@ -216,13 +216,13 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * When <code>true</code>, the reboot is conducted through a MultiAZ failover.
      * </p>
      * <p>
-     * Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      * 
      * @param forceFailover
      *        When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
      *        <p>
-     *        Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     *        Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,12 +236,12 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * When <code>true</code>, the reboot is conducted through a MultiAZ failover.
      * </p>
      * <p>
-     * Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     * Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      * </p>
      * 
      * @return When <code>true</code>, the reboot is conducted through a MultiAZ failover. </p>
      *         <p>
-     *         Constraint: You cannot specify <code>true</code> if the instance is not configured for MultiAZ.
+     *         Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.
      */
 
     public Boolean isForceFailover() {

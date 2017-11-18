@@ -1,3 +1,20 @@
+# __1.11.232__ __2017-11-17__
+## __AWS Database Migration Service__
+  - ### Features
+    - Support for migration task assessment. Support for data validation after the migration.
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Amazon RDS now supports importing MySQL databases by using backup files from Amazon S3.
+
+## __Application Auto Scaling__
+  - ### Features
+    - This SDK update contains support for Target Tracking scaling for EC2 Spot Fleet. It allows you to scale an EC2 Spot Fleet using a Target Tracking scaling policy.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release adds Proxy Protocol v2 support for Network Load Balancer. Proxy protocol provides a convenient way to transport connection information (such as a client's source IP address/port and destination IP address/port) for a TCP connection across multiple layers of NAT or TCP proxies.
+
 # __1.11.231__ __2017-11-16__
 ## __AWS Glue__
   - ### Features

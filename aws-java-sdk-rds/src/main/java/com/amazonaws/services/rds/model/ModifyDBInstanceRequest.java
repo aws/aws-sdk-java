@@ -131,7 +131,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -227,7 +227,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean applyImmediately;
     /**
      * <p>
-     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. The password can include any printable ASCII character except "/",
+     * """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
@@ -370,7 +371,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Time Coordinated (UTC)
+     * Must be in Universal Time Coordinated (UTC)
      * </p>
      * </li>
      * <li>
@@ -513,8 +514,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      */
     private String optionGroupName;
@@ -561,19 +562,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      */
     private String tdeCredentialArn;
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      */
     private String tdeCredentialPassword;
@@ -593,7 +594,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String domain;
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      */
@@ -705,8 +706,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean publiclyAccessible;
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
@@ -739,7 +741,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer promotionTier;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -774,14 +776,14 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      */
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -1443,7 +1445,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -1458,7 +1460,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide. </p>
@@ -1478,7 +1480,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -1492,7 +1494,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all regions, or for all database engines. For the full list of DB
+     *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *         instance classes, and availability for your engine, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the Amazon RDS User Guide. </p>
@@ -1512,7 +1514,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all regions, or for all database engines. For the full list of DB instance
+     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the Amazon RDS User Guide.
@@ -1527,7 +1529,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all regions, or for all database engines. For the full list of DB
+     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the Amazon RDS User Guide. </p>
@@ -2195,7 +2197,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. The password can include any printable ASCII character except "/",
+     * """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
@@ -2251,7 +2254,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param masterUserPassword
-     *        The new password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     *        The new password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      *        possible. Between the time of the request and the completion of the request, the
@@ -2312,7 +2316,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. The password can include any printable ASCII character except "/",
+     * """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
@@ -2367,7 +2372,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </note>
      * 
-     * @return The new password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     * @return The new password for the master user. The password can include any printable ASCII character except "/",
+     *         """, or "@".</p>
      *         <p>
      *         Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      *         possible. Between the time of the request and the completion of the request, the
@@ -2428,7 +2434,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. The password can include any printable ASCII character except "/",
+     * """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
@@ -2484,7 +2491,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param masterUserPassword
-     *        The new password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
+     *        The new password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
      *        Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      *        possible. Between the time of the request and the completion of the request, the
@@ -2952,7 +2960,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Time Coordinated (UTC)
+     * Must be in Universal Time Coordinated (UTC)
      * </p>
      * </li>
      * <li>
@@ -2989,7 +2997,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Time Coordinated (UTC)
+     *        Must be in Universal Time Coordinated (UTC)
      *        </p>
      *        </li>
      *        <li>
@@ -3032,7 +3040,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Time Coordinated (UTC)
+     * Must be in Universal Time Coordinated (UTC)
      * </p>
      * </li>
      * <li>
@@ -3068,7 +3076,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Times should be in Universal Time Coordinated (UTC)
+     *         Must be in Universal Time Coordinated (UTC)
      *         </p>
      *         </li>
      *         <li>
@@ -3111,7 +3119,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Times should be in Universal Time Coordinated (UTC)
+     * Must be in Universal Time Coordinated (UTC)
      * </p>
      * </li>
      * <li>
@@ -3148,7 +3156,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Times should be in Universal Time Coordinated (UTC)
+     *        Must be in Universal Time Coordinated (UTC)
      *        </p>
      *        </li>
      *        <li>
@@ -3959,8 +3967,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
@@ -3971,8 +3979,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        brief (sub-second) period during which new connections are rejected but existing connections are not
      *        interrupted. </p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      */
 
@@ -3989,8 +3997,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @return Indicates that the DB instance should be associated with the specified option group. Changing this
@@ -4000,8 +4008,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         cause a brief (sub-second) period during which new connections are rejected but existing connections are
      *         not interrupted. </p>
      *         <p>
-     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *         option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *         option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *         instance
      */
 
@@ -4018,8 +4026,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * which new connections are rejected but existing connections are not interrupted.
      * </p>
      * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option
-     * group, and that option group cannot be removed from a DB instance once it is associated with a DB instance
+     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
+     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
      * @param optionGroupName
@@ -4030,8 +4038,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        brief (sub-second) period during which new connections are rejected but existing connections are not
      *        interrupted. </p>
      *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an
-     *        option group, and that option group cannot be removed from a DB instance once it is associated with a DB
+     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
      *        instance
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4245,7 +4253,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -4257,7 +4265,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      */
 
     public void setStorageType(String storageType) {
@@ -4275,7 +4283,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
@@ -4286,7 +4294,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *         </p>
      *         <p>
-     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise
+     *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
      *         <code>standard</code>
      */
 
@@ -4305,7 +4313,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      * </p>
      * <p>
-     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * </p>
      * 
      * @param storageType
@@ -4317,7 +4325,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
      *        </p>
      *        <p>
-     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified; otherwise <code>standard</code>
+     *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>standard</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4328,11 +4336,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public void setTdeCredentialArn(String tdeCredentialArn) {
@@ -4341,10 +4349,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
-     * @return The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * @return The ARN from the key store with which to associate the instance for TDE encryption.
      */
 
     public String getTdeCredentialArn() {
@@ -4353,11 +4361,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN from the Key Store with which to associate the instance for TDE encryption.
+     * The ARN from the key store with which to associate the instance for TDE encryption.
      * </p>
      * 
      * @param tdeCredentialArn
-     *        The ARN from the Key Store with which to associate the instance for TDE encryption.
+     *        The ARN from the key store with which to associate the instance for TDE encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4368,11 +4376,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to access the device.
+     *        The password for the given ARN from the key store in order to access the device.
      */
 
     public void setTdeCredentialPassword(String tdeCredentialPassword) {
@@ -4381,10 +4389,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
-     * @return The password for the given ARN from the Key Store in order to access the device.
+     * @return The password for the given ARN from the key store in order to access the device.
      */
 
     public String getTdeCredentialPassword() {
@@ -4393,11 +4401,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the given ARN from the Key Store in order to access the device.
+     * The password for the given ARN from the key store in order to access the device.
      * </p>
      * 
      * @param tdeCredentialPassword
-     *        The password for the given ARN from the Key Store in order to access the device.
+     *        The password for the given ARN from the key store in order to access the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4500,13 +4508,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *        is false.
+     *        True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *        default is false.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -4515,12 +4523,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
-     * @return True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *         is false.
+     * @return True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -4529,13 +4537,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *        is false.
+     *        True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *        default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4546,12 +4554,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default is
+     * True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is
      * false.
      * </p>
      * 
-     * @return True to copy all tags from the DB instance to snapshots of the DB instance; otherwise false. The default
-     *         is false.
+     * @return True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The
+     *         default is false.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -5233,8 +5241,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
@@ -5244,8 +5253,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
-     *        example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
+     *        For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
      *        role, go to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      *        create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
@@ -5260,8 +5269,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
@@ -5270,9 +5280,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>MonitoringRoleArn</code> value.
      * </p>
      * 
-     * @return The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
-     *         example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
-     *         role, go to <a href=
+     * @return The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
+     *         For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a
+     *         monitoring role, go to <a href=
      *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole"
      *         >To create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
      *         <p>
@@ -5286,8 +5296,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For example,
-     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go to <a
+     * The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
+     * example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, go
+     * to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a>.
      * </p>
@@ -5297,8 +5308,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param monitoringRoleArn
-     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to CloudWatch Logs. For
-     *        example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
+     *        The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs.
+     *        For example, <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring
      *        role, go to <a href=
      *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      *        create an IAM role for Amazon RDS Enhanced Monitoring</a>.</p>
@@ -5446,7 +5457,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -5479,7 +5490,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
@@ -5516,7 +5527,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -5548,7 +5559,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
@@ -5585,7 +5596,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -5618,7 +5629,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
@@ -5657,7 +5668,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
      * false.
      * </p>
      * <p>
@@ -5689,7 +5700,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
@@ -5726,11 +5737,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance; otherwise false.
+     *        True to enable Performance Insights for the DB instance, and otherwise false.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -5739,10 +5750,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance; otherwise false.
+     * @return True to enable Performance Insights for the DB instance, and otherwise false.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -5751,11 +5762,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance; otherwise false.
+     *        True to enable Performance Insights for the DB instance, and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5766,10 +5777,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance; otherwise false.
+     * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance; otherwise false.
+     * @return True to enable Performance Insights for the DB instance, and otherwise false.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -5778,13 +5789,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -5793,12 +5804,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
-     * @return The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -5807,13 +5818,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name
-     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
+     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
+     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

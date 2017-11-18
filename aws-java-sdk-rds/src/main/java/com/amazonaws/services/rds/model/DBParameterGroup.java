@@ -17,11 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the <a>CreateDBParameterGroup</a> action.
+ * Contains the details of an Amazon RDS DB parameter group.
  * </p>
  * <p>
- * This data type is used as a request parameter in the <a>DeleteDBParameterGroup</a> action, and as a response element
- * in the <a>DescribeDBParameterGroups</a> action.
+ * This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBParameterGroup" target="_top">AWS API

@@ -20,7 +20,7 @@ package com.amazonaws.services.s3.model.inventory;
 public enum InventoryFormat {
 
     CSV("CSV"),
-
+    ORC("ORC")
     ;
 
     private final String format;

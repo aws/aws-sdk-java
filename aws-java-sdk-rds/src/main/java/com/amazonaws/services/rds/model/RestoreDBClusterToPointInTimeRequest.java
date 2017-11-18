@@ -69,7 +69,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.
      * </p>
      * <p>
@@ -184,7 +184,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -220,8 +220,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String kmsKeyId;
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -403,7 +403,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.
      * </p>
      * <p>
@@ -426,7 +426,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        </ul>
      *        <p>
-     *        Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster
+     *        Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
      *        is earlier than 1.11.
      *        </p>
      *        <p>
@@ -455,7 +455,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.
      * </p>
      * <p>
@@ -477,7 +477,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         </ul>
      *         <p>
-     *         Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster
+     *         Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
      *         is earlier than 1.11.
      *         </p>
      *         <p>
@@ -506,7 +506,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster is
+     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
      * earlier than 1.11.
      * </p>
      * <p>
@@ -529,7 +529,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        </ul>
      *        <p>
-     *        Constraints: You cannot specify <code>copy-on-write</code> if the engine version of the source DB cluster
+     *        Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
      *        is earlier than 1.11.
      *        </p>
      *        <p>
@@ -1283,7 +1283,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -1317,7 +1317,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
      *        a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -1355,7 +1355,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -1388,7 +1388,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * rejected.
      * </p>
      * 
-     * @return The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     * @return The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     *         cluster.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
      *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -1426,7 +1427,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
@@ -1460,7 +1461,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param kmsKeyId
-     *        The KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
      *        a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
@@ -1500,16 +1501,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      */
@@ -1520,15 +1521,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */
@@ -1539,16 +1540,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts, and otherwise false.</p>
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1561,15 +1562,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts, and otherwise false.
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
+     * false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts, and otherwise false.</p>
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
      */

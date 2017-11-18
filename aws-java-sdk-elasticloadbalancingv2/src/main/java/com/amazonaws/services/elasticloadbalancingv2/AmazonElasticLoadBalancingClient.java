@@ -908,6 +908,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         The specified load balancer does not exist.
      * @throws OperationNotPermittedException
      *         This operation is not allowed.
+     * @throws ResourceInUseException
+     *         A specified resource is in use.
      * @sample AmazonElasticLoadBalancing.DeleteLoadBalancer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer"
      *      target="_top">AWS API Documentation</a>

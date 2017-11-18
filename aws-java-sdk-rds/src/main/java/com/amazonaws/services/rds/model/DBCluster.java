@@ -17,40 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details of an Amazon RDS DB cluster.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateDBCluster</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteDBCluster</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>FailoverDBCluster</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ModifyDBCluster</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RestoreDBClusterFromSnapshot</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RestoreDBClusterToPointInTime</a>
- * </p>
- * </li>
- * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBClusters</a> action.
  * </p>
@@ -244,14 +212,14 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB cluster is accessed.
+     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB cluster is accessed.
      * </p>
      */
     private String dbClusterResourceId;
@@ -271,8 +239,8 @@ public class DBCluster implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -1684,11 +1652,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1697,10 +1665,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      */
 
     public String getKmsKeyId() {
@@ -1709,11 +1677,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1724,13 +1692,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB cluster is accessed.
+     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     *        entries whenever the KMS key for the DB cluster is accessed.
+     *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
+     *        log entries whenever the AWS KMS key for the DB cluster is accessed.
      */
 
     public void setDbClusterResourceId(String dbClusterResourceId) {
@@ -1739,12 +1707,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB cluster is accessed.
+     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB cluster is accessed.
      * </p>
      * 
-     * @return The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *         log entries whenever the KMS key for the DB cluster is accessed.
+     * @return The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS
+     *         CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
      */
 
     public String getDbClusterResourceId() {
@@ -1753,13 +1721,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the KMS key for the DB cluster is accessed.
+     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
+     * entries whenever the AWS KMS key for the DB cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     *        entries whenever the KMS key for the DB cluster is accessed.
+     *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
+     *        log entries whenever the AWS KMS key for the DB cluster is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1899,12 +1867,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.
      */
 
@@ -1914,11 +1882,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.
      */
 
@@ -1928,12 +1896,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *        otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1945,11 +1913,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
-     * false.
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
      *         otherwise false.
      */
 

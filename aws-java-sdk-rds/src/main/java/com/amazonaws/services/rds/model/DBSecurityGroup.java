@@ -17,30 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following actions:
+ * Contains the details for an Amazon RDS DB security group.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a>DescribeDBSecurityGroups</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>AuthorizeDBSecurityGroupIngress</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>CreateDBSecurityGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RevokeDBSecurityGroupIngress</a>
- * </p>
- * </li>
- * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBSecurityGroups</a> action.
  * </p>
