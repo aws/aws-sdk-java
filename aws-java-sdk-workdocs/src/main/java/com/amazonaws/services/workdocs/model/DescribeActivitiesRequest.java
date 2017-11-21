@@ -27,21 +27,21 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      */
     private String authenticationToken;
     /**
      * <p>
-     * The timestamp that determines the starting time of the activities; the response includes the activities performed
+     * The timestamp that determines the starting time of the activities. The response includes the activities performed
      * after the specified timestamp.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The timestamp that determines the end time of the activities; the response includes the activities performed
+     * The timestamp that determines the end time of the activities. The response includes the activities performed
      * before the specified timestamp.
      * </p>
      */
@@ -67,20 +67,20 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer limit;
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results.
      * </p>
      */
     private String marker;
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *        as in accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *        accessing the API using AWS credentials.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -89,12 +89,12 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
-     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *         as in accessing the API using AWS credentials.
+     * @return Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *         accessing the API using AWS credentials.
      */
 
     public String getAuthenticationToken() {
@@ -103,13 +103,13 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *        as in accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *        accessing the API using AWS credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,12 +120,12 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The timestamp that determines the starting time of the activities; the response includes the activities performed
+     * The timestamp that determines the starting time of the activities. The response includes the activities performed
      * after the specified timestamp.
      * </p>
      * 
      * @param startTime
-     *        The timestamp that determines the starting time of the activities; the response includes the activities
+     *        The timestamp that determines the starting time of the activities. The response includes the activities
      *        performed after the specified timestamp.
      */
 
@@ -135,11 +135,11 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The timestamp that determines the starting time of the activities; the response includes the activities performed
+     * The timestamp that determines the starting time of the activities. The response includes the activities performed
      * after the specified timestamp.
      * </p>
      * 
-     * @return The timestamp that determines the starting time of the activities; the response includes the activities
+     * @return The timestamp that determines the starting time of the activities. The response includes the activities
      *         performed after the specified timestamp.
      */
 
@@ -149,12 +149,12 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The timestamp that determines the starting time of the activities; the response includes the activities performed
+     * The timestamp that determines the starting time of the activities. The response includes the activities performed
      * after the specified timestamp.
      * </p>
      * 
      * @param startTime
-     *        The timestamp that determines the starting time of the activities; the response includes the activities
+     *        The timestamp that determines the starting time of the activities. The response includes the activities
      *        performed after the specified timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -166,12 +166,12 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The timestamp that determines the end time of the activities; the response includes the activities performed
+     * The timestamp that determines the end time of the activities. The response includes the activities performed
      * before the specified timestamp.
      * </p>
      * 
      * @param endTime
-     *        The timestamp that determines the end time of the activities; the response includes the activities
+     *        The timestamp that determines the end time of the activities. The response includes the activities
      *        performed before the specified timestamp.
      */
 
@@ -181,11 +181,11 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The timestamp that determines the end time of the activities; the response includes the activities performed
+     * The timestamp that determines the end time of the activities. The response includes the activities performed
      * before the specified timestamp.
      * </p>
      * 
-     * @return The timestamp that determines the end time of the activities; the response includes the activities
+     * @return The timestamp that determines the end time of the activities. The response includes the activities
      *         performed before the specified timestamp.
      */
 
@@ -195,12 +195,12 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The timestamp that determines the end time of the activities; the response includes the activities performed
+     * The timestamp that determines the end time of the activities. The response includes the activities performed
      * before the specified timestamp.
      * </p>
      * 
      * @param endTime
-     *        The timestamp that determines the end time of the activities; the response includes the activities
+     *        The timestamp that determines the end time of the activities. The response includes the activities
      *        performed before the specified timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -338,11 +338,11 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results.
      * </p>
      * 
      * @param marker
-     *        The marker for the next set of results. (You received this marker from a previous call.)
+     *        The marker for the next set of results.
      */
 
     public void setMarker(String marker) {
@@ -351,10 +351,10 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results.
      * </p>
      * 
-     * @return The marker for the next set of results. (You received this marker from a previous call.)
+     * @return The marker for the next set of results.
      */
 
     public String getMarker() {
@@ -363,11 +363,11 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results.
      * </p>
      * 
      * @param marker
-     *        The marker for the next set of results. (You received this marker from a previous call.)
+     *        The marker for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

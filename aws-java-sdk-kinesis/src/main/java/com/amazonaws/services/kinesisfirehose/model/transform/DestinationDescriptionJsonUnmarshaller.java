@@ -70,6 +70,10 @@ public class DestinationDescriptionJsonUnmarshaller implements Unmarshaller<Dest
                     destinationDescription.setElasticsearchDestinationDescription(ElasticsearchDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("SplunkDestinationDescription", targetDepth)) {
+                    context.nextToken();
+                    destinationDescription.setSplunkDestinationDescription(SplunkDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

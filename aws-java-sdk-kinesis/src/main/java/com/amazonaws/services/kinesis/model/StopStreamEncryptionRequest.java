@@ -33,26 +33,43 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
     private String streamName;
     /**
      * <p>
-     * The encryption type. This parameter can be one of the following values:
+     * The encryption type. The only valid value is <code>KMS</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String encryptionType;
     /**
      * <p>
-     * The GUID for the customer-managed key that was used for encryption.
+     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
+     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
+     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String keyId;
 
@@ -98,35 +115,11 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The encryption type. This parameter can be one of the following values:
+     * The encryption type. The only valid value is <code>KMS</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param encryptionType
-     *        The encryption type. This parameter can be one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *        key.
-     *        </p>
-     *        </li>
+     *        The encryption type. The only valid value is <code>KMS</code>.
      * @see EncryptionType
      */
 
@@ -136,35 +129,10 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The encryption type. This parameter can be one of the following values:
+     * The encryption type. The only valid value is <code>KMS</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The encryption type. This parameter can be one of the following values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be
-     *         thrown.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *         key.
-     *         </p>
-     *         </li>
+     * @return The encryption type. The only valid value is <code>KMS</code>.
      * @see EncryptionType
      */
 
@@ -174,35 +142,11 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The encryption type. This parameter can be one of the following values:
+     * The encryption type. The only valid value is <code>KMS</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param encryptionType
-     *        The encryption type. This parameter can be one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *        key.
-     *        </p>
-     *        </li>
+     *        The encryption type. The only valid value is <code>KMS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType
      */
@@ -214,35 +158,11 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The encryption type. This parameter can be one of the following values:
+     * The encryption type. The only valid value is <code>KMS</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param encryptionType
-     *        The encryption type. This parameter can be one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *        key.
-     *        </p>
-     *        </li>
+     *        The encryption type. The only valid value is <code>KMS</code>.
      * @see EncryptionType
      */
 
@@ -252,35 +172,11 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The encryption type. This parameter can be one of the following values:
+     * The encryption type. The only valid value is <code>KMS</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param encryptionType
-     *        The encryption type. This parameter can be one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *        key.
-     *        </p>
-     *        </li>
+     *        The encryption type. The only valid value is <code>KMS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType
      */
@@ -292,11 +188,68 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The GUID for the customer-managed key that was used for encryption.
+     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
+     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
+     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyId
-     *        The GUID for the customer-managed key that was used for encryption.
+     *        The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
+     *        identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
+     *        can also use a master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name example: <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     *        </p>
+     *        </li>
      */
 
     public void setKeyId(String keyId) {
@@ -305,10 +258,67 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The GUID for the customer-managed key that was used for encryption.
+     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
+     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
+     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The GUID for the customer-managed key that was used for encryption.
+     * @return The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
+     *         identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
+     *         can also use a master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias name example: <code>alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     *         </p>
+     *         </li>
      */
 
     public String getKeyId() {
@@ -317,11 +327,68 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The GUID for the customer-managed key that was used for encryption.
+     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
+     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
+     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias name example: <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyId
-     *        The GUID for the customer-managed key that was used for encryption.
+     *        The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
+     *        identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
+     *        can also use a master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias name example: <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

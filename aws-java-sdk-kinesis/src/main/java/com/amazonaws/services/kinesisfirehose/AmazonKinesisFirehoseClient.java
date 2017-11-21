@@ -86,9 +86,6 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.kinesisfirehose.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStreamTypeException").withModeledClass(
-                                    com.amazonaws.services.kinesisfirehose.model.InvalidStreamTypeException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
                                     com.amazonaws.services.kinesisfirehose.model.ServiceUnavailableException.class))
                     .addErrorMetadata(
@@ -503,55 +500,6 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDeliveryStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeDeliveryStreamResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * @param getKinesisStreamRequest
-     * @return Result of the GetKinesisStream operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
-     * @throws InvalidArgumentException
-     *         The specified input parameter has a value that is not valid.
-     * @throws InvalidStreamTypeException
-     * @sample AmazonKinesisFirehose.GetKinesisStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public GetKinesisStreamResult getKinesisStream(GetKinesisStreamRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetKinesisStream(request);
-    }
-
-    @SdkInternalApi
-    final GetKinesisStreamResult executeGetKinesisStream(GetKinesisStreamRequest getKinesisStreamRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getKinesisStreamRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetKinesisStreamRequest> request = null;
-        Response<GetKinesisStreamResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetKinesisStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKinesisStreamRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetKinesisStreamResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetKinesisStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

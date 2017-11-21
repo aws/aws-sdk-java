@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The unit of data of the Amazon Kinesis stream, which is composed of a sequence number, a partition key, and a data
- * blob.
+ * The unit of data of the Kinesis stream, which is composed of a sequence number, a partition key, and a data blob.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Record" target="_top">AWS API
@@ -43,10 +42,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date approximateArrivalTimestamp;
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      */
     private java.nio.ByteBuffer data;
@@ -157,10 +155,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -174,8 +171,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param data
-     *        The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does
-     *        not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
+     *        The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not
+     *        inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
      *        base64-encoding) is added to the partition key size, the total size must not exceed the maximum record
      *        size (1 MB).
      */
@@ -186,10 +183,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -199,10 +195,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which
-     *         does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload
-     *         before base64-encoding) is added to the partition key size, the total size must not exceed the maximum
-     *         record size (1 MB).
+     * @return The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not
+     *         inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
+     *         base64-encoding) is added to the partition key size, the total size must not exceed the maximum record
+     *         size (1 MB).
      */
 
     public java.nio.ByteBuffer getData() {
@@ -211,10 +207,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not
-     * inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
-     * base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1
-     * MB).
+     * The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not inspect,
+     * interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is
+     * added to the partition key size, the total size must not exceed the maximum record size (1 MB).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -228,8 +223,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param data
-     *        The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does
-     *        not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
+     *        The data blob. The data in the blob is both opaque and immutable to Kinesis Streams, which does not
+     *        inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before
      *        base64-encoding) is added to the partition key size, the total size must not exceed the maximum record
      *        size (1 MB).
      * @return Returns a reference to this object so that method calls can be chained together.

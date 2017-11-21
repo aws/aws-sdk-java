@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum ProcessorParameterName {
 
     LambdaArn("LambdaArn"),
-    NumberOfRetries("NumberOfRetries");
+    NumberOfRetries("NumberOfRetries"),
+    RoleArn("RoleArn"),
+    BufferSizeInMBs("BufferSizeInMBs"),
+    BufferIntervalInSeconds("BufferIntervalInSeconds");
 
     private String value;
 

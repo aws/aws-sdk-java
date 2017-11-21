@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A uniquely identified group of data records in an Amazon Kinesis stream.
+ * A uniquely identified group of data records in a Kinesis stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Shard" target="_top">AWS API

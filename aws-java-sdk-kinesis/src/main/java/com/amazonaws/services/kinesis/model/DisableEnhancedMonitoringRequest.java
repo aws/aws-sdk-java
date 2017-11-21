@@ -30,7 +30,7 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis stream for which to disable enhanced monitoring.
      * </p>
      */
     private String streamName;
@@ -93,11 +93,11 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis stream for which to disable enhanced monitoring.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     *        The name of the Kinesis stream for which to disable enhanced monitoring.
      */
 
     public void setStreamName(String streamName) {
@@ -106,10 +106,10 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis stream for which to disable enhanced monitoring.
      * </p>
      * 
-     * @return The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     * @return The name of the Kinesis stream for which to disable enhanced monitoring.
      */
 
     public String getStreamName() {
@@ -118,11 +118,11 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis stream for which to disable enhanced monitoring.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream for which to disable enhanced monitoring.
+     *        The name of the Kinesis stream for which to disable enhanced monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

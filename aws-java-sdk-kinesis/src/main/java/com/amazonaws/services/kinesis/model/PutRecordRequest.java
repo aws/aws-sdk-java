@@ -63,8 +63,8 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      */
     private String sequenceNumberForOrdering;
@@ -305,15 +305,15 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      * 
      * @param sequenceNumberForOrdering
      *        Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition
      *        key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of
      *        record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not
-     *        set, records will be coarsely ordered based on arrival time.
+     *        set, records are coarsely ordered based on arrival time.
      */
 
     public void setSequenceNumberForOrdering(String sequenceNumberForOrdering) {
@@ -324,14 +324,14 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      * 
      * @return Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition
      *         key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of
      *         record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not
-     *         set, records will be coarsely ordered based on arrival time.
+     *         set, records are coarsely ordered based on arrival time.
      */
 
     public String getSequenceNumberForOrdering() {
@@ -342,15 +342,15 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key.
      * Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record
-     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will
-     * be coarsely ordered based on arrival time.
+     * <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records are
+     * coarsely ordered based on arrival time.
      * </p>
      * 
      * @param sequenceNumberForOrdering
      *        Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition
      *        key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of
      *        record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not
-     *        set, records will be coarsely ordered based on arrival time.
+     *        set, records are coarsely ordered based on arrival time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

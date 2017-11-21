@@ -35,15 +35,15 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>
-     * , the shard has been closed and the requested iterator will not return any more data.
+     * , the shard has been closed and the requested iterator does not return any more data.
      * </p>
      */
     private String nextShardIterator;
     /**
      * <p>
      * The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far
-     * behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no
-     * new records to process at this moment.
+     * behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are
+     * no new records to process at this moment.
      * </p>
      */
     private Long millisBehindLatest;
@@ -124,12 +124,12 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>
-     * , the shard has been closed and the requested iterator will not return any more data.
+     * , the shard has been closed and the requested iterator does not return any more data.
      * </p>
      * 
      * @param nextShardIterator
      *        The next position in the shard from which to start sequentially reading data records. If set to
-     *        <code>null</code>, the shard has been closed and the requested iterator will not return any more data.
+     *        <code>null</code>, the shard has been closed and the requested iterator does not return any more data.
      */
 
     public void setNextShardIterator(String nextShardIterator) {
@@ -139,11 +139,11 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>
-     * , the shard has been closed and the requested iterator will not return any more data.
+     * , the shard has been closed and the requested iterator does not return any more data.
      * </p>
      * 
      * @return The next position in the shard from which to start sequentially reading data records. If set to
-     *         <code>null</code>, the shard has been closed and the requested iterator will not return any more data.
+     *         <code>null</code>, the shard has been closed and the requested iterator does not return any more data.
      */
 
     public String getNextShardIterator() {
@@ -153,12 +153,12 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>
-     * , the shard has been closed and the requested iterator will not return any more data.
+     * , the shard has been closed and the requested iterator does not return any more data.
      * </p>
      * 
      * @param nextShardIterator
      *        The next position in the shard from which to start sequentially reading data records. If set to
-     *        <code>null</code>, the shard has been closed and the requested iterator will not return any more data.
+     *        <code>null</code>, the shard has been closed and the requested iterator does not return any more data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,14 +170,14 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far
-     * behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no
-     * new records to process at this moment.
+     * behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are
+     * no new records to process at this moment.
      * </p>
      * 
      * @param millisBehindLatest
      *        The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how
-     *        far behind current time the consumer is. A value of zero indicates record processing is caught up, and
-     *        there are no new records to process at this moment.
+     *        far behind current time the consumer is. A value of zero indicates that record processing is caught up,
+     *        and there are no new records to process at this moment.
      */
 
     public void setMillisBehindLatest(Long millisBehindLatest) {
@@ -187,13 +187,13 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far
-     * behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no
-     * new records to process at this moment.
+     * behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are
+     * no new records to process at this moment.
      * </p>
      * 
      * @return The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how
-     *         far behind current time the consumer is. A value of zero indicates record processing is caught up, and
-     *         there are no new records to process at this moment.
+     *         far behind current time the consumer is. A value of zero indicates that record processing is caught up,
+     *         and there are no new records to process at this moment.
      */
 
     public Long getMillisBehindLatest() {
@@ -203,14 +203,14 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     /**
      * <p>
      * The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far
-     * behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no
-     * new records to process at this moment.
+     * behind current time the consumer is. A value of zero indicates that record processing is caught up, and there are
+     * no new records to process at this moment.
      * </p>
      * 
      * @param millisBehindLatest
      *        The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how
-     *        far behind current time the consumer is. A value of zero indicates record processing is caught up, and
-     *        there are no new records to process at this moment.
+     *        far behind current time the consumer is. A value of zero indicates that record processing is caught up,
+     *        and there are no new records to process at this moment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

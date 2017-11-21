@@ -42,7 +42,7 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * The original name of the resource prior to a rename operation.
+     * The original name of the resource before a rename operation.
      * </p>
      */
     private String originalName;
@@ -186,11 +186,11 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The original name of the resource prior to a rename operation.
+     * The original name of the resource before a rename operation.
      * </p>
      * 
      * @param originalName
-     *        The original name of the resource prior to a rename operation.
+     *        The original name of the resource before a rename operation.
      */
 
     public void setOriginalName(String originalName) {
@@ -199,10 +199,10 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The original name of the resource prior to a rename operation.
+     * The original name of the resource before a rename operation.
      * </p>
      * 
-     * @return The original name of the resource prior to a rename operation.
+     * @return The original name of the resource before a rename operation.
      */
 
     public String getOriginalName() {
@@ -211,11 +211,11 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The original name of the resource prior to a rename operation.
+     * The original name of the resource before a rename operation.
      * </p>
      * 
      * @param originalName
-     *        The original name of the resource prior to a rename operation.
+     *        The original name of the resource before a rename operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

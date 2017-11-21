@@ -224,20 +224,6 @@ public interface AmazonKinesisFirehose {
     DescribeDeliveryStreamResult describeDeliveryStream(DescribeDeliveryStreamRequest describeDeliveryStreamRequest);
 
     /**
-     * @param getKinesisStreamRequest
-     * @return Result of the GetKinesisStream operation returned by the service.
-     * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
-     * @throws InvalidArgumentException
-     *         The specified input parameter has a value that is not valid.
-     * @throws InvalidStreamTypeException
-     * @sample AmazonKinesisFirehose.GetKinesisStream
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/GetKinesisStream" target="_top">AWS API
-     *      Documentation</a>
-     */
-    GetKinesisStreamResult getKinesisStream(GetKinesisStreamRequest getKinesisStreamRequest);
-
-    /**
      * <p>
      * Lists your delivery streams.
      * </p>

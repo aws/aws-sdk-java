@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The pagination marker and/or limit fields are not valid.
+ * The pagination marker or limit fields are not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

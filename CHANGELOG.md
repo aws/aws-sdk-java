@@ -1,3 +1,28 @@
+# __1.11.233__ __2017-11-21__
+## __AWS CodeCommit__
+  - ### Features
+    - AWS CodeCommit now supports pull requests. You can use pull requests to collaboratively review code changes for minor changes or fixes, major feature additions, or new versions of your released software.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - The AWS Cost Explorer API gives customers programmatic access to AWS cost and usage information, allowing them to perform adhoc queries and build interactive cost management applications that leverage this dataset.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Documentation updates for Apigateway
+
+## __Amazon Kinesis__
+  - ### Features
+    - Customers can now obtain the important characteristics of their stream with DescribeStreamSummary. The response will not include the shard list for the stream but will have the number of open shards, and all the other fields included in the DescribeStream response.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - This release includes a new Kinesis Firehose feature that supports Splunk as Kinesis Firehose delivery destination. You can now use Kinesis Firehose to ingest real-time data to Splunk in a serverless, reliable, and salable manner. This release also includes a new feature that allows you to configure Lambda buffer size in Kinesis Firehose data transformation feature. You can now customize the data buffer size before invoking Lambda function in Kinesis Firehose for data transformation. This feature allows you to flexibly trade-off processing and delivery latency with cost and efficiency based on your specific use cases and requirements. 
+
+## __Amazon WorkDocs__
+  - ### Features
+    - DescribeGroups API and miscellaneous enhancements
+
 # __1.11.232__ __2017-11-17__
 ## __AWS Database Migration Service__
   - ### Features

@@ -30,7 +30,7 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      */
     private Long storageUtilizedInBytes;
@@ -43,11 +43,11 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      * 
      * @param storageUtilizedInBytes
-     *        The amount of storage utilized, in bytes.
+     *        The amount of storage used, in bytes.
      */
 
     public void setStorageUtilizedInBytes(Long storageUtilizedInBytes) {
@@ -56,10 +56,10 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      * 
-     * @return The amount of storage utilized, in bytes.
+     * @return The amount of storage used, in bytes.
      */
 
     public Long getStorageUtilizedInBytes() {
@@ -68,11 +68,11 @@ public class UserStorageMetadata implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The amount of storage utilized, in bytes.
+     * The amount of storage used, in bytes.
      * </p>
      * 
      * @param storageUtilizedInBytes
-     *        The amount of storage utilized, in bytes.
+     *        The amount of storage used, in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

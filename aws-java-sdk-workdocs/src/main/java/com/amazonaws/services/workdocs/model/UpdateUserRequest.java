@@ -27,7 +27,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      */
@@ -74,16 +74,22 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String locale;
+    /**
+     * <p>
+     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * </p>
+     */
+    private String grantPoweruserPrivileges;
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *        as in accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *        accessing the API using AWS credentials.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -92,12 +98,12 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
-     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *         as in accessing the API using AWS credentials.
+     * @return Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *         accessing the API using AWS credentials.
      */
 
     public String getAuthenticationToken() {
@@ -106,13 +112,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *        as in accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *        accessing the API using AWS credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,6 +474,79 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * </p>
+     * 
+     * @param grantPoweruserPrivileges
+     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     * @see BooleanEnumType
+     */
+
+    public void setGrantPoweruserPrivileges(String grantPoweruserPrivileges) {
+        this.grantPoweruserPrivileges = grantPoweruserPrivileges;
+    }
+
+    /**
+     * <p>
+     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * </p>
+     * 
+     * @return Boolean value to determine whether the user is granted Poweruser privileges.
+     * @see BooleanEnumType
+     */
+
+    public String getGrantPoweruserPrivileges() {
+        return this.grantPoweruserPrivileges;
+    }
+
+    /**
+     * <p>
+     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * </p>
+     * 
+     * @param grantPoweruserPrivileges
+     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BooleanEnumType
+     */
+
+    public UpdateUserRequest withGrantPoweruserPrivileges(String grantPoweruserPrivileges) {
+        setGrantPoweruserPrivileges(grantPoweruserPrivileges);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * </p>
+     * 
+     * @param grantPoweruserPrivileges
+     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     * @see BooleanEnumType
+     */
+
+    public void setGrantPoweruserPrivileges(BooleanEnumType grantPoweruserPrivileges) {
+        withGrantPoweruserPrivileges(grantPoweruserPrivileges);
+    }
+
+    /**
+     * <p>
+     * Boolean value to determine whether the user is granted Poweruser privileges.
+     * </p>
+     * 
+     * @param grantPoweruserPrivileges
+     *        Boolean value to determine whether the user is granted Poweruser privileges.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BooleanEnumType
+     */
+
+    public UpdateUserRequest withGrantPoweruserPrivileges(BooleanEnumType grantPoweruserPrivileges) {
+        this.grantPoweruserPrivileges = grantPoweruserPrivileges.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -493,7 +572,9 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getTimeZoneId() != null)
             sb.append("TimeZoneId: ").append(getTimeZoneId()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: ").append(getLocale());
+            sb.append("Locale: ").append(getLocale()).append(",");
+        if (getGrantPoweruserPrivileges() != null)
+            sb.append("GrantPoweruserPrivileges: ").append(getGrantPoweruserPrivileges());
         sb.append("}");
         return sb.toString();
     }
@@ -540,6 +621,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getLocale() != null && other.getLocale().equals(this.getLocale()) == false)
             return false;
+        if (other.getGrantPoweruserPrivileges() == null ^ this.getGrantPoweruserPrivileges() == null)
+            return false;
+        if (other.getGrantPoweruserPrivileges() != null && other.getGrantPoweruserPrivileges().equals(this.getGrantPoweruserPrivileges()) == false)
+            return false;
         return true;
     }
 
@@ -556,6 +641,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getStorageRule() == null) ? 0 : getStorageRule().hashCode());
         hashCode = prime * hashCode + ((getTimeZoneId() == null) ? 0 : getTimeZoneId().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
+        hashCode = prime * hashCode + ((getGrantPoweruserPrivileges() == null) ? 0 : getGrantPoweruserPrivileges().hashCode());
         return hashCode;
     }
 

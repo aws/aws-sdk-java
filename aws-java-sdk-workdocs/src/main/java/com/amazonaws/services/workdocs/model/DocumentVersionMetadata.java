@@ -66,25 +66,25 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
     private String status;
     /**
      * <p>
-     * The time stamp when the document was first uploaded.
+     * The timestamp when the document was first uploaded.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The time stamp when the document was last uploaded.
+     * The timestamp when the document was last uploaded.
      * </p>
      */
     private java.util.Date modifiedTimestamp;
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      */
     private java.util.Date contentCreatedTimestamp;
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      */
     private java.util.Date contentModifiedTimestamp;
@@ -382,11 +382,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the document was first uploaded.
+     * The timestamp when the document was first uploaded.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time stamp when the document was first uploaded.
+     *        The timestamp when the document was first uploaded.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -395,10 +395,10 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the document was first uploaded.
+     * The timestamp when the document was first uploaded.
      * </p>
      * 
-     * @return The time stamp when the document was first uploaded.
+     * @return The timestamp when the document was first uploaded.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -407,11 +407,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the document was first uploaded.
+     * The timestamp when the document was first uploaded.
      * </p>
      * 
      * @param createdTimestamp
-     *        The time stamp when the document was first uploaded.
+     *        The timestamp when the document was first uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +422,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the document was last uploaded.
+     * The timestamp when the document was last uploaded.
      * </p>
      * 
      * @param modifiedTimestamp
-     *        The time stamp when the document was last uploaded.
+     *        The timestamp when the document was last uploaded.
      */
 
     public void setModifiedTimestamp(java.util.Date modifiedTimestamp) {
@@ -435,10 +435,10 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the document was last uploaded.
+     * The timestamp when the document was last uploaded.
      * </p>
      * 
-     * @return The time stamp when the document was last uploaded.
+     * @return The timestamp when the document was last uploaded.
      */
 
     public java.util.Date getModifiedTimestamp() {
@@ -447,11 +447,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the document was last uploaded.
+     * The timestamp when the document was last uploaded.
      * </p>
      * 
      * @param modifiedTimestamp
-     *        The time stamp when the document was last uploaded.
+     *        The timestamp when the document was last uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,11 +462,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      * 
      * @param contentCreatedTimestamp
-     *        The time stamp when the content of the document was originally created.
+     *        The timestamp when the content of the document was originally created.
      */
 
     public void setContentCreatedTimestamp(java.util.Date contentCreatedTimestamp) {
@@ -475,10 +475,10 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      * 
-     * @return The time stamp when the content of the document was originally created.
+     * @return The timestamp when the content of the document was originally created.
      */
 
     public java.util.Date getContentCreatedTimestamp() {
@@ -487,11 +487,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      * 
      * @param contentCreatedTimestamp
-     *        The time stamp when the content of the document was originally created.
+     *        The timestamp when the content of the document was originally created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,11 +502,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      * 
      * @param contentModifiedTimestamp
-     *        The time stamp when the content of the document was modified.
+     *        The timestamp when the content of the document was modified.
      */
 
     public void setContentModifiedTimestamp(java.util.Date contentModifiedTimestamp) {
@@ -515,10 +515,10 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      * 
-     * @return The time stamp when the content of the document was modified.
+     * @return The timestamp when the content of the document was modified.
      */
 
     public java.util.Date getContentModifiedTimestamp() {
@@ -527,11 +527,11 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      * 
      * @param contentModifiedTimestamp
-     *        The time stamp when the content of the document was modified.
+     *        The timestamp when the content of the document was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

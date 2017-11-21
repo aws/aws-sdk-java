@@ -560,6 +560,39 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStreamSummaryResult> describeStreamSummaryAsync(DescribeStreamSummaryRequest request) {
+
+        return describeStreamSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamSummaryResult> describeStreamSummaryAsync(final DescribeStreamSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStreamSummaryRequest, DescribeStreamSummaryResult> asyncHandler) {
+        final DescribeStreamSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStreamSummaryResult>() {
+            @Override
+            public DescribeStreamSummaryResult call() throws Exception {
+                DescribeStreamSummaryResult result = null;
+
+                try {
+                    result = executeDescribeStreamSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableEnhancedMonitoringResult> disableEnhancedMonitoringAsync(DisableEnhancedMonitoringRequest request) {
 
         return disableEnhancedMonitoringAsync(request, null);

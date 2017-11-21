@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified branch name is not valid.
+ * The specified reference name is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

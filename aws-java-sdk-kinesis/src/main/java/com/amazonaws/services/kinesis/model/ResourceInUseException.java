@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource is not available for this operation. For successful operation, the resource needs to be in the
+ * The resource is not available for this operation. For successful operation, the resource must be in the
  * <code>ACTIVE</code> state.
  * </p>
  */

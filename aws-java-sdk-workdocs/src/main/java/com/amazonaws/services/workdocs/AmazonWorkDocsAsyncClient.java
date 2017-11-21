@@ -32,29 +32,29 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * File Migration: File migration applications are supported for users who want to migrate their files from an
- * on-premise or off-premise file system or service. Users can insert files into a user directory structure, as well as
- * allow for basic metadata changes, such as modifications to the permissions of files.
+ * on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well
+ * as allow for basic metadata changes, such as modifications to the permissions of files.
  * </p>
  * </li>
  * <li>
  * <p>
- * Security: Support security applications are supported for users who have additional security needs, such as
- * anti-virus or data loss prevention. The APIs, in conjunction with Amazon CloudTrail, allow these applications to
- * detect when changes occur in Amazon WorkDocs, so the application can take the necessary actions and replace the
- * target file. The application can also choose to email the user if the target file violates the policy.
+ * Security: Support security applications are supported for users who have additional security needs, such as antivirus
+ * or data loss prevention. The API actions, along with AWS CloudTrail, allow these applications to detect when changes
+ * occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the
+ * target file violates the policy, the application can also choose to email the user.
  * </p>
  * </li>
  * <li>
  * <p>
  * eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These
- * applications can choose to mimic and/or record the actions in an Amazon WorkDocs site, in conjunction with Amazon
- * CloudTrails, to replicate data for eDiscovery, backup, or analytical applications.
+ * applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to
+ * replicate data for eDiscovery, backup, or analytical applications.
  * </p>
  * </li>
  * </ul>
  * <p>
- * All Amazon WorkDocs APIs are Amazon authenticated, certificate-signed APIs. They not only require the use of the AWS
- * SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
+ * All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the
+ * AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
  * policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full
  * administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is
  * not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to
@@ -807,6 +807,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeDescribeFolderContents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGroupsResult> describeGroupsAsync(DescribeGroupsRequest request) {
+
+        return describeGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGroupsResult> describeGroupsAsync(final DescribeGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGroupsRequest, DescribeGroupsResult> asyncHandler) {
+        final DescribeGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGroupsResult>() {
+            @Override
+            public DescribeGroupsResult call() throws Exception {
+                DescribeGroupsResult result = null;
+
+                try {
+                    result = executeDescribeGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

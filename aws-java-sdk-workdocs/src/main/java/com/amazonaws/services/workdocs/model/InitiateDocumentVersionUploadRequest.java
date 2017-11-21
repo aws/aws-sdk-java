@@ -27,7 +27,7 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      */
@@ -46,13 +46,13 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
     private String name;
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      */
     private java.util.Date contentCreatedTimestamp;
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      */
     private java.util.Date contentModifiedTimestamp;
@@ -77,13 +77,13 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *        as in accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *        accessing the API using AWS credentials.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -92,12 +92,12 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
-     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *         as in accessing the API using AWS credentials.
+     * @return Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *         accessing the API using AWS credentials.
      */
 
     public String getAuthenticationToken() {
@@ -106,13 +106,13 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
      * accessing the API using AWS credentials.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
-     *        as in accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
+     *        accessing the API using AWS credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +203,11 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      * 
      * @param contentCreatedTimestamp
-     *        The time stamp when the content of the document was originally created.
+     *        The timestamp when the content of the document was originally created.
      */
 
     public void setContentCreatedTimestamp(java.util.Date contentCreatedTimestamp) {
@@ -216,10 +216,10 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      * 
-     * @return The time stamp when the content of the document was originally created.
+     * @return The timestamp when the content of the document was originally created.
      */
 
     public java.util.Date getContentCreatedTimestamp() {
@@ -228,11 +228,11 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The time stamp when the content of the document was originally created.
+     * The timestamp when the content of the document was originally created.
      * </p>
      * 
      * @param contentCreatedTimestamp
-     *        The time stamp when the content of the document was originally created.
+     *        The timestamp when the content of the document was originally created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      * 
      * @param contentModifiedTimestamp
-     *        The time stamp when the content of the document was modified.
+     *        The timestamp when the content of the document was modified.
      */
 
     public void setContentModifiedTimestamp(java.util.Date contentModifiedTimestamp) {
@@ -256,10 +256,10 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      * 
-     * @return The time stamp when the content of the document was modified.
+     * @return The timestamp when the content of the document was modified.
      */
 
     public java.util.Date getContentModifiedTimestamp() {
@@ -268,11 +268,11 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The time stamp when the content of the document was modified.
+     * The timestamp when the content of the document was modified.
      * </p>
      * 
      * @param contentModifiedTimestamp
-     *        The time stamp when the content of the document was modified.
+     *        The timestamp when the content of the document was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

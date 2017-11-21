@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the users and/or user groups.
+ * Describes the users or user groups.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Participants" target="_top">AWS API

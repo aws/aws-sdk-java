@@ -40,9 +40,17 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private User contributor;
-
+    /**
+     * <p>
+     * The timestamp that the comment was created.
+     * </p>
+     */
     private java.util.Date createdTimestamp;
-
+    /**
+     * <p>
+     * The status of the comment.
+     * </p>
+     */
     private String commentStatus;
     /**
      * <p>
@@ -132,7 +140,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The timestamp that the comment was created.
+     * </p>
+     * 
      * @param createdTimestamp
+     *        The timestamp that the comment was created.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -140,7 +153,11 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The timestamp that the comment was created.
+     * </p>
+     * 
+     * @return The timestamp that the comment was created.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -148,7 +165,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The timestamp that the comment was created.
+     * </p>
+     * 
      * @param createdTimestamp
+     *        The timestamp that the comment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,7 +180,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The status of the comment.
+     * </p>
+     * 
      * @param commentStatus
+     *        The status of the comment.
      * @see CommentStatusType
      */
 
@@ -167,7 +194,11 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the comment.
+     * </p>
+     * 
+     * @return The status of the comment.
      * @see CommentStatusType
      */
 
@@ -176,7 +207,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The status of the comment.
+     * </p>
+     * 
      * @param commentStatus
+     *        The status of the comment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommentStatusType
      */
@@ -187,7 +223,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The status of the comment.
+     * </p>
+     * 
      * @param commentStatus
+     *        The status of the comment.
      * @see CommentStatusType
      */
 
@@ -196,7 +237,12 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The status of the comment.
+     * </p>
+     * 
      * @param commentStatus
+     *        The status of the comment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommentStatusType
      */

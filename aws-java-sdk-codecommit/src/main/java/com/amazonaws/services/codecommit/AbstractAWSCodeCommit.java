@@ -48,6 +48,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public CreatePullRequestResult createPullRequest(CreatePullRequestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,7 +63,17 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public DeleteCommentContentResult deleteCommentContent(DeleteCommentContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRepositoryResult deleteRepository(DeleteRepositoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePullRequestEventsResult describePullRequestEvents(DescribePullRequestEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,12 +88,37 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public GetCommentResult getComment(GetCommentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCommentsForComparedCommitResult getCommentsForComparedCommit(GetCommentsForComparedCommitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCommentsForPullRequestResult getCommentsForPullRequest(GetCommentsForPullRequestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCommitResult getCommit(GetCommitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetDifferencesResult getDifferences(GetDifferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMergeConflictsResult getMergeConflicts(GetMergeConflictsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPullRequestResult getPullRequest(GetPullRequestRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,7 +138,32 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public ListPullRequestsResult listPullRequests(ListPullRequestsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRepositoriesResult listRepositories(ListRepositoriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public MergePullRequestByFastForwardResult mergePullRequestByFastForward(MergePullRequestByFastForwardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PostCommentForComparedCommitResult postCommentForComparedCommit(PostCommentForComparedCommitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PostCommentForPullRequestResult postCommentForPullRequest(PostCommentForPullRequestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PostCommentReplyResult postCommentReply(PostCommentReplyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,7 +178,27 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public UpdateCommentResult updateComment(UpdateCommentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDefaultBranchResult updateDefaultBranch(UpdateDefaultBranchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePullRequestDescriptionResult updatePullRequestDescription(UpdatePullRequestDescriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePullRequestStatusResult updatePullRequestStatus(UpdatePullRequestStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePullRequestTitleResult updatePullRequestTitle(UpdatePullRequestTitleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

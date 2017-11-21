@@ -40,7 +40,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
     private String endpoint;
     /**
      * <p>
-     * The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * </p>
      */
     private String protocol;
@@ -139,11 +139,11 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     *        The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * @see SubscriptionProtocolType
      */
 
@@ -153,11 +153,10 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * </p>
      * 
-     * @return The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS
-     *         POST.
+     * @return The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * @see SubscriptionProtocolType
      */
 
@@ -167,11 +166,11 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     *        The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionProtocolType
      */
@@ -183,11 +182,11 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     *        The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * @see SubscriptionProtocolType
      */
 
@@ -197,11 +196,11 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     * The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * </p>
      * 
      * @param protocol
-     *        The protocol to use. The supported value is https, which delivers JSON-encoded messasges using HTTPS POST.
+     *        The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionProtocolType
      */

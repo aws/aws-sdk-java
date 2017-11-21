@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization
- * is failing, such as a connected active directory.
+ * is failing, such as a connected Active Directory.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

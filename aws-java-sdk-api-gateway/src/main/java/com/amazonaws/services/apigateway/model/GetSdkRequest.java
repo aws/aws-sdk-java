@@ -40,7 +40,7 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
-     * <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      */
     private String sdkType;
@@ -139,12 +139,13 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
-     * <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      * 
      * @param sdkType
      *        The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     *        <code>android</code>, <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     *        <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and
+     *        <code>ruby</code> are supported.
      */
 
     public void setSdkType(String sdkType) {
@@ -154,11 +155,12 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
-     * <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      * 
      * @return The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     *         <code>android</code>, <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     *         <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and
+     *         <code>ruby</code> are supported.
      */
 
     public String getSdkType() {
@@ -168,12 +170,13 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>,
-     * <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     * <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code> are supported.
      * </p>
      * 
      * @param sdkType
      *        The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-     *        <code>android</code>, <code>objectivec</code> and <code>swift</code> (for iOS) are supported.
+     *        <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and
+     *        <code>ruby</code> are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

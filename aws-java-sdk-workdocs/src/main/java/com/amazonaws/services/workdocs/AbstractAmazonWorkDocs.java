@@ -138,6 +138,11 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public DescribeGroupsResult describeGroups(DescribeGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeNotificationSubscriptionsResult describeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

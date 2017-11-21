@@ -314,6 +314,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGroupsResult> describeGroupsAsync(DescribeGroupsRequest request) {
+
+        return describeGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGroupsResult> describeGroupsAsync(DescribeGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeGroupsRequest, DescribeGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeNotificationSubscriptionsResult> describeNotificationSubscriptionsAsync(
             DescribeNotificationSubscriptionsRequest request) {
 

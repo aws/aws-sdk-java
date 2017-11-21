@@ -32,29 +32,29 @@ import com.amazonaws.services.workdocs.model.*;
  * <li>
  * <p>
  * File Migration: File migration applications are supported for users who want to migrate their files from an
- * on-premise or off-premise file system or service. Users can insert files into a user directory structure, as well as
- * allow for basic metadata changes, such as modifications to the permissions of files.
+ * on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well
+ * as allow for basic metadata changes, such as modifications to the permissions of files.
  * </p>
  * </li>
  * <li>
  * <p>
- * Security: Support security applications are supported for users who have additional security needs, such as
- * anti-virus or data loss prevention. The APIs, in conjunction with Amazon CloudTrail, allow these applications to
- * detect when changes occur in Amazon WorkDocs, so the application can take the necessary actions and replace the
- * target file. The application can also choose to email the user if the target file violates the policy.
+ * Security: Support security applications are supported for users who have additional security needs, such as antivirus
+ * or data loss prevention. The API actions, along with AWS CloudTrail, allow these applications to detect when changes
+ * occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the
+ * target file violates the policy, the application can also choose to email the user.
  * </p>
  * </li>
  * <li>
  * <p>
  * eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These
- * applications can choose to mimic and/or record the actions in an Amazon WorkDocs site, in conjunction with Amazon
- * CloudTrails, to replicate data for eDiscovery, backup, or analytical applications.
+ * applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to
+ * replicate data for eDiscovery, backup, or analytical applications.
  * </p>
  * </li>
  * </ul>
  * <p>
- * All Amazon WorkDocs APIs are Amazon authenticated, certificate-signed APIs. They not only require the use of the AWS
- * SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
+ * All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the
+ * AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
  * policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full
  * administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is
  * not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to
@@ -793,6 +793,37 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * Describes the groups specified by query.
+     * </p>
+     * 
+     * @param describeGroupsRequest
+     * @return A Java Future containing the result of the DescribeGroups operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DescribeGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGroupsResult> describeGroupsAsync(DescribeGroupsRequest describeGroupsRequest);
+
+    /**
+     * <p>
+     * Describes the groups specified by query.
+     * </p>
+     * 
+     * @param describeGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGroups operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DescribeGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGroupsResult> describeGroupsAsync(DescribeGroupsRequest describeGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGroupsRequest, DescribeGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the specified notification subscriptions.
      * </p>
      * 
@@ -861,8 +892,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecyleBin</code>.
-     * <code>RootFolder</code> is the root of user's files and folders and <code>RecyleBin</code> is the root of
+     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>.
+     * <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of
      * recycled items. This is not a valid action for SigV4 (administrative API) clients.
      * </p>
      * 
@@ -876,8 +907,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecyleBin</code>.
-     * <code>RootFolder</code> is the root of user's files and folders and <code>RecyleBin</code> is the root of
+     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>.
+     * <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of
      * recycled items. This is not a valid action for SigV4 (administrative API) clients.
      * </p>
      * 

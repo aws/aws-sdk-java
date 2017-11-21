@@ -27,7 +27,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of delivery streams to list.
+     * The maximum number of delivery streams to list. The default value is 10.
      * </p>
      */
     private Integer limit;
@@ -61,11 +61,11 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of delivery streams to list.
+     * The maximum number of delivery streams to list. The default value is 10.
      * </p>
      * 
      * @param limit
-     *        The maximum number of delivery streams to list.
+     *        The maximum number of delivery streams to list. The default value is 10.
      */
 
     public void setLimit(Integer limit) {
@@ -74,10 +74,10 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of delivery streams to list.
+     * The maximum number of delivery streams to list. The default value is 10.
      * </p>
      * 
-     * @return The maximum number of delivery streams to list.
+     * @return The maximum number of delivery streams to list. The default value is 10.
      */
 
     public Integer getLimit() {
@@ -86,11 +86,11 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of delivery streams to list.
+     * The maximum number of delivery streams to list. The default value is 10.
      * </p>
      * 
      * @param limit
-     *        The maximum number of delivery streams to list.
+     *        The maximum number of delivery streams to list. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

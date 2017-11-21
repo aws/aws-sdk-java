@@ -31,6 +31,8 @@ public class DescribeResourcePermissionsRequestMarshaller {
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("principalId").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class DescribeResourcePermissionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(describeResourcePermissionsRequest.getPrincipalId(), PRINCIPALID_BINDING);
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getMarker(), MARKER_BINDING);
         } catch (Exception e) {

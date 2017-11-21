@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum UserType {
 
     USER("USER"),
-    ADMIN("ADMIN");
+    ADMIN("ADMIN"),
+    POWERUSER("POWERUSER"),
+    MINIMALUSER("MINIMALUSER"),
+    WORKSPACESUSER("WORKSPACESUSER");
 
     private String value;
 

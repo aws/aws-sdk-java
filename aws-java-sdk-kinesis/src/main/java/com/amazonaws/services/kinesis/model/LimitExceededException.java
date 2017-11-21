@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the
- * maximum number allowed (5).
+ * maximum number allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
