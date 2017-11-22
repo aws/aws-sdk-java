@@ -90,6 +90,10 @@ public class UpdateStageResultJsonUnmarshaller implements Unmarshaller<UpdateSta
                     context.nextToken();
                     updateStageResult.setDocumentationVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("accessLogSettings", targetDepth)) {
+                    context.nextToken();
+                    updateStageResult.setAccessLogSettings(AccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     updateStageResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

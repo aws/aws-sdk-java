@@ -56,6 +56,12 @@ public class StackInstance implements Serializable, Cloneable {
     private String stackId;
     /**
      * <p>
+     * A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Parameter> parameterOverrides;
+    /**
+     * <p>
      * The status of the stack instance, in terms of its synchronization with its associated stack set.
      * </p>
      * <ul>
@@ -257,6 +263,80 @@ public class StackInstance implements Serializable, Cloneable {
 
     public StackInstance withStackId(String stackId) {
         setStackId(stackId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * </p>
+     * 
+     * @return A list of parameters from the stack set template whose values have been overridden in this stack
+     *         instance.
+     */
+
+    public java.util.List<Parameter> getParameterOverrides() {
+        if (parameterOverrides == null) {
+            parameterOverrides = new com.amazonaws.internal.SdkInternalList<Parameter>();
+        }
+        return parameterOverrides;
+    }
+
+    /**
+     * <p>
+     * A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * </p>
+     * 
+     * @param parameterOverrides
+     *        A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     */
+
+    public void setParameterOverrides(java.util.Collection<Parameter> parameterOverrides) {
+        if (parameterOverrides == null) {
+            this.parameterOverrides = null;
+            return;
+        }
+
+        this.parameterOverrides = new com.amazonaws.internal.SdkInternalList<Parameter>(parameterOverrides);
+    }
+
+    /**
+     * <p>
+     * A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameterOverrides(java.util.Collection)} or {@link #withParameterOverrides(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param parameterOverrides
+     *        A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstance withParameterOverrides(Parameter... parameterOverrides) {
+        if (this.parameterOverrides == null) {
+            setParameterOverrides(new com.amazonaws.internal.SdkInternalList<Parameter>(parameterOverrides.length));
+        }
+        for (Parameter ele : parameterOverrides) {
+            this.parameterOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * </p>
+     * 
+     * @param parameterOverrides
+     *        A list of parameters from the stack set template whose values have been overridden in this stack instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstance withParameterOverrides(java.util.Collection<Parameter> parameterOverrides) {
+        setParameterOverrides(parameterOverrides);
         return this;
     }
 
@@ -718,6 +798,8 @@ public class StackInstance implements Serializable, Cloneable {
             sb.append("Account: ").append(getAccount()).append(",");
         if (getStackId() != null)
             sb.append("StackId: ").append(getStackId()).append(",");
+        if (getParameterOverrides() != null)
+            sb.append("ParameterOverrides: ").append(getParameterOverrides()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
@@ -752,6 +834,10 @@ public class StackInstance implements Serializable, Cloneable {
             return false;
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
             return false;
+        if (other.getParameterOverrides() == null ^ this.getParameterOverrides() == null)
+            return false;
+        if (other.getParameterOverrides() != null && other.getParameterOverrides().equals(this.getParameterOverrides()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -772,6 +858,7 @@ public class StackInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAccount() == null) ? 0 : getAccount().hashCode());
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
+        hashCode = prime * hashCode + ((getParameterOverrides() == null) ? 0 : getParameterOverrides().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         return hashCode;

@@ -50,6 +50,8 @@ public class CreateNFSFileShareRequestMarshaller {
             .marshallLocationName("Squash").build();
     private static final MarshallingInfo<Boolean> READONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadOnly").build();
+    private static final MarshallingInfo<Boolean> GUESSMIMETYPEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GuessMIMETypeEnabled").build();
 
     private static final CreateNFSFileShareRequestMarshaller instance = new CreateNFSFileShareRequestMarshaller();
 
@@ -78,6 +80,7 @@ public class CreateNFSFileShareRequestMarshaller {
             protocolMarshaller.marshall(createNFSFileShareRequest.getClientList(), CLIENTLIST_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getSquash(), SQUASH_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getReadOnly(), READONLY_BINDING);
+            protocolMarshaller.marshall(createNFSFileShareRequest.getGuessMIMETypeEnabled(), GUESSMIMETYPEENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -18,6 +18,12 @@ import javax.annotation.Generated;
  * <p>
  * Exception that indicates that the operation would exceed a limit.
  * </p>
+ * <p>
+ * <code>Type</code> is the type of limit that would be exceeded.
+ * </p>
+ * <p>
+ * <code>Limit</code> is the threshold that would be exceeded.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitsExceededException extends com.amazonaws.services.shield.model.AWSShieldException {

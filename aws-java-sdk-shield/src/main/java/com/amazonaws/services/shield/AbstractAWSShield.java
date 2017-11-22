@@ -73,6 +73,11 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public GetSubscriptionStateResult getSubscriptionState(GetSubscriptionStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAttacksResult listAttacks(ListAttacksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

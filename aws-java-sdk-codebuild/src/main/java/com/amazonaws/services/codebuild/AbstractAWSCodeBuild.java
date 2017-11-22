@@ -73,6 +73,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListBuildsResult listBuilds(ListBuildsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

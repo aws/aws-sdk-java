@@ -34,13 +34,19 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      */
     private TimeRange startTime;
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      */
     private TimeRange endTime;
@@ -139,11 +145,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param startTime
-     *        The time period for the attacks.
+     *        The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      */
 
     public void setStartTime(TimeRange startTime) {
@@ -152,10 +165,17 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
-     * @return The time period for the attacks.
+     * @return The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *         above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *         However any valid <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *         format</a> is allowed.
      */
 
     public TimeRange getStartTime() {
@@ -164,11 +184,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time period for the attacks.
+     * The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param startTime
-     *        The time period for the attacks.
+     *        The start of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +206,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param endTime
-     *        The end of the time period for the attacks.
+     *        The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      */
 
     public void setEndTime(TimeRange endTime) {
@@ -192,10 +226,17 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
-     * @return The end of the time period for the attacks.
+     * @return The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *         above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *         However any valid <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *         format</a> is allowed.
      */
 
     public TimeRange getEndTime() {
@@ -204,11 +245,18 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end of the time period for the attacks.
+     * The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request above
+     * indicates a <code>number</code> type because the default used by WAF is Unix time in seconds. However any valid
+     * <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     * format</a> is allowed.
      * </p>
      * 
      * @param endTime
-     *        The end of the time period for the attacks.
+     *        The end of the time period for the attacks. This is a <code>timestamp</code> type. The sample request
+     *        above indicates a <code>number</code> type because the default used by WAF is Unix time in seconds.
+     *        However any valid <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp
+     *        format</a> is allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

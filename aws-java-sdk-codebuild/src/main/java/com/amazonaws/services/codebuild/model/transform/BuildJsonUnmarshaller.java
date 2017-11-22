@@ -92,6 +92,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setArtifacts(BuildArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("cache", targetDepth)) {
+                    context.nextToken();
+                    build.setCache(ProjectCacheJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
                     build.setEnvironment(ProjectEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
@@ -111,6 +115,14 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                 if (context.testExpression("initiator", targetDepth)) {
                     context.nextToken();
                     build.setInitiator(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("vpcConfig", targetDepth)) {
+                    context.nextToken();
+                    build.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("networkInterface", targetDepth)) {
+                    context.nextToken();
+                    build.setNetworkInterface(NetworkInterfaceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

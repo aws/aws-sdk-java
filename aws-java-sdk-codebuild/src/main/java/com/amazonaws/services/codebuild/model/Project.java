@@ -60,6 +60,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private ProjectArtifacts artifacts;
     /**
      * <p>
+     * Information about the cache for the build project.
+     * </p>
+     */
+    private ProjectCache cache;
+    /**
+     * <p>
      * Information about the build environment for this build project.
      * </p>
      */
@@ -116,6 +122,20 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Webhook webhook;
+    /**
+     * <p>
+     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
+     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
+     * VPC. You must provide at least one security group and one subnet ID.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * Information about the build badge for the build project.
+     * </p>
+     */
+    private ProjectBadge badge;
 
     /**
      * <p>
@@ -314,6 +334,46 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     public Project withArtifacts(ProjectArtifacts artifacts) {
         setArtifacts(artifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the cache for the build project.
+     * </p>
+     * 
+     * @param cache
+     *        Information about the cache for the build project.
+     */
+
+    public void setCache(ProjectCache cache) {
+        this.cache = cache;
+    }
+
+    /**
+     * <p>
+     * Information about the cache for the build project.
+     * </p>
+     * 
+     * @return Information about the cache for the build project.
+     */
+
+    public ProjectCache getCache() {
+        return this.cache;
+    }
+
+    /**
+     * <p>
+     * Information about the cache for the build project.
+     * </p>
+     * 
+     * @param cache
+     *        Information about the cache for the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withCache(ProjectCache cache) {
+        setCache(cache);
         return this;
     }
 
@@ -728,6 +788,98 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
+     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
+     * VPC. You must provide at least one security group and one subnet ID.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that
+     *        identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets
+     *        must belong to the same VPC. You must provide at least one security group and one subnet ID.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
+     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
+     * VPC. You must provide at least one security group and one subnet ID.
+     * </p>
+     * 
+     * @return If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that
+     *         identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets
+     *         must belong to the same VPC. You must provide at least one security group and one subnet ID.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
+     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
+     * VPC. You must provide at least one security group and one subnet ID.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that
+     *        identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets
+     *        must belong to the same VPC. You must provide at least one security group and one subnet ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the build badge for the build project.
+     * </p>
+     * 
+     * @param badge
+     *        Information about the build badge for the build project.
+     */
+
+    public void setBadge(ProjectBadge badge) {
+        this.badge = badge;
+    }
+
+    /**
+     * <p>
+     * Information about the build badge for the build project.
+     * </p>
+     * 
+     * @return Information about the build badge for the build project.
+     */
+
+    public ProjectBadge getBadge() {
+        return this.badge;
+    }
+
+    /**
+     * <p>
+     * Information about the build badge for the build project.
+     * </p>
+     * 
+     * @param badge
+     *        Information about the build badge for the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withBadge(ProjectBadge badge) {
+        setBadge(badge);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -748,6 +900,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             sb.append("Source: ").append(getSource()).append(",");
         if (getArtifacts() != null)
             sb.append("Artifacts: ").append(getArtifacts()).append(",");
+        if (getCache() != null)
+            sb.append("Cache: ").append(getCache()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getServiceRole() != null)
@@ -763,7 +917,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         if (getLastModified() != null)
             sb.append("LastModified: ").append(getLastModified()).append(",");
         if (getWebhook() != null)
-            sb.append("Webhook: ").append(getWebhook());
+            sb.append("Webhook: ").append(getWebhook()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getBadge() != null)
+            sb.append("Badge: ").append(getBadge());
         sb.append("}");
         return sb.toString();
     }
@@ -798,6 +956,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArtifacts() != null && other.getArtifacts().equals(this.getArtifacts()) == false)
             return false;
+        if (other.getCache() == null ^ this.getCache() == null)
+            return false;
+        if (other.getCache() != null && other.getCache().equals(this.getCache()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -830,6 +992,14 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWebhook() != null && other.getWebhook().equals(this.getWebhook()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getBadge() == null ^ this.getBadge() == null)
+            return false;
+        if (other.getBadge() != null && other.getBadge().equals(this.getBadge()) == false)
+            return false;
         return true;
     }
 
@@ -843,6 +1013,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
@@ -851,6 +1022,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
         hashCode = prime * hashCode + ((getWebhook() == null) ? 0 : getWebhook().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getBadge() == null) ? 0 : getBadge().hashCode());
         return hashCode;
     }
 

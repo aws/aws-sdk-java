@@ -30,6 +30,12 @@ public class CreateCollectionResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String collectionArn;
+    /**
+     * <p>
+     * Version number of the face detection model associated with the collection you are creating.
+     * </p>
+     */
+    private String faceModelVersion;
 
     /**
      * <p>
@@ -112,6 +118,46 @@ public class CreateCollectionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Version number of the face detection model associated with the collection you are creating.
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the collection you are creating.
+     */
+
+    public void setFaceModelVersion(String faceModelVersion) {
+        this.faceModelVersion = faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the collection you are creating.
+     * </p>
+     * 
+     * @return Version number of the face detection model associated with the collection you are creating.
+     */
+
+    public String getFaceModelVersion() {
+        return this.faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the collection you are creating.
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the collection you are creating.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCollectionResult withFaceModelVersion(String faceModelVersion) {
+        setFaceModelVersion(faceModelVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -125,7 +171,9 @@ public class CreateCollectionResult extends com.amazonaws.AmazonWebServiceResult
         if (getStatusCode() != null)
             sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getCollectionArn() != null)
-            sb.append("CollectionArn: ").append(getCollectionArn());
+            sb.append("CollectionArn: ").append(getCollectionArn()).append(",");
+        if (getFaceModelVersion() != null)
+            sb.append("FaceModelVersion: ").append(getFaceModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -148,6 +196,10 @@ public class CreateCollectionResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getCollectionArn() != null && other.getCollectionArn().equals(this.getCollectionArn()) == false)
             return false;
+        if (other.getFaceModelVersion() == null ^ this.getFaceModelVersion() == null)
+            return false;
+        if (other.getFaceModelVersion() != null && other.getFaceModelVersion().equals(this.getFaceModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -158,6 +210,7 @@ public class CreateCollectionResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getCollectionArn() == null) ? 0 : getCollectionArn().hashCode());
+        hashCode = prime * hashCode + ((getFaceModelVersion() == null) ? 0 : getFaceModelVersion().hashCode());
         return hashCode;
     }
 

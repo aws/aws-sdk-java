@@ -1678,11 +1678,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Represents a get integration.
+     * Get the integration settings.
      * </p>
      * 
      * @param getIntegrationRequest
-     *        Represents a get integration request.
+     *        Represents a request to get the integration configuration.
      * @return A Java Future containing the result of the GetIntegration operation returned by the service.
      * @sample AmazonApiGatewayAsync.GetIntegration
      */
@@ -1690,11 +1690,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Represents a get integration.
+     * Get the integration settings.
      * </p>
      * 
      * @param getIntegrationRequest
-     *        Represents a get integration request.
+     *        Represents a request to get the integration configuration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

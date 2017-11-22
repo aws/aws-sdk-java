@@ -36,7 +36,8 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
     private String masterInstanceType;
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      */
     private String masterPublicDnsName;
@@ -181,11 +182,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The DNS name of the master node.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      */
 
     public void setMasterPublicDnsName(String masterPublicDnsName) {
@@ -194,10 +197,12 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
-     * @return The DNS name of the master node.
+     * @return The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On
+     *         a public subnet, this is the public DNS name.
      */
 
     public String getMasterPublicDnsName() {
@@ -206,11 +211,13 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The DNS name of the master node.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The DNS name of the master node.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

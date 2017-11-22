@@ -1576,6 +1576,39 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateStackInstancesResult> updateStackInstancesAsync(UpdateStackInstancesRequest request) {
+
+        return updateStackInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStackInstancesResult> updateStackInstancesAsync(final UpdateStackInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStackInstancesRequest, UpdateStackInstancesResult> asyncHandler) {
+        final UpdateStackInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStackInstancesResult>() {
+            @Override
+            public UpdateStackInstancesResult call() throws Exception {
+                UpdateStackInstancesResult result = null;
+
+                try {
+                    result = executeUpdateStackInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStackSetResult> updateStackSetAsync(UpdateStackSetRequest request) {
 
         return updateStackSetAsync(request, null);

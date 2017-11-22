@@ -1908,6 +1908,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<NotifyWhenUploadedResult> notifyWhenUploadedAsync(NotifyWhenUploadedRequest request) {
+
+        return notifyWhenUploadedAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyWhenUploadedResult> notifyWhenUploadedAsync(final NotifyWhenUploadedRequest request,
+            final com.amazonaws.handlers.AsyncHandler<NotifyWhenUploadedRequest, NotifyWhenUploadedResult> asyncHandler) {
+        final NotifyWhenUploadedRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<NotifyWhenUploadedResult>() {
+            @Override
+            public NotifyWhenUploadedResult call() throws Exception {
+                NotifyWhenUploadedResult result = null;
+
+                try {
+                    result = executeNotifyWhenUploaded(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(RefreshCacheRequest request) {
 
         return refreshCacheAsync(request, null);

@@ -160,6 +160,12 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String contentHandling;
+    /**
+     * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     */
+    private Integer timeoutInMillis;
 
     /**
      * <p>
@@ -1235,6 +1241,47 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     * 
+     * @param timeoutInMillis
+     *        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     */
+
+    public void setTimeoutInMillis(Integer timeoutInMillis) {
+        this.timeoutInMillis = timeoutInMillis;
+    }
+
+    /**
+     * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     * 
+     * @return Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29
+     *         seconds.
+     */
+
+    public Integer getTimeoutInMillis() {
+        return this.timeoutInMillis;
+    }
+
+    /**
+     * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     * 
+     * @param timeoutInMillis
+     *        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntegrationRequest withTimeoutInMillis(Integer timeoutInMillis) {
+        setTimeoutInMillis(timeoutInMillis);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1270,7 +1317,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCacheKeyParameters() != null)
             sb.append("CacheKeyParameters: ").append(getCacheKeyParameters()).append(",");
         if (getContentHandling() != null)
-            sb.append("ContentHandling: ").append(getContentHandling());
+            sb.append("ContentHandling: ").append(getContentHandling()).append(",");
+        if (getTimeoutInMillis() != null)
+            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis());
         sb.append("}");
         return sb.toString();
     }
@@ -1337,6 +1386,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getContentHandling() != null && other.getContentHandling().equals(this.getContentHandling()) == false)
             return false;
+        if (other.getTimeoutInMillis() == null ^ this.getTimeoutInMillis() == null)
+            return false;
+        if (other.getTimeoutInMillis() != null && other.getTimeoutInMillis().equals(this.getTimeoutInMillis()) == false)
+            return false;
         return true;
     }
 
@@ -1358,6 +1411,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCacheNamespace() == null) ? 0 : getCacheNamespace().hashCode());
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
         hashCode = prime * hashCode + ((getContentHandling() == null) ? 0 : getContentHandling().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
         return hashCode;
     }
 

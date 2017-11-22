@@ -10185,7 +10185,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
-      "members" : null,
+      "members" : [ ],
       "membersAsMap" : { },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
@@ -10371,7 +10371,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "EC2InstanceId",
-        "c2jShape" : "String",
+        "c2jShape" : "EC2InstanceId",
         "deprecated" : false,
         "documentation" : "<p/>",
         "enumType" : null,
@@ -10434,7 +10434,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Hostname",
-        "c2jShape" : "String",
+        "c2jShape" : "Hostname",
         "deprecated" : false,
         "documentation" : "<p/>",
         "enumType" : null,
@@ -10497,7 +10497,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "ResourceARN",
-        "c2jShape" : "String",
+        "c2jShape" : "ResourceARN",
         "deprecated" : false,
         "documentation" : "<p/>",
         "enumType" : null,
@@ -10562,7 +10562,7 @@
       "membersAsMap" : {
         "EC2InstanceId" : {
           "c2jName" : "EC2InstanceId",
-          "c2jShape" : "String",
+          "c2jShape" : "EC2InstanceId",
           "deprecated" : false,
           "documentation" : "<p/>",
           "enumType" : null,
@@ -10626,7 +10626,7 @@
         },
         "Hostname" : {
           "c2jName" : "Hostname",
-          "c2jShape" : "String",
+          "c2jShape" : "Hostname",
           "deprecated" : false,
           "documentation" : "<p/>",
           "enumType" : null,
@@ -10690,7 +10690,7 @@
         },
         "ResourceARN" : {
           "c2jName" : "ResourceARN",
-          "c2jShape" : "String",
+          "c2jShape" : "ResourceARN",
           "deprecated" : false,
           "documentation" : "<p/>",
           "enumType" : null,
@@ -16373,7 +16373,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "Timestamp" ],
       "shapeName" : "TelemetryRecord",
       "signerAware" : false,
       "signerType" : null,
@@ -16408,7 +16408,7 @@
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
       "marshaller" : null,
-      "members" : null,
+      "members" : [ ],
       "membersAsMap" : { },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,

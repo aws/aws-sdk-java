@@ -476,6 +476,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DetectTextResult> detectTextAsync(DetectTextRequest request) {
+
+        return detectTextAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectTextResult> detectTextAsync(final DetectTextRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectTextRequest, DetectTextResult> asyncHandler) {
+        final DetectTextRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectTextResult>() {
+            @Override
+            public DetectTextResult call() throws Exception {
+                DetectTextResult result = null;
+
+                try {
+                    result = executeDetectText(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest request) {
 
         return getCelebrityInfoAsync(request, null);

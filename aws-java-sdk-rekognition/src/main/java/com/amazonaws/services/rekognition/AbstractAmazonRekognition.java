@@ -73,6 +73,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DetectTextResult detectText(DetectTextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCelebrityInfoResult getCelebrityInfo(GetCelebrityInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

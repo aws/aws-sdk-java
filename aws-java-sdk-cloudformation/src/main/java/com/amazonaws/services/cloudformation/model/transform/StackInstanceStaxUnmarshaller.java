@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudformation.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -60,6 +62,16 @@ public class StackInstanceStaxUnmarshaller implements Unmarshaller<StackInstance
 
                 if (context.testExpression("StackId", targetDepth)) {
                     stackInstance.setStackId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ParameterOverrides", targetDepth)) {
+                    stackInstance.withParameterOverrides(new ArrayList<Parameter>());
+                    continue;
+                }
+
+                if (context.testExpression("ParameterOverrides/member", targetDepth)) {
+                    stackInstance.withParameterOverrides(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

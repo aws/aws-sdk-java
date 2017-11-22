@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a get integration request.
+ * Represents a request to get the integration configuration.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

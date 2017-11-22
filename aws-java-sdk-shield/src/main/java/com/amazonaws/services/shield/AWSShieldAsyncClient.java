@@ -479,6 +479,39 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(GetSubscriptionStateRequest request) {
+
+        return getSubscriptionStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(final GetSubscriptionStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSubscriptionStateRequest, GetSubscriptionStateResult> asyncHandler) {
+        final GetSubscriptionStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSubscriptionStateResult>() {
+            @Override
+            public GetSubscriptionStateResult call() throws Exception {
+                GetSubscriptionStateResult result = null;
+
+                try {
+                    result = executeGetSubscriptionState(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAttacksResult> listAttacksAsync(ListAttacksRequest request) {
 
         return listAttacksAsync(request, null);

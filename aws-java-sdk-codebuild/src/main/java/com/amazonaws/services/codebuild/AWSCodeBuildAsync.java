@@ -369,6 +369,37 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
+     * Resets the cache for a project.
+     * </p>
+     * 
+     * @param invalidateProjectCacheRequest
+     * @return A Java Future containing the result of the InvalidateProjectCache operation returned by the service.
+     * @sample AWSCodeBuildAsync.InvalidateProjectCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<InvalidateProjectCacheResult> invalidateProjectCacheAsync(InvalidateProjectCacheRequest invalidateProjectCacheRequest);
+
+    /**
+     * <p>
+     * Resets the cache for a project.
+     * </p>
+     * 
+     * @param invalidateProjectCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the InvalidateProjectCache operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.InvalidateProjectCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<InvalidateProjectCacheResult> invalidateProjectCacheAsync(InvalidateProjectCacheRequest invalidateProjectCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<InvalidateProjectCacheRequest, InvalidateProjectCacheResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of build IDs, with each build ID representing a single build.
      * </p>
      * 

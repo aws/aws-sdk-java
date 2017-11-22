@@ -141,7 +141,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Integer normalizedInstanceHours;
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      */
     private String masterPublicDnsName;
@@ -200,6 +201,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String repoUpgradeOnBoot;
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     */
+    private KerberosAttributes kerberosAttributes;
 
     /**
      * <p>
@@ -1113,11 +1122,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The public DNS name of the master EC2 instance.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      */
 
     public void setMasterPublicDnsName(String masterPublicDnsName) {
@@ -1126,10 +1137,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
-     * @return The public DNS name of the master EC2 instance.
+     * @return The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On
+     *         a public subnet, this is the public DNS name.
      */
 
     public String getMasterPublicDnsName() {
@@ -1138,11 +1151,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public DNS name of the master EC2 instance.
+     * The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a public
+     * subnet, this is the public DNS name.
      * </p>
      * 
      * @param masterPublicDnsName
-     *        The public DNS name of the master EC2 instance.
+     *        The DNS name of the master node. If the cluster is on a private subnet, this is the private DNS name. On a
+     *        public subnet, this is the public DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1651,6 +1666,61 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param kerberosAttributes
+     *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *        configuration. For more information see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     */
+
+    public void setKerberosAttributes(KerberosAttributes kerberosAttributes) {
+        this.kerberosAttributes = kerberosAttributes;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @return Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *         configuration. For more information see <a
+     *         href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *         Authentication</a> in the <i>EMR Management Guide</i>.
+     */
+
+    public KerberosAttributes getKerberosAttributes() {
+        return this.kerberosAttributes;
+    }
+
+    /**
+     * <p>
+     * Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For
+     * more information see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param kerberosAttributes
+     *        Attributes for Kerberos configuration when Kerberos authentication is enabled using a security
+     *        configuration. For more information see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos
+     *        Authentication</a> in the <i>EMR Management Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withKerberosAttributes(KerberosAttributes kerberosAttributes) {
+        setKerberosAttributes(kerberosAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1708,7 +1778,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getEbsRootVolumeSize() != null)
             sb.append("EbsRootVolumeSize: ").append(getEbsRootVolumeSize()).append(",");
         if (getRepoUpgradeOnBoot() != null)
-            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot());
+            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot()).append(",");
+        if (getKerberosAttributes() != null)
+            sb.append("KerberosAttributes: ").append(getKerberosAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -1819,6 +1891,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRepoUpgradeOnBoot() != null && other.getRepoUpgradeOnBoot().equals(this.getRepoUpgradeOnBoot()) == false)
             return false;
+        if (other.getKerberosAttributes() == null ^ this.getKerberosAttributes() == null)
+            return false;
+        if (other.getKerberosAttributes() != null && other.getKerberosAttributes().equals(this.getKerberosAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -1851,6 +1927,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomAmiId() == null) ? 0 : getCustomAmiId().hashCode());
         hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
+        hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
         return hashCode;
     }
 

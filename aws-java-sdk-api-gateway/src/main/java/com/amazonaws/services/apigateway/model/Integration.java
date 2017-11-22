@@ -136,6 +136,12 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
     private String contentHandling;
     /**
      * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     */
+    private Integer timeoutInMillis;
+    /**
+     * <p>
      * Specifies the integration's cache namespace.
      * </p>
      */
@@ -1046,6 +1052,47 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     * 
+     * @param timeoutInMillis
+     *        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     */
+
+    public void setTimeoutInMillis(Integer timeoutInMillis) {
+        this.timeoutInMillis = timeoutInMillis;
+    }
+
+    /**
+     * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     * 
+     * @return Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29
+     *         seconds.
+     */
+
+    public Integer getTimeoutInMillis() {
+        return this.timeoutInMillis;
+    }
+
+    /**
+     * <p>
+     * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * </p>
+     * 
+     * @param timeoutInMillis
+     *        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration withTimeoutInMillis(Integer timeoutInMillis) {
+        setTimeoutInMillis(timeoutInMillis);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the integration's cache namespace.
      * </p>
      * 
@@ -1377,6 +1424,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
             sb.append("PassthroughBehavior: ").append(getPassthroughBehavior()).append(",");
         if (getContentHandling() != null)
             sb.append("ContentHandling: ").append(getContentHandling()).append(",");
+        if (getTimeoutInMillis() != null)
+            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis()).append(",");
         if (getCacheNamespace() != null)
             sb.append("CacheNamespace: ").append(getCacheNamespace()).append(",");
         if (getCacheKeyParameters() != null)
@@ -1429,6 +1478,10 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContentHandling() != null && other.getContentHandling().equals(this.getContentHandling()) == false)
             return false;
+        if (other.getTimeoutInMillis() == null ^ this.getTimeoutInMillis() == null)
+            return false;
+        if (other.getTimeoutInMillis() != null && other.getTimeoutInMillis().equals(this.getTimeoutInMillis()) == false)
+            return false;
         if (other.getCacheNamespace() == null ^ this.getCacheNamespace() == null)
             return false;
         if (other.getCacheNamespace() != null && other.getCacheNamespace().equals(this.getCacheNamespace()) == false)
@@ -1457,6 +1510,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRequestTemplates() == null) ? 0 : getRequestTemplates().hashCode());
         hashCode = prime * hashCode + ((getPassthroughBehavior() == null) ? 0 : getPassthroughBehavior().hashCode());
         hashCode = prime * hashCode + ((getContentHandling() == null) ? 0 : getContentHandling().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
         hashCode = prime * hashCode + ((getCacheNamespace() == null) ? 0 : getCacheNamespace().hashCode());
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
         hashCode = prime * hashCode + ((getIntegrationResponses() == null) ? 0 : getIntegrationResponses().hashCode());

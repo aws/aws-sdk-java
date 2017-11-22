@@ -42,13 +42,15 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
     private String resourceArn;
     /**
      * <p>
-     * The start time of the attack, in the format 2016-12-16T13:50Z.
+     * The start time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The end time of the attack, in the format 2016-12-16T13:50Z.
+     * The end time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      */
     private java.util.Date endTime;
@@ -141,11 +143,13 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time of the attack, in the format 2016-12-16T13:50Z.
+     * The start time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param startTime
-     *        The start time of the attack, in the format 2016-12-16T13:50Z.
+     *        The start time of the attack, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -154,10 +158,13 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time of the attack, in the format 2016-12-16T13:50Z.
+     * The start time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
-     * @return The start time of the attack, in the format 2016-12-16T13:50Z.
+     * @return The start time of the attack, in Unix time in seconds. For more information see <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types"
+     *         >timestamp</a>.
      */
 
     public java.util.Date getStartTime() {
@@ -166,11 +173,13 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time of the attack, in the format 2016-12-16T13:50Z.
+     * The start time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param startTime
-     *        The start time of the attack, in the format 2016-12-16T13:50Z.
+     *        The start time of the attack, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +190,13 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end time of the attack, in the format 2016-12-16T13:50Z.
+     * The end time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param endTime
-     *        The end time of the attack, in the format 2016-12-16T13:50Z.
+     *        The end time of the attack, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -194,10 +205,13 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end time of the attack, in the format 2016-12-16T13:50Z.
+     * The end time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
-     * @return The end time of the attack, in the format 2016-12-16T13:50Z.
+     * @return The end time of the attack, in Unix time in seconds. For more information see <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types"
+     *         >timestamp</a>.
      */
 
     public java.util.Date getEndTime() {
@@ -206,11 +220,13 @@ public class AttackSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end time of the attack, in the format 2016-12-16T13:50Z.
+     * The end time of the attack, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param endTime
-     *        The end time of the attack, in the format 2016-12-16T13:50Z.
+     *        The end time of the attack, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

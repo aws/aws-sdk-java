@@ -99,6 +99,8 @@ public enum CloudFormationActions implements Action {
     StopStackSetOperation("cloudformation:StopStackSetOperation"),
     /** Action for the UpdateStack operation. */
     UpdateStack("cloudformation:UpdateStack"),
+    /** Action for the UpdateStackInstances operation. */
+    UpdateStackInstances("cloudformation:UpdateStackInstances"),
     /** Action for the UpdateStackSet operation. */
     UpdateStackSet("cloudformation:UpdateStackSet"),
     /** Action for the UpdateTerminationProtection operation. */

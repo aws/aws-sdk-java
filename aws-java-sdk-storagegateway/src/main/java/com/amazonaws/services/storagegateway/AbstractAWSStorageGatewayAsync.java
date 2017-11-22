@@ -697,6 +697,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<NotifyWhenUploadedResult> notifyWhenUploadedAsync(NotifyWhenUploadedRequest request) {
+
+        return notifyWhenUploadedAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyWhenUploadedResult> notifyWhenUploadedAsync(NotifyWhenUploadedRequest request,
+            com.amazonaws.handlers.AsyncHandler<NotifyWhenUploadedRequest, NotifyWhenUploadedResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(RefreshCacheRequest request) {
 
         return refreshCacheAsync(request, null);

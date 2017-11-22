@@ -51,6 +51,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private ProjectArtifacts artifacts;
     /**
      * <p>
+     * Stores recently used information so that it can be quickly accessed at a later time.
+     * </p>
+     */
+    private ProjectCache cache;
+    /**
+     * <p>
      * Information about the build environment for the build project.
      * </p>
      */
@@ -89,6 +95,18 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * </p>
+     */
+    private Boolean badgeEnabled;
 
     /**
      * <p>
@@ -247,6 +265,46 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateProjectRequest withArtifacts(ProjectArtifacts artifacts) {
         setArtifacts(artifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Stores recently used information so that it can be quickly accessed at a later time.
+     * </p>
+     * 
+     * @param cache
+     *        Stores recently used information so that it can be quickly accessed at a later time.
+     */
+
+    public void setCache(ProjectCache cache) {
+        this.cache = cache;
+    }
+
+    /**
+     * <p>
+     * Stores recently used information so that it can be quickly accessed at a later time.
+     * </p>
+     * 
+     * @return Stores recently used information so that it can be quickly accessed at a later time.
+     */
+
+    public ProjectCache getCache() {
+        return this.cache;
+    }
+
+    /**
+     * <p>
+     * Stores recently used information so that it can be quickly accessed at a later time.
+     * </p>
+     * 
+     * @param cache
+     *        Stores recently used information so that it can be quickly accessed at a later time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withCache(ProjectCache cache) {
+        setCache(cache);
         return this;
     }
 
@@ -540,6 +598,98 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * </p>
+     * 
+     * @return VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * </p>
+     * 
+     * @param badgeEnabled
+     *        Set this to true to generate a publicly-accessible URL for your project's build badge.
+     */
+
+    public void setBadgeEnabled(Boolean badgeEnabled) {
+        this.badgeEnabled = badgeEnabled;
+    }
+
+    /**
+     * <p>
+     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * </p>
+     * 
+     * @return Set this to true to generate a publicly-accessible URL for your project's build badge.
+     */
+
+    public Boolean getBadgeEnabled() {
+        return this.badgeEnabled;
+    }
+
+    /**
+     * <p>
+     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * </p>
+     * 
+     * @param badgeEnabled
+     *        Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withBadgeEnabled(Boolean badgeEnabled) {
+        setBadgeEnabled(badgeEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * </p>
+     * 
+     * @return Set this to true to generate a publicly-accessible URL for your project's build badge.
+     */
+
+    public Boolean isBadgeEnabled() {
+        return this.badgeEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -558,6 +708,8 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Source: ").append(getSource()).append(",");
         if (getArtifacts() != null)
             sb.append("Artifacts: ").append(getArtifacts()).append(",");
+        if (getCache() != null)
+            sb.append("Cache: ").append(getCache()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getServiceRole() != null)
@@ -567,7 +719,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEncryptionKey() != null)
             sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getBadgeEnabled() != null)
+            sb.append("BadgeEnabled: ").append(getBadgeEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -598,6 +754,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getArtifacts() != null && other.getArtifacts().equals(this.getArtifacts()) == false)
             return false;
+        if (other.getCache() == null ^ this.getCache() == null)
+            return false;
+        if (other.getCache() != null && other.getCache().equals(this.getCache()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -618,6 +778,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getBadgeEnabled() == null ^ this.getBadgeEnabled() == null)
+            return false;
+        if (other.getBadgeEnabled() != null && other.getBadgeEnabled().equals(this.getBadgeEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -630,11 +798,14 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getBadgeEnabled() == null) ? 0 : getBadgeEnabled().hashCode());
         return hashCode;
     }
 

@@ -1,4 +1,37 @@
-# __1.11.233__ __2017-11-21__
+# __1.11.234__ __2017-11-22__
+## __AWS Cloud Formation__
+  - ### Features
+    - 1) Instance-level parameter overrides (CloudFormation-StackSet feature): This feature will allow the customers to override the template parameters on specific stackInstances. Customers will also have ability to update their existing instances with/without parameter-overrides using a new API "UpdateStackInstances"                                                                                                                                                                                                                                                         2) Add support for SSM parameters in CloudFormation - This feature will allow the customers to use Systems Manager parameters in CloudFormation templates. They will be able to see values for these parameters in Describe APIs.
+
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support for accessing Amazon VPC resources from AWS CodeBuild, dependency caching and build badges.
+
+## __AWS Shield__
+  - ### Features
+    - The AWS Shield SDK has been updated in order to support Elastic IP address protections, the addition of AttackProperties objects in DescribeAttack responses, and a new GetSubscriptionState operation.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway now enables you to get notification when all your files written to your NFS file share have been uploaded to Amazon S3. Storage Gateway also enables guessing of the MIME type for uploaded objects based on file extensions.
+
+## __AWS X-Ray__
+  - ### Features
+    - Added automatic pagination support for AWS X-Ray APIs in the SDKs that support this feature.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Add support for Access logs and customizable integration timeouts
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Enable Kerberos on Amazon EMR. 
+
+## __Amazon Rekognition__
+  - ### Features
+    - This release includes updates to Amazon Rekognition for the following APIs. The new DetectText API allows you to recognize and extract textual content from images. Face Model Versioning has been added to operations that deal with face detection.
+
+# __1.11.233__ __2017-11-20__
 ## __AWS CodeCommit__
   - ### Features
     - AWS CodeCommit now supports pull requests. You can use pull requests to collaboratively review code changes for minor changes or fixes, major feature additions, or new versions of your released software.

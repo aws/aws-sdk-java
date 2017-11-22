@@ -56,6 +56,10 @@ public class IndexFacesResultJsonUnmarshaller implements Unmarshaller<IndexFaces
                     context.nextToken();
                     indexFacesResult.setOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FaceModelVersion", targetDepth)) {
+                    context.nextToken();
+                    indexFacesResult.setFaceModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

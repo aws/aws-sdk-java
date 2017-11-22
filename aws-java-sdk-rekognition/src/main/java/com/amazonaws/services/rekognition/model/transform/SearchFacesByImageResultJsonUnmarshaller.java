@@ -60,6 +60,10 @@ public class SearchFacesByImageResultJsonUnmarshaller implements Unmarshaller<Se
                     context.nextToken();
                     searchFacesByImageResult.setFaceMatches(new ListUnmarshaller<FaceMatch>(FaceMatchJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("FaceModelVersion", targetDepth)) {
+                    context.nextToken();
+                    searchFacesByImageResult.setFaceModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

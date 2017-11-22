@@ -38,6 +38,8 @@ public class ProjectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
+    private static final MarshallingInfo<StructuredPojo> CACHE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cache").build();
     private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environment").build();
     private static final MarshallingInfo<String> SERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,10 @@ public class ProjectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModified").build();
     private static final MarshallingInfo<StructuredPojo> WEBHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("webhook").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> BADGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("badge").build();
 
     private static final ProjectMarshaller instance = new ProjectMarshaller();
 
@@ -76,6 +82,7 @@ public class ProjectMarshaller {
             protocolMarshaller.marshall(project.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(project.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(project.getArtifacts(), ARTIFACTS_BINDING);
+            protocolMarshaller.marshall(project.getCache(), CACHE_BINDING);
             protocolMarshaller.marshall(project.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(project.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(project.getTimeoutInMinutes(), TIMEOUTINMINUTES_BINDING);
@@ -84,6 +91,8 @@ public class ProjectMarshaller {
             protocolMarshaller.marshall(project.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(project.getLastModified(), LASTMODIFIED_BINDING);
             protocolMarshaller.marshall(project.getWebhook(), WEBHOOK_BINDING);
+            protocolMarshaller.marshall(project.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(project.getBadge(), BADGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

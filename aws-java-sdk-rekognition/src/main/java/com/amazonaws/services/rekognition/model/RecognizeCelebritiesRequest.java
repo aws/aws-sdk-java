@@ -22,18 +22,21 @@ public class RecognizeCelebritiesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The input image to use for celebrity recognition.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      */
     private Image image;
 
     /**
      * <p>
-     * The input image to use for celebrity recognition.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
      * @param image
-     *        The input image to use for celebrity recognition.
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported.
      */
 
     public void setImage(Image image) {
@@ -42,10 +45,12 @@ public class RecognizeCelebritiesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The input image to use for celebrity recognition.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
-     * @return The input image to use for celebrity recognition.
+     * @return The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *         Rekognition operations, passing base64-encoded image bytes is not supported.
      */
 
     public Image getImage() {
@@ -54,11 +59,13 @@ public class RecognizeCelebritiesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The input image to use for celebrity recognition.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
      * @param image
-     *        The input image to use for celebrity recognition.
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

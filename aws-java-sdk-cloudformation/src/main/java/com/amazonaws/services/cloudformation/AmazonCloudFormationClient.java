@@ -2386,6 +2386,89 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Updates the parameter values for stack instances for the specified accounts, within the specified regions. A
+     * stack instance refers to a stack in a specific account and region.
+     * </p>
+     * <p>
+     * You can only update stack instances in regions and accounts where they already exist; to create additional stack
+     * instances, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html"
+     * >CreateStackInstances</a>.
+     * </p>
+     * <p>
+     * During stack set updates, any parameters overridden for a stack instance are not updated, but retain their
+     * overridden value.
+     * </p>
+     * <p>
+     * You can only update the parameter <i>values</i> that are specified in the stack set; to add or delete a parameter
+     * itself, use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet
+     * </a> to update the stack set template. If you add a parameter to a template, before you can override the
+     * parameter value specified in the stack set you must first use <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
+     * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.
+     * </p>
+     * 
+     * @param updateStackInstancesRequest
+     * @return Result of the UpdateStackInstances operation returned by the service.
+     * @throws StackSetNotFoundException
+     *         The specified stack set doesn't exist.
+     * @throws StackInstanceNotFoundException
+     *         The specified stack instance doesn't exist.
+     * @throws OperationInProgressException
+     *         Another operation is currently in progress for this stack set. Only one operation can be performed for a
+     *         stack set at a given time.
+     * @throws OperationIdAlreadyExistsException
+     *         The specified operation ID already exists.
+     * @throws StaleRequestException
+     *         Another operation has been performed on this stack set since the specified operation was performed.
+     * @throws InvalidOperationException
+     *         The specified operation isn't valid.
+     * @sample AmazonCloudFormation.UpdateStackInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateStackInstancesResult updateStackInstances(UpdateStackInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStackInstances(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStackInstancesResult executeUpdateStackInstances(UpdateStackInstancesRequest updateStackInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateStackInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateStackInstancesRequest> request = null;
+        Response<UpdateStackInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateStackInstancesRequestMarshaller().marshall(super.beforeMarshalling(updateStackInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateStackInstancesResult> responseHandler = new StaxResponseHandler<UpdateStackInstancesResult>(
+                    new UpdateStackInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the stack set and <i>all</i> associated stack instances.
      * </p>
      * <p>

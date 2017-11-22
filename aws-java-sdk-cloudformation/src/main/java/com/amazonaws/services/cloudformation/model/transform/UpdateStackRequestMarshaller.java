@@ -88,6 +88,11 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
                     request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
                             StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
                 }
+
+                if (parametersListValue.getResolvedValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                }
                 parametersListIndex++;
             }
         }

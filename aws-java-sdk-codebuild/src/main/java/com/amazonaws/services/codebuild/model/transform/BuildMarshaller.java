@@ -50,6 +50,8 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("source").build();
     private static final MarshallingInfo<StructuredPojo> ARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifacts").build();
+    private static final MarshallingInfo<StructuredPojo> CACHE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cache").build();
     private static final MarshallingInfo<StructuredPojo> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environment").build();
     private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,10 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildComplete").build();
     private static final MarshallingInfo<String> INITIATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("initiator").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKINTERFACE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterface").build();
 
     private static final BuildMarshaller instance = new BuildMarshaller();
 
@@ -88,11 +94,14 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getPhases(), PHASES_BINDING);
             protocolMarshaller.marshall(build.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(build.getArtifacts(), ARTIFACTS_BINDING);
+            protocolMarshaller.marshall(build.getCache(), CACHE_BINDING);
             protocolMarshaller.marshall(build.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(build.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(build.getTimeoutInMinutes(), TIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(build.getBuildComplete(), BUILDCOMPLETE_BINDING);
             protocolMarshaller.marshall(build.getInitiator(), INITIATOR_BINDING);
+            protocolMarshaller.marshall(build.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(build.getNetworkInterface(), NETWORKINTERFACE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -3515,11 +3515,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Represents a get integration.
+     * Get the integration settings.
      * </p>
      * 
      * @param getIntegrationRequest
-     *        Represents a get integration request.
+     *        Represents a request to get the integration configuration.
      * @return Result of the GetIntegration operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.

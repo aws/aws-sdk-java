@@ -76,6 +76,39 @@ public class CreateStackInstancesRequestMarshaller implements Marshaller<Request
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<Parameter> parameterOverridesList = (com.amazonaws.internal.SdkInternalList<Parameter>) createStackInstancesRequest
+                .getParameterOverrides();
+        if (parameterOverridesList.isEmpty() && !parameterOverridesList.isAutoConstruct()) {
+            request.addParameter("ParameterOverrides", "");
+        }
+        if (!parameterOverridesList.isEmpty() || !parameterOverridesList.isAutoConstruct()) {
+            int parameterOverridesListIndex = 1;
+
+            for (Parameter parameterOverridesListValue : parameterOverridesList) {
+
+                if (parameterOverridesListValue.getParameterKey() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterKey",
+                            StringUtils.fromString(parameterOverridesListValue.getParameterKey()));
+                }
+
+                if (parameterOverridesListValue.getParameterValue() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterValue",
+                            StringUtils.fromString(parameterOverridesListValue.getParameterValue()));
+                }
+
+                if (parameterOverridesListValue.getUsePreviousValue() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".UsePreviousValue",
+                            StringUtils.fromBoolean(parameterOverridesListValue.getUsePreviousValue()));
+                }
+
+                if (parameterOverridesListValue.getResolvedValue() != null) {
+                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parameterOverridesListValue.getResolvedValue()));
+                }
+                parameterOverridesListIndex++;
+            }
+        }
+
         StackSetOperationPreferences operationPreferences = createStackInstancesRequest.getOperationPreferences();
         if (operationPreferences != null) {
 

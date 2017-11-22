@@ -92,6 +92,10 @@ public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSC
                     context.nextToken();
                     storediSCSIVolume.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeUsedInBytes", targetDepth)) {
+                    context.nextToken();
+                    storediSCSIVolume.setVolumeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

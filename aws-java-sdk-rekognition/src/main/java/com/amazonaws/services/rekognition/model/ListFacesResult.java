@@ -31,6 +31,12 @@ public class ListFacesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     */
+    private String faceModelVersion;
 
     /**
      * <p>
@@ -149,6 +155,49 @@ public class ListFacesResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
+     *        ).
+     */
+
+    public void setFaceModelVersion(String faceModelVersion) {
+        this.faceModelVersion = faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @return Version number of the face detection model associated with the input collection (
+     *         <code>CollectionId</code>).
+     */
+
+    public String getFaceModelVersion() {
+        return this.faceModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+     * </p>
+     * 
+     * @param faceModelVersion
+     *        Version number of the face detection model associated with the input collection (<code>CollectionId</code>
+     *        ).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFacesResult withFaceModelVersion(String faceModelVersion) {
+        setFaceModelVersion(faceModelVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -162,7 +211,9 @@ public class ListFacesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getFaces() != null)
             sb.append("Faces: ").append(getFaces()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFaceModelVersion() != null)
+            sb.append("FaceModelVersion: ").append(getFaceModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -185,6 +236,10 @@ public class ListFacesResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getFaceModelVersion() == null ^ this.getFaceModelVersion() == null)
+            return false;
+        if (other.getFaceModelVersion() != null && other.getFaceModelVersion().equals(this.getFaceModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -195,6 +250,7 @@ public class ListFacesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
         hashCode = prime * hashCode + ((getFaces() == null) ? 0 : getFaces().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFaceModelVersion() == null) ? 0 : getFaceModelVersion().hashCode());
         return hashCode;
     }
 

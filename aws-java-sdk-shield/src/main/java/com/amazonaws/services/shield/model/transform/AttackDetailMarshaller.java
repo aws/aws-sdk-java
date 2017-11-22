@@ -40,6 +40,8 @@ public class AttackDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").build();
     private static final MarshallingInfo<List> ATTACKCOUNTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttackCounters").build();
+    private static final MarshallingInfo<List> ATTACKPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttackProperties").build();
     private static final MarshallingInfo<List> MITIGATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Mitigations").build();
 
@@ -65,6 +67,7 @@ public class AttackDetailMarshaller {
             protocolMarshaller.marshall(attackDetail.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(attackDetail.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(attackDetail.getAttackCounters(), ATTACKCOUNTERS_BINDING);
+            protocolMarshaller.marshall(attackDetail.getAttackProperties(), ATTACKPROPERTIES_BINDING);
             protocolMarshaller.marshall(attackDetail.getMitigations(), MITIGATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

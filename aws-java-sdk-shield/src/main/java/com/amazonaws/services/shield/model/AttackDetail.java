@@ -48,13 +48,15 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<SubResourceSummary> subResources;
     /**
      * <p>
-     * The time the attack started, in the format 2016-12-16T13:50Z.
+     * The time the attack started, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time the attack ended, in the format 2016-12-16T13:50Z.
+     * The time the attack ended, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      */
     private java.util.Date endTime;
@@ -64,6 +66,12 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<SummarizedCounter> attackCounters;
+    /**
+     * <p>
+     * The array of <a>AttackProperty</a> objects.
+     * </p>
+     */
+    private java.util.List<AttackProperty> attackProperties;
     /**
      * <p>
      * List of mitigation actions taken for the attack.
@@ -223,11 +231,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the attack started, in the format 2016-12-16T13:50Z.
+     * The time the attack started, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param startTime
-     *        The time the attack started, in the format 2016-12-16T13:50Z.
+     *        The time the attack started, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -236,10 +246,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the attack started, in the format 2016-12-16T13:50Z.
+     * The time the attack started, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
-     * @return The time the attack started, in the format 2016-12-16T13:50Z.
+     * @return The time the attack started, in Unix time in seconds. For more information see <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types"
+     *         >timestamp</a>.
      */
 
     public java.util.Date getStartTime() {
@@ -248,11 +261,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the attack started, in the format 2016-12-16T13:50Z.
+     * The time the attack started, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param startTime
-     *        The time the attack started, in the format 2016-12-16T13:50Z.
+     *        The time the attack started, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +278,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the attack ended, in the format 2016-12-16T13:50Z.
+     * The time the attack ended, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param endTime
-     *        The time the attack ended, in the format 2016-12-16T13:50Z.
+     *        The time the attack ended, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -276,10 +293,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the attack ended, in the format 2016-12-16T13:50Z.
+     * The time the attack ended, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
-     * @return The time the attack ended, in the format 2016-12-16T13:50Z.
+     * @return The time the attack ended, in Unix time in seconds. For more information see <a
+     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types"
+     *         >timestamp</a>.
      */
 
     public java.util.Date getEndTime() {
@@ -288,11 +308,13 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the attack ended, in the format 2016-12-16T13:50Z.
+     * The time the attack ended, in Unix time in seconds. For more information see <a
+     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * </p>
      * 
      * @param endTime
-     *        The time the attack ended, in the format 2016-12-16T13:50Z.
+     *        The time the attack ended, in Unix time in seconds. For more information see <a
+     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,6 +390,76 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
 
     public AttackDetail withAttackCounters(java.util.Collection<SummarizedCounter> attackCounters) {
         setAttackCounters(attackCounters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The array of <a>AttackProperty</a> objects.
+     * </p>
+     * 
+     * @return The array of <a>AttackProperty</a> objects.
+     */
+
+    public java.util.List<AttackProperty> getAttackProperties() {
+        return attackProperties;
+    }
+
+    /**
+     * <p>
+     * The array of <a>AttackProperty</a> objects.
+     * </p>
+     * 
+     * @param attackProperties
+     *        The array of <a>AttackProperty</a> objects.
+     */
+
+    public void setAttackProperties(java.util.Collection<AttackProperty> attackProperties) {
+        if (attackProperties == null) {
+            this.attackProperties = null;
+            return;
+        }
+
+        this.attackProperties = new java.util.ArrayList<AttackProperty>(attackProperties);
+    }
+
+    /**
+     * <p>
+     * The array of <a>AttackProperty</a> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttackProperties(java.util.Collection)} or {@link #withAttackProperties(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param attackProperties
+     *        The array of <a>AttackProperty</a> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttackDetail withAttackProperties(AttackProperty... attackProperties) {
+        if (this.attackProperties == null) {
+            setAttackProperties(new java.util.ArrayList<AttackProperty>(attackProperties.length));
+        }
+        for (AttackProperty ele : attackProperties) {
+            this.attackProperties.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The array of <a>AttackProperty</a> objects.
+     * </p>
+     * 
+     * @param attackProperties
+     *        The array of <a>AttackProperty</a> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttackDetail withAttackProperties(java.util.Collection<AttackProperty> attackProperties) {
+        setAttackProperties(attackProperties);
         return this;
     }
 
@@ -464,6 +556,8 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getAttackCounters() != null)
             sb.append("AttackCounters: ").append(getAttackCounters()).append(",");
+        if (getAttackProperties() != null)
+            sb.append("AttackProperties: ").append(getAttackProperties()).append(",");
         if (getMitigations() != null)
             sb.append("Mitigations: ").append(getMitigations());
         sb.append("}");
@@ -504,6 +598,10 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAttackCounters() != null && other.getAttackCounters().equals(this.getAttackCounters()) == false)
             return false;
+        if (other.getAttackProperties() == null ^ this.getAttackProperties() == null)
+            return false;
+        if (other.getAttackProperties() != null && other.getAttackProperties().equals(this.getAttackProperties()) == false)
+            return false;
         if (other.getMitigations() == null ^ this.getMitigations() == null)
             return false;
         if (other.getMitigations() != null && other.getMitigations().equals(this.getMitigations()) == false)
@@ -522,6 +620,7 @@ public class AttackDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getAttackCounters() == null) ? 0 : getAttackCounters().hashCode());
+        hashCode = prime * hashCode + ((getAttackProperties() == null) ? 0 : getAttackProperties().hashCode());
         hashCode = prime * hashCode + ((getMitigations() == null) ? 0 : getMitigations().hashCode());
         return hashCode;
     }

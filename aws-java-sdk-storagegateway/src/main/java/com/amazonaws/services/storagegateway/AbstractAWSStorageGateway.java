@@ -283,6 +283,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public NotifyWhenUploadedResult notifyWhenUploaded(NotifyWhenUploadedRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RefreshCacheResult refreshCache(RefreshCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

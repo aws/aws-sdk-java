@@ -74,6 +74,10 @@ public class AttackDetailJsonUnmarshaller implements Unmarshaller<AttackDetail, 
                     attackDetail
                             .setAttackCounters(new ListUnmarshaller<SummarizedCounter>(SummarizedCounterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("AttackProperties", targetDepth)) {
+                    context.nextToken();
+                    attackDetail.setAttackProperties(new ListUnmarshaller<AttackProperty>(AttackPropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("Mitigations", targetDepth)) {
                     context.nextToken();
                     attackDetail.setMitigations(new ListUnmarshaller<Mitigation>(MitigationJsonUnmarshaller.getInstance()).unmarshall(context));

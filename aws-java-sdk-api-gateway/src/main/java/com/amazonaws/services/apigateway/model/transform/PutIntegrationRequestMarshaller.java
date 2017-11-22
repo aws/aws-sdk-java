@@ -55,6 +55,8 @@ public class PutIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheKeyParameters").build();
     private static final MarshallingInfo<String> CONTENTHANDLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentHandling").build();
+    private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMillis").build();
 
     private static final PutIntegrationRequestMarshaller instance = new PutIntegrationRequestMarshaller();
 
@@ -85,6 +87,7 @@ public class PutIntegrationRequestMarshaller {
             protocolMarshaller.marshall(putIntegrationRequest.getCacheNamespace(), CACHENAMESPACE_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getCacheKeyParameters(), CACHEKEYPARAMETERS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getContentHandling(), CONTENTHANDLING_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

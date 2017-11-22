@@ -97,6 +97,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean readOnly;
+    /**
+     * <p>
+     * Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME type
+     * guessing, and otherwise "false".
+     * </p>
+     */
+    private Boolean guessMIMETypeEnabled;
 
     /**
      * <p>
@@ -606,6 +613,66 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME type
+     * guessing, and otherwise "false".
+     * </p>
+     * 
+     * @param guessMIMETypeEnabled
+     *        Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME
+     *        type guessing, and otherwise "false".
+     */
+
+    public void setGuessMIMETypeEnabled(Boolean guessMIMETypeEnabled) {
+        this.guessMIMETypeEnabled = guessMIMETypeEnabled;
+    }
+
+    /**
+     * <p>
+     * Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME type
+     * guessing, and otherwise "false".
+     * </p>
+     * 
+     * @return Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME
+     *         type guessing, and otherwise "false".
+     */
+
+    public Boolean getGuessMIMETypeEnabled() {
+        return this.guessMIMETypeEnabled;
+    }
+
+    /**
+     * <p>
+     * Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME type
+     * guessing, and otherwise "false".
+     * </p>
+     * 
+     * @param guessMIMETypeEnabled
+     *        Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME
+     *        type guessing, and otherwise "false".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNFSFileShareRequest withGuessMIMETypeEnabled(Boolean guessMIMETypeEnabled) {
+        setGuessMIMETypeEnabled(guessMIMETypeEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME type
+     * guessing, and otherwise "false".
+     * </p>
+     * 
+     * @return Enables guessing of the MIME type for uploaded objects based on file extensions: "true" to enable MIME
+     *         type guessing, and otherwise "false".
+     */
+
+    public Boolean isGuessMIMETypeEnabled() {
+        return this.guessMIMETypeEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -631,7 +698,9 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSquash() != null)
             sb.append("Squash: ").append(getSquash()).append(",");
         if (getReadOnly() != null)
-            sb.append("ReadOnly: ").append(getReadOnly());
+            sb.append("ReadOnly: ").append(getReadOnly()).append(",");
+        if (getGuessMIMETypeEnabled() != null)
+            sb.append("GuessMIMETypeEnabled: ").append(getGuessMIMETypeEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -678,6 +747,10 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getReadOnly() != null && other.getReadOnly().equals(this.getReadOnly()) == false)
             return false;
+        if (other.getGuessMIMETypeEnabled() == null ^ this.getGuessMIMETypeEnabled() == null)
+            return false;
+        if (other.getGuessMIMETypeEnabled() != null && other.getGuessMIMETypeEnabled().equals(this.getGuessMIMETypeEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -694,6 +767,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getClientList() == null) ? 0 : getClientList().hashCode());
         hashCode = prime * hashCode + ((getSquash() == null) ? 0 : getSquash().hashCode());
         hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
+        hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         return hashCode;
     }
 

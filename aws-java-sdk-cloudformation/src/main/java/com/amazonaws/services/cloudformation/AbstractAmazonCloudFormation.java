@@ -244,6 +244,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public UpdateStackInstancesResult updateStackInstances(UpdateStackInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateStackSetResult updateStackSet(UpdateStackSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

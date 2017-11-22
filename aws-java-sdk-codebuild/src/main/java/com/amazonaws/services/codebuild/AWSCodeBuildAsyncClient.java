@@ -567,6 +567,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<InvalidateProjectCacheResult> invalidateProjectCacheAsync(InvalidateProjectCacheRequest request) {
+
+        return invalidateProjectCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InvalidateProjectCacheResult> invalidateProjectCacheAsync(final InvalidateProjectCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<InvalidateProjectCacheRequest, InvalidateProjectCacheResult> asyncHandler) {
+        final InvalidateProjectCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<InvalidateProjectCacheResult>() {
+            @Override
+            public InvalidateProjectCacheResult call() throws Exception {
+                InvalidateProjectCacheResult result = null;
+
+                try {
+                    result = executeInvalidateProjectCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBuildsResult> listBuildsAsync(ListBuildsRequest request) {
 
         return listBuildsAsync(request, null);

@@ -85,6 +85,11 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
                     request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
                             StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
                 }
+
+                if (parametersListValue.getResolvedValue() != null) {
+                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                }
                 parametersListIndex++;
             }
         }

@@ -34,7 +34,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Compares a face in the <i>source</i> input image with each face detected in the <i>target</i> input image.
+     * Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i>
+     * input image.
      * </p>
      * <note>
      * <p>
@@ -42,6 +43,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * detected in the target image.
      * </p>
      * </note>
+     * <p>
+     * You pass the input and target images either as base64-encoded image bytes or as a references to images in an
+     * Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not
+     * supported. The image must be either a PNG or JPEG formatted file.
+     * </p>
      * <p>
      * In response, the operation returns an array of face matches ordered by similarity score in descending order. For
      * each face match, the response provides a bounding box of the face, facial landmarks, pose details (pitch, role,
@@ -63,6 +69,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation information for the
      * source and target images. Use these values to display the images with the correct image orientation.
+     * </p>
+     * <p>
+     * If no faces are detected in the source or target images, <code>CompareFaces</code> returns an
+     * <code>InvalidParameterException</code> error.
      * </p>
      * <note>
      * <p>
@@ -84,7 +94,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Compares a face in the <i>source</i> input image with each face detected in the <i>target</i> input image.
+     * Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i>
+     * input image.
      * </p>
      * <note>
      * <p>
@@ -92,6 +103,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * detected in the target image.
      * </p>
      * </note>
+     * <p>
+     * You pass the input and target images either as base64-encoded image bytes or as a references to images in an
+     * Amazon S3 bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not
+     * supported. The image must be either a PNG or JPEG formatted file.
+     * </p>
      * <p>
      * In response, the operation returns an array of face matches ordered by similarity score in descending order. For
      * each face match, the response provides a bounding box of the face, facial landmarks, pose details (pitch, role,
@@ -113,6 +129,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation information for the
      * source and target images. Use these values to display the images with the correct image orientation.
+     * </p>
+     * <p>
+     * If no faces are detected in the source or target images, <code>CompareFaces</code> returns an
+     * <code>InvalidParameterException</code> error.
      * </p>
      * <note>
      * <p>
@@ -268,16 +288,22 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Detects faces within an image (JPEG or PNG) that is provided as input.
+     * Detects faces within an image that is provided as input.
      * </p>
      * <p>
-     * For each face detected, the operation returns face details including a bounding box of the face, a confidence
-     * value (that the bounding box contains a face), and a fixed set of attributes such as facial landmarks (for
-     * example, coordinates of eye and mouth), gender, presence of beard, sunglasses, etc.
+     * <code>DetectFaces</code> detects the 100 largest faces in the image. For each face detected, the operation
+     * returns face details including a bounding box of the face, a confidence value (that the bounding box contains a
+     * face), and a fixed set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
+     * gender, presence of beard, sunglasses, etc.
      * </p>
      * <p>
      * The face-detection algorithm is most effective on frontal faces. For non-frontal or obscured faces, the algorithm
      * may not detect the faces or might detect faces with lower confidence.
+     * </p>
+     * <p>
+     * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <note>
      * <p>
@@ -299,16 +325,22 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Detects faces within an image (JPEG or PNG) that is provided as input.
+     * Detects faces within an image that is provided as input.
      * </p>
      * <p>
-     * For each face detected, the operation returns face details including a bounding box of the face, a confidence
-     * value (that the bounding box contains a face), and a fixed set of attributes such as facial landmarks (for
-     * example, coordinates of eye and mouth), gender, presence of beard, sunglasses, etc.
+     * <code>DetectFaces</code> detects the 100 largest faces in the image. For each face detected, the operation
+     * returns face details including a bounding box of the face, a confidence value (that the bounding box contains a
+     * face), and a fixed set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
+     * gender, presence of beard, sunglasses, etc.
      * </p>
      * <p>
      * The face-detection algorithm is most effective on frontal faces. For non-frontal or obscured faces, the algorithm
      * may not detect the faces or might detect faces with lower confidence.
+     * </p>
+     * <p>
+     * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <note>
      * <p>
@@ -340,6 +372,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.
      * </p>
      * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
+     * you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image
+     * must be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
      * For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and
      * the level of confidence that the image contains the object. For example, suppose the input image has a
      * lighthouse, the sea, and a rock. The response will include all three labels, one for each object.
@@ -371,10 +408,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * In this example, the detection algorithm more precisely identifies the flower as a tulip.
      * </p>
      * <p>
-     * You can provide the input image as an S3 object or as base64-encoded bytes. In response, the API returns an array
-     * of labels. In addition, the response also includes the orientation correction. Optionally, you can specify
-     * <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50%. You
-     * can also add the <code>MaxLabels</code> parameter to limit the number of labels returned.
+     * In response, the API returns an array of labels. In addition, the response also includes the orientation
+     * correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the
+     * labels returned. The default is 50%. You can also add the <code>MaxLabels</code> parameter to limit the number of
+     * labels returned.
      * </p>
      * <note>
      * <p>
@@ -402,6 +439,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.
      * </p>
      * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
+     * you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image
+     * must be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
      * For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and
      * the level of confidence that the image contains the object. For example, suppose the input image has a
      * lighthouse, the sea, and a rock. The response will include all three labels, one for each object.
@@ -433,10 +475,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * In this example, the detection algorithm more precisely identifies the flower as a tulip.
      * </p>
      * <p>
-     * You can provide the input image as an S3 object or as base64-encoded bytes. In response, the API returns an array
-     * of labels. In addition, the response also includes the orientation correction. Optionally, you can specify
-     * <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50%. You
-     * can also add the <code>MaxLabels</code> parameter to limit the number of labels returned.
+     * In response, the API returns an array of labels. In addition, the response also includes the orientation
+     * correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the
+     * labels returned. The default is 50%. You can also add the <code>MaxLabels</code> parameter to limit the number of
+     * labels returned.
      * </p>
      * <note>
      * <p>
@@ -472,6 +514,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
      * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
      * </p>
+     * <p>
+     * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
+     * </p>
      * 
      * @param detectModerationLabelsRequest
      * @return A Java Future containing the result of the DetectModerationLabels operation returned by the service.
@@ -489,6 +536,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
      * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
      * </p>
+     * <p>
+     * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
+     * </p>
      * 
      * @param detectModerationLabelsRequest
      * @param asyncHandler
@@ -500,6 +552,99 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest detectModerationLabelsRequest,
             com.amazonaws.handlers.AsyncHandler<DetectModerationLabelsRequest, DetectModerationLabelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Detects text in the input image and converts it into machine-readable text.
+     * </p>
+     * <p>
+     * Pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you
+     * use the AWS CLI to call Amazon Rekognition operations, you must pass it as a reference to an image in an Amazon
+     * S3 bucket. For the AWS CLI, passing image bytes is not supported. The image must be either a .png or .jpeg
+     * formatted file.
+     * </p>
+     * <p>
+     * The <code>DetectText</code> operation returns text in an array of elements, <code>TextDetections</code>. Each
+     * <code>TextDetection</code> element provides information about a single word or line of text that was detected in
+     * the image.
+     * </p>
+     * <p>
+     * A word is one or more ISO basic latin script characters that are not separated by spaces. <code>DetectText</code>
+     * can detect up to 50 words in an image.
+     * </p>
+     * <p>
+     * A line is a string of equally spaced words. A line isn't necessarily a complete sentence. For example, a driver's
+     * license number is detected as a line. A line ends when there is no aligned text after it. Also, a line ends when
+     * there is a large gap between words, relative to the length of the words. This means, depending on the gap between
+     * words, Amazon Rekognition may detect multiple lines in text aligned in the same direction. Periods don't
+     * represent the end of a line. If a sentence spans multiple lines, the <code>DetectText</code> operation returns
+     * multiple lines.
+     * </p>
+     * <p>
+     * To determine whether a <code>TextDetection</code> element is a line of text or a word, use the
+     * <code>TextDetection</code> object <code>Type</code> field.
+     * </p>
+     * <p>
+     * To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+     * </p>
+     * <p>
+     * For more information, see <a>text-detection</a>.
+     * </p>
+     * 
+     * @param detectTextRequest
+     * @return A Java Future containing the result of the DetectText operation returned by the service.
+     * @sample AmazonRekognitionAsync.DetectText
+     */
+    java.util.concurrent.Future<DetectTextResult> detectTextAsync(DetectTextRequest detectTextRequest);
+
+    /**
+     * <p>
+     * Detects text in the input image and converts it into machine-readable text.
+     * </p>
+     * <p>
+     * Pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you
+     * use the AWS CLI to call Amazon Rekognition operations, you must pass it as a reference to an image in an Amazon
+     * S3 bucket. For the AWS CLI, passing image bytes is not supported. The image must be either a .png or .jpeg
+     * formatted file.
+     * </p>
+     * <p>
+     * The <code>DetectText</code> operation returns text in an array of elements, <code>TextDetections</code>. Each
+     * <code>TextDetection</code> element provides information about a single word or line of text that was detected in
+     * the image.
+     * </p>
+     * <p>
+     * A word is one or more ISO basic latin script characters that are not separated by spaces. <code>DetectText</code>
+     * can detect up to 50 words in an image.
+     * </p>
+     * <p>
+     * A line is a string of equally spaced words. A line isn't necessarily a complete sentence. For example, a driver's
+     * license number is detected as a line. A line ends when there is no aligned text after it. Also, a line ends when
+     * there is a large gap between words, relative to the length of the words. This means, depending on the gap between
+     * words, Amazon Rekognition may detect multiple lines in text aligned in the same direction. Periods don't
+     * represent the end of a line. If a sentence spans multiple lines, the <code>DetectText</code> operation returns
+     * multiple lines.
+     * </p>
+     * <p>
+     * To determine whether a <code>TextDetection</code> element is a line of text or a word, use the
+     * <code>TextDetection</code> object <code>Type</code> field.
+     * </p>
+     * <p>
+     * To be detected, text must be within +/- 30 degrees orientation of the horizontal axis.
+     * </p>
+     * <p>
+     * For more information, see <a>text-detection</a>.
+     * </p>
+     * 
+     * @param detectTextRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectText operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DetectText
+     */
+    java.util.concurrent.Future<DetectTextResult> detectTextAsync(DetectTextRequest detectTextRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectTextRequest, DetectTextResult> asyncHandler);
 
     /**
      * <p>
@@ -549,7 +694,13 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * operations using the and operations.
      * </p>
      * <p>
-     * If you provide the optional <code>externalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you are using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
+     * the input image. Later versions of the face detection model index the 100 largest faces in the input image. To
+     * determine which version of the model you are using, check the the value of <code>FaceModelVersion</code> in the
+     * response from <code>IndexFaces</code>. For more information, see <a>face-detection-model</a>.
+     * </p>
+     * <p>
+     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the operation, the response returns the external
      * ID. You can use this external image ID to create a client-side index to associate the faces with each image. You
      * can then use the index to find all faces in an image.
@@ -562,6 +713,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
+     * </p>
+     * <p>
+     * The input image is passed either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
      * For an example, see <a>example2</a>.
@@ -587,7 +743,13 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * operations using the and operations.
      * </p>
      * <p>
-     * If you provide the optional <code>externalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you are using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
+     * the input image. Later versions of the face detection model index the 100 largest faces in the input image. To
+     * determine which version of the model you are using, check the the value of <code>FaceModelVersion</code> in the
+     * response from <code>IndexFaces</code>. For more information, see <a>face-detection-model</a>.
+     * </p>
+     * <p>
+     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the operation, the response returns the external
      * ID. You can use this external image ID to create a client-side index to associate the faces with each image. You
      * can then use the index to find all faces in an image.
@@ -600,6 +762,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
+     * </p>
+     * <p>
+     * The input image is passed either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
      * For an example, see <a>example2</a>.
@@ -699,25 +866,30 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Returns an array of celebrities recognized in the input image. The image is passed either as base64-encoded image
-     * bytes or as a reference to an image in an Amazon S3 bucket. The image must be either a PNG or JPEG formatted
-     * file. For more information, see <a>celebrity-recognition</a>.
+     * Returns an array of celebrities recognized in the input image. For more information, see
+     * <a>celebrity-recognition</a>.
      * </p>
      * <p>
-     * <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists recognized celebrities in
-     * the <code>CelebrityFaces</code> list and unrecognized faces in the <code>UnrecognizedFaces</code> list. The
-     * operation doesn't return celebrities whose face sizes are smaller than the largest 15 faces in the image.
+     * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
+     * the <code>CelebrityFaces</code> array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
+     * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces are not amongst the largest 100 faces in
+     * the image.
      * </p>
      * <p>
-     * For each celebrity recognized, the API returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
-     * contains the celebrity name, ID, URL links to additional information, match confidence, and a
-     * <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
+     * For each celebrity recognized, the <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
+     * <code>Celebrity</code> object contains the celebrity name, ID, URL links to additional information, match
+     * confidence, and a <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
      * </p>
      * <p>
      * Rekognition does not retain information about which images a celebrity has been recognized in. Your application
      * must store this information and use the <code>Celebrity</code> ID property as a unique identifier for the
      * celebrity. If you don't store the celebrity name or additional information URLs returned by
      * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the operation.
+     * </p>
+     * <p>
+     * You pass the imput image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
      * For an example, see <a>recognize-celebrities-tutorial</a>.
@@ -734,25 +906,30 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Returns an array of celebrities recognized in the input image. The image is passed either as base64-encoded image
-     * bytes or as a reference to an image in an Amazon S3 bucket. The image must be either a PNG or JPEG formatted
-     * file. For more information, see <a>celebrity-recognition</a>.
+     * Returns an array of celebrities recognized in the input image. For more information, see
+     * <a>celebrity-recognition</a>.
      * </p>
      * <p>
-     * <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists recognized celebrities in
-     * the <code>CelebrityFaces</code> list and unrecognized faces in the <code>UnrecognizedFaces</code> list. The
-     * operation doesn't return celebrities whose face sizes are smaller than the largest 15 faces in the image.
+     * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
+     * the <code>CelebrityFaces</code> array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
+     * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces are not amongst the largest 100 faces in
+     * the image.
      * </p>
      * <p>
-     * For each celebrity recognized, the API returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
-     * contains the celebrity name, ID, URL links to additional information, match confidence, and a
-     * <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
+     * For each celebrity recognized, the <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
+     * <code>Celebrity</code> object contains the celebrity name, ID, URL links to additional information, match
+     * confidence, and a <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
      * </p>
      * <p>
      * Rekognition does not retain information about which images a celebrity has been recognized in. Your application
      * must store this information and use the <code>Celebrity</code> ID property as a unique identifier for the
      * celebrity. If you don't store the celebrity name or additional information URLs returned by
      * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the operation.
+     * </p>
+     * <p>
+     * You pass the imput image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
      * For an example, see <a>recognize-celebrities-tutorial</a>.
@@ -853,6 +1030,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
+     * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
      * The response returns an array of faces that match, ordered by similarity score with the highest similarity first.
      * More specifically, it is an array of metadata for each face match found. Along with the metadata, the response
      * also includes a <code>similarity</code> indicating how similar the face is to the input face. In the response,
@@ -887,6 +1069,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * crops, which then you can pass in to the <code>SearchFacesByImage</code> operation.
      * </p>
      * </note>
+     * <p>
+     * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
+     * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * The image must be either a PNG or JPEG formatted file.
+     * </p>
      * <p>
      * The response returns an array of faces that match, ordered by similarity score with the highest similarity first.
      * More specifically, it is an array of metadata for each face match found. Along with the metadata, the response

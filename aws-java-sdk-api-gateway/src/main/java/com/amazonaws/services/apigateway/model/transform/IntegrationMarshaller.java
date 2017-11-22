@@ -45,6 +45,8 @@ public class IntegrationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("passthroughBehavior").build();
     private static final MarshallingInfo<String> CONTENTHANDLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentHandling").build();
+    private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMillis").build();
     private static final MarshallingInfo<String> CACHENAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheNamespace").build();
     private static final MarshallingInfo<List> CACHEKEYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -76,6 +78,7 @@ public class IntegrationMarshaller {
             protocolMarshaller.marshall(integration.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
             protocolMarshaller.marshall(integration.getPassthroughBehavior(), PASSTHROUGHBEHAVIOR_BINDING);
             protocolMarshaller.marshall(integration.getContentHandling(), CONTENTHANDLING_BINDING);
+            protocolMarshaller.marshall(integration.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
             protocolMarshaller.marshall(integration.getCacheNamespace(), CACHENAMESPACE_BINDING);
             protocolMarshaller.marshall(integration.getCacheKeyParameters(), CACHEKEYPARAMETERS_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationResponses(), INTEGRATIONRESPONSES_BINDING);

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception that indicates that the subscription has been modified by another client. You can retry the request.
+ * Exception that indicates that the subscription you are trying to delete has not yet completed the 1-year commitment.
+ * You cannot delete this subscription.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

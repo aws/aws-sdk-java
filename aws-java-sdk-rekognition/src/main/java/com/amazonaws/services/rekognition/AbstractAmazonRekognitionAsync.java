@@ -119,6 +119,19 @@ public class AbstractAmazonRekognitionAsync extends AbstractAmazonRekognition im
     }
 
     @Override
+    public java.util.concurrent.Future<DetectTextResult> detectTextAsync(DetectTextRequest request) {
+
+        return detectTextAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectTextResult> detectTextAsync(DetectTextRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectTextRequest, DetectTextResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest request) {
 
         return getCelebrityInfoAsync(request, null);

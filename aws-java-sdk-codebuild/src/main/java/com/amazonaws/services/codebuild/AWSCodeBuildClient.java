@@ -743,6 +743,59 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
+     * Resets the cache for a project.
+     * </p>
+     * 
+     * @param invalidateProjectCacheRequest
+     * @return Result of the InvalidateProjectCache operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.InvalidateProjectCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeInvalidateProjectCache(request);
+    }
+
+    @SdkInternalApi
+    final InvalidateProjectCacheResult executeInvalidateProjectCache(InvalidateProjectCacheRequest invalidateProjectCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(invalidateProjectCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InvalidateProjectCacheRequest> request = null;
+        Response<InvalidateProjectCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InvalidateProjectCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invalidateProjectCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InvalidateProjectCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new InvalidateProjectCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of build IDs, with each build ID representing a single build.
      * </p>
      * 

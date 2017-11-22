@@ -93,6 +93,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private String documentationVersion;
     /**
      * <p>
+     * The access log settings in this stage.
+     * </p>
+     */
+    private AccessLogSettings accessLogSettings;
+    /**
+     * <p>
      * The timestamp when the stage was created.
      * </p>
      */
@@ -620,6 +626,46 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The access log settings in this stage.
+     * </p>
+     * 
+     * @param accessLogSettings
+     *        The access log settings in this stage.
+     */
+
+    public void setAccessLogSettings(AccessLogSettings accessLogSettings) {
+        this.accessLogSettings = accessLogSettings;
+    }
+
+    /**
+     * <p>
+     * The access log settings in this stage.
+     * </p>
+     * 
+     * @return The access log settings in this stage.
+     */
+
+    public AccessLogSettings getAccessLogSettings() {
+        return this.accessLogSettings;
+    }
+
+    /**
+     * <p>
+     * The access log settings in this stage.
+     * </p>
+     * 
+     * @param accessLogSettings
+     *        The access log settings in this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stage withAccessLogSettings(AccessLogSettings accessLogSettings) {
+        setAccessLogSettings(accessLogSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp when the stage was created.
      * </p>
      * 
@@ -729,6 +775,8 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Variables: ").append(getVariables()).append(",");
         if (getDocumentationVersion() != null)
             sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
+        if (getAccessLogSettings() != null)
+            sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getLastUpdatedDate() != null)
@@ -787,6 +835,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDocumentationVersion() != null && other.getDocumentationVersion().equals(this.getDocumentationVersion()) == false)
             return false;
+        if (other.getAccessLogSettings() == null ^ this.getAccessLogSettings() == null)
+            return false;
+        if (other.getAccessLogSettings() != null && other.getAccessLogSettings().equals(this.getAccessLogSettings()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -813,6 +865,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMethodSettings() == null) ? 0 : getMethodSettings().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
+        hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;

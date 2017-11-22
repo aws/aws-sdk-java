@@ -118,6 +118,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(GetSubscriptionStateRequest request) {
+
+        return getSubscriptionStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubscriptionStateResult> getSubscriptionStateAsync(GetSubscriptionStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSubscriptionStateRequest, GetSubscriptionStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAttacksResult> listAttacksAsync(ListAttacksRequest request) {
 
         return listAttacksAsync(request, null);

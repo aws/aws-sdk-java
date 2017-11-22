@@ -76,6 +76,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsRootVolumeSize").build();
     private static final MarshallingInfo<String> REPOUPGRADEONBOOT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepoUpgradeOnBoot").build();
+    private static final MarshallingInfo<StructuredPojo> KERBEROSATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KerberosAttributes").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -117,6 +119,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getCustomAmiId(), CUSTOMAMIID_BINDING);
             protocolMarshaller.marshall(cluster.getEbsRootVolumeSize(), EBSROOTVOLUMESIZE_BINDING);
             protocolMarshaller.marshall(cluster.getRepoUpgradeOnBoot(), REPOUPGRADEONBOOT_BINDING);
+            protocolMarshaller.marshall(cluster.getKerberosAttributes(), KERBEROSATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

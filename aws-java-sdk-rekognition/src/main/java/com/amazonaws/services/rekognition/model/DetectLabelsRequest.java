@@ -22,7 +22,8 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The input image. You can provide a blob of image bytes or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      */
     private Image image;
@@ -47,11 +48,13 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The input image. You can provide a blob of image bytes or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
      * @param image
-     *        The input image. You can provide a blob of image bytes or an S3 object.
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported.
      */
 
     public void setImage(Image image) {
@@ -60,10 +63,12 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The input image. You can provide a blob of image bytes or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
-     * @return The input image. You can provide a blob of image bytes or an S3 object.
+     * @return The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
+     *         Rekognition operations, passing base64-encoded image bytes is not supported.
      */
 
     public Image getImage() {
@@ -72,11 +77,13 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The input image. You can provide a blob of image bytes or an S3 object.
+     * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     * operations, passing base64-encoded image bytes is not supported.
      * </p>
      * 
      * @param image
-     *        The input image. You can provide a blob of image bytes or an S3 object.
+     *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
+     *        operations, passing base64-encoded image bytes is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

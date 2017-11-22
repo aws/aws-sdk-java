@@ -39,6 +39,8 @@ public enum CodebuildActions implements Action {
     DeleteProject("codebuild:DeleteProject"),
     /** Action for the DeleteWebhook operation. */
     DeleteWebhook("codebuild:DeleteWebhook"),
+    /** Action for the InvalidateProjectCache operation. */
+    InvalidateProjectCache("codebuild:InvalidateProjectCache"),
     /** Action for the ListBuilds operation. */
     ListBuilds("codebuild:ListBuilds"),
     /** Action for the ListBuildsForProject operation. */

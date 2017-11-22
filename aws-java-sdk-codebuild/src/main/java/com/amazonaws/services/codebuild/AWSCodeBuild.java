@@ -320,6 +320,23 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Resets the cache for a project.
+     * </p>
+     * 
+     * @param invalidateProjectCacheRequest
+     * @return Result of the InvalidateProjectCache operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.InvalidateProjectCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/InvalidateProjectCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest invalidateProjectCacheRequest);
+
+    /**
+     * <p>
      * Gets a list of build IDs, with each build ID representing a single build.
      * </p>
      * 
