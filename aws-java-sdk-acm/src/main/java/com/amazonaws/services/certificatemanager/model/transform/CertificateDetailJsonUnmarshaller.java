@@ -133,6 +133,15 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                     context.nextToken();
                     certificateDetail.setRenewalSummary(RenewalSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("KeyUsages", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setKeyUsages(new ListUnmarshaller<KeyUsage>(KeyUsageJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ExtendedKeyUsages", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setExtendedKeyUsages(new ListUnmarshaller<ExtendedKeyUsage>(ExtendedKeyUsageJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

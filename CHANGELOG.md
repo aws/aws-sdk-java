@@ -1,4 +1,9 @@
-# __1.11.234__ __2017-11-22__
+# __1.11.235__ __2017-11-22__
+## __AWS Certificate Manager__
+  - ### Features
+    - AWS Certificate Manager now supports the ability to import domainless certs and additional Key Types as well as an additional validation method for DNS.
+
+# __1.11.234__ __2017-11-21__
 ## __AWS Cloud Formation__
   - ### Features
     - 1) Instance-level parameter overrides (CloudFormation-StackSet feature): This feature will allow the customers to override the template parameters on specific stackInstances. Customers will also have ability to update their existing instances with/without parameter-overrides using a new API "UpdateStackInstances"                                                                                                                                                                                                                                                         2) Add support for SSM parameters in CloudFormation - This feature will allow the customers to use Systems Manager parameters in CloudFormation templates. They will be able to see values for these parameters in Describe APIs.

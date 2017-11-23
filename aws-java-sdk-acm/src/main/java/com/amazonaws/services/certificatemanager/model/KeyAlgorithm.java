@@ -22,7 +22,10 @@ public enum KeyAlgorithm {
 
     RSA_2048("RSA_2048"),
     RSA_1024("RSA_1024"),
-    EC_prime256v1("EC_prime256v1");
+    RSA_4096("RSA_4096"),
+    EC_prime256v1("EC_prime256v1"),
+    EC_secp384r1("EC_secp384r1"),
+    EC_secp521r1("EC_secp521r1");
 
     private String value;
 

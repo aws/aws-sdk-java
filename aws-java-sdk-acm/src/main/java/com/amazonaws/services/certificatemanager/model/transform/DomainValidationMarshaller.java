@@ -36,6 +36,10 @@ public class DomainValidationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationDomain").build();
     private static final MarshallingInfo<String> VALIDATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStatus").build();
+    private static final MarshallingInfo<StructuredPojo> RESOURCERECORD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceRecord").build();
+    private static final MarshallingInfo<String> VALIDATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationMethod").build();
 
     private static final DomainValidationMarshaller instance = new DomainValidationMarshaller();
 
@@ -57,6 +61,8 @@ public class DomainValidationMarshaller {
             protocolMarshaller.marshall(domainValidation.getValidationEmails(), VALIDATIONEMAILS_BINDING);
             protocolMarshaller.marshall(domainValidation.getValidationDomain(), VALIDATIONDOMAIN_BINDING);
             protocolMarshaller.marshall(domainValidation.getValidationStatus(), VALIDATIONSTATUS_BINDING);
+            protocolMarshaller.marshall(domainValidation.getResourceRecord(), RESOURCERECORD_BINDING);
+            protocolMarshaller.marshall(domainValidation.getValidationMethod(), VALIDATIONMETHOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -64,6 +64,14 @@ public class DomainValidationJsonUnmarshaller implements Unmarshaller<DomainVali
                     context.nextToken();
                     domainValidation.setValidationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceRecord", targetDepth)) {
+                    context.nextToken();
+                    domainValidation.setResourceRecord(ResourceRecordJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ValidationMethod", targetDepth)) {
+                    context.nextToken();
+                    domainValidation.setValidationMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

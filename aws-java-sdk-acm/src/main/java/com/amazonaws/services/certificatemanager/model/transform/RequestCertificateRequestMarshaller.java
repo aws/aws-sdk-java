@@ -30,6 +30,8 @@ public class RequestCertificateRequestMarshaller {
 
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> VALIDATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationMethod").build();
     private static final MarshallingInfo<List> SUBJECTALTERNATIVENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubjectAlternativeNames").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class RequestCertificateRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(requestCertificateRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(requestCertificateRequest.getValidationMethod(), VALIDATIONMETHOD_BINDING);
             protocolMarshaller.marshall(requestCertificateRequest.getSubjectAlternativeNames(), SUBJECTALTERNATIVENAMES_BINDING);
             protocolMarshaller.marshall(requestCertificateRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(requestCertificateRequest.getDomainValidationOptions(), DOMAINVALIDATIONOPTIONS_BINDING);

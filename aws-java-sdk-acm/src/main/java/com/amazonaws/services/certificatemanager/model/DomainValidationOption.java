@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the domain names that you want ACM to use to send you emails to validate your ownership of
- * the domain.
+ * Contains information about the domain names that you want ACM to use to send you emails that enable you to validate
+ * domain ownership.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidationOption" target="_top">AWS API

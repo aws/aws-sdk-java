@@ -29,10 +29,7 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * <p>
      * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
      * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
-     * be sent to all top-level domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -87,10 +84,7 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * <p>
      * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
      * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
-     * be sent to all top-level domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -99,10 +93,8 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * @param certificateArn
      *        String that contains the ARN of the requested certificate. The certificate ARN is generated and returned
      *        by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter
-     *        causes email to be sent to all top-level domains you specified in the certificate request.</p>
-     *        <p>
-     *        The ARN must be of the form:
-     *        </p>
+     *        causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be
+     *        of the form: </p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -115,10 +107,7 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * <p>
      * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
      * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
-     * be sent to all top-level domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -126,10 +115,8 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * 
      * @return String that contains the ARN of the requested certificate. The certificate ARN is generated and returned
      *         by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter
-     *         causes email to be sent to all top-level domains you specified in the certificate request.</p>
-     *         <p>
-     *         The ARN must be of the form:
-     *         </p>
+     *         causes email to be sent to all top-level domains you specified in the certificate request. The ARN must
+     *         be of the form: </p>
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
@@ -142,10 +129,7 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * <p>
      * String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the
      * <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to
-     * be sent to all top-level domains you specified in the certificate request.
-     * </p>
-     * <p>
-     * The ARN must be of the form:
+     * be sent to all top-level domains you specified in the certificate request. The ARN must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -154,10 +138,8 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
      * @param certificateArn
      *        String that contains the ARN of the requested certificate. The certificate ARN is generated and returned
      *        by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter
-     *        causes email to be sent to all top-level domains you specified in the certificate request.</p>
-     *        <p>
-     *        The ARN must be of the form:
-     *        </p>
+     *        causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be
+     *        of the form: </p>
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be chained together.

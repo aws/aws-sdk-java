@@ -133,7 +133,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.Date notAfter;
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm that was used to generate the public-private key pair.
      * </p>
      */
     private String keyAlgorithm;
@@ -179,6 +179,21 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private RenewalSummary renewalSummary;
+    /**
+     * <p>
+     * A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the
+     * public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.
+     * </p>
+     */
+    private java.util.List<KeyUsage> keyUsages;
+    /**
+     * <p>
+     * Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the
+     * certificate public key can be used and consists of a name and an object identifier (OID).
+     * </p>
+     */
+    private java.util.List<ExtendedKeyUsage> extendedKeyUsages;
 
     /**
      * <p>
@@ -994,11 +1009,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm that was used to generate the public-private key pair.
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm that was used to generate the key pair (the public and private key).
+     *        The algorithm that was used to generate the public-private key pair.
      * @see KeyAlgorithm
      */
 
@@ -1008,10 +1023,10 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm that was used to generate the public-private key pair.
      * </p>
      * 
-     * @return The algorithm that was used to generate the key pair (the public and private key).
+     * @return The algorithm that was used to generate the public-private key pair.
      * @see KeyAlgorithm
      */
 
@@ -1021,11 +1036,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm that was used to generate the public-private key pair.
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm that was used to generate the key pair (the public and private key).
+     *        The algorithm that was used to generate the public-private key pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -1037,11 +1052,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm that was used to generate the public-private key pair.
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm that was used to generate the key pair (the public and private key).
+     *        The algorithm that was used to generate the public-private key pair.
      * @see KeyAlgorithm
      */
 
@@ -1051,11 +1066,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm that was used to generate the public-private key pair.
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm that was used to generate the key pair (the public and private key).
+     *        The algorithm that was used to generate the public-private key pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -1472,6 +1487,170 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the
+     * public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.
+     * </p>
+     * 
+     * @return A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose
+     *         of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE,
+     *         KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.
+     */
+
+    public java.util.List<KeyUsage> getKeyUsages() {
+        return keyUsages;
+    }
+
+    /**
+     * <p>
+     * A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the
+     * public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.
+     * </p>
+     * 
+     * @param keyUsages
+     *        A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose
+     *        of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE,
+     *        KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.
+     */
+
+    public void setKeyUsages(java.util.Collection<KeyUsage> keyUsages) {
+        if (keyUsages == null) {
+            this.keyUsages = null;
+            return;
+        }
+
+        this.keyUsages = new java.util.ArrayList<KeyUsage>(keyUsages);
+    }
+
+    /**
+     * <p>
+     * A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the
+     * public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setKeyUsages(java.util.Collection)} or {@link #withKeyUsages(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param keyUsages
+     *        A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose
+     *        of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE,
+     *        KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withKeyUsages(KeyUsage... keyUsages) {
+        if (this.keyUsages == null) {
+            setKeyUsages(new java.util.ArrayList<KeyUsage>(keyUsages.length));
+        }
+        for (KeyUsage ele : keyUsages) {
+            this.keyUsages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose of the
+     * public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.
+     * </p>
+     * 
+     * @param keyUsages
+     *        A list of Key Usage X.509 v3 extension objects. Each object is a string value that identifies the purpose
+     *        of the public key contained in the certificate. Possible extension values include DIGITAL_SIGNATURE,
+     *        KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withKeyUsages(java.util.Collection<KeyUsage> keyUsages) {
+        setKeyUsages(keyUsages);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the
+     * certificate public key can be used and consists of a name and an object identifier (OID).
+     * </p>
+     * 
+     * @return Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for
+     *         which the certificate public key can be used and consists of a name and an object identifier (OID).
+     */
+
+    public java.util.List<ExtendedKeyUsage> getExtendedKeyUsages() {
+        return extendedKeyUsages;
+    }
+
+    /**
+     * <p>
+     * Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the
+     * certificate public key can be used and consists of a name and an object identifier (OID).
+     * </p>
+     * 
+     * @param extendedKeyUsages
+     *        Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for
+     *        which the certificate public key can be used and consists of a name and an object identifier (OID).
+     */
+
+    public void setExtendedKeyUsages(java.util.Collection<ExtendedKeyUsage> extendedKeyUsages) {
+        if (extendedKeyUsages == null) {
+            this.extendedKeyUsages = null;
+            return;
+        }
+
+        this.extendedKeyUsages = new java.util.ArrayList<ExtendedKeyUsage>(extendedKeyUsages);
+    }
+
+    /**
+     * <p>
+     * Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the
+     * certificate public key can be used and consists of a name and an object identifier (OID).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExtendedKeyUsages(java.util.Collection)} or {@link #withExtendedKeyUsages(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param extendedKeyUsages
+     *        Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for
+     *        which the certificate public key can be used and consists of a name and an object identifier (OID).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withExtendedKeyUsages(ExtendedKeyUsage... extendedKeyUsages) {
+        if (this.extendedKeyUsages == null) {
+            setExtendedKeyUsages(new java.util.ArrayList<ExtendedKeyUsage>(extendedKeyUsages.length));
+        }
+        for (ExtendedKeyUsage ele : extendedKeyUsages) {
+            this.extendedKeyUsages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for which the
+     * certificate public key can be used and consists of a name and an object identifier (OID).
+     * </p>
+     * 
+     * @param extendedKeyUsages
+     *        Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a purpose for
+     *        which the certificate public key can be used and consists of a name and an object identifier (OID).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withExtendedKeyUsages(java.util.Collection<ExtendedKeyUsage> extendedKeyUsages) {
+        setExtendedKeyUsages(extendedKeyUsages);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1523,7 +1702,11 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getRenewalSummary() != null)
-            sb.append("RenewalSummary: ").append(getRenewalSummary());
+            sb.append("RenewalSummary: ").append(getRenewalSummary()).append(",");
+        if (getKeyUsages() != null)
+            sb.append("KeyUsages: ").append(getKeyUsages()).append(",");
+        if (getExtendedKeyUsages() != null)
+            sb.append("ExtendedKeyUsages: ").append(getExtendedKeyUsages());
         sb.append("}");
         return sb.toString();
     }
@@ -1622,6 +1805,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRenewalSummary() != null && other.getRenewalSummary().equals(this.getRenewalSummary()) == false)
             return false;
+        if (other.getKeyUsages() == null ^ this.getKeyUsages() == null)
+            return false;
+        if (other.getKeyUsages() != null && other.getKeyUsages().equals(this.getKeyUsages()) == false)
+            return false;
+        if (other.getExtendedKeyUsages() == null ^ this.getExtendedKeyUsages() == null)
+            return false;
+        if (other.getExtendedKeyUsages() != null && other.getExtendedKeyUsages().equals(this.getExtendedKeyUsages()) == false)
+            return false;
         return true;
     }
 
@@ -1651,6 +1842,8 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getRenewalSummary() == null) ? 0 : getRenewalSummary().hashCode());
+        hashCode = prime * hashCode + ((getKeyUsages() == null) ? 0 : getKeyUsages().hashCode());
+        hashCode = prime * hashCode + ((getExtendedKeyUsages() == null) ? 0 : getExtendedKeyUsages().hashCode());
         return hashCode;
     }
 
