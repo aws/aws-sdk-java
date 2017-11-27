@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.235</version>
+    <version>1.11.236</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.235</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.236</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.235</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.236</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,26 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Elemental MediaConvert</title>
+                      <packages>com.amazonaws.services.mediaconvert*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaStore</title>
+                      <packages>com.amazonaws.services.mediastore*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaStore Data Plane</title>
+                      <packages>com.amazonaws.services.mediastoredata*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaLive</title>
+                      <packages>com.amazonaws.services.medialive*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaPackage</title>
+                      <packages>com.amazonaws.services.mediapackage*</packages>
+                    </group>
                     <group>
                       <title>AWS Cost Explorer</title>
                       <packages>com.amazonaws.services.costexplorer*</packages>
@@ -655,10 +675,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.235</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.236</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.235</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.236</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -672,6 +692,26 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Elemental MediaConvert</title>
+                      <packages>com.amazonaws.services.mediaconvert*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaStore</title>
+                      <packages>com.amazonaws.services.mediastore*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaStore Data Plane</title>
+                      <packages>com.amazonaws.services.mediastoredata*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaLive</title>
+                      <packages>com.amazonaws.services.medialive*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Elemental MediaPackage</title>
+                      <packages>com.amazonaws.services.mediapackage*</packages>
+                    </group>
                     <group>
                       <title>AWS Cost Explorer</title>
                       <packages>com.amazonaws.services.costexplorer*</packages>
@@ -1192,10 +1232,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.235</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.236</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.235</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.236</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1209,6 +1249,26 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS Elemental MediaConvert</title>
+                  <packages>com.amazonaws.services.mediaconvert*</packages>
+                </group>
+                <group>
+                  <title>AWS Elemental MediaStore</title>
+                  <packages>com.amazonaws.services.mediastore*</packages>
+                </group>
+                <group>
+                  <title>AWS Elemental MediaStore Data Plane</title>
+                  <packages>com.amazonaws.services.mediastoredata*</packages>
+                </group>
+                <group>
+                  <title>AWS Elemental MediaLive</title>
+                  <packages>com.amazonaws.services.medialive*</packages>
+                </group>
+                <group>
+                  <title>AWS Elemental MediaPackage</title>
+                  <packages>com.amazonaws.services.mediapackage*</packages>
+                </group>
                 <group>
                   <title>AWS Cost Explorer</title>
                   <packages>com.amazonaws.services.costexplorer*</packages>
@@ -1942,7 +2002,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.235-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.236-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

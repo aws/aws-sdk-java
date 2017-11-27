@@ -1,3 +1,24 @@
+# __1.11.236__ __2017-11-27__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert is a file-based video conversion service that transforms media into formats required for traditional broadcast and for internet streaming to multi-screen devices.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.
+
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - AWS Elemental MediaPackage is a just-in-time video packaging and origination service that lets you format highly secure and reliable live outputs for a variety of devices.
+
+## __AWS Elemental MediaStore__
+  - ### Features
+    - AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
+
+## __AWS Elemental MediaStore Data Plane__
+  - ### Features
+    - AWS Elemental MediaStore is an AWS storage service optimized for media. It gives you the performance, consistency, and low latency required to deliver live and on-demand video content. AWS Elemental MediaStore acts as the origin store in your video workflow.
+
 # __1.11.235__ __2017-11-22__
 ## __AWS Certificate Manager__
   - ### Features
