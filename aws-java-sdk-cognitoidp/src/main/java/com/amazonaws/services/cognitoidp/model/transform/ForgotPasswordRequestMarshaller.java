@@ -31,8 +31,12 @@ public class ForgotPasswordRequestMarshaller {
             .marshallLocationName("ClientId").build();
     private static final MarshallingInfo<String> SECRETHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretHash").build();
+    private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
 
     private static final ForgotPasswordRequestMarshaller instance = new ForgotPasswordRequestMarshaller();
 
@@ -52,7 +56,9 @@ public class ForgotPasswordRequestMarshaller {
         try {
             protocolMarshaller.marshall(forgotPasswordRequest.getClientId(), CLIENTID_BINDING);
             protocolMarshaller.marshall(forgotPasswordRequest.getSecretHash(), SECRETHASH_BINDING);
+            protocolMarshaller.marshall(forgotPasswordRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
             protocolMarshaller.marshall(forgotPasswordRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(forgotPasswordRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

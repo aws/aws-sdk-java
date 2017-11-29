@@ -70,6 +70,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Map<String, String> variables;
+    /**
+     * <p>
+     * The input configuration for the canary deployment when the deployment is a canary release deployment.
+     * </p>
+     */
+    private DeploymentCanarySettings canarySettings;
 
     /**
      * <p>
@@ -403,6 +409,46 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The input configuration for the canary deployment when the deployment is a canary release deployment.
+     * </p>
+     * 
+     * @param canarySettings
+     *        The input configuration for the canary deployment when the deployment is a canary release deployment.
+     */
+
+    public void setCanarySettings(DeploymentCanarySettings canarySettings) {
+        this.canarySettings = canarySettings;
+    }
+
+    /**
+     * <p>
+     * The input configuration for the canary deployment when the deployment is a canary release deployment.
+     * </p>
+     * 
+     * @return The input configuration for the canary deployment when the deployment is a canary release deployment.
+     */
+
+    public DeploymentCanarySettings getCanarySettings() {
+        return this.canarySettings;
+    }
+
+    /**
+     * <p>
+     * The input configuration for the canary deployment when the deployment is a canary release deployment.
+     * </p>
+     * 
+     * @param canarySettings
+     *        The input configuration for the canary deployment when the deployment is a canary release deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withCanarySettings(DeploymentCanarySettings canarySettings) {
+        setCanarySettings(canarySettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -426,7 +472,9 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         if (getCacheClusterSize() != null)
             sb.append("CacheClusterSize: ").append(getCacheClusterSize()).append(",");
         if (getVariables() != null)
-            sb.append("Variables: ").append(getVariables());
+            sb.append("Variables: ").append(getVariables()).append(",");
+        if (getCanarySettings() != null)
+            sb.append("CanarySettings: ").append(getCanarySettings());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +517,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getVariables() != null && other.getVariables().equals(this.getVariables()) == false)
             return false;
+        if (other.getCanarySettings() == null ^ this.getCanarySettings() == null)
+            return false;
+        if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
+            return false;
         return true;
     }
 
@@ -484,6 +536,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCacheClusterEnabled() == null) ? 0 : getCacheClusterEnabled().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
+        hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
         return hashCode;
     }
 

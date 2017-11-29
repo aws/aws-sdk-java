@@ -27,18 +27,18 @@ public class RequestSpotFleetResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      */
     private String spotFleetRequestId;
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      */
 
     public void setSpotFleetRequestId(String spotFleetRequestId) {
@@ -47,10 +47,10 @@ public class RequestSpotFleetResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The ID of the Spot fleet request.
+     * @return The ID of the Spot Fleet request.
      */
 
     public String getSpotFleetRequestId() {
@@ -59,11 +59,11 @@ public class RequestSpotFleetResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

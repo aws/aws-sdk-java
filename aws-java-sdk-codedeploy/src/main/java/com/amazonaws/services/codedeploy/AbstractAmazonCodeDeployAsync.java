@@ -592,6 +592,21 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    public java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest request) {
+
+        return putLifecycleEventHookExecutionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutLifecycleEventHookExecutionStatusRequest, PutLifecycleEventHookExecutionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterApplicationRevisionResult> registerApplicationRevisionAsync(RegisterApplicationRevisionRequest request) {
 
         return registerApplicationRevisionAsync(request, null);

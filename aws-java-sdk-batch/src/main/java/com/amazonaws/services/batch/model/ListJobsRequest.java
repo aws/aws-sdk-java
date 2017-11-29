@@ -33,6 +33,13 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String jobQueue;
     /**
      * <p>
+     * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
+     * specified array.
+     * </p>
+     */
+    private String arrayJobId;
+    /**
+     * <p>
      * The job status with which to filter jobs in the specified queue. If you do not specify a status, only
      * <code>RUNNING</code> jobs are returned.
      * </p>
@@ -102,6 +109,52 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     public ListJobsRequest withJobQueue(String jobQueue) {
         setJobQueue(jobQueue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
+     * specified array.
+     * </p>
+     * 
+     * @param arrayJobId
+     *        The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from
+     *        within the specified array.
+     */
+
+    public void setArrayJobId(String arrayJobId) {
+        this.arrayJobId = arrayJobId;
+    }
+
+    /**
+     * <p>
+     * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
+     * specified array.
+     * </p>
+     * 
+     * @return The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from
+     *         within the specified array.
+     */
+
+    public String getArrayJobId() {
+        return this.arrayJobId;
+    }
+
+    /**
+     * <p>
+     * The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
+     * specified array.
+     * </p>
+     * 
+     * @param arrayJobId
+     *        The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from
+     *        within the specified array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListJobsRequest withArrayJobId(String arrayJobId) {
+        setArrayJobId(arrayJobId);
         return this;
     }
 
@@ -359,6 +412,8 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         sb.append("{");
         if (getJobQueue() != null)
             sb.append("JobQueue: ").append(getJobQueue()).append(",");
+        if (getArrayJobId() != null)
+            sb.append("ArrayJobId: ").append(getArrayJobId()).append(",");
         if (getJobStatus() != null)
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getMaxResults() != null)
@@ -383,6 +438,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getJobQueue() != null && other.getJobQueue().equals(this.getJobQueue()) == false)
             return false;
+        if (other.getArrayJobId() == null ^ this.getArrayJobId() == null)
+            return false;
+        if (other.getArrayJobId() != null && other.getArrayJobId().equals(this.getArrayJobId()) == false)
+            return false;
         if (other.getJobStatus() == null ^ this.getJobStatus() == null)
             return false;
         if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
@@ -404,6 +463,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobQueue() == null) ? 0 : getJobQueue().hashCode());
+        hashCode = prime * hashCode + ((getArrayJobId() == null) ? 0 : getArrayJobId().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());

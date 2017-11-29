@@ -31,7 +31,8 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * running.
      * </p>
      */
     private Host host;
@@ -48,13 +49,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * running.
      * </p>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume, but the data is not guaranteed to persist after the containers
+     *        a host path for your data volume. However, the data is not guaranteed to persist after the containers
      *        associated with it stop running.
      */
 
@@ -66,12 +68,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * running.
      * </p>
      * 
      * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *         container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *         a host path for your data volume, but the data is not guaranteed to persist after the containers
+     *         a host path for your data volume. However, the data is not guaranteed to persist after the containers
      *         associated with it stop running.
      */
 
@@ -83,13 +86,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The contents of the <code>host</code> parameter determine whether your data volume persists on the host container
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
-     * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
+     * your data volume. However, the data is not guaranteed to persist after the containers associated with it stop
+     * running.
      * </p>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
-     *        a host path for your data volume, but the data is not guaranteed to persist after the containers
+     *        a host path for your data volume. However, the data is not guaranteed to persist after the containers
      *        associated with it stop running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

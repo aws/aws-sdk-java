@@ -43,6 +43,8 @@ public class LambdaConfigTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateAuthChallenge").build();
     private static final MarshallingInfo<String> VERIFYAUTHCHALLENGERESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerifyAuthChallengeResponse").build();
+    private static final MarshallingInfo<String> PRETOKENGENERATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreTokenGeneration").build();
 
     private static final LambdaConfigTypeMarshaller instance = new LambdaConfigTypeMarshaller();
 
@@ -68,6 +70,7 @@ public class LambdaConfigTypeMarshaller {
             protocolMarshaller.marshall(lambdaConfigType.getDefineAuthChallenge(), DEFINEAUTHCHALLENGE_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getCreateAuthChallenge(), CREATEAUTHCHALLENGE_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getVerifyAuthChallengeResponse(), VERIFYAUTHCHALLENGERESPONSE_BINDING);
+            protocolMarshaller.marshall(lambdaConfigType.getPreTokenGeneration(), PRETOKENGENERATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

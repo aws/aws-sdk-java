@@ -41,7 +41,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -160,7 +160,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -185,7 +185,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>service-name</code>: The name of the AWS service.
+     *         <code>service-name</code>: The name of the service.
      *         </p>
      *         </li>
      *         <li>
@@ -220,7 +220,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -246,7 +246,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the AWS service.
+     *        <code>service-name</code>: The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -283,7 +283,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -314,7 +314,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the AWS service.
+     *        <code>service-name</code>: The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -353,7 +353,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the AWS service.
+     * <code>service-name</code>: The name of the service.
      * </p>
      * </li>
      * <li>
@@ -379,7 +379,7 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the AWS service.
+     *        <code>service-name</code>: The name of the service.
      *        </p>
      *        </li>
      *        <li>

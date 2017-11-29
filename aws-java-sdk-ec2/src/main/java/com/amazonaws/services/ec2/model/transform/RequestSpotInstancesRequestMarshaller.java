@@ -106,6 +106,11 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                                     StringUtils.fromInteger(ebs.getIops()));
                         }
 
+                        if (ebs.getKmsKeyId() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId",
+                                    StringUtils.fromString(ebs.getKmsKeyId()));
+                        }
+
                         if (ebs.getSnapshotId() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
                                     StringUtils.fromString(ebs.getSnapshotId()));

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.237-SNAPSHOT</version>
+    <version>1.11.237</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,24 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-appsync</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-guardduty</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-mq</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-mediaconvert</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -812,6 +830,18 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS AppSync</title>
+                                  <packages>com.amazonaws.services.appsync*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon GuardDuty</title>
+                                  <packages>com.amazonaws.services.guardduty*</packages>
+                              </group>
+                              <group>
+                                  <title>AmazonMQ</title>
+                                  <packages>com.amazonaws.services.mq*</packages>
+                              </group>
                               <group>
                                   <title>AWS Elemental MediaConvert</title>
                                   <packages>com.amazonaws.services.mediaconvert*</packages>

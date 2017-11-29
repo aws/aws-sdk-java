@@ -27,17 +27,17 @@ public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests;
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
-     * @return One or more Spot instance requests.
+     * @return One or more Spot Instance requests.
      */
 
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
@@ -49,11 +49,11 @@ public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param cancelledSpotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      */
 
     public void setCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
@@ -67,7 +67,7 @@ public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param cancelledSpotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param cancelledSpotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

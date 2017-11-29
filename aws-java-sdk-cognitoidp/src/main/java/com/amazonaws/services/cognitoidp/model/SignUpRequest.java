@@ -68,6 +68,19 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private java.util.List<AttributeType> validationData;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
 
     /**
      * <p>
@@ -396,6 +409,92 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SignUpRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SignUpRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -417,7 +516,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         if (getUserAttributes() != null)
             sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getValidationData() != null)
-            sb.append("ValidationData: ").append(getValidationData());
+            sb.append("ValidationData: ").append(getValidationData()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -456,6 +559,14 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
             return false;
         if (other.getValidationData() != null && other.getValidationData().equals(this.getValidationData()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         return true;
     }
 
@@ -470,6 +581,8 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         hashCode = prime * hashCode + ((getValidationData() == null) ? 0 : getValidationData().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         return hashCode;
     }
 

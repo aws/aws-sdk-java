@@ -150,13 +150,27 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
-     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
-     * and placeholders for user name and temporary password.
+     * Creates a new user in the specified user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * If <code>MessageAction</code> is not set, the default is to send a welcome message via email or phone (SMS).
+     * </p>
+     * <note>
+     * <p>
+     * This message is based on a template that you configured in your call to or . This template includes your custom
+     * sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * </note>
+     * <p>
+     * Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code> parameter, and
+     * Amazon Cognito will not send any email.
+     * </p>
+     * <p>
+     * In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change
+     * their password.
+     * </p>
+     * <p>
+     * AdminCreateUser requires developer credentials.
      * </p>
      * 
      * @param adminCreateUserRequest
@@ -170,13 +184,27 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
-     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
-     * and placeholders for user name and temporary password.
+     * Creates a new user in the specified user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * If <code>MessageAction</code> is not set, the default is to send a welcome message via email or phone (SMS).
+     * </p>
+     * <note>
+     * <p>
+     * This message is based on a template that you configured in your call to or . This template includes your custom
+     * sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * </note>
+     * <p>
+     * Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code> parameter, and
+     * Amazon Cognito will not send any email.
+     * </p>
+     * <p>
+     * In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change
+     * their password.
+     * </p>
+     * <p>
+     * AdminCreateUser requires developer credentials.
      * </p>
      * 
      * @param adminCreateUserRequest
@@ -279,8 +307,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
      * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
      * removed. The next time the external user (no longer attached to the previously linked
-     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -301,11 +328,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
      * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
-     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
-     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
-     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
-     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * used for the <code>SourceUser</code> when the identities were originally linked in the call. (If the linking was
+     * done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here).
+     * However, if the user has already signed in, the <code>ProviderAttributeName</code> must be
+     * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
      * </p>
      * 
      * @param adminDisableProviderForUserRequest
@@ -323,8 +349,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
      * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
      * removed. The next time the external user (no longer attached to the previously linked
-     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -345,11 +370,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
      * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
-     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
-     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
-     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
-     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * used for the <code>SourceUser</code> when the identities were originally linked in the call. (If the linking was
+     * done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here).
+     * However, if the user has already signed in, the <code>ProviderAttributeName</code> must be
+     * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
      * </p>
      * 
      * @param adminDisableProviderForUserRequest
@@ -620,7 +644,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * </p>
      * </important>
      * <p>
-     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * See also .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -654,7 +678,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * </p>
      * </important>
      * <p>
-     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * See also .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -748,6 +772,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(AdminListGroupsForUserRequest adminListGroupsForUserRequest,
             com.amazonaws.handlers.AsyncHandler<AdminListGroupsForUserRequest, AdminListGroupsForUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists a history of user activity and any risks detected as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminListUserAuthEventsRequest
+     * @return A Java Future containing the result of the AdminListUserAuthEvents operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminListUserAuthEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminListUserAuthEventsResult> adminListUserAuthEventsAsync(AdminListUserAuthEventsRequest adminListUserAuthEventsRequest);
+
+    /**
+     * <p>
+     * Lists a history of user activity and any risks detected as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminListUserAuthEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminListUserAuthEvents operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminListUserAuthEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminListUserAuthEventsResult> adminListUserAuthEventsAsync(AdminListUserAuthEventsRequest adminListUserAuthEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminListUserAuthEventsRequest, AdminListUserAuthEventsResult> asyncHandler);
 
     /**
      * <p>
@@ -884,6 +939,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Sets the user's multi-factor authentication (MFA) preference.
+     * </p>
+     * 
+     * @param adminSetUserMFAPreferenceRequest
+     * @return A Java Future containing the result of the AdminSetUserMFAPreference operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminSetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminSetUserMFAPreferenceResult> adminSetUserMFAPreferenceAsync(
+            AdminSetUserMFAPreferenceRequest adminSetUserMFAPreferenceRequest);
+
+    /**
+     * <p>
+     * Sets the user's multi-factor authentication (MFA) preference.
+     * </p>
+     * 
+     * @param adminSetUserMFAPreferenceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminSetUserMFAPreference operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminSetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminSetUserMFAPreferenceResult> adminSetUserMFAPreferenceAsync(
+            AdminSetUserMFAPreferenceRequest adminSetUserMFAPreferenceRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminSetUserMFAPreferenceRequest, AdminSetUserMFAPreferenceResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
      * <p>
@@ -920,6 +1008,43 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<AdminSetUserSettingsResult> adminSetUserSettingsAsync(AdminSetUserSettingsRequest adminSetUserSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<AdminSetUserSettingsRequest, AdminSetUserSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides feedback for an authentication event as to whether it was from a valid user. This feedback is used for
+     * improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminUpdateAuthEventFeedbackRequest
+     * @return A Java Future containing the result of the AdminUpdateAuthEventFeedback operation returned by the
+     *         service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminUpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminUpdateAuthEventFeedbackResult> adminUpdateAuthEventFeedbackAsync(
+            AdminUpdateAuthEventFeedbackRequest adminUpdateAuthEventFeedbackRequest);
+
+    /**
+     * <p>
+     * Provides feedback for an authentication event as to whether it was from a valid user. This feedback is used for
+     * improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminUpdateAuthEventFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminUpdateAuthEventFeedback operation returned by the
+     *         service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminUpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminUpdateAuthEventFeedbackResult> adminUpdateAuthEventFeedbackAsync(
+            AdminUpdateAuthEventFeedbackRequest adminUpdateAuthEventFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminUpdateAuthEventFeedbackRequest, AdminUpdateAuthEventFeedbackResult> asyncHandler);
 
     /**
      * <p>
@@ -1051,6 +1176,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<AdminUserGlobalSignOutResult> adminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest,
             com.amazonaws.handlers.AsyncHandler<AdminUserGlobalSignOutRequest, AdminUserGlobalSignOutResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a unique generated shared secret key code for the user account. The request takes an access token or a
+     * session string, but not both.
+     * </p>
+     * 
+     * @param associateSoftwareTokenRequest
+     * @return A Java Future containing the result of the AssociateSoftwareToken operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AssociateSoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSoftwareTokenResult> associateSoftwareTokenAsync(AssociateSoftwareTokenRequest associateSoftwareTokenRequest);
+
+    /**
+     * <p>
+     * Returns a unique generated shared secret key code for the user account. The request takes an access token or a
+     * session string, but not both.
+     * </p>
+     * 
+     * @param associateSoftwareTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSoftwareToken operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AssociateSoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSoftwareTokenResult> associateSoftwareTokenAsync(AssociateSoftwareTokenRequest associateSoftwareTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSoftwareTokenRequest, AssociateSoftwareTokenResult> asyncHandler);
 
     /**
      * <p>
@@ -1739,6 +1897,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Describes the risk configuration.
+     * </p>
+     * 
+     * @param describeRiskConfigurationRequest
+     * @return A Java Future containing the result of the DescribeRiskConfiguration operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DescribeRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRiskConfigurationResult> describeRiskConfigurationAsync(
+            DescribeRiskConfigurationRequest describeRiskConfigurationRequest);
+
+    /**
+     * <p>
+     * Describes the risk configuration.
+     * </p>
+     * 
+     * @param describeRiskConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRiskConfiguration operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRiskConfigurationResult> describeRiskConfigurationAsync(
+            DescribeRiskConfigurationRequest describeRiskConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRiskConfigurationRequest, DescribeRiskConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the user import job.
      * </p>
      * 
@@ -1907,7 +2098,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
      * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
      * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
-     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
+     * resetting the password, call .
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -1926,7 +2117,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
      * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
      * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
-     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
+     * resetting the password, call .
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -2185,6 +2376,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     java.util.concurrent.Future<GetUserAttributeVerificationCodeResult> getUserAttributeVerificationCodeAsync(
             GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest,
             com.amazonaws.handlers.AsyncHandler<GetUserAttributeVerificationCodeRequest, GetUserAttributeVerificationCodeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the user pool multi-factor authentication (MFA) configuration.
+     * </p>
+     * 
+     * @param getUserPoolMfaConfigRequest
+     * @return A Java Future containing the result of the GetUserPoolMfaConfig operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUserPoolMfaConfigResult> getUserPoolMfaConfigAsync(GetUserPoolMfaConfigRequest getUserPoolMfaConfigRequest);
+
+    /**
+     * <p>
+     * Gets the user pool multi-factor authentication (MFA) configuration.
+     * </p>
+     * 
+     * @param getUserPoolMfaConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUserPoolMfaConfig operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUserPoolMfaConfigResult> getUserPoolMfaConfigAsync(GetUserPoolMfaConfigRequest getUserPoolMfaConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUserPoolMfaConfigRequest, GetUserPoolMfaConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -2621,6 +2843,53 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or
+     * <code>ClientId</code>, pass null values for all four configuration types.
+     * </p>
+     * <p>
+     * To enable Amazon Cognito advanced security features, update the user pool to include the
+     * <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+     * </p>
+     * <p>
+     * See .
+     * </p>
+     * 
+     * @param setRiskConfigurationRequest
+     * @return A Java Future containing the result of the SetRiskConfiguration operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.SetRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetRiskConfigurationResult> setRiskConfigurationAsync(SetRiskConfigurationRequest setRiskConfigurationRequest);
+
+    /**
+     * <p>
+     * Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or
+     * <code>ClientId</code>, pass null values for all four configuration types.
+     * </p>
+     * <p>
+     * To enable Amazon Cognito advanced security features, update the user pool to include the
+     * <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+     * </p>
+     * <p>
+     * See .
+     * </p>
+     * 
+     * @param setRiskConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetRiskConfiguration operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.SetRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetRiskConfigurationResult> setRiskConfigurationAsync(SetRiskConfigurationRequest setRiskConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<SetRiskConfigurationRequest, SetRiskConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the UI customization information for a user pool's built-in app UI.
      * </p>
      * <p>
@@ -2675,6 +2944,68 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<SetUICustomizationResult> setUICustomizationAsync(SetUICustomizationRequest setUICustomizationRequest,
             com.amazonaws.handlers.AsyncHandler<SetUICustomizationRequest, SetUICustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Set the user's multi-factor authentication (MFA) method preference.
+     * </p>
+     * 
+     * @param setUserMFAPreferenceRequest
+     * @return A Java Future containing the result of the SetUserMFAPreference operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.SetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetUserMFAPreferenceResult> setUserMFAPreferenceAsync(SetUserMFAPreferenceRequest setUserMFAPreferenceRequest);
+
+    /**
+     * <p>
+     * Set the user's multi-factor authentication (MFA) method preference.
+     * </p>
+     * 
+     * @param setUserMFAPreferenceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetUserMFAPreference operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.SetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetUserMFAPreferenceResult> setUserMFAPreferenceAsync(SetUserMFAPreferenceRequest setUserMFAPreferenceRequest,
+            com.amazonaws.handlers.AsyncHandler<SetUserMFAPreferenceRequest, SetUserMFAPreferenceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Set the user pool MFA configuration.
+     * </p>
+     * 
+     * @param setUserPoolMfaConfigRequest
+     * @return A Java Future containing the result of the SetUserPoolMfaConfig operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.SetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetUserPoolMfaConfigResult> setUserPoolMfaConfigAsync(SetUserPoolMfaConfigRequest setUserPoolMfaConfigRequest);
+
+    /**
+     * <p>
+     * Set the user pool MFA configuration.
+     * </p>
+     * 
+     * @param setUserPoolMfaConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetUserPoolMfaConfig operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.SetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetUserPoolMfaConfigResult> setUserPoolMfaConfigAsync(SetUserPoolMfaConfigRequest setUserPoolMfaConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<SetUserPoolMfaConfigRequest, SetUserPoolMfaConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -2809,6 +3140,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<StopUserImportJobResult> stopUserImportJobAsync(StopUserImportJobRequest stopUserImportJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopUserImportJobRequest, StopUserImportJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the feedback for an authentication event whether it was from a valid user or not. This feedback is used
+     * for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param updateAuthEventFeedbackRequest
+     * @return A Java Future containing the result of the UpdateAuthEventFeedback operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.UpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAuthEventFeedbackResult> updateAuthEventFeedbackAsync(UpdateAuthEventFeedbackRequest updateAuthEventFeedbackRequest);
+
+    /**
+     * <p>
+     * Provides the feedback for an authentication event whether it was from a valid user or not. This feedback is used
+     * for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param updateAuthEventFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAuthEventFeedback operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAuthEventFeedbackResult> updateAuthEventFeedbackAsync(UpdateAuthEventFeedbackRequest updateAuthEventFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAuthEventFeedbackRequest, UpdateAuthEventFeedbackResult> asyncHandler);
 
     /**
      * <p>
@@ -3040,6 +3404,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<UpdateUserPoolClientResult> updateUserPoolClientAsync(UpdateUserPoolClientRequest updateUserPoolClientRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateUserPoolClientRequest, UpdateUserPoolClientResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this API to register a user's entered TOTP code and mark the user's software token MFA status as "verified"
+     * if successful,
+     * </p>
+     * 
+     * @param verifySoftwareTokenRequest
+     * @return A Java Future containing the result of the VerifySoftwareToken operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.VerifySoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<VerifySoftwareTokenResult> verifySoftwareTokenAsync(VerifySoftwareTokenRequest verifySoftwareTokenRequest);
+
+    /**
+     * <p>
+     * Use this API to register a user's entered TOTP code and mark the user's software token MFA status as "verified"
+     * if successful,
+     * </p>
+     * 
+     * @param verifySoftwareTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the VerifySoftwareToken operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.VerifySoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<VerifySoftwareTokenResult> verifySoftwareTokenAsync(VerifySoftwareTokenRequest verifySoftwareTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<VerifySoftwareTokenRequest, VerifySoftwareTokenResult> asyncHandler);
 
     /**
      * <p>

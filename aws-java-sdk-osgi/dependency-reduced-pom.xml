@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.236</version>
+    <version>1.11.237</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.236</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.237</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.236</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.237</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS AppSync</title>
+                      <packages>com.amazonaws.services.appsync*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon GuardDuty</title>
+                      <packages>com.amazonaws.services.guardduty*</packages>
+                    </group>
+                    <group>
+                      <title>AmazonMQ</title>
+                      <packages>com.amazonaws.services.mq*</packages>
+                    </group>
                     <group>
                       <title>AWS Elemental MediaConvert</title>
                       <packages>com.amazonaws.services.mediaconvert*</packages>
@@ -675,10 +687,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.236</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.237</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.236</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.237</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -692,6 +704,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS AppSync</title>
+                      <packages>com.amazonaws.services.appsync*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon GuardDuty</title>
+                      <packages>com.amazonaws.services.guardduty*</packages>
+                    </group>
+                    <group>
+                      <title>AmazonMQ</title>
+                      <packages>com.amazonaws.services.mq*</packages>
+                    </group>
                     <group>
                       <title>AWS Elemental MediaConvert</title>
                       <packages>com.amazonaws.services.mediaconvert*</packages>
@@ -1232,10 +1256,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.236</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.237</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.236</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.237</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1249,6 +1273,18 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS AppSync</title>
+                  <packages>com.amazonaws.services.appsync*</packages>
+                </group>
+                <group>
+                  <title>Amazon GuardDuty</title>
+                  <packages>com.amazonaws.services.guardduty*</packages>
+                </group>
+                <group>
+                  <title>AmazonMQ</title>
+                  <packages>com.amazonaws.services.mq*</packages>
+                </group>
                 <group>
                   <title>AWS Elemental MediaConvert</title>
                   <packages>com.amazonaws.services.mediaconvert*</packages>
@@ -2002,7 +2038,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.236-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.237-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

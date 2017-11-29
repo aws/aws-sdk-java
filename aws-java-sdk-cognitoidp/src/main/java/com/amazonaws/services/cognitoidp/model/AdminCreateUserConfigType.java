@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of configuration for creating a new user profile.
+ * The configuration for creating a new user profile.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType"
@@ -46,6 +46,11 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The message template to be used for the welcome message to new users.
+     * </p>
+     * <p>
+     * See also <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * >Customizing User Invitation Messages</a>.
      * </p>
      */
     private MessageTemplateType inviteMessageTemplate;
@@ -169,9 +174,18 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <p>
      * The message template to be used for the welcome message to new users.
      * </p>
+     * <p>
+     * See also <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * >Customizing User Invitation Messages</a>.
+     * </p>
      * 
      * @param inviteMessageTemplate
-     *        The message template to be used for the welcome message to new users.
+     *        The message template to be used for the welcome message to new users.</p>
+     *        <p>
+     *        See also <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     *        >Customizing User Invitation Messages</a>.
      */
 
     public void setInviteMessageTemplate(MessageTemplateType inviteMessageTemplate) {
@@ -182,8 +196,17 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <p>
      * The message template to be used for the welcome message to new users.
      * </p>
+     * <p>
+     * See also <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * >Customizing User Invitation Messages</a>.
+     * </p>
      * 
-     * @return The message template to be used for the welcome message to new users.
+     * @return The message template to be used for the welcome message to new users.</p>
+     *         <p>
+     *         See also <a href=
+     *         "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     *         >Customizing User Invitation Messages</a>.
      */
 
     public MessageTemplateType getInviteMessageTemplate() {
@@ -194,9 +217,18 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * <p>
      * The message template to be used for the welcome message to new users.
      * </p>
+     * <p>
+     * See also <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     * >Customizing User Invitation Messages</a>.
+     * </p>
      * 
      * @param inviteMessageTemplate
-     *        The message template to be used for the welcome message to new users.
+     *        The message template to be used for the welcome message to new users.</p>
+     *        <p>
+     *        See also <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization"
+     *        >Customizing User Invitation Messages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

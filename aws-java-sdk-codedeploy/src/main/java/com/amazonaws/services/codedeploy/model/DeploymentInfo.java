@@ -230,6 +230,18 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String fileExistsBehavior;
+    /**
+     * <p>
+     * Messages that contain information about the status of a deployment.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> deploymentStatusMessages;
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     */
+    private String computePlatform;
 
     /**
      * <p>
@@ -1831,6 +1843,152 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Messages that contain information about the status of a deployment.
+     * </p>
+     * 
+     * @return Messages that contain information about the status of a deployment.
+     */
+
+    public java.util.List<String> getDeploymentStatusMessages() {
+        if (deploymentStatusMessages == null) {
+            deploymentStatusMessages = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return deploymentStatusMessages;
+    }
+
+    /**
+     * <p>
+     * Messages that contain information about the status of a deployment.
+     * </p>
+     * 
+     * @param deploymentStatusMessages
+     *        Messages that contain information about the status of a deployment.
+     */
+
+    public void setDeploymentStatusMessages(java.util.Collection<String> deploymentStatusMessages) {
+        if (deploymentStatusMessages == null) {
+            this.deploymentStatusMessages = null;
+            return;
+        }
+
+        this.deploymentStatusMessages = new com.amazonaws.internal.SdkInternalList<String>(deploymentStatusMessages);
+    }
+
+    /**
+     * <p>
+     * Messages that contain information about the status of a deployment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeploymentStatusMessages(java.util.Collection)} or
+     * {@link #withDeploymentStatusMessages(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param deploymentStatusMessages
+     *        Messages that contain information about the status of a deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentInfo withDeploymentStatusMessages(String... deploymentStatusMessages) {
+        if (this.deploymentStatusMessages == null) {
+            setDeploymentStatusMessages(new com.amazonaws.internal.SdkInternalList<String>(deploymentStatusMessages.length));
+        }
+        for (String ele : deploymentStatusMessages) {
+            this.deploymentStatusMessages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Messages that contain information about the status of a deployment.
+     * </p>
+     * 
+     * @param deploymentStatusMessages
+     *        Messages that contain information about the status of a deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentInfo withDeploymentStatusMessages(java.util.Collection<String> deploymentStatusMessages) {
+        setDeploymentStatusMessages(deploymentStatusMessages);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @return The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public DeploymentInfo withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(ComputePlatform computePlatform) {
+        withComputePlatform(computePlatform);
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public DeploymentInfo withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1890,7 +2048,11 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getAdditionalDeploymentStatusInfo() != null)
             sb.append("AdditionalDeploymentStatusInfo: ").append(getAdditionalDeploymentStatusInfo()).append(",");
         if (getFileExistsBehavior() != null)
-            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior());
+            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior()).append(",");
+        if (getDeploymentStatusMessages() != null)
+            sb.append("DeploymentStatusMessages: ").append(getDeploymentStatusMessages()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -2009,6 +2171,14 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFileExistsBehavior() != null && other.getFileExistsBehavior().equals(this.getFileExistsBehavior()) == false)
             return false;
+        if (other.getDeploymentStatusMessages() == null ^ this.getDeploymentStatusMessages() == null)
+            return false;
+        if (other.getDeploymentStatusMessages() != null && other.getDeploymentStatusMessages().equals(this.getDeploymentStatusMessages()) == false)
+            return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         return true;
     }
 
@@ -2042,6 +2212,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());
         hashCode = prime * hashCode + ((getAdditionalDeploymentStatusInfo() == null) ? 0 : getAdditionalDeploymentStatusInfo().hashCode());
         hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentStatusMessages() == null) ? 0 : getDeploymentStatusMessages().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,10 @@ public class CreateDeploymentConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentConfigName").build();
     private static final MarshallingInfo<StructuredPojo> MINIMUMHEALTHYHOSTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumHealthyHosts").build();
+    private static final MarshallingInfo<StructuredPojo> TRAFFICROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trafficRoutingConfig").build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
 
     private static final CreateDeploymentConfigRequestMarshaller instance = new CreateDeploymentConfigRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class CreateDeploymentConfigRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDeploymentConfigRequest.getDeploymentConfigName(), DEPLOYMENTCONFIGNAME_BINDING);
             protocolMarshaller.marshall(createDeploymentConfigRequest.getMinimumHealthyHosts(), MINIMUMHEALTHYHOSTS_BINDING);
+            protocolMarshaller.marshall(createDeploymentConfigRequest.getTrafficRoutingConfig(), TRAFFICROUTINGCONFIG_BINDING);
+            protocolMarshaller.marshall(createDeploymentConfigRequest.getComputePlatform(), COMPUTEPLATFORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

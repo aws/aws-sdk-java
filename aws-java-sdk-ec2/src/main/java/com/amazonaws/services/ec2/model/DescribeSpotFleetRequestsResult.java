@@ -34,7 +34,7 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
-     * Information about the configuration of your Spot fleet.
+     * Information about the configuration of your Spot Fleet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotFleetRequestConfig> spotFleetRequestConfigs;
@@ -87,10 +87,10 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the configuration of your Spot fleet.
+     * Information about the configuration of your Spot Fleet.
      * </p>
      * 
-     * @return Information about the configuration of your Spot fleet.
+     * @return Information about the configuration of your Spot Fleet.
      */
 
     public java.util.List<SpotFleetRequestConfig> getSpotFleetRequestConfigs() {
@@ -102,11 +102,11 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the configuration of your Spot fleet.
+     * Information about the configuration of your Spot Fleet.
      * </p>
      * 
      * @param spotFleetRequestConfigs
-     *        Information about the configuration of your Spot fleet.
+     *        Information about the configuration of your Spot Fleet.
      */
 
     public void setSpotFleetRequestConfigs(java.util.Collection<SpotFleetRequestConfig> spotFleetRequestConfigs) {
@@ -120,7 +120,7 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the configuration of your Spot fleet.
+     * Information about the configuration of your Spot Fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param spotFleetRequestConfigs
-     *        Information about the configuration of your Spot fleet.
+     *        Information about the configuration of your Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the configuration of your Spot fleet.
+     * Information about the configuration of your Spot Fleet.
      * </p>
      * 
      * @param spotFleetRequestConfigs
-     *        Information about the configuration of your Spot fleet.
+     *        Information about the configuration of your Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,14 @@ public class DeploymentConfigInfoJsonUnmarshaller implements Unmarshaller<Deploy
                     context.nextToken();
                     deploymentConfigInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("computePlatform", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfigInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("trafficRoutingConfig", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfigInfo.setTrafficRoutingConfig(TrafficRoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

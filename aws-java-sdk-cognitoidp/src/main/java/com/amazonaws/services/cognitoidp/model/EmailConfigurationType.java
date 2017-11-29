@@ -36,7 +36,7 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
     private String sourceArn;
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      */
     private String replyToEmailAddress;
@@ -83,11 +83,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      * 
      * @param replyToEmailAddress
-     *        The REPLY-TO email address.
+     *        The destination to which the receiver of the email should reply to.
      */
 
     public void setReplyToEmailAddress(String replyToEmailAddress) {
@@ -96,10 +96,10 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      * 
-     * @return The REPLY-TO email address.
+     * @return The destination to which the receiver of the email should reply to.
      */
 
     public String getReplyToEmailAddress() {
@@ -108,11 +108,11 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The REPLY-TO email address.
+     * The destination to which the receiver of the email should reply to.
      * </p>
      * 
      * @param replyToEmailAddress
-     *        The REPLY-TO email address.
+     *        The destination to which the receiver of the email should reply to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

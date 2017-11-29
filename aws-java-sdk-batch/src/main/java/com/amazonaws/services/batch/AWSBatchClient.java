@@ -285,7 +285,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the CancelJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -338,8 +338,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * <p>
      * In a managed compute environment, AWS Batch manages the compute resources within the environment, based on the
      * compute resources that you specify. Instances launched into a managed compute environment use a recent, approved
-     * version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand instances in your managed
-     * compute environment, or you can use Amazon EC2 Spot instances that only launch when the Spot bid price is below a
+     * version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand Instances in your managed
+     * compute environment, or you can use Amazon EC2 Spot Instances that only launch when the Spot bid price is below a
      * specified percentage of the On-Demand price.
      * </p>
      * <p>
@@ -347,19 +347,19 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * resource configuration options, such as using a custom AMI, but you must ensure that your AMI meets the Amazon
      * ECS container instance AMI specification. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance
-     * AMIs</a> in the <i>Amazon EC2 Container Service Developer Guide</i>. After you have created your unmanaged
+     * AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your unmanaged
      * compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS cluster
      * that is associated with it and then manually launch your container instances into that Amazon ECS cluster. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
-     * Amazon ECS Container Instance</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param createComputeEnvironmentRequest
      * @return Result of the CreateComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -422,7 +422,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the CreateJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -481,7 +481,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DeleteComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -542,7 +542,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DeleteJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -596,7 +596,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DeregisterJobDefinition operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -657,7 +657,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DescribeComputeEnvironments operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -714,7 +714,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DescribeJobDefinitions operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -769,7 +769,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DescribeJobQueues operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -823,7 +823,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the DescribeJobs operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -878,7 +878,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the ListJobs operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -932,7 +932,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the RegisterJobDefinition operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -988,7 +988,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the SubmitJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1044,7 +1044,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the TerminateJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1098,7 +1098,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the UpdateComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1154,7 +1154,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @return Result of the UpdateJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permission to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.

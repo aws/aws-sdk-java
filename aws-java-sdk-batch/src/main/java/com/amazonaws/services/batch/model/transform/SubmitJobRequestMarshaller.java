@@ -33,6 +33,8 @@ public class SubmitJobRequestMarshaller {
             .marshallLocationName("jobName").build();
     private static final MarshallingInfo<String> JOBQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobQueue").build();
+    private static final MarshallingInfo<StructuredPojo> ARRAYPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayProperties").build();
     private static final MarshallingInfo<List> DEPENDSON_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dependsOn").build();
     private static final MarshallingInfo<String> JOBDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class SubmitJobRequestMarshaller {
         try {
             protocolMarshaller.marshall(submitJobRequest.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getJobQueue(), JOBQUEUE_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getArrayProperties(), ARRAYPROPERTIES_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getDependsOn(), DEPENDSON_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getJobDefinition(), JOBDEFINITION_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getParameters(), PARAMETERS_BINDING);

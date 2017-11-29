@@ -39,6 +39,10 @@ public class AdminInitiateAuthRequestMarshaller {
             .marshallLocationName("AuthParameters").build();
     private static final MarshallingInfo<Map> CLIENTMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClientMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> CONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContextData").build();
 
     private static final AdminInitiateAuthRequestMarshaller instance = new AdminInitiateAuthRequestMarshaller();
 
@@ -61,6 +65,8 @@ public class AdminInitiateAuthRequestMarshaller {
             protocolMarshaller.marshall(adminInitiateAuthRequest.getAuthFlow(), AUTHFLOW_BINDING);
             protocolMarshaller.marshall(adminInitiateAuthRequest.getAuthParameters(), AUTHPARAMETERS_BINDING);
             protocolMarshaller.marshall(adminInitiateAuthRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
+            protocolMarshaller.marshall(adminInitiateAuthRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
+            protocolMarshaller.marshall(adminInitiateAuthRequest.getContextData(), CONTEXTDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

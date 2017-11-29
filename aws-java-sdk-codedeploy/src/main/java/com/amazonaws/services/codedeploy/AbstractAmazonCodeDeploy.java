@@ -229,6 +229,11 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    public PutLifecycleEventHookExecutionStatusResult putLifecycleEventHookExecutionStatus(PutLifecycleEventHookExecutionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterApplicationRevisionResult registerApplicationRevision(RegisterApplicationRevisionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -64,6 +64,10 @@ public class GetAliasResultJsonUnmarshaller implements Unmarshaller<GetAliasResu
                     context.nextToken();
                     getAliasResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RoutingConfig", targetDepth)) {
+                    context.nextToken();
+                    getAliasResult.setRoutingConfig(AliasRoutingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

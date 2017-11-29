@@ -29,6 +29,8 @@ public class ListJobsRequestMarshaller {
 
     private static final MarshallingInfo<String> JOBQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobQueue").build();
+    private static final MarshallingInfo<String> ARRAYJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayJobId").build();
     private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -53,6 +55,7 @@ public class ListJobsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listJobsRequest.getJobQueue(), JOBQUEUE_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getArrayJobId(), ARRAYJOBID_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getNextToken(), NEXTTOKEN_BINDING);

@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InstanceInterruptionBehavior {
 
+    Hibernate("hibernate"),
     Stop("stop"),
     Terminate("terminate");
 

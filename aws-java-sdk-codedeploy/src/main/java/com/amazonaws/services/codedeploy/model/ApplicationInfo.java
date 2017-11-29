@@ -58,6 +58,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String gitHubAccountName;
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     */
+    private String computePlatform;
 
     /**
      * <p>
@@ -272,6 +278,69 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for deployment of the application (<code>Lambda</code> or
+     *        <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @return The destination platform type for deployment of the application (<code>Lambda</code> or
+     *         <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for deployment of the application (<code>Lambda</code> or
+     *        <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public ApplicationInfo withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for deployment of the application (<code>Lambda</code> or
+     *        <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public ApplicationInfo withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -291,7 +360,9 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         if (getLinkedToGitHub() != null)
             sb.append("LinkedToGitHub: ").append(getLinkedToGitHub()).append(",");
         if (getGitHubAccountName() != null)
-            sb.append("GitHubAccountName: ").append(getGitHubAccountName());
+            sb.append("GitHubAccountName: ").append(getGitHubAccountName()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +397,10 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getGitHubAccountName() != null && other.getGitHubAccountName().equals(this.getGitHubAccountName()) == false)
             return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         return true;
     }
 
@@ -339,6 +414,7 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getLinkedToGitHub() == null) ? 0 : getLinkedToGitHub().hashCode());
         hashCode = prime * hashCode + ((getGitHubAccountName() == null) ? 0 : getGitHubAccountName().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         return hashCode;
     }
 

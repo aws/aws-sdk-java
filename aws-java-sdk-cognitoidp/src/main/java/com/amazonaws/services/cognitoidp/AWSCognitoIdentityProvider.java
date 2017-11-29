@@ -198,13 +198,27 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
-     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
-     * and placeholders for user name and temporary password.
+     * Creates a new user in the specified user pool.
      * </p>
      * <p>
-     * Requires developer credentials.
+     * If <code>MessageAction</code> is not set, the default is to send a welcome message via email or phone (SMS).
+     * </p>
+     * <note>
+     * <p>
+     * This message is based on a template that you configured in your call to or . This template includes your custom
+     * sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * </note>
+     * <p>
+     * Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code> parameter, and
+     * Amazon Cognito will not send any email.
+     * </p>
+     * <p>
+     * In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change
+     * their password.
+     * </p>
+     * <p>
+     * AdminCreateUser requires developer credentials.
      * </p>
      * 
      * @param adminCreateUserRequest
@@ -317,8 +331,7 @@ public interface AWSCognitoIdentityProvider {
      * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
      * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
      * removed. The next time the external user (no longer attached to the previously linked
-     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -339,11 +352,10 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
      * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
-     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
-     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
-     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
-     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
-     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * used for the <code>SourceUser</code> when the identities were originally linked in the call. (If the linking was
+     * done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here).
+     * However, if the user has already signed in, the <code>ProviderAttributeName</code> must be
+     * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
      * </p>
      * 
      * @param adminDisableProviderForUserRequest
@@ -589,7 +601,7 @@ public interface AWSCognitoIdentityProvider {
      * </p>
      * </important>
      * <p>
-     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * See also .
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -675,6 +687,33 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     AdminListGroupsForUserResult adminListGroupsForUser(AdminListGroupsForUserRequest adminListGroupsForUserRequest);
+
+    /**
+     * <p>
+     * Lists a history of user activity and any risks detected as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminListUserAuthEventsRequest
+     * @return Result of the AdminListUserAuthEvents operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminListUserAuthEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserAuthEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AdminListUserAuthEventsResult adminListUserAuthEvents(AdminListUserAuthEventsRequest adminListUserAuthEventsRequest);
 
     /**
      * <p>
@@ -817,11 +856,41 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user is not found.
      * @throws UserNotConfirmedException
      *         This exception is thrown when a user is not confirmed successfully.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
      * @sample AWSCognitoIdentityProvider.AdminRespondToAuthChallenge
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge"
      *      target="_top">AWS API Documentation</a>
      */
     AdminRespondToAuthChallengeResult adminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest adminRespondToAuthChallengeRequest);
+
+    /**
+     * <p>
+     * Sets the user's multi-factor authentication (MFA) preference.
+     * </p>
+     * 
+     * @param adminSetUserMFAPreferenceRequest
+     * @return Result of the AdminSetUserMFAPreference operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminSetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AdminSetUserMFAPreferenceResult adminSetUserMFAPreference(AdminSetUserMFAPreferenceRequest adminSetUserMFAPreferenceRequest);
 
     /**
      * <p>
@@ -849,6 +918,34 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     AdminSetUserSettingsResult adminSetUserSettings(AdminSetUserSettingsRequest adminSetUserSettingsRequest);
+
+    /**
+     * <p>
+     * Provides feedback for an authentication event as to whether it was from a valid user. This feedback is used for
+     * improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param adminUpdateAuthEventFeedbackRequest
+     * @return Result of the AdminUpdateAuthEventFeedback operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminUpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AdminUpdateAuthEventFeedbackResult adminUpdateAuthEventFeedback(AdminUpdateAuthEventFeedbackRequest adminUpdateAuthEventFeedbackRequest);
 
     /**
      * <p>
@@ -956,6 +1053,31 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     AdminUserGlobalSignOutResult adminUserGlobalSignOut(AdminUserGlobalSignOutRequest adminUserGlobalSignOutRequest);
+
+    /**
+     * <p>
+     * Returns a unique generated shared secret key code for the user account. The request takes an access token or a
+     * session string, but not both.
+     * </p>
+     * 
+     * @param associateSoftwareTokenRequest
+     * @return Result of the AssociateSoftwareToken operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
+     * @sample AWSCognitoIdentityProvider.AssociateSoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateSoftwareTokenResult associateSoftwareToken(AssociateSoftwareTokenRequest associateSoftwareTokenRequest);
 
     /**
      * <p>
@@ -1574,6 +1696,31 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Describes the risk configuration.
+     * </p>
+     * 
+     * @param describeRiskConfigurationRequest
+     * @return Result of the DescribeRiskConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DescribeRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRiskConfigurationResult describeRiskConfiguration(DescribeRiskConfigurationRequest describeRiskConfigurationRequest);
+
+    /**
+     * <p>
      * Describes the user import job.
      * </p>
      * 
@@ -1706,7 +1853,7 @@ public interface AWSCognitoIdentityProvider {
      * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
      * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
      * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
-     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
+     * resetting the password, call .
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -1965,6 +2112,29 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     GetUserAttributeVerificationCodeResult getUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest getUserAttributeVerificationCodeRequest);
+
+    /**
+     * <p>
+     * Gets the user pool multi-factor authentication (MFA) configuration.
+     * </p>
+     * 
+     * @param getUserPoolMfaConfigRequest
+     * @return Result of the GetUserPoolMfaConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.GetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetUserPoolMfaConfigResult getUserPoolMfaConfig(GetUserPoolMfaConfigRequest getUserPoolMfaConfigRequest);
 
     /**
      * <p>
@@ -2359,11 +2529,52 @@ public interface AWSCognitoIdentityProvider {
      *         with this email or phone already exists.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
      * @sample AWSCognitoIdentityProvider.RespondToAuthChallenge
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge"
      *      target="_top">AWS API Documentation</a>
      */
     RespondToAuthChallengeResult respondToAuthChallenge(RespondToAuthChallengeRequest respondToAuthChallengeRequest);
+
+    /**
+     * <p>
+     * Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or
+     * <code>ClientId</code>, pass null values for all four configuration types.
+     * </p>
+     * <p>
+     * To enable Amazon Cognito advanced security features, update the user pool to include the
+     * <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+     * </p>
+     * <p>
+     * See .
+     * </p>
+     * 
+     * @param setRiskConfigurationRequest
+     * @return Result of the SetRiskConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws CodeDeliveryFailureException
+     *         This exception is thrown when a verification code fails to deliver successfully.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
+     *         400.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetRiskConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetRiskConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetRiskConfigurationResult setRiskConfiguration(SetRiskConfigurationRequest setRiskConfigurationRequest);
 
     /**
      * <p>
@@ -2400,6 +2611,63 @@ public interface AWSCognitoIdentityProvider {
      *      API Documentation</a>
      */
     SetUICustomizationResult setUICustomization(SetUICustomizationRequest setUICustomizationRequest);
+
+    /**
+     * <p>
+     * Set the user's multi-factor authentication (MFA) method preference.
+     * </p>
+     * 
+     * @param setUserMFAPreferenceRequest
+     * @return Result of the SetUserMFAPreference operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetUserMFAPreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetUserMFAPreferenceResult setUserMFAPreference(SetUserMFAPreferenceRequest setUserMFAPreferenceRequest);
+
+    /**
+     * <p>
+     * Set the user pool MFA configuration.
+     * </p>
+     * 
+     * @param setUserPoolMfaConfigRequest
+     * @return Result of the SetUserPoolMfaConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS configuration does not have permission to
+     *         publish using Amazon SNS.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid for the role provided for SMS
+     *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
+     *         provided in the role does not match what is provided in the SMS configuration for the user pool.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetUserPoolMfaConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetUserPoolMfaConfigResult setUserPoolMfaConfig(SetUserPoolMfaConfigRequest setUserPoolMfaConfigRequest);
 
     /**
      * <p>
@@ -2529,6 +2797,34 @@ public interface AWSCognitoIdentityProvider {
      *      API Documentation</a>
      */
     StopUserImportJobResult stopUserImportJob(StopUserImportJobRequest stopUserImportJobRequest);
+
+    /**
+     * <p>
+     * Provides the feedback for an authentication event whether it was from a valid user or not. This feedback is used
+     * for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param updateAuthEventFeedbackRequest
+     * @return Result of the UpdateAuthEventFeedback operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserPoolAddOnNotEnabledException
+     *         This exception is thrown when user pool add-ons are not enabled.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateAuthEventFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateAuthEventFeedback"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAuthEventFeedbackResult updateAuthEventFeedback(UpdateAuthEventFeedbackRequest updateAuthEventFeedbackRequest);
 
     /**
      * <p>
@@ -2747,6 +3043,8 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ConcurrentModificationException
+     *         This exception is thrown if two or more modifications are happening concurrently.
      * @throws TooManyRequestsException
      *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
@@ -2762,6 +3060,48 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateUserPoolClientResult updateUserPoolClient(UpdateUserPoolClientRequest updateUserPoolClientRequest);
+
+    /**
+     * <p>
+     * Use this API to register a user's entered TOTP code and mark the user's software token MFA status as "verified"
+     * if successful,
+     * </p>
+     * 
+     * @param verifySoftwareTokenRequest
+     * @return Result of the VerifySoftwareToken operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidUserPoolConfigurationException
+     *         This exception is thrown when the user pool configuration is invalid.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws PasswordResetRequiredException
+     *         This exception is thrown when a password reset is required.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws UserNotConfirmedException
+     *         This exception is thrown when a user is not confirmed successfully.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws EnableSoftwareTokenMFAException
+     *         This exception is thrown when there is a code mismatch and the service fails to configure the software
+     *         token TOTP multi-factor authentication (MFA).
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws SoftwareTokenMFANotFoundException
+     *         This exception is thrown when the software token TOTP multi-factor authentication (MFA) is not enabled
+     *         for the user pool.
+     * @throws CodeMismatchException
+     *         This exception is thrown if the provided code does not match what the server was expecting.
+     * @sample AWSCognitoIdentityProvider.VerifySoftwareToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    VerifySoftwareTokenResult verifySoftwareToken(VerifySoftwareTokenRequest verifySoftwareTokenRequest);
 
     /**
      * <p>

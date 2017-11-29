@@ -37,6 +37,10 @@ public class InitiateAuthRequestMarshaller {
             .marshallLocationName("ClientMetadata").build();
     private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClientId").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
 
     private static final InitiateAuthRequestMarshaller instance = new InitiateAuthRequestMarshaller();
 
@@ -58,6 +62,8 @@ public class InitiateAuthRequestMarshaller {
             protocolMarshaller.marshall(initiateAuthRequest.getAuthParameters(), AUTHPARAMETERS_BINDING);
             protocolMarshaller.marshall(initiateAuthRequest.getClientMetadata(), CLIENTMETADATA_BINDING);
             protocolMarshaller.marshall(initiateAuthRequest.getClientId(), CLIENTID_BINDING);
+            protocolMarshaller.marshall(initiateAuthRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
+            protocolMarshaller.marshall(initiateAuthRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

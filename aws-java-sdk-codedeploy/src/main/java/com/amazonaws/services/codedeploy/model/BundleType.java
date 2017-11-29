@@ -22,7 +22,9 @@ public enum BundleType {
 
     Tar("tar"),
     Tgz("tgz"),
-    Zip("zip");
+    Zip("zip"),
+    YAML("YAML"),
+    JSON("JSON");
 
     private String value;
 

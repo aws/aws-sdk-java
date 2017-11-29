@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a running instance in a Spot fleet.
+ * Describes a running instance in a Spot Fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ActiveInstance" target="_top">AWS API
@@ -40,7 +40,7 @@ public class ActiveInstance implements Serializable, Cloneable {
     private String instanceType;
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      */
     private String spotInstanceRequestId;
@@ -135,11 +135,11 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      * 
      * @param spotInstanceRequestId
-     *        The ID of the Spot instance request.
+     *        The ID of the Spot Instance request.
      */
 
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
@@ -148,10 +148,10 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      * 
-     * @return The ID of the Spot instance request.
+     * @return The ID of the Spot Instance request.
      */
 
     public String getSpotInstanceRequestId() {
@@ -160,11 +160,11 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Spot instance request.
+     * The ID of the Spot Instance request.
      * </p>
      * 
      * @param spotInstanceRequestId
-     *        The ID of the Spot instance request.
+     *        The ID of the Spot Instance request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

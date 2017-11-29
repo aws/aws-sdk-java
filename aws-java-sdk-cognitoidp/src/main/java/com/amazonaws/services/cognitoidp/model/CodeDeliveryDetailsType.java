@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type of code delivery details being returned from the server.
+ * The code delivery details being returned from the server.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CodeDeliveryDetailsType"
@@ -42,7 +42,7 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
     private String deliveryMedium;
     /**
      * <p>
-     * The name of the attribute in the code delivery details type.
+     * The attribute name.
      * </p>
      */
     private String attributeName;
@@ -162,11 +162,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the attribute in the code delivery details type.
+     * The attribute name.
      * </p>
      * 
      * @param attributeName
-     *        The name of the attribute in the code delivery details type.
+     *        The attribute name.
      */
 
     public void setAttributeName(String attributeName) {
@@ -175,10 +175,10 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the attribute in the code delivery details type.
+     * The attribute name.
      * </p>
      * 
-     * @return The name of the attribute in the code delivery details type.
+     * @return The attribute name.
      */
 
     public String getAttributeName() {
@@ -187,11 +187,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the attribute in the code delivery details type.
+     * The attribute name.
      * </p>
      * 
      * @param attributeName
-     *        The name of the attribute in the code delivery details type.
+     *        The attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

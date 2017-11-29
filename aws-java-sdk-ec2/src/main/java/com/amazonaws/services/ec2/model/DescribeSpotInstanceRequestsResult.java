@@ -27,17 +27,17 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotInstanceRequest> spotInstanceRequests;
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
-     * @return One or more Spot instance requests.
+     * @return One or more Spot Instance requests.
      */
 
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
@@ -49,11 +49,11 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      */
 
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
@@ -67,7 +67,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot instance requests.
+     * One or more Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot instance requests.
+     *        One or more Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

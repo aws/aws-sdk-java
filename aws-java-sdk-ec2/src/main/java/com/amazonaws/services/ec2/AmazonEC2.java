@@ -115,6 +115,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param acceptVpcEndpointConnectionsRequest
+     * @return Result of the AcceptVpcEndpointConnections operation returned by the service.
+     * @sample AmazonEC2.AcceptVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptVpcEndpointConnectionsResult acceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest acceptVpcEndpointConnectionsRequest);
+
+    /**
+     * <p>
      * Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the
      * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use
      * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
@@ -681,12 +694,12 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Cancels the specified Spot fleet requests.
+     * Cancels the specified Spot Fleet requests.
      * </p>
      * <p>
-     * After you cancel a Spot fleet request, the Spot fleet launches no new Spot instances. You must specify whether
-     * the Spot fleet should also terminate its Spot instances. If you terminate the instances, the Spot fleet request
-     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot fleet request enters the
+     * After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether
+     * the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request
+     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the
      * <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you
      * terminate them manually.
      * </p>
@@ -702,15 +715,14 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Cancels one or more Spot instance requests. Spot instances are instances that Amazon EC2 starts on your behalf
-     * when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price
-     * based on available Spot instance capacity and current Spot instance requests. For more information, see <a
+     * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * Canceling a Spot instance request does not terminate running Spot instances associated with the request.
+     * Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.
      * </p>
      * </important>
      * 
@@ -1089,20 +1101,19 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the
-     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#8 private
+     * private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1 private
      * key. If a key with the specified name already exists, Amazon EC2 returns an error.
      * </p>
      * <p>
      * You can have up to five thousand key pairs per region.
      * </p>
      * <p>
-     * The key pair returned to you is available only in the region in which you create it. To create a key pair that is
-     * available in all regions, use <a>ImportKeyPair</a>.
+     * The key pair returned to you is available only in the region in which you create it. If you prefer, you can
+     * create your own key pair using a third-party tool and upload it to any region using <a>ImportKeyPair</a>.
      * </p>
      * <p>
-     * For more information about key pairs, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+     * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -1113,6 +1124,39 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest);
+
+    /**
+     * <p>
+     * Creates a launch template. A launch template contains the parameters to launch an instance. When you launch an
+     * instance using <a>RunInstances</a>, you can specify a launch template instead of providing the launch parameters
+     * in the request.
+     * </p>
+     * 
+     * @param createLaunchTemplateRequest
+     * @return Result of the CreateLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2.CreateLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLaunchTemplateResult createLaunchTemplate(CreateLaunchTemplateRequest createLaunchTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a new version for a launch template. You can specify an existing version of launch template from which to
+     * base the new version.
+     * </p>
+     * <p>
+     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * replace the numbering of launch template versions.
+     * </p>
+     * 
+     * @param createLaunchTemplateVersionRequest
+     * @return Result of the CreateLaunchTemplateVersion operation returned by the service.
+     * @sample AmazonEC2.CreateLaunchTemplateVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLaunchTemplateVersionResult createLaunchTemplateVersion(CreateLaunchTemplateVersionRequest createLaunchTemplateVersionRequest);
 
     /**
      * <p>
@@ -1432,7 +1476,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a data feed for Spot instances, enabling you to view Spot instance usage logs. You can create one data
+     * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -1586,19 +1630,23 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint for a specified AWS service. An endpoint enables you to create a private connection
-     * between your VPC and another AWS service in your account. You can create a gateway endpoint or an interface
-     * endpoint.
+     * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
+     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+     * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * A gateway endpoint serves as a target for a route in your route table for traffic destined for the AWS service.
-     * You can specify the VPC route tables that use the endpoint, and you can optionally specify an endpoint policy to
-     * attach to the endpoint that will control access to the service from your VPC.
+     * A <code>gateway</code> endpoint serves as a target for a route in your route table for traffic destined for the
+     * AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service
+     * from your VPC. You can also specify the VPC route tables that use the endpoint.
      * </p>
      * <p>
-     * An interface endpoint is a network interface in your subnet with a private IP address that serves as an entry
-     * point for traffic destined to the AWS service. You can specify the subnets in which to create an endpoint, and
-     * the security groups to associate with the network interface.
+     * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
+     * communicating with the specified service. You can specify the subnets in which to create an endpoint, and the
+     * security groups to associate with the endpoint network interface.
+     * </p>
+     * <p>
+     * Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
      * </p>
      * 
      * @param createVpcEndpointRequest
@@ -1609,6 +1657,46 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest createVpcEndpointRequest);
+
+    /**
+     * <p>
+     * Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification
+     * notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more
+     * information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the
+     * <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can create a connection notification for interface endpoints only.
+     * </p>
+     * 
+     * @param createVpcEndpointConnectionNotificationRequest
+     * @return Result of the CreateVpcEndpointConnectionNotification operation returned by the service.
+     * @sample AmazonEC2.CreateVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVpcEndpointConnectionNotificationResult createVpcEndpointConnectionNotification(
+            CreateVpcEndpointConnectionNotificationRequest createVpcEndpointConnectionNotificationRequest);
+
+    /**
+     * <p>
+     * Creates a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles)
+     * can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+     * </p>
+     * <p>
+     * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
+     * more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+     * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createVpcEndpointServiceConfigurationRequest
+     * @return Result of the CreateVpcEndpointServiceConfiguration operation returned by the service.
+     * @sample AmazonEC2.CreateVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVpcEndpointServiceConfigurationResult createVpcEndpointServiceConfiguration(
+            CreateVpcEndpointServiceConfigurationRequest createVpcEndpointServiceConfigurationRequest);
 
     /**
      * <p>
@@ -1820,6 +1908,34 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes a launch template. Deleting a launch template deletes all of its versions.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateRequest
+     * @return Result of the DeleteLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2.DeleteLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLaunchTemplateResult deleteLaunchTemplate(DeleteLaunchTemplateRequest deleteLaunchTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes one or more versions of a launch template. You cannot delete the default version of a launch template;
+     * you must first assign a different version as the default. If the default version is the only version for the
+     * launch template, you must delete the entire launch template using <a>DeleteLaunchTemplate</a>.
+     * </p>
+     * 
+     * @param deleteLaunchTemplateVersionsRequest
+     * @return Result of the DeleteLaunchTemplateVersions operation returned by the service.
+     * @sample AmazonEC2.DeleteLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLaunchTemplateVersionsResult deleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest deleteLaunchTemplateVersionsRequest);
+
+    /**
+     * <p>
      * Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic IP address, but does not
      * release the address from your account. Deleting a NAT gateway does not delete any NAT gateway routes in your
      * route tables.
@@ -1989,7 +2105,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the data feed for Spot instances.
+     * Deletes the data feed for Spot Instances.
      * </p>
      * 
      * @param deleteSpotDatafeedSubscriptionRequest
@@ -2083,6 +2199,36 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     DeleteVpcResult deleteVpc(DeleteVpcRequest deleteVpcRequest);
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint connection notifications.
+     * </p>
+     * 
+     * @param deleteVpcEndpointConnectionNotificationsRequest
+     * @return Result of the DeleteVpcEndpointConnectionNotifications operation returned by the service.
+     * @sample AmazonEC2.DeleteVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVpcEndpointConnectionNotificationsResult deleteVpcEndpointConnectionNotifications(
+            DeleteVpcEndpointConnectionNotificationsRequest deleteVpcEndpointConnectionNotificationsRequest);
+
+    /**
+     * <p>
+     * Deletes one or more VPC endpoint service configurations in your account. Before you delete the endpoint service
+     * configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint
+     * connections that are attached to the service.
+     * </p>
+     * 
+     * @param deleteVpcEndpointServiceConfigurationsRequest
+     * @return Result of the DeleteVpcEndpointServiceConfigurations operation returned by the service.
+     * @sample AmazonEC2.DeleteVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVpcEndpointServiceConfigurationsResult deleteVpcEndpointServiceConfigurations(
+            DeleteVpcEndpointServiceConfigurationsRequest deleteVpcEndpointServiceConfigurationsRequest);
 
     /**
      * <p>
@@ -2903,6 +3049,33 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more versions of a specified launch template. You can describe all versions, individual
+     * versions, or a range of versions.
+     * </p>
+     * 
+     * @param describeLaunchTemplateVersionsRequest
+     * @return Result of the DescribeLaunchTemplateVersions operation returned by the service.
+     * @sample AmazonEC2.DescribeLaunchTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplateVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLaunchTemplateVersionsResult describeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest describeLaunchTemplateVersionsRequest);
+
+    /**
+     * <p>
+     * Describes one or more launch templates.
+     * </p>
+     * 
+     * @param describeLaunchTemplatesRequest
+     * @return Result of the DescribeLaunchTemplates operation returned by the service.
+     * @sample AmazonEC2.DescribeLaunchTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeLaunchTemplatesResult describeLaunchTemplates(DescribeLaunchTemplatesRequest describeLaunchTemplatesRequest);
+
+    /**
+     * <p>
      * Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to
      * the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your
      * account.
@@ -3041,7 +3214,7 @@ public interface AmazonEC2 {
      * <p>
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
      * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
-     * security group rule that allows traffic from a VPC to access an AWS service through a VPC endpoint.
+     * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
      * </p>
      * 
      * @param describePrefixListsRequest
@@ -3424,7 +3597,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the data feed for Spot instances. For more information, see <a
+     * Describes the data feed for Spot Instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -3447,7 +3620,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the running instances for the specified Spot fleet.
+     * Describes the running instances for the specified Spot Fleet.
      * </p>
      * 
      * @param describeSpotFleetInstancesRequest
@@ -3461,10 +3634,10 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the events for the specified Spot fleet request during the specified time.
+     * Describes the events for the specified Spot Fleet request during the specified time.
      * </p>
      * <p>
-     * Spot fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
+     * Spot Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query
      * by the last evaluated time and not miss a recorded event.
      * </p>
      * 
@@ -3479,10 +3652,10 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes your Spot fleet requests.
+     * Describes your Spot Fleet requests.
      * </p>
      * <p>
-     * Spot fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
+     * Spot Fleet requests are deleted 48 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotFleetRequestsRequest
@@ -3503,20 +3676,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot instance requests that belong to your account. Spot instances are instances that Amazon EC2
-     * launches when the bid price that you specify exceeds the current Spot price. Amazon EC2 periodically sets the
-     * Spot price based on available Spot instance capacity and current Spot instance requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
+     * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot instance by examining the response.
-     * If the status of the Spot instance is <code>fulfilled</code>, the instance ID appears in the response and
+     * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
+     * If the status of the Spot Instance is <code>fulfilled</code>, the instance ID appears in the response and
      * contains the identifier of the instance. Alternatively, you can use <a>DescribeInstances</a> with a filter to
      * look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * Spot instance requests are deleted 4 hours after they are canceled and their instances are terminated.
+     * Spot Instance requests are deleted 4 hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotInstanceRequestsRequest
@@ -3822,7 +3994,63 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes all supported AWS services that can be specified when creating a VPC endpoint.
+     * Describes the connection notifications for VPC endpoints and VPC endpoint services.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionNotificationsRequest
+     * @return Result of the DescribeVpcEndpointConnectionNotifications operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointConnectionNotifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVpcEndpointConnectionNotificationsResult describeVpcEndpointConnectionNotifications(
+            DescribeVpcEndpointConnectionNotificationsRequest describeVpcEndpointConnectionNotificationsRequest);
+
+    /**
+     * <p>
+     * Describes the VPC endpoint connections to your VPC endpoint services, including any endpoints that are pending
+     * your acceptance.
+     * </p>
+     * 
+     * @param describeVpcEndpointConnectionsRequest
+     * @return Result of the DescribeVpcEndpointConnections operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVpcEndpointConnectionsResult describeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest describeVpcEndpointConnectionsRequest);
+
+    /**
+     * <p>
+     * Describes the VPC endpoint service configurations in your account (your services).
+     * </p>
+     * 
+     * @param describeVpcEndpointServiceConfigurationsRequest
+     * @return Result of the DescribeVpcEndpointServiceConfigurations operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointServiceConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServiceConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVpcEndpointServiceConfigurationsResult describeVpcEndpointServiceConfigurations(
+            DescribeVpcEndpointServiceConfigurationsRequest describeVpcEndpointServiceConfigurationsRequest);
+
+    /**
+     * <p>
+     * Describes the principals (service consumers) that are permitted to discover your VPC endpoint service.
+     * </p>
+     * 
+     * @param describeVpcEndpointServicePermissionsRequest
+     * @return Result of the DescribeVpcEndpointServicePermissions operation returned by the service.
+     * @sample AmazonEC2.DescribeVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVpcEndpointServicePermissionsResult describeVpcEndpointServicePermissions(
+            DescribeVpcEndpointServicePermissionsRequest describeVpcEndpointServicePermissionsRequest);
+
+    /**
+     * <p>
+     * Describes available services to which you can create a VPC endpoint.
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
@@ -4323,6 +4551,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Retrieves the configuration data of the specified instance. You can use this data to create a launch template.
+     * </p>
+     * 
+     * @param getLaunchTemplateDataRequest
+     * @return Result of the GetLaunchTemplateData operation returned by the service.
+     * @sample AmazonEC2.GetLaunchTemplateData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLaunchTemplateDataResult getLaunchTemplateData(GetLaunchTemplateDataRequest getLaunchTemplateDataRequest);
+
+    /**
+     * <p>
      * Retrieves the encrypted administrator password for a running Windows instance.
      * </p>
      * <p>
@@ -4645,6 +4886,20 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Modifies a launch template. You can specify which version of the launch template to set as the default version.
+     * When launching an instance, the default version applies when a launch template version is not specified.
+     * </p>
+     * 
+     * @param modifyLaunchTemplateRequest
+     * @return Result of the ModifyLaunchTemplate operation returned by the service.
+     * @sample AmazonEC2.ModifyLaunchTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyLaunchTemplateResult modifyLaunchTemplate(ModifyLaunchTemplateRequest modifyLaunchTemplateRequest);
+
+    /**
+     * <p>
      * Modifies the specified network interface attribute. You can specify only one attribute at a time.
      * </p>
      * 
@@ -4707,25 +4962,29 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Spot fleet request.
+     * Modifies the specified Spot Fleet request.
      * </p>
      * <p>
-     * While the Spot fleet request is being modified, it is in the <code>modifying</code> state.
+     * While the Spot Fleet request is being modified, it is in the <code>modifying</code> state.
      * </p>
      * <p>
-     * To scale up your Spot fleet, increase its target capacity. The Spot fleet launches the additional Spot instances
-     * according to the allocation strategy for the Spot fleet request. If the allocation strategy is
-     * <code>lowestPrice</code>, the Spot fleet launches instances using the Spot pool with the lowest price. If the
-     * allocation strategy is <code>diversified</code>, the Spot fleet distributes the instances across the Spot pools.
+     * To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches the additional Spot Instances
+     * according to the allocation strategy for the Spot Fleet request. If the allocation strategy is
+     * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot pool with the lowest price. If the
+     * allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot pools.
      * </p>
      * <p>
-     * To scale down your Spot fleet, decrease its target capacity. First, the Spot fleet cancels any open bids that
-     * exceed the new target capacity. You can request that the Spot fleet terminate Spot instances until the size of
+     * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
+     * exceed the new target capacity. You can request that the Spot Fleet terminate Spot Instances until the size of
      * the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
-     * Spot fleet terminates the instances with the highest price per unit. If the allocation strategy is
-     * <code>diversified</code>, the Spot fleet terminates instances across the Spot pools. Alternatively, you can
-     * request that the Spot fleet keep the fleet at its current size, but not replace any Spot instances that are
+     * Spot Fleet terminates the instances with the highest price per unit. If the allocation strategy is
+     * <code>diversified</code>, the Spot Fleet terminates instances across the Spot pools. Alternatively, you can
+     * request that the Spot Fleet keep the fleet at its current size, but not replace any Spot Instances that are
      * interrupted or that you terminate manually.
+     * </p>
+     * <p>
+     * If you are finished with your Spot Fleet for now, but will use it again later, you can set the target capacity to
+     * 0.
      * </p>
      * 
      * @param modifySpotFleetRequestRequest
@@ -4855,6 +5114,52 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     ModifyVpcEndpointResult modifyVpcEndpoint(ModifyVpcEndpointRequest modifyVpcEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies a connection notification for VPC endpoint or VPC endpoint service. You can change the SNS topic for the
+     * notification, or the events for which to be notified.
+     * </p>
+     * 
+     * @param modifyVpcEndpointConnectionNotificationRequest
+     * @return Result of the ModifyVpcEndpointConnectionNotification operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcEndpointConnectionNotification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVpcEndpointConnectionNotificationResult modifyVpcEndpointConnectionNotification(
+            ModifyVpcEndpointConnectionNotificationRequest modifyVpcEndpointConnectionNotificationRequest);
+
+    /**
+     * <p>
+     * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers for
+     * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
+     * through an interface VPC endpoint.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServiceConfigurationRequest
+     * @return Result of the ModifyVpcEndpointServiceConfiguration operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcEndpointServiceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVpcEndpointServiceConfigurationResult modifyVpcEndpointServiceConfiguration(
+            ModifyVpcEndpointServiceConfigurationRequest modifyVpcEndpointServiceConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers
+     * (IAM users, IAM roles, and AWS accounts) to discover your endpoint service.
+     * </p>
+     * 
+     * @param modifyVpcEndpointServicePermissionsRequest
+     * @return Result of the ModifyVpcEndpointServicePermissions operation returned by the service.
+     * @sample AmazonEC2.ModifyVpcEndpointServicePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServicePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVpcEndpointServicePermissionsResult modifyVpcEndpointServicePermissions(
+            ModifyVpcEndpointServicePermissionsRequest modifyVpcEndpointServicePermissionsRequest);
 
     /**
      * <p>
@@ -5092,6 +5397,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+     * </p>
+     * 
+     * @param rejectVpcEndpointConnectionsRequest
+     * @return Result of the RejectVpcEndpointConnections operation returned by the service.
+     * @sample AmazonEC2.RejectVpcEndpointConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcEndpointConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RejectVpcEndpointConnectionsResult rejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest rejectVpcEndpointConnectionsRequest);
+
+    /**
+     * <p>
      * Rejects a VPC peering connection request. The VPC peering connection must be in the
      * <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a> request to view your
      * outstanding VPC peering connection requests. To delete an active VPC peering connection, or to delete a VPC
@@ -5280,21 +5598,25 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot fleet request.
+     * Creates a Spot Fleet request.
      * </p>
      * <p>
      * You can submit a single request that includes multiple launch specifications that vary by instance type, AMI,
      * Availability Zone, or subnet.
      * </p>
      * <p>
-     * By default, the Spot fleet requests Spot instances in the Spot pool where the price per unit is the lowest. Each
+     * By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each
      * launch specification can include its own instance weighting that reflects the value of the instance type to your
      * application workload.
      * </p>
      * <p>
-     * Alternatively, you can specify that the Spot fleet distribute the target capacity across the Spot pools included
-     * in its launch specifications. By ensuring that the Spot instances in your Spot fleet are in different Spot pools,
+     * Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included
+     * in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools,
      * you can improve the availability of your fleet.
+     * </p>
+     * <p>
+     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request; only
+     * the <code>instance</code> resource type is supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -5313,9 +5635,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot instance request. Spot instances are instances that Amazon EC2 launches when the bid price that
-     * you specify exceeds the current Spot price. Amazon EC2 periodically sets the Spot price based on available Spot
-     * Instance capacity and current Spot instance requests. For more information, see <a
+     * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
+     * that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -5550,6 +5871,11 @@ public interface AmazonEC2 {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * You can create a <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+     * template</a>, which is a resource that contains the parameters to launch an instance. When you launch an instance
+     * using <a>RunInstances</a>, you can specify the launch template instead of specifying the launch parameters.
+     * </p>
      * <p>
      * To ensure faster instance launches, break up large requests into smaller batches. For example, create five
      * separate launch requests for 100 instances each instead of one launch request for 500 instances.

@@ -52,6 +52,13 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     */
+    private AliasRoutingConfiguration routingConfig;
 
     /**
      * <p>
@@ -226,6 +233,52 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
+     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     */
+
+    public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     * 
+     * @return Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
+     *         traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     */
+
+    public AliasRoutingConfiguration getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies an additional function versions the alias points to, allowing you to dictate what percentage of traffic
+     * will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Specifies an additional function versions the alias points to, allowing you to dictate what percentage of
+     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAliasResult withRoutingConfig(AliasRoutingConfiguration routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -243,7 +296,9 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (getFunctionVersion() != null)
             sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +329,10 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +345,7 @@ public class GetAliasResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
         return hashCode;
     }
 

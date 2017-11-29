@@ -29,6 +29,8 @@ public class CreateApplicationRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
+    private static final MarshallingInfo<String> COMPUTEPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computePlatform").build();
 
     private static final CreateApplicationRequestMarshaller instance = new CreateApplicationRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class CreateApplicationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createApplicationRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getComputePlatform(), COMPUTEPLATFORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

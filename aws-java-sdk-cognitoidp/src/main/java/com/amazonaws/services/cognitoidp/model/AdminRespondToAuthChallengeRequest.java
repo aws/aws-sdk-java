@@ -42,7 +42,7 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
     private String clientId;
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      */
     private String challengeName;
@@ -94,6 +94,19 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String session;
+    /**
+     * <p>
+     * The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private ContextDataType contextData;
 
     /**
      * <p>
@@ -177,11 +190,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     *        The challenge name. For more information, see .
      * @see ChallengeNameType
      */
 
@@ -191,10 +204,10 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * 
-     * @return The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * @return The challenge name. For more information, see .
      * @see ChallengeNameType
      */
 
@@ -204,11 +217,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     *        The challenge name. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -220,11 +233,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     *        The challenge name. For more information, see .
      * @see ChallengeNameType
      */
 
@@ -234,11 +247,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     * The challenge name. For more information, see .
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see <a href="API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+     *        The challenge name. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -566,6 +579,95 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code>
+     *        calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.
+     * </p>
+     * 
+     * @return The analytics metadata for collecting Amazon Pinpoint metrics for
+     *         <code>AdminRespondToAuthChallenge</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminRespondToAuthChallenge</code>
+     *        calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdminRespondToAuthChallengeRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param contextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setContextData(ContextDataType contextData) {
+        this.contextData = contextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public ContextDataType getContextData() {
+        return this.contextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param contextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdminRespondToAuthChallengeRequest withContextData(ContextDataType contextData) {
+        setContextData(contextData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -585,7 +687,11 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
         if (getChallengeResponses() != null)
             sb.append("ChallengeResponses: ").append(getChallengeResponses()).append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession());
+            sb.append("Session: ").append(getSession()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getContextData() != null)
+            sb.append("ContextData: ").append(getContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -620,6 +726,14 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getSession() != null && other.getSession().equals(this.getSession()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getContextData() == null ^ this.getContextData() == null)
+            return false;
+        if (other.getContextData() != null && other.getContextData().equals(this.getContextData()) == false)
+            return false;
         return true;
     }
 
@@ -633,6 +747,8 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getChallengeName() == null) ? 0 : getChallengeName().hashCode());
         hashCode = prime * hashCode + ((getChallengeResponses() == null) ? 0 : getChallengeResponses().hashCode());
         hashCode = prime * hashCode + ((getSession() == null) ? 0 : getSession().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getContextData() == null) ? 0 : getContextData().hashCode());
         return hashCode;
     }
 

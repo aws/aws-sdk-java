@@ -36,15 +36,15 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
     private AttemptContainerDetail container;
     /**
      * <p>
-     * The Unix timestamp for when the attempt was started (when the task transitioned from the <code>PENDING</code>
-     * state to the <code>RUNNING</code> state).
+     * The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      */
     private Long startedAt;
     /**
      * <p>
-     * The Unix timestamp for when the attempt was stopped (when the task transitioned from the <code>RUNNING</code>
-     * state to the <code>STOPPED</code> state).
+     * The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code>
+     * state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      */
     private Long stoppedAt;
@@ -97,13 +97,13 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the attempt was started (when the task transitioned from the <code>PENDING</code>
-     * state to the <code>RUNNING</code> state).
+     * The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the attempt was started (when the task transitioned from the
-     *        <code>PENDING</code> state to the <code>RUNNING</code> state).
+     *        The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     *        <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
     public void setStartedAt(Long startedAt) {
@@ -112,12 +112,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the attempt was started (when the task transitioned from the <code>PENDING</code>
-     * state to the <code>RUNNING</code> state).
+     * The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix timestamp for when the attempt was started (when the task transitioned from the
-     *         <code>PENDING</code> state to the <code>RUNNING</code> state).
+     * @return The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     *         <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
     public Long getStartedAt() {
@@ -126,13 +126,13 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the attempt was started (when the task transitioned from the <code>PENDING</code>
-     * state to the <code>RUNNING</code> state).
+     * The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix timestamp for when the attempt was started (when the task transitioned from the
-     *        <code>PENDING</code> state to the <code>RUNNING</code> state).
+     *        The Unix time stamp for when the attempt was started (when the attempt transitioned from the
+     *        <code>STARTING</code> state to the <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,13 +143,13 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the attempt was stopped (when the task transitioned from the <code>RUNNING</code>
-     * state to the <code>STOPPED</code> state).
+     * The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code>
+     * state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the attempt was stopped (when the task transitioned from the
-     *        <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     *        The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the
+     *        <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      */
 
     public void setStoppedAt(Long stoppedAt) {
@@ -158,12 +158,12 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the attempt was stopped (when the task transitioned from the <code>RUNNING</code>
-     * state to the <code>STOPPED</code> state).
+     * The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code>
+     * state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
-     * @return The Unix timestamp for when the attempt was stopped (when the task transitioned from the
-     *         <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     * @return The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the
+     *         <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      */
 
     public Long getStoppedAt() {
@@ -172,13 +172,13 @@ public class AttemptDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the attempt was stopped (when the task transitioned from the <code>RUNNING</code>
-     * state to the <code>STOPPED</code> state).
+     * The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the <code>RUNNING</code>
+     * state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix timestamp for when the attempt was stopped (when the task transitioned from the
-     *        <code>RUNNING</code> state to the <code>STOPPED</code> state).
+     *        The Unix time stamp for when the attempt was stopped (when the attempt transitioned from the
+     *        <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -127,6 +127,10 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setOnPremisesTagSet(OnPremisesTagSetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("computePlatform", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

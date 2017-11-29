@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the launch specification for one or more Spot instances.
+ * Describes the launch specification for one or more Spot Instances.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification" target="_top">AWS
@@ -72,7 +72,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String imageId;
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      */
     private String instanceType;
@@ -115,9 +115,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String ramdiskId;
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
      * </p>
      */
     private String spotPrice;
@@ -542,11 +542,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @see InstanceType
      */
 
@@ -556,10 +556,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
-     * @return The instance type. Note that T2 and HS1 instance types are not supported.
+     * @return The instance type.
      * @see InstanceType
      */
 
@@ -569,11 +569,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -585,11 +585,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @see InstanceType
      */
 
@@ -599,11 +599,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type. Note that T2 and HS1 instance types are not supported.
+     * The instance type.
      * </p>
      * 
      * @param instanceType
-     *        The instance type. Note that T2 and HS1 instance types are not supported.
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -896,15 +896,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
      * </p>
      * 
      * @param spotPrice
-     *        The bid price per unit hour for the specified instance type. If this value is not specified, the default
-     *        is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
-     *        bid price by the value of <code>WeightedCapacity</code>.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not
+     *        specified, the default is the Spot price specified for the fleet. To determine the Spot price per unit
+     *        hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -913,14 +913,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
      * </p>
      * 
-     * @return The bid price per unit hour for the specified instance type. If this value is not specified, the default
-     *         is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
-     *         bid price by the value of <code>WeightedCapacity</code>.
+     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not
+     *         specified, the default is the Spot price specified for the fleet. To determine the Spot price per unit
+     *         hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
      */
 
     public String getSpotPrice() {
@@ -929,15 +929,15 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour for the specified instance type. If this value is not specified, the default is the
-     * Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot bid price by
-     * the value of <code>WeightedCapacity</code>.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not specified,
+     * the default is the Spot price specified for the fleet. To determine the Spot price per unit hour, divide the Spot
+     * price by the value of <code>WeightedCapacity</code>.
      * </p>
      * 
      * @param spotPrice
-     *        The bid price per unit hour for the specified instance type. If this value is not specified, the default
-     *        is the Spot bid price specified for the fleet. To determine the bid price per unit hour, divide the Spot
-     *        bid price by the value of <code>WeightedCapacity</code>.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If this value is not
+     *        specified, the default is the Spot price specified for the fleet. To determine the Spot price per unit
+     *        hour, divide the Spot price by the value of <code>WeightedCapacity</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,6 +40,10 @@ public class InvokeResultJsonUnmarshaller implements Unmarshaller<InvokeResult, 
                 context.setCurrentHeader("X-Amz-Log-Result");
                 invokeResult.setLogResult(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("X-Amz-Executed-Version") != null) {
+                context.setCurrentHeader("X-Amz-Executed-Version");
+                invokeResult.setExecutedVersion(context.getUnmarshaller(String.class).unmarshall(context));
+            }
         }
 
         invokeResult.setStatusCode(context.getHttpResponse().getStatusCode());

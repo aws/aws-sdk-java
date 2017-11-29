@@ -64,6 +64,13 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private java.nio.ByteBuffer payload;
+    /**
+     * <p>
+     * The function version that has been executed. This value is returned only if the invocation type is
+     * <code>RequestResponse</code>.
+     * </p>
+     */
+    private String executedVersion;
 
     /**
      * <p>
@@ -335,6 +342,52 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The function version that has been executed. This value is returned only if the invocation type is
+     * <code>RequestResponse</code>.
+     * </p>
+     * 
+     * @param executedVersion
+     *        The function version that has been executed. This value is returned only if the invocation type is
+     *        <code>RequestResponse</code>.
+     */
+
+    public void setExecutedVersion(String executedVersion) {
+        this.executedVersion = executedVersion;
+    }
+
+    /**
+     * <p>
+     * The function version that has been executed. This value is returned only if the invocation type is
+     * <code>RequestResponse</code>.
+     * </p>
+     * 
+     * @return The function version that has been executed. This value is returned only if the invocation type is
+     *         <code>RequestResponse</code>.
+     */
+
+    public String getExecutedVersion() {
+        return this.executedVersion;
+    }
+
+    /**
+     * <p>
+     * The function version that has been executed. This value is returned only if the invocation type is
+     * <code>RequestResponse</code>.
+     * </p>
+     * 
+     * @param executedVersion
+     *        The function version that has been executed. This value is returned only if the invocation type is
+     *        <code>RequestResponse</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeResult withExecutedVersion(String executedVersion) {
+        setExecutedVersion(executedVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -352,7 +405,9 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getLogResult() != null)
             sb.append("LogResult: ").append(getLogResult()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: ").append(getPayload());
+            sb.append("Payload: ").append(getPayload()).append(",");
+        if (getExecutedVersion() != null)
+            sb.append("ExecutedVersion: ").append(getExecutedVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -383,6 +438,10 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
             return false;
+        if (other.getExecutedVersion() == null ^ this.getExecutedVersion() == null)
+            return false;
+        if (other.getExecutedVersion() != null && other.getExecutedVersion().equals(this.getExecutedVersion()) == false)
+            return false;
         return true;
     }
 
@@ -395,6 +454,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getFunctionError() == null) ? 0 : getFunctionError().hashCode());
         hashCode = prime * hashCode + ((getLogResult() == null) ? 0 : getLogResult().hashCode());
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
+        hashCode = prime * hashCode + ((getExecutedVersion() == null) ? 0 : getExecutedVersion().hashCode());
         return hashCode;
     }
 

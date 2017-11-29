@@ -366,7 +366,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws PolicyLengthExceededException
      *         Lambda function access policy is limited to 20 KB.
      * @throws TooManyRequestsException
@@ -433,7 +434,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.CreateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
@@ -517,7 +519,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @throws TooManyRequestsException
@@ -591,7 +594,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws ResourceNotFoundException
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
@@ -659,7 +663,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias" target="_top">AWS API
@@ -722,7 +727,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.DeleteEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
@@ -799,7 +805,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.DeleteFunction
@@ -920,7 +927,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.GetAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
@@ -982,7 +990,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.GetEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping" target="_top">AWS
@@ -1056,7 +1065,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @sample AWSLambda.GetFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1127,7 +1137,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @sample AWSLambda.GetFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1198,7 +1209,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @sample AWSLambda.GetPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -1278,7 +1290,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws EC2UnexpectedException
      *         AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda function.
      * @throws SubnetIPAddressLimitReachedException
@@ -1440,7 +1453,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListAliases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases" target="_top">AWS API
@@ -1513,7 +1527,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListEventSourceMappings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings" target="_top">AWS
@@ -1587,7 +1602,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @sample AWSLambda.ListFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
      *      Documentation</a>
@@ -1650,7 +1666,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
@@ -1711,7 +1728,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.ListVersionsByFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction" target="_top">AWS
@@ -1775,7 +1793,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
@@ -1850,7 +1869,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
@@ -1911,7 +1931,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
@@ -1970,7 +1991,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
@@ -2034,7 +2056,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @sample AWSLambda.UpdateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias" target="_top">AWS API
@@ -2109,7 +2132,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @throws ResourceConflictException
      *         The resource already exists.
@@ -2182,7 +2206,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
@@ -2255,7 +2280,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42.
+     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
+     *         version specified is <code>$LATEST</code>.
      * @throws TooManyRequestsException
      * @throws ResourceConflictException
      *         The resource already exists.

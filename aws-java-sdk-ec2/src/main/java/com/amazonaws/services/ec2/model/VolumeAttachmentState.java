@@ -23,7 +23,8 @@ public enum VolumeAttachmentState {
     Attaching("attaching"),
     Attached("attached"),
     Detaching("detaching"),
-    Detached("detached");
+    Detached("detached"),
+    Busy("busy");
 
     private String value;
 

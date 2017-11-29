@@ -79,6 +79,8 @@ public class UserPoolTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailConfigurationFailure").build();
     private static final MarshallingInfo<StructuredPojo> ADMINCREATEUSERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdminCreateUserConfig").build();
+    private static final MarshallingInfo<StructuredPojo> USERPOOLADDONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolAddOns").build();
 
     private static final UserPoolTypeMarshaller instance = new UserPoolTypeMarshaller();
 
@@ -121,6 +123,7 @@ public class UserPoolTypeMarshaller {
             protocolMarshaller.marshall(userPoolType.getSmsConfigurationFailure(), SMSCONFIGURATIONFAILURE_BINDING);
             protocolMarshaller.marshall(userPoolType.getEmailConfigurationFailure(), EMAILCONFIGURATIONFAILURE_BINDING);
             protocolMarshaller.marshall(userPoolType.getAdminCreateUserConfig(), ADMINCREATEUSERCONFIG_BINDING);
+            protocolMarshaller.marshall(userPoolType.getUserPoolAddOns(), USERPOOLADDONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

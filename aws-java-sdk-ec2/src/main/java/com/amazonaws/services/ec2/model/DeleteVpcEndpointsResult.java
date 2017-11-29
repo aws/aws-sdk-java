@@ -27,17 +27,17 @@ public class DeleteVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the endpoints that were not successfully deleted.
+     * Information about the VPC endpoints that were not successfully deleted.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<UnsuccessfulItem> unsuccessful;
 
     /**
      * <p>
-     * Information about the endpoints that were not successfully deleted.
+     * Information about the VPC endpoints that were not successfully deleted.
      * </p>
      * 
-     * @return Information about the endpoints that were not successfully deleted.
+     * @return Information about the VPC endpoints that were not successfully deleted.
      */
 
     public java.util.List<UnsuccessfulItem> getUnsuccessful() {
@@ -49,11 +49,11 @@ public class DeleteVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the endpoints that were not successfully deleted.
+     * Information about the VPC endpoints that were not successfully deleted.
      * </p>
      * 
      * @param unsuccessful
-     *        Information about the endpoints that were not successfully deleted.
+     *        Information about the VPC endpoints that were not successfully deleted.
      */
 
     public void setUnsuccessful(java.util.Collection<UnsuccessfulItem> unsuccessful) {
@@ -67,7 +67,7 @@ public class DeleteVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the endpoints that were not successfully deleted.
+     * Information about the VPC endpoints that were not successfully deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class DeleteVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param unsuccessful
-     *        Information about the endpoints that were not successfully deleted.
+     *        Information about the VPC endpoints that were not successfully deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class DeleteVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the endpoints that were not successfully deleted.
+     * Information about the VPC endpoints that were not successfully deleted.
      * </p>
      * 
      * @param unsuccessful
-     *        Information about the endpoints that were not successfully deleted.
+     *        Information about the VPC endpoints that were not successfully deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

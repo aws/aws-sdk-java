@@ -136,6 +136,12 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean allowedOAuthFlowsUserPoolClient;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for the user pool client.
+     * </p>
+     */
+    private AnalyticsConfigurationType analyticsConfiguration;
 
     /**
      * <p>
@@ -1183,6 +1189,46 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for the user pool client.
+     * </p>
+     * 
+     * @param analyticsConfiguration
+     *        The Amazon Pinpoint analytics configuration for the user pool client.
+     */
+
+    public void setAnalyticsConfiguration(AnalyticsConfigurationType analyticsConfiguration) {
+        this.analyticsConfiguration = analyticsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for the user pool client.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics configuration for the user pool client.
+     */
+
+    public AnalyticsConfigurationType getAnalyticsConfiguration() {
+        return this.analyticsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics configuration for the user pool client.
+     * </p>
+     * 
+     * @param analyticsConfiguration
+     *        The Amazon Pinpoint analytics configuration for the user pool client.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolClientType withAnalyticsConfiguration(AnalyticsConfigurationType analyticsConfiguration) {
+        setAnalyticsConfiguration(analyticsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1226,7 +1272,9 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
         if (getAllowedOAuthScopes() != null)
             sb.append("AllowedOAuthScopes: ").append(getAllowedOAuthScopes()).append(",");
         if (getAllowedOAuthFlowsUserPoolClient() != null)
-            sb.append("AllowedOAuthFlowsUserPoolClient: ").append(getAllowedOAuthFlowsUserPoolClient());
+            sb.append("AllowedOAuthFlowsUserPoolClient: ").append(getAllowedOAuthFlowsUserPoolClient()).append(",");
+        if (getAnalyticsConfiguration() != null)
+            sb.append("AnalyticsConfiguration: ").append(getAnalyticsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1310,6 +1358,10 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
         if (other.getAllowedOAuthFlowsUserPoolClient() != null
                 && other.getAllowedOAuthFlowsUserPoolClient().equals(this.getAllowedOAuthFlowsUserPoolClient()) == false)
             return false;
+        if (other.getAnalyticsConfiguration() == null ^ this.getAnalyticsConfiguration() == null)
+            return false;
+        if (other.getAnalyticsConfiguration() != null && other.getAnalyticsConfiguration().equals(this.getAnalyticsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1335,6 +1387,7 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getAllowedOAuthFlows() == null) ? 0 : getAllowedOAuthFlows().hashCode());
         hashCode = prime * hashCode + ((getAllowedOAuthScopes() == null) ? 0 : getAllowedOAuthScopes().hashCode());
         hashCode = prime * hashCode + ((getAllowedOAuthFlowsUserPoolClient() == null) ? 0 : getAllowedOAuthFlowsUserPoolClient().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsConfiguration() == null) ? 0 : getAnalyticsConfiguration().hashCode());
         return hashCode;
     }
 

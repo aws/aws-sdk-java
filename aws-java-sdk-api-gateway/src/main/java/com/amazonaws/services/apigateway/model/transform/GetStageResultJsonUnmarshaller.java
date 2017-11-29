@@ -94,6 +94,10 @@ public class GetStageResultJsonUnmarshaller implements Unmarshaller<GetStageResu
                     context.nextToken();
                     getStageResult.setAccessLogSettings(AccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("canarySettings", targetDepth)) {
+                    context.nextToken();
+                    getStageResult.setCanarySettings(CanarySettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     getStageResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

@@ -29,17 +29,17 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * One or more VPC endpoint IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcEndpointIds;
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * One or more VPC endpoint IDs.
      * </p>
      * 
-     * @return One or more endpoint IDs.
+     * @return One or more VPC endpoint IDs.
      */
 
     public java.util.List<String> getVpcEndpointIds() {
@@ -51,11 +51,11 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * One or more VPC endpoint IDs.
      * </p>
      * 
      * @param vpcEndpointIds
-     *        One or more endpoint IDs.
+     *        One or more VPC endpoint IDs.
      */
 
     public void setVpcEndpointIds(java.util.Collection<String> vpcEndpointIds) {
@@ -69,7 +69,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * One or more VPC endpoint IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest implement
      * </p>
      * 
      * @param vpcEndpointIds
-     *        One or more endpoint IDs.
+     *        One or more VPC endpoint IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * One or more endpoint IDs.
+     * One or more VPC endpoint IDs.
      * </p>
      * 
      * @param vpcEndpointIds
-     *        One or more endpoint IDs.
+     *        One or more VPC endpoint IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

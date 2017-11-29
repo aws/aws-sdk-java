@@ -56,6 +56,8 @@ public class CreateUserPoolClientRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOAuthScopes").build();
     private static final MarshallingInfo<Boolean> ALLOWEDOAUTHFLOWSUSERPOOLCLIENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOAuthFlowsUserPoolClient").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsConfiguration").build();
 
     private static final CreateUserPoolClientRequestMarshaller instance = new CreateUserPoolClientRequestMarshaller();
 
@@ -87,6 +89,7 @@ public class CreateUserPoolClientRequestMarshaller {
             protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthFlows(), ALLOWEDOAUTHFLOWS_BINDING);
             protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthScopes(), ALLOWEDOAUTHSCOPES_BINDING);
             protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthFlowsUserPoolClient(), ALLOWEDOAUTHFLOWSUSERPOOLCLIENT_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getAnalyticsConfiguration(), ANALYTICSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

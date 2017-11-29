@@ -50,7 +50,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      */
@@ -231,14 +231,14 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * 
      * @return The set of compute environments mapped to a job queue and their order relative to each other. The job
      *         scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *         environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *         can associate up to 3 compute environments with a job queue.
+     *         can associate up to three compute environments with a job queue.
      */
 
     public java.util.List<ComputeEnvironmentOrder> getComputeEnvironmentOrder() {
@@ -249,7 +249,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * 
@@ -257,7 +257,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
      *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to 3 compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue.
      */
 
     public void setComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
@@ -273,7 +273,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * <p>
@@ -286,7 +286,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
      *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to 3 compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,7 +304,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
      * uses this parameter to determine which compute environment should execute a given job. Compute environments must
-     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to 3
+     * be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three
      * compute environments with a job queue.
      * </p>
      * 
@@ -312,7 +312,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The set of compute environments mapped to a job queue and their order relative to each other. The job
      *        scheduler uses this parameter to determine which compute environment should execute a given job. Compute
      *        environments must be in the <code>VALID</code> state before you can associate them with a job queue. You
-     *        can associate up to 3 compute environments with a job queue.
+     *        can associate up to three compute environments with a job queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

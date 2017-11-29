@@ -52,6 +52,19 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date createTime;
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     */
+    private String computePlatform;
+    /**
+     * <p>
+     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * platform can specify this.
+     * </p>
+     */
+    private TrafficRoutingConfig trafficRoutingConfig;
 
     /**
      * <p>
@@ -214,6 +227,111 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @return The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public DeploymentConfigInfo withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public DeploymentConfigInfo withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * platform can specify this.
+     * </p>
+     * 
+     * @param trafficRoutingConfig
+     *        The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda
+     *        compute platform can specify this.
+     */
+
+    public void setTrafficRoutingConfig(TrafficRoutingConfig trafficRoutingConfig) {
+        this.trafficRoutingConfig = trafficRoutingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * platform can specify this.
+     * </p>
+     * 
+     * @return The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda
+     *         compute platform can specify this.
+     */
+
+    public TrafficRoutingConfig getTrafficRoutingConfig() {
+        return this.trafficRoutingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * platform can specify this.
+     * </p>
+     * 
+     * @param trafficRoutingConfig
+     *        The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda
+     *        compute platform can specify this.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfigInfo withTrafficRoutingConfig(TrafficRoutingConfig trafficRoutingConfig) {
+        setTrafficRoutingConfig(trafficRoutingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -231,7 +349,11 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
         if (getMinimumHealthyHosts() != null)
             sb.append("MinimumHealthyHosts: ").append(getMinimumHealthyHosts()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: ").append(getCreateTime());
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
+        if (getTrafficRoutingConfig() != null)
+            sb.append("TrafficRoutingConfig: ").append(getTrafficRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +384,14 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
             return false;
         if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
             return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
+        if (other.getTrafficRoutingConfig() == null ^ this.getTrafficRoutingConfig() == null)
+            return false;
+        if (other.getTrafficRoutingConfig() != null && other.getTrafficRoutingConfig().equals(this.getTrafficRoutingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +404,8 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
         hashCode = prime * hashCode + ((getMinimumHealthyHosts() == null) ? 0 : getMinimumHealthyHosts().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
+        hashCode = prime * hashCode + ((getTrafficRoutingConfig() == null) ? 0 : getTrafficRoutingConfig().hashCode());
         return hashCode;
     }
 

@@ -52,8 +52,7 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String roleArn;
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroup.html">CreateGroup</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      */
     private Integer precedence;
@@ -226,13 +225,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroup.html">CreateGroup</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      * 
      * @param precedence
-     *        The new precedence value for the group. For more information about this parameter, see <a
-     *        href="API_CreateGroup.html">CreateGroup</a>.
+     *        The new precedence value for the group. For more information about this parameter, see .
      */
 
     public void setPrecedence(Integer precedence) {
@@ -241,12 +238,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroup.html">CreateGroup</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      * 
-     * @return The new precedence value for the group. For more information about this parameter, see <a
-     *         href="API_CreateGroup.html">CreateGroup</a>.
+     * @return The new precedence value for the group. For more information about this parameter, see .
      */
 
     public Integer getPrecedence() {
@@ -255,13 +250,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see <a
-     * href="API_CreateGroup.html">CreateGroup</a>.
+     * The new precedence value for the group. For more information about this parameter, see .
      * </p>
      * 
      * @param precedence
-     *        The new precedence value for the group. For more information about this parameter, see <a
-     *        href="API_CreateGroup.html">CreateGroup</a>.
+     *        The new precedence value for the group. For more information about this parameter, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

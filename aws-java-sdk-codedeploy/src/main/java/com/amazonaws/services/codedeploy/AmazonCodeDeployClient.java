@@ -51,14 +51,14 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * <p>
  * <fullname>AWS CodeDeploy</fullname>
  * <p>
- * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances or on-premises
- * instances running in your own facility.
+ * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises
+ * instances running in your own facility, or serverless AWS Lambda functions.
  * </p>
  * <p>
- * You can deploy a nearly unlimited variety of application content, such as code, web and configuration files,
- * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy application content stored in
- * Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing
- * code before you can use AWS CodeDeploy.
+ * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, code, web and
+ * configuration files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
+ * application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to
+ * make changes to your existing code before you can use AWS CodeDeploy.
  * </p>
  * <p>
  * AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application
@@ -81,8 +81,9 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <b>Deployment group</b>: A set of individual instances. A deployment group contains individually tagged instances,
- * Amazon EC2 instances in Auto Scaling groups, or both.
+ * <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications. A Lambda deployment group
+ * contains a group of applications. An EC2/On-premises deployment group contains individually tagged instances, Amazon
+ * EC2 instances in Auto Scaling groups, or both.
  * </p>
  * </li>
  * <li>
@@ -93,22 +94,25 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <b>Deployment</b>: The process, and the components involved in the process, of installing content on one or more
- * instances.
+ * <b>Deployment</b>: The process, and the components involved in the process, of updating a Lambda function or of
+ * installing content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Application revisions</b>: An archive file containing source content—source code, web pages, executable files, and
- * deployment scripts—along with an application specification file (AppSpec file). Revisions are stored in Amazon S3
- * buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
- * ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
+ * <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file that specifies the Lambda function
+ * to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises deployment, this
+ * is an archive file containing source content—source code, web pages, executable files, and deployment scripts—along
+ * with an application specification file (AppSpec file). Revisions are stored in Amazon S3 buckets or GitHub
+ * repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or
+ * both. For GitHub, a revision is uniquely identified by its commit ID.
  * </p>
  * </li>
  * </ul>
  * <p>
- * This guide also contains information to help you get details about the instances in your deployments and to make
- * on-premises instances available for AWS CodeDeploy deployments.
+ * This guide also contains information to help you get details about the instances in your deployments, to make
+ * on-premises instances available for AWS CodeDeploy deployments, and to get details about a Lambda function
+ * deployment.
  * </p>
  * <p>
  * <b>AWS CodeDeploy Information Resources</b>
@@ -173,6 +177,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("ApplicationNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLifecycleEventHookExecutionIdException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionIdException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAutoRollbackConfigException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException.class))
                     .addErrorMetadata(
@@ -184,6 +191,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentAlreadyCompletedException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.OperationNotSupportedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException.class))
@@ -251,6 +261,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentIdRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIgnoreApplicationStopFailuresValueException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException.class))
                     .addErrorMetadata(
@@ -259,6 +272,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRegistrationStatusException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLifecycleEventHookExecutionStatusException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException.class))
@@ -302,11 +318,20 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InvalidBucketNameFilterException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidComputePlatformException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidComputePlatformException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RoleRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.RoleRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.ThrottlingException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentNotStartedException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentNotStartedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LifecycleEventAlreadyCompletedException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidIamSessionArnException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException.class))
@@ -331,6 +356,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IamUserArnRequiredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.IamUserArnRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUpdateOutdatedInstancesOnlyValueException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentIdException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidDeploymentIdException.class))
@@ -364,6 +392,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidTimeRangeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidInputException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSortByException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidSortByException.class))
@@ -400,6 +431,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAutoScalingGroupException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTrafficRoutingConfigurationException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.codedeploy.model.AmazonCodeDeployException.class));
 
     /**
@@ -1099,6 +1133,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         An application with the specified name already exists with the applicable IAM user or AWS account.
      * @throws ApplicationLimitExceededException
      *         More applications were attempted to be created than are allowed.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @sample AmazonCodeDeploy.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication" target="_top">AWS
      *      API Documentation</a>
@@ -1206,6 +1242,19 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or
      *         directories that already exist in a deployment target location but weren't part of the previous
      *         successful deployment. Valid values include "DISALLOW", "OVERWRITE", and "RETAIN".
+     * @throws InvalidRoleException
+     *         The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the
+     *         specified service role does not grant the appropriate permissions to Auto Scaling.
+     * @throws InvalidAutoScalingGroupException
+     *         The Auto Scaling group was specified in an invalid format or does not exist.
+     * @throws ThrottlingException
+     *         An API function was called too frequently.
+     * @throws InvalidUpdateOutdatedInstancesOnlyValueException
+     *         The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code> is
+     *         expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
+     * @throws InvalidIgnoreApplicationStopFailuresValueException
+     *         The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is
+     *         expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
      * @sample AmazonCodeDeploy.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
      *      API Documentation</a>
@@ -1266,6 +1315,10 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The minimum healthy instance value was specified in an invalid format.
      * @throws DeploymentConfigLimitExceededException
      *         The deployment configurations limit was exceeded.
+     * @throws InvalidComputePlatformException
+     *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
+     * @throws InvalidTrafficRoutingConfigurationException
+     *         The configuration that specifies how traffic routes during a deployment is invalid.
      * @sample AmazonCodeDeploy.CreateDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1400,6 +1453,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         data types can be used in a single call.
      * @throws TagSetListLimitExceededException
      *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
+     * @throws InvalidInputException
+     *         The specified input was specified in an invalid format.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>
@@ -2476,6 +2531,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         The next token was specified in an invalid format.
      * @throws ResourceValidationException
      *         The specified resource could not be validated.
+     * @throws OperationNotSupportedException
+     *         The API used does not support the deployment.
      * @sample AmazonCodeDeploy.ListGitHubAccountTokenNames
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames"
      *      target="_top">AWS API Documentation</a>
@@ -2583,6 +2640,75 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
     @Override
     public ListOnPremisesInstancesResult listOnPremisesInstances() {
         return listOnPremisesInstances(new ListOnPremisesInstancesRequest());
+    }
+
+    /**
+     * <p>
+     * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
+     * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+     * <code>Failed</code>.
+     * </p>
+     * 
+     * @param putLifecycleEventHookExecutionStatusRequest
+     * @return Result of the PutLifecycleEventHookExecutionStatus operation returned by the service.
+     * @throws InvalidLifecycleEventHookExecutionStatusException
+     *         The result of a Lambda validation function that verifies a lifecycle event is invalid. It should return
+     *         <code>Succeeded</code> or <code>Failed</code>.
+     * @throws InvalidLifecycleEventHookExecutionIdException
+     *         A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure
+     *         the lifecycle events and <code>hooks</code> functions are valide.
+     * @throws LifecycleEventAlreadyCompletedException
+     *         An attempt to return the status of a lifecycle event that already completed occurred.
+     * @throws DeploymentIdRequiredException
+     *         At least one deployment ID must be specified.
+     * @throws DeploymentDoesNotExistException
+     *         The deployment does not exist with the applicable IAM user or AWS account.
+     * @throws InvalidDeploymentIdException
+     *         At least one of the deployment IDs was specified in an invalid format.
+     * @throws UnsupportedActionForDeploymentTypeException
+     *         A call was submitted that is not supported for the specified deployment type.
+     * @sample AmazonCodeDeploy.PutLifecycleEventHookExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutLifecycleEventHookExecutionStatusResult putLifecycleEventHookExecutionStatus(PutLifecycleEventHookExecutionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLifecycleEventHookExecutionStatus(request);
+    }
+
+    @SdkInternalApi
+    final PutLifecycleEventHookExecutionStatusResult executePutLifecycleEventHookExecutionStatus(
+            PutLifecycleEventHookExecutionStatusRequest putLifecycleEventHookExecutionStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putLifecycleEventHookExecutionStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutLifecycleEventHookExecutionStatusRequest> request = null;
+        Response<PutLifecycleEventHookExecutionStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutLifecycleEventHookExecutionStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putLifecycleEventHookExecutionStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutLifecycleEventHookExecutionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutLifecycleEventHookExecutionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -3061,6 +3187,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         data types can be used in a single call.
      * @throws TagSetListLimitExceededException
      *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
+     * @throws InvalidInputException
+     *         The specified input was specified in an invalid format.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>

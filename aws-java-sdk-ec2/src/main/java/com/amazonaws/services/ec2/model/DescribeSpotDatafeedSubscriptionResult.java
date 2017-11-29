@@ -28,18 +28,18 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      */
     private SpotDatafeedSubscription spotDatafeedSubscription;
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      * 
      * @param spotDatafeedSubscription
-     *        The Spot instance data feed subscription.
+     *        The Spot Instance data feed subscription.
      */
 
     public void setSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {
@@ -48,10 +48,10 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      * 
-     * @return The Spot instance data feed subscription.
+     * @return The Spot Instance data feed subscription.
      */
 
     public SpotDatafeedSubscription getSpotDatafeedSubscription() {
@@ -60,11 +60,11 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Spot instance data feed subscription.
+     * The Spot Instance data feed subscription.
      * </p>
      * 
      * @param spotDatafeedSubscription
-     *        The Spot instance data feed subscription.
+     *        The Spot Instance data feed subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

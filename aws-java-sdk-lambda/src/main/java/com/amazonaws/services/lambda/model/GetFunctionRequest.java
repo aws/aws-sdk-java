@@ -41,8 +41,8 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String functionName;
     /**
      * <p>
-     * Using this optional parameter to specify a function version or an alias name. If you specify function version,
-     * the API uses qualified function ARN for the request and returns information about the specific Lambda function
+     * Use this optional parameter to specify a function version or an alias name. If you specify function version, the
+     * API uses qualified function ARN for the request and returns information about the specific Lambda function
      * version. If you specify an alias name, the API uses the alias ARN and returns information about the function
      * version to which the alias points. If you don't provide this parameter, the API uses unqualified function ARN and
      * returns information about the <code>$LATEST</code> version of the Lambda function.
@@ -131,15 +131,15 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Using this optional parameter to specify a function version or an alias name. If you specify function version,
-     * the API uses qualified function ARN for the request and returns information about the specific Lambda function
+     * Use this optional parameter to specify a function version or an alias name. If you specify function version, the
+     * API uses qualified function ARN for the request and returns information about the specific Lambda function
      * version. If you specify an alias name, the API uses the alias ARN and returns information about the function
      * version to which the alias points. If you don't provide this parameter, the API uses unqualified function ARN and
      * returns information about the <code>$LATEST</code> version of the Lambda function.
      * </p>
      * 
      * @param qualifier
-     *        Using this optional parameter to specify a function version or an alias name. If you specify function
+     *        Use this optional parameter to specify a function version or an alias name. If you specify function
      *        version, the API uses qualified function ARN for the request and returns information about the specific
      *        Lambda function version. If you specify an alias name, the API uses the alias ARN and returns information
      *        about the function version to which the alias points. If you don't provide this parameter, the API uses
@@ -153,14 +153,14 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Using this optional parameter to specify a function version or an alias name. If you specify function version,
-     * the API uses qualified function ARN for the request and returns information about the specific Lambda function
+     * Use this optional parameter to specify a function version or an alias name. If you specify function version, the
+     * API uses qualified function ARN for the request and returns information about the specific Lambda function
      * version. If you specify an alias name, the API uses the alias ARN and returns information about the function
      * version to which the alias points. If you don't provide this parameter, the API uses unqualified function ARN and
      * returns information about the <code>$LATEST</code> version of the Lambda function.
      * </p>
      * 
-     * @return Using this optional parameter to specify a function version or an alias name. If you specify function
+     * @return Use this optional parameter to specify a function version or an alias name. If you specify function
      *         version, the API uses qualified function ARN for the request and returns information about the specific
      *         Lambda function version. If you specify an alias name, the API uses the alias ARN and returns information
      *         about the function version to which the alias points. If you don't provide this parameter, the API uses
@@ -174,15 +174,15 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Using this optional parameter to specify a function version or an alias name. If you specify function version,
-     * the API uses qualified function ARN for the request and returns information about the specific Lambda function
+     * Use this optional parameter to specify a function version or an alias name. If you specify function version, the
+     * API uses qualified function ARN for the request and returns information about the specific Lambda function
      * version. If you specify an alias name, the API uses the alias ARN and returns information about the function
      * version to which the alias points. If you don't provide this parameter, the API uses unqualified function ARN and
      * returns information about the <code>$LATEST</code> version of the Lambda function.
      * </p>
      * 
      * @param qualifier
-     *        Using this optional parameter to specify a function version or an alias name. If you specify function
+     *        Use this optional parameter to specify a function version or an alias name. If you specify function
      *        version, the API uses qualified function ARN for the request and returns information about the specific
      *        Lambda function version. If you specify an alias name, the API uses the alias ARN and returns information
      *        about the function version to which the alias points. If you don't provide this parameter, the API uses

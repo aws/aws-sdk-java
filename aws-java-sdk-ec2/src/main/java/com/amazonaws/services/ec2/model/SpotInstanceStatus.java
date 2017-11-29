@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the status of a Spot instance request.
+ * Describes the status of a Spot Instance request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotInstanceStatus" target="_top">AWS API
@@ -30,7 +30,7 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String code;
@@ -52,13 +52,13 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param code
      *        The status code. For a list of status codes, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setCode(String code) {
@@ -69,12 +69,12 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The status code. For a list of status codes, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     *         >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getCode() {
@@ -85,13 +85,13 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
      * <p>
      * The status code. For a list of status codes, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     * >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param code
      *        The status code. For a list of status codes, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand"
-     *        >Spot Bid Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Spot Status Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

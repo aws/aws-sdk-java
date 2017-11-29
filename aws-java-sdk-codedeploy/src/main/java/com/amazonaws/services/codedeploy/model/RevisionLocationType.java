@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RevisionLocationType {
 
     S3("S3"),
-    GitHub("GitHub");
+    GitHub("GitHub"),
+    String("String");
 
     private String value;
 

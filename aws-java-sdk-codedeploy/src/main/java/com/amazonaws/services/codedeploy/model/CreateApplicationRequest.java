@@ -34,6 +34,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String applicationName;
+    /**
+     * <p>
+     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * </p>
+     */
+    private String computePlatform;
 
     /**
      * <p>
@@ -76,6 +82,65 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public void setComputePlatform(String computePlatform) {
+        this.computePlatform = computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @return The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * @see ComputePlatform
+     */
+
+    public String getComputePlatform() {
+        return this.computePlatform;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public CreateApplicationRequest withComputePlatform(String computePlatform) {
+        setComputePlatform(computePlatform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * </p>
+     * 
+     * @param computePlatform
+     *        The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputePlatform
+     */
+
+    public CreateApplicationRequest withComputePlatform(ComputePlatform computePlatform) {
+        this.computePlatform = computePlatform.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +152,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: ").append(getApplicationName());
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
+        if (getComputePlatform() != null)
+            sb.append("ComputePlatform: ").append(getComputePlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +173,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
             return false;
+        if (other.getComputePlatform() == null ^ this.getComputePlatform() == null)
+            return false;
+        if (other.getComputePlatform() != null && other.getComputePlatform().equals(this.getComputePlatform()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +186,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         return hashCode;
     }
 

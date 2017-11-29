@@ -37,6 +37,10 @@ public class ConfirmSignUpRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfirmationCode").build();
     private static final MarshallingInfo<Boolean> FORCEALIASCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceAliasCreation").build();
+    private static final MarshallingInfo<StructuredPojo> ANALYTICSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> USERCONTEXTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserContextData").build();
 
     private static final ConfirmSignUpRequestMarshaller instance = new ConfirmSignUpRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class ConfirmSignUpRequestMarshaller {
             protocolMarshaller.marshall(confirmSignUpRequest.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(confirmSignUpRequest.getConfirmationCode(), CONFIRMATIONCODE_BINDING);
             protocolMarshaller.marshall(confirmSignUpRequest.getForceAliasCreation(), FORCEALIASCREATION_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getAnalyticsMetadata(), ANALYTICSMETADATA_BINDING);
+            protocolMarshaller.marshall(confirmSignUpRequest.getUserContextData(), USERCONTEXTDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

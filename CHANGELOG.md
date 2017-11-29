@@ -1,3 +1,40 @@
+# __1.11.237__ __2017-11-29__
+## __AWS AppSync__
+  - ### Features
+    - AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.
+
+## __AWS Batch__
+  - ### Features
+    - Add support for Array Jobs which allow users to easily submit many copies of a job with a single API call.  This change also enhances the job dependency model to support N_TO_N and sequential dependency chains. The ListJobs and DescribeJobs APIs now have the ability to list or describe the status of entire Array Jobs or individual elements within the array.
+
+## __AWS CodeDeploy__
+  - ### Features
+    - Support for AWS Lambda function deployment - AWS CodeDeploy now supports the deployment of AWS Lambda functions. A Lambda deployment uses a Lambda function alias to shift traffic to a new version. You select a deployment configuration that specifies exactly how traffic shifts to your new version. Success of a deployment can be validated using Lambda functions that are referenced by the deployment. This provides the opportunity to rollback if necessary.
+
+## __AWS Lambda__
+  - ### Features
+    - Lambda aliases can now shift traffic between two function versions, based on preassigned weights.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Changes related to CanaryReleaseDeployment feature. Enables API developer to create a deployment as canary deployment and test API changes with percentage of customers before promoting changes to all customers.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - AWS Cognito SDK has been updated to support new Cognito user-pool objects and operations for advanced security
+
+## __Amazon EC2__
+  - ### Features
+    - Adds the following updates: 1. You are now able to host a service powered by AWS PrivateLink to provide private connectivity to other VPCs. You are now also able to create endpoints to other services powered by PrivateLink including AWS services, Marketplace Seller services or custom services created by yourself or other AWS VPC customers. 2. You are now able to save launch parameters in a single template that can be used with Auto Scaling, Spot Fleet, Spot, and On Demand instances. 3. You are now able to launch Spot instances via the RunInstances API, using a single additional parameter. RunInstances will response synchronously with an instance ID should capacity be available for your Spot request. 4. A simplified Spot pricing model which delivers low, predictable prices that adjust gradually, based on long-term trends in supply and demand. 5. Amazon EC2 Spot can now hibernate Amazon EBS-backed instances in the event of an interruption, so your workloads pick up from where they left off. Spot can fulfill your request by resuming instances from a hibernated state when capacity is available.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Enable Amazon GuardDuty to continuously monitor and process AWS data sources to identify threats to your AWS accounts and workloads.  You can add customization by uploading additional threat intelligence lists and IP safe lists. You can list security findings, suspend, and disable the service. 
+
+## __AmazonMQ__
+  - ### Features
+    - This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud. 
+
 # __1.11.236__ __2017-11-27__
 ## __AWS Elemental MediaConvert__
   - ### Features

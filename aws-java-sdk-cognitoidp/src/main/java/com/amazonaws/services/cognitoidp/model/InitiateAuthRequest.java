@@ -112,6 +112,19 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String clientId;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
 
     /**
      * <p>
@@ -858,6 +871,92 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InitiateAuthRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InitiateAuthRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -875,7 +974,11 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getClientMetadata() != null)
             sb.append("ClientMetadata: ").append(getClientMetadata()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: ").append(getClientId());
+            sb.append("ClientId: ").append(getClientId()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData());
         sb.append("}");
         return sb.toString();
     }
@@ -906,6 +1009,14 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
             return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
+            return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         return true;
     }
 
@@ -918,6 +1029,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAuthParameters() == null) ? 0 : getAuthParameters().hashCode());
         hashCode = prime * hashCode + ((getClientMetadata() == null) ? 0 : getClientMetadata().hashCode());
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         return hashCode;
     }
 

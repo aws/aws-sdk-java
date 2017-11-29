@@ -33,13 +33,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String restApiId;
     /**
      * <p>
-     * The name for the <a>Stage</a> resource.
+     * {Required] The name for the <a>Stage</a> resource.
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      * </p>
      */
     private String deploymentId;
@@ -74,6 +74,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String documentationVersion;
+    /**
+     * <p>
+     * The canary deployment settings of this stage.
+     * </p>
+     */
+    private CanarySettings canarySettings;
 
     /**
      * <p>
@@ -117,11 +123,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the <a>Stage</a> resource.
+     * {Required] The name for the <a>Stage</a> resource.
      * </p>
      * 
      * @param stageName
-     *        The name for the <a>Stage</a> resource.
+     *        {Required] The name for the <a>Stage</a> resource.
      */
 
     public void setStageName(String stageName) {
@@ -130,10 +136,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the <a>Stage</a> resource.
+     * {Required] The name for the <a>Stage</a> resource.
      * </p>
      * 
-     * @return The name for the <a>Stage</a> resource.
+     * @return {Required] The name for the <a>Stage</a> resource.
      */
 
     public String getStageName() {
@@ -142,11 +148,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the <a>Stage</a> resource.
+     * {Required] The name for the <a>Stage</a> resource.
      * </p>
      * 
      * @param stageName
-     *        The name for the <a>Stage</a> resource.
+     *        {Required] The name for the <a>Stage</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +163,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     *        [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -170,10 +176,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      * </p>
      * 
-     * @return The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * @return [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      */
 
     public String getDeploymentId() {
@@ -182,11 +188,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     * [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
+     *        [Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,6 +444,46 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The canary deployment settings of this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        The canary deployment settings of this stage.
+     */
+
+    public void setCanarySettings(CanarySettings canarySettings) {
+        this.canarySettings = canarySettings;
+    }
+
+    /**
+     * <p>
+     * The canary deployment settings of this stage.
+     * </p>
+     * 
+     * @return The canary deployment settings of this stage.
+     */
+
+    public CanarySettings getCanarySettings() {
+        return this.canarySettings;
+    }
+
+    /**
+     * <p>
+     * The canary deployment settings of this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        The canary deployment settings of this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStageRequest withCanarySettings(CanarySettings canarySettings) {
+        setCanarySettings(canarySettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -463,7 +509,9 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getVariables() != null)
             sb.append("Variables: ").append(getVariables()).append(",");
         if (getDocumentationVersion() != null)
-            sb.append("DocumentationVersion: ").append(getDocumentationVersion());
+            sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
+        if (getCanarySettings() != null)
+            sb.append("CanarySettings: ").append(getCanarySettings());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +558,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDocumentationVersion() != null && other.getDocumentationVersion().equals(this.getDocumentationVersion()) == false)
             return false;
+        if (other.getCanarySettings() == null ^ this.getCanarySettings() == null)
+            return false;
+        if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
+            return false;
         return true;
     }
 
@@ -526,6 +578,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCacheClusterSize() == null) ? 0 : getCacheClusterSize().hashCode());
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
+        hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
         return hashCode;
     }
 

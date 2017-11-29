@@ -65,6 +65,8 @@ public class CreateUserPoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdminCreateUserConfig").build();
     private static final MarshallingInfo<List> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schema").build();
+    private static final MarshallingInfo<StructuredPojo> USERPOOLADDONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolAddOns").build();
 
     private static final CreateUserPoolRequestMarshaller instance = new CreateUserPoolRequestMarshaller();
 
@@ -100,6 +102,7 @@ public class CreateUserPoolRequestMarshaller {
             protocolMarshaller.marshall(createUserPoolRequest.getUserPoolTags(), USERPOOLTAGS_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getAdminCreateUserConfig(), ADMINCREATEUSERCONFIG_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getSchema(), SCHEMA_BINDING);
+            protocolMarshaller.marshall(createUserPoolRequest.getUserPoolAddOns(), USERPOOLADDONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

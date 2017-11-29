@@ -29,7 +29,10 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of endpoint. If not specified, the default is a gateway endpoint.
+     * The type of endpoint.
+     * </p>
+     * <p>
+     * Default: Gateway
      * </p>
      */
     private String vpcEndpointType;
@@ -41,8 +44,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private String vpcId;
     /**
      * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      */
     private String serviceName;
@@ -62,13 +64,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create a network interface for the endpoint.
+     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     * (Interface endpoint) The ID of one or more security groups to associate with the endpoint network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -101,11 +103,16 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of endpoint. If not specified, the default is a gateway endpoint.
+     * The type of endpoint.
+     * </p>
+     * <p>
+     * Default: Gateway
      * </p>
      * 
      * @param vpcEndpointType
-     *        The type of endpoint. If not specified, the default is a gateway endpoint.
+     *        The type of endpoint.</p>
+     *        <p>
+     *        Default: Gateway
      * @see VpcEndpointType
      */
 
@@ -115,10 +122,15 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of endpoint. If not specified, the default is a gateway endpoint.
+     * The type of endpoint.
+     * </p>
+     * <p>
+     * Default: Gateway
      * </p>
      * 
-     * @return The type of endpoint. If not specified, the default is a gateway endpoint.
+     * @return The type of endpoint.</p>
+     *         <p>
+     *         Default: Gateway
      * @see VpcEndpointType
      */
 
@@ -128,11 +140,16 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of endpoint. If not specified, the default is a gateway endpoint.
+     * The type of endpoint.
+     * </p>
+     * <p>
+     * Default: Gateway
      * </p>
      * 
      * @param vpcEndpointType
-     *        The type of endpoint. If not specified, the default is a gateway endpoint.
+     *        The type of endpoint.</p>
+     *        <p>
+     *        Default: Gateway
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpcEndpointType
      */
@@ -144,11 +161,16 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The type of endpoint. If not specified, the default is a gateway endpoint.
+     * The type of endpoint.
+     * </p>
+     * <p>
+     * Default: Gateway
      * </p>
      * 
      * @param vpcEndpointType
-     *        The type of endpoint. If not specified, the default is a gateway endpoint.
+     *        The type of endpoint.</p>
+     *        <p>
+     *        Default: Gateway
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpcEndpointType
      */
@@ -200,13 +222,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      * 
      * @param serviceName
-     *        The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
-     *        of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     *        The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
      */
 
     public void setServiceName(String serviceName) {
@@ -215,12 +235,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      * 
-     * @return The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
-     *         of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * @return The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a>
+     *         request.
      */
 
     public String getServiceName() {
@@ -229,13 +248,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      * 
      * @param serviceName
-     *        The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
-     *        of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     *        The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,11 +388,10 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create a network interface for the endpoint.
+     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * </p>
      * 
-     * @return (Interface endpoint) The ID of one or more subnets in which to create a network interface for the
-     *         endpoint.
+     * @return (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -387,12 +403,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create a network interface for the endpoint.
+     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) The ID of one or more subnets in which to create a network interface for the
-     *        endpoint.
+     *        (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -406,7 +421,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create a network interface for the endpoint.
+     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -415,8 +430,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) The ID of one or more subnets in which to create a network interface for the
-     *        endpoint.
+     *        (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,12 +446,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create a network interface for the endpoint.
+     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) The ID of one or more subnets in which to create a network interface for the
-     *        endpoint.
+     *        (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,10 +461,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     * (Interface endpoint) The ID of one or more security groups to associate with the endpoint network interface.
      * </p>
      * 
-     * @return (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     * @return (Interface endpoint) The ID of one or more security groups to associate with the endpoint network
+     *         interface.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -463,11 +477,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     * (Interface endpoint) The ID of one or more security groups to associate with the endpoint network interface.
      * </p>
      * 
      * @param securityGroupIds
-     *        (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     *        (Interface endpoint) The ID of one or more security groups to associate with the endpoint network
+     *        interface.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -481,7 +496,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     * (Interface endpoint) The ID of one or more security groups to associate with the endpoint network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -490,7 +505,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param securityGroupIds
-     *        (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     *        (Interface endpoint) The ID of one or more security groups to associate with the endpoint network
+     *        interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,11 +522,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     * (Interface endpoint) The ID of one or more security groups to associate with the endpoint network interface.
      * </p>
      * 
      * @param securityGroupIds
-     *        (Interface endpoint) The ID of one or more security groups to associate with the network interface.
+     *        (Interface endpoint) The ID of one or more security groups to associate with the endpoint network
+     *        interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,14 +27,14 @@ import com.amazonaws.services.codedeploy.model.*;
  * <p>
  * <fullname>AWS CodeDeploy</fullname>
  * <p>
- * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances or on-premises
- * instances running in your own facility.
+ * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises
+ * instances running in your own facility, or serverless AWS Lambda functions.
  * </p>
  * <p>
- * You can deploy a nearly unlimited variety of application content, such as code, web and configuration files,
- * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy application content stored in
- * Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing
- * code before you can use AWS CodeDeploy.
+ * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, code, web and
+ * configuration files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
+ * application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to
+ * make changes to your existing code before you can use AWS CodeDeploy.
  * </p>
  * <p>
  * AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application
@@ -57,8 +57,9 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * <li>
  * <p>
- * <b>Deployment group</b>: A set of individual instances. A deployment group contains individually tagged instances,
- * Amazon EC2 instances in Auto Scaling groups, or both.
+ * <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications. A Lambda deployment group
+ * contains a group of applications. An EC2/On-premises deployment group contains individually tagged instances, Amazon
+ * EC2 instances in Auto Scaling groups, or both.
  * </p>
  * </li>
  * <li>
@@ -69,22 +70,25 @@ import com.amazonaws.services.codedeploy.model.*;
  * </li>
  * <li>
  * <p>
- * <b>Deployment</b>: The process, and the components involved in the process, of installing content on one or more
- * instances.
+ * <b>Deployment</b>: The process, and the components involved in the process, of updating a Lambda function or of
+ * installing content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Application revisions</b>: An archive file containing source content—source code, web pages, executable files, and
- * deployment scripts—along with an application specification file (AppSpec file). Revisions are stored in Amazon S3
- * buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its
- * ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
+ * <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file that specifies the Lambda function
+ * to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises deployment, this
+ * is an archive file containing source content—source code, web pages, executable files, and deployment scripts—along
+ * with an application specification file (AppSpec file). Revisions are stored in Amazon S3 buckets or GitHub
+ * repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or
+ * both. For GitHub, a revision is uniquely identified by its commit ID.
  * </p>
  * </li>
  * </ul>
  * <p>
- * This guide also contains information to help you get details about the instances in your deployments and to make
- * on-premises instances available for AWS CodeDeploy deployments.
+ * This guide also contains information to help you get details about the instances in your deployments, to make
+ * on-premises instances available for AWS CodeDeploy deployments, and to get details about a Lambda function
+ * deployment.
  * </p>
  * <p>
  * <b>AWS CodeDeploy Information Resources</b>
@@ -1286,6 +1290,45 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      */
     java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<ListOnPremisesInstancesRequest, ListOnPremisesInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
+     * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+     * <code>Failed</code>.
+     * </p>
+     * 
+     * @param putLifecycleEventHookExecutionStatusRequest
+     * @return A Java Future containing the result of the PutLifecycleEventHookExecutionStatus operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsync.PutLifecycleEventHookExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest putLifecycleEventHookExecutionStatusRequest);
+
+    /**
+     * <p>
+     * Sets the result of a Lambda validation function. The function validates one or both lifecycle events (
+     * <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>) and returns <code>Succeeded</code> or
+     * <code>Failed</code>.
+     * </p>
+     * 
+     * @param putLifecycleEventHookExecutionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLifecycleEventHookExecutionStatus operation returned by the
+     *         service.
+     * @sample AmazonCodeDeployAsyncHandler.PutLifecycleEventHookExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/PutLifecycleEventHookExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLifecycleEventHookExecutionStatusResult> putLifecycleEventHookExecutionStatusAsync(
+            PutLifecycleEventHookExecutionStatusRequest putLifecycleEventHookExecutionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLifecycleEventHookExecutionStatusRequest, PutLifecycleEventHookExecutionStatusResult> asyncHandler);
 
     /**
      * <p>

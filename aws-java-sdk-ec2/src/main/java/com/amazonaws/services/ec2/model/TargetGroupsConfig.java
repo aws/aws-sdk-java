@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the target groups to attach to a Spot fleet. Spot fleet registers the running Spot instances with these
+ * Describes the target groups to attach to a Spot Fleet. Spot Fleet registers the running Spot Instances with these
  * target groups.
  * </p>
  * 

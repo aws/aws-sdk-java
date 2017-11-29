@@ -80,6 +80,16 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("launchTemplateConfigs", targetDepth)) {
+                    spotFleetRequestConfigData.withLaunchTemplateConfigs(new ArrayList<LaunchTemplateConfig>());
+                    continue;
+                }
+
+                if (context.testExpression("launchTemplateConfigs/item", targetDepth)) {
+                    spotFleetRequestConfigData.withLaunchTemplateConfigs(LaunchTemplateConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("spotPrice", targetDepth)) {
                     spotFleetRequestConfigData.setSpotPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

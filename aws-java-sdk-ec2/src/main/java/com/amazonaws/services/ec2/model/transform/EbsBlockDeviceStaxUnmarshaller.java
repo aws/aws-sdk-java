@@ -58,6 +58,11 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
                     continue;
                 }
 
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    ebsBlockDevice.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("snapshotId", targetDepth)) {
                     ebsBlockDevice.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

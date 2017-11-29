@@ -34,6 +34,12 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String jobId;
+    /**
+     * <p>
+     * The type of the job dependency.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -76,6 +82,65 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of the job dependency.
+     * </p>
+     * 
+     * @param type
+     *        The type of the job dependency.
+     * @see ArrayJobDependency
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of the job dependency.
+     * </p>
+     * 
+     * @return The type of the job dependency.
+     * @see ArrayJobDependency
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of the job dependency.
+     * </p>
+     * 
+     * @param type
+     *        The type of the job dependency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ArrayJobDependency
+     */
+
+    public JobDependency withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the job dependency.
+     * </p>
+     * 
+     * @param type
+     *        The type of the job dependency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ArrayJobDependency
+     */
+
+    public JobDependency withType(ArrayJobDependency type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +152,9 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId());
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +173,10 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +186,7 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

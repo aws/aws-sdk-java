@@ -27,23 +27,23 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are successfully canceled.
+     * Information about the Spot Fleet requests that are successfully canceled.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests;
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
+     * Information about the Spot Fleet requests that are not successfully canceled.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests;
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are successfully canceled.
+     * Information about the Spot Fleet requests that are successfully canceled.
      * </p>
      * 
-     * @return Information about the Spot fleet requests that are successfully canceled.
+     * @return Information about the Spot Fleet requests that are successfully canceled.
      */
 
     public java.util.List<CancelSpotFleetRequestsSuccessItem> getSuccessfulFleetRequests() {
@@ -55,11 +55,11 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are successfully canceled.
+     * Information about the Spot Fleet requests that are successfully canceled.
      * </p>
      * 
      * @param successfulFleetRequests
-     *        Information about the Spot fleet requests that are successfully canceled.
+     *        Information about the Spot Fleet requests that are successfully canceled.
      */
 
     public void setSuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests) {
@@ -73,7 +73,7 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are successfully canceled.
+     * Information about the Spot Fleet requests that are successfully canceled.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param successfulFleetRequests
-     *        Information about the Spot fleet requests that are successfully canceled.
+     *        Information about the Spot Fleet requests that are successfully canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are successfully canceled.
+     * Information about the Spot Fleet requests that are successfully canceled.
      * </p>
      * 
      * @param successfulFleetRequests
-     *        Information about the Spot fleet requests that are successfully canceled.
+     *        Information about the Spot Fleet requests that are successfully canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +113,10 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
+     * Information about the Spot Fleet requests that are not successfully canceled.
      * </p>
      * 
-     * @return Information about the Spot fleet requests that are not successfully canceled.
+     * @return Information about the Spot Fleet requests that are not successfully canceled.
      */
 
     public java.util.List<CancelSpotFleetRequestsErrorItem> getUnsuccessfulFleetRequests() {
@@ -128,11 +128,11 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
+     * Information about the Spot Fleet requests that are not successfully canceled.
      * </p>
      * 
      * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not successfully canceled.
+     *        Information about the Spot Fleet requests that are not successfully canceled.
      */
 
     public void setUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
@@ -146,7 +146,7 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
+     * Information about the Spot Fleet requests that are not successfully canceled.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -155,7 +155,7 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not successfully canceled.
+     *        Information about the Spot Fleet requests that are not successfully canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +171,11 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
+     * Information about the Spot Fleet requests that are not successfully canceled.
      * </p>
      * 
      * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not successfully canceled.
+     *        Information about the Spot Fleet requests that are not successfully canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      * </p>
      */
     private String bucket;
@@ -53,7 +53,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      * (with...) methods to initialize any additional object members.
      * 
      * @param bucket
-     *        The Amazon S3 bucket in which to store the Spot instance data feed.
+     *        The Amazon S3 bucket in which to store the Spot Instance data feed.
      */
     public CreateSpotDatafeedSubscriptionRequest(String bucket) {
         setBucket(bucket);
@@ -61,11 +61,11 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket in which to store the Spot instance data feed.
+     *        The Amazon S3 bucket in which to store the Spot Instance data feed.
      */
 
     public void setBucket(String bucket) {
@@ -74,10 +74,10 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      * </p>
      * 
-     * @return The Amazon S3 bucket in which to store the Spot instance data feed.
+     * @return The Amazon S3 bucket in which to store the Spot Instance data feed.
      */
 
     public String getBucket() {
@@ -86,11 +86,11 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * The Amazon S3 bucket in which to store the Spot Instance data feed.
      * </p>
      * 
      * @param bucket
-     *        The Amazon S3 bucket in which to store the Spot instance data feed.
+     *        The Amazon S3 bucket in which to store the Spot Instance data feed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

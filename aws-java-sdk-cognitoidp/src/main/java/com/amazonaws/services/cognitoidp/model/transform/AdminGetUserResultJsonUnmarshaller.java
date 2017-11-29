@@ -76,6 +76,14 @@ public class AdminGetUserResultJsonUnmarshaller implements Unmarshaller<AdminGet
                     context.nextToken();
                     adminGetUserResult.setMFAOptions(new ListUnmarshaller<MFAOptionType>(MFAOptionTypeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("PreferredMfaSetting", targetDepth)) {
+                    context.nextToken();
+                    adminGetUserResult.setPreferredMfaSetting(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UserMFASettingList", targetDepth)) {
+                    context.nextToken();
+                    adminGetUserResult.setUserMFASettingList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

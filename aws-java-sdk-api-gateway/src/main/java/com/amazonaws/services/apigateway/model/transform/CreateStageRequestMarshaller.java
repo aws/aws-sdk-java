@@ -45,6 +45,8 @@ public class CreateStageRequestMarshaller {
             .marshallLocationName("variables").build();
     private static final MarshallingInfo<String> DOCUMENTATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentationVersion").build();
+    private static final MarshallingInfo<StructuredPojo> CANARYSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("canarySettings").build();
 
     private static final CreateStageRequestMarshaller instance = new CreateStageRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class CreateStageRequestMarshaller {
             protocolMarshaller.marshall(createStageRequest.getCacheClusterSize(), CACHECLUSTERSIZE_BINDING);
             protocolMarshaller.marshall(createStageRequest.getVariables(), VARIABLES_BINDING);
             protocolMarshaller.marshall(createStageRequest.getDocumentationVersion(), DOCUMENTATIONVERSION_BINDING);
+            protocolMarshaller.marshall(createStageRequest.getCanarySettings(), CANARYSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

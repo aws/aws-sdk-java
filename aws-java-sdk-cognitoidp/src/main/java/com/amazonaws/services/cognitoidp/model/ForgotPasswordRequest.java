@@ -43,10 +43,23 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     private String secretHash;
     /**
      * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     */
+    private UserContextDataType userContextData;
+    /**
+     * <p>
      * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      */
     private String username;
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     */
+    private AnalyticsMetadataType analyticsMetadata;
 
     /**
      * <p>
@@ -136,6 +149,52 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public void setUserContextData(UserContextDataType userContextData) {
+        this.userContextData = userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @return Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *         risk of an unexpected event by Amazon Cognito advanced security.
+     */
+
+    public UserContextDataType getUserContextData() {
+        return this.userContextData;
+    }
+
+    /**
+     * <p>
+     * Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an
+     * unexpected event by Amazon Cognito advanced security.
+     * </p>
+     * 
+     * @param userContextData
+     *        Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the
+     *        risk of an unexpected event by Amazon Cognito advanced security.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ForgotPasswordRequest withUserContextData(UserContextDataType userContextData) {
+        setUserContextData(userContextData);
+        return this;
+    }
+
+    /**
+     * <p>
      * The user name of the user for whom you want to enter a code to reset a forgotten password.
      * </p>
      * 
@@ -175,6 +234,46 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     */
+
+    public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        this.analyticsMetadata = analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     * 
+     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     */
+
+    public AnalyticsMetadataType getAnalyticsMetadata() {
+        return this.analyticsMetadata;
+    }
+
+    /**
+     * <p>
+     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * </p>
+     * 
+     * @param analyticsMetadata
+     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ForgotPasswordRequest withAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
+        setAnalyticsMetadata(analyticsMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -189,8 +288,12 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("ClientId: ").append(getClientId()).append(",");
         if (getSecretHash() != null)
             sb.append("SecretHash: ").append(getSecretHash()).append(",");
+        if (getUserContextData() != null)
+            sb.append("UserContextData: ").append(getUserContextData()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append(getUsername()).append(",");
+        if (getAnalyticsMetadata() != null)
+            sb.append("AnalyticsMetadata: ").append(getAnalyticsMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -213,9 +316,17 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSecretHash() != null && other.getSecretHash().equals(this.getSecretHash()) == false)
             return false;
+        if (other.getUserContextData() == null ^ this.getUserContextData() == null)
+            return false;
+        if (other.getUserContextData() != null && other.getUserContextData().equals(this.getUserContextData()) == false)
+            return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
+            return false;
+        if (other.getAnalyticsMetadata() == null ^ this.getAnalyticsMetadata() == null)
+            return false;
+        if (other.getAnalyticsMetadata() != null && other.getAnalyticsMetadata().equals(this.getAnalyticsMetadata()) == false)
             return false;
         return true;
     }
@@ -227,7 +338,9 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getSecretHash() == null) ? 0 : getSecretHash().hashCode());
+        hashCode = prime * hashCode + ((getUserContextData() == null) ? 0 : getUserContextData().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getAnalyticsMetadata() == null) ? 0 : getAnalyticsMetadata().hashCode());
         return hashCode;
     }
 

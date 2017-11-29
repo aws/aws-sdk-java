@@ -28,7 +28,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Information about the events in the history of the Spot fleet request.
+     * Information about the events in the history of the Spot Fleet request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<HistoryRecord> historyRecords;
@@ -51,7 +51,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
     private String nextToken;
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      */
     private String spotFleetRequestId;
@@ -65,10 +65,10 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Information about the events in the history of the Spot fleet request.
+     * Information about the events in the history of the Spot Fleet request.
      * </p>
      * 
-     * @return Information about the events in the history of the Spot fleet request.
+     * @return Information about the events in the history of the Spot Fleet request.
      */
 
     public java.util.List<HistoryRecord> getHistoryRecords() {
@@ -80,11 +80,11 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Information about the events in the history of the Spot fleet request.
+     * Information about the events in the history of the Spot Fleet request.
      * </p>
      * 
      * @param historyRecords
-     *        Information about the events in the history of the Spot fleet request.
+     *        Information about the events in the history of the Spot Fleet request.
      */
 
     public void setHistoryRecords(java.util.Collection<HistoryRecord> historyRecords) {
@@ -98,7 +98,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Information about the events in the history of the Spot fleet request.
+     * Information about the events in the history of the Spot Fleet request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,7 +107,7 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param historyRecords
-     *        Information about the events in the history of the Spot fleet request.
+     *        Information about the events in the history of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +123,11 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Information about the events in the history of the Spot fleet request.
+     * Information about the events in the history of the Spot Fleet request.
      * </p>
      * 
      * @param historyRecords
-     *        Information about the events in the history of the Spot fleet request.
+     *        Information about the events in the history of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +248,11 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      */
 
     public void setSpotFleetRequestId(String spotFleetRequestId) {
@@ -261,10 +261,10 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
-     * @return The ID of the Spot fleet request.
+     * @return The ID of the Spot Fleet request.
      */
 
     public String getSpotFleetRequestId() {
@@ -273,11 +273,11 @@ public class DescribeSpotFleetRequestHistoryResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
+     * The ID of the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
+     *        The ID of the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

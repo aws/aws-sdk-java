@@ -139,6 +139,13 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     */
+    private UserPoolAddOnsType userPoolAddOns;
 
     /**
      * <p>
@@ -1050,6 +1057,52 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *        value "AUDIT".
+     */
+
+    public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        this.userPoolAddOns = userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @return Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *         value "AUDIT".
+     */
+
+    public UserPoolAddOnsType getUserPoolAddOns() {
+        return this.userPoolAddOns;
+    }
+
+    /**
+     * <p>
+     * Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
+     * "AUDIT".
+     * </p>
+     * 
+     * @param userPoolAddOns
+     *        Used to enable advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the
+     *        value "AUDIT".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
+        setUserPoolAddOns(userPoolAddOns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1089,7 +1142,9 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getUserPoolTags() != null)
             sb.append("UserPoolTags: ").append(getUserPoolTags()).append(",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig());
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
+        if (getUserPoolAddOns() != null)
+            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns());
         sb.append("}");
         return sb.toString();
     }
@@ -1164,6 +1219,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
             return false;
+        if (other.getUserPoolAddOns() == null ^ this.getUserPoolAddOns() == null)
+            return false;
+        if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
+            return false;
         return true;
     }
 
@@ -1187,6 +1246,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         return hashCode;
     }
 

@@ -43,7 +43,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The IDs of the Spot Fleet requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIds;
@@ -139,10 +139,10 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The IDs of the Spot Fleet requests.
      * </p>
      * 
-     * @return The IDs of the Spot fleet requests.
+     * @return The IDs of the Spot Fleet requests.
      */
 
     public java.util.List<String> getSpotFleetRequestIds() {
@@ -154,11 +154,11 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The IDs of the Spot Fleet requests.
      * </p>
      * 
      * @param spotFleetRequestIds
-     *        The IDs of the Spot fleet requests.
+     *        The IDs of the Spot Fleet requests.
      */
 
     public void setSpotFleetRequestIds(java.util.Collection<String> spotFleetRequestIds) {
@@ -172,7 +172,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The IDs of the Spot Fleet requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -181,7 +181,7 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param spotFleetRequestIds
-     *        The IDs of the Spot fleet requests.
+     *        The IDs of the Spot Fleet requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,11 +197,11 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The IDs of the Spot Fleet requests.
      * </p>
      * 
      * @param spotFleetRequestIds
-     *        The IDs of the Spot fleet requests.
+     *        The IDs of the Spot Fleet requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

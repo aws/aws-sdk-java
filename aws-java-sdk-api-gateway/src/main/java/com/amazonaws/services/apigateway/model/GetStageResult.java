@@ -91,10 +91,16 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String documentationVersion;
     /**
      * <p>
-     * The access log settings in this stage.
+     * Settings for logging access in this stage.
      * </p>
      */
     private AccessLogSettings accessLogSettings;
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     */
+    private CanarySettings canarySettings;
     /**
      * <p>
      * The timestamp when the stage was created.
@@ -624,11 +630,11 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The access log settings in this stage.
+     * Settings for logging access in this stage.
      * </p>
      * 
      * @param accessLogSettings
-     *        The access log settings in this stage.
+     *        Settings for logging access in this stage.
      */
 
     public void setAccessLogSettings(AccessLogSettings accessLogSettings) {
@@ -637,10 +643,10 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The access log settings in this stage.
+     * Settings for logging access in this stage.
      * </p>
      * 
-     * @return The access log settings in this stage.
+     * @return Settings for logging access in this stage.
      */
 
     public AccessLogSettings getAccessLogSettings() {
@@ -649,16 +655,56 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The access log settings in this stage.
+     * Settings for logging access in this stage.
      * </p>
      * 
      * @param accessLogSettings
-     *        The access log settings in this stage.
+     *        Settings for logging access in this stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetStageResult withAccessLogSettings(AccessLogSettings accessLogSettings) {
         setAccessLogSettings(accessLogSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        Settings for the canary deployment in this stage.
+     */
+
+    public void setCanarySettings(CanarySettings canarySettings) {
+        this.canarySettings = canarySettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @return Settings for the canary deployment in this stage.
+     */
+
+    public CanarySettings getCanarySettings() {
+        return this.canarySettings;
+    }
+
+    /**
+     * <p>
+     * Settings for the canary deployment in this stage.
+     * </p>
+     * 
+     * @param canarySettings
+     *        Settings for the canary deployment in this stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetStageResult withCanarySettings(CanarySettings canarySettings) {
+        setCanarySettings(canarySettings);
         return this;
     }
 
@@ -775,6 +821,8 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
         if (getAccessLogSettings() != null)
             sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
+        if (getCanarySettings() != null)
+            sb.append("CanarySettings: ").append(getCanarySettings()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getLastUpdatedDate() != null)
@@ -837,6 +885,10 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getAccessLogSettings() != null && other.getAccessLogSettings().equals(this.getAccessLogSettings()) == false)
             return false;
+        if (other.getCanarySettings() == null ^ this.getCanarySettings() == null)
+            return false;
+        if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -864,6 +916,7 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
         hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
+        hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;

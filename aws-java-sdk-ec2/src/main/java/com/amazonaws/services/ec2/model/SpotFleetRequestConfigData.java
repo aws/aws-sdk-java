@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the configuration of a Spot fleet request.
+ * Describes the configuration of a Spot Fleet request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetRequestConfigData" target="_top">AWS API
@@ -28,7 +28,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The
+     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
      * default is <code>lowestPrice</code>.
      * </p>
      */
@@ -44,8 +44,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private String clientToken;
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
      * </p>
      */
     private String excessCapacityTerminationPolicy;
@@ -57,34 +57,42 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     private Double fulfilledCapacity;
     /**
      * <p>
-     * Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
+     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.
      * </p>
      */
     private String iamFleetRole;
     /**
      * <p>
-     * Information about the launch specifications for the Spot fleet request.
+     * The launch specifications for the Spot Fleet request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotFleetLaunchSpecification> launchSpecifications;
     /**
      * <p>
-     * The bid price per unit hour.
+     * The launch template and overrides.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig> launchTemplateConfigs;
+    /**
+     * <p>
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
+     * price.
      * </p>
      */
     private String spotPrice;
     /**
      * <p>
      * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
      * </p>
      */
     private Integer targetCapacity;
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      * </p>
      */
     private Boolean terminateInstancesWithExpiration;
@@ -92,9 +100,9 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also
      * attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only
-     * place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it
-     * submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a
-     * certain target capacity, fleet will place the required bids to meet this target capacity. It will also
+     * place the required requests. It will not attempt to replenish Spot Instances if capacity is diminished, nor will
+     * it submit requests in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+     * a certain target capacity, fleet will place the required requests to meet this target capacity. It will also
      * automatically replenish any interrupted instances. Default: <code>maintain</code>.
      * </p>
      */
@@ -110,30 +118,30 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance requests are
-     * placed or enabled to fulfill the request.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
+     * placed or able to fulfill the request. The default end date is 7 days from the current date.
      * </p>
      */
     private java.util.Date validUntil;
     /**
      * <p>
-     * Indicates whether Spot fleet should replace unhealthy instances.
+     * Indicates whether Spot Fleet should replace unhealthy instances.
      * </p>
      */
     private Boolean replaceUnhealthyInstances;
     /**
      * <p>
-     * Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      */
     private String instanceInterruptionBehavior;
     /**
      * <p>
-     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
-     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers
+     * the running Spot Instances with the specified Classic Load Balancers and target groups.
      * </p>
      * <p>
-     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1,
      * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      * </p>
      */
@@ -141,12 +149,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The
+     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
      * default is <code>lowestPrice</code>.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request.
+     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
      *        The default is <code>lowestPrice</code>.
      * @see AllocationStrategy
      */
@@ -157,11 +165,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The
+     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
      * default is <code>lowestPrice</code>.
      * </p>
      * 
-     * @return Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request.
+     * @return Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
      *         The default is <code>lowestPrice</code>.
      * @see AllocationStrategy
      */
@@ -172,12 +180,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The
+     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
      * default is <code>lowestPrice</code>.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request.
+     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
      *        The default is <code>lowestPrice</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllocationStrategy
@@ -190,12 +198,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The
+     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
      * default is <code>lowestPrice</code>.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request.
+     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
      *        The default is <code>lowestPrice</code>.
      * @see AllocationStrategy
      */
@@ -206,12 +214,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request. The
+     * Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request. The
      * default is <code>lowestPrice</code>.
      * </p>
      * 
      * @param allocationStrategy
-     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot fleet request.
+     *        Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
      *        The default is <code>lowestPrice</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllocationStrategy
@@ -282,13 +290,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -298,12 +306,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
      * </p>
      * 
-     * @return Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *         request is decreased below the current size of the Spot fleet.
+     * @return Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *         request is decreased below the current size of the Spot Fleet.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -313,13 +321,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExcessCapacityTerminationPolicy
      */
@@ -331,13 +339,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
      * @see ExcessCapacityTerminationPolicy
      */
 
@@ -347,13 +355,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
+     * Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet request is
+     * decreased below the current size of the Spot Fleet.
      * </p>
      * 
      * @param excessCapacityTerminationPolicy
-     *        Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet
-     *        request is decreased below the current size of the Spot fleet.
+     *        Indicates whether running Spot Instances should be terminated if the target capacity of the Spot Fleet
+     *        request is decreased below the current size of the Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExcessCapacityTerminationPolicy
      */
@@ -405,14 +413,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
+     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @param iamFleetRole
-     *        Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet
-     *        request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     *        Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
+     *        request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      *        <code>terminateInstancesWithExpiration</code>.
      */
 
@@ -422,13 +430,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
+     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.
      * </p>
      * 
-     * @return Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot
-     *         fleet request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     * @return Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot
+     *         Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      *         <code>terminateInstancesWithExpiration</code>.
      */
 
@@ -438,14 +446,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet
-     * request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     * Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
+     * request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      * <code>terminateInstancesWithExpiration</code>.
      * </p>
      * 
      * @param iamFleetRole
-     *        Grants the Spot fleet permission to terminate Spot instances on your behalf when you cancel its Spot fleet
-     *        request using <a>CancelSpotFleetRequests</a> or when the Spot fleet request expires, if you set
+     *        Grants the Spot Fleet permission to terminate Spot Instances on your behalf when you cancel its Spot Fleet
+     *        request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet request expires, if you set
      *        <code>terminateInstancesWithExpiration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -457,10 +465,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the launch specifications for the Spot fleet request.
+     * The launch specifications for the Spot Fleet request.
      * </p>
      * 
-     * @return Information about the launch specifications for the Spot fleet request.
+     * @return The launch specifications for the Spot Fleet request.
      */
 
     public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
@@ -472,11 +480,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the launch specifications for the Spot fleet request.
+     * The launch specifications for the Spot Fleet request.
      * </p>
      * 
      * @param launchSpecifications
-     *        Information about the launch specifications for the Spot fleet request.
+     *        The launch specifications for the Spot Fleet request.
      */
 
     public void setLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
@@ -490,7 +498,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the launch specifications for the Spot fleet request.
+     * The launch specifications for the Spot Fleet request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -499,7 +507,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * </p>
      * 
      * @param launchSpecifications
-     *        Information about the launch specifications for the Spot fleet request.
+     *        The launch specifications for the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,11 +523,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the launch specifications for the Spot fleet request.
+     * The launch specifications for the Spot Fleet request.
      * </p>
      * 
      * @param launchSpecifications
-     *        Information about the launch specifications for the Spot fleet request.
+     *        The launch specifications for the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,11 +538,86 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour.
+     * The launch template and overrides.
+     * </p>
+     * 
+     * @return The launch template and overrides.
+     */
+
+    public java.util.List<LaunchTemplateConfig> getLaunchTemplateConfigs() {
+        if (launchTemplateConfigs == null) {
+            launchTemplateConfigs = new com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>();
+        }
+        return launchTemplateConfigs;
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides.
+     * </p>
+     * 
+     * @param launchTemplateConfigs
+     *        The launch template and overrides.
+     */
+
+    public void setLaunchTemplateConfigs(java.util.Collection<LaunchTemplateConfig> launchTemplateConfigs) {
+        if (launchTemplateConfigs == null) {
+            this.launchTemplateConfigs = null;
+            return;
+        }
+
+        this.launchTemplateConfigs = new com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>(launchTemplateConfigs);
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLaunchTemplateConfigs(java.util.Collection)} or
+     * {@link #withLaunchTemplateConfigs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param launchTemplateConfigs
+     *        The launch template and overrides.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetRequestConfigData withLaunchTemplateConfigs(LaunchTemplateConfig... launchTemplateConfigs) {
+        if (this.launchTemplateConfigs == null) {
+            setLaunchTemplateConfigs(new com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>(launchTemplateConfigs.length));
+        }
+        for (LaunchTemplateConfig ele : launchTemplateConfigs) {
+            this.launchTemplateConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides.
+     * </p>
+     * 
+     * @param launchTemplateConfigs
+     *        The launch template and overrides.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetRequestConfigData withLaunchTemplateConfigs(java.util.Collection<LaunchTemplateConfig> launchTemplateConfigs) {
+        setLaunchTemplateConfigs(launchTemplateConfigs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
+     * price.
      * </p>
      * 
      * @param spotPrice
-     *        The bid price per unit hour.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
+     *        On-Demand price.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -543,10 +626,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
+     * price.
      * </p>
      * 
-     * @return The bid price per unit hour.
+     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
+     *         On-Demand price.
      */
 
     public String getSpotPrice() {
@@ -555,11 +640,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The bid price per unit hour.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the On-Demand
+     * price.
      * </p>
      * 
      * @param spotPrice
-     *        The bid price per unit hour.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. The default is the
+     *        On-Demand price.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -571,12 +658,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
      * </p>
      * 
      * @param targetCapacity
      *        The number of units to request. You can choose to set the target capacity in terms of instances or a
      *        performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     *        If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     *        later.
      */
 
     public void setTargetCapacity(Integer targetCapacity) {
@@ -586,11 +676,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
      * </p>
      * 
      * @return The number of units to request. You can choose to set the target capacity in terms of instances or a
      *         performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     *         If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     *         later.
      */
 
     public Integer getTargetCapacity() {
@@ -600,12 +693,15 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The number of units to request. You can choose to set the target capacity in terms of instances or a performance
-     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     * characteristic that is important to your application workload, such as vCPUs, memory, or I/O. If the request type
+     * is <code>maintain</code>, you can specify a target capacity of 0 and add capacity later.
      * </p>
      * 
      * @param targetCapacity
      *        The number of units to request. You can choose to set the target capacity in terms of instances or a
      *        performance characteristic that is important to your application workload, such as vCPUs, memory, or I/O.
+     *        If the request type is <code>maintain</code>, you can specify a target capacity of 0 and add capacity
+     *        later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -616,11 +712,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      * </p>
      * 
      * @param terminateInstancesWithExpiration
-     *        Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     *        Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      */
 
     public void setTerminateInstancesWithExpiration(Boolean terminateInstancesWithExpiration) {
@@ -629,10 +725,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      * </p>
      * 
-     * @return Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * @return Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      */
 
     public Boolean getTerminateInstancesWithExpiration() {
@@ -641,11 +737,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      * </p>
      * 
      * @param terminateInstancesWithExpiration
-     *        Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     *        Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,10 +752,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      * </p>
      * 
-     * @return Indicates whether running Spot instances should be terminated when the Spot fleet request expires.
+     * @return Indicates whether running Spot Instances should be terminated when the Spot Fleet request expires.
      */
 
     public Boolean isTerminateInstancesWithExpiration() {
@@ -670,19 +766,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also
      * attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only
-     * place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it
-     * submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a
-     * certain target capacity, fleet will place the required bids to meet this target capacity. It will also
+     * place the required requests. It will not attempt to replenish Spot Instances if capacity is diminished, nor will
+     * it submit requests in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+     * a certain target capacity, fleet will place the required requests to meet this target capacity. It will also
      * automatically replenish any interrupted instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or
      *        also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the
-     *        fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is
-     *        diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want
-     *        to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this target
-     *        capacity. It will also automatically replenish any interrupted instances. Default: <code>maintain</code>.
+     *        fleet will only place the required requests. It will not attempt to replenish Spot Instances if capacity
+     *        is diminished, nor will it submit requests in alternative Spot pools if capacity is not available. When
+     *        you want to <code>maintain</code> a certain target capacity, fleet will place the required requests to
+     *        meet this target capacity. It will also automatically replenish any interrupted instances. Default:
+     *        <code>maintain</code>.
      * @see FleetType
      */
 
@@ -694,18 +791,18 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also
      * attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only
-     * place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it
-     * submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a
-     * certain target capacity, fleet will place the required bids to meet this target capacity. It will also
+     * place the required requests. It will not attempt to replenish Spot Instances if capacity is diminished, nor will
+     * it submit requests in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+     * a certain target capacity, fleet will place the required requests to meet this target capacity. It will also
      * automatically replenish any interrupted instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @return The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or
      *         also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the
-     *         fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is
-     *         diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want
-     *         to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this
-     *         target capacity. It will also automatically replenish any interrupted instances. Default:
+     *         fleet will only place the required requests. It will not attempt to replenish Spot Instances if capacity
+     *         is diminished, nor will it submit requests in alternative Spot pools if capacity is not available. When
+     *         you want to <code>maintain</code> a certain target capacity, fleet will place the required requests to
+     *         meet this target capacity. It will also automatically replenish any interrupted instances. Default:
      *         <code>maintain</code>.
      * @see FleetType
      */
@@ -718,19 +815,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also
      * attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only
-     * place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it
-     * submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a
-     * certain target capacity, fleet will place the required bids to meet this target capacity. It will also
+     * place the required requests. It will not attempt to replenish Spot Instances if capacity is diminished, nor will
+     * it submit requests in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+     * a certain target capacity, fleet will place the required requests to meet this target capacity. It will also
      * automatically replenish any interrupted instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or
      *        also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the
-     *        fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is
-     *        diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want
-     *        to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this target
-     *        capacity. It will also automatically replenish any interrupted instances. Default: <code>maintain</code>.
+     *        fleet will only place the required requests. It will not attempt to replenish Spot Instances if capacity
+     *        is diminished, nor will it submit requests in alternative Spot pools if capacity is not available. When
+     *        you want to <code>maintain</code> a certain target capacity, fleet will place the required requests to
+     *        meet this target capacity. It will also automatically replenish any interrupted instances. Default:
+     *        <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -744,19 +842,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also
      * attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only
-     * place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it
-     * submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a
-     * certain target capacity, fleet will place the required bids to meet this target capacity. It will also
+     * place the required requests. It will not attempt to replenish Spot Instances if capacity is diminished, nor will
+     * it submit requests in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+     * a certain target capacity, fleet will place the required requests to meet this target capacity. It will also
      * automatically replenish any interrupted instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or
      *        also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the
-     *        fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is
-     *        diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want
-     *        to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this target
-     *        capacity. It will also automatically replenish any interrupted instances. Default: <code>maintain</code>.
+     *        fleet will only place the required requests. It will not attempt to replenish Spot Instances if capacity
+     *        is diminished, nor will it submit requests in alternative Spot pools if capacity is not available. When
+     *        you want to <code>maintain</code> a certain target capacity, fleet will place the required requests to
+     *        meet this target capacity. It will also automatically replenish any interrupted instances. Default:
+     *        <code>maintain</code>.
      * @see FleetType
      */
 
@@ -768,19 +867,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or also
      * attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the fleet will only
-     * place the required bids. It will not attempt to replenish Spot instances if capacity is diminished, nor will it
-     * submit bids in alternative Spot pools if capacity is not available. When you want to <code>maintain</code> a
-     * certain target capacity, fleet will place the required bids to meet this target capacity. It will also
+     * place the required requests. It will not attempt to replenish Spot Instances if capacity is diminished, nor will
+     * it submit requests in alternative Spot pools if capacity is not available. When you want to <code>maintain</code>
+     * a certain target capacity, fleet will place the required requests to meet this target capacity. It will also
      * automatically replenish any interrupted instances. Default: <code>maintain</code>.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the fleet will only <code>request</code> the target capacity or
      *        also attempt to <code>maintain</code> it. When you <code>request</code> a certain target capacity, the
-     *        fleet will only place the required bids. It will not attempt to replenish Spot instances if capacity is
-     *        diminished, nor will it submit bids in alternative Spot pools if capacity is not available. When you want
-     *        to <code>maintain</code> a certain target capacity, fleet will place the required bids to meet this target
-     *        capacity. It will also automatically replenish any interrupted instances. Default: <code>maintain</code>.
+     *        fleet will only place the required requests. It will not attempt to replenish Spot Instances if capacity
+     *        is diminished, nor will it submit requests in alternative Spot pools if capacity is not available. When
+     *        you want to <code>maintain</code> a certain target capacity, fleet will place the required requests to
+     *        meet this target capacity. It will also automatically replenish any interrupted instances. Default:
+     *        <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -845,14 +945,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance requests are
-     * placed or enabled to fulfill the request.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
+     * placed or able to fulfill the request. The default end date is 7 days from the current date.
      * </p>
      * 
      * @param validUntil
      *        The end date and time of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance
-     *        requests are placed or enabled to fulfill the request.
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
+     *        requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -862,13 +962,13 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance requests are
-     * placed or enabled to fulfill the request.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
+     * placed or able to fulfill the request. The default end date is 7 days from the current date.
      * </p>
      * 
      * @return The end date and time of the request, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance
-     *         requests are placed or enabled to fulfill the request.
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
+     *         requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
      */
 
     public java.util.Date getValidUntil() {
@@ -878,14 +978,14 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
     /**
      * <p>
      * The end date and time of the request, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance requests are
-     * placed or enabled to fulfill the request.
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance requests are
+     * placed or able to fulfill the request. The default end date is 7 days from the current date.
      * </p>
      * 
      * @param validUntil
      *        The end date and time of the request, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot instance
-     *        requests are placed or enabled to fulfill the request.
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point, no new Spot Instance
+     *        requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -896,11 +996,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Spot fleet should replace unhealthy instances.
+     * Indicates whether Spot Fleet should replace unhealthy instances.
      * </p>
      * 
      * @param replaceUnhealthyInstances
-     *        Indicates whether Spot fleet should replace unhealthy instances.
+     *        Indicates whether Spot Fleet should replace unhealthy instances.
      */
 
     public void setReplaceUnhealthyInstances(Boolean replaceUnhealthyInstances) {
@@ -909,10 +1009,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Spot fleet should replace unhealthy instances.
+     * Indicates whether Spot Fleet should replace unhealthy instances.
      * </p>
      * 
-     * @return Indicates whether Spot fleet should replace unhealthy instances.
+     * @return Indicates whether Spot Fleet should replace unhealthy instances.
      */
 
     public Boolean getReplaceUnhealthyInstances() {
@@ -921,11 +1021,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Spot fleet should replace unhealthy instances.
+     * Indicates whether Spot Fleet should replace unhealthy instances.
      * </p>
      * 
      * @param replaceUnhealthyInstances
-     *        Indicates whether Spot fleet should replace unhealthy instances.
+     *        Indicates whether Spot Fleet should replace unhealthy instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -936,10 +1036,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether Spot fleet should replace unhealthy instances.
+     * Indicates whether Spot Fleet should replace unhealthy instances.
      * </p>
      * 
-     * @return Indicates whether Spot fleet should replace unhealthy instances.
+     * @return Indicates whether Spot Fleet should replace unhealthy instances.
      */
 
     public Boolean isReplaceUnhealthyInstances() {
@@ -948,11 +1048,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        Indicates whether a Spot instance stops or terminates when it is interrupted.
+     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * @see InstanceInterruptionBehavior
      */
 
@@ -962,10 +1062,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      * 
-     * @return Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * @return The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * @see InstanceInterruptionBehavior
      */
 
@@ -975,11 +1075,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        Indicates whether a Spot instance stops or terminates when it is interrupted.
+     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceInterruptionBehavior
      */
@@ -991,11 +1091,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        Indicates whether a Spot instance stops or terminates when it is interrupted.
+     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * @see InstanceInterruptionBehavior
      */
 
@@ -1005,11 +1105,11 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether a Spot instance stops or terminates when it is interrupted.
+     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        Indicates whether a Spot instance stops or terminates when it is interrupted.
+     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceInterruptionBehavior
      */
@@ -1021,19 +1121,19 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
-     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers
+     * the running Spot Instances with the specified Classic Load Balancers and target groups.
      * </p>
      * <p>
-     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1,
      * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      * </p>
      * 
      * @param loadBalancersConfig
-     *        One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet
-     *        registers the running Spot instances with the specified Classic Load Balancers and target groups.</p>
+     *        One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet
+     *        registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
      *        <p>
-     *        With Network Load Balancers, Spot fleet cannot register instances that have the following instance types:
+     *        With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types:
      *        C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      */
 
@@ -1043,18 +1143,18 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
-     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers
+     * the running Spot Instances with the specified Classic Load Balancers and target groups.
      * </p>
      * <p>
-     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1,
      * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      * </p>
      * 
-     * @return One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet
-     *         registers the running Spot instances with the specified Classic Load Balancers and target groups.</p>
+     * @return One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet
+     *         registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
      *         <p>
-     *         With Network Load Balancers, Spot fleet cannot register instances that have the following instance types:
+     *         With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types:
      *         C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      */
 
@@ -1064,19 +1164,19 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet registers
-     * the running Spot instances with the specified Classic Load Balancers and target groups.
+     * One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet registers
+     * the running Spot Instances with the specified Classic Load Balancers and target groups.
      * </p>
      * <p>
-     * With Network Load Balancers, Spot fleet cannot register instances that have the following instance types: C1,
+     * With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types: C1,
      * CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      * </p>
      * 
      * @param loadBalancersConfig
-     *        One or more Classic Load Balancers and target groups to attach to the Spot fleet request. Spot fleet
-     *        registers the running Spot instances with the specified Classic Load Balancers and target groups.</p>
+     *        One or more Classic Load Balancers and target groups to attach to the Spot Fleet request. Spot Fleet
+     *        registers the running Spot Instances with the specified Classic Load Balancers and target groups.</p>
      *        <p>
-     *        With Network Load Balancers, Spot fleet cannot register instances that have the following instance types:
+     *        With Network Load Balancers, Spot Fleet cannot register instances that have the following instance types:
      *        C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1109,6 +1209,8 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             sb.append("IamFleetRole: ").append(getIamFleetRole()).append(",");
         if (getLaunchSpecifications() != null)
             sb.append("LaunchSpecifications: ").append(getLaunchSpecifications()).append(",");
+        if (getLaunchTemplateConfigs() != null)
+            sb.append("LaunchTemplateConfigs: ").append(getLaunchTemplateConfigs()).append(",");
         if (getSpotPrice() != null)
             sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getTargetCapacity() != null)
@@ -1166,6 +1268,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
             return false;
         if (other.getLaunchSpecifications() != null && other.getLaunchSpecifications().equals(this.getLaunchSpecifications()) == false)
             return false;
+        if (other.getLaunchTemplateConfigs() == null ^ this.getLaunchTemplateConfigs() == null)
+            return false;
+        if (other.getLaunchTemplateConfigs() != null && other.getLaunchTemplateConfigs().equals(this.getLaunchTemplateConfigs()) == false)
+            return false;
         if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
             return false;
         if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
@@ -1217,6 +1323,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFulfilledCapacity() == null) ? 0 : getFulfilledCapacity().hashCode());
         hashCode = prime * hashCode + ((getIamFleetRole() == null) ? 0 : getIamFleetRole().hashCode());
         hashCode = prime * hashCode + ((getLaunchSpecifications() == null) ? 0 : getLaunchSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplateConfigs() == null) ? 0 : getLaunchTemplateConfigs().hashCode());
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
         hashCode = prime * hashCode + ((getTerminateInstancesWithExpiration() == null) ? 0 : getTerminateInstancesWithExpiration().hashCode());

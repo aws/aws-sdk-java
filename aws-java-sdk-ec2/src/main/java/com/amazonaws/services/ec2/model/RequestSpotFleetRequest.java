@@ -29,18 +29,18 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The configuration for the Spot fleet request.
+     * The configuration for the Spot Fleet request.
      * </p>
      */
     private SpotFleetRequestConfigData spotFleetRequestConfig;
 
     /**
      * <p>
-     * The configuration for the Spot fleet request.
+     * The configuration for the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestConfig
-     *        The configuration for the Spot fleet request.
+     *        The configuration for the Spot Fleet request.
      */
 
     public void setSpotFleetRequestConfig(SpotFleetRequestConfigData spotFleetRequestConfig) {
@@ -49,10 +49,10 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The configuration for the Spot fleet request.
+     * The configuration for the Spot Fleet request.
      * </p>
      * 
-     * @return The configuration for the Spot fleet request.
+     * @return The configuration for the Spot Fleet request.
      */
 
     public SpotFleetRequestConfigData getSpotFleetRequestConfig() {
@@ -61,11 +61,11 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The configuration for the Spot fleet request.
+     * The configuration for the Spot Fleet request.
      * </p>
      * 
      * @param spotFleetRequestConfig
-     *        The configuration for the Spot fleet request.
+     *        The configuration for the Spot Fleet request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -74,6 +74,10 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
                     }
 
+                    if (ebs.getKmsKeyId() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
+                    }
+
                     if (ebs.getSnapshotId() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
                                 StringUtils.fromString(ebs.getSnapshotId()));

@@ -35,6 +35,8 @@ public class UpdateAliasRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionVersion").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<StructuredPojo> ROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingConfig").build();
 
     private static final UpdateAliasRequestMarshaller instance = new UpdateAliasRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateAliasRequestMarshaller {
             protocolMarshaller.marshall(updateAliasRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateAliasRequest.getFunctionVersion(), FUNCTIONVERSION_BINDING);
             protocolMarshaller.marshall(updateAliasRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getRoutingConfig(), ROUTINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

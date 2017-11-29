@@ -44,6 +44,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AcceptVpcEndpointConnectionsResult acceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AcceptVpcPeeringConnectionResult acceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +274,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateLaunchTemplateResult createLaunchTemplate(CreateLaunchTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLaunchTemplateVersionResult createLaunchTemplateVersion(CreateLaunchTemplateVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNatGatewayResult createNatGateway(CreateNatGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -354,6 +369,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateVpcEndpointConnectionNotificationResult createVpcEndpointConnectionNotification(CreateVpcEndpointConnectionNotificationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVpcEndpointServiceConfigurationResult createVpcEndpointServiceConfiguration(CreateVpcEndpointServiceConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVpcPeeringConnectionResult createVpcPeeringConnection(CreateVpcPeeringConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -410,6 +435,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteKeyPairResult deleteKeyPair(DeleteKeyPairRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLaunchTemplateResult deleteLaunchTemplate(DeleteLaunchTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLaunchTemplateVersionsResult deleteLaunchTemplateVersions(DeleteLaunchTemplateVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -490,6 +525,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteVpcResult deleteVpc(DeleteVpcRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcEndpointConnectionNotificationsResult deleteVpcEndpointConnectionNotifications(DeleteVpcEndpointConnectionNotificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcEndpointServiceConfigurationsResult deleteVpcEndpointServiceConfigurations(DeleteVpcEndpointServiceConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -761,6 +806,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeKeyPairsResult describeKeyPairs() {
         return describeKeyPairs(new DescribeKeyPairsRequest());
+    }
+
+    @Override
+    public DescribeLaunchTemplateVersionsResult describeLaunchTemplateVersions(DescribeLaunchTemplateVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLaunchTemplatesResult describeLaunchTemplates(DescribeLaunchTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1054,6 +1109,26 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeVpcEndpointConnectionNotificationsResult describeVpcEndpointConnectionNotifications(DescribeVpcEndpointConnectionNotificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVpcEndpointConnectionsResult describeVpcEndpointConnections(DescribeVpcEndpointConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVpcEndpointServiceConfigurationsResult describeVpcEndpointServiceConfigurations(DescribeVpcEndpointServiceConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVpcEndpointServicePermissionsResult describeVpcEndpointServicePermissions(DescribeVpcEndpointServicePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeVpcEndpointServicesResult describeVpcEndpointServices(DescribeVpcEndpointServicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1214,6 +1289,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetLaunchTemplateDataResult getLaunchTemplateData(GetLaunchTemplateDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPasswordDataResult getPasswordData(GetPasswordDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1294,6 +1374,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyLaunchTemplateResult modifyLaunchTemplate(ModifyLaunchTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyNetworkInterfaceAttributeResult modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1339,6 +1424,21 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyVpcEndpointConnectionNotificationResult modifyVpcEndpointConnectionNotification(ModifyVpcEndpointConnectionNotificationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVpcEndpointServiceConfigurationResult modifyVpcEndpointServiceConfiguration(ModifyVpcEndpointServiceConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVpcEndpointServicePermissionsResult modifyVpcEndpointServicePermissions(ModifyVpcEndpointServicePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyVpcPeeringConnectionOptionsResult modifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1380,6 +1480,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RegisterImageResult registerImage(RegisterImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RejectVpcEndpointConnectionsResult rejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

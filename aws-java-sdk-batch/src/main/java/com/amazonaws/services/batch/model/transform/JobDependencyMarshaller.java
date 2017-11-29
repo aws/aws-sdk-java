@@ -29,6 +29,8 @@ public class JobDependencyMarshaller {
 
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final JobDependencyMarshaller instance = new JobDependencyMarshaller();
 
@@ -47,6 +49,7 @@ public class JobDependencyMarshaller {
 
         try {
             protocolMarshaller.marshall(jobDependency.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(jobDependency.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

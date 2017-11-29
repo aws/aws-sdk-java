@@ -80,6 +80,10 @@ public class LambdaConfigTypeJsonUnmarshaller implements Unmarshaller<LambdaConf
                     context.nextToken();
                     lambdaConfigType.setVerifyAuthChallengeResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PreTokenGeneration", targetDepth)) {
+                    context.nextToken();
+                    lambdaConfigType.setPreTokenGeneration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

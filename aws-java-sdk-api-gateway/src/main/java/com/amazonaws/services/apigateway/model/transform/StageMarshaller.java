@@ -51,6 +51,8 @@ public class StageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentationVersion").build();
     private static final MarshallingInfo<StructuredPojo> ACCESSLOGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessLogSettings").build();
+    private static final MarshallingInfo<StructuredPojo> CANARYSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("canarySettings").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -83,6 +85,7 @@ public class StageMarshaller {
             protocolMarshaller.marshall(stage.getVariables(), VARIABLES_BINDING);
             protocolMarshaller.marshall(stage.getDocumentationVersion(), DOCUMENTATIONVERSION_BINDING);
             protocolMarshaller.marshall(stage.getAccessLogSettings(), ACCESSLOGSETTINGS_BINDING);
+            protocolMarshaller.marshall(stage.getCanarySettings(), CANARYSETTINGS_BINDING);
             protocolMarshaller.marshall(stage.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(stage.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
         } catch (Exception e) {
