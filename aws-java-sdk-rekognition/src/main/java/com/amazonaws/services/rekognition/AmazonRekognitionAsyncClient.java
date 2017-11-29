@@ -311,6 +311,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStreamProcessorResult> createStreamProcessorAsync(CreateStreamProcessorRequest request) {
+
+        return createStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamProcessorResult> createStreamProcessorAsync(final CreateStreamProcessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateStreamProcessorRequest, CreateStreamProcessorResult> asyncHandler) {
+        final CreateStreamProcessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateStreamProcessorResult>() {
+            @Override
+            public CreateStreamProcessorResult call() throws Exception {
+                CreateStreamProcessorResult result = null;
+
+                try {
+                    result = executeCreateStreamProcessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCollectionResult> deleteCollectionAsync(DeleteCollectionRequest request) {
 
         return deleteCollectionAsync(request, null);
@@ -361,6 +394,72 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeDeleteFaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamProcessorResult> deleteStreamProcessorAsync(DeleteStreamProcessorRequest request) {
+
+        return deleteStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamProcessorResult> deleteStreamProcessorAsync(final DeleteStreamProcessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStreamProcessorRequest, DeleteStreamProcessorResult> asyncHandler) {
+        final DeleteStreamProcessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStreamProcessorResult>() {
+            @Override
+            public DeleteStreamProcessorResult call() throws Exception {
+                DeleteStreamProcessorResult result = null;
+
+                try {
+                    result = executeDeleteStreamProcessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(DescribeStreamProcessorRequest request) {
+
+        return describeStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(final DescribeStreamProcessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStreamProcessorRequest, DescribeStreamProcessorResult> asyncHandler) {
+        final DescribeStreamProcessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStreamProcessorResult>() {
+            @Override
+            public DescribeStreamProcessorResult call() throws Exception {
+                DescribeStreamProcessorResult result = null;
+
+                try {
+                    result = executeDescribeStreamProcessor(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -542,6 +641,204 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetCelebrityRecognitionResult> getCelebrityRecognitionAsync(GetCelebrityRecognitionRequest request) {
+
+        return getCelebrityRecognitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCelebrityRecognitionResult> getCelebrityRecognitionAsync(final GetCelebrityRecognitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCelebrityRecognitionRequest, GetCelebrityRecognitionResult> asyncHandler) {
+        final GetCelebrityRecognitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCelebrityRecognitionResult>() {
+            @Override
+            public GetCelebrityRecognitionResult call() throws Exception {
+                GetCelebrityRecognitionResult result = null;
+
+                try {
+                    result = executeGetCelebrityRecognition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContentModerationResult> getContentModerationAsync(GetContentModerationRequest request) {
+
+        return getContentModerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContentModerationResult> getContentModerationAsync(final GetContentModerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContentModerationRequest, GetContentModerationResult> asyncHandler) {
+        final GetContentModerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContentModerationResult>() {
+            @Override
+            public GetContentModerationResult call() throws Exception {
+                GetContentModerationResult result = null;
+
+                try {
+                    result = executeGetContentModeration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFaceDetectionResult> getFaceDetectionAsync(GetFaceDetectionRequest request) {
+
+        return getFaceDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFaceDetectionResult> getFaceDetectionAsync(final GetFaceDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFaceDetectionRequest, GetFaceDetectionResult> asyncHandler) {
+        final GetFaceDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFaceDetectionResult>() {
+            @Override
+            public GetFaceDetectionResult call() throws Exception {
+                GetFaceDetectionResult result = null;
+
+                try {
+                    result = executeGetFaceDetection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFaceSearchResult> getFaceSearchAsync(GetFaceSearchRequest request) {
+
+        return getFaceSearchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFaceSearchResult> getFaceSearchAsync(final GetFaceSearchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFaceSearchRequest, GetFaceSearchResult> asyncHandler) {
+        final GetFaceSearchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFaceSearchResult>() {
+            @Override
+            public GetFaceSearchResult call() throws Exception {
+                GetFaceSearchResult result = null;
+
+                try {
+                    result = executeGetFaceSearch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLabelDetectionResult> getLabelDetectionAsync(GetLabelDetectionRequest request) {
+
+        return getLabelDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLabelDetectionResult> getLabelDetectionAsync(final GetLabelDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLabelDetectionRequest, GetLabelDetectionResult> asyncHandler) {
+        final GetLabelDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLabelDetectionResult>() {
+            @Override
+            public GetLabelDetectionResult call() throws Exception {
+                GetLabelDetectionResult result = null;
+
+                try {
+                    result = executeGetLabelDetection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPersonTrackingResult> getPersonTrackingAsync(GetPersonTrackingRequest request) {
+
+        return getPersonTrackingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPersonTrackingResult> getPersonTrackingAsync(final GetPersonTrackingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPersonTrackingRequest, GetPersonTrackingResult> asyncHandler) {
+        final GetPersonTrackingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPersonTrackingResult>() {
+            @Override
+            public GetPersonTrackingResult call() throws Exception {
+                GetPersonTrackingResult result = null;
+
+                try {
+                    result = executeGetPersonTracking(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<IndexFacesResult> indexFacesAsync(IndexFacesRequest request) {
 
         return indexFacesAsync(request, null);
@@ -641,6 +938,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListStreamProcessorsResult> listStreamProcessorsAsync(ListStreamProcessorsRequest request) {
+
+        return listStreamProcessorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamProcessorsResult> listStreamProcessorsAsync(final ListStreamProcessorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStreamProcessorsRequest, ListStreamProcessorsResult> asyncHandler) {
+        final ListStreamProcessorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStreamProcessorsResult>() {
+            @Override
+            public ListStreamProcessorsResult call() throws Exception {
+                ListStreamProcessorsResult result = null;
+
+                try {
+                    result = executeListStreamProcessors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(RecognizeCelebritiesRequest request) {
 
         return recognizeCelebritiesAsync(request, null);
@@ -724,6 +1054,270 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeSearchFacesByImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCelebrityRecognitionResult> startCelebrityRecognitionAsync(StartCelebrityRecognitionRequest request) {
+
+        return startCelebrityRecognitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCelebrityRecognitionResult> startCelebrityRecognitionAsync(final StartCelebrityRecognitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartCelebrityRecognitionRequest, StartCelebrityRecognitionResult> asyncHandler) {
+        final StartCelebrityRecognitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartCelebrityRecognitionResult>() {
+            @Override
+            public StartCelebrityRecognitionResult call() throws Exception {
+                StartCelebrityRecognitionResult result = null;
+
+                try {
+                    result = executeStartCelebrityRecognition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContentModerationResult> startContentModerationAsync(StartContentModerationRequest request) {
+
+        return startContentModerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContentModerationResult> startContentModerationAsync(final StartContentModerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartContentModerationRequest, StartContentModerationResult> asyncHandler) {
+        final StartContentModerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartContentModerationResult>() {
+            @Override
+            public StartContentModerationResult call() throws Exception {
+                StartContentModerationResult result = null;
+
+                try {
+                    result = executeStartContentModeration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFaceDetectionResult> startFaceDetectionAsync(StartFaceDetectionRequest request) {
+
+        return startFaceDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFaceDetectionResult> startFaceDetectionAsync(final StartFaceDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartFaceDetectionRequest, StartFaceDetectionResult> asyncHandler) {
+        final StartFaceDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartFaceDetectionResult>() {
+            @Override
+            public StartFaceDetectionResult call() throws Exception {
+                StartFaceDetectionResult result = null;
+
+                try {
+                    result = executeStartFaceDetection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFaceSearchResult> startFaceSearchAsync(StartFaceSearchRequest request) {
+
+        return startFaceSearchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFaceSearchResult> startFaceSearchAsync(final StartFaceSearchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartFaceSearchRequest, StartFaceSearchResult> asyncHandler) {
+        final StartFaceSearchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartFaceSearchResult>() {
+            @Override
+            public StartFaceSearchResult call() throws Exception {
+                StartFaceSearchResult result = null;
+
+                try {
+                    result = executeStartFaceSearch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLabelDetectionResult> startLabelDetectionAsync(StartLabelDetectionRequest request) {
+
+        return startLabelDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLabelDetectionResult> startLabelDetectionAsync(final StartLabelDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartLabelDetectionRequest, StartLabelDetectionResult> asyncHandler) {
+        final StartLabelDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartLabelDetectionResult>() {
+            @Override
+            public StartLabelDetectionResult call() throws Exception {
+                StartLabelDetectionResult result = null;
+
+                try {
+                    result = executeStartLabelDetection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPersonTrackingResult> startPersonTrackingAsync(StartPersonTrackingRequest request) {
+
+        return startPersonTrackingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPersonTrackingResult> startPersonTrackingAsync(final StartPersonTrackingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartPersonTrackingRequest, StartPersonTrackingResult> asyncHandler) {
+        final StartPersonTrackingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartPersonTrackingResult>() {
+            @Override
+            public StartPersonTrackingResult call() throws Exception {
+                StartPersonTrackingResult result = null;
+
+                try {
+                    result = executeStartPersonTracking(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamProcessorResult> startStreamProcessorAsync(StartStreamProcessorRequest request) {
+
+        return startStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamProcessorResult> startStreamProcessorAsync(final StartStreamProcessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartStreamProcessorRequest, StartStreamProcessorResult> asyncHandler) {
+        final StartStreamProcessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartStreamProcessorResult>() {
+            @Override
+            public StartStreamProcessorResult call() throws Exception {
+                StartStreamProcessorResult result = null;
+
+                try {
+                    result = executeStartStreamProcessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamProcessorResult> stopStreamProcessorAsync(StopStreamProcessorRequest request) {
+
+        return stopStreamProcessorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamProcessorResult> stopStreamProcessorAsync(final StopStreamProcessorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopStreamProcessorRequest, StopStreamProcessorResult> asyncHandler) {
+        final StopStreamProcessorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopStreamProcessorResult>() {
+            @Override
+            public StopStreamProcessorResult call() throws Exception {
+                StopStreamProcessorResult result = null;
+
+                try {
+                    result = executeStopStreamProcessor(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

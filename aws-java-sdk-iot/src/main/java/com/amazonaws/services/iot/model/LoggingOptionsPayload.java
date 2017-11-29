@@ -33,7 +33,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
     private String roleArn;
     /**
      * <p>
-     * The logging level.
+     * The log level.
      * </p>
      */
     private String logLevel;
@@ -80,11 +80,11 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The logging level.
+     * The log level.
      * </p>
      * 
      * @param logLevel
-     *        The logging level.
+     *        The log level.
      * @see LogLevel
      */
 
@@ -94,10 +94,10 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The logging level.
+     * The log level.
      * </p>
      * 
-     * @return The logging level.
+     * @return The log level.
      * @see LogLevel
      */
 
@@ -107,11 +107,11 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The logging level.
+     * The log level.
      * </p>
      * 
      * @param logLevel
-     *        The logging level.
+     *        The log level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */
@@ -123,11 +123,11 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The logging level.
+     * The log level.
      * </p>
      * 
      * @param logLevel
-     *        The logging level.
+     *        The log level.
      * @see LogLevel
      */
 
@@ -137,11 +137,11 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The logging level.
+     * The log level.
      * </p>
      * 
      * @param logLevel
-     *        The logging level.
+     *        The log level.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */

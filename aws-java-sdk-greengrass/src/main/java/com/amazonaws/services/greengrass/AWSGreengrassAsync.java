@@ -462,6 +462,93 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
             com.amazonaws.handlers.AsyncHandler<CreateLoggerDefinitionVersionRequest, CreateLoggerDefinitionVersionResult> asyncHandler);
 
     /**
+     * Creates a resource definition which contains a list of resources to be used in a group. You can create an initial
+     * version of the definition by providing a list of resources now, or use ``CreateResourceDefinitionVersion`` later.
+     * 
+     * @param createResourceDefinitionRequest
+     * @return A Java Future containing the result of the CreateResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsync.CreateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceDefinitionResult> createResourceDefinitionAsync(CreateResourceDefinitionRequest createResourceDefinitionRequest);
+
+    /**
+     * Creates a resource definition which contains a list of resources to be used in a group. You can create an initial
+     * version of the definition by providing a list of resources now, or use ``CreateResourceDefinitionVersion`` later.
+     * 
+     * @param createResourceDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.CreateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceDefinitionResult> createResourceDefinitionAsync(CreateResourceDefinitionRequest createResourceDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateResourceDefinitionRequest, CreateResourceDefinitionResult> asyncHandler);
+
+    /**
+     * Create a version of a resource definition that has already been defined.
+     * 
+     * @param createResourceDefinitionVersionRequest
+     * @return A Java Future containing the result of the CreateResourceDefinitionVersion operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsync.CreateResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceDefinitionVersionResult> createResourceDefinitionVersionAsync(
+            CreateResourceDefinitionVersionRequest createResourceDefinitionVersionRequest);
+
+    /**
+     * Create a version of a resource definition that has already been defined.
+     * 
+     * @param createResourceDefinitionVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateResourceDefinitionVersion operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsyncHandler.CreateResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceDefinitionVersionResult> createResourceDefinitionVersionAsync(
+            CreateResourceDefinitionVersionRequest createResourceDefinitionVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateResourceDefinitionVersionRequest, CreateResourceDefinitionVersionResult> asyncHandler);
+
+    /**
+     * Creates an Iot Job that will trigger your Greengrass Cores to update the software they are running.
+     * 
+     * @param createSoftwareUpdateJobRequest
+     * @return A Java Future containing the result of the CreateSoftwareUpdateJob operation returned by the service.
+     * @sample AWSGreengrassAsync.CreateSoftwareUpdateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSoftwareUpdateJobResult> createSoftwareUpdateJobAsync(CreateSoftwareUpdateJobRequest createSoftwareUpdateJobRequest);
+
+    /**
+     * Creates an Iot Job that will trigger your Greengrass Cores to update the software they are running.
+     * 
+     * @param createSoftwareUpdateJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSoftwareUpdateJob operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.CreateSoftwareUpdateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSoftwareUpdateJobResult> createSoftwareUpdateJobAsync(CreateSoftwareUpdateJobRequest createSoftwareUpdateJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSoftwareUpdateJobRequest, CreateSoftwareUpdateJobResult> asyncHandler);
+
+    /**
      * Creates a subscription definition. You may optionally provide the initial version of the subscription definition
      * or use ``CreateSubscriptionDefinitionVersion`` at a later time.
      * 
@@ -659,6 +746,33 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
      */
     java.util.concurrent.Future<DeleteLoggerDefinitionResult> deleteLoggerDefinitionAsync(DeleteLoggerDefinitionRequest deleteLoggerDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLoggerDefinitionRequest, DeleteLoggerDefinitionResult> asyncHandler);
+
+    /**
+     * Deletes a resource definition.
+     * 
+     * @param deleteResourceDefinitionRequest
+     * @return A Java Future containing the result of the DeleteResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsync.DeleteResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceDefinitionResult> deleteResourceDefinitionAsync(DeleteResourceDefinitionRequest deleteResourceDefinitionRequest);
+
+    /**
+     * Deletes a resource definition.
+     * 
+     * @param deleteResourceDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.DeleteResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceDefinitionResult> deleteResourceDefinitionAsync(DeleteResourceDefinitionRequest deleteResourceDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceDefinitionRequest, DeleteResourceDefinitionResult> asyncHandler);
 
     /**
      * Deletes a subscription definition. The subscription definition must not have been used in a deployment.
@@ -1175,6 +1289,64 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
             com.amazonaws.handlers.AsyncHandler<GetLoggerDefinitionVersionRequest, GetLoggerDefinitionVersionResult> asyncHandler);
 
     /**
+     * Retrieves information about a resource definition, such as its creation time and latest version.
+     * 
+     * @param getResourceDefinitionRequest
+     * @return A Java Future containing the result of the GetResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsync.GetResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceDefinitionResult> getResourceDefinitionAsync(GetResourceDefinitionRequest getResourceDefinitionRequest);
+
+    /**
+     * Retrieves information about a resource definition, such as its creation time and latest version.
+     * 
+     * @param getResourceDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.GetResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceDefinitionResult> getResourceDefinitionAsync(GetResourceDefinitionRequest getResourceDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceDefinitionRequest, GetResourceDefinitionResult> asyncHandler);
+
+    /**
+     * Retrieves information about a resource definition version, such as which resources are included in the version.
+     * 
+     * @param getResourceDefinitionVersionRequest
+     * @return A Java Future containing the result of the GetResourceDefinitionVersion operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsync.GetResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceDefinitionVersionResult> getResourceDefinitionVersionAsync(
+            GetResourceDefinitionVersionRequest getResourceDefinitionVersionRequest);
+
+    /**
+     * Retrieves information about a resource definition version, such as which resources are included in the version.
+     * 
+     * @param getResourceDefinitionVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceDefinitionVersion operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsyncHandler.GetResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceDefinitionVersionResult> getResourceDefinitionVersionAsync(
+            GetResourceDefinitionVersionRequest getResourceDefinitionVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceDefinitionVersionRequest, GetResourceDefinitionVersionResult> asyncHandler);
+
+    /**
      * Retrieves the service role that is attached to the account.
      * 
      * @param getServiceRoleForAccountRequest
@@ -1604,6 +1776,64 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
             com.amazonaws.handlers.AsyncHandler<ListLoggerDefinitionsRequest, ListLoggerDefinitionsResult> asyncHandler);
 
     /**
+     * Lists the versions of a resource definition.
+     * 
+     * @param listResourceDefinitionVersionsRequest
+     * @return A Java Future containing the result of the ListResourceDefinitionVersions operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsync.ListResourceDefinitionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceDefinitionVersionsResult> listResourceDefinitionVersionsAsync(
+            ListResourceDefinitionVersionsRequest listResourceDefinitionVersionsRequest);
+
+    /**
+     * Lists the versions of a resource definition.
+     * 
+     * @param listResourceDefinitionVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceDefinitionVersions operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsyncHandler.ListResourceDefinitionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceDefinitionVersionsResult> listResourceDefinitionVersionsAsync(
+            ListResourceDefinitionVersionsRequest listResourceDefinitionVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceDefinitionVersionsRequest, ListResourceDefinitionVersionsResult> asyncHandler);
+
+    /**
+     * Retrieves a list of resource definitions.
+     * 
+     * @param listResourceDefinitionsRequest
+     * @return A Java Future containing the result of the ListResourceDefinitions operation returned by the service.
+     * @sample AWSGreengrassAsync.ListResourceDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceDefinitionsResult> listResourceDefinitionsAsync(ListResourceDefinitionsRequest listResourceDefinitionsRequest);
+
+    /**
+     * Retrieves a list of resource definitions.
+     * 
+     * @param listResourceDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceDefinitions operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.ListResourceDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceDefinitionsResult> listResourceDefinitionsAsync(ListResourceDefinitionsRequest listResourceDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceDefinitionsRequest, ListResourceDefinitionsResult> asyncHandler);
+
+    /**
      * Lists the versions of a subscription definition.
      * 
      * @param listSubscriptionDefinitionVersionsRequest
@@ -1888,6 +2118,33 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
      */
     java.util.concurrent.Future<UpdateLoggerDefinitionResult> updateLoggerDefinitionAsync(UpdateLoggerDefinitionRequest updateLoggerDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLoggerDefinitionRequest, UpdateLoggerDefinitionResult> asyncHandler);
+
+    /**
+     * Updates a resource definition.
+     * 
+     * @param updateResourceDefinitionRequest
+     * @return A Java Future containing the result of the UpdateResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsync.UpdateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceDefinitionResult> updateResourceDefinitionAsync(UpdateResourceDefinitionRequest updateResourceDefinitionRequest);
+
+    /**
+     * Updates a resource definition.
+     * 
+     * @param updateResourceDefinitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourceDefinition operation returned by the service.
+     * @sample AWSGreengrassAsyncHandler.UpdateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceDefinitionResult> updateResourceDefinitionAsync(UpdateResourceDefinitionRequest updateResourceDefinitionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourceDefinitionRequest, UpdateResourceDefinitionResult> asyncHandler);
 
     /**
      * Updates a subscription definition.

@@ -52,6 +52,14 @@ public class DescribeThingTypeResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeThingTypeResult.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("thingTypeId", targetDepth)) {
+                    context.nextToken();
+                    describeThingTypeResult.setThingTypeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("thingTypeArn", targetDepth)) {
+                    context.nextToken();
+                    describeThingTypeResult.setThingTypeArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("thingTypeProperties", targetDepth)) {
                     context.nextToken();
                     describeThingTypeResult.setThingTypeProperties(ThingTypePropertiesJsonUnmarshaller.getInstance().unmarshall(context));

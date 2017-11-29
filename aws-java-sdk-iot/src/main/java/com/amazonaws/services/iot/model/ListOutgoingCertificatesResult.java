@@ -25,7 +25,7 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The certificates that are being transfered but not yet accepted.
+     * The certificates that are being transferred but not yet accepted.
      * </p>
      */
     private java.util.List<OutgoingCertificate> outgoingCertificates;
@@ -38,10 +38,10 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The certificates that are being transfered but not yet accepted.
+     * The certificates that are being transferred but not yet accepted.
      * </p>
      * 
-     * @return The certificates that are being transfered but not yet accepted.
+     * @return The certificates that are being transferred but not yet accepted.
      */
 
     public java.util.List<OutgoingCertificate> getOutgoingCertificates() {
@@ -50,11 +50,11 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The certificates that are being transfered but not yet accepted.
+     * The certificates that are being transferred but not yet accepted.
      * </p>
      * 
      * @param outgoingCertificates
-     *        The certificates that are being transfered but not yet accepted.
+     *        The certificates that are being transferred but not yet accepted.
      */
 
     public void setOutgoingCertificates(java.util.Collection<OutgoingCertificate> outgoingCertificates) {
@@ -68,7 +68,7 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The certificates that are being transfered but not yet accepted.
+     * The certificates that are being transferred but not yet accepted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param outgoingCertificates
-     *        The certificates that are being transfered but not yet accepted.
+     *        The certificates that are being transferred but not yet accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The certificates that are being transfered but not yet accepted.
+     * The certificates that are being transferred but not yet accepted.
      * </p>
      * 
      * @param outgoingCertificates
-     *        The certificates that are being transfered but not yet accepted.
+     *        The certificates that are being transferred but not yet accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

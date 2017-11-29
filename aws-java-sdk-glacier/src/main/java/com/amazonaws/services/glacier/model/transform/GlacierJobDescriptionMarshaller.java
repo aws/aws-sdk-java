@@ -63,6 +63,12 @@ public class GlacierJobDescriptionMarshaller {
             .marshallLocationName("Tier").build();
     private static final MarshallingInfo<StructuredPojo> INVENTORYRETRIEVALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InventoryRetrievalParameters").build();
+    private static final MarshallingInfo<String> JOBOUTPUTPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobOutputPath").build();
+    private static final MarshallingInfo<StructuredPojo> SELECTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectParameters").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocation").build();
 
     private static final GlacierJobDescriptionMarshaller instance = new GlacierJobDescriptionMarshaller();
 
@@ -98,6 +104,9 @@ public class GlacierJobDescriptionMarshaller {
             protocolMarshaller.marshall(glacierJobDescription.getRetrievalByteRange(), RETRIEVALBYTERANGE_BINDING);
             protocolMarshaller.marshall(glacierJobDescription.getTier(), TIER_BINDING);
             protocolMarshaller.marshall(glacierJobDescription.getInventoryRetrievalParameters(), INVENTORYRETRIEVALPARAMETERS_BINDING);
+            protocolMarshaller.marshall(glacierJobDescription.getJobOutputPath(), JOBOUTPUTPATH_BINDING);
+            protocolMarshaller.marshall(glacierJobDescription.getSelectParameters(), SELECTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(glacierJobDescription.getOutputLocation(), OUTPUTLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -35,6 +35,8 @@ public class GroupVersionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionDefinitionVersionArn").build();
     private static final MarshallingInfo<String> LOGGERDEFINITIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggerDefinitionVersionArn").build();
+    private static final MarshallingInfo<String> RESOURCEDEFINITIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceDefinitionVersionArn").build();
     private static final MarshallingInfo<String> SUBSCRIPTIONDEFINITIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscriptionDefinitionVersionArn").build();
 
@@ -58,6 +60,7 @@ public class GroupVersionMarshaller {
             protocolMarshaller.marshall(groupVersion.getDeviceDefinitionVersionArn(), DEVICEDEFINITIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(groupVersion.getFunctionDefinitionVersionArn(), FUNCTIONDEFINITIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(groupVersion.getLoggerDefinitionVersionArn(), LOGGERDEFINITIONVERSIONARN_BINDING);
+            protocolMarshaller.marshall(groupVersion.getResourceDefinitionVersionArn(), RESOURCEDEFINITIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(groupVersion.getSubscriptionDefinitionVersionArn(), SUBSCRIPTIONDEFINITIONVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

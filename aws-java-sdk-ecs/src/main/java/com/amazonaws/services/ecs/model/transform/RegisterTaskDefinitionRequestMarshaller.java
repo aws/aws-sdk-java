@@ -32,6 +32,8 @@ public class RegisterTaskDefinitionRequestMarshaller {
             .marshallLocationName("family").build();
     private static final MarshallingInfo<String> TASKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskRoleArn").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRoleArn").build();
     private static final MarshallingInfo<String> NETWORKMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkMode").build();
     private static final MarshallingInfo<List> CONTAINERDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -40,6 +42,12 @@ public class RegisterTaskDefinitionRequestMarshaller {
             .marshallLocationName("volumes").build();
     private static final MarshallingInfo<List> PLACEMENTCONSTRAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementConstraints").build();
+    private static final MarshallingInfo<List> REQUIRESCOMPATIBILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiresCompatibilities").build();
+    private static final MarshallingInfo<String> CPU_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cpu").build();
+    private static final MarshallingInfo<String> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("memory").build();
 
     private static final RegisterTaskDefinitionRequestMarshaller instance = new RegisterTaskDefinitionRequestMarshaller();
 
@@ -59,10 +67,14 @@ public class RegisterTaskDefinitionRequestMarshaller {
         try {
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getFamily(), FAMILY_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getTaskRoleArn(), TASKROLEARN_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getNetworkMode(), NETWORKMODE_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getContainerDefinitions(), CONTAINERDEFINITIONS_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getVolumes(), VOLUMES_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getPlacementConstraints(), PLACEMENTCONSTRAINTS_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getRequiresCompatibilities(), REQUIRESCOMPATIBILITIES_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getCpu(), CPU_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getMemory(), MEMORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

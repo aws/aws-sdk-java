@@ -80,7 +80,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>get-started-exercise-compare-faces</a>.
+     * For an example, see <a>faces-compare-images</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:CompareFaces</code> action.
@@ -140,7 +140,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>get-started-exercise-compare-faces</a>.
+     * For an example, see <a>faces-compare-images</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:CompareFaces</code> action.
@@ -172,9 +172,6 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>example1</a>.
-     * </p>
-     * <p>
      * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
      * </p>
      * 
@@ -199,9 +196,6 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>example1</a>.
-     * </p>
-     * <p>
      * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
      * </p>
      * 
@@ -218,8 +212,67 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming
+     * video.
+     * </p>
+     * <p>
+     * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Rekognition Video sends analysis
+     * results to Amazon Kinesis Data Streams.
+     * </p>
+     * <p>
+     * You provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+     * stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection
+     * containing faces that you want to recognize. Use <code>Name</code> to assign an identifier for the stream
+     * processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the
+     * source video by calling with the <code>Name</code> field.
+     * </p>
+     * <p>
+     * After you have finished analyzing a streaming video, use to stop processing. You can delete the stream processor
+     * by calling .
+     * </p>
+     * 
+     * @param createStreamProcessorRequest
+     * @return A Java Future containing the result of the CreateStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsync.CreateStreamProcessor
+     */
+    java.util.concurrent.Future<CreateStreamProcessorResult> createStreamProcessorAsync(CreateStreamProcessorRequest createStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming
+     * video.
+     * </p>
+     * <p>
+     * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Rekognition Video sends analysis
+     * results to Amazon Kinesis Data Streams.
+     * </p>
+     * <p>
+     * You provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+     * stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection
+     * containing faces that you want to recognize. Use <code>Name</code> to assign an identifier for the stream
+     * processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the
+     * source video by calling with the <code>Name</code> field.
+     * </p>
+     * <p>
+     * After you have finished analyzing a streaming video, use to stop processing. You can delete the stream processor
+     * by calling .
+     * </p>
+     * 
+     * @param createStreamProcessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.CreateStreamProcessor
+     */
+    java.util.concurrent.Future<CreateStreamProcessorResult> createStreamProcessorAsync(CreateStreamProcessorRequest createStreamProcessorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStreamProcessorRequest, CreateStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified collection. Note that this operation removes all faces in the collection. For an example,
-     * see <a>example1</a>.
+     * see <a>delete-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteCollection</code> action.
@@ -234,7 +287,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
     /**
      * <p>
      * Deletes the specified collection. Note that this operation removes all faces in the collection. For an example,
-     * see <a>example1</a>.
+     * see <a>delete-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteCollection</code> action.
@@ -288,6 +341,68 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you
+     * create the stream processor with . You might not be able to use the same name for a stream processor for a few
+     * seconds after calling <code>DeleteStreamProcessor</code>.
+     * </p>
+     * 
+     * @param deleteStreamProcessorRequest
+     * @return A Java Future containing the result of the DeleteStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsync.DeleteStreamProcessor
+     */
+    java.util.concurrent.Future<DeleteStreamProcessorResult> deleteStreamProcessorAsync(DeleteStreamProcessorRequest deleteStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you
+     * create the stream processor with . You might not be able to use the same name for a stream processor for a few
+     * seconds after calling <code>DeleteStreamProcessor</code>.
+     * </p>
+     * 
+     * @param deleteStreamProcessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DeleteStreamProcessor
+     */
+    java.util.concurrent.Future<DeleteStreamProcessorResult> deleteStreamProcessorAsync(DeleteStreamProcessorRequest deleteStreamProcessorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamProcessorRequest, DeleteStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about a stream processor created by . You can get information about the input and output
+     * streams, the input parameters for the face recognition being performed, and the current status of the stream
+     * processor.
+     * </p>
+     * 
+     * @param describeStreamProcessorRequest
+     * @return A Java Future containing the result of the DescribeStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsync.DescribeStreamProcessor
+     */
+    java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(DescribeStreamProcessorRequest describeStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Provides information about a stream processor created by . You can get information about the input and output
+     * streams, the input parameters for the face recognition being performed, and the current status of the stream
+     * processor.
+     * </p>
+     * 
+     * @param describeStreamProcessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DescribeStreamProcessor
+     */
+    java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(DescribeStreamProcessorRequest describeStreamProcessorRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStreamProcessorRequest, DescribeStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
      * Detects faces within an image that is provided as input.
      * </p>
      * <p>
@@ -311,7 +426,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>get-started-exercise-detect-faces</a>.
+     * For an example, see <a>procedure-detecting-faces-in-images</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DetectFaces</code> action.
@@ -348,7 +463,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>get-started-exercise-detect-faces</a>.
+     * For an example, see <a>procedure-detecting-faces-in-images</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DetectFaces</code> action.
@@ -367,10 +482,16 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Detects instances of real-world labels within an image (JPEG or PNG) provided as input. This includes objects
+     * Detects instances of real-world entities within an image (JPEG or PNG) provided as input. This includes objects
      * like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape,
-     * evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.
+     * evening, and nature. For an example, see <a>images-s3</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported
+     * for label detection in videos. For more information, see .
+     * </p>
+     * </note>
      * <p>
      * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
      * you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image
@@ -434,10 +555,16 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Detects instances of real-world labels within an image (JPEG or PNG) provided as input. This includes objects
+     * Detects instances of real-world entities within an image (JPEG or PNG) provided as input. This includes objects
      * like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape,
-     * evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.
+     * evening, and nature. For an example, see <a>images-s3</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported
+     * for label detection in videos. For more information, see .
+     * </p>
+     * </note>
      * <p>
      * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
      * you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image
@@ -512,7 +639,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
-     * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
+     * content are appropriate. For information about moderation labels, see <a>moderation</a>.
      * </p>
      * <p>
      * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
@@ -534,7 +661,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
-     * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
+     * content are appropriate. For information about moderation labels, see <a>moderation</a>.
      * </p>
      * <p>
      * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
@@ -650,7 +777,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * Gets the name and additional information about a celebrity based on his or her Rekognition ID. The additional
      * information is returned as an array of URLs. If there is no additional information about the celebrity, this list
-     * is empty. For more information, see <a>celebrity-recognition</a>.
+     * is empty. For more information, see <a>get-celebrity-info-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
@@ -666,7 +793,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * Gets the name and additional information about a celebrity based on his or her Rekognition ID. The additional
      * information is returned as an array of URLs. If there is no additional information about the celebrity, this list
-     * is empty. For more information, see <a>celebrity-recognition</a>.
+     * is empty. For more information, see <a>get-celebrity-info-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
@@ -682,6 +809,472 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest getCelebrityInfoRequest,
             com.amazonaws.handlers.AsyncHandler<GetCelebrityInfoRequest, GetCelebrityInfoResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the celebrity recognition results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to which returns a
+     * job identifier (<code>JobId</code>). When the celebrity recognition operation finishes, Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check
+     * that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.
+     * </p>
+     * <p>
+     * <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array (
+     * <code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the
+     * celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected.
+     * </p>
+     * <p>
+     * By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video). You
+     * can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input
+     * parameter.
+     * </p>
+     * <p>
+     * The <code>CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If you
+     * don't store the additional information urls, you can get them later by calling with the celebrity identifer.
+     * </p>
+     * <p>
+     * No information is returned for faces not recognized as celebrities.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call
+     * <code>GetCelebrityDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetCelebrityRecognition</code>.
+     * </p>
+     * 
+     * @param getCelebrityRecognitionRequest
+     * @return A Java Future containing the result of the GetCelebrityRecognition operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetCelebrityRecognition
+     */
+    java.util.concurrent.Future<GetCelebrityRecognitionResult> getCelebrityRecognitionAsync(GetCelebrityRecognitionRequest getCelebrityRecognitionRequest);
+
+    /**
+     * <p>
+     * Gets the celebrity recognition results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to which returns a
+     * job identifier (<code>JobId</code>). When the celebrity recognition operation finishes, Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check
+     * that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.
+     * </p>
+     * <p>
+     * <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array (
+     * <code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the
+     * celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected.
+     * </p>
+     * <p>
+     * By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video). You
+     * can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input
+     * parameter.
+     * </p>
+     * <p>
+     * The <code>CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If you
+     * don't store the additional information urls, you can get them later by calling with the celebrity identifer.
+     * </p>
+     * <p>
+     * No information is returned for faces not recognized as celebrities.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call
+     * <code>GetCelebrityDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetCelebrityRecognition</code>.
+     * </p>
+     * 
+     * @param getCelebrityRecognitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCelebrityRecognition operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetCelebrityRecognition
+     */
+    java.util.concurrent.Future<GetCelebrityRecognitionResult> getCelebrityRecognitionAsync(GetCelebrityRecognitionRequest getCelebrityRecognitionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCelebrityRecognitionRequest, GetCelebrityRecognitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the content moderation analysis results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Content moderation analysis of a video is an asynchronous operation. You start analysis by calling . which
+     * returns a job identifier (<code>JobId</code>). When analysis finishes, Rekognition Video publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartContentModeration</code>. To get the results of the content moderation analysis, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.
+     * </p>
+     * <p>
+     * <code>GetContentModeration</code> returns detected content moderation labels, and the time they are detected, in
+     * an array, <code>ModerationLabels</code>, of objects.
+     * </p>
+     * <p>
+     * By default, the moderated labels are returned sorted by time, in milliseconds from the start of the video. You
+     * can also sort them by moderated label by specifying <code>NAME</code> for the <code>SortBy</code> input
+     * parameter.
+     * </p>
+     * <p>
+     * Since video analysis can return a large number of results, use the <code>MaxResults</code> parameter to limit the
+     * number of labels returned in a single call to <code>GetContentModeration</code>. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetContentModeration</code> and populate the <code>NextToken</code> request parameter with the value of
+     * <code>NextToken</code> returned from the previous call to <code>GetContentModeration</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>moderation</a>.
+     * </p>
+     * 
+     * @param getContentModerationRequest
+     * @return A Java Future containing the result of the GetContentModeration operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetContentModeration
+     */
+    java.util.concurrent.Future<GetContentModerationResult> getContentModerationAsync(GetContentModerationRequest getContentModerationRequest);
+
+    /**
+     * <p>
+     * Gets the content moderation analysis results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Content moderation analysis of a video is an asynchronous operation. You start analysis by calling . which
+     * returns a job identifier (<code>JobId</code>). When analysis finishes, Rekognition Video publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartContentModeration</code>. To get the results of the content moderation analysis, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.
+     * </p>
+     * <p>
+     * <code>GetContentModeration</code> returns detected content moderation labels, and the time they are detected, in
+     * an array, <code>ModerationLabels</code>, of objects.
+     * </p>
+     * <p>
+     * By default, the moderated labels are returned sorted by time, in milliseconds from the start of the video. You
+     * can also sort them by moderated label by specifying <code>NAME</code> for the <code>SortBy</code> input
+     * parameter.
+     * </p>
+     * <p>
+     * Since video analysis can return a large number of results, use the <code>MaxResults</code> parameter to limit the
+     * number of labels returned in a single call to <code>GetContentModeration</code>. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetContentModeration</code> and populate the <code>NextToken</code> request parameter with the value of
+     * <code>NextToken</code> returned from the previous call to <code>GetContentModeration</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>moderation</a>.
+     * </p>
+     * 
+     * @param getContentModerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContentModeration operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetContentModeration
+     */
+    java.util.concurrent.Future<GetContentModerationResult> getContentModerationAsync(GetContentModerationRequest getContentModerationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContentModerationRequest, GetContentModerationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets face detection results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Face detection with Rekognition Video is an asynchronous operation. You start face detection by calling which
+     * returns a job identifier (<code>JobId</code>). When the face detection operation finishes, Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartFaceDetection</code>. To get the results of the face detection operation, first check that the status
+     * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetFaceDetection</code> returns an array of detected faces (<code>Faces</code>) sorted by the time the
+     * faces were detected.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call <code>GetFaceDetection</code>
+     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
+     * <code>GetFaceDetection</code>.
+     * </p>
+     * 
+     * @param getFaceDetectionRequest
+     * @return A Java Future containing the result of the GetFaceDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetFaceDetection
+     */
+    java.util.concurrent.Future<GetFaceDetectionResult> getFaceDetectionAsync(GetFaceDetectionRequest getFaceDetectionRequest);
+
+    /**
+     * <p>
+     * Gets face detection results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Face detection with Rekognition Video is an asynchronous operation. You start face detection by calling which
+     * returns a job identifier (<code>JobId</code>). When the face detection operation finishes, Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartFaceDetection</code>. To get the results of the face detection operation, first check that the status
+     * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetFaceDetection</code> returns an array of detected faces (<code>Faces</code>) sorted by the time the
+     * faces were detected.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call <code>GetFaceDetection</code>
+     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
+     * <code>GetFaceDetection</code>.
+     * </p>
+     * 
+     * @param getFaceDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFaceDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetFaceDetection
+     */
+    java.util.concurrent.Future<GetFaceDetectionResult> getFaceDetectionAsync(GetFaceDetectionRequest getFaceDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFaceDetectionRequest, GetFaceDetectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the face search results for Rekognition Video face search started by . The search returns faces in a
+     * collection that match the faces of persons detected in a video. It also includes the time(s) that faces are
+     * matched in the video.
+     * </p>
+     * <p>
+     * Face search in a video is an asynchronous operation. You start face search by calling to which returns a job
+     * identifier (<code>JobId</code>). When the search operation finishes, Rekognition Video publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartFaceSearch</code>. To get the search results, first check that the status value published to the
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see
+     * <a>collections</a>.
+     * </p>
+     * <p>
+     * The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
+     * element contains details about the matching faces in the input collection, person information for the matched
+     * person, and the time the person was matched in the video.
+     * </p>
+     * <p>
+     * By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video,
+     * persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code>
+     * input parameter.
+     * </p>
+     * 
+     * @param getFaceSearchRequest
+     * @return A Java Future containing the result of the GetFaceSearch operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetFaceSearch
+     */
+    java.util.concurrent.Future<GetFaceSearchResult> getFaceSearchAsync(GetFaceSearchRequest getFaceSearchRequest);
+
+    /**
+     * <p>
+     * Gets the face search results for Rekognition Video face search started by . The search returns faces in a
+     * collection that match the faces of persons detected in a video. It also includes the time(s) that faces are
+     * matched in the video.
+     * </p>
+     * <p>
+     * Face search in a video is an asynchronous operation. You start face search by calling to which returns a job
+     * identifier (<code>JobId</code>). When the search operation finishes, Rekognition Video publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartFaceSearch</code>. To get the search results, first check that the status value published to the
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see
+     * <a>collections</a>.
+     * </p>
+     * <p>
+     * The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
+     * element contains details about the matching faces in the input collection, person information for the matched
+     * person, and the time the person was matched in the video.
+     * </p>
+     * <p>
+     * By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video,
+     * persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code>
+     * input parameter.
+     * </p>
+     * 
+     * @param getFaceSearchRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFaceSearch operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetFaceSearch
+     */
+    java.util.concurrent.Future<GetFaceSearchResult> getFaceSearchAsync(GetFaceSearchRequest getFaceSearchRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFaceSearchRequest, GetFaceSearchResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the label detection results of a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * The label detection operation is started by a call to which returns a job identifier (<code>JobId</code>). When
+     * the label detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple
+     * Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results
+     * of the label detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartLabelDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the
+     * labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the
+     * <code>SortBy</code> input parameter.
+     * </p>
+     * <p>
+     * The labels returned include the label name, the percentage confidence in the accuracy of the detected label, and
+     * the time the label was detected in the video.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code>
+     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
+     * <code>GetLabelDetection</code>.
+     * </p>
+     * 
+     * @param getLabelDetectionRequest
+     * @return A Java Future containing the result of the GetLabelDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetLabelDetection
+     */
+    java.util.concurrent.Future<GetLabelDetectionResult> getLabelDetectionAsync(GetLabelDetectionRequest getLabelDetectionRequest);
+
+    /**
+     * <p>
+     * Gets the label detection results of a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * The label detection operation is started by a call to which returns a job identifier (<code>JobId</code>). When
+     * the label detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple
+     * Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results
+     * of the label detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartLabelDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the
+     * labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the
+     * <code>SortBy</code> input parameter.
+     * </p>
+     * <p>
+     * The labels returned include the label name, the percentage confidence in the accuracy of the detected label, and
+     * the time the label was detected in the video.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code>
+     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
+     * <code>GetLabelDetection</code>.
+     * </p>
+     * 
+     * @param getLabelDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLabelDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetLabelDetection
+     */
+    java.util.concurrent.Future<GetLabelDetectionResult> getLabelDetectionAsync(GetLabelDetectionRequest getLabelDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLabelDetectionRequest, GetLabelDetectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the person tracking results of a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * The person detection operation is started by a call to <code>StartPersonTracking</code> which returns a job
+     * identifier (<code>JobId</code>). When the person detection operation finishes, Rekognition Video publishes a
+     * completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartPersonTracking</code>.
+     * </p>
+     * <p>
+     * To get the results of the person tracking operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartPersonTracking</code>.
+     * </p>
+     * <p>
+     * <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they
+     * were tracked in the video.
+     * </p>
+     * <p>
+     * By default, the array is sorted by the time(s) a person is tracked in the video. You can sort by tracked persons
+     * by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetPersonTracking</code>.
+     * </p>
+     * 
+     * @param getPersonTrackingRequest
+     * @return A Java Future containing the result of the GetPersonTracking operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetPersonTracking
+     */
+    java.util.concurrent.Future<GetPersonTrackingResult> getPersonTrackingAsync(GetPersonTrackingRequest getPersonTrackingRequest);
+
+    /**
+     * <p>
+     * Gets the person tracking results of a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * The person detection operation is started by a call to <code>StartPersonTracking</code> which returns a job
+     * identifier (<code>JobId</code>). When the person detection operation finishes, Rekognition Video publishes a
+     * completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartPersonTracking</code>.
+     * </p>
+     * <p>
+     * To get the results of the person tracking operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartPersonTracking</code>.
+     * </p>
+     * <p>
+     * <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they
+     * were tracked in the video.
+     * </p>
+     * <p>
+     * By default, the array is sorted by the time(s) a person is tracked in the video. You can sort by tracked persons
+     * by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetPersonTracking</code>.
+     * </p>
+     * 
+     * @param getPersonTrackingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPersonTracking operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetPersonTracking
+     */
+    java.util.concurrent.Future<GetPersonTrackingResult> getPersonTrackingAsync(GetPersonTrackingRequest getPersonTrackingRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPersonTrackingRequest, GetPersonTrackingResult> asyncHandler);
 
     /**
      * <p>
@@ -718,9 +1311,6 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * The input image is passed either as base64-encoded image bytes or as a reference to an image in an Amazon S3
      * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
      * The image must be either a PNG or JPEG formatted file.
-     * </p>
-     * <p>
-     * For an example, see <a>example2</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.
@@ -769,9 +1359,6 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For an example, see <a>example2</a>.
-     * </p>
-     * <p>
      * This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.
      * </p>
      * 
@@ -792,7 +1379,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.
      * </p>
      * <p>
-     * For an example, see <a>example1</a>.
+     * For an example, see <a>list-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.
@@ -810,7 +1397,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.
      * </p>
      * <p>
-     * For an example, see <a>example1</a>.
+     * For an example, see <a>list-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.
@@ -831,7 +1418,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * Returns metadata for faces in the specified collection. This metadata includes information such as the bounding
      * box coordinates, the confidence (that the bounding box contains a face), and face ID. For an example, see
-     * <a>example3</a>.
+     * <a>list-faces-in-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListFaces</code> action.
@@ -847,7 +1434,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * Returns metadata for faces in the specified collection. This metadata includes information such as the bounding
      * box coordinates, the confidence (that the bounding box contains a face), and face ID. For an example, see
-     * <a>example3</a>.
+     * <a>list-faces-in-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListFaces</code> action.
@@ -866,8 +1453,34 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Returns an array of celebrities recognized in the input image. For more information, see
-     * <a>celebrity-recognition</a>.
+     * Gets a list of stream processors that you have created with .
+     * </p>
+     * 
+     * @param listStreamProcessorsRequest
+     * @return A Java Future containing the result of the ListStreamProcessors operation returned by the service.
+     * @sample AmazonRekognitionAsync.ListStreamProcessors
+     */
+    java.util.concurrent.Future<ListStreamProcessorsResult> listStreamProcessorsAsync(ListStreamProcessorsRequest listStreamProcessorsRequest);
+
+    /**
+     * <p>
+     * Gets a list of stream processors that you have created with .
+     * </p>
+     * 
+     * @param listStreamProcessorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStreamProcessors operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.ListStreamProcessors
+     */
+    java.util.concurrent.Future<ListStreamProcessorsResult> listStreamProcessorsAsync(ListStreamProcessorsRequest listStreamProcessorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStreamProcessorsRequest, ListStreamProcessorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of celebrities recognized in the input image. For more information, see <a>celebrities</a>.
      * </p>
      * <p>
      * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
@@ -892,7 +1505,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For an example, see <a>recognize-celebrities-tutorial</a>.
+     * For an example, see <a>celebrities-procedure-image</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
@@ -906,8 +1519,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Returns an array of celebrities recognized in the input image. For more information, see
-     * <a>celebrity-recognition</a>.
+     * Returns an array of celebrities recognized in the input image. For more information, see <a>celebrities</a>.
      * </p>
      * <p>
      * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
@@ -932,7 +1544,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For an example, see <a>recognize-celebrities-tutorial</a>.
+     * For an example, see <a>celebrities-procedure-image</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
@@ -967,7 +1579,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * confidence that the specific face matches the input face.
      * </p>
      * <p>
-     * For an example, see <a>example3</a>.
+     * For an example, see <a>search-face-with-id-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.
@@ -997,7 +1609,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * confidence that the specific face matches the input face.
      * </p>
      * <p>
-     * For an example, see <a>example3</a>.
+     * For an example, see <a>search-face-with-id-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.
@@ -1042,7 +1654,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * face that Amazon Rekognition used for the input image.
      * </p>
      * <p>
-     * For an example, see <a>example3</a>.
+     * For an example, see <a>search-face-with-image-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.
@@ -1082,7 +1694,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * face that Amazon Rekognition used for the input image.
      * </p>
      * <p>
-     * For an example, see <a>example3</a>.
+     * For an example, see <a>search-face-with-image-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.
@@ -1098,5 +1710,369 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<SearchFacesByImageResult> searchFacesByImageAsync(SearchFacesByImageRequest searchFacesByImageRequest,
             com.amazonaws.handlers.AsyncHandler<SearchFacesByImageRequest, SearchFacesByImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts asynchronous recognition of celebrities in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect celebrities in a video must be stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartCelebrityRecognition</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the analysis. When celebrity recognition
+     * analysis is finished, Rekognition Video publishes a completion status to the Amazon Simple Notification Service
+     * topic that you specify in <code>NotificationChannel</code>. To get the results of the celebrity recognition
+     * analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+     * call and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityRecognition</code>. For more information, see <a>celebrities</a>.
+     * </p>
+     * 
+     * @param startCelebrityRecognitionRequest
+     * @return A Java Future containing the result of the StartCelebrityRecognition operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartCelebrityRecognition
+     */
+    java.util.concurrent.Future<StartCelebrityRecognitionResult> startCelebrityRecognitionAsync(
+            StartCelebrityRecognitionRequest startCelebrityRecognitionRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous recognition of celebrities in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect celebrities in a video must be stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartCelebrityRecognition</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the analysis. When celebrity recognition
+     * analysis is finished, Rekognition Video publishes a completion status to the Amazon Simple Notification Service
+     * topic that you specify in <code>NotificationChannel</code>. To get the results of the celebrity recognition
+     * analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+     * call and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityRecognition</code>. For more information, see <a>celebrities</a>.
+     * </p>
+     * 
+     * @param startCelebrityRecognitionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCelebrityRecognition operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartCelebrityRecognition
+     */
+    java.util.concurrent.Future<StartCelebrityRecognitionResult> startCelebrityRecognitionAsync(
+            StartCelebrityRecognitionRequest startCelebrityRecognitionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCelebrityRecognitionRequest, StartCelebrityRecognitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of explicit or suggestive adult content in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can moderate content in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartContentModeration</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the analysis. When content moderation analysis is
+     * finished, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that
+     * you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the content moderation analysis, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartContentModeration</code>. For more information, see <a>moderation</a>.
+     * </p>
+     * 
+     * @param startContentModerationRequest
+     * @return A Java Future containing the result of the StartContentModeration operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartContentModeration
+     */
+    java.util.concurrent.Future<StartContentModerationResult> startContentModerationAsync(StartContentModerationRequest startContentModerationRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of explicit or suggestive adult content in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can moderate content in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartContentModeration</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the analysis. When content moderation analysis is
+     * finished, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that
+     * you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the content moderation analysis, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartContentModeration</code>. For more information, see <a>moderation</a>.
+     * </p>
+     * 
+     * @param startContentModerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartContentModeration operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartContentModeration
+     */
+    java.util.concurrent.Future<StartContentModerationResult> startContentModerationAsync(StartContentModerationRequest startContentModerationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartContentModerationRequest, StartContentModerationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of faces in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartFaceDetection</code> returns a job identifier (
+     * <code>JobId</code>) that you use to get the results of the operation. When face detection is finished,
+     * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify
+     * in <code>NotificationChannel</code>. To get the results of the label detection operation, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
+     * (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>. For more information, see
+     * <a>faces-video</a>.
+     * </p>
+     * 
+     * @param startFaceDetectionRequest
+     * @return A Java Future containing the result of the StartFaceDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartFaceDetection
+     */
+    java.util.concurrent.Future<StartFaceDetectionResult> startFaceDetectionAsync(StartFaceDetectionRequest startFaceDetectionRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of faces in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartFaceDetection</code> returns a job identifier (
+     * <code>JobId</code>) that you use to get the results of the operation. When face detection is finished,
+     * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify
+     * in <code>NotificationChannel</code>. To get the results of the label detection operation, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
+     * (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>. For more information, see
+     * <a>faces-video</a>.
+     * </p>
+     * 
+     * @param startFaceDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartFaceDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartFaceDetection
+     */
+    java.util.concurrent.Future<StartFaceDetectionResult> startFaceDetectionAsync(StartFaceDetectionRequest startFaceDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartFaceDetectionRequest, StartFaceDetectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the asynchronous search for faces in a collection that match the faces of persons detected in a stored
+     * video.
+     * </p>
+     * <p>
+     * The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of
+     * the video. <code>StartFaceSearch</code> returns a job identifier (<code>JobId</code>) which you use to get the
+     * search results once the search has completed. When searching is finished, Rekognition Video publishes a
+     * completion status to the Amazon Simple Notification Service topic that you specify in
+     * <code>NotificationChannel</code>. To get the search results, first check that the status value published to the
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
+     * </p>
+     * 
+     * @param startFaceSearchRequest
+     * @return A Java Future containing the result of the StartFaceSearch operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartFaceSearch
+     */
+    java.util.concurrent.Future<StartFaceSearchResult> startFaceSearchAsync(StartFaceSearchRequest startFaceSearchRequest);
+
+    /**
+     * <p>
+     * Starts the asynchronous search for faces in a collection that match the faces of persons detected in a stored
+     * video.
+     * </p>
+     * <p>
+     * The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of
+     * the video. <code>StartFaceSearch</code> returns a job identifier (<code>JobId</code>) which you use to get the
+     * search results once the search has completed. When searching is finished, Rekognition Video publishes a
+     * completion status to the Amazon Simple Notification Service topic that you specify in
+     * <code>NotificationChannel</code>. To get the search results, first check that the status value published to the
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
+     * </p>
+     * 
+     * @param startFaceSearchRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartFaceSearch operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartFaceSearch
+     */
+    java.util.concurrent.Future<StartFaceSearchResult> startFaceSearchAsync(StartFaceSearchRequest startFaceSearchRequest,
+            com.amazonaws.handlers.AsyncHandler<StartFaceSearchRequest, StartFaceSearchResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of labels in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect labels in a video. Labels are instances of real-world entities. This includes
+     * objects like flower, tree, and table; events like wedding, graduation, and birthday party; concepts like
+     * landscape, evening, and nature; and activities like a person getting out of a car or a person skiing.
+     * </p>
+     * <p>
+     * The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of
+     * the video. <code>StartLabelDetection</code> returns a job identifier (<code>JobId</code>) which you use to get
+     * the results of the operation. When label detection is finished, Rekognition Video publishes a completion status
+     * to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the label detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartLabelDetection</code>.
+     * </p>
+     * <p/>
+     * 
+     * @param startLabelDetectionRequest
+     * @return A Java Future containing the result of the StartLabelDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartLabelDetection
+     */
+    java.util.concurrent.Future<StartLabelDetectionResult> startLabelDetectionAsync(StartLabelDetectionRequest startLabelDetectionRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of labels in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect labels in a video. Labels are instances of real-world entities. This includes
+     * objects like flower, tree, and table; events like wedding, graduation, and birthday party; concepts like
+     * landscape, evening, and nature; and activities like a person getting out of a car or a person skiing.
+     * </p>
+     * <p>
+     * The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of
+     * the video. <code>StartLabelDetection</code> returns a job identifier (<code>JobId</code>) which you use to get
+     * the results of the operation. When label detection is finished, Rekognition Video publishes a completion status
+     * to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the label detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartLabelDetection</code>.
+     * </p>
+     * <p/>
+     * 
+     * @param startLabelDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartLabelDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartLabelDetection
+     */
+    java.util.concurrent.Future<StartLabelDetectionResult> startLabelDetectionAsync(StartLabelDetectionRequest startLabelDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartLabelDetectionRequest, StartLabelDetectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the asynchronous tracking of persons in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can track persons in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartPersonTracking</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the operation. When label detection is finished, Amazon
+     * Rekognition publishes a completion status to the Amazon Simple Notification Service topic that you specify in
+     * <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the person detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartPersonTracking</code>.
+     * </p>
+     * 
+     * @param startPersonTrackingRequest
+     * @return A Java Future containing the result of the StartPersonTracking operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartPersonTracking
+     */
+    java.util.concurrent.Future<StartPersonTrackingResult> startPersonTrackingAsync(StartPersonTrackingRequest startPersonTrackingRequest);
+
+    /**
+     * <p>
+     * Starts the asynchronous tracking of persons in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can track persons in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartPersonTracking</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the operation. When label detection is finished, Amazon
+     * Rekognition publishes a completion status to the Amazon Simple Notification Service topic that you specify in
+     * <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the person detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartPersonTracking</code>.
+     * </p>
+     * 
+     * @param startPersonTrackingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartPersonTracking operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartPersonTracking
+     */
+    java.util.concurrent.Future<StartPersonTrackingResult> startPersonTrackingAsync(StartPersonTrackingRequest startPersonTrackingRequest,
+            com.amazonaws.handlers.AsyncHandler<StartPersonTrackingRequest, StartPersonTrackingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts processing a stream processor. You create a stream processor by calling . To tell
+     * <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field
+     * specified in the call to <code>CreateStreamProcessor</code>.
+     * </p>
+     * 
+     * @param startStreamProcessorRequest
+     * @return A Java Future containing the result of the StartStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartStreamProcessor
+     */
+    java.util.concurrent.Future<StartStreamProcessorResult> startStreamProcessorAsync(StartStreamProcessorRequest startStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Starts processing a stream processor. You create a stream processor by calling . To tell
+     * <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field
+     * specified in the call to <code>CreateStreamProcessor</code>.
+     * </p>
+     * 
+     * @param startStreamProcessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartStreamProcessor
+     */
+    java.util.concurrent.Future<StartStreamProcessorResult> startStreamProcessorAsync(StartStreamProcessorRequest startStreamProcessorRequest,
+            com.amazonaws.handlers.AsyncHandler<StartStreamProcessorRequest, StartStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a running stream processor that was created by .
+     * </p>
+     * 
+     * @param stopStreamProcessorRequest
+     * @return A Java Future containing the result of the StopStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsync.StopStreamProcessor
+     */
+    java.util.concurrent.Future<StopStreamProcessorResult> stopStreamProcessorAsync(StopStreamProcessorRequest stopStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Stops a running stream processor that was created by .
+     * </p>
+     * 
+     * @param stopStreamProcessorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopStreamProcessor operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StopStreamProcessor
+     */
+    java.util.concurrent.Future<StopStreamProcessorResult> stopStreamProcessorAsync(StopStreamProcessorRequest stopStreamProcessorRequest,
+            com.amazonaws.handlers.AsyncHandler<StopStreamProcessorRequest, StopStreamProcessorResult> asyncHandler);
 
 }

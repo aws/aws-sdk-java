@@ -56,6 +56,10 @@ public class CreateThingTypeResultJsonUnmarshaller implements Unmarshaller<Creat
                     context.nextToken();
                     createThingTypeResult.setThingTypeArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("thingTypeId", targetDepth)) {
+                    context.nextToken();
+                    createThingTypeResult.setThingTypeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

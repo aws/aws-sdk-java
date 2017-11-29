@@ -41,6 +41,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      */
     private HostVolumeProperties host;
 
@@ -102,12 +105,17 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
      *        a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *        associated with it stop running.
+     *        associated with it stop running.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
      */
 
     public void setHost(HostVolumeProperties host) {
@@ -120,11 +128,16 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      * 
      * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *         container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
      *         a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *         associated with it stop running.
+     *         associated with it stop running.</p>
+     *         <p>
+     *         If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
      */
 
     public HostVolumeProperties getHost() {
@@ -137,12 +150,17 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      * 
      * @param host
      *        The contents of the <code>host</code> parameter determine whether your data volume persists on the host
      *        container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns
      *        a host path for your data volume, but the data is not guaranteed to persist after the containers
-     *        associated with it stop running.
+     *        associated with it stop running.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -97,23 +97,14 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("RegistrationCodeValidationException").withModeledClass(
                                     com.amazonaws.services.iot.model.RegistrationCodeValidationException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.iot.model.ThrottlingException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
-                                    com.amazonaws.services.iot.model.UnauthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResponseException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InvalidResponseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.iot.model.LimitExceededException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CertificateStateException").withModeledClass(
-                                    com.amazonaws.services.iot.model.CertificateStateException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransferAlreadyCompletedException").withModeledClass(
                                     com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("VersionConflictException").withModeledClass(
-                                    com.amazonaws.services.iot.model.VersionConflictException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.iot.model.ResourceNotFoundException.class))
@@ -121,14 +112,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("SqlParseException").withModeledClass(
                                     com.amazonaws.services.iot.model.SqlParseException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withModeledClass(
-                                    com.amazonaws.services.iot.model.MalformedPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictingResourceUpdateException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ConflictingResourceUpdateException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.iot.model.ServiceUnavailableException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withModeledClass(
-                                    com.amazonaws.services.iot.model.CertificateValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotConfiguredException").withModeledClass(
+                                    com.amazonaws.services.iot.model.NotConfiguredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
@@ -141,6 +129,36 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransferConflictException").withModeledClass(
                                     com.amazonaws.services.iot.model.TransferConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IndexNotReadyException").withModeledClass(
+                                    com.amazonaws.services.iot.model.IndexNotReadyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
+                                    com.amazonaws.services.iot.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateStateException").withModeledClass(
+                                    com.amazonaws.services.iot.model.CertificateStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("VersionConflictException").withModeledClass(
+                                    com.amazonaws.services.iot.model.VersionConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withModeledClass(
+                                    com.amazonaws.services.iot.model.MalformedPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidQueryException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InvalidQueryException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withModeledClass(
+                                    com.amazonaws.services.iot.model.CertificateValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceRegistrationFailureException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ResourceRegistrationFailureException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iot.model.AWSIotException.class));
 
     /**
@@ -392,7 +410,199 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Adds a thing to a thing group.
+     * </p>
+     * 
+     * @param addThingToThingGroupRequest
+     * @return Result of the AddThingToThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.AddThingToThingGroup
+     */
+    @Override
+    public AddThingToThingGroupResult addThingToThingGroup(AddThingToThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddThingToThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final AddThingToThingGroupResult executeAddThingToThingGroup(AddThingToThingGroupRequest addThingToThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addThingToThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddThingToThingGroupRequest> request = null;
+        Response<AddThingToThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddThingToThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addThingToThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddThingToThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddThingToThingGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a group with a continuous job. The following criteria must be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The job status must currently be "IN_PROGRESS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total number of targets associated with a job must not exceed 100.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param associateTargetsWithJobRequest
+     * @return Result of the AssociateTargetsWithJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.AssociateTargetsWithJob
+     */
+    @Override
+    public AssociateTargetsWithJobResult associateTargetsWithJob(AssociateTargetsWithJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateTargetsWithJob(request);
+    }
+
+    @SdkInternalApi
+    final AssociateTargetsWithJobResult executeAssociateTargetsWithJob(AssociateTargetsWithJobRequest associateTargetsWithJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateTargetsWithJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateTargetsWithJobRequest> request = null;
+        Response<AssociateTargetsWithJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateTargetsWithJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateTargetsWithJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateTargetsWithJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateTargetsWithJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches a policy to the specified target.
+     * </p>
+     * 
+     * @param attachPolicyRequest
+     * @return Result of the AttachPolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.AttachPolicy
+     */
+    @Override
+    public AttachPolicyResult attachPolicy(AttachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachPolicyResult executeAttachPolicy(AttachPolicyRequest attachPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(attachPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AttachPolicyRequest> request = null;
+        Response<AttachPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AttachPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Attaches the specified policy to the specified principal (certificate or other credential).
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>AttachPolicy</a> instead.
      * </p>
      * 
      * @param attachPrincipalPolicyRequest
@@ -415,6 +625,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.AttachPrincipalPolicy
      */
     @Override
+    @Deprecated
     public AttachPrincipalPolicyResult attachPrincipalPolicy(AttachPrincipalPolicyRequest request) {
         request = beforeClientExecution(request);
         return executeAttachPrincipalPolicy(request);
@@ -586,6 +797,179 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Cancels a job.
+     * </p>
+     * 
+     * @param cancelJobRequest
+     * @return Result of the CancelJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.CancelJob
+     */
+    @Override
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelJobRequest> request = null;
+        Response<CancelJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Clears the default authorizer.
+     * </p>
+     * 
+     * @param clearDefaultAuthorizerRequest
+     * @return Result of the ClearDefaultAuthorizer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ClearDefaultAuthorizer
+     */
+    @Override
+    public ClearDefaultAuthorizerResult clearDefaultAuthorizer(ClearDefaultAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeClearDefaultAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final ClearDefaultAuthorizerResult executeClearDefaultAuthorizer(ClearDefaultAuthorizerRequest clearDefaultAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(clearDefaultAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ClearDefaultAuthorizerRequest> request = null;
+        Response<ClearDefaultAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ClearDefaultAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(clearDefaultAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ClearDefaultAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ClearDefaultAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an authorizer.
+     * </p>
+     * 
+     * @param createAuthorizerRequest
+     * @return Result of the CreateAuthorizer operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateAuthorizer
+     */
+    @Override
+    public CreateAuthorizerResult createAuthorizer(CreateAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final CreateAuthorizerResult executeCreateAuthorizer(CreateAuthorizerRequest createAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAuthorizerRequest> request = null;
+        Response<CreateAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an X.509 certificate using the specified certificate signing request.
      * </p>
      * <p>
@@ -681,6 +1065,64 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<CreateCertificateFromCsrResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateCertificateFromCsrResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a job.
+     * </p>
+     * 
+     * @param createJobRequest
+     * @return Result of the CreateJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.CreateJob
+     */
+    @Override
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateJobRequest> request = null;
+        Response<CreateJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -890,6 +1332,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Creates a role alias.
+     * </p>
+     * 
+     * @param createRoleAliasRequest
+     * @return Result of the CreateRoleAlias operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateRoleAlias
+     */
+    @Override
+    public CreateRoleAliasResult createRoleAlias(CreateRoleAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRoleAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateRoleAliasResult executeCreateRoleAlias(CreateRoleAliasRequest createRoleAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRoleAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRoleAliasRequest> request = null;
+        Response<CreateRoleAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRoleAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRoleAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRoleAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRoleAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a thing record in the thing registry.
      * </p>
      * 
@@ -939,6 +1441,60 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateThingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a thing group.
+     * </p>
+     * 
+     * @param createThingGroupRequest
+     * @return Result of the CreateThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateThingGroup
+     */
+    @Override
+    public CreateThingGroupResult createThingGroup(CreateThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateThingGroupResult executeCreateThingGroup(CreateThingGroupRequest createThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThingGroupRequest> request = null;
+        Response<CreateThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThingGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1056,6 +1612,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an authorizer.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     * @return Result of the DeleteAuthorizer operation returned by the service.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteAuthorizer
+     */
+    @Override
+    public DeleteAuthorizerResult deleteAuthorizer(DeleteAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAuthorizerResult executeDeleteAuthorizer(DeleteAuthorizerRequest deleteAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAuthorizerRequest> request = null;
+        Response<DeleteAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAuthorizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1390,6 +2006,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Deletes a role alias
+     * </p>
+     * 
+     * @param deleteRoleAliasRequest
+     * @return Result of the DeleteRoleAlias operation returned by the service.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DeleteRoleAlias
+     */
+    @Override
+    public DeleteRoleAliasResult deleteRoleAlias(DeleteRoleAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRoleAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRoleAliasResult executeDeleteRoleAlias(DeleteRoleAliasRequest deleteRoleAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRoleAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRoleAliasRequest> request = null;
+        Response<DeleteRoleAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRoleAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRoleAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRoleAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRoleAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified thing.
      * </p>
      * 
@@ -1440,6 +2116,61 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteThingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a thing group.
+     * </p>
+     * 
+     * @param deleteThingGroupRequest
+     * @return Result of the DeleteThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of a thing passed to a command is different than the version
+     *         specified with the --version parameter.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteThingGroup
+     */
+    @Override
+    public DeleteThingGroupResult deleteThingGroup(DeleteThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThingGroupResult executeDeleteThingGroup(DeleteThingGroupRequest deleteThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThingGroupRequest> request = null;
+        Response<DeleteThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThingGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1514,7 +2245,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Deletes the specified rule.
+     * Deletes the rule.
      * </p>
      * 
      * @param deleteTopicRuleRequest
@@ -1557,6 +2288,58 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a logging level.
+     * </p>
+     * 
+     * @param deleteV2LoggingLevelRequest
+     * @return Result of the DeleteV2LoggingLevel operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DeleteV2LoggingLevel
+     */
+    @Override
+    public DeleteV2LoggingLevelResult deleteV2LoggingLevel(DeleteV2LoggingLevelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteV2LoggingLevel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteV2LoggingLevelResult executeDeleteV2LoggingLevel(DeleteV2LoggingLevelRequest deleteV2LoggingLevelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteV2LoggingLevelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteV2LoggingLevelRequest> request = null;
+        Response<DeleteV2LoggingLevelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteV2LoggingLevelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteV2LoggingLevelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteV2LoggingLevelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteV2LoggingLevelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1616,6 +2399,64 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeprecateThingTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeprecateThingTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an authorizer.
+     * </p>
+     * 
+     * @param describeAuthorizerRequest
+     * @return Result of the DescribeAuthorizer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuthorizer
+     */
+    @Override
+    public DescribeAuthorizerResult describeAuthorizer(DescribeAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAuthorizerResult executeDescribeAuthorizer(DescribeAuthorizerRequest describeAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAuthorizerRequest> request = null;
+        Response<DescribeAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAuthorizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1688,7 +2529,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified certificate.
+     * Gets information about the specified certificate. You may specify the certificate using either its ID or PEM.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -1747,6 +2588,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Describes the default authorizer.
+     * </p>
+     * 
+     * @param describeDefaultAuthorizerRequest
+     * @return Result of the DescribeDefaultAuthorizer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeDefaultAuthorizer
+     */
+    @Override
+    public DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDefaultAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDefaultAuthorizerResult executeDescribeDefaultAuthorizer(DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDefaultAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDefaultAuthorizerRequest> request = null;
+        Response<DescribeDefaultAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDefaultAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDefaultAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDefaultAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDefaultAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a unique endpoint specific to the AWS account making the call.
      * </p>
      * 
@@ -1755,6 +2656,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @return Result of the DescribeEndpoint operation returned by the service.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws ThrottlingException
@@ -1788,6 +2691,282 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes event configurations.
+     * </p>
+     * 
+     * @param describeEventConfigurationsRequest
+     * @return Result of the DescribeEventConfigurations operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.DescribeEventConfigurations
+     */
+    @Override
+    public DescribeEventConfigurationsResult describeEventConfigurations(DescribeEventConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventConfigurationsResult executeDescribeEventConfigurations(DescribeEventConfigurationsRequest describeEventConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEventConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventConfigurationsRequest> request = null;
+        Response<DescribeEventConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEventConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEventConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a search index.
+     * </p>
+     * 
+     * @param describeIndexRequest
+     * @return Result of the DescribeIndex operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeIndex
+     */
+    @Override
+    public DescribeIndexResult describeIndex(DescribeIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIndex(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIndexResult executeDescribeIndex(DescribeIndexRequest describeIndexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeIndexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIndexRequest> request = null;
+        Response<DescribeIndexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIndexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeIndexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a job.
+     * </p>
+     * 
+     * @param describeJobRequest
+     * @return Result of the DescribeJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DescribeJob
+     */
+    @Override
+    public DescribeJobResult describeJob(DescribeJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobResult executeDescribeJob(DescribeJobRequest describeJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeJobRequest> request = null;
+        Response<DescribeJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a job execution.
+     * </p>
+     * 
+     * @param describeJobExecutionRequest
+     * @return Result of the DescribeJobExecution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DescribeJobExecution
+     */
+    @Override
+    public DescribeJobExecutionResult describeJobExecution(DescribeJobExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobExecution(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobExecutionResult executeDescribeJobExecution(DescribeJobExecutionRequest describeJobExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeJobExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeJobExecutionRequest> request = null;
+        Response<DescribeJobExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeJobExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeJobExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a role alias.
+     * </p>
+     * 
+     * @param describeRoleAliasRequest
+     * @return Result of the DescribeRoleAlias operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeRoleAlias
+     */
+    @Override
+    public DescribeRoleAliasResult describeRoleAlias(DescribeRoleAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRoleAlias(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRoleAliasResult executeDescribeRoleAlias(DescribeRoleAliasRequest describeRoleAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRoleAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRoleAliasRequest> request = null;
+        Response<DescribeRoleAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRoleAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRoleAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRoleAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRoleAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1859,6 +3038,118 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Describe a thing group.
+     * </p>
+     * 
+     * @param describeThingGroupRequest
+     * @return Result of the DescribeThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeThingGroup
+     */
+    @Override
+    public DescribeThingGroupResult describeThingGroup(DescribeThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThingGroupResult executeDescribeThingGroup(DescribeThingGroupRequest describeThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThingGroupRequest> request = null;
+        Response<DescribeThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThingGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param describeThingRegistrationTaskRequest
+     * @return Result of the DescribeThingRegistrationTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeThingRegistrationTask
+     */
+    @Override
+    public DescribeThingRegistrationTaskResult describeThingRegistrationTask(DescribeThingRegistrationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThingRegistrationTask(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThingRegistrationTaskResult executeDescribeThingRegistrationTask(DescribeThingRegistrationTaskRequest describeThingRegistrationTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThingRegistrationTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThingRegistrationTaskRequest> request = null;
+        Response<DescribeThingRegistrationTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThingRegistrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeThingRegistrationTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThingRegistrationTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeThingRegistrationTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified thing type.
      * </p>
      * 
@@ -1918,7 +3209,68 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Detaches a policy from the specified target.
+     * </p>
+     * 
+     * @param detachPolicyRequest
+     * @return Result of the DetachPolicy operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.DetachPolicy
+     */
+    @Override
+    public DetachPolicyResult detachPolicy(DetachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachPolicyResult executeDetachPolicy(DetachPolicyRequest detachPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detachPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetachPolicyRequest> request = null;
+        Response<DetachPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetachPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the specified policy from the specified certificate.
+     * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>DetachPolicy</a> instead.
      * </p>
      * 
      * @param detachPrincipalPolicyRequest
@@ -1939,6 +3291,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.DetachPrincipalPolicy
      */
     @Override
+    @Deprecated
     public DetachPrincipalPolicyResult detachPrincipalPolicy(DetachPrincipalPolicyRequest request) {
         request = beforeClientExecution(request);
         return executeDetachPrincipalPolicy(request);
@@ -2037,7 +3390,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Disables the specified rule.
+     * Disables the rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
@@ -2092,7 +3445,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Enables the specified rule.
+     * Enables the rule.
      * </p>
      * 
      * @param enableTopicRuleRequest
@@ -2135,6 +3488,178 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<EnableTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets effective policies.
+     * </p>
+     * 
+     * @param getEffectivePoliciesRequest
+     * @return Result of the GetEffectivePolicies operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.GetEffectivePolicies
+     */
+    @Override
+    public GetEffectivePoliciesResult getEffectivePolicies(GetEffectivePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEffectivePolicies(request);
+    }
+
+    @SdkInternalApi
+    final GetEffectivePoliciesResult executeGetEffectivePolicies(GetEffectivePoliciesRequest getEffectivePoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEffectivePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEffectivePoliciesRequest> request = null;
+        Response<GetEffectivePoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEffectivePoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEffectivePoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEffectivePoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEffectivePoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the search configuration.
+     * </p>
+     * 
+     * @param getIndexingConfigurationRequest
+     * @return Result of the GetIndexingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.GetIndexingConfiguration
+     */
+    @Override
+    public GetIndexingConfigurationResult getIndexingConfiguration(GetIndexingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIndexingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetIndexingConfigurationResult executeGetIndexingConfiguration(GetIndexingConfigurationRequest getIndexingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getIndexingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetIndexingConfigurationRequest> request = null;
+        Response<GetIndexingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetIndexingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getIndexingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetIndexingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetIndexingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a job document.
+     * </p>
+     * 
+     * @param getJobDocumentRequest
+     * @return Result of the GetJobDocument operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.GetJobDocument
+     */
+    @Override
+    public GetJobDocumentResult getJobDocument(GetJobDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetJobDocument(request);
+    }
+
+    @SdkInternalApi
+    final GetJobDocumentResult executeGetJobDocument(GetJobDocumentRequest getJobDocumentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getJobDocumentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetJobDocumentRequest> request = null;
+        Response<GetJobDocumentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetJobDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobDocumentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetJobDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2375,7 +3900,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified rule.
+     * Gets information about the rule.
      * </p>
      * 
      * @param getTopicRuleRequest
@@ -2418,6 +3943,174 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the fine grained logging options.
+     * </p>
+     * 
+     * @param getV2LoggingOptionsRequest
+     * @return Result of the GetV2LoggingOptions operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.GetV2LoggingOptions
+     */
+    @Override
+    public GetV2LoggingOptionsResult getV2LoggingOptions(GetV2LoggingOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetV2LoggingOptions(request);
+    }
+
+    @SdkInternalApi
+    final GetV2LoggingOptionsResult executeGetV2LoggingOptions(GetV2LoggingOptionsRequest getV2LoggingOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getV2LoggingOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetV2LoggingOptionsRequest> request = null;
+        Response<GetV2LoggingOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetV2LoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getV2LoggingOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetV2LoggingOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetV2LoggingOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the policies attached to the specified thing group.
+     * </p>
+     * 
+     * @param listAttachedPoliciesRequest
+     * @return Result of the ListAttachedPolicies operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.ListAttachedPolicies
+     */
+    @Override
+    public ListAttachedPoliciesResult listAttachedPolicies(ListAttachedPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachedPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachedPoliciesResult executeListAttachedPolicies(ListAttachedPoliciesRequest listAttachedPoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAttachedPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAttachedPoliciesRequest> request = null;
+        Response<ListAttachedPoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAttachedPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttachedPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAttachedPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAttachedPoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the authorizers registered in your account.
+     * </p>
+     * 
+     * @param listAuthorizersRequest
+     * @return Result of the ListAuthorizers operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuthorizers
+     */
+    @Override
+    public ListAuthorizersResult listAuthorizers(ListAuthorizersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAuthorizers(request);
+    }
+
+    @SdkInternalApi
+    final ListAuthorizersResult executeListAuthorizers(ListAuthorizersRequest listAuthorizersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAuthorizersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAuthorizersRequest> request = null;
+        Response<ListAuthorizersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAuthorizersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAuthorizersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAuthorizersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAuthorizersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2609,7 +4302,229 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Lists certificates that are being transfered but not yet accepted.
+     * Lists the search indices.
+     * </p>
+     * 
+     * @param listIndicesRequest
+     * @return Result of the ListIndices operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListIndices
+     */
+    @Override
+    public ListIndicesResult listIndices(ListIndicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIndices(request);
+    }
+
+    @SdkInternalApi
+    final ListIndicesResult executeListIndices(ListIndicesRequest listIndicesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIndicesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIndicesRequest> request = null;
+        Response<ListIndicesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIndicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIndicesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIndicesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIndicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the job executions for a job.
+     * </p>
+     * 
+     * @param listJobExecutionsForJobRequest
+     * @return Result of the ListJobExecutionsForJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.ListJobExecutionsForJob
+     */
+    @Override
+    public ListJobExecutionsForJobResult listJobExecutionsForJob(ListJobExecutionsForJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobExecutionsForJob(request);
+    }
+
+    @SdkInternalApi
+    final ListJobExecutionsForJobResult executeListJobExecutionsForJob(ListJobExecutionsForJobRequest listJobExecutionsForJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listJobExecutionsForJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobExecutionsForJobRequest> request = null;
+        Response<ListJobExecutionsForJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobExecutionsForJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listJobExecutionsForJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListJobExecutionsForJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListJobExecutionsForJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the job executions for the specified thing.
+     * </p>
+     * 
+     * @param listJobExecutionsForThingRequest
+     * @return Result of the ListJobExecutionsForThing operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.ListJobExecutionsForThing
+     */
+    @Override
+    public ListJobExecutionsForThingResult listJobExecutionsForThing(ListJobExecutionsForThingRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobExecutionsForThing(request);
+    }
+
+    @SdkInternalApi
+    final ListJobExecutionsForThingResult executeListJobExecutionsForThing(ListJobExecutionsForThingRequest listJobExecutionsForThingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listJobExecutionsForThingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobExecutionsForThingRequest> request = null;
+        Response<ListJobExecutionsForThingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobExecutionsForThingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listJobExecutionsForThingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListJobExecutionsForThingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListJobExecutionsForThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists jobs.
+     * </p>
+     * 
+     * @param listJobsRequest
+     * @return Result of the ListJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.ListJobs
+     */
+    @Override
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsResult executeListJobs(ListJobsRequest listJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobsRequest> request = null;
+        Response<ListJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListJobsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists certificates that are being transferred but not yet accepted.
      * </p>
      * 
      * @param listOutgoingCertificatesRequest
@@ -2727,6 +4642,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Lists the principals associated with the specified policy.
      * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+     * </p>
      * 
      * @param listPolicyPrincipalsRequest
      *        The input for the ListPolicyPrincipals operation.
@@ -2746,6 +4664,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.ListPolicyPrincipals
      */
     @Override
+    @Deprecated
     public ListPolicyPrincipalsResult listPolicyPrincipals(ListPolicyPrincipalsRequest request) {
         request = beforeClientExecution(request);
         return executeListPolicyPrincipals(request);
@@ -2848,6 +4767,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
      * >AmazonCognito Identity format</a>.
      * </p>
+     * <p>
+     * <b>Note:</b> This API is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+     * </p>
      * 
      * @param listPrincipalPoliciesRequest
      *        The input for the ListPrincipalPolicies operation.
@@ -2867,6 +4789,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @sample AWSIot.ListPrincipalPolicies
      */
     @Override
+    @Deprecated
     public ListPrincipalPoliciesResult listPrincipalPolicies(ListPrincipalPoliciesRequest request) {
         request = beforeClientExecution(request);
         return executeListPrincipalPolicies(request);
@@ -2965,6 +4888,228 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Lists the role aliases registered in your account.
+     * </p>
+     * 
+     * @param listRoleAliasesRequest
+     * @return Result of the ListRoleAliases operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListRoleAliases
+     */
+    @Override
+    public ListRoleAliasesResult listRoleAliases(ListRoleAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRoleAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListRoleAliasesResult executeListRoleAliases(ListRoleAliasesRequest listRoleAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRoleAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRoleAliasesRequest> request = null;
+        Response<ListRoleAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRoleAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRoleAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRoleAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRoleAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List targets for the specified policy.
+     * </p>
+     * 
+     * @param listTargetsForPolicyRequest
+     * @return Result of the ListTargetsForPolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.ListTargetsForPolicy
+     */
+    @Override
+    public ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTargetsForPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ListTargetsForPolicyResult executeListTargetsForPolicy(ListTargetsForPolicyRequest listTargetsForPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTargetsForPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTargetsForPolicyRequest> request = null;
+        Response<ListTargetsForPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTargetsForPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsForPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTargetsForPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTargetsForPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the thing groups in your account.
+     * </p>
+     * 
+     * @param listThingGroupsRequest
+     * @return Result of the ListThingGroups operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.ListThingGroups
+     */
+    @Override
+    public ListThingGroupsResult listThingGroups(ListThingGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThingGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListThingGroupsResult executeListThingGroups(ListThingGroupsRequest listThingGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThingGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThingGroupsRequest> request = null;
+        Response<ListThingGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThingGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThingGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the thing groups to which the specified thing belongs.
+     * </p>
+     * 
+     * @param listThingGroupsForThingRequest
+     * @return Result of the ListThingGroupsForThing operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.ListThingGroupsForThing
+     */
+    @Override
+    public ListThingGroupsForThingResult listThingGroupsForThing(ListThingGroupsForThingRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThingGroupsForThing(request);
+    }
+
+    @SdkInternalApi
+    final ListThingGroupsForThingResult executeListThingGroupsForThing(ListThingGroupsForThingRequest listThingGroupsForThingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThingGroupsForThingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThingGroupsForThingRequest> request = null;
+        Response<ListThingGroupsForThingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThingGroupsForThingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listThingGroupsForThingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingGroupsForThingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListThingGroupsForThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the principals associated with the specified thing.
      * </p>
      * 
@@ -3012,6 +5157,119 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListThingPrincipalsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThingPrincipalsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Information about the thing registration tasks.
+     * </p>
+     * 
+     * @param listThingRegistrationTaskReportsRequest
+     * @return Result of the ListThingRegistrationTaskReports operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListThingRegistrationTaskReports
+     */
+    @Override
+    public ListThingRegistrationTaskReportsResult listThingRegistrationTaskReports(ListThingRegistrationTaskReportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThingRegistrationTaskReports(request);
+    }
+
+    @SdkInternalApi
+    final ListThingRegistrationTaskReportsResult executeListThingRegistrationTaskReports(
+            ListThingRegistrationTaskReportsRequest listThingRegistrationTaskReportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThingRegistrationTaskReportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThingRegistrationTaskReportsRequest> request = null;
+        Response<ListThingRegistrationTaskReportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThingRegistrationTaskReportsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listThingRegistrationTaskReportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingRegistrationTaskReportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListThingRegistrationTaskReportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List bulk thing provisioning tasks.
+     * </p>
+     * 
+     * @param listThingRegistrationTasksRequest
+     * @return Result of the ListThingRegistrationTasks operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListThingRegistrationTasks
+     */
+    @Override
+    public ListThingRegistrationTasksResult listThingRegistrationTasks(ListThingRegistrationTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThingRegistrationTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListThingRegistrationTasksResult executeListThingRegistrationTasks(ListThingRegistrationTasksRequest listThingRegistrationTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThingRegistrationTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThingRegistrationTasksRequest> request = null;
+        Response<ListThingRegistrationTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThingRegistrationTasksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listThingRegistrationTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingRegistrationTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListThingRegistrationTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3140,6 +5398,59 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Lists the things in the specified group.
+     * </p>
+     * 
+     * @param listThingsInThingGroupRequest
+     * @return Result of the ListThingsInThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.ListThingsInThingGroup
+     */
+    @Override
+    public ListThingsInThingGroupResult listThingsInThingGroup(ListThingsInThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThingsInThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListThingsInThingGroupResult executeListThingsInThingGroup(ListThingsInThingGroupRequest listThingsInThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThingsInThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThingsInThingGroupRequest> request = null;
+        Response<ListThingsInThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThingsInThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThingsInThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThingsInThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListThingsInThingGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the rules for the specific topic.
      * </p>
      * 
@@ -3181,6 +5492,60 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTopicRulesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTopicRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists logging levels.
+     * </p>
+     * 
+     * @param listV2LoggingLevelsRequest
+     * @return Result of the ListV2LoggingLevels operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws NotConfiguredException
+     *         The resource is not configured.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.ListV2LoggingLevels
+     */
+    @Override
+    public ListV2LoggingLevelsResult listV2LoggingLevels(ListV2LoggingLevelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListV2LoggingLevels(request);
+    }
+
+    @SdkInternalApi
+    final ListV2LoggingLevelsResult executeListV2LoggingLevels(ListV2LoggingLevelsRequest listV2LoggingLevelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listV2LoggingLevelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListV2LoggingLevelsRequest> request = null;
+        Response<ListV2LoggingLevelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListV2LoggingLevelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listV2LoggingLevelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListV2LoggingLevelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListV2LoggingLevelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3331,6 +5696,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Provisions a thing.
+     * </p>
+     * 
+     * @param registerThingRequest
+     * @return Result of the RegisterThing operation returned by the service.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
+     * @throws ResourceRegistrationFailureException
+     *         The resource registration failed.
+     * @sample AWSIot.RegisterThing
+     */
+    @Override
+    public RegisterThingResult registerThing(RegisterThingRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterThing(request);
+    }
+
+    @SdkInternalApi
+    final RegisterThingResult executeRegisterThing(RegisterThingRequest registerThingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerThingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterThingRequest> request = null;
+        Response<RegisterThingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterThingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerThingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterThingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status
      * changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
@@ -3402,9 +5828,64 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Replaces the specified rule. You must specify all parameters for the new rule. Creating rules is an
-     * administrator-level action. Any user who has permission to create rules will be able to access data processed by
-     * the rule.
+     * Remove the specified thing from the specified group.
+     * </p>
+     * 
+     * @param removeThingFromThingGroupRequest
+     * @return Result of the RemoveThingFromThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.RemoveThingFromThingGroup
+     */
+    @Override
+    public RemoveThingFromThingGroupResult removeThingFromThingGroup(RemoveThingFromThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveThingFromThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final RemoveThingFromThingGroupResult executeRemoveThingFromThingGroup(RemoveThingFromThingGroupRequest removeThingFromThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeThingFromThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveThingFromThingGroupRequest> request = null;
+        Response<RemoveThingFromThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveThingFromThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeThingFromThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveThingFromThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveThingFromThingGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level
+     * action. Any user who has permission to create rules will be able to access data processed by the rule.
      * </p>
      * 
      * @param replaceTopicRuleRequest
@@ -3449,6 +5930,127 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<ReplaceTopicRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReplaceTopicRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The query search index.
+     * </p>
+     * 
+     * @param searchIndexRequest
+     * @return Result of the SearchIndex operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidQueryException
+     *         The query is invalid.
+     * @throws IndexNotReadyException
+     *         The index is not ready.
+     * @sample AWSIot.SearchIndex
+     */
+    @Override
+    public SearchIndexResult searchIndex(SearchIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchIndex(request);
+    }
+
+    @SdkInternalApi
+    final SearchIndexResult executeSearchIndex(SearchIndexRequest searchIndexRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchIndexRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchIndexRequest> request = null;
+        Response<SearchIndexResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchIndexRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchIndexResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the default authorizer. This will be used if a websocket connection is made without specifying an
+     * authorizer.
+     * </p>
+     * 
+     * @param setDefaultAuthorizerRequest
+     * @return Result of the SetDefaultAuthorizer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.SetDefaultAuthorizer
+     */
+    @Override
+    public SetDefaultAuthorizerResult setDefaultAuthorizer(SetDefaultAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetDefaultAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final SetDefaultAuthorizerResult executeSetDefaultAuthorizer(SetDefaultAuthorizerRequest setDefaultAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setDefaultAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetDefaultAuthorizerRequest> request = null;
+        Response<SetDefaultAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetDefaultAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setDefaultAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetDefaultAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetDefaultAuthorizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3577,6 +6179,346 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Sets the logging level.
+     * </p>
+     * 
+     * @param setV2LoggingLevelRequest
+     * @return Result of the SetV2LoggingLevel operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws NotConfiguredException
+     *         The resource is not configured.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.SetV2LoggingLevel
+     */
+    @Override
+    public SetV2LoggingLevelResult setV2LoggingLevel(SetV2LoggingLevelRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetV2LoggingLevel(request);
+    }
+
+    @SdkInternalApi
+    final SetV2LoggingLevelResult executeSetV2LoggingLevel(SetV2LoggingLevelRequest setV2LoggingLevelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setV2LoggingLevelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetV2LoggingLevelRequest> request = null;
+        Response<SetV2LoggingLevelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetV2LoggingLevelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setV2LoggingLevelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetV2LoggingLevelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetV2LoggingLevelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the logging options for the V2 logging service.
+     * </p>
+     * 
+     * @param setV2LoggingOptionsRequest
+     * @return Result of the SetV2LoggingOptions operation returned by the service.
+     * @throws InternalException
+     *         An unexpected error has occurred.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.SetV2LoggingOptions
+     */
+    @Override
+    public SetV2LoggingOptionsResult setV2LoggingOptions(SetV2LoggingOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetV2LoggingOptions(request);
+    }
+
+    @SdkInternalApi
+    final SetV2LoggingOptionsResult executeSetV2LoggingOptions(SetV2LoggingOptionsRequest setV2LoggingOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setV2LoggingOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetV2LoggingOptionsRequest> request = null;
+        Response<SetV2LoggingOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetV2LoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setV2LoggingOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetV2LoggingOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetV2LoggingOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param startThingRegistrationTaskRequest
+     * @return Result of the StartThingRegistrationTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.StartThingRegistrationTask
+     */
+    @Override
+    public StartThingRegistrationTaskResult startThingRegistrationTask(StartThingRegistrationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartThingRegistrationTask(request);
+    }
+
+    @SdkInternalApi
+    final StartThingRegistrationTaskResult executeStartThingRegistrationTask(StartThingRegistrationTaskRequest startThingRegistrationTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startThingRegistrationTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartThingRegistrationTaskRequest> request = null;
+        Response<StartThingRegistrationTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartThingRegistrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startThingRegistrationTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartThingRegistrationTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartThingRegistrationTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a bulk thing provisioning task.
+     * </p>
+     * 
+     * @param stopThingRegistrationTaskRequest
+     * @return Result of the StopThingRegistrationTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.StopThingRegistrationTask
+     */
+    @Override
+    public StopThingRegistrationTaskResult stopThingRegistrationTask(StopThingRegistrationTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopThingRegistrationTask(request);
+    }
+
+    @SdkInternalApi
+    final StopThingRegistrationTaskResult executeStopThingRegistrationTask(StopThingRegistrationTaskRequest stopThingRegistrationTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopThingRegistrationTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopThingRegistrationTaskRequest> request = null;
+        Response<StopThingRegistrationTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopThingRegistrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopThingRegistrationTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopThingRegistrationTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopThingRegistrationTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Test custom authorization.
+     * </p>
+     * 
+     * @param testAuthorizationRequest
+     * @return Result of the TestAuthorization operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @sample AWSIot.TestAuthorization
+     */
+    @Override
+    public TestAuthorizationResult testAuthorization(TestAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final TestAuthorizationResult executeTestAuthorization(TestAuthorizationRequest testAuthorizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testAuthorizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestAuthorizationRequest> request = null;
+        Response<TestAuthorizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestAuthorizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testAuthorizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TestAuthorizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestAuthorizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Invoke the specified custom authorizer for testing purposes.
+     * </p>
+     * 
+     * @param testInvokeAuthorizerRequest
+     * @return Result of the TestInvokeAuthorizer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws InvalidResponseException
+     *         The response is invalid.
+     * @sample AWSIot.TestInvokeAuthorizer
+     */
+    @Override
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(TestInvokeAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestInvokeAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final TestInvokeAuthorizerResult executeTestInvokeAuthorizer(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testInvokeAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestInvokeAuthorizerRequest> request = null;
+        Response<TestInvokeAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestInvokeAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testInvokeAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TestInvokeAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestInvokeAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Transfers the specified certificate to the specified AWS account.
      * </p>
      * <p>
@@ -3643,6 +6585,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<TransferCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TransferCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an authorizer.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     * @return Result of the UpdateAuthorizer operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateAuthorizer
+     */
+    @Override
+    public UpdateAuthorizerResult updateAuthorizer(UpdateAuthorizerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAuthorizer(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAuthorizerResult executeUpdateAuthorizer(UpdateAuthorizerRequest updateAuthorizerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAuthorizerRequest> request = null;
+        Response<UpdateAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAuthorizerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAuthorizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3782,6 +6784,176 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Updates the event configurations.
+     * </p>
+     * 
+     * @param updateEventConfigurationsRequest
+     * @return Result of the UpdateEventConfigurations operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @sample AWSIot.UpdateEventConfigurations
+     */
+    @Override
+    public UpdateEventConfigurationsResult updateEventConfigurations(UpdateEventConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEventConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEventConfigurationsResult executeUpdateEventConfigurations(UpdateEventConfigurationsRequest updateEventConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEventConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEventConfigurationsRequest> request = null;
+        Response<UpdateEventConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEventConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEventConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateEventConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the search configuration.
+     * </p>
+     * 
+     * @param updateIndexingConfigurationRequest
+     * @return Result of the UpdateIndexingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateIndexingConfiguration
+     */
+    @Override
+    public UpdateIndexingConfigurationResult updateIndexingConfiguration(UpdateIndexingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateIndexingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateIndexingConfigurationResult executeUpdateIndexingConfiguration(UpdateIndexingConfigurationRequest updateIndexingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateIndexingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateIndexingConfigurationRequest> request = null;
+        Response<UpdateIndexingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateIndexingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateIndexingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateIndexingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateIndexingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a role alias.
+     * </p>
+     * 
+     * @param updateRoleAliasRequest
+     * @return Result of the UpdateRoleAlias operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateRoleAlias
+     */
+    @Override
+    public UpdateRoleAliasResult updateRoleAlias(UpdateRoleAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRoleAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRoleAliasResult executeUpdateRoleAlias(UpdateRoleAliasRequest updateRoleAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRoleAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRoleAliasRequest> request = null;
+        Response<UpdateRoleAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRoleAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRoleAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRoleAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRoleAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the data for a thing.
      * </p>
      * 
@@ -3832,6 +7004,119 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateThingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a thing group.
+     * </p>
+     * 
+     * @param updateThingGroupRequest
+     * @return Result of the UpdateThingGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of a thing passed to a command is different than the version
+     *         specified with the --version parameter.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.UpdateThingGroup
+     */
+    @Override
+    public UpdateThingGroupResult updateThingGroup(UpdateThingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThingGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThingGroupResult executeUpdateThingGroup(UpdateThingGroupRequest updateThingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThingGroupRequest> request = null;
+        Response<UpdateThingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThingGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the groups to which the thing belongs.
+     * </p>
+     * 
+     * @param updateThingGroupsForThingRequest
+     * @return Result of the UpdateThingGroupsForThing operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.UpdateThingGroupsForThing
+     */
+    @Override
+    public UpdateThingGroupsForThingResult updateThingGroupsForThing(UpdateThingGroupsForThingRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThingGroupsForThing(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThingGroupsForThingResult executeUpdateThingGroupsForThing(UpdateThingGroupsForThingRequest updateThingGroupsForThingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThingGroupsForThingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThingGroupsForThingRequest> request = null;
+        Response<UpdateThingGroupsForThingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThingGroupsForThingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateThingGroupsForThingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThingGroupsForThingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateThingGroupsForThingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

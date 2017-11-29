@@ -46,6 +46,8 @@ public class TableDescriptionMarshaller {
             .marshallLocationName("ItemCount").build();
     private static final MarshallingInfo<String> TABLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TableArn").build();
+    private static final MarshallingInfo<String> TABLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableId").build();
     private static final MarshallingInfo<List> LOCALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexes").build();
     private static final MarshallingInfo<List> GLOBALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -56,6 +58,8 @@ public class TableDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestStreamLabel").build();
     private static final MarshallingInfo<String> LATESTSTREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestStreamArn").build();
+    private static final MarshallingInfo<StructuredPojo> RESTORESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RestoreSummary").build();
 
     private static final TableDescriptionMarshaller instance = new TableDescriptionMarshaller();
 
@@ -82,11 +86,13 @@ public class TableDescriptionMarshaller {
             protocolMarshaller.marshall(tableDescription.getTableSizeBytes(), TABLESIZEBYTES_BINDING);
             protocolMarshaller.marshall(tableDescription.getItemCount(), ITEMCOUNT_BINDING);
             protocolMarshaller.marshall(tableDescription.getTableArn(), TABLEARN_BINDING);
+            protocolMarshaller.marshall(tableDescription.getTableId(), TABLEID_BINDING);
             protocolMarshaller.marshall(tableDescription.getLocalSecondaryIndexes(), LOCALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(tableDescription.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(tableDescription.getStreamSpecification(), STREAMSPECIFICATION_BINDING);
             protocolMarshaller.marshall(tableDescription.getLatestStreamLabel(), LATESTSTREAMLABEL_BINDING);
             protocolMarshaller.marshall(tableDescription.getLatestStreamArn(), LATESTSTREAMARN_BINDING);
+            protocolMarshaller.marshall(tableDescription.getRestoreSummary(), RESTORESUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -64,6 +64,10 @@ public class GroupVersionJsonUnmarshaller implements Unmarshaller<GroupVersion, 
                     context.nextToken();
                     groupVersion.setLoggerDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceDefinitionVersionArn", targetDepth)) {
+                    context.nextToken();
+                    groupVersion.setResourceDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SubscriptionDefinitionVersionArn", targetDepth)) {
                     context.nextToken();
                     groupVersion.setSubscriptionDefinitionVersionArn(context.getUnmarshaller(String.class).unmarshall(context));

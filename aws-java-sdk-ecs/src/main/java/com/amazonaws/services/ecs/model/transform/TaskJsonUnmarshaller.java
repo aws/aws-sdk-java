@@ -76,6 +76,14 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setDesiredStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    task.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    task.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("containers", targetDepth)) {
                     context.nextToken();
                     task.setContainers(new ListUnmarshaller<Container>(ContainerJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -92,6 +100,26 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setStoppedReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectivity", targetDepth)) {
+                    context.nextToken();
+                    task.setConnectivity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectivityAt", targetDepth)) {
+                    context.nextToken();
+                    task.setConnectivityAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("pullStartedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setPullStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("pullStoppedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setPullStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("executionStoppedAt", targetDepth)) {
+                    context.nextToken();
+                    task.setExecutionStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     task.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
@@ -100,6 +128,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("stoppingAt", targetDepth)) {
+                    context.nextToken();
+                    task.setStoppingAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("stoppedAt", targetDepth)) {
                     context.nextToken();
                     task.setStoppedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
@@ -107,6 +139,14 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 if (context.testExpression("group", targetDepth)) {
                     context.nextToken();
                     task.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("launchType", targetDepth)) {
+                    context.nextToken();
+                    task.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformVersion", targetDepth)) {
+                    context.nextToken();
+                    task.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachments", targetDepth)) {
                     context.nextToken();

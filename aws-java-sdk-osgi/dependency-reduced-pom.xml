@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.237</version>
+    <version>1.11.238</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.237</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.238</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.237</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.238</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,30 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon Comprehend</title>
+                      <packages>com.amazonaws.services.comprehend*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Translate</title>
+                      <packages>com.amazonaws.services.translate*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon SageMaker</title>
+                      <packages>com.amazonaws.services.sagemaker*</packages>
+                    </group>
+                    <group>
+                      <title>AWS IoT Jobs Data Plane</title>
+                      <packages>com.amazonaws.services.iotjobsdataplane*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon SageMaker Runtime</title>
+                      <packages>com.amazonaws.services.sagemakerruntime*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Kinesis Video Streams</title>
+                      <packages>com.amazonaws.services.kinesisvideo*</packages>
+                    </group>
                     <group>
                       <title>AWS AppSync</title>
                       <packages>com.amazonaws.services.appsync*</packages>
@@ -687,10 +711,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.237</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.238</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.237</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.238</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -704,6 +728,30 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon Comprehend</title>
+                      <packages>com.amazonaws.services.comprehend*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Translate</title>
+                      <packages>com.amazonaws.services.translate*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon SageMaker</title>
+                      <packages>com.amazonaws.services.sagemaker*</packages>
+                    </group>
+                    <group>
+                      <title>AWS IoT Jobs Data Plane</title>
+                      <packages>com.amazonaws.services.iotjobsdataplane*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon SageMaker Runtime</title>
+                      <packages>com.amazonaws.services.sagemakerruntime*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Kinesis Video Streams</title>
+                      <packages>com.amazonaws.services.kinesisvideo*</packages>
+                    </group>
                     <group>
                       <title>AWS AppSync</title>
                       <packages>com.amazonaws.services.appsync*</packages>
@@ -1256,10 +1304,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.237</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.238</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.237</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.238</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1273,6 +1321,30 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>Amazon Comprehend</title>
+                  <packages>com.amazonaws.services.comprehend*</packages>
+                </group>
+                <group>
+                  <title>Amazon Translate</title>
+                  <packages>com.amazonaws.services.translate*</packages>
+                </group>
+                <group>
+                  <title>Amazon SageMaker</title>
+                  <packages>com.amazonaws.services.sagemaker*</packages>
+                </group>
+                <group>
+                  <title>AWS IoT Jobs Data Plane</title>
+                  <packages>com.amazonaws.services.iotjobsdataplane*</packages>
+                </group>
+                <group>
+                  <title>Amazon SageMaker Runtime</title>
+                  <packages>com.amazonaws.services.sagemakerruntime*</packages>
+                </group>
+                <group>
+                  <title>Amazon Kinesis Video Streams</title>
+                  <packages>com.amazonaws.services.kinesisvideo*</packages>
+                </group>
                 <group>
                   <title>AWS AppSync</title>
                   <packages>com.amazonaws.services.appsync*</packages>
@@ -2038,7 +2110,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.237-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.238-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>
@@ -2050,6 +2122,48 @@
     </profile>
   </profiles>
   <dependencies>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-codec-http</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-codec</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-handler</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-buffer</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-common</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-transport</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-resolver</artifactId>
+      <version>4.1.17.Final</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>

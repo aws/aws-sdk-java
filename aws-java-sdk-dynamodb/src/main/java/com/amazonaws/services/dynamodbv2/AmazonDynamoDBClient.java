@@ -94,26 +94,56 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ItemCollectionSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
                                     com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TableAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GlobalTableAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicaAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConditionalCheckFailedException").withModeledClass(
                                     com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFoundException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.BackupNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GlobalTableNotFoundException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.GlobalTableNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ItemCollectionSizeLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicaNotFoundException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TableNotFoundException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.TableNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BackupInUseException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.BackupInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ContinuousBackupsUnavailableException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TableInUseException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.TableInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class));
 
     /**
@@ -589,6 +619,211 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a backup for an existing table.
+     * </p>
+     * <p>
+     * Each time you create an On-Demand Backup, the entire table data is backed up. There is no limit to the number of
+     * on-demand backups that can be taken.
+     * </p>
+     * <p>
+     * You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+     * </p>
+     * <p>
+     * All backups in DynamoDB work without consuming any provisioned throughput on the table. This results in a fast,
+     * low-cost, and scalable backup process. In general, the larger the table, the more time it takes to back up. The
+     * backup is stored in an S3 data store that is maintained and managed by DynamoDB.
+     * </p>
+     * <p>
+     * Backups incorporate all writes (delete, put, update) that were completed within the last minute before the backup
+     * request was initiated. Backups might include some writes (delete, put, update) that were completed before the
+     * backup request was finished.
+     * </p>
+     * <p>
+     * For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all
+     * data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may
+     * not contain data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal
+     * consistency.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the backups:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createBackupRequest
+     * @return Result of the CreateBackup operation returned by the service.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @throws TableInUseException
+     *         A table by that name is either being created or deleted.
+     * @throws ContinuousBackupsUnavailableException
+     *         Backups have not yet been enabled for this table.
+     * @throws BackupInUseException
+     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         being created, deleted or restored to a table.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.CreateBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateBackupResult createBackup(CreateBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBackup(request);
+    }
+
+    @SdkInternalApi
+    final CreateBackupResult executeCreateBackup(CreateBackupRequest createBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBackupRequest> request = null;
+        Response<CreateBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBackupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a global table from an existing table. A global table creates a replication relationship between two or
+     * more DynamoDB tables with the same table name in the provided regions.
+     * </p>
+     * <p>
+     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The tables must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must contain no items.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGlobalTableRequest
+     * @return Result of the CreateGlobalTable operation returned by the service.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws GlobalTableAlreadyExistsException
+     *         The specified global table already exists.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @sample AmazonDynamoDB.CreateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateGlobalTableResult createGlobalTable(CreateGlobalTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGlobalTable(request);
+    }
+
+    @SdkInternalApi
+    final CreateGlobalTableResult executeCreateGlobalTable(CreateGlobalTableRequest createGlobalTableRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGlobalTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGlobalTableRequest> request = null;
+        Response<CreateGlobalTableResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGlobalTableRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGlobalTableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The <code>CreateTable</code> operation adds a new table to your account. In an AWS account, table names must be
      * unique within each region. That is, you can have two tables with same name if you create the tables in different
      * regions.
@@ -671,6 +906,73 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             java.util.List<KeySchemaElement> keySchema, ProvisionedThroughput provisionedThroughput) {
         return createTable(new CreateTableRequest().withAttributeDefinitions(attributeDefinitions).withTableName(tableName).withKeySchema(keySchema)
                 .withProvisionedThroughput(provisionedThroughput));
+    }
+
+    /**
+     * <p>
+     * Deletes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @return Result of the DeleteBackup operation returned by the service.
+     * @throws BackupNotFoundException
+     *         Backup not found for the given BackupARN.
+     * @throws BackupInUseException
+     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         being created, deleted or restored to a table.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBackup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBackupResult executeDeleteBackup(DeleteBackupRequest deleteBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBackupRequest> request = null;
+        Response<DeleteBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBackupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -851,6 +1153,171 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public DeleteTableResult deleteTable(String tableName) {
         return deleteTable(new DeleteTableRequest().withTableName(tableName));
+    }
+
+    /**
+     * <p>
+     * Describes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeBackupRequest
+     * @return Result of the DescribeBackup operation returned by the service.
+     * @throws BackupNotFoundException
+     *         Backup not found for the given BackupARN.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeBackupResult describeBackup(DescribeBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBackup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBackupResult executeDescribeBackup(DescribeBackupRequest describeBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBackupRequest> request = null;
+        Response<DescribeBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBackupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks the status of the backup restore settings on the specified table. If backups are enabled,
+     * <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+     * </p>
+     * <p>
+     * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeContinuousBackupsRequest
+     * @return Result of the DescribeContinuousBackups operation returned by the service.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeContinuousBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeContinuousBackupsResult describeContinuousBackups(DescribeContinuousBackupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeContinuousBackups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeContinuousBackupsResult executeDescribeContinuousBackups(DescribeContinuousBackupsRequest describeContinuousBackupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeContinuousBackupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeContinuousBackupsRequest> request = null;
+        Response<DescribeContinuousBackupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeContinuousBackupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeContinuousBackupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeContinuousBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeContinuousBackupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the global table.
+     * </p>
+     * 
+     * @param describeGlobalTableRequest
+     * @return Result of the DescribeGlobalTable operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @sample AmazonDynamoDB.DescribeGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGlobalTable(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGlobalTableResult executeDescribeGlobalTable(DescribeGlobalTableRequest describeGlobalTableRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGlobalTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGlobalTableRequest> request = null;
+        Response<DescribeGlobalTableResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGlobalTableRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeGlobalTableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1188,6 +1655,116 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public GetItemResult getItem(String tableName, java.util.Map<String, AttributeValue> key, Boolean consistentRead) {
         return getItem(new GetItemRequest().withTableName(tableName).withKey(key).withConsistentRead(consistentRead));
+    }
+
+    /**
+     * <p>
+     * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
+     * <code>ListBackups</code> returns a paginated list of results with at most 1MB worth of items in a page. You can
+     * also specify a limit for the maximum number of entries to be returned in a page.
+     * </p>
+     * <p>
+     * In the request, start time is inclusive but end time is exclusive. Note that these limits are for the time at
+     * which the original backup was requested.
+     * </p>
+     * <p>
+     * You can call <code>ListBackups</code> a maximum of 5 times per second.
+     * </p>
+     * 
+     * @param listBackupsRequest
+     * @return Result of the ListBackups operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListBackupsResult listBackups(ListBackupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBackups(request);
+    }
+
+    @SdkInternalApi
+    final ListBackupsResult executeListBackups(ListBackupsRequest listBackupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBackupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBackupsRequest> request = null;
+        Response<ListBackupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBackupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBackupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the global tables. Only those global tables that have replicas in the region specified as input are
+     * returned.
+     * </p>
+     * 
+     * @param listGlobalTablesRequest
+     * @return Result of the ListGlobalTables operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListGlobalTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListGlobalTablesResult listGlobalTables(ListGlobalTablesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGlobalTables(request);
+    }
+
+    @SdkInternalApi
+    final ListGlobalTablesResult executeListGlobalTables(ListGlobalTablesRequest listGlobalTablesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGlobalTablesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGlobalTablesRequest> request = null;
+        Response<ListGlobalTablesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGlobalTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGlobalTablesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGlobalTablesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGlobalTablesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1598,6 +2175,109 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a new table from an existing backup. Any number of users can execute up to 10 concurrent restores in a
+     * given account.
+     * </p>
+     * <p>
+     * You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * <p>
+     * You must manually set up the following on the restored table:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto scaling policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cloudwatch metrics and alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Time to Live (TTL) settings
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param restoreTableFromBackupRequest
+     * @return Result of the RestoreTableFromBackup operation returned by the service.
+     * @throws TableAlreadyExistsException
+     *         A table with the name already exists.
+     * @throws TableInUseException
+     *         A table by that name is either being created or deleted.
+     * @throws BackupNotFoundException
+     *         Backup not found for the given BackupARN.
+     * @throws BackupInUseException
+     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         being created, deleted or restored to a table.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.RestoreTableFromBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestoreTableFromBackupResult restoreTableFromBackup(RestoreTableFromBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreTableFromBackup(request);
+    }
+
+    @SdkInternalApi
+    final RestoreTableFromBackupResult executeRestoreTableFromBackup(RestoreTableFromBackupRequest restoreTableFromBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreTableFromBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreTableFromBackupRequest> request = null;
+        Response<RestoreTableFromBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreTableFromBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreTableFromBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreTableFromBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RestoreTableFromBackupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The <code>Scan</code> operation returns one or more items and item attributes by accessing every item in a table
      * or a secondary index. To have DynamoDB return fewer items, you can provide a <code>FilterExpression</code>
      * operation.
@@ -1833,6 +2513,65 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or removes replicas to the specified global table. The global table should already exist to be able to use
+     * this operation. Currently, the replica to be added should be empty.
+     * </p>
+     * 
+     * @param updateGlobalTableRequest
+     * @return Result of the UpdateGlobalTable operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @throws ReplicaAlreadyExistsException
+     *         The specified replica is already part of the global table.
+     * @throws ReplicaNotFoundException
+     *         The specified replica is no longer part of the global table.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @sample AmazonDynamoDB.UpdateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateGlobalTableResult updateGlobalTable(UpdateGlobalTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGlobalTable(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGlobalTableResult executeUpdateGlobalTable(UpdateGlobalTableRequest updateGlobalTableRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGlobalTableRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGlobalTableRequest> request = null;
+        Response<UpdateGlobalTableResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGlobalTableRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGlobalTableResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -68,16 +68,28 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private Integer runningCount;
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix timestamp for when the service was last updated.
+     * The Unix time stamp for when the service was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     */
+    private String launchType;
+    /**
+     * <p>
+     * The platform version on which your service is running.
+     * </p>
+     */
+    private String platformVersion;
     /**
      * <p>
      * The VPC subnet and security group configuration for tasks that receive their own Elastic Network Interface by
@@ -343,11 +355,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service was created.
+     *        The Unix time stamp for when the service was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -356,10 +368,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      * 
-     * @return The Unix timestamp for when the service was created.
+     * @return The Unix time stamp for when the service was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -368,11 +380,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was created.
+     * The Unix time stamp for when the service was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp for when the service was created.
+     *        The Unix time stamp for when the service was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +395,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was last updated.
+     * The Unix time stamp for when the service was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp for when the service was last updated.
+     *        The Unix time stamp for when the service was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -396,10 +408,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was last updated.
+     * The Unix time stamp for when the service was last updated.
      * </p>
      * 
-     * @return The Unix timestamp for when the service was last updated.
+     * @return The Unix time stamp for when the service was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -408,16 +420,115 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp for when the service was last updated.
+     * The Unix time stamp for when the service was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp for when the service was last updated.
+     *        The Unix time stamp for when the service was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Deployment withUpdatedAt(java.util.Date updatedAt) {
         setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which your service is running.
+     * @see LaunchType
+     */
+
+    public void setLaunchType(String launchType) {
+        this.launchType = launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @return The launch type on which your service is running.
+     * @see LaunchType
+     */
+
+    public String getLaunchType() {
+        return this.launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which your service is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public Deployment withLaunchType(String launchType) {
+        setLaunchType(launchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type on which your service is running.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which your service is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public Deployment withLaunchType(LaunchType launchType) {
+        this.launchType = launchType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform version on which your service is running.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which your service is running.
+     */
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which your service is running.
+     * </p>
+     * 
+     * @return The platform version on which your service is running.
+     */
+
+    public String getPlatformVersion() {
+        return this.platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which your service is running.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which your service is running.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withPlatformVersion(String platformVersion) {
+        setPlatformVersion(platformVersion);
         return this;
     }
 
@@ -494,6 +605,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getLaunchType() != null)
+            sb.append("LaunchType: ").append(getLaunchType()).append(",");
+        if (getPlatformVersion() != null)
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
         sb.append("}");
@@ -542,6 +657,14 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getLaunchType() == null ^ this.getLaunchType() == null)
+            return false;
+        if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
+            return false;
+        if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
+            return false;
+        if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
+            return false;
         if (other.getNetworkConfiguration() == null ^ this.getNetworkConfiguration() == null)
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
@@ -562,6 +685,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
+        hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         return hashCode;
     }

@@ -335,6 +335,141 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * Creates a backup for an existing table.
+     * </p>
+     * <p>
+     * Each time you create an On-Demand Backup, the entire table data is backed up. There is no limit to the number of
+     * on-demand backups that can be taken.
+     * </p>
+     * <p>
+     * You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+     * </p>
+     * <p>
+     * All backups in DynamoDB work without consuming any provisioned throughput on the table. This results in a fast,
+     * low-cost, and scalable backup process. In general, the larger the table, the more time it takes to back up. The
+     * backup is stored in an S3 data store that is maintained and managed by DynamoDB.
+     * </p>
+     * <p>
+     * Backups incorporate all writes (delete, put, update) that were completed within the last minute before the backup
+     * request was initiated. Backups might include some writes (delete, put, update) that were completed before the
+     * backup request was finished.
+     * </p>
+     * <p>
+     * For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all
+     * data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may
+     * not contain data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal
+     * consistency.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the backups:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createBackupRequest
+     * @return Result of the CreateBackup operation returned by the service.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @throws TableInUseException
+     *         A table by that name is either being created or deleted.
+     * @throws ContinuousBackupsUnavailableException
+     *         Backups have not yet been enabled for this table.
+     * @throws BackupInUseException
+     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         being created, deleted or restored to a table.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.CreateBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateBackupResult createBackup(CreateBackupRequest createBackupRequest);
+
+    /**
+     * <p>
+     * Creates a global table from an existing table. A global table creates a replication relationship between two or
+     * more DynamoDB tables with the same table name in the provided regions.
+     * </p>
+     * <p>
+     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The tables must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must contain no items.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGlobalTableRequest
+     * @return Result of the CreateGlobalTable operation returned by the service.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws GlobalTableAlreadyExistsException
+     *         The specified global table already exists.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @sample AmazonDynamoDB.CreateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateGlobalTableResult createGlobalTable(CreateGlobalTableRequest createGlobalTableRequest);
+
+    /**
+     * <p>
      * The <code>CreateTable</code> operation adds a new table to your account. In an AWS account, table names must be
      * unique within each region. That is, you can have two tables with same name if you create the tables in different
      * regions.
@@ -384,6 +519,38 @@ public interface AmazonDynamoDB {
      */
     CreateTableResult createTable(java.util.List<AttributeDefinition> attributeDefinitions, String tableName, java.util.List<KeySchemaElement> keySchema,
             ProvisionedThroughput provisionedThroughput);
+
+    /**
+     * <p>
+     * Deletes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @return Result of the DeleteBackup operation returned by the service.
+     * @throws BackupNotFoundException
+     *         Backup not found for the given BackupARN.
+     * @throws BackupInUseException
+     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         being created, deleted or restored to a table.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteBackupResult deleteBackup(DeleteBackupRequest deleteBackupRequest);
 
     /**
      * <p>
@@ -500,6 +667,64 @@ public interface AmazonDynamoDB {
      * @see #deleteTable(DeleteTableRequest)
      */
     DeleteTableResult deleteTable(String tableName);
+
+    /**
+     * <p>
+     * Describes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeBackupRequest
+     * @return Result of the DescribeBackup operation returned by the service.
+     * @throws BackupNotFoundException
+     *         Backup not found for the given BackupARN.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeBackupResult describeBackup(DescribeBackupRequest describeBackupRequest);
+
+    /**
+     * <p>
+     * Checks the status of the backup restore settings on the specified table. If backups are enabled,
+     * <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+     * </p>
+     * <p>
+     * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeContinuousBackupsRequest
+     * @return Result of the DescribeContinuousBackups operation returned by the service.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeContinuousBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeContinuousBackupsResult describeContinuousBackups(DescribeContinuousBackupsRequest describeContinuousBackupsRequest);
+
+    /**
+     * <p>
+     * Returns information about the global table.
+     * </p>
+     * 
+     * @param describeGlobalTableRequest
+     * @return Result of the DescribeGlobalTable operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @sample AmazonDynamoDB.DescribeGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest describeGlobalTableRequest);
 
     /**
      * <p>
@@ -703,6 +928,46 @@ public interface AmazonDynamoDB {
      * @see #getItem(GetItemRequest)
      */
     GetItemResult getItem(String tableName, java.util.Map<String, AttributeValue> key, Boolean consistentRead);
+
+    /**
+     * <p>
+     * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
+     * <code>ListBackups</code> returns a paginated list of results with at most 1MB worth of items in a page. You can
+     * also specify a limit for the maximum number of entries to be returned in a page.
+     * </p>
+     * <p>
+     * In the request, start time is inclusive but end time is exclusive. Note that these limits are for the time at
+     * which the original backup was requested.
+     * </p>
+     * <p>
+     * You can call <code>ListBackups</code> a maximum of 5 times per second.
+     * </p>
+     * 
+     * @param listBackupsRequest
+     * @return Result of the ListBackups operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListBackupsResult listBackups(ListBackupsRequest listBackupsRequest);
+
+    /**
+     * <p>
+     * Lists all the global tables. Only those global tables that have replicas in the region specified as input are
+     * returned.
+     * </p>
+     * 
+     * @param listGlobalTablesRequest
+     * @return Result of the ListGlobalTables operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListGlobalTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListGlobalTablesResult listGlobalTables(ListGlobalTablesRequest listGlobalTablesRequest);
 
     /**
      * <p>
@@ -984,6 +1249,73 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
+     * Creates a new table from an existing backup. Any number of users can execute up to 10 concurrent restores in a
+     * given account.
+     * </p>
+     * <p>
+     * You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * <p>
+     * You must manually set up the following on the restored table:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto scaling policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cloudwatch metrics and alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Time to Live (TTL) settings
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param restoreTableFromBackupRequest
+     * @return Result of the RestoreTableFromBackup operation returned by the service.
+     * @throws TableAlreadyExistsException
+     *         A table with the name already exists.
+     * @throws TableInUseException
+     *         A table by that name is either being created or deleted.
+     * @throws BackupNotFoundException
+     *         Backup not found for the given BackupARN.
+     * @throws BackupInUseException
+     *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
+     *         being created, deleted or restored to a table.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.RestoreTableFromBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RestoreTableFromBackupResult restoreTableFromBackup(RestoreTableFromBackupRequest restoreTableFromBackupRequest);
+
+    /**
+     * <p>
      * The <code>Scan</code> operation returns one or more items and item attributes by accessing every item in a table
      * or a secondary index. To have DynamoDB return fewer items, you can provide a <code>FilterExpression</code>
      * operation.
@@ -1129,6 +1461,30 @@ public interface AmazonDynamoDB {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or removes replicas to the specified global table. The global table should already exist to be able to use
+     * this operation. Currently, the replica to be added should be empty.
+     * </p>
+     * 
+     * @param updateGlobalTableRequest
+     * @return Result of the UpdateGlobalTable operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @throws ReplicaAlreadyExistsException
+     *         The specified replica is already part of the global table.
+     * @throws ReplicaNotFoundException
+     *         The specified replica is no longer part of the global table.
+     * @throws TableNotFoundException
+     *         A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+     * @sample AmazonDynamoDB.UpdateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateGlobalTableResult updateGlobalTable(UpdateGlobalTableRequest updateGlobalTableRequest);
 
     /**
      * <p>

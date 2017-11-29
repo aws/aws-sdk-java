@@ -44,6 +44,10 @@ public class RunTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementConstraints").build();
     private static final MarshallingInfo<List> PLACEMENTSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementStrategy").build();
+    private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
+    private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
 
@@ -71,6 +75,8 @@ public class RunTaskRequestMarshaller {
             protocolMarshaller.marshall(runTaskRequest.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getPlacementConstraints(), PLACEMENTCONSTRAINTS_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getPlacementStrategy(), PLACEMENTSTRATEGY_BINDING);
+            protocolMarshaller.marshall(runTaskRequest.getLaunchType(), LAUNCHTYPE_BINDING);
+            protocolMarshaller.marshall(runTaskRequest.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

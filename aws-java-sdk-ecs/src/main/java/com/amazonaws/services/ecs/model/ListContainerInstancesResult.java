@@ -25,8 +25,8 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     * associated with the specified cluster.
+     * The list of container instances with full ARN entries for each container instance associated with the specified
+     * cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> containerInstanceArns;
@@ -41,12 +41,12 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     * associated with the specified cluster.
+     * The list of container instances with full ARN entries for each container instance associated with the specified
+     * cluster.
      * </p>
      * 
-     * @return The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     *         associated with the specified cluster.
+     * @return The list of container instances with full ARN entries for each container instance associated with the
+     *         specified cluster.
      */
 
     public java.util.List<String> getContainerInstanceArns() {
@@ -58,13 +58,13 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     * associated with the specified cluster.
+     * The list of container instances with full ARN entries for each container instance associated with the specified
+     * cluster.
      * </p>
      * 
      * @param containerInstanceArns
-     *        The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     *        associated with the specified cluster.
+     *        The list of container instances with full ARN entries for each container instance associated with the
+     *        specified cluster.
      */
 
     public void setContainerInstanceArns(java.util.Collection<String> containerInstanceArns) {
@@ -78,8 +78,8 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     * associated with the specified cluster.
+     * The list of container instances with full ARN entries for each container instance associated with the specified
+     * cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,8 +88,8 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param containerInstanceArns
-     *        The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     *        associated with the specified cluster.
+     *        The list of container instances with full ARN entries for each container instance associated with the
+     *        specified cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,13 +105,13 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     * associated with the specified cluster.
+     * The list of container instances with full ARN entries for each container instance associated with the specified
+     * cluster.
      * </p>
      * 
      * @param containerInstanceArns
-     *        The list of container instances with full Amazon Resource Name (ARN) entries for each container instance
-     *        associated with the specified cluster.
+     *        The list of container instances with full ARN entries for each container instance associated with the
+     *        specified cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

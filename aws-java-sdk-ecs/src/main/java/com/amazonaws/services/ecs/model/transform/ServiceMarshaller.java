@@ -44,6 +44,10 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runningCount").build();
     private static final MarshallingInfo<Integer> PENDINGCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pendingCount").build();
+    private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
+    private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<String> TASKDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskDefinition").build();
     private static final MarshallingInfo<StructuredPojo> DEPLOYMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -87,6 +91,8 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getDesiredCount(), DESIREDCOUNT_BINDING);
             protocolMarshaller.marshall(service.getRunningCount(), RUNNINGCOUNT_BINDING);
             protocolMarshaller.marshall(service.getPendingCount(), PENDINGCOUNT_BINDING);
+            protocolMarshaller.marshall(service.getLaunchType(), LAUNCHTYPE_BINDING);
+            protocolMarshaller.marshall(service.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(service.getTaskDefinition(), TASKDEFINITION_BINDING);
             protocolMarshaller.marshall(service.getDeploymentConfiguration(), DEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(service.getDeployments(), DEPLOYMENTS_BINDING);

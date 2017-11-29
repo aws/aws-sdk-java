@@ -80,6 +80,14 @@ public class JobParametersJsonUnmarshaller implements Unmarshaller<JobParameters
                     context.nextToken();
                     jobParameters.setInventoryRetrievalParameters(InventoryRetrievalJobInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SelectParameters", targetDepth)) {
+                    context.nextToken();
+                    jobParameters.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OutputLocation", targetDepth)) {
+                    context.nextToken();
+                    jobParameters.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

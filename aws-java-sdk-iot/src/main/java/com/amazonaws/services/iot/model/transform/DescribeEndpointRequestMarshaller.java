@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeEndpointRequestMarshaller {
 
+    private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("endpointType").build();
+
     private static final DescribeEndpointRequestMarshaller instance = new DescribeEndpointRequestMarshaller();
 
     public static DescribeEndpointRequestMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class DescribeEndpointRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeEndpointRequest.getEndpointType(), ENDPOINTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -122,6 +122,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
+import com.amazonaws.services.s3.model.RestoreObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
@@ -4558,9 +4559,35 @@ public interface AmazonS3 extends S3DirectSpi {
      *             request.
      *
      * @see AmazonS3Client#restoreObject(String, String, int)
+     * @deprecated use {@link AmazonS3#restoreObjectV2(RestoreObjectRequest)}
      */
+    @Deprecated
     public void restoreObject(RestoreObjectRequest request)
             throws AmazonServiceException;
+
+    /**
+     * Restore an object, which was transitioned to Amazon Glacier from Amazon
+     * S3 when it was expired, into Amazon S3 again. This copy is by nature temporary
+     * and is always stored as RRS in Amazon S3. The customer will be able to set /
+     * re-adjust the lifetime of this copy. By re-adjust we mean the customer
+     * can call this API to shorten or extend the lifetime of the copy. Note the
+     * request will only be accepted when there is no ongoing restore request. One
+     * needs to have the new s3:RestoreObject permission to perform this
+     * operation.
+     *
+     * @param request
+     *            The request object containing all the options for restoring an
+     *            Amazon S3 object.
+     *
+     * @return A RestoreObjectResult from Amazon S3.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3Client#restoreObjectV2(RestoreObjectRequest)
+     */
+    public RestoreObjectResult restoreObjectV2(RestoreObjectRequest request)
+        throws AmazonServiceException;
 
     /**
      * Restore an object, which was transitioned to Amazon Glacier from Amazon
@@ -4583,8 +4610,10 @@ public interface AmazonS3 extends S3DirectSpi {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      *
-     * @see AmazonS3Client#restoreObject(RestoreObjectRequest)
+     * @see AmazonS3Client#restoreObjectV2(RestoreObjectRequest)
+     * @deprecated use {@link AmazonS3#restoreObjectV2(RestoreObjectRequest)}
      */
+    @Deprecated
     public void restoreObject(String bucketName, String key, int expirationInDays)
             throws AmazonServiceException;
 

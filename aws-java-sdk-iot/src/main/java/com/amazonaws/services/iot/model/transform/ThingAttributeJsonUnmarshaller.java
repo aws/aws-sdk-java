@@ -56,6 +56,10 @@ public class ThingAttributeJsonUnmarshaller implements Unmarshaller<ThingAttribu
                     context.nextToken();
                     thingAttribute.setThingTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("thingArn", targetDepth)) {
+                    context.nextToken();
+                    thingAttribute.setThingArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
                     thingAttribute.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

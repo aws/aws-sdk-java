@@ -34,9 +34,9 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String cluster;
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      */
     private String taskDefinition;
@@ -58,8 +58,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private TaskOverride overrides;
     /**
      * <p>
-     * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task. You can specify up to 10 container instances.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> containerInstances;
@@ -140,15 +140,15 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     *        <code>ACTIVE</code> revision is used.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *        is used.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -157,14 +157,14 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      * 
-     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *         Name (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     *         <code>ACTIVE</code> revision is used.
+     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *         definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *         is used.
      */
 
     public String getTaskDefinition() {
@@ -173,15 +173,15 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision is
+     * used.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to start. If a <code>revision</code> is not specified, the latest
-     *        <code>ACTIVE</code> revision is used.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to start. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,12 +287,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task. You can specify up to 10 container instances.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      * 
-     * @return The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on
-     *         which you would like to place your task. You can specify up to 10 container instances.
+     * @return The container instance IDs or full ARN entries for the container instances on which you would like to
+     *         place your task. You can specify up to 10 container instances.
      */
 
     public java.util.List<String> getContainerInstances() {
@@ -304,13 +304,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task. You can specify up to 10 container instances.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      * 
      * @param containerInstances
-     *        The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which
-     *        you would like to place your task. You can specify up to 10 container instances.
+     *        The container instance IDs or full ARN entries for the container instances on which you would like to
+     *        place your task. You can specify up to 10 container instances.
      */
 
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
@@ -324,8 +324,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task. You can specify up to 10 container instances.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -334,8 +334,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param containerInstances
-     *        The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which
-     *        you would like to place your task. You can specify up to 10 container instances.
+     *        The container instance IDs or full ARN entries for the container instances on which you would like to
+     *        place your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,13 +351,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which you
-     * would like to place your task. You can specify up to 10 container instances.
+     * The container instance IDs or full ARN entries for the container instances on which you would like to place your
+     * task. You can specify up to 10 container instances.
      * </p>
      * 
      * @param containerInstances
-     *        The container instance IDs or full Amazon Resource Name (ARN) entries for the container instances on which
-     *        you would like to place your task. You can specify up to 10 container instances.
+     *        The container instance IDs or full ARN entries for the container instances on which you would like to
+     *        place your task. You can specify up to 10 container instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

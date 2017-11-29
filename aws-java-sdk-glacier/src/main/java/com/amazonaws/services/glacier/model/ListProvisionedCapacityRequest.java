@@ -22,27 +22,24 @@ public class ListProvisionedCapacityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens
-     * ('-') in the ID.
+     * The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a
+     * single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, don't include any hyphens ('-') in the ID.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens
-     * ('-') in the ID.
+     * The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a
+     * single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, don't include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS
-     *        account ID associated with the credentials used to sign the request. If you use an account ID, don't
-     *        include any hyphens ('-') in the ID.
+     *        The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or
+     *        optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID.
      */
 
     public void setAccountId(String accountId) {
@@ -51,16 +48,15 @@ public class ListProvisionedCapacityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens
-     * ('-') in the ID.
+     * The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a
+     * single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, don't include any hyphens ('-') in the ID.
      * </p>
      * 
-     * @return The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *         specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS
-     *         account ID associated with the credentials used to sign the request. If you use an account ID, don't
-     *         include any hyphens ('-') in the ID.
+     * @return The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or
+     *         optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with
+     *         the credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in
+     *         the ID.
      */
 
     public String getAccountId() {
@@ -69,17 +65,15 @@ public class ListProvisionedCapacityRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify
-     * an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID
-     * associated with the credentials used to sign the request. If you use an account ID, don't include any hyphens
-     * ('-') in the ID.
+     * The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a
+     * single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to
+     * sign the request. If you use an account ID, don't include any hyphens ('-') in the ID.
      * </p>
      * 
      * @param accountId
-     *        The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either
-     *        specify an AWS account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS
-     *        account ID associated with the credentials used to sign the request. If you use an account ID, don't
-     *        include any hyphens ('-') in the ID.
+     *        The AWS account ID of the account that owns the vault. You can either specify an AWS account ID or
+     *        optionally a single '-' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
+     *        credentials used to sign the request. If you use an account ID, don't include any hyphens ('-') in the ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

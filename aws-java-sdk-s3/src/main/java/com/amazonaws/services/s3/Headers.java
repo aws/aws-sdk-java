@@ -228,4 +228,6 @@ public interface Headers {
     public static final String TAGGING_DIRECTIVE = "x-amz-tagging-directive";
 
     public static final String REMOVE_SELF_BUCKET_ACCESS = "x-amz-confirm-remove-self-bucket-access";
+
+    public static final String S3_RESTORE_OUTPUT_PATH = "x-amz-restore-output-path";
 }

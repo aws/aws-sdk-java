@@ -120,6 +120,18 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
                     context.nextToken();
                     describeJobResult.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("JobOutputPath", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setJobOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SelectParameters", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OutputLocation", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

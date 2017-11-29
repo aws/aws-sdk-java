@@ -36,7 +36,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private String containerArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      */
     private String taskArn;
@@ -120,11 +120,11 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task.
+     *        The ARN of the task.
      */
 
     public void setTaskArn(String taskArn) {
@@ -133,10 +133,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task.
+     * @return The ARN of the task.
      */
 
     public String getTaskArn() {
@@ -145,11 +145,11 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task.
+     * The ARN of the task.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task.
+     *        The ARN of the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

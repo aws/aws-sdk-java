@@ -39,7 +39,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ContainerDefinition> containerDefinitions;
@@ -51,22 +51,43 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String family;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role.
      * </p>
      */
     private String taskRoleArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     */
+    private String executionRoleArn;
+    /**
+     * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
-     * If the network mode is <code>none</code>, the containers do not have external connectivity. The default Docker
-     * network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is allocated an Elastic
-     * Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-     * performance for containers because they use the EC2 network stack instead of the virtualized network stack
-     * provided by the <code>bridge</code> mode.
+     * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * </p>
+     * <p>
+     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * container instance when port mappings are used.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -85,9 +106,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private Integer revision;
     /**
      * <p>
-     * The list of volumes in a task. For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * The list of volumes in a task.
+     * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
+     * supported.
+     * </p>
+     * <p>
+     * For more information about volume definition parameters and defaults, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Volume> volumes;
@@ -99,16 +127,102 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The container instance attributes required by your task.
+     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
+     * for your task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> requiresAttributes;
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks.
+     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
+     * type for your task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
+    /**
+     * <p>
+     * The launch type to use with your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> compatibilities;
+    /**
+     * <p>
+     * The launch type the task is using.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
+    /**
+     * <p>
+     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
+     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String cpu;
+    /**
+     * <p>
+     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
+     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
+     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String memory;
 
     /**
      * <p>
@@ -155,13 +269,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of container definitions in JSON format that describe the different containers that make up your
      *         task. For more information about container definition parameters and defaults, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *         Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public java.util.List<ContainerDefinition> getContainerDefinitions() {
@@ -176,14 +290,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param containerDefinitions
      *        A list of container definitions in JSON format that describe the different containers that make up your
      *        task. For more information about container definition parameters and defaults, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setContainerDefinitions(java.util.Collection<ContainerDefinition> containerDefinitions) {
@@ -200,7 +314,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -212,7 +326,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        A list of container definitions in JSON format that describe the different containers that make up your
      *        task. For more information about container definition parameters and defaults, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,14 +345,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param containerDefinitions
      *        A list of container definitions in JSON format that describe the different containers that make up your
      *        task. For more information about container definition parameters and defaults, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,13 +403,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role.
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *        this task are granted the permissions that are specified in this role.
+     *        The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
+     *        the permissions that are specified in this role.
      */
 
     public void setTaskRoleArn(String taskRoleArn) {
@@ -304,12 +418,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *         this task are granted the permissions that are specified in this role.
+     * @return The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
+     *         the permissions that are specified in this role.
      */
 
     public String getTaskRoleArn() {
@@ -318,13 +432,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
-     * task are granted the permissions that are specified in this role.
+     * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
+     * permissions that are specified in this role.
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in
-     *        this task are granted the permissions that are specified in this role.
+     *        The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
+     *        the permissions that are specified in this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,15 +449,75 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *        Docker daemon can assume.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *         Docker daemon can assume.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
+     * daemon can assume.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
+     *        Docker daemon can assume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
-     * If the network mode is <code>none</code>, the containers do not have external connectivity. The default Docker
-     * network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is allocated an Elastic
-     * Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-     * performance for containers because they use the EC2 network stack instead of the virtualized network stack
-     * provided by the <code>bridge</code> mode.
+     * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * </p>
+     * <p>
+     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * container instance when port mappings are used.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -352,13 +526,29 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. </p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
-     *        If the network mode is <code>none</code>, the containers do not have external connectivity. The default
-     *        Docker network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
-     *        allocated an Elastic Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer
-     *        the highest networking performance for containers because they use the EC2 network stack instead of the
-     *        virtualized network stack provided by the <code>bridge</code> mode.
+     *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        definition. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -373,14 +563,28 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
-     * If the network mode is <code>none</code>, the containers do not have external connectivity. The default Docker
-     * network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is allocated an Elastic
-     * Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-     * performance for containers because they use the EC2 network stack instead of the virtualized network stack
-     * provided by the <code>bridge</code> mode.
+     * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * </p>
+     * <p>
+     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * container instance when port mappings are used.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -388,13 +592,29 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. </p>
+     *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     *         <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *         If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *         <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *         containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *         offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *         the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *         <p>
-     *         If the network mode is <code>none</code>, the containers do not have external connectivity. The default
-     *         Docker network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
-     *         allocated an Elastic Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer
-     *         the highest networking performance for containers because they use the EC2 network stack instead of the
-     *         virtualized network stack provided by the <code>bridge</code> mode.
+     *         With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
+     *         directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *         network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
+     *         dynamic host port mappings.
+     *         </p>
+     *         <p>
+     *         If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *         must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *         definition. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *         in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *         single container instance when port mappings are used.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -410,14 +630,28 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
-     * If the network mode is <code>none</code>, the containers do not have external connectivity. The default Docker
-     * network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is allocated an Elastic
-     * Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-     * performance for containers because they use the EC2 network stack instead of the virtualized network stack
-     * provided by the <code>bridge</code> mode.
+     * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * </p>
+     * <p>
+     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * container instance when port mappings are used.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -426,13 +660,29 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. </p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
-     *        If the network mode is <code>none</code>, the containers do not have external connectivity. The default
-     *        Docker network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
-     *        allocated an Elastic Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer
-     *        the highest networking performance for containers because they use the EC2 network stack instead of the
-     *        virtualized network stack provided by the <code>bridge</code> mode.
+     *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        definition. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -449,14 +699,28 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
-     * If the network mode is <code>none</code>, the containers do not have external connectivity. The default Docker
-     * network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is allocated an Elastic
-     * Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-     * performance for containers because they use the EC2 network stack instead of the virtualized network stack
-     * provided by the <code>bridge</code> mode.
+     * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * </p>
+     * <p>
+     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * container instance when port mappings are used.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -465,13 +729,29 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. </p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
-     *        If the network mode is <code>none</code>, the containers do not have external connectivity. The default
-     *        Docker network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
-     *        allocated an Elastic Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer
-     *        the highest networking performance for containers because they use the EC2 network stack instead of the
-     *        virtualized network stack provided by the <code>bridge</code> mode.
+     *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        definition. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -486,14 +766,28 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     * <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required. If using
+     * the EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>, you can't
+     * specify port mappings in your container definitions, and the task's containers do not have external connectivity.
+     * The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for
+     * containers because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
-     * If the network mode is <code>none</code>, the containers do not have external connectivity. The default Docker
-     * network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is allocated an Elastic
-     * Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
-     * performance for containers because they use the EC2 network stack instead of the virtualized network stack
-     * provided by the <code>bridge</code> mode.
+     * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
+     * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
+     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
+     * </p>
+     * <p>
+     * If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you must
+     * specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task definition. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task
+     * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
+     * container instance when port mappings are used.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -502,13 +796,29 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. </p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
+     *        <code>bridge</code>. If using the Fargate launch type, the <code>awsvpc</code> network mode is required.
+     *        If using the EC2 launch type, any network mode can be used. If the network mode is set to
+     *        <code>none</code>, you can't specify port mappings in your container definitions, and the task's
+     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
+     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
+     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
      *        <p>
-     *        If the network mode is <code>none</code>, the containers do not have external connectivity. The default
-     *        Docker network mode is <code>bridge</code>. If the network mode is <code>awsvpc</code>, the task is
-     *        allocated an Elastic Network Interface. The <code>host</code> and <code>awsvpc</code> network modes offer
-     *        the highest networking performance for containers because they use the EC2 network stack instead of the
-     *        virtualized network stack provided by the <code>bridge</code> mode.
+     *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
+     *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
+     *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
+     *        host port mappings.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>awsvpc</code>, the task is allocated an Elastic Network Interface, and you
+     *        must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the task
+     *        definition. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
+     *        single container instance when port mappings are used.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -582,14 +892,27 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task. For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * The list of volumes in a task.
+     * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
+     * supported.
+     * </p>
+     * <p>
+     * For more information about volume definition parameters and defaults, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The list of volumes in a task. For more information about volume definition parameters and defaults, see
-     *         <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *         Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * @return The list of volumes in a task.</p>
+     *         <p>
+     *         If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters
+     *         are not supported.
+     *         </p>
+     *         <p>
+     *         For more information about volume definition parameters and defaults, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *         Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public java.util.List<Volume> getVolumes() {
@@ -601,15 +924,28 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task. For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * The list of volumes in a task.
+     * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
+     * supported.
+     * </p>
+     * <p>
+     * For more information about volume definition parameters and defaults, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param volumes
-     *        The list of volumes in a task. For more information about volume definition parameters and defaults, see
-     *        <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        The list of volumes in a task.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     *        not supported.
+     *        </p>
+     *        <p>
+     *        For more information about volume definition parameters and defaults, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setVolumes(java.util.Collection<Volume> volumes) {
@@ -623,9 +959,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task. For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * The list of volumes in a task.
+     * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
+     * supported.
+     * </p>
+     * <p>
+     * For more information about volume definition parameters and defaults, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -634,9 +977,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumes
-     *        The list of volumes in a task. For more information about volume definition parameters and defaults, see
-     *        <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        The list of volumes in a task.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     *        not supported.
+     *        </p>
+     *        <p>
+     *        For more information about volume definition parameters and defaults, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,15 +1001,28 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volumes in a task. For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * The list of volumes in a task.
+     * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are not
+     * supported.
+     * </p>
+     * <p>
+     * For more information about volume definition parameters and defaults, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param volumes
-     *        The list of volumes in a task. For more information about volume definition parameters and defaults, see
-     *        <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        The list of volumes in a task.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
+     *        not supported.
+     *        </p>
+     *        <p>
+     *        For more information about volume definition parameters and defaults, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -744,10 +1106,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task.
+     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
+     * for your task.
      * </p>
      * 
-     * @return The container instance attributes required by your task.
+     * @return The container instance attributes required by your task. This field is not valid if using the Fargate
+     *         launch type for your task.
      */
 
     public java.util.List<Attribute> getRequiresAttributes() {
@@ -759,11 +1123,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task.
+     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
+     * for your task.
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task.
+     *        The container instance attributes required by your task. This field is not valid if using the Fargate
+     *        launch type for your task.
      */
 
     public void setRequiresAttributes(java.util.Collection<Attribute> requiresAttributes) {
@@ -777,7 +1143,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task.
+     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
+     * for your task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -786,7 +1153,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task.
+     *        The container instance attributes required by your task. This field is not valid if using the Fargate
+     *        launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,11 +1170,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task.
+     * The container instance attributes required by your task. This field is not valid if using the Fargate launch type
+     * for your task.
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task.
+     *        The container instance attributes required by your task. This field is not valid if using the Fargate
+     *        launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -817,10 +1187,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks.
+     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
+     * type for your task.
      * </p>
      * 
-     * @return An array of placement constraint objects to use for tasks.
+     * @return An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
+     *         launch type for your task.
      */
 
     public java.util.List<TaskDefinitionPlacementConstraint> getPlacementConstraints() {
@@ -832,11 +1204,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks.
+     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
+     * type for your task.
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks.
+     *        An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
+     *        launch type for your task.
      */
 
     public void setPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
@@ -850,7 +1224,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks.
+     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
+     * type for your task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -859,7 +1234,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks.
+     *        An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
+     *        launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -875,16 +1251,666 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks.
+     * An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate launch
+     * type for your task.
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks.
+     *        An array of placement constraint objects to use for tasks. This field is not valid if using the Fargate
+     *        launch type for your task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TaskDefinition withPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
         setPlacementConstraints(placementConstraints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type to use with your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The launch type to use with your task. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @see Compatibility
+     */
+
+    public java.util.List<String> getCompatibilities() {
+        if (compatibilities == null) {
+            compatibilities = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return compatibilities;
+    }
+
+    /**
+     * <p>
+     * The launch type to use with your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param compatibilities
+     *        The launch type to use with your task. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @see Compatibility
+     */
+
+    public void setCompatibilities(java.util.Collection<String> compatibilities) {
+        if (compatibilities == null) {
+            this.compatibilities = null;
+            return;
+        }
+
+        this.compatibilities = new com.amazonaws.internal.SdkInternalList<String>(compatibilities);
+    }
+
+    /**
+     * <p>
+     * The launch type to use with your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCompatibilities(java.util.Collection)} or {@link #withCompatibilities(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param compatibilities
+     *        The launch type to use with your task. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public TaskDefinition withCompatibilities(String... compatibilities) {
+        if (this.compatibilities == null) {
+            setCompatibilities(new com.amazonaws.internal.SdkInternalList<String>(compatibilities.length));
+        }
+        for (String ele : compatibilities) {
+            this.compatibilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type to use with your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param compatibilities
+     *        The launch type to use with your task. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public TaskDefinition withCompatibilities(java.util.Collection<String> compatibilities) {
+        setCompatibilities(compatibilities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type to use with your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param compatibilities
+     *        The launch type to use with your task. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public TaskDefinition withCompatibilities(Compatibility... compatibilities) {
+        com.amazonaws.internal.SdkInternalList<String> compatibilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(compatibilities.length);
+        for (Compatibility value : compatibilities) {
+            compatibilitiesCopy.add(value.toString());
+        }
+        if (getCompatibilities() == null) {
+            setCompatibilities(compatibilitiesCopy);
+        } else {
+            getCompatibilities().addAll(compatibilitiesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type the task is using.
+     * </p>
+     * 
+     * @return The launch type the task is using.
+     * @see Compatibility
+     */
+
+    public java.util.List<String> getRequiresCompatibilities() {
+        if (requiresCompatibilities == null) {
+            requiresCompatibilities = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return requiresCompatibilities;
+    }
+
+    /**
+     * <p>
+     * The launch type the task is using.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type the task is using.
+     * @see Compatibility
+     */
+
+    public void setRequiresCompatibilities(java.util.Collection<String> requiresCompatibilities) {
+        if (requiresCompatibilities == null) {
+            this.requiresCompatibilities = null;
+            return;
+        }
+
+        this.requiresCompatibilities = new com.amazonaws.internal.SdkInternalList<String>(requiresCompatibilities);
+    }
+
+    /**
+     * <p>
+     * The launch type the task is using.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequiresCompatibilities(java.util.Collection)} or
+     * {@link #withRequiresCompatibilities(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type the task is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public TaskDefinition withRequiresCompatibilities(String... requiresCompatibilities) {
+        if (this.requiresCompatibilities == null) {
+            setRequiresCompatibilities(new com.amazonaws.internal.SdkInternalList<String>(requiresCompatibilities.length));
+        }
+        for (String ele : requiresCompatibilities) {
+            this.requiresCompatibilities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type the task is using.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type the task is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public TaskDefinition withRequiresCompatibilities(java.util.Collection<String> requiresCompatibilities) {
+        setRequiresCompatibilities(requiresCompatibilities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type the task is using.
+     * </p>
+     * 
+     * @param requiresCompatibilities
+     *        The launch type the task is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Compatibility
+     */
+
+    public TaskDefinition withRequiresCompatibilities(Compatibility... requiresCompatibilities) {
+        com.amazonaws.internal.SdkInternalList<String> requiresCompatibilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                requiresCompatibilities.length);
+        for (Compatibility value : requiresCompatibilities) {
+            requiresCompatibilitiesCopy.add(value.toString());
+        }
+        if (getRequiresCompatibilities() == null) {
+            setRequiresCompatibilities(requiresCompatibilitiesCopy);
+        } else {
+            getRequiresCompatibilities().addAll(requiresCompatibilitiesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
+     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cpu
+     *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
+     *        optional and any value can be used. If using the Fargate launch type, this field is required and you must
+     *        use one of the following values, which determines your range of valid values for the <code>memory</code>
+     *        parameter:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *        </p>
+     *        </li>
+     */
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
+     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
+     *         optional and any value can be used. If using the Fargate launch type, this field is required and you must
+     *         use one of the following values, which determines your range of valid values for the <code>memory</code>
+     *         parameter:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *         </p>
+     *         </li>
+     */
+
+    public String getCpu() {
+        return this.cpu;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
+     * any value can be used. If using the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cpu
+     *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
+     *        optional and any value can be used. If using the Fargate launch type, this field is required and you must
+     *        use one of the following values, which determines your range of valid values for the <code>memory</code>
+     *        parameter:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withCpu(String cpu) {
+        setCpu(cpu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
+     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
+     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param memory
+     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
+     *        any value can be used. If using the Fargate launch type, this field is required and you must use one of
+     *        the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *        </p>
+     *        </li>
+     */
+
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
+
+    /**
+     * <p>
+     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
+     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
+     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
+     *         any value can be used. If using the Fargate launch type, this field is required and you must use one of
+     *         the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *         </p>
+     *         </li>
+     */
+
+    public String getMemory() {
+        return this.memory;
+    }
+
+    /**
+     * <p>
+     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
+     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
+     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param memory
+     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
+     *        any value can be used. If using the Fargate launch type, this field is required and you must use one of
+     *        the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withMemory(String memory) {
+        setMemory(memory);
         return this;
     }
 
@@ -907,6 +1933,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             sb.append("Family: ").append(getFamily()).append(",");
         if (getTaskRoleArn() != null)
             sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getNetworkMode() != null)
             sb.append("NetworkMode: ").append(getNetworkMode()).append(",");
         if (getRevision() != null)
@@ -918,7 +1946,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getRequiresAttributes() != null)
             sb.append("RequiresAttributes: ").append(getRequiresAttributes()).append(",");
         if (getPlacementConstraints() != null)
-            sb.append("PlacementConstraints: ").append(getPlacementConstraints());
+            sb.append("PlacementConstraints: ").append(getPlacementConstraints()).append(",");
+        if (getCompatibilities() != null)
+            sb.append("Compatibilities: ").append(getCompatibilities()).append(",");
+        if (getRequiresCompatibilities() != null)
+            sb.append("RequiresCompatibilities: ").append(getRequiresCompatibilities()).append(",");
+        if (getCpu() != null)
+            sb.append("Cpu: ").append(getCpu()).append(",");
+        if (getMemory() != null)
+            sb.append("Memory: ").append(getMemory());
         sb.append("}");
         return sb.toString();
     }
@@ -949,6 +1985,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTaskRoleArn() != null && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
         if (other.getNetworkMode() == null ^ this.getNetworkMode() == null)
             return false;
         if (other.getNetworkMode() != null && other.getNetworkMode().equals(this.getNetworkMode()) == false)
@@ -973,6 +2013,22 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlacementConstraints() != null && other.getPlacementConstraints().equals(this.getPlacementConstraints()) == false)
             return false;
+        if (other.getCompatibilities() == null ^ this.getCompatibilities() == null)
+            return false;
+        if (other.getCompatibilities() != null && other.getCompatibilities().equals(this.getCompatibilities()) == false)
+            return false;
+        if (other.getRequiresCompatibilities() == null ^ this.getRequiresCompatibilities() == null)
+            return false;
+        if (other.getRequiresCompatibilities() != null && other.getRequiresCompatibilities().equals(this.getRequiresCompatibilities()) == false)
+            return false;
+        if (other.getCpu() == null ^ this.getCpu() == null)
+            return false;
+        if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
+            return false;
+        if (other.getMemory() == null ^ this.getMemory() == null)
+            return false;
+        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
+            return false;
         return true;
     }
 
@@ -985,12 +2041,17 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContainerDefinitions() == null) ? 0 : getContainerDefinitions().hashCode());
         hashCode = prime * hashCode + ((getFamily() == null) ? 0 : getFamily().hashCode());
         hashCode = prime * hashCode + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getNetworkMode() == null) ? 0 : getNetworkMode().hashCode());
         hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRequiresAttributes() == null) ? 0 : getRequiresAttributes().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
+        hashCode = prime * hashCode + ((getCompatibilities() == null) ? 0 : getCompatibilities().hashCode());
+        hashCode = prime * hashCode + ((getRequiresCompatibilities() == null) ? 0 : getRequiresCompatibilities().hashCode());
+        hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
+        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         return hashCode;
     }
 

@@ -43,6 +43,22 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public AddThingToThingGroupResult addThingToThingGroup(AddThingToThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateTargetsWithJobResult associateTargetsWithJob(AssociateTargetsWithJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AttachPolicyResult attachPolicy(AttachPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public AttachPrincipalPolicyResult attachPrincipalPolicy(AttachPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,7 +74,27 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ClearDefaultAuthorizerResult clearDefaultAuthorizer(ClearDefaultAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAuthorizerResult createAuthorizer(CreateAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCertificateFromCsrResult createCertificateFromCsr(CreateCertificateFromCsrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateJobResult createJob(CreateJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +114,17 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateRoleAliasResult createRoleAlias(CreateRoleAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateThingResult createThing(CreateThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateThingGroupResult createThingGroup(CreateThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +135,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public CreateTopicRuleResult createTopicRule(CreateTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAuthorizerResult deleteAuthorizer(DeleteAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,7 +169,17 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteRoleAliasResult deleteRoleAlias(DeleteRoleAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteThingResult deleteThing(DeleteThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteThingGroupResult deleteThingGroup(DeleteThingGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,7 +194,17 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteV2LoggingLevelResult deleteV2LoggingLevel(DeleteV2LoggingLevelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeprecateThingTypeResult deprecateThingType(DeprecateThingTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAuthorizerResult describeAuthorizer(DescribeAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,7 +219,37 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEndpointResult describeEndpoint(DescribeEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEventConfigurationsResult describeEventConfigurations(DescribeEventConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeIndexResult describeIndex(DescribeIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeJobResult describeJob(DescribeJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeJobExecutionResult describeJobExecution(DescribeJobExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRoleAliasResult describeRoleAlias(DescribeRoleAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,11 +259,27 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DescribeThingGroupResult describeThingGroup(DescribeThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThingRegistrationTaskResult describeThingRegistrationTask(DescribeThingRegistrationTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeThingTypeResult describeThingType(DescribeThingTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DetachPolicyResult detachPolicy(DetachPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public DetachPrincipalPolicyResult detachPrincipalPolicy(DetachPrincipalPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +296,21 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public EnableTopicRuleResult enableTopicRule(EnableTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEffectivePoliciesResult getEffectivePolicies(GetEffectivePoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetIndexingConfigurationResult getIndexingConfiguration(GetIndexingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetJobDocumentResult getJobDocument(GetJobDocumentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,6 +340,21 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public GetV2LoggingOptionsResult getV2LoggingOptions(GetV2LoggingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAttachedPoliciesResult listAttachedPolicies(ListAttachedPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAuthorizersResult listAuthorizers(ListAuthorizersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCACertificatesResult listCACertificates(ListCACertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,6 +370,26 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListIndicesResult listIndices(ListIndicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListJobExecutionsForJobResult listJobExecutionsForJob(ListJobExecutionsForJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListJobExecutionsForThingResult listJobExecutionsForThing(ListJobExecutionsForThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOutgoingCertificatesResult listOutgoingCertificates(ListOutgoingCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -233,6 +400,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    @Deprecated
     public ListPolicyPrincipalsResult listPolicyPrincipals(ListPolicyPrincipalsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,6 +411,7 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    @Deprecated
     public ListPrincipalPoliciesResult listPrincipalPolicies(ListPrincipalPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -253,7 +422,37 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListRoleAliasesResult listRoleAliases(ListRoleAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThingGroupsResult listThingGroups(ListThingGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThingGroupsForThingResult listThingGroupsForThing(ListThingGroupsForThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListThingPrincipalsResult listThingPrincipals(ListThingPrincipalsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThingRegistrationTaskReportsResult listThingRegistrationTaskReports(ListThingRegistrationTaskReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThingRegistrationTasksResult listThingRegistrationTasks(ListThingRegistrationTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,7 +467,17 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListThingsInThingGroupResult listThingsInThingGroup(ListThingsInThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTopicRulesResult listTopicRules(ListTopicRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListV2LoggingLevelsResult listV2LoggingLevels(ListV2LoggingLevelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -283,12 +492,32 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public RegisterThingResult registerThing(RegisterThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RejectCertificateTransferResult rejectCertificateTransfer(RejectCertificateTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public RemoveThingFromThingGroupResult removeThingFromThingGroup(RemoveThingFromThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ReplaceTopicRuleResult replaceTopicRule(ReplaceTopicRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchIndexResult searchIndex(SearchIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetDefaultAuthorizerResult setDefaultAuthorizer(SetDefaultAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -303,7 +532,42 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public SetV2LoggingLevelResult setV2LoggingLevel(SetV2LoggingLevelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetV2LoggingOptionsResult setV2LoggingOptions(SetV2LoggingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartThingRegistrationTaskResult startThingRegistrationTask(StartThingRegistrationTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopThingRegistrationTaskResult stopThingRegistrationTask(StopThingRegistrationTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestAuthorizationResult testAuthorization(TestAuthorizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(TestInvokeAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TransferCertificateResult transferCertificate(TransferCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAuthorizerResult updateAuthorizer(UpdateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -318,7 +582,32 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public UpdateEventConfigurationsResult updateEventConfigurations(UpdateEventConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateIndexingConfigurationResult updateIndexingConfiguration(UpdateIndexingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoleAliasResult updateRoleAlias(UpdateRoleAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateThingResult updateThing(UpdateThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThingGroupResult updateThingGroup(UpdateThingGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThingGroupsForThingResult updateThingGroupsForThing(UpdateThingGroupsForThingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

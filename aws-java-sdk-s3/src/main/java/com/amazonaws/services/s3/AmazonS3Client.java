@@ -91,6 +91,7 @@ import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
 import com.amazonaws.services.s3.internal.S3RequestEndpointResolver;
 import com.amazonaws.services.s3.internal.S3RequesterChargedHeaderHandler;
+import com.amazonaws.services.s3.internal.S3RestoreOutputPathHeaderHandler;
 import com.amazonaws.services.s3.internal.S3Signer;
 import com.amazonaws.services.s3.internal.S3StringResponseHandler;
 import com.amazonaws.services.s3.internal.S3V4AuthErrorRetryStrategy;
@@ -214,6 +215,8 @@ import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
+import com.amazonaws.services.s3.model.RestoreObjectResult;
+import com.amazonaws.services.s3.model.RestoreRequestType;
 import com.amazonaws.services.s3.model.S3AccelerateUnsupported;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
@@ -3350,40 +3353,43 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     @Override
     public void restoreObject(RestoreObjectRequest restoreObjectRequest)
-            throws AmazonServiceException {
+        throws AmazonServiceException {
+        restoreObjectV2(restoreObjectRequest);
+    }
+
+    @Override
+    public RestoreObjectResult restoreObjectV2(RestoreObjectRequest restoreObjectRequest)
+        throws AmazonServiceException {
+
         restoreObjectRequest = beforeClientExecution(restoreObjectRequest);
         String bucketName = restoreObjectRequest.getBucketName();
         String key = restoreObjectRequest.getKey();
-        String versionId = restoreObjectRequest.getVersionId();
-        int expirationIndays = restoreObjectRequest.getExpirationInDays();
+        int expirationInDays = restoreObjectRequest.getExpirationInDays();
 
-        rejectNull(bucketName, "The bucket name parameter must be specified when copying a glacier object");
-        rejectNull(key, "The key parameter must be specified when copying a glacier object");
-        if (expirationIndays == -1) {
-            throw new IllegalArgumentException("The expiration in days parameter must be specified when copying a glacier object");
+        rejectNull(bucketName, "The bucket name parameter must be specified when restoring a glacier object");
+        rejectNull(key, "The key parameter must be specified when restoring a glacier object");
+
+        if (restoreObjectRequest.getOutputLocation() != null) {
+            rejectNull(restoreObjectRequest.getType(), "The restore request type must be specified with restores that specify OutputLocation");
+
+            if (RestoreRequestType.SELECT.toString().equals(restoreObjectRequest.getType())) {
+                rejectNull(restoreObjectRequest.getSelectParameters(),
+                           "The select parameters must be specified when restoring a glacier object with SELECT restore request type");
+            }
+        } else if (expirationInDays == -1) {
+            throw new IllegalArgumentException("The expiration in days parameter must be specified when restoring a glacier object without OutputLocation");
         }
 
-        Request<RestoreObjectRequest> request = createRequest(bucketName, key, restoreObjectRequest, HttpMethodName.POST);
-        request.addParameter("restore", null);
-        if (versionId != null) {
-            request.addParameter("versionId", versionId);
-        }
+        Request<RestoreObjectRequest> request =
+            createRestoreObjectRequest(restoreObjectRequest);
 
-        populateRequesterPaysHeader(request, restoreObjectRequest.isRequesterPays());
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<RestoreObjectResult> responseHandler = new ResponseHeaderHandlerChain<RestoreObjectResult>(
+            new Unmarshallers.RestoreObjectResultUnmarshaller(),
+            new S3RequesterChargedHeaderHandler<RestoreObjectResult>(),
+            new S3RestoreOutputPathHeaderHandler<RestoreObjectResult>());
 
-        byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
-        request.addHeader("Content-Length", String.valueOf(content.length));
-        request.addHeader("Content-Type", "application/xml");
-        request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch (Exception e) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
-
-        invoke(request, voidResponseHandler, bucketName, key);
+        return invoke(request, responseHandler, bucketName, key);
     }
 
     @Override
@@ -5134,5 +5140,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 throw new AmazonClientException("Couldn't compute md5 sum", e);
             }
         }
+    }
+
+    private Request<RestoreObjectRequest> createRestoreObjectRequest(RestoreObjectRequest restoreObjectRequest) {
+        String bucketName = restoreObjectRequest.getBucketName();
+        String key = restoreObjectRequest.getKey();
+        String versionId = restoreObjectRequest.getVersionId();
+
+        Request<RestoreObjectRequest> request = createRequest(
+            bucketName, key, restoreObjectRequest, HttpMethodName.POST);
+        request.addParameter("restore", null);
+        if (versionId != null) {
+            request.addParameter("versionId", versionId);
+        }
+
+        populateRequesterPaysHeader(request, restoreObjectRequest.isRequesterPays());
+        byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
+        setContent(request, content, "application/xml", true);
+        return request;
     }
 }

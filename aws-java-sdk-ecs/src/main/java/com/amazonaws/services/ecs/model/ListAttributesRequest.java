@@ -55,8 +55,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -287,8 +286,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -300,8 +298,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request
      *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.</p> <note>
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -316,8 +313,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -328,8 +324,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request
      *         where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *         continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *         is <code>null</code> when there are no more results to return.</p> <note>
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -344,8 +339,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request where
      * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -357,8 +351,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param nextToken
      *        The <code>nextToken</code> value returned from a previous paginated <code>ListAttributes</code> request
      *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>nextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.</p> <note>
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.

@@ -30,7 +30,8 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
+     * supported.
      * </p>
      */
     private String sourceVolume;
@@ -50,11 +51,13 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
+     * supported.
      * </p>
      * 
      * @param sourceVolume
-     *        The name of the volume to mount.
+     *        The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter
+     *        is not supported.
      */
 
     public void setSourceVolume(String sourceVolume) {
@@ -63,10 +66,12 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
+     * supported.
      * </p>
      * 
-     * @return The name of the volume to mount.
+     * @return The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code>
+     *         parameter is not supported.
      */
 
     public String getSourceVolume() {
@@ -75,11 +80,13 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount.
+     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
+     * supported.
      * </p>
      * 
      * @param sourceVolume
-     *        The name of the volume to mount.
+     *        The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter
+     *        is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

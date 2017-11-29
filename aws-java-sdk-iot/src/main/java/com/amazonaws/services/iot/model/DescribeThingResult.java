@@ -37,6 +37,18 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
     private String thingName;
     /**
      * <p>
+     * The ID of the thing to describe.
+     * </p>
+     */
+    private String thingId;
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     */
+    private String thingArn;
+    /**
+     * <p>
      * The thing type name.
      * </p>
      */
@@ -137,6 +149,86 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeThingResult withThingName(String thingName) {
         setThingName(thingName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the thing to describe.
+     * </p>
+     * 
+     * @param thingId
+     *        The ID of the thing to describe.
+     */
+
+    public void setThingId(String thingId) {
+        this.thingId = thingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the thing to describe.
+     * </p>
+     * 
+     * @return The ID of the thing to describe.
+     */
+
+    public String getThingId() {
+        return this.thingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the thing to describe.
+     * </p>
+     * 
+     * @param thingId
+     *        The ID of the thing to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingResult withThingId(String thingId) {
+        setThingId(thingId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     * 
+     * @param thingArn
+     *        The ARN of the thing to describe.
+     */
+
+    public void setThingArn(String thingArn) {
+        this.thingArn = thingArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     * 
+     * @return The ARN of the thing to describe.
+     */
+
+    public String getThingArn() {
+        return this.thingArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the thing to describe.
+     * </p>
+     * 
+     * @param thingArn
+     *        The ARN of the thing to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeThingResult withThingArn(String thingArn) {
+        setThingArn(thingArn);
         return this;
     }
 
@@ -329,6 +421,10 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("DefaultClientId: ").append(getDefaultClientId()).append(",");
         if (getThingName() != null)
             sb.append("ThingName: ").append(getThingName()).append(",");
+        if (getThingId() != null)
+            sb.append("ThingId: ").append(getThingId()).append(",");
+        if (getThingArn() != null)
+            sb.append("ThingArn: ").append(getThingArn()).append(",");
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getAttributes() != null)
@@ -357,6 +453,14 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
             return false;
+        if (other.getThingId() == null ^ this.getThingId() == null)
+            return false;
+        if (other.getThingId() != null && other.getThingId().equals(this.getThingId()) == false)
+            return false;
+        if (other.getThingArn() == null ^ this.getThingArn() == null)
+            return false;
+        if (other.getThingArn() != null && other.getThingArn().equals(this.getThingArn()) == false)
+            return false;
         if (other.getThingTypeName() == null ^ this.getThingTypeName() == null)
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
@@ -379,6 +483,8 @@ public class DescribeThingResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getDefaultClientId() == null) ? 0 : getDefaultClientId().hashCode());
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
+        hashCode = prime * hashCode + ((getThingId() == null) ? 0 : getThingId().hashCode());
+        hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());

@@ -27,7 +27,7 @@ public class GetFunctionDefinitionVersionResult extends com.amazonaws.AmazonWebS
     private String arn;
     /** Timestamp when the funtion definition version was created. */
     private String creationTimestamp;
-    /** Information on the definition. */
+    /** Information on the definition */
     private FunctionDefinitionVersion definition;
     /** Id of the function definition the version belongs to. */
     private String id;
@@ -103,10 +103,10 @@ public class GetFunctionDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Information on the definition.
+     * Information on the definition
      * 
      * @param definition
-     *        Information on the definition.
+     *        Information on the definition
      */
 
     public void setDefinition(FunctionDefinitionVersion definition) {
@@ -114,9 +114,9 @@ public class GetFunctionDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Information on the definition.
+     * Information on the definition
      * 
-     * @return Information on the definition.
+     * @return Information on the definition
      */
 
     public FunctionDefinitionVersion getDefinition() {
@@ -124,10 +124,10 @@ public class GetFunctionDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Information on the definition.
+     * Information on the definition
      * 
      * @param definition
-     *        Information on the definition.
+     *        Information on the definition
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

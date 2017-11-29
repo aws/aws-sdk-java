@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A certificate that has been transfered but not yet accepted.
+ * A certificate that has been transferred but not yet accepted.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -39,6 +39,12 @@ public class ThingAttribute implements Serializable, Cloneable, StructuredPojo {
     private String thingTypeName;
     /**
      * <p>
+     * The thing ARN.
+     * </p>
+     */
+    private String thingArn;
+    /**
+     * <p>
      * A list of thing attributes which are name-value pairs.
      * </p>
      */
@@ -127,6 +133,46 @@ public class ThingAttribute implements Serializable, Cloneable, StructuredPojo {
 
     public ThingAttribute withThingTypeName(String thingTypeName) {
         setThingTypeName(thingTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The thing ARN.
+     * </p>
+     * 
+     * @param thingArn
+     *        The thing ARN.
+     */
+
+    public void setThingArn(String thingArn) {
+        this.thingArn = thingArn;
+    }
+
+    /**
+     * <p>
+     * The thing ARN.
+     * </p>
+     * 
+     * @return The thing ARN.
+     */
+
+    public String getThingArn() {
+        return this.thingArn;
+    }
+
+    /**
+     * <p>
+     * The thing ARN.
+     * </p>
+     * 
+     * @param thingArn
+     *        The thing ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThingAttribute withThingArn(String thingArn) {
+        setThingArn(thingArn);
         return this;
     }
 
@@ -246,6 +292,8 @@ public class ThingAttribute implements Serializable, Cloneable, StructuredPojo {
             sb.append("ThingName: ").append(getThingName()).append(",");
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
+        if (getThingArn() != null)
+            sb.append("ThingArn: ").append(getThingArn()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getVersion() != null)
@@ -272,6 +320,10 @@ public class ThingAttribute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
             return false;
+        if (other.getThingArn() == null ^ this.getThingArn() == null)
+            return false;
+        if (other.getThingArn() != null && other.getThingArn().equals(this.getThingArn()) == false)
+            return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
@@ -290,6 +342,7 @@ public class ThingAttribute implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
+        hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;

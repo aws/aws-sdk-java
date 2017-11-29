@@ -48,12 +48,27 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public CreateStreamProcessorResult createStreamProcessor(CreateStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCollectionResult deleteCollection(DeleteCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteFacesResult deleteFaces(DeleteFacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStreamProcessorResult deleteStreamProcessor(DeleteStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStreamProcessorResult describeStreamProcessor(DescribeStreamProcessorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,6 +98,36 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public GetCelebrityRecognitionResult getCelebrityRecognition(GetCelebrityRecognitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContentModerationResult getContentModeration(GetContentModerationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFaceDetectionResult getFaceDetection(GetFaceDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFaceSearchResult getFaceSearch(GetFaceSearchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLabelDetectionResult getLabelDetection(GetLabelDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPersonTrackingResult getPersonTracking(GetPersonTrackingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public IndexFacesResult indexFaces(IndexFacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -98,6 +143,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public ListStreamProcessorsResult listStreamProcessors(ListStreamProcessorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RecognizeCelebritiesResult recognizeCelebrities(RecognizeCelebritiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +159,46 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCelebrityRecognitionResult startCelebrityRecognition(StartCelebrityRecognitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartContentModerationResult startContentModeration(StartContentModerationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartFaceDetectionResult startFaceDetection(StartFaceDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartFaceSearchResult startFaceSearch(StartFaceSearchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartLabelDetectionResult startLabelDetection(StartLabelDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartPersonTrackingResult startPersonTracking(StartPersonTrackingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartStreamProcessorResult startStreamProcessor(StartStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopStreamProcessorResult stopStreamProcessor(StopStreamProcessorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

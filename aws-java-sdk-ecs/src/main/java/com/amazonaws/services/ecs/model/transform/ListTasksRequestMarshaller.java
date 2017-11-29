@@ -43,6 +43,8 @@ public class ListTasksRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
     private static final MarshallingInfo<String> DESIREDSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("desiredStatus").build();
+    private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
 
     private static final ListTasksRequestMarshaller instance = new ListTasksRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class ListTasksRequestMarshaller {
             protocolMarshaller.marshall(listTasksRequest.getStartedBy(), STARTEDBY_BINDING);
             protocolMarshaller.marshall(listTasksRequest.getServiceName(), SERVICENAME_BINDING);
             protocolMarshaller.marshall(listTasksRequest.getDesiredStatus(), DESIREDSTATUS_BINDING);
+            protocolMarshaller.marshall(listTasksRequest.getLaunchType(), LAUNCHTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

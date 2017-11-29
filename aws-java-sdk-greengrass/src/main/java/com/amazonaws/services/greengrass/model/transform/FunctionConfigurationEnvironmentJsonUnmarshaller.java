@@ -48,6 +48,15 @@ public class FunctionConfigurationEnvironmentJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccessSysfs", targetDepth)) {
+                    context.nextToken();
+                    functionConfigurationEnvironment.setAccessSysfs(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceAccessPolicies", targetDepth)) {
+                    context.nextToken();
+                    functionConfigurationEnvironment.setResourceAccessPolicies(new ListUnmarshaller<ResourceAccessPolicy>(ResourceAccessPolicyJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("Variables", targetDepth)) {
                     context.nextToken();
                     functionConfigurationEnvironment.setVariables(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

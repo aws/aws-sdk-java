@@ -46,11 +46,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer desiredCount;
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon
-     * ECS spawns a task with the new version of the task definition and then stops an old task after the new version is
-     * running.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task
+     * with the new version of the task definition and then stops an old task after the new version is running.
      * </p>
      */
     private String taskDefinition;
@@ -66,8 +65,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -78,6 +77,18 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The platform version you want to update your service to run.
+     * </p>
+     */
+    private String platformVersion;
+    /**
+     * <p>
+     * Whether or not to force a new deployment of the service.
+     * </p>
+     */
+    private Boolean forceNewDeployment;
 
     /**
      * <p>
@@ -207,19 +218,18 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon
-     * ECS spawns a task with the new version of the task definition and then stops an old task after the new version is
-     * running.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task
+     * with the new version of the task definition and then stops an old task after the new version is running.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the
-     *        latest <code>ACTIVE</code> revision is used. If you modify the task definition with
-     *        <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then
-     *        stops an old task after the new version is running.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to run in your service. If a <code>revision</code> is not specified, the latest
+     *        <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>,
+     *        Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the
+     *        new version is running.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -228,18 +238,17 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon
-     * ECS spawns a task with the new version of the task definition and then stops an old task after the new version is
-     * running.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task
+     * with the new version of the task definition and then stops an old task after the new version is running.
      * </p>
      * 
-     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *         Name (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified,
-     *         the latest <code>ACTIVE</code> revision is used. If you modify the task definition with
-     *         <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then
-     *         stops an old task after the new version is running.
+     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *         definition to run in your service. If a <code>revision</code> is not specified, the latest
+     *         <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>,
+     *         Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the
+     *         new version is running.
      */
 
     public String getTaskDefinition() {
@@ -248,19 +257,18 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon
-     * ECS spawns a task with the new version of the task definition and then stops an old task after the new version is
-     * running.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used. If you modify the task definition with <code>UpdateService</code>, Amazon ECS spawns a task
+     * with the new version of the task definition and then stops an old task after the new version is running.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the
-     *        latest <code>ACTIVE</code> revision is used. If you modify the task definition with
-     *        <code>UpdateService</code>, Amazon ECS spawns a task with the new version of the task definition and then
-     *        stops an old task after the new version is running.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to run in your service. If a <code>revision</code> is not specified, the latest
+     *        <code>ACTIVE</code> revision is used. If you modify the task definition with <code>UpdateService</code>,
+     *        Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the
+     *        new version is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,8 +328,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -335,8 +343,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> <note>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
      *        For example, if your network configuration change is to keep the existing subnets and simply add another
@@ -353,8 +361,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -367,8 +375,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The network configuration for the service. This parameter is required for task definitions that use the
      *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *         for other network modes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> <note>
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *         <p>
      *         Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
      *         For example, if your network configuration change is to keep the existing subnets and simply add another
@@ -385,8 +393,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -400,8 +408,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> <note>
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
      *        For example, if your network configuration change is to keep the existing subnets and simply add another
@@ -413,6 +421,98 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateServiceRequest withNetworkConfiguration(NetworkConfiguration networkConfiguration) {
         setNetworkConfiguration(networkConfiguration);
         return this;
+    }
+
+    /**
+     * <p>
+     * The platform version you want to update your service to run.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version you want to update your service to run.
+     */
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version you want to update your service to run.
+     * </p>
+     * 
+     * @return The platform version you want to update your service to run.
+     */
+
+    public String getPlatformVersion() {
+        return this.platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version you want to update your service to run.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version you want to update your service to run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withPlatformVersion(String platformVersion) {
+        setPlatformVersion(platformVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not to force a new deployment of the service.
+     * </p>
+     * 
+     * @param forceNewDeployment
+     *        Whether or not to force a new deployment of the service.
+     */
+
+    public void setForceNewDeployment(Boolean forceNewDeployment) {
+        this.forceNewDeployment = forceNewDeployment;
+    }
+
+    /**
+     * <p>
+     * Whether or not to force a new deployment of the service.
+     * </p>
+     * 
+     * @return Whether or not to force a new deployment of the service.
+     */
+
+    public Boolean getForceNewDeployment() {
+        return this.forceNewDeployment;
+    }
+
+    /**
+     * <p>
+     * Whether or not to force a new deployment of the service.
+     * </p>
+     * 
+     * @param forceNewDeployment
+     *        Whether or not to force a new deployment of the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withForceNewDeployment(Boolean forceNewDeployment) {
+        setForceNewDeployment(forceNewDeployment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not to force a new deployment of the service.
+     * </p>
+     * 
+     * @return Whether or not to force a new deployment of the service.
+     */
+
+    public Boolean isForceNewDeployment() {
+        return this.forceNewDeployment;
     }
 
     /**
@@ -437,7 +537,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getDeploymentConfiguration() != null)
             sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getPlatformVersion() != null)
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
+        if (getForceNewDeployment() != null)
+            sb.append("ForceNewDeployment: ").append(getForceNewDeployment());
         sb.append("}");
         return sb.toString();
     }
@@ -476,6 +580,14 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
+            return false;
+        if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
+            return false;
+        if (other.getForceNewDeployment() == null ^ this.getForceNewDeployment() == null)
+            return false;
+        if (other.getForceNewDeployment() != null && other.getForceNewDeployment().equals(this.getForceNewDeployment()) == false)
+            return false;
         return true;
     }
 
@@ -490,6 +602,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
+        hashCode = prime * hashCode + ((getForceNewDeployment() == null) ? 0 : getForceNewDeployment().hashCode());
         return hashCode;
     }
 

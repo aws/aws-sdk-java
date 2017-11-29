@@ -33,6 +33,8 @@ public class ListServicesRequestMarshaller {
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
 
     private static final ListServicesRequestMarshaller instance = new ListServicesRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListServicesRequestMarshaller {
             protocolMarshaller.marshall(listServicesRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(listServicesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listServicesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listServicesRequest.getLaunchType(), LAUNCHTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

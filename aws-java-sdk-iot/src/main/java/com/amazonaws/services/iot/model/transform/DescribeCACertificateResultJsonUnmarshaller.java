@@ -52,6 +52,10 @@ public class DescribeCACertificateResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeCACertificateResult.setCertificateDescription(CACertificateDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("registrationConfig", targetDepth)) {
+                    context.nextToken();
+                    describeCACertificateResult.setRegistrationConfig(RegistrationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

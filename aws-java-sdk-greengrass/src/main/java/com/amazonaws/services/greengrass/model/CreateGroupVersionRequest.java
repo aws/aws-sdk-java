@@ -35,8 +35,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     private String functionDefinitionVersionArn;
     /** The unique Id of the AWS Greengrass Group */
     private String groupId;
-    /** Logger definitionv ersion arn for this group. */
+    /** Logger definition version arn for this group. */
     private String loggerDefinitionVersionArn;
+    /** Resource definition version arn for this group. */
+    private String resourceDefinitionVersionArn;
     /** Subscription definition version arn for this group. */
     private String subscriptionDefinitionVersionArn;
 
@@ -211,10 +213,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      * 
      * @param loggerDefinitionVersionArn
-     *        Logger definitionv ersion arn for this group.
+     *        Logger definition version arn for this group.
      */
 
     public void setLoggerDefinitionVersionArn(String loggerDefinitionVersionArn) {
@@ -222,9 +224,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      * 
-     * @return Logger definitionv ersion arn for this group.
+     * @return Logger definition version arn for this group.
      */
 
     public String getLoggerDefinitionVersionArn() {
@@ -232,15 +234,49 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Logger definitionv ersion arn for this group.
+     * Logger definition version arn for this group.
      * 
      * @param loggerDefinitionVersionArn
-     *        Logger definitionv ersion arn for this group.
+     *        Logger definition version arn for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateGroupVersionRequest withLoggerDefinitionVersionArn(String loggerDefinitionVersionArn) {
         setLoggerDefinitionVersionArn(loggerDefinitionVersionArn);
+        return this;
+    }
+
+    /**
+     * Resource definition version arn for this group.
+     * 
+     * @param resourceDefinitionVersionArn
+     *        Resource definition version arn for this group.
+     */
+
+    public void setResourceDefinitionVersionArn(String resourceDefinitionVersionArn) {
+        this.resourceDefinitionVersionArn = resourceDefinitionVersionArn;
+    }
+
+    /**
+     * Resource definition version arn for this group.
+     * 
+     * @return Resource definition version arn for this group.
+     */
+
+    public String getResourceDefinitionVersionArn() {
+        return this.resourceDefinitionVersionArn;
+    }
+
+    /**
+     * Resource definition version arn for this group.
+     * 
+     * @param resourceDefinitionVersionArn
+     *        Resource definition version arn for this group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupVersionRequest withResourceDefinitionVersionArn(String resourceDefinitionVersionArn) {
+        setResourceDefinitionVersionArn(resourceDefinitionVersionArn);
         return this;
     }
 
@@ -301,6 +337,8 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getLoggerDefinitionVersionArn() != null)
             sb.append("LoggerDefinitionVersionArn: ").append(getLoggerDefinitionVersionArn()).append(",");
+        if (getResourceDefinitionVersionArn() != null)
+            sb.append("ResourceDefinitionVersionArn: ").append(getResourceDefinitionVersionArn()).append(",");
         if (getSubscriptionDefinitionVersionArn() != null)
             sb.append("SubscriptionDefinitionVersionArn: ").append(getSubscriptionDefinitionVersionArn());
         sb.append("}");
@@ -341,6 +379,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getLoggerDefinitionVersionArn() != null && other.getLoggerDefinitionVersionArn().equals(this.getLoggerDefinitionVersionArn()) == false)
             return false;
+        if (other.getResourceDefinitionVersionArn() == null ^ this.getResourceDefinitionVersionArn() == null)
+            return false;
+        if (other.getResourceDefinitionVersionArn() != null && other.getResourceDefinitionVersionArn().equals(this.getResourceDefinitionVersionArn()) == false)
+            return false;
         if (other.getSubscriptionDefinitionVersionArn() == null ^ this.getSubscriptionDefinitionVersionArn() == null)
             return false;
         if (other.getSubscriptionDefinitionVersionArn() != null
@@ -360,6 +402,7 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFunctionDefinitionVersionArn() == null) ? 0 : getFunctionDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getLoggerDefinitionVersionArn() == null) ? 0 : getLoggerDefinitionVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceDefinitionVersionArn() == null) ? 0 : getResourceDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getSubscriptionDefinitionVersionArn() == null) ? 0 : getSubscriptionDefinitionVersionArn().hashCode());
         return hashCode;
     }

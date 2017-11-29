@@ -823,6 +823,160 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
+     * Creates a resource definition which contains a list of resources to be used in a group. You can create an initial
+     * version of the definition by providing a list of resources now, or use ``CreateResourceDefinitionVersion`` later.
+     * 
+     * @param createResourceDefinitionRequest
+     * @return Result of the CreateResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.CreateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateResourceDefinitionResult createResourceDefinition(CreateResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final CreateResourceDefinitionResult executeCreateResourceDefinition(CreateResourceDefinitionRequest createResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateResourceDefinitionRequest> request = null;
+        Response<CreateResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateResourceDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Create a version of a resource definition that has already been defined.
+     * 
+     * @param createResourceDefinitionVersionRequest
+     * @return Result of the CreateResourceDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.CreateResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateResourceDefinitionVersionResult createResourceDefinitionVersion(CreateResourceDefinitionVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateResourceDefinitionVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateResourceDefinitionVersionResult executeCreateResourceDefinitionVersion(
+            CreateResourceDefinitionVersionRequest createResourceDefinitionVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createResourceDefinitionVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateResourceDefinitionVersionRequest> request = null;
+        Response<CreateResourceDefinitionVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateResourceDefinitionVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createResourceDefinitionVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateResourceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateResourceDefinitionVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Creates an Iot Job that will trigger your Greengrass Cores to update the software they are running.
+     * 
+     * @param createSoftwareUpdateJobRequest
+     * @return Result of the CreateSoftwareUpdateJob operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AWSGreengrass.CreateSoftwareUpdateJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSoftwareUpdateJobResult createSoftwareUpdateJob(CreateSoftwareUpdateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSoftwareUpdateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateSoftwareUpdateJobResult executeCreateSoftwareUpdateJob(CreateSoftwareUpdateJobRequest createSoftwareUpdateJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSoftwareUpdateJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSoftwareUpdateJobRequest> request = null;
+        Response<CreateSoftwareUpdateJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSoftwareUpdateJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSoftwareUpdateJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSoftwareUpdateJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSoftwareUpdateJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Creates a subscription definition. You may optionally provide the initial version of the subscription definition
      * or use ``CreateSubscriptionDefinitionVersion`` at a later time.
      * 
@@ -1158,6 +1312,56 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteLoggerDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes a resource definition.
+     * 
+     * @param deleteResourceDefinitionRequest
+     * @return Result of the DeleteResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.DeleteResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteResourceDefinitionResult deleteResourceDefinition(DeleteResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourceDefinitionResult executeDeleteResourceDefinition(DeleteResourceDefinitionRequest deleteResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourceDefinitionRequest> request = null;
+        Response<DeleteResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteResourceDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2065,6 +2269,105 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
+     * Retrieves information about a resource definition, such as its creation time and latest version.
+     * 
+     * @param getResourceDefinitionRequest
+     * @return Result of the GetResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.GetResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceDefinitionResult getResourceDefinition(GetResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceDefinitionResult executeGetResourceDefinition(GetResourceDefinitionRequest getResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceDefinitionRequest> request = null;
+        Response<GetResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetResourceDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves information about a resource definition version, such as which resources are included in the version.
+     * 
+     * @param getResourceDefinitionVersionRequest
+     * @return Result of the GetResourceDefinitionVersion operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.GetResourceDefinitionVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceDefinitionVersionResult getResourceDefinitionVersion(GetResourceDefinitionVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceDefinitionVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceDefinitionVersionResult executeGetResourceDefinitionVersion(GetResourceDefinitionVersionRequest getResourceDefinitionVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceDefinitionVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceDefinitionVersionRequest> request = null;
+        Response<GetResourceDefinitionVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceDefinitionVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getResourceDefinitionVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceDefinitionVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetResourceDefinitionVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Retrieves the service role that is attached to the account.
      * 
      * @param getServiceRoleForAccountRequest
@@ -2799,6 +3102,104 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
+     * Lists the versions of a resource definition.
+     * 
+     * @param listResourceDefinitionVersionsRequest
+     * @return Result of the ListResourceDefinitionVersions operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.ListResourceDefinitionVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceDefinitionVersionsResult listResourceDefinitionVersions(ListResourceDefinitionVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceDefinitionVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceDefinitionVersionsResult executeListResourceDefinitionVersions(ListResourceDefinitionVersionsRequest listResourceDefinitionVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceDefinitionVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceDefinitionVersionsRequest> request = null;
+        Response<ListResourceDefinitionVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceDefinitionVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourceDefinitionVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceDefinitionVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourceDefinitionVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Retrieves a list of resource definitions.
+     * 
+     * @param listResourceDefinitionsRequest
+     * @return Result of the ListResourceDefinitions operation returned by the service.
+     * @sample AWSGreengrass.ListResourceDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceDefinitionsResult listResourceDefinitions(ListResourceDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceDefinitionsResult executeListResourceDefinitions(ListResourceDefinitionsRequest listResourceDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceDefinitionsRequest> request = null;
+        Response<ListResourceDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourceDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourceDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Lists the versions of a subscription definition.
      * 
      * @param listSubscriptionDefinitionVersionsRequest
@@ -3286,6 +3687,56 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLoggerDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateLoggerDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates a resource definition.
+     * 
+     * @param updateResourceDefinitionRequest
+     * @return Result of the UpdateResourceDefinition operation returned by the service.
+     * @throws BadRequestException
+     *         user error
+     * @sample AWSGreengrass.UpdateResourceDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateResourceDefinitionResult updateResourceDefinition(UpdateResourceDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourceDefinition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourceDefinitionResult executeUpdateResourceDefinition(UpdateResourceDefinitionRequest updateResourceDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourceDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourceDefinitionRequest> request = null;
+        Response<UpdateResourceDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateResourceDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateResourceDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

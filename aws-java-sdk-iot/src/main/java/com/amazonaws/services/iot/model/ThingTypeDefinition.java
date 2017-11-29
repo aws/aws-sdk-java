@@ -33,6 +33,12 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
     private String thingTypeName;
     /**
      * <p>
+     * The thing type ARN.
+     * </p>
+     */
+    private String thingTypeArn;
+    /**
+     * <p>
      * The ThingTypeProperties for the thing type.
      * </p>
      */
@@ -82,6 +88,46 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
 
     public ThingTypeDefinition withThingTypeName(String thingTypeName) {
         setThingTypeName(thingTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @param thingTypeArn
+     *        The thing type ARN.
+     */
+
+    public void setThingTypeArn(String thingTypeArn) {
+        this.thingTypeArn = thingTypeArn;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @return The thing type ARN.
+     */
+
+    public String getThingTypeArn() {
+        return this.thingTypeArn;
+    }
+
+    /**
+     * <p>
+     * The thing type ARN.
+     * </p>
+     * 
+     * @param thingTypeArn
+     *        The thing type ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThingTypeDefinition withThingTypeArn(String thingTypeArn) {
+        setThingTypeArn(thingTypeArn);
         return this;
     }
 
@@ -185,6 +231,8 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getThingTypeName() != null)
             sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
+        if (getThingTypeArn() != null)
+            sb.append("ThingTypeArn: ").append(getThingTypeArn()).append(",");
         if (getThingTypeProperties() != null)
             sb.append("ThingTypeProperties: ").append(getThingTypeProperties()).append(",");
         if (getThingTypeMetadata() != null)
@@ -207,6 +255,10 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
             return false;
+        if (other.getThingTypeArn() == null ^ this.getThingTypeArn() == null)
+            return false;
+        if (other.getThingTypeArn() != null && other.getThingTypeArn().equals(this.getThingTypeArn()) == false)
+            return false;
         if (other.getThingTypeProperties() == null ^ this.getThingTypeProperties() == null)
             return false;
         if (other.getThingTypeProperties() != null && other.getThingTypeProperties().equals(this.getThingTypeProperties()) == false)
@@ -224,6 +276,7 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
+        hashCode = prime * hashCode + ((getThingTypeArn() == null) ? 0 : getThingTypeArn().hashCode());
         hashCode = prime * hashCode + ((getThingTypeProperties() == null) ? 0 : getThingTypeProperties().hashCode());
         hashCode = prime * hashCode + ((getThingTypeMetadata() == null) ? 0 : getThingTypeMetadata().hashCode());
         return hashCode;

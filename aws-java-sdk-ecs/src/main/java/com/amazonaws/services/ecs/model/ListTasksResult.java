@@ -25,7 +25,7 @@ public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> taskArns;
@@ -40,10 +40,10 @@ public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * 
-     * @return The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     * @return The list of task ARN entries for the <code>ListTasks</code> request.
      */
 
     public java.util.List<String> getTaskArns() {
@@ -55,11 +55,11 @@ public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * 
      * @param taskArns
-     *        The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     *        The list of task ARN entries for the <code>ListTasks</code> request.
      */
 
     public void setTaskArns(java.util.Collection<String> taskArns) {
@@ -73,7 +73,7 @@ public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param taskArns
-     *        The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     *        The list of task ARN entries for the <code>ListTasks</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ListTasksResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     * The list of task ARN entries for the <code>ListTasks</code> request.
      * </p>
      * 
      * @param taskArns
-     *        The list of task Amazon Resource Name (ARN) entries for the <code>ListTasks</code> request.
+     *        The list of task ARN entries for the <code>ListTasks</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

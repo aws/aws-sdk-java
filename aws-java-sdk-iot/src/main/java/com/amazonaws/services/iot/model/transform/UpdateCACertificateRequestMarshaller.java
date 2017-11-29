@@ -33,6 +33,10 @@ public class UpdateCACertificateRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("newStatus").build();
     private static final MarshallingInfo<String> NEWAUTOREGISTRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("newAutoRegistrationStatus").build();
+    private static final MarshallingInfo<StructuredPojo> REGISTRATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registrationConfig").build();
+    private static final MarshallingInfo<Boolean> REMOVEAUTOREGISTRATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeAutoRegistration").build();
 
     private static final UpdateCACertificateRequestMarshaller instance = new UpdateCACertificateRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class UpdateCACertificateRequestMarshaller {
             protocolMarshaller.marshall(updateCACertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
             protocolMarshaller.marshall(updateCACertificateRequest.getNewStatus(), NEWSTATUS_BINDING);
             protocolMarshaller.marshall(updateCACertificateRequest.getNewAutoRegistrationStatus(), NEWAUTOREGISTRATIONSTATUS_BINDING);
+            protocolMarshaller.marshall(updateCACertificateRequest.getRegistrationConfig(), REGISTRATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(updateCACertificateRequest.getRemoveAutoRegistration(), REMOVEAUTOREGISTRATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

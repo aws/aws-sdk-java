@@ -26,7 +26,7 @@ public class StartTaskResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * A full description of the tasks that were started. Each task that was successfully placed on your container
-     * instances are described here.
+     * instances is described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Task> tasks;
@@ -40,11 +40,11 @@ public class StartTaskResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * A full description of the tasks that were started. Each task that was successfully placed on your container
-     * instances are described here.
+     * instances is described.
      * </p>
      * 
      * @return A full description of the tasks that were started. Each task that was successfully placed on your
-     *         container instances are described here.
+     *         container instances is described.
      */
 
     public java.util.List<Task> getTasks() {
@@ -57,12 +57,12 @@ public class StartTaskResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * A full description of the tasks that were started. Each task that was successfully placed on your container
-     * instances are described here.
+     * instances is described.
      * </p>
      * 
      * @param tasks
      *        A full description of the tasks that were started. Each task that was successfully placed on your
-     *        container instances are described here.
+     *        container instances is described.
      */
 
     public void setTasks(java.util.Collection<Task> tasks) {
@@ -77,7 +77,7 @@ public class StartTaskResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * A full description of the tasks that were started. Each task that was successfully placed on your container
-     * instances are described here.
+     * instances is described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,7 +87,7 @@ public class StartTaskResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * 
      * @param tasks
      *        A full description of the tasks that were started. Each task that was successfully placed on your
-     *        container instances are described here.
+     *        container instances is described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,12 +104,12 @@ public class StartTaskResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * A full description of the tasks that were started. Each task that was successfully placed on your container
-     * instances are described here.
+     * instances is described.
      * </p>
      * 
      * @param tasks
      *        A full description of the tasks that were started. Each task that was successfully placed on your
-     *        container instances are described here.
+     *        container instances is described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

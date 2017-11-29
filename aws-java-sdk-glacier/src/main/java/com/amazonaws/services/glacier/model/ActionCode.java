@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ActionCode {
 
     ArchiveRetrieval("ArchiveRetrieval"),
-    InventoryRetrieval("InventoryRetrieval");
+    InventoryRetrieval("InventoryRetrieval"),
+    Select("Select");
 
     private String value;
 

@@ -34,7 +34,7 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
     private String cluster;
     /**
      * <p>
-     * A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> containerInstances;
@@ -87,10 +87,10 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * 
-     * @return A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * @return A list of container instance IDs or full ARN entries.
      */
 
     public java.util.List<String> getContainerInstances() {
@@ -102,11 +102,11 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * 
      * @param containerInstances
-     *        A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     *        A list of container instance IDs or full ARN entries.
      */
 
     public void setContainerInstances(java.util.Collection<String> containerInstances) {
@@ -120,7 +120,7 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +129,7 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param containerInstances
-     *        A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     *        A list of container instance IDs or full ARN entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     * A list of container instance IDs or full ARN entries.
      * </p>
      * 
      * @param containerInstances
-     *        A list of container instance IDs or full Amazon Resource Name (ARN) entries.
+     *        A list of container instance IDs or full ARN entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

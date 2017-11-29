@@ -80,6 +80,14 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setPendingCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("launchType", targetDepth)) {
+                    context.nextToken();
+                    service.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("platformVersion", targetDepth)) {
+                    context.nextToken();
+                    service.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("taskDefinition", targetDepth)) {
                     context.nextToken();
                     service.setTaskDefinition(context.getUnmarshaller(String.class).unmarshall(context));

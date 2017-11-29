@@ -29,6 +29,8 @@ public class ThingTypeDefinitionMarshaller {
 
     private static final MarshallingInfo<String> THINGTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeName").build();
+    private static final MarshallingInfo<String> THINGTYPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeArn").build();
     private static final MarshallingInfo<StructuredPojo> THINGTYPEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("thingTypeProperties").build();
     private static final MarshallingInfo<StructuredPojo> THINGTYPEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,7 @@ public class ThingTypeDefinitionMarshaller {
 
         try {
             protocolMarshaller.marshall(thingTypeDefinition.getThingTypeName(), THINGTYPENAME_BINDING);
+            protocolMarshaller.marshall(thingTypeDefinition.getThingTypeArn(), THINGTYPEARN_BINDING);
             protocolMarshaller.marshall(thingTypeDefinition.getThingTypeProperties(), THINGTYPEPROPERTIES_BINDING);
             protocolMarshaller.marshall(thingTypeDefinition.getThingTypeMetadata(), THINGTYPEMETADATA_BINDING);
         } catch (Exception e) {

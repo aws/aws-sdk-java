@@ -42,9 +42,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String serviceName;
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      * </p>
      */
     private String taskDefinition;
@@ -82,6 +82,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientToken;
     /**
      * <p>
+     * The launch type on which to run your service.
+     * </p>
+     */
+    private String launchType;
+    /**
+     * <p>
+     * The platform version on which to run your service. If one is not specified, the latest version is used by
+     * default.
+     * </p>
+     */
+    private String platformVersion;
+    /**
+     * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load
      * balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and
      * your task definition does not use the <code>awsvpc</code> network mode. If you specify the <code>role</code>
@@ -92,8 +105,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -122,7 +135,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<PlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules
+     * The placement strategy objects to use for tasks in your service. You can specify a maximum of five strategy rules
      * per service.
      * </p>
      */
@@ -132,8 +145,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
@@ -238,15 +251,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the
-     *        latest <code>ACTIVE</code> revision is used.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to run in your service. If a <code>revision</code> is not specified, the latest
+     *        <code>ACTIVE</code> revision is used.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -255,14 +268,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      * </p>
      * 
-     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *         Name (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified,
-     *         the latest <code>ACTIVE</code> revision is used.
+     * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *         definition to run in your service. If a <code>revision</code> is not specified, the latest
+     *         <code>ACTIVE</code> revision is used.
      */
 
     public String getTaskDefinition() {
@@ -271,15 +284,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource Name
-     * (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the latest
-     * <code>ACTIVE</code> revision is used.
+     * The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     * definition to run in your service. If a <code>revision</code> is not specified, the latest <code>ACTIVE</code>
+     * revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full Amazon Resource
-     *        Name (ARN) of the task definition to run in your service. If a <code>revision</code> is not specified, the
-     *        latest <code>ACTIVE</code> revision is used.
+     *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
+     *        definition to run in your service. If a <code>revision</code> is not specified, the latest
+     *        <code>ACTIVE</code> revision is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -557,6 +570,111 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The launch type on which to run your service.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which to run your service.
+     * @see LaunchType
+     */
+
+    public void setLaunchType(String launchType) {
+        this.launchType = launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which to run your service.
+     * </p>
+     * 
+     * @return The launch type on which to run your service.
+     * @see LaunchType
+     */
+
+    public String getLaunchType() {
+        return this.launchType;
+    }
+
+    /**
+     * <p>
+     * The launch type on which to run your service.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which to run your service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public CreateServiceRequest withLaunchType(String launchType) {
+        setLaunchType(launchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type on which to run your service.
+     * </p>
+     * 
+     * @param launchType
+     *        The launch type on which to run your service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LaunchType
+     */
+
+    public CreateServiceRequest withLaunchType(LaunchType launchType) {
+        this.launchType = launchType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform version on which to run your service. If one is not specified, the latest version is used by
+     * default.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which to run your service. If one is not specified, the latest version is used by
+     *        default.
+     */
+
+    public void setPlatformVersion(String platformVersion) {
+        this.platformVersion = platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which to run your service. If one is not specified, the latest version is used by
+     * default.
+     * </p>
+     * 
+     * @return The platform version on which to run your service. If one is not specified, the latest version is used by
+     *         default.
+     */
+
+    public String getPlatformVersion() {
+        return this.platformVersion;
+    }
+
+    /**
+     * <p>
+     * The platform version on which to run your service. If one is not specified, the latest version is used by
+     * default.
+     * </p>
+     * 
+     * @param platformVersion
+     *        The platform version on which to run your service. If one is not specified, the latest version is used by
+     *        default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withPlatformVersion(String platformVersion) {
+        setPlatformVersion(platformVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load
      * balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and
      * your task definition does not use the <code>awsvpc</code> network mode. If you specify the <code>role</code>
@@ -567,8 +685,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -591,8 +709,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        your service unless you specify a role here. The service-linked role is required if your task definition
      *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        </important>
      *        <p>
@@ -620,8 +738,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -643,8 +761,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         your service unless you specify a role here. The service-linked role is required if your task definition
      *         uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         </important>
      *         <p>
@@ -672,8 +790,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If your account has already created the Amazon ECS service-linked role, that role is used by default for your
      * service unless you specify a role here. The service-linked role is required if your task definition uses the
      * <code>awsvpc</code> network mode, in which case you should not specify a role here. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -696,8 +814,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        your service unless you specify a role here. The service-linked role is required if your task definition
      *        uses the <code>awsvpc</code> network mode, in which case you should not specify a role here. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        </important>
      *        <p>
@@ -848,12 +966,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules
+     * The placement strategy objects to use for tasks in your service. You can specify a maximum of five strategy rules
      * per service.
      * </p>
      * 
-     * @return The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy
-     *         rules per service.
+     * @return The placement strategy objects to use for tasks in your service. You can specify a maximum of five
+     *         strategy rules per service.
      */
 
     public java.util.List<PlacementStrategy> getPlacementStrategy() {
@@ -865,13 +983,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules
+     * The placement strategy objects to use for tasks in your service. You can specify a maximum of five strategy rules
      * per service.
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy
-     *        rules per service.
+     *        The placement strategy objects to use for tasks in your service. You can specify a maximum of five
+     *        strategy rules per service.
      */
 
     public void setPlacementStrategy(java.util.Collection<PlacementStrategy> placementStrategy) {
@@ -885,7 +1003,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules
+     * The placement strategy objects to use for tasks in your service. You can specify a maximum of five strategy rules
      * per service.
      * </p>
      * <p>
@@ -895,8 +1013,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy
-     *        rules per service.
+     *        The placement strategy objects to use for tasks in your service. You can specify a maximum of five
+     *        strategy rules per service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -912,13 +1030,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules
+     * The placement strategy objects to use for tasks in your service. You can specify a maximum of five strategy rules
      * per service.
      * </p>
      * 
      * @param placementStrategy
-     *        The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy
-     *        rules per service.
+     *        The placement strategy objects to use for tasks in your service. You can specify a maximum of five
+     *        strategy rules per service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -932,16 +1050,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -953,15 +1071,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The network configuration for the service. This parameter is required for task definitions that use the
      *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *         for other network modes. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *         in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+     *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -973,16 +1091,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a> in the
-     * <i>Amazon EC2 Container Service Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
      *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
      *        for other network modes. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask-networking.html">Task Networking</a>
-     *        in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+     *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1014,6 +1132,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getLaunchType() != null)
+            sb.append("LaunchType: ").append(getLaunchType()).append(",");
+        if (getPlatformVersion() != null)
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
         if (getDeploymentConfiguration() != null)
@@ -1062,6 +1184,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getLaunchType() == null ^ this.getLaunchType() == null)
+            return false;
+        if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
+            return false;
+        if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
+            return false;
+        if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
+            return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
@@ -1096,6 +1226,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode());
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
+        hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());

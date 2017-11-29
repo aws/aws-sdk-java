@@ -20,7 +20,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      */
     private java.util.List<FaceRecord> faceRecords;
@@ -49,11 +49,11 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * 
      * @return An array of faces detected and added to the collection. For more information, see
-     *         <a>howitworks-index-faces</a>.
+     *         <a>collections-index-faces</a>.
      */
 
     public java.util.List<FaceRecord> getFaceRecords() {
@@ -62,12 +62,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * 
      * @param faceRecords
      *        An array of faces detected and added to the collection. For more information, see
-     *        <a>howitworks-index-faces</a>.
+     *        <a>collections-index-faces</a>.
      */
 
     public void setFaceRecords(java.util.Collection<FaceRecord> faceRecords) {
@@ -81,7 +81,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +91,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * 
      * @param faceRecords
      *        An array of faces detected and added to the collection. For more information, see
-     *        <a>howitworks-index-faces</a>.
+     *        <a>collections-index-faces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,12 +107,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>howitworks-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
      * </p>
      * 
      * @param faceRecords
      *        An array of faces detected and added to the collection. For more information, see
-     *        <a>howitworks-index-faces</a>.
+     *        <a>collections-index-faces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

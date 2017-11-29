@@ -33,7 +33,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
     private String policyName;
     /**
      * <p>
-     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces
+     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
      * </p>
      */
     private String policyDocument;
@@ -88,12 +88,12 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces
+     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
      * </p>
      * 
      * @param policyDocument
      *        The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding
-     *        whitespaces
+     *        whitespace.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -102,11 +102,11 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces
+     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
      * </p>
      * 
      * @return The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding
-     *         whitespaces
+     *         whitespace.
      */
 
     public String getPolicyDocument() {
@@ -115,12 +115,12 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespaces
+     * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
      * </p>
      * 
      * @param policyDocument
      *        The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding
-     *        whitespaces
+     *        whitespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

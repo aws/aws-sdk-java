@@ -166,6 +166,12 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
     private String tableArn;
     /**
      * <p>
+     * Unique identifier for the table for which the backup was created.
+     * </p>
+     */
+    private String tableId;
+    /**
+     * <p>
      * Represents one or more local secondary indexes on the table. Each index is scoped to a given partition key value.
      * Tables with one or more local secondary indexes are subject to an item collection size limit, where the amount of
      * data within a given item collection cannot exceed 10 GB. Each element is composed of:
@@ -396,6 +402,12 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String latestStreamArn;
+    /**
+     * <p>
+     * Contains details for the restore.
+     * </p>
+     */
+    private RestoreSummary restoreSummary;
 
     /**
      * <p>
@@ -1526,6 +1538,46 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
 
     public TableDescription withTableArn(String tableArn) {
         setTableArn(tableArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the table for which the backup was created.
+     * </p>
+     * 
+     * @param tableId
+     *        Unique identifier for the table for which the backup was created.
+     */
+
+    public void setTableId(String tableId) {
+        this.tableId = tableId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the table for which the backup was created.
+     * </p>
+     * 
+     * @return Unique identifier for the table for which the backup was created.
+     */
+
+    public String getTableId() {
+        return this.tableId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the table for which the backup was created.
+     * </p>
+     * 
+     * @param tableId
+     *        Unique identifier for the table for which the backup was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withTableId(String tableId) {
+        setTableId(tableId);
         return this;
     }
 
@@ -3360,6 +3412,46 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Contains details for the restore.
+     * </p>
+     * 
+     * @param restoreSummary
+     *        Contains details for the restore.
+     */
+
+    public void setRestoreSummary(RestoreSummary restoreSummary) {
+        this.restoreSummary = restoreSummary;
+    }
+
+    /**
+     * <p>
+     * Contains details for the restore.
+     * </p>
+     * 
+     * @return Contains details for the restore.
+     */
+
+    public RestoreSummary getRestoreSummary() {
+        return this.restoreSummary;
+    }
+
+    /**
+     * <p>
+     * Contains details for the restore.
+     * </p>
+     * 
+     * @param restoreSummary
+     *        Contains details for the restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withRestoreSummary(RestoreSummary restoreSummary) {
+        setRestoreSummary(restoreSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3388,6 +3480,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             sb.append("ItemCount: ").append(getItemCount()).append(",");
         if (getTableArn() != null)
             sb.append("TableArn: ").append(getTableArn()).append(",");
+        if (getTableId() != null)
+            sb.append("TableId: ").append(getTableId()).append(",");
         if (getLocalSecondaryIndexes() != null)
             sb.append("LocalSecondaryIndexes: ").append(getLocalSecondaryIndexes()).append(",");
         if (getGlobalSecondaryIndexes() != null)
@@ -3397,7 +3491,9 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         if (getLatestStreamLabel() != null)
             sb.append("LatestStreamLabel: ").append(getLatestStreamLabel()).append(",");
         if (getLatestStreamArn() != null)
-            sb.append("LatestStreamArn: ").append(getLatestStreamArn());
+            sb.append("LatestStreamArn: ").append(getLatestStreamArn()).append(",");
+        if (getRestoreSummary() != null)
+            sb.append("RestoreSummary: ").append(getRestoreSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -3448,6 +3544,10 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTableArn() != null && other.getTableArn().equals(this.getTableArn()) == false)
             return false;
+        if (other.getTableId() == null ^ this.getTableId() == null)
+            return false;
+        if (other.getTableId() != null && other.getTableId().equals(this.getTableId()) == false)
+            return false;
         if (other.getLocalSecondaryIndexes() == null ^ this.getLocalSecondaryIndexes() == null)
             return false;
         if (other.getLocalSecondaryIndexes() != null && other.getLocalSecondaryIndexes().equals(this.getLocalSecondaryIndexes()) == false)
@@ -3468,6 +3568,10 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLatestStreamArn() != null && other.getLatestStreamArn().equals(this.getLatestStreamArn()) == false)
             return false;
+        if (other.getRestoreSummary() == null ^ this.getRestoreSummary() == null)
+            return false;
+        if (other.getRestoreSummary() != null && other.getRestoreSummary().equals(this.getRestoreSummary()) == false)
+            return false;
         return true;
     }
 
@@ -3485,11 +3589,13 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTableSizeBytes() == null) ? 0 : getTableSizeBytes().hashCode());
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
         hashCode = prime * hashCode + ((getTableArn() == null) ? 0 : getTableArn().hashCode());
+        hashCode = prime * hashCode + ((getTableId() == null) ? 0 : getTableId().hashCode());
         hashCode = prime * hashCode + ((getLocalSecondaryIndexes() == null) ? 0 : getLocalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
         hashCode = prime * hashCode + ((getLatestStreamLabel() == null) ? 0 : getLatestStreamLabel().hashCode());
         hashCode = prime * hashCode + ((getLatestStreamArn() == null) ? 0 : getLatestStreamArn().hashCode());
+        hashCode = prime * hashCode + ((getRestoreSummary() == null) ? 0 : getRestoreSummary().hashCode());
         return hashCode;
     }
 

@@ -39,6 +39,10 @@ public class UpdateServiceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
+    private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
+    private static final MarshallingInfo<Boolean> FORCENEWDEPLOYMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceNewDeployment").build();
 
     private static final UpdateServiceRequestMarshaller instance = new UpdateServiceRequestMarshaller();
 
@@ -62,6 +66,8 @@ public class UpdateServiceRequestMarshaller {
             protocolMarshaller.marshall(updateServiceRequest.getTaskDefinition(), TASKDEFINITION_BINDING);
             protocolMarshaller.marshall(updateServiceRequest.getDeploymentConfiguration(), DEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateServiceRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateServiceRequest.getPlatformVersion(), PLATFORMVERSION_BINDING);
+            protocolMarshaller.marshall(updateServiceRequest.getForceNewDeployment(), FORCENEWDEPLOYMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

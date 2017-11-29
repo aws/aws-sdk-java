@@ -62,7 +62,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     private VersionInfo versionInfo;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      */
     private String containerInstanceArn;
@@ -341,11 +341,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     *        The ARN of the container instance (if it was previously registered).
      */
 
     public void setContainerInstanceArn(String containerInstanceArn) {
@@ -354,10 +354,10 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * @return The ARN of the container instance (if it was previously registered).
      */
 
     public String getContainerInstanceArn() {
@@ -366,11 +366,11 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     * The ARN of the container instance (if it was previously registered).
      * </p>
      * 
      * @param containerInstanceArn
-     *        The Amazon Resource Name (ARN) of the container instance (if it was previously registered).
+     *        The ARN of the container instance (if it was previously registered).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

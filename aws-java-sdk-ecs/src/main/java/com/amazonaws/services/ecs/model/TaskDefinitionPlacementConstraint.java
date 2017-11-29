@@ -19,9 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a constraint on task placement in the task definition. For more information, see <a
+ * An object representing a constraint on task placement in the task definition.
+ * </p>
+ * <p>
+ * If you are using the Fargate launch type, task placement contraints are not supported.
+ * </p>
+ * <p>
+ * For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
- * Constraints</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinitionPlacementConstraint"
@@ -42,7 +48,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String expression;
@@ -144,13 +150,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExpression(String expression) {
@@ -161,12 +167,12 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return A cluster query language expression to apply to the constraint. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *         Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getExpression() {
@@ -177,13 +183,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
-     * Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
-     *        Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

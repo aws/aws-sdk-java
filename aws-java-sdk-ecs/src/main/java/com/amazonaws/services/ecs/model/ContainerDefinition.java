@@ -88,10 +88,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
-     * The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code>
-     * units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance with the same ratio as their
-     * allocated amount. This parameter maps to <code>CpuShares</code> in the <a
+     * The number of <code>cpu</code> units reserved for the container. If your containers will be part of a task using
+     * the Fargate launch type, this field is optional and the only requirement is that the total amount of CPU reserved
+     * for all containers within a task be lower than the task <code>cpu</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
+     * <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a
+     * container, and containers share unallocated CPU units with other containers on the instance with the same ratio
+     * as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -146,11 +151,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
-     * container definitions. If you specify both, <code>memory</code> must be greater than
-     * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
-     * of <code>memory</code> is used.
+     * If your containers will be part of a task using the Fargate launch type, this field is optional and the only
+     * requirement is that the total amount of memory reserved for all containers within a task be lower than the task
+     * <code>memory</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer for one
+     * or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
+     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -191,11 +201,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The <code>link</code> parameter allows containers to communicate with each other without the need for port
      * mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     * construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed for each <code>name</code> and <code>alias</code>. For more
-     * information on linking Docker containers, see <a
-     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
-     * >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
+     * construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers in
+     * tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking Docker
+     * containers, see <a
+     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https:/
+     * /docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
      * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -214,19 +225,27 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The list of port mappings for the container. Port mappings allow containers to access ports on the host container
-     * instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     * instance to send or receive traffic.
+     * </p>
+     * <p>
+     * If using containers in a task with the Fargate, exposed ports should be specified using
+     * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the
+     * <code>containerPort</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
-     * network mode of a task definition is set to <code>none</code>, then you cannot specify port mappings. If the
+     * network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the
      * network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they
      * must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
-     * are visible in the <b>Network Bindings</b> section of a container description of a selected task in the Amazon
+     * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
      * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
      * </p>
      * </note>
@@ -244,7 +263,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * containers, you should group containers that are used for a common purpose into components, and separate the
      * different components into multiple task definitions. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
-     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private Boolean essential;
@@ -291,14 +310,20 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important>
      */
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> environment;
     /**
      * <p>
-     * The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     * The mount points for data volumes in your container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     * </p>
+     * <p>
+     * This parameter maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -318,7 +343,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<VolumeFrom> volumesFrom;
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>. This
+     * field is not valid for containers in tasks using the Fargate launch type.
      * </p>
      */
     private LinuxParameters linuxParameters;
@@ -407,7 +433,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<String> dnsSearchDomains;
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
+     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -418,8 +445,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<HostEntry> extraHosts;
     /**
      * <p>
-     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This parameter
-     * maps to <code>SecurityOpt</code> in the <a
+     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This field is
+     * not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * <p>
+     * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -431,7 +461,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      */
@@ -444,7 +474,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
@@ -458,14 +488,20 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
      * Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
+     * instance, log in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Ulimit> ulimits;
     /**
      * <p>
-     * The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in the <a
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -487,7 +523,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -496,7 +532,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
      * on that instance can use these log configuration options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      */
@@ -854,10 +890,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code>
-     * units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance with the same ratio as their
-     * allocated amount. This parameter maps to <code>CpuShares</code> in the <a
+     * The number of <code>cpu</code> units reserved for the container. If your containers will be part of a task using
+     * the Fargate launch type, this field is optional and the only requirement is that the total amount of CPU reserved
+     * for all containers within a task be lower than the task <code>cpu</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
+     * <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a
+     * container, and containers share unallocated CPU units with other containers on the instance with the same ratio
+     * as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -902,7 +943,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param cpu
-     *        The number of <code>cpu</code> units reserved for the container. A container instance has 1,024
+     *        The number of <code>cpu</code> units reserved for the container. If your containers will be part of a task
+     *        using the Fargate launch type, this field is optional and the only requirement is that the total amount of
+     *        CPU reserved for all containers within a task be lower than the task <code>cpu</code> value.</p>
+     *        <p>
+     *        For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
      *        <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve
      *        for a container, and containers share unallocated CPU units with other containers on the instance with the
      *        same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
@@ -910,7 +955,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>.
+     *        </p>
+     *        <note>
      *        <p>
      *        You can determine the number of CPU units that are available per EC2 instance type by multiplying the
      *        vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
@@ -955,10 +1002,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code>
-     * units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance with the same ratio as their
-     * allocated amount. This parameter maps to <code>CpuShares</code> in the <a
+     * The number of <code>cpu</code> units reserved for the container. If your containers will be part of a task using
+     * the Fargate launch type, this field is optional and the only requirement is that the total amount of CPU reserved
+     * for all containers within a task be lower than the task <code>cpu</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
+     * <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a
+     * container, and containers share unallocated CPU units with other containers on the instance with the same ratio
+     * as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -1002,7 +1054,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * 
-     * @return The number of <code>cpu</code> units reserved for the container. A container instance has 1,024
+     * @return The number of <code>cpu</code> units reserved for the container. If your containers will be part of a
+     *         task using the Fargate launch type, this field is optional and the only requirement is that the total
+     *         amount of CPU reserved for all containers within a task be lower than the task <code>cpu</code>
+     *         value.</p>
+     *         <p>
+     *         For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
      *         <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve
      *         for a container, and containers share unallocated CPU units with other containers on the instance with
      *         the same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
@@ -1010,7 +1067,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         run</a>.
+     *         </p>
+     *         <note>
      *         <p>
      *         You can determine the number of CPU units that are available per EC2 instance type by multiplying the
      *         vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
@@ -1055,10 +1114,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of <code>cpu</code> units reserved for the container. A container instance has 1,024 <code>cpu</code>
-     * units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a container, and
-     * containers share unallocated CPU units with other containers on the instance with the same ratio as their
-     * allocated amount. This parameter maps to <code>CpuShares</code> in the <a
+     * The number of <code>cpu</code> units reserved for the container. If your containers will be part of a task using
+     * the Fargate launch type, this field is optional and the only requirement is that the total amount of CPU reserved
+     * for all containers within a task be lower than the task <code>cpu</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
+     * <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve for a
+     * container, and containers share unallocated CPU units with other containers on the instance with the same ratio
+     * as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -1103,7 +1167,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param cpu
-     *        The number of <code>cpu</code> units reserved for the container. A container instance has 1,024
+     *        The number of <code>cpu</code> units reserved for the container. If your containers will be part of a task
+     *        using the Fargate launch type, this field is optional and the only requirement is that the total amount of
+     *        CPU reserved for all containers within a task be lower than the task <code>cpu</code> value.</p>
+     *        <p>
+     *        For containers that will be part of a task using the EC2 launch type, a container instance has 1,024
      *        <code>cpu</code> units for every CPU core. This parameter specifies the minimum amount of CPU to reserve
      *        for a container, and containers share unallocated CPU units with other containers on the instance with the
      *        same ratio as their allocated amount. This parameter maps to <code>CpuShares</code> in the <a
@@ -1111,7 +1179,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>.
+     *        </p>
+     *        <note>
      *        <p>
      *        You can determine the number of CPU units that are available per EC2 instance type by multiplying the
      *        vCPUs listed for that instance type on the <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
@@ -1166,11 +1236,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
-     * container definitions. If you specify both, <code>memory</code> must be greater than
-     * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
-     * of <code>memory</code> is used.
+     * If your containers will be part of a task using the Fargate launch type, this field is optional and the only
+     * requirement is that the total amount of memory reserved for all containers within a task be lower than the task
+     * <code>memory</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer for one
+     * or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
+     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -1186,11 +1261,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <p>
-     *        You must specify a non-zero integer for one or both of <code>memory</code> or
-     *        <code>memoryReservation</code> in container definitions. If you specify both, <code>memory</code> must be
-     *        greater than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that
-     *        value is subtracted from the available memory resources for the container instance on which the container
-     *        is placed; otherwise, the value of <code>memory</code> is used.
+     *        If your containers will be part of a task using the Fargate launch type, this field is optional and the
+     *        only requirement is that the total amount of memory reserved for all containers within a task be lower
+     *        than the task <code>memory</code> value.
+     *        </p>
+     *        <p>
+     *        For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer
+     *        for one or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you
+     *        specify both, <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     *        <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     *        container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
      *        The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
@@ -1211,11 +1291,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
-     * container definitions. If you specify both, <code>memory</code> must be greater than
-     * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
-     * of <code>memory</code> is used.
+     * If your containers will be part of a task using the Fargate launch type, this field is optional and the only
+     * requirement is that the total amount of memory reserved for all containers within a task be lower than the task
+     * <code>memory</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer for one
+     * or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
+     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -1230,11 +1315,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p>
      *         <p>
-     *         You must specify a non-zero integer for one or both of <code>memory</code> or
-     *         <code>memoryReservation</code> in container definitions. If you specify both, <code>memory</code> must be
-     *         greater than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that
-     *         value is subtracted from the available memory resources for the container instance on which the container
-     *         is placed; otherwise, the value of <code>memory</code> is used.
+     *         If your containers will be part of a task using the Fargate launch type, this field is optional and the
+     *         only requirement is that the total amount of memory reserved for all containers within a task be lower
+     *         than the task <code>memory</code> value.
+     *         </p>
+     *         <p>
+     *         For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer
+     *         for one or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you
+     *         specify both, <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     *         <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     *         container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      *         </p>
      *         <p>
      *         The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
@@ -1255,11 +1345,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
-     * You must specify a non-zero integer for one or both of <code>memory</code> or <code>memoryReservation</code> in
-     * container definitions. If you specify both, <code>memory</code> must be greater than
-     * <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that value is subtracted from
-     * the available memory resources for the container instance on which the container is placed; otherwise, the value
-     * of <code>memory</code> is used.
+     * If your containers will be part of a task using the Fargate launch type, this field is optional and the only
+     * requirement is that the total amount of memory reserved for all containers within a task be lower than the task
+     * <code>memory</code> value.
+     * </p>
+     * <p>
+     * For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer for one
+     * or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you specify both,
+     * <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     * <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     * container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      * </p>
      * <p>
      * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
@@ -1275,11 +1370,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <p>
-     *        You must specify a non-zero integer for one or both of <code>memory</code> or
-     *        <code>memoryReservation</code> in container definitions. If you specify both, <code>memory</code> must be
-     *        greater than <code>memoryReservation</code>. If you specify <code>memoryReservation</code>, then that
-     *        value is subtracted from the available memory resources for the container instance on which the container
-     *        is placed; otherwise, the value of <code>memory</code> is used.
+     *        If your containers will be part of a task using the Fargate launch type, this field is optional and the
+     *        only requirement is that the total amount of memory reserved for all containers within a task be lower
+     *        than the task <code>memory</code> value.
+     *        </p>
+     *        <p>
+     *        For containers that will be part of a task using the EC2 launch type, you must specify a non-zero integer
+     *        for one or both of <code>memory</code> or <code>memoryReservation</code> in container definitions. If you
+     *        specify both, <code>memory</code> must be greater than <code>memoryReservation</code>. If you specify
+     *        <code>memoryReservation</code>, then that value is subtracted from the available memory resources for the
+     *        container instance on which the container is placed; otherwise, the value of <code>memory</code> is used.
      *        </p>
      *        <p>
      *        The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
@@ -1471,11 +1571,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The <code>link</code> parameter allows containers to communicate with each other without the need for port
      * mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     * construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed for each <code>name</code> and <code>alias</code>. For more
-     * information on linking Docker containers, see <a
-     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
-     * >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
+     * construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers in
+     * tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking Docker
+     * containers, see <a
+     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https:/
+     * /docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
      * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -1492,9 +1593,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @return The <code>link</code> parameter allows containers to communicate with each other without the need for
      *         port mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link.
-     *         This construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and
-     *         lowercase), numbers, hyphens, and underscores are allowed for each <code>name</code> and
-     *         <code>alias</code>. For more information on linking Docker containers, see <a
+     *         This construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for
+     *         containers in tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers,
+     *         hyphens, and underscores are allowed for each <code>name</code> and <code>alias</code>. For more
+     *         information on linking Docker containers, see <a
      *         href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
      *         >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter
      *         maps to <code>Links</code> in the <a
@@ -1521,11 +1623,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The <code>link</code> parameter allows containers to communicate with each other without the need for port
      * mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     * construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed for each <code>name</code> and <code>alias</code>. For more
-     * information on linking Docker containers, see <a
-     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
-     * >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
+     * construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers in
+     * tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking Docker
+     * containers, see <a
+     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https:/
+     * /docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
      * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -1543,9 +1646,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param links
      *        The <code>link</code> parameter allows containers to communicate with each other without the need for port
      *        mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     *        construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed for each <code>name</code> and
-     *        <code>alias</code>. For more information on linking Docker containers, see <a
+     *        construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers
+     *        in tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking
+     *        Docker containers, see <a
      *        href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
      *        >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps
      *        to <code>Links</code> in the <a
@@ -1574,11 +1678,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The <code>link</code> parameter allows containers to communicate with each other without the need for port
      * mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     * construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed for each <code>name</code> and <code>alias</code>. For more
-     * information on linking Docker containers, see <a
-     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
-     * >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
+     * construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers in
+     * tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking Docker
+     * containers, see <a
+     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https:/
+     * /docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
      * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -1601,9 +1706,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param links
      *        The <code>link</code> parameter allows containers to communicate with each other without the need for port
      *        mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     *        construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed for each <code>name</code> and
-     *        <code>alias</code>. For more information on linking Docker containers, see <a
+     *        construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers
+     *        in tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking
+     *        Docker containers, see <a
      *        href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
      *        >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps
      *        to <code>Links</code> in the <a
@@ -1634,11 +1740,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The <code>link</code> parameter allows containers to communicate with each other without the need for port
      * mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     * construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and lowercase),
-     * numbers, hyphens, and underscores are allowed for each <code>name</code> and <code>alias</code>. For more
-     * information on linking Docker containers, see <a
-     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
-     * >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
+     * construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers in
+     * tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking Docker
+     * containers, see <a
+     * href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/">https:/
+     * /docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps to
      * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -1656,9 +1763,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param links
      *        The <code>link</code> parameter allows containers to communicate with each other without the need for port
      *        mappings, using the <code>name</code> parameter and optionally, an <code>alias</code> for the link. This
-     *        construct is analogous to <code>name:alias</code> in Docker links. Up to 255 letters (uppercase and
-     *        lowercase), numbers, hyphens, and underscores are allowed for each <code>name</code> and
-     *        <code>alias</code>. For more information on linking Docker containers, see <a
+     *        construct is analogous to <code>name:alias</code> in Docker links. This field is not valid for containers
+     *        in tasks using the Fargate launch type. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed for each <code>name</code> and <code>alias</code>. For more information on linking
+     *        Docker containers, see <a
      *        href="https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/"
      *        >https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/</a>. This parameter maps
      *        to <code>Links</code> in the <a
@@ -1683,35 +1791,52 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The list of port mappings for the container. Port mappings allow containers to access ports on the host container
-     * instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     * instance to send or receive traffic.
+     * </p>
+     * <p>
+     * If using containers in a task with the Fargate, exposed ports should be specified using
+     * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the
+     * <code>containerPort</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
-     * network mode of a task definition is set to <code>none</code>, then you cannot specify port mappings. If the
+     * network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the
      * network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they
      * must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
-     * are visible in the <b>Network Bindings</b> section of a container description of a selected task in the Amazon
+     * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
      * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
      * </p>
      * </note>
      * 
      * @return The list of port mappings for the container. Port mappings allow containers to access ports on the host
-     *         container instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     *         container instance to send or receive traffic.</p>
+     *         <p>
+     *         If using containers in a task with the Fargate, exposed ports should be specified using
+     *         <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as
+     *         the <code>containerPort</code>.
+     *         </p>
+     *         <p>
+     *         This parameter maps to <code>PortBindings</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. If the network mode of a task definition is set to <code>none</code>, then you cannot specify
+     *         run</a>. If the network mode of a task definition is set to <code>none</code>, then you can't specify
      *         port mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must
-     *         either be undefined or they must match the container port in the port mapping.</p> <note>
+     *         either be undefined or they must match the container port in the port mapping.
+     *         </p>
+     *         <note>
      *         <p>
      *         After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
-     *         assignments are visible in the <b>Network Bindings</b> section of a container description of a selected
+     *         assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
      *         task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
      *         responses.
      *         </p>
@@ -1727,36 +1852,53 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The list of port mappings for the container. Port mappings allow containers to access ports on the host container
-     * instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     * instance to send or receive traffic.
+     * </p>
+     * <p>
+     * If using containers in a task with the Fargate, exposed ports should be specified using
+     * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the
+     * <code>containerPort</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
-     * network mode of a task definition is set to <code>none</code>, then you cannot specify port mappings. If the
+     * network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the
      * network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they
      * must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
-     * are visible in the <b>Network Bindings</b> section of a container description of a selected task in the Amazon
+     * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
      * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
      * </p>
      * </note>
      * 
      * @param portMappings
      *        The list of port mappings for the container. Port mappings allow containers to access ports on the host
-     *        container instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     *        container instance to send or receive traffic.</p>
+     *        <p>
+     *        If using containers in a task with the Fargate, exposed ports should be specified using
+     *        <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as
+     *        the <code>containerPort</code>.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>PortBindings</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        If the network mode of a task definition is set to <code>none</code>, then you cannot specify port
+     *        If the network mode of a task definition is set to <code>none</code>, then you can't specify port
      *        mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must
-     *        either be undefined or they must match the container port in the port mapping.</p> <note>
+     *        either be undefined or they must match the container port in the port mapping.
+     *        </p>
+     *        <note>
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
-     *        assignments are visible in the <b>Network Bindings</b> section of a container description of a selected
+     *        assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
      *        task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
      *        responses.
      *        </p>
@@ -1774,19 +1916,27 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The list of port mappings for the container. Port mappings allow containers to access ports on the host container
-     * instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     * instance to send or receive traffic.
+     * </p>
+     * <p>
+     * If using containers in a task with the Fargate, exposed ports should be specified using
+     * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the
+     * <code>containerPort</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
-     * network mode of a task definition is set to <code>none</code>, then you cannot specify port mappings. If the
+     * network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the
      * network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they
      * must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
-     * are visible in the <b>Network Bindings</b> section of a container description of a selected task in the Amazon
+     * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
      * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
      * </p>
      * </note>
@@ -1798,17 +1948,26 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param portMappings
      *        The list of port mappings for the container. Port mappings allow containers to access ports on the host
-     *        container instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     *        container instance to send or receive traffic.</p>
+     *        <p>
+     *        If using containers in a task with the Fargate, exposed ports should be specified using
+     *        <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as
+     *        the <code>containerPort</code>.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>PortBindings</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        If the network mode of a task definition is set to <code>none</code>, then you cannot specify port
+     *        If the network mode of a task definition is set to <code>none</code>, then you can't specify port
      *        mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must
-     *        either be undefined or they must match the container port in the port mapping.</p> <note>
+     *        either be undefined or they must match the container port in the port mapping.
+     *        </p>
+     *        <note>
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
-     *        assignments are visible in the <b>Network Bindings</b> section of a container description of a selected
+     *        assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
      *        task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
      *        responses.
      *        </p>
@@ -1828,36 +1987,53 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The list of port mappings for the container. Port mappings allow containers to access ports on the host container
-     * instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     * instance to send or receive traffic.
+     * </p>
+     * <p>
+     * If using containers in a task with the Fargate, exposed ports should be specified using
+     * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the
+     * <code>containerPort</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>PortBindings</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. If the
-     * network mode of a task definition is set to <code>none</code>, then you cannot specify port mappings. If the
+     * network mode of a task definition is set to <code>none</code>, then you can't specify port mappings. If the
      * network mode of a task definition is set to <code>host</code>, then host ports must either be undefined or they
      * must match the container port in the port mapping.
      * </p>
      * <note>
      * <p>
      * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments
-     * are visible in the <b>Network Bindings</b> section of a container description of a selected task in the Amazon
+     * are visible in the <b>Network Bindings</b> section of a container description for a selected task in the Amazon
      * ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a> responses.
      * </p>
      * </note>
      * 
      * @param portMappings
      *        The list of port mappings for the container. Port mappings allow containers to access ports on the host
-     *        container instance to send or receive traffic. This parameter maps to <code>PortBindings</code> in the <a
+     *        container instance to send or receive traffic.</p>
+     *        <p>
+     *        If using containers in a task with the Fargate, exposed ports should be specified using
+     *        <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as
+     *        the <code>containerPort</code>.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>PortBindings</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        If the network mode of a task definition is set to <code>none</code>, then you cannot specify port
+     *        If the network mode of a task definition is set to <code>none</code>, then you can't specify port
      *        mappings. If the network mode of a task definition is set to <code>host</code>, then host ports must
-     *        either be undefined or they must match the container port in the port mapping.</p> <note>
+     *        either be undefined or they must match the container port in the port mapping.
+     *        </p>
+     *        <note>
      *        <p>
      *        After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port
-     *        assignments are visible in the <b>Network Bindings</b> section of a container description of a selected
+     *        assignments are visible in the <b>Network Bindings</b> section of a container description for a selected
      *        task in the Amazon ECS console, or the <code>networkBindings</code> section <a>DescribeTasks</a>
      *        responses.
      *        </p>
@@ -1881,7 +2057,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * containers, you should group containers that are used for a common purpose into components, and separate the
      * different components into multiple task definitions. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
-     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param essential
@@ -1895,7 +2071,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        multiple containers, you should group containers that are used for a common purpose into components, and
      *        separate the different components into multiple task definitions. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
-     *        >Application Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        >Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setEssential(Boolean essential) {
@@ -1914,7 +2090,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * containers, you should group containers that are used for a common purpose into components, and separate the
      * different components into multiple task definitions. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
-     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return If the <code>essential</code> parameter of a container is marked as <code>true</code>, and that container
@@ -1927,7 +2103,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         multiple containers, you should group containers that are used for a common purpose into components, and
      *         separate the different components into multiple task definitions. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
-     *         >Application Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         >Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean getEssential() {
@@ -1946,7 +2122,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * containers, you should group containers that are used for a common purpose into components, and separate the
      * different components into multiple task definitions. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
-     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param essential
@@ -1960,7 +2136,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        multiple containers, you should group containers that are used for a common purpose into components, and
      *        separate the different components into multiple task definitions. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
-     *        >Application Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        >Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1981,7 +2157,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * containers, you should group containers that are used for a common purpose into components, and separate the
      * different components into multiple task definitions. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
-     * Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return If the <code>essential</code> parameter of a container is marked as <code>true</code>, and that container
@@ -1994,7 +2170,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         multiple containers, you should group containers that are used for a common purpose into components, and
      *         separate the different components into multiple task definitions. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
-     *         >Application Architecture</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         >Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public Boolean isEssential() {
@@ -2325,7 +2501,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important>
      * 
@@ -2336,7 +2512,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <important>
      *         <p>
-     *         We do not recommend using plain text environment variables for sensitive information, such as credential
+     *         We do not recommend using plaintext environment variables for sensitive information, such as credential
      *         data.
      *         </p>
      */
@@ -2358,7 +2534,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important>
      * 
@@ -2370,7 +2546,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <important>
      *        <p>
-     *        We do not recommend using plain text environment variables for sensitive information, such as credential
+     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      */
@@ -2394,7 +2570,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important>
      * <p>
@@ -2411,7 +2587,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <important>
      *        <p>
-     *        We do not recommend using plain text environment variables for sensitive information, such as credential
+     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2437,7 +2613,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We do not recommend using plain text environment variables for sensitive information, such as credential data.
+     * We do not recommend using plaintext environment variables for sensitive information, such as credential data.
      * </p>
      * </important>
      * 
@@ -2449,7 +2625,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      *        <important>
      *        <p>
-     *        We do not recommend using plain text environment variables for sensitive information, such as credential
+     *        We do not recommend using plaintext environment variables for sensitive information, such as credential
      *        data.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2462,16 +2638,27 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     * The mount points for data volumes in your container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     * </p>
+     * <p>
+     * This parameter maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * 
-     * @return The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the
-     *         <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     *         a container</a> section of the <a
+     * @return The mount points for data volumes in your container.</p>
+     *         <p>
+     *         If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     *         </p>
+     *         <p>
+     *         This parameter maps to <code>Volumes</code> in the <a
+     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
+     *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.
@@ -2486,7 +2673,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     * The mount points for data volumes in your container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     * </p>
+     * <p>
+     * This parameter maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -2494,7 +2687,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param mountPoints
-     *        The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     *        The mount points for data volumes in your container.</p>
+     *        <p>
+     *        If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>Volumes</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -2512,7 +2710,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     * The mount points for data volumes in your container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     * </p>
+     * <p>
+     * This parameter maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -2525,7 +2729,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param mountPoints
-     *        The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     *        The mount points for data volumes in your container.</p>
+     *        <p>
+     *        If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>Volumes</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -2545,7 +2754,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     * The mount points for data volumes in your container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     * </p>
+     * <p>
+     * This parameter maps to <code>Volumes</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -2553,7 +2768,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param mountPoints
-     *        The mount points for data volumes in your container. This parameter maps to <code>Volumes</code> in the <a
+     *        The mount points for data volumes in your container.</p>
+     *        <p>
+     *        If using the Fargate launch type, the <code>sourceVolume</code> parameter is not supported.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>Volumes</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -2677,11 +2897,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>. This
+     * field is not valid for containers in tasks using the Fargate launch type.
      * </p>
      * 
      * @param linuxParameters
      *        Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     *        This field is not valid for containers in tasks using the Fargate launch type.
      */
 
     public void setLinuxParameters(LinuxParameters linuxParameters) {
@@ -2690,10 +2912,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>. This
+     * field is not valid for containers in tasks using the Fargate launch type.
      * </p>
      * 
      * @return Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     *         This field is not valid for containers in tasks using the Fargate launch type.
      */
 
     public LinuxParameters getLinuxParameters() {
@@ -2702,11 +2926,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     * Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>. This
+     * field is not valid for containers in tasks using the Fargate launch type.
      * </p>
      * 
      * @param linuxParameters
      *        Linux-specific modifications that are applied to the container, such as Linux <a>KernelCapabilities</a>.
+     *        This field is not valid for containers in tasks using the Fargate launch type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3407,7 +3633,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
+     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -3416,7 +3643,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *         container. This parameter maps to <code>ExtraHosts</code> in the <a
+     *         container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
+     *         container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
@@ -3433,7 +3661,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
+     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -3443,7 +3672,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
+     *        container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3461,7 +3691,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
+     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -3476,7 +3707,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
+     *        container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3496,7 +3728,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. This
+     * A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the container. If
+     * using the Fargate launch type, this may be used to list non-Fargate hosts you want the container to talk to. This
      * parameter maps to <code>ExtraHosts</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
@@ -3506,7 +3739,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param extraHosts
      *        A list of hostnames and IP address mappings to append to the <code>/etc/hosts</code> file on the
-     *        container. This parameter maps to <code>ExtraHosts</code> in the <a
+     *        container. If using the Fargate launch type, this may be used to list non-Fargate hosts you want the
+     *        container to talk to. This parameter maps to <code>ExtraHosts</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3521,8 +3755,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This parameter
-     * maps to <code>SecurityOpt</code> in the <a
+     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This field is
+     * not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * <p>
+     * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3534,23 +3771,27 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @return A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
-     *         parameter maps to <code>SecurityOpt</code> in the <a
+     *         field is not valid for containers in tasks using the Fargate launch type.</p>
+     *         <p>
+     *         This parameter maps to <code>SecurityOpt</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         run</a>.
+     *         </p>
+     *         <note>
      *         <p>
      *         The Amazon ECS container agent running on a container instance must register with the
      *         <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *         before containers placed on that instance can use these security options. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *         Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      */
 
@@ -3563,8 +3804,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This parameter
-     * maps to <code>SecurityOpt</code> in the <a
+     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This field is
+     * not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * <p>
+     * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3576,24 +3820,28 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param dockerSecurityOptions
      *        A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
-     *        parameter maps to <code>SecurityOpt</code> in the <a
+     *        field is not valid for containers in tasks using the Fargate launch type.</p>
+     *        <p>
+     *        This parameter maps to <code>SecurityOpt</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The Amazon ECS container agent running on a container instance must register with the
      *        <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *        before containers placed on that instance can use these security options. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *        Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      */
 
@@ -3608,8 +3856,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This parameter
-     * maps to <code>SecurityOpt</code> in the <a
+     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This field is
+     * not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * <p>
+     * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3621,7 +3872,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -3632,18 +3883,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param dockerSecurityOptions
      *        A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
-     *        parameter maps to <code>SecurityOpt</code> in the <a
+     *        field is not valid for containers in tasks using the Fargate launch type.</p>
+     *        <p>
+     *        This parameter maps to <code>SecurityOpt</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The Amazon ECS container agent running on a container instance must register with the
      *        <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *        before containers placed on that instance can use these security options. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *        Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3660,8 +3915,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This parameter
-     * maps to <code>SecurityOpt</code> in the <a
+     * A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This field is
+     * not valid for containers in tasks using the Fargate launch type.
+     * </p>
+     * <p>
+     * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3673,24 +3931,28 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param dockerSecurityOptions
      *        A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
-     *        parameter maps to <code>SecurityOpt</code> in the <a
+     *        field is not valid for containers in tasks using the Fargate launch type.</p>
+     *        <p>
+     *        This parameter maps to <code>SecurityOpt</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--security-opt</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        run</a>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The Amazon ECS container agent running on a container instance must register with the
      *        <code>ECS_SELINUX_CAPABLE=true</code> or <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *        before containers placed on that instance can use these security options. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *        Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3708,7 +3970,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -3718,7 +3980,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. This parameter requires version 1.18 of the Docker Remote API or greater on your container
-     *         instance. To check the Docker Remote API version on your container instance, log into your container
+     *         instance. To check the Docker Remote API version on your container instance, log in to your container
      *         instance and run the following command: <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -3734,7 +3996,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -3745,7 +4007,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -3761,7 +4023,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. This
      * parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -3772,7 +4034,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      *        <code>--label</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3812,7 +4074,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
      * Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
+     * instance, log in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -3824,7 +4086,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires
      *         version 1.18 of the Docker Remote API or greater on your container instance. To check the Docker Remote
-     *         API version on your container instance, log into your container instance and run the following command:
+     *         API version on your container instance, log in to your container instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -3844,7 +4106,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
      * Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
+     * instance, log in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -3856,7 +4118,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log into your container instance and run the following command:
+     *        your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -3878,7 +4140,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
      * Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
+     * instance, log in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <p>
@@ -3895,7 +4157,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log into your container instance and run the following command:
+     *        your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3919,7 +4181,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Valid
      * naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
      * Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     * instance, log into your container instance and run the following command:
+     * instance, log in to your container instance and run the following command:
      * <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -3931,7 +4193,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      *        Valid naming values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of
      *        the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log into your container instance and run the following command:
+     *        your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3943,7 +4205,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in the <a
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3965,7 +4233,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -3974,13 +4242,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
      * on that instance can use these log configuration options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param logConfiguration
-     *        The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in
-     *        the <a
+     *        The log configuration specification for the container.</p>
+     *        <p>
+     *        If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>LogConfig</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -3991,7 +4263,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        must be configured properly on the container instance (or on a different log server for remote logging
      *        options). For more information on the options for different supported log drivers, see <a
      *        href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
-     *        documentation.</p> <note>
+     *        documentation.
+     *        </p>
+     *        <note>
      *        <p>
      *        Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
@@ -4000,7 +4274,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      *        </p>
      *        <note>
@@ -4009,7 +4283,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      *        containers placed on that instance can use these log configuration options. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *        Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      */
 
@@ -4019,7 +4293,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in the <a
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -4041,7 +4321,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -4050,12 +4330,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
      * on that instance can use these log configuration options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
-     * @return The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in
-     *         the <a
+     * @return The log configuration specification for the container.</p>
+     *         <p>
+     *         If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     *         </p>
+     *         <p>
+     *         This parameter maps to <code>LogConfig</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
@@ -4066,7 +4350,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         must be configured properly on the container instance (or on a different log server for remote logging
      *         options). For more information on the options for different supported log drivers, see <a
      *         href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
-     *         documentation.</p> <note>
+     *         documentation.
+     *         </p>
+     *         <note>
      *         <p>
      *         Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in
      *         the <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
@@ -4075,7 +4361,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         </note>
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *         check the Docker Remote API version on your container instance, log into your container instance and run
+     *         check the Docker Remote API version on your container instance, log in to your container instance and run
      *         the following command: <code>sudo docker version | grep "Server API version"</code>
      *         </p>
      *         <note>
@@ -4084,7 +4370,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable
      *         before containers placed on that instance can use these log configuration options. For more information,
      *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *         Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *         Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      */
 
@@ -4094,7 +4380,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in the <a
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -4116,7 +4408,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * <note>
@@ -4125,13 +4417,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
      * on that instance can use these log configuration options. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
-     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param logConfiguration
-     *        The log configuration specification for the container. This parameter maps to <code>LogConfig</code> in
-     *        the <a
+     *        The log configuration specification for the container.</p>
+     *        <p>
+     *        If using the Fargate launch type, the only supported value is <code>awslogs</code>.
+     *        </p>
+     *        <p>
+     *        This parameter maps to <code>LogConfig</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
@@ -4142,7 +4438,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        must be configured properly on the container instance (or on a different log server for remote logging
      *        options). For more information on the options for different supported log drivers, see <a
      *        href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
-     *        documentation.</p> <note>
+     *        documentation.
+     *        </p>
+     *        <note>
      *        <p>
      *        Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon (shown in the
      *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
@@ -4151,7 +4449,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        </note>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
-     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
      *        the following command: <code>sudo docker version | grep "Server API version"</code>
      *        </p>
      *        <note>
@@ -4160,7 +4458,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      *        containers placed on that instance can use these log configuration options. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
-     *        Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

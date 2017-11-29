@@ -43,6 +43,10 @@ public class JobParametersMarshaller {
             .marshallLocationName("Tier").build();
     private static final MarshallingInfo<StructuredPojo> INVENTORYRETRIEVALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InventoryRetrievalParameters").build();
+    private static final MarshallingInfo<StructuredPojo> SELECTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectParameters").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocation").build();
 
     private static final JobParametersMarshaller instance = new JobParametersMarshaller();
 
@@ -68,6 +72,8 @@ public class JobParametersMarshaller {
             protocolMarshaller.marshall(jobParameters.getRetrievalByteRange(), RETRIEVALBYTERANGE_BINDING);
             protocolMarshaller.marshall(jobParameters.getTier(), TIER_BINDING);
             protocolMarshaller.marshall(jobParameters.getInventoryRetrievalParameters(), INVENTORYRETRIEVALPARAMETERS_BINDING);
+            protocolMarshaller.marshall(jobParameters.getSelectParameters(), SELECTPARAMETERS_BINDING);
+            protocolMarshaller.marshall(jobParameters.getOutputLocation(), OUTPUTLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

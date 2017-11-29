@@ -458,4 +458,15 @@ public class Unmarshallers {
             return new SetBucketInventoryConfigurationResult();
         }
     }
+
+    /**
+     * Unmarshaller for the RestoreObjectResult XML response.
+     */
+    public static final class RestoreObjectResultUnmarshaller
+        implements Unmarshaller<RestoreObjectResult, InputStream> {
+
+        public RestoreObjectResult unmarshall(InputStream in) {
+            return new RestoreObjectResult();
+        }
+    }
 }

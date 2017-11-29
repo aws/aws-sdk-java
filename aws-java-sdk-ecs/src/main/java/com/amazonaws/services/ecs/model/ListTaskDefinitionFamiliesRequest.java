@@ -48,8 +48,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
      * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * continues from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -256,8 +255,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
      * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * continues from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -270,8 +268,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      *        The <code>nextToken</code> value returned from a previous paginated
      *        <code>ListTaskDefinitionFamilies</code> request where <code>maxResults</code> was used and the results
      *        exceeded the value of that parameter. Pagination continues from the end of the previous results that
-     *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
-     *        to return.</p> <note>
+     *        returned the <code>nextToken</code> value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.
@@ -286,8 +283,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
      * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * continues from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -299,8 +295,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * @return The <code>nextToken</code> value returned from a previous paginated
      *         <code>ListTaskDefinitionFamilies</code> request where <code>maxResults</code> was used and the results
      *         exceeded the value of that parameter. Pagination continues from the end of the previous results that
-     *         returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
-     *         to return.</p> <note>
+     *         returned the <code>nextToken</code> value.</p> <note>
      *         <p>
      *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
@@ -315,8 +310,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListTaskDefinitionFamilies</code>
      * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-     * <code>null</code> when there are no more results to return.
+     * continues from the end of the previous results that returned the <code>nextToken</code> value.
      * </p>
      * <note>
      * <p>
@@ -329,8 +323,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      *        The <code>nextToken</code> value returned from a previous paginated
      *        <code>ListTaskDefinitionFamilies</code> request where <code>maxResults</code> was used and the results
      *        exceeded the value of that parameter. Pagination continues from the end of the previous results that
-     *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
-     *        to return.</p> <note>
+     *        returned the <code>nextToken</code> value.</p> <note>
      *        <p>
      *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
      *        list and not for other programmatic purposes.

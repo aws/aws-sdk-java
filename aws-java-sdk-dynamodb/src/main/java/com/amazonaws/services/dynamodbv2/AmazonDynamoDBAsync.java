@@ -462,6 +462,216 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Creates a backup for an existing table.
+     * </p>
+     * <p>
+     * Each time you create an On-Demand Backup, the entire table data is backed up. There is no limit to the number of
+     * on-demand backups that can be taken.
+     * </p>
+     * <p>
+     * You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+     * </p>
+     * <p>
+     * All backups in DynamoDB work without consuming any provisioned throughput on the table. This results in a fast,
+     * low-cost, and scalable backup process. In general, the larger the table, the more time it takes to back up. The
+     * backup is stored in an S3 data store that is maintained and managed by DynamoDB.
+     * </p>
+     * <p>
+     * Backups incorporate all writes (delete, put, update) that were completed within the last minute before the backup
+     * request was initiated. Backups might include some writes (delete, put, update) that were completed before the
+     * backup request was finished.
+     * </p>
+     * <p>
+     * For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all
+     * data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may
+     * not contain data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal
+     * consistency.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the backups:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createBackupRequest
+     * @return A Java Future containing the result of the CreateBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsync.CreateBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest createBackupRequest);
+
+    /**
+     * <p>
+     * Creates a backup for an existing table.
+     * </p>
+     * <p>
+     * Each time you create an On-Demand Backup, the entire table data is backed up. There is no limit to the number of
+     * on-demand backups that can be taken.
+     * </p>
+     * <p>
+     * You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+     * </p>
+     * <p>
+     * All backups in DynamoDB work without consuming any provisioned throughput on the table. This results in a fast,
+     * low-cost, and scalable backup process. In general, the larger the table, the more time it takes to back up. The
+     * backup is stored in an S3 data store that is maintained and managed by DynamoDB.
+     * </p>
+     * <p>
+     * Backups incorporate all writes (delete, put, update) that were completed within the last minute before the backup
+     * request was initiated. Backups might include some writes (delete, put, update) that were completed before the
+     * backup request was finished.
+     * </p>
+     * <p>
+     * For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all
+     * data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may
+     * not contain data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal
+     * consistency.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the backups:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.CreateBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest createBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBackupRequest, CreateBackupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a global table from an existing table. A global table creates a replication relationship between two or
+     * more DynamoDB tables with the same table name in the provided regions.
+     * </p>
+     * <p>
+     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The tables must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must contain no items.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGlobalTableRequest
+     * @return A Java Future containing the result of the CreateGlobalTable operation returned by the service.
+     * @sample AmazonDynamoDBAsync.CreateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGlobalTableResult> createGlobalTableAsync(CreateGlobalTableRequest createGlobalTableRequest);
+
+    /**
+     * <p>
+     * Creates a global table from an existing table. A global table creates a replication relationship between two or
+     * more DynamoDB tables with the same table name in the provided regions.
+     * </p>
+     * <p>
+     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The tables must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must contain no items.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGlobalTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGlobalTable operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.CreateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGlobalTableResult> createGlobalTableAsync(CreateGlobalTableRequest createGlobalTableRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGlobalTableRequest, CreateGlobalTableResult> asyncHandler);
+
+    /**
+     * <p>
      * The <code>CreateTable</code> operation adds a new table to your account. In an AWS account, table names must be
      * unique within each region. That is, you can have two tables with same name if you create the tables in different
      * regions.
@@ -541,6 +751,43 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     java.util.concurrent.Future<CreateTableResult> createTableAsync(java.util.List<AttributeDefinition> attributeDefinitions, String tableName,
             java.util.List<KeySchemaElement> keySchema, ProvisionedThroughput provisionedThroughput,
             com.amazonaws.handlers.AsyncHandler<CreateTableRequest, CreateTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @return A Java Future containing the result of the DeleteBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest deleteBackupRequest);
+
+    /**
+     * <p>
+     * Deletes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest deleteBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBackupRequest, DeleteBackupResult> asyncHandler);
 
     /**
      * <p>
@@ -720,6 +967,115 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(String tableName,
             com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeBackupRequest
+     * @return A Java Future containing the result of the DescribeBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBackupResult> describeBackupAsync(DescribeBackupRequest describeBackupRequest);
+
+    /**
+     * <p>
+     * Describes an existing backup of a table.
+     * </p>
+     * <p>
+     * You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBackupResult> describeBackupAsync(DescribeBackupRequest describeBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBackupRequest, DescribeBackupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Checks the status of the backup restore settings on the specified table. If backups are enabled,
+     * <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+     * </p>
+     * <p>
+     * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeContinuousBackupsRequest
+     * @return A Java Future containing the result of the DescribeContinuousBackups operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeContinuousBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeContinuousBackupsResult> describeContinuousBackupsAsync(
+            DescribeContinuousBackupsRequest describeContinuousBackupsRequest);
+
+    /**
+     * <p>
+     * Checks the status of the backup restore settings on the specified table. If backups are enabled,
+     * <code>ContinuousBackupsStatus</code> will bet set to ENABLED.
+     * </p>
+     * <p>
+     * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
+     * </p>
+     * 
+     * @param describeContinuousBackupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeContinuousBackups operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeContinuousBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeContinuousBackupsResult> describeContinuousBackupsAsync(
+            DescribeContinuousBackupsRequest describeContinuousBackupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the global table.
+     * </p>
+     * 
+     * @param describeGlobalTableRequest
+     * @return A Java Future containing the result of the DescribeGlobalTable operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest describeGlobalTableRequest);
+
+    /**
+     * <p>
+     * Returns information about the global table.
+     * </p>
+     * 
+     * @param describeGlobalTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGlobalTable operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest describeGlobalTableRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalTableRequest, DescribeGlobalTableResult> asyncHandler);
 
     /**
      * <p>
@@ -1103,6 +1459,88 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<GetItemResult> getItemAsync(String tableName, java.util.Map<String, AttributeValue> key, Boolean consistentRead,
             com.amazonaws.handlers.AsyncHandler<GetItemRequest, GetItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
+     * <code>ListBackups</code> returns a paginated list of results with at most 1MB worth of items in a page. You can
+     * also specify a limit for the maximum number of entries to be returned in a page.
+     * </p>
+     * <p>
+     * In the request, start time is inclusive but end time is exclusive. Note that these limits are for the time at
+     * which the original backup was requested.
+     * </p>
+     * <p>
+     * You can call <code>ListBackups</code> a maximum of 5 times per second.
+     * </p>
+     * 
+     * @param listBackupsRequest
+     * @return A Java Future containing the result of the ListBackups operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBackupsResult> listBackupsAsync(ListBackupsRequest listBackupsRequest);
+
+    /**
+     * <p>
+     * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
+     * <code>ListBackups</code> returns a paginated list of results with at most 1MB worth of items in a page. You can
+     * also specify a limit for the maximum number of entries to be returned in a page.
+     * </p>
+     * <p>
+     * In the request, start time is inclusive but end time is exclusive. Note that these limits are for the time at
+     * which the original backup was requested.
+     * </p>
+     * <p>
+     * You can call <code>ListBackups</code> a maximum of 5 times per second.
+     * </p>
+     * 
+     * @param listBackupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBackups operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBackupsResult> listBackupsAsync(ListBackupsRequest listBackupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBackupsRequest, ListBackupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the global tables. Only those global tables that have replicas in the region specified as input are
+     * returned.
+     * </p>
+     * 
+     * @param listGlobalTablesRequest
+     * @return A Java Future containing the result of the ListGlobalTables operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListGlobalTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListGlobalTablesResult> listGlobalTablesAsync(ListGlobalTablesRequest listGlobalTablesRequest);
+
+    /**
+     * <p>
+     * Lists all the global tables. Only those global tables that have replicas in the region specified as input are
+     * returned.
+     * </p>
+     * 
+     * @param listGlobalTablesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGlobalTables operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListGlobalTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListGlobalTablesResult> listGlobalTablesAsync(ListGlobalTablesRequest listGlobalTablesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGlobalTablesRequest, ListGlobalTablesResult> asyncHandler);
 
     /**
      * <p>
@@ -1618,6 +2056,105 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Creates a new table from an existing backup. Any number of users can execute up to 10 concurrent restores in a
+     * given account.
+     * </p>
+     * <p>
+     * You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * <p>
+     * You must manually set up the following on the restored table:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto scaling policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cloudwatch metrics and alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Time to Live (TTL) settings
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param restoreTableFromBackupRequest
+     * @return A Java Future containing the result of the RestoreTableFromBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsync.RestoreTableFromBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreTableFromBackupResult> restoreTableFromBackupAsync(RestoreTableFromBackupRequest restoreTableFromBackupRequest);
+
+    /**
+     * <p>
+     * Creates a new table from an existing backup. Any number of users can execute up to 10 concurrent restores in a
+     * given account.
+     * </p>
+     * <p>
+     * You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per second.
+     * </p>
+     * <p>
+     * You must manually set up the following on the restored table:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto scaling policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM policies
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cloudwatch metrics and alarms
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Time to Live (TTL) settings
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param restoreTableFromBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreTableFromBackup operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.RestoreTableFromBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableFromBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreTableFromBackupResult> restoreTableFromBackupAsync(RestoreTableFromBackupRequest restoreTableFromBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreTableFromBackupRequest, RestoreTableFromBackupResult> asyncHandler);
+
+    /**
+     * <p>
      * The <code>Scan</code> operation returns one or more items and item attributes by accessing every item in a table
      * or a secondary index. To have DynamoDB return fewer items, you can provide a <code>FilterExpression</code>
      * operation.
@@ -1838,6 +2375,39 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or removes replicas to the specified global table. The global table should already exist to be able to use
+     * this operation. Currently, the replica to be added should be empty.
+     * </p>
+     * 
+     * @param updateGlobalTableRequest
+     * @return A Java Future containing the result of the UpdateGlobalTable operation returned by the service.
+     * @sample AmazonDynamoDBAsync.UpdateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalTableResult> updateGlobalTableAsync(UpdateGlobalTableRequest updateGlobalTableRequest);
+
+    /**
+     * <p>
+     * Adds or removes replicas to the specified global table. The global table should already exist to be able to use
+     * this operation. Currently, the replica to be added should be empty.
+     * </p>
+     * 
+     * @param updateGlobalTableRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGlobalTable operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.UpdateGlobalTable
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalTableResult> updateGlobalTableAsync(UpdateGlobalTableRequest updateGlobalTableRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGlobalTableRequest, UpdateGlobalTableResult> asyncHandler);
 
     /**
      * <p>

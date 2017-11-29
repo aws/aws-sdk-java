@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the subnets and security groups for a task or service.
+ * An object representing the networking details for a task or service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AwsVpcConfiguration" target="_top">AWS API
@@ -41,6 +41,12 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
+    /**
+     * <p>
+     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * </p>
+     */
+    private String assignPublicIp;
 
     /**
      * <p>
@@ -197,6 +203,65 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * </p>
+     * 
+     * @param assignPublicIp
+     *        Specifies whether or not the task's elastic network interface receives a public IP address.
+     * @see AssignPublicIp
+     */
+
+    public void setAssignPublicIp(String assignPublicIp) {
+        this.assignPublicIp = assignPublicIp;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * </p>
+     * 
+     * @return Specifies whether or not the task's elastic network interface receives a public IP address.
+     * @see AssignPublicIp
+     */
+
+    public String getAssignPublicIp() {
+        return this.assignPublicIp;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * </p>
+     * 
+     * @param assignPublicIp
+     *        Specifies whether or not the task's elastic network interface receives a public IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssignPublicIp
+     */
+
+    public AwsVpcConfiguration withAssignPublicIp(String assignPublicIp) {
+        setAssignPublicIp(assignPublicIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * </p>
+     * 
+     * @param assignPublicIp
+     *        Specifies whether or not the task's elastic network interface receives a public IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssignPublicIp
+     */
+
+    public AwsVpcConfiguration withAssignPublicIp(AssignPublicIp assignPublicIp) {
+        this.assignPublicIp = assignPublicIp.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -210,7 +275,9 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: ").append(getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
+        if (getAssignPublicIp() != null)
+            sb.append("AssignPublicIp: ").append(getAssignPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -233,6 +300,10 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
+        if (other.getAssignPublicIp() == null ^ this.getAssignPublicIp() == null)
+            return false;
+        if (other.getAssignPublicIp() != null && other.getAssignPublicIp().equals(this.getAssignPublicIp()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +314,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getAssignPublicIp() == null) ? 0 : getAssignPublicIp().hashCode());
         return hashCode;
     }
 

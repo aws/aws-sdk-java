@@ -120,6 +120,18 @@ public class GlacierJobDescriptionJsonUnmarshaller implements Unmarshaller<Glaci
                     context.nextToken();
                     glacierJobDescription.setInventoryRetrievalParameters(InventoryRetrievalJobDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("JobOutputPath", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setJobOutputPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SelectParameters", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setSelectParameters(SelectParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OutputLocation", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setOutputLocation(OutputLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

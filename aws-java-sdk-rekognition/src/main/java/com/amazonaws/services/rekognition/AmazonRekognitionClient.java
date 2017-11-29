@@ -72,20 +72,35 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.rekognition.model.AccessDeniedException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
                                     com.amazonaws.services.rekognition.model.InvalidParameterException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.rekognition.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ResourceInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidImageFormatException").withModeledClass(
                                     com.amazonaws.services.rekognition.model.InvalidImageFormatException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
                                     com.amazonaws.services.rekognition.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.InvalidS3ObjectException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("VideoTooLargeException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.VideoTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.IdempotentParameterMismatchException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
                                     com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException.class))
@@ -98,9 +113,6 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withModeledClass(
                                     com.amazonaws.services.rekognition.model.InvalidPaginationTokenException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withModeledClass(
-                                    com.amazonaws.services.rekognition.model.InvalidS3ObjectException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
                                     com.amazonaws.services.rekognition.model.InternalServerErrorException.class))
@@ -337,7 +349,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>get-started-exercise-compare-faces</a>.
+     * For an example, see <a>faces-compare-images</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:CompareFaces</code> action.
@@ -416,9 +428,6 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>example1</a>.
-     * </p>
-     * <p>
      * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
      * </p>
      * 
@@ -478,8 +487,84 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a streaming
+     * video.
+     * </p>
+     * <p>
+     * Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Rekognition Video sends analysis
+     * results to Amazon Kinesis Data Streams.
+     * </p>
+     * <p>
+     * You provide as input a Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
+     * stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection
+     * containing faces that you want to recognize. Use <code>Name</code> to assign an identifier for the stream
+     * processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the
+     * source video by calling with the <code>Name</code> field.
+     * </p>
+     * <p>
+     * After you have finished analyzing a streaming video, use to stop processing. You can delete the stream processor
+     * by calling .
+     * </p>
+     * 
+     * @param createStreamProcessorRequest
+     * @return Result of the CreateStreamProcessor operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws LimitExceededException
+     * @throws ResourceInUseException
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.CreateStreamProcessor
+     */
+    @Override
+    public CreateStreamProcessorResult createStreamProcessor(CreateStreamProcessorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStreamProcessor(request);
+    }
+
+    @SdkInternalApi
+    final CreateStreamProcessorResult executeCreateStreamProcessor(CreateStreamProcessorRequest createStreamProcessorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createStreamProcessorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStreamProcessorRequest> request = null;
+        Response<CreateStreamProcessorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStreamProcessorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamProcessorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStreamProcessorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified collection. Note that this operation removes all faces in the collection. For an example,
-     * see <a>example1</a>.
+     * see <a>delete-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteCollection</code> action.
@@ -604,6 +689,132 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you
+     * create the stream processor with . You might not be able to use the same name for a stream processor for a few
+     * seconds after calling <code>DeleteStreamProcessor</code>.
+     * </p>
+     * 
+     * @param deleteStreamProcessorRequest
+     * @return Result of the DeleteStreamProcessor operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DeleteStreamProcessor
+     */
+    @Override
+    public DeleteStreamProcessorResult deleteStreamProcessor(DeleteStreamProcessorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStreamProcessor(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStreamProcessorResult executeDeleteStreamProcessor(DeleteStreamProcessorRequest deleteStreamProcessorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteStreamProcessorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteStreamProcessorRequest> request = null;
+        Response<DeleteStreamProcessorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteStreamProcessorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStreamProcessorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStreamProcessorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides information about a stream processor created by . You can get information about the input and output
+     * streams, the input parameters for the face recognition being performed, and the current status of the stream
+     * processor.
+     * </p>
+     * 
+     * @param describeStreamProcessorRequest
+     * @return Result of the DescribeStreamProcessor operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DescribeStreamProcessor
+     */
+    @Override
+    public DescribeStreamProcessorResult describeStreamProcessor(DescribeStreamProcessorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStreamProcessor(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStreamProcessorResult executeDescribeStreamProcessor(DescribeStreamProcessorRequest describeStreamProcessorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStreamProcessorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStreamProcessorRequest> request = null;
+        Response<DescribeStreamProcessorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStreamProcessorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeStreamProcessorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStreamProcessorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Detects faces within an image that is provided as input.
      * </p>
      * <p>
@@ -627,7 +838,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * For an example, see <a>get-started-exercise-detect-faces</a>.
+     * For an example, see <a>procedure-detecting-faces-in-images</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DetectFaces</code> action.
@@ -693,10 +904,16 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Detects instances of real-world labels within an image (JPEG or PNG) provided as input. This includes objects
+     * Detects instances of real-world entities within an image (JPEG or PNG) provided as input. This includes objects
      * like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape,
-     * evening, and nature. For an example, see <a>get-started-exercise-detect-labels</a>.
+     * evening, and nature. For an example, see <a>images-s3</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported
+     * for label detection in videos. For more information, see .
+     * </p>
+     * </note>
      * <p>
      * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
      * you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image
@@ -818,7 +1035,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
-     * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
+     * content are appropriate. For information about moderation labels, see <a>moderation</a>.
      * </p>
      * <p>
      * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
@@ -985,7 +1202,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <p>
      * Gets the name and additional information about a celebrity based on his or her Rekognition ID. The additional
      * information is returned as an array of URLs. If there is no additional information about the celebrity, this list
-     * is empty. For more information, see <a>celebrity-recognition</a>.
+     * is empty. For more information, see <a>get-celebrity-info-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
@@ -1047,6 +1264,526 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets the celebrity recognition results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to which returns a
+     * job identifier (<code>JobId</code>). When the celebrity recognition operation finishes, Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check
+     * that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.
+     * </p>
+     * <p>
+     * <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array (
+     * <code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the
+     * celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected.
+     * </p>
+     * <p>
+     * By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video). You
+     * can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input
+     * parameter.
+     * </p>
+     * <p>
+     * The <code>CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If you
+     * don't store the additional information urls, you can get them later by calling with the celebrity identifer.
+     * </p>
+     * <p>
+     * No information is returned for faces not recognized as celebrities.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call
+     * <code>GetCelebrityDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetCelebrityRecognition</code>.
+     * </p>
+     * 
+     * @param getCelebrityRecognitionRequest
+     * @return Result of the GetCelebrityRecognition operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetCelebrityRecognition
+     */
+    @Override
+    public GetCelebrityRecognitionResult getCelebrityRecognition(GetCelebrityRecognitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCelebrityRecognition(request);
+    }
+
+    @SdkInternalApi
+    final GetCelebrityRecognitionResult executeGetCelebrityRecognition(GetCelebrityRecognitionRequest getCelebrityRecognitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCelebrityRecognitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCelebrityRecognitionRequest> request = null;
+        Response<GetCelebrityRecognitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCelebrityRecognitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCelebrityRecognitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCelebrityRecognitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCelebrityRecognitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the content moderation analysis results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Content moderation analysis of a video is an asynchronous operation. You start analysis by calling . which
+     * returns a job identifier (<code>JobId</code>). When analysis finishes, Rekognition Video publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartContentModeration</code>. To get the results of the content moderation analysis, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
+     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.
+     * </p>
+     * <p>
+     * <code>GetContentModeration</code> returns detected content moderation labels, and the time they are detected, in
+     * an array, <code>ModerationLabels</code>, of objects.
+     * </p>
+     * <p>
+     * By default, the moderated labels are returned sorted by time, in milliseconds from the start of the video. You
+     * can also sort them by moderated label by specifying <code>NAME</code> for the <code>SortBy</code> input
+     * parameter.
+     * </p>
+     * <p>
+     * Since video analysis can return a large number of results, use the <code>MaxResults</code> parameter to limit the
+     * number of labels returned in a single call to <code>GetContentModeration</code>. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetContentModeration</code> and populate the <code>NextToken</code> request parameter with the value of
+     * <code>NextToken</code> returned from the previous call to <code>GetContentModeration</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>moderation</a>.
+     * </p>
+     * 
+     * @param getContentModerationRequest
+     * @return Result of the GetContentModeration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetContentModeration
+     */
+    @Override
+    public GetContentModerationResult getContentModeration(GetContentModerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContentModeration(request);
+    }
+
+    @SdkInternalApi
+    final GetContentModerationResult executeGetContentModeration(GetContentModerationRequest getContentModerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContentModerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContentModerationRequest> request = null;
+        Response<GetContentModerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContentModerationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContentModerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContentModerationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContentModerationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets face detection results for a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * Face detection with Rekognition Video is an asynchronous operation. You start face detection by calling which
+     * returns a job identifier (<code>JobId</code>). When the face detection operation finishes, Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartFaceDetection</code>. To get the results of the face detection operation, first check that the status
+     * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetFaceDetection</code> returns an array of detected faces (<code>Faces</code>) sorted by the time the
+     * faces were detected.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call <code>GetFaceDetection</code>
+     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
+     * <code>GetFaceDetection</code>.
+     * </p>
+     * 
+     * @param getFaceDetectionRequest
+     * @return Result of the GetFaceDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetFaceDetection
+     */
+    @Override
+    public GetFaceDetectionResult getFaceDetection(GetFaceDetectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFaceDetection(request);
+    }
+
+    @SdkInternalApi
+    final GetFaceDetectionResult executeGetFaceDetection(GetFaceDetectionRequest getFaceDetectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFaceDetectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFaceDetectionRequest> request = null;
+        Response<GetFaceDetectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFaceDetectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFaceDetectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFaceDetectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFaceDetectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the face search results for Rekognition Video face search started by . The search returns faces in a
+     * collection that match the faces of persons detected in a video. It also includes the time(s) that faces are
+     * matched in the video.
+     * </p>
+     * <p>
+     * Face search in a video is an asynchronous operation. You start face search by calling to which returns a job
+     * identifier (<code>JobId</code>). When the search operation finishes, Rekognition Video publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartFaceSearch</code>. To get the search results, first check that the status value published to the
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see
+     * <a>collections</a>.
+     * </p>
+     * <p>
+     * The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
+     * element contains details about the matching faces in the input collection, person information for the matched
+     * person, and the time the person was matched in the video.
+     * </p>
+     * <p>
+     * By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video,
+     * persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code>
+     * input parameter.
+     * </p>
+     * 
+     * @param getFaceSearchRequest
+     * @return Result of the GetFaceSearch operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetFaceSearch
+     */
+    @Override
+    public GetFaceSearchResult getFaceSearch(GetFaceSearchRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFaceSearch(request);
+    }
+
+    @SdkInternalApi
+    final GetFaceSearchResult executeGetFaceSearch(GetFaceSearchRequest getFaceSearchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFaceSearchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFaceSearchRequest> request = null;
+        Response<GetFaceSearchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFaceSearchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFaceSearchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFaceSearchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFaceSearchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the label detection results of a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * The label detection operation is started by a call to which returns a job identifier (<code>JobId</code>). When
+     * the label detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple
+     * Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results
+     * of the label detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartLabelDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the
+     * labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the
+     * <code>SortBy</code> input parameter.
+     * </p>
+     * <p>
+     * The labels returned include the label name, the percentage confidence in the accuracy of the detected label, and
+     * the time the label was detected in the video.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
+     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
+     * token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code>
+     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
+     * <code>GetLabelDetection</code>.
+     * </p>
+     * 
+     * @param getLabelDetectionRequest
+     * @return Result of the GetLabelDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetLabelDetection
+     */
+    @Override
+    public GetLabelDetectionResult getLabelDetection(GetLabelDetectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLabelDetection(request);
+    }
+
+    @SdkInternalApi
+    final GetLabelDetectionResult executeGetLabelDetection(GetLabelDetectionRequest getLabelDetectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLabelDetectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLabelDetectionRequest> request = null;
+        Response<GetLabelDetectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLabelDetectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLabelDetectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLabelDetectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLabelDetectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the person tracking results of a Rekognition Video analysis started by .
+     * </p>
+     * <p>
+     * The person detection operation is started by a call to <code>StartPersonTracking</code> which returns a job
+     * identifier (<code>JobId</code>). When the person detection operation finishes, Rekognition Video publishes a
+     * completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartPersonTracking</code>.
+     * </p>
+     * <p>
+     * To get the results of the person tracking operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartPersonTracking</code>.
+     * </p>
+     * <p>
+     * <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they
+     * were tracked in the video.
+     * </p>
+     * <p>
+     * By default, the array is sorted by the time(s) a person is tracked in the video. You can sort by tracked persons
+     * by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetPersonTracking</code>.
+     * </p>
+     * 
+     * @param getPersonTrackingRequest
+     * @return Result of the GetPersonTracking operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetPersonTracking
+     */
+    @Override
+    public GetPersonTrackingResult getPersonTracking(GetPersonTrackingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPersonTracking(request);
+    }
+
+    @SdkInternalApi
+    final GetPersonTrackingResult executeGetPersonTracking(GetPersonTrackingRequest getPersonTrackingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPersonTrackingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPersonTrackingRequest> request = null;
+        Response<GetPersonTrackingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPersonTrackingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPersonTrackingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPersonTrackingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPersonTrackingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Detects faces in the input image and adds them to the specified collection.
      * </p>
      * <p>
@@ -1080,9 +1817,6 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * The input image is passed either as base64-encoded image bytes or as a reference to an image in an Amazon S3
      * bucket. If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes is not supported.
      * The image must be either a PNG or JPEG formatted file.
-     * </p>
-     * <p>
-     * For an example, see <a>example2</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.
@@ -1154,7 +1888,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.
      * </p>
      * <p>
-     * For an example, see <a>example1</a>.
+     * For an example, see <a>list-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.
@@ -1220,7 +1954,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns metadata for faces in the specified collection. This metadata includes information such as the bounding
      * box coordinates, the confidence (that the bounding box contains a face), and face ID. For an example, see
-     * <a>example3</a>.
+     * <a>list-faces-in-collection-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:ListFaces</code> action.
@@ -1284,8 +2018,66 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns an array of celebrities recognized in the input image. For more information, see
-     * <a>celebrity-recognition</a>.
+     * Gets a list of stream processors that you have created with .
+     * </p>
+     * 
+     * @param listStreamProcessorsRequest
+     * @return Result of the ListStreamProcessors operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.ListStreamProcessors
+     */
+    @Override
+    public ListStreamProcessorsResult listStreamProcessors(ListStreamProcessorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStreamProcessors(request);
+    }
+
+    @SdkInternalApi
+    final ListStreamProcessorsResult executeListStreamProcessors(ListStreamProcessorsRequest listStreamProcessorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStreamProcessorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStreamProcessorsRequest> request = null;
+        Response<ListStreamProcessorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStreamProcessorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamProcessorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStreamProcessorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStreamProcessorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of celebrities recognized in the input image. For more information, see <a>celebrities</a>.
      * </p>
      * <p>
      * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
@@ -1310,7 +2102,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * The image must be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For an example, see <a>recognize-celebrities-tutorial</a>.
+     * For an example, see <a>celebrities-procedure-image</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
@@ -1394,7 +2186,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * confidence that the specific face matches the input face.
      * </p>
      * <p>
-     * For an example, see <a>example3</a>.
+     * For an example, see <a>search-face-with-id-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFaces</code> action.
@@ -1482,7 +2274,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * face that Amazon Rekognition used for the input image.
      * </p>
      * <p>
-     * For an example, see <a>example3</a>.
+     * For an example, see <a>search-face-with-image-procedure</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code> action.
@@ -1538,6 +2330,600 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<SearchFacesByImageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchFacesByImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts asynchronous recognition of celebrities in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect celebrities in a video must be stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartCelebrityRecognition</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the analysis. When celebrity recognition
+     * analysis is finished, Rekognition Video publishes a completion status to the Amazon Simple Notification Service
+     * topic that you specify in <code>NotificationChannel</code>. To get the results of the celebrity recognition
+     * analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+     * call and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartCelebrityRecognition</code>. For more information, see <a>celebrities</a>.
+     * </p>
+     * 
+     * @param startCelebrityRecognitionRequest
+     * @return Result of the StartCelebrityRecognition operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
+     *         duration is 2 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartCelebrityRecognition
+     */
+    @Override
+    public StartCelebrityRecognitionResult startCelebrityRecognition(StartCelebrityRecognitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCelebrityRecognition(request);
+    }
+
+    @SdkInternalApi
+    final StartCelebrityRecognitionResult executeStartCelebrityRecognition(StartCelebrityRecognitionRequest startCelebrityRecognitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCelebrityRecognitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCelebrityRecognitionRequest> request = null;
+        Response<StartCelebrityRecognitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCelebrityRecognitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startCelebrityRecognitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCelebrityRecognitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartCelebrityRecognitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts asynchronous detection of explicit or suggestive adult content in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can moderate content in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartContentModeration</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the analysis. When content moderation analysis is
+     * finished, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that
+     * you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the content moderation analysis, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartContentModeration</code>. For more information, see <a>moderation</a>.
+     * </p>
+     * 
+     * @param startContentModerationRequest
+     * @return Result of the StartContentModeration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
+     *         duration is 2 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartContentModeration
+     */
+    @Override
+    public StartContentModerationResult startContentModeration(StartContentModerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartContentModeration(request);
+    }
+
+    @SdkInternalApi
+    final StartContentModerationResult executeStartContentModeration(StartContentModerationRequest startContentModerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startContentModerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartContentModerationRequest> request = null;
+        Response<StartContentModerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartContentModerationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startContentModerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartContentModerationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartContentModerationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts asynchronous detection of faces in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartFaceDetection</code> returns a job identifier (
+     * <code>JobId</code>) that you use to get the results of the operation. When face detection is finished,
+     * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify
+     * in <code>NotificationChannel</code>. To get the results of the label detection operation, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
+     * (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>. For more information, see
+     * <a>faces-video</a>.
+     * </p>
+     * 
+     * @param startFaceDetectionRequest
+     * @return Result of the StartFaceDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
+     *         duration is 2 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartFaceDetection
+     */
+    @Override
+    public StartFaceDetectionResult startFaceDetection(StartFaceDetectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartFaceDetection(request);
+    }
+
+    @SdkInternalApi
+    final StartFaceDetectionResult executeStartFaceDetection(StartFaceDetectionRequest startFaceDetectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startFaceDetectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartFaceDetectionRequest> request = null;
+        Response<StartFaceDetectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartFaceDetectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFaceDetectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartFaceDetectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartFaceDetectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the asynchronous search for faces in a collection that match the faces of persons detected in a stored
+     * video.
+     * </p>
+     * <p>
+     * The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of
+     * the video. <code>StartFaceSearch</code> returns a job identifier (<code>JobId</code>) which you use to get the
+     * search results once the search has completed. When searching is finished, Rekognition Video publishes a
+     * completion status to the Amazon Simple Notification Service topic that you specify in
+     * <code>NotificationChannel</code>. To get the search results, first check that the status value published to the
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartFaceSearch</code>. For more information, see <a>collections-search-person</a>.
+     * </p>
+     * 
+     * @param startFaceSearchRequest
+     * @return Result of the StartFaceSearch operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
+     *         duration is 2 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartFaceSearch
+     */
+    @Override
+    public StartFaceSearchResult startFaceSearch(StartFaceSearchRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartFaceSearch(request);
+    }
+
+    @SdkInternalApi
+    final StartFaceSearchResult executeStartFaceSearch(StartFaceSearchRequest startFaceSearchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startFaceSearchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartFaceSearchRequest> request = null;
+        Response<StartFaceSearchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartFaceSearchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFaceSearchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartFaceSearchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartFaceSearchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts asynchronous detection of labels in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can detect labels in a video. Labels are instances of real-world entities. This includes
+     * objects like flower, tree, and table; events like wedding, graduation, and birthday party; concepts like
+     * landscape, evening, and nature; and activities like a person getting out of a car or a person skiing.
+     * </p>
+     * <p>
+     * The video must be stored in an Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of
+     * the video. <code>StartLabelDetection</code> returns a job identifier (<code>JobId</code>) which you use to get
+     * the results of the operation. When label detection is finished, Rekognition Video publishes a completion status
+     * to the Amazon Simple Notification Service topic that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the label detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartLabelDetection</code>.
+     * </p>
+     * <p/>
+     * 
+     * @param startLabelDetectionRequest
+     * @return Result of the StartLabelDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
+     *         duration is 2 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartLabelDetection
+     */
+    @Override
+    public StartLabelDetectionResult startLabelDetection(StartLabelDetectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartLabelDetection(request);
+    }
+
+    @SdkInternalApi
+    final StartLabelDetectionResult executeStartLabelDetection(StartLabelDetectionRequest startLabelDetectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startLabelDetectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartLabelDetectionRequest> request = null;
+        Response<StartLabelDetectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartLabelDetectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startLabelDetectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartLabelDetectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartLabelDetectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the asynchronous tracking of persons in a stored video.
+     * </p>
+     * <p>
+     * Rekognition Video can track persons in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify the
+     * bucket name and the filename of the video. <code>StartPersonTracking</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the operation. When label detection is finished, Amazon
+     * Rekognition publishes a completion status to the Amazon Simple Notification Service topic that you specify in
+     * <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the person detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartPersonTracking</code>.
+     * </p>
+     * 
+     * @param startPersonTrackingRequest
+     * @return Result of the StartPersonTracking operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
+     *         duration is 2 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartPersonTracking
+     */
+    @Override
+    public StartPersonTrackingResult startPersonTracking(StartPersonTrackingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartPersonTracking(request);
+    }
+
+    @SdkInternalApi
+    final StartPersonTrackingResult executeStartPersonTracking(StartPersonTrackingRequest startPersonTrackingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startPersonTrackingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartPersonTrackingRequest> request = null;
+        Response<StartPersonTrackingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartPersonTrackingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startPersonTrackingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartPersonTrackingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartPersonTrackingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts processing a stream processor. You create a stream processor by calling . To tell
+     * <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field
+     * specified in the call to <code>CreateStreamProcessor</code>.
+     * </p>
+     * 
+     * @param startStreamProcessorRequest
+     * @return Result of the StartStreamProcessor operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.StartStreamProcessor
+     */
+    @Override
+    public StartStreamProcessorResult startStreamProcessor(StartStreamProcessorRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartStreamProcessor(request);
+    }
+
+    @SdkInternalApi
+    final StartStreamProcessorResult executeStartStreamProcessor(StartStreamProcessorRequest startStreamProcessorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startStreamProcessorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartStreamProcessorRequest> request = null;
+        Response<StartStreamProcessorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartStreamProcessorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startStreamProcessorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartStreamProcessorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a running stream processor that was created by .
+     * </p>
+     * 
+     * @param stopStreamProcessorRequest
+     * @return Result of the StopStreamProcessor operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.StopStreamProcessor
+     */
+    @Override
+    public StopStreamProcessorResult stopStreamProcessor(StopStreamProcessorRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopStreamProcessor(request);
+    }
+
+    @SdkInternalApi
+    final StopStreamProcessorResult executeStopStreamProcessor(StopStreamProcessorRequest stopStreamProcessorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopStreamProcessorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopStreamProcessorRequest> request = null;
+        Response<StopStreamProcessorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopStreamProcessorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopStreamProcessorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopStreamProcessorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopStreamProcessorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

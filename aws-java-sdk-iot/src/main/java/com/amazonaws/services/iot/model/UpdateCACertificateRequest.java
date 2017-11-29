@@ -46,6 +46,18 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String newAutoRegistrationStatus;
+    /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     */
+    private RegistrationConfig registrationConfig;
+    /**
+     * <p>
+     * If true, remove auto registration.
+     * </p>
+     */
+    private Boolean removeAutoRegistration;
 
     /**
      * <p>
@@ -259,6 +271,98 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     * 
+     * @param registrationConfig
+     *        Information about the registration configuration.
+     */
+
+    public void setRegistrationConfig(RegistrationConfig registrationConfig) {
+        this.registrationConfig = registrationConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     * 
+     * @return Information about the registration configuration.
+     */
+
+    public RegistrationConfig getRegistrationConfig() {
+        return this.registrationConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the registration configuration.
+     * </p>
+     * 
+     * @param registrationConfig
+     *        Information about the registration configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCACertificateRequest withRegistrationConfig(RegistrationConfig registrationConfig) {
+        setRegistrationConfig(registrationConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, remove auto registration.
+     * </p>
+     * 
+     * @param removeAutoRegistration
+     *        If true, remove auto registration.
+     */
+
+    public void setRemoveAutoRegistration(Boolean removeAutoRegistration) {
+        this.removeAutoRegistration = removeAutoRegistration;
+    }
+
+    /**
+     * <p>
+     * If true, remove auto registration.
+     * </p>
+     * 
+     * @return If true, remove auto registration.
+     */
+
+    public Boolean getRemoveAutoRegistration() {
+        return this.removeAutoRegistration;
+    }
+
+    /**
+     * <p>
+     * If true, remove auto registration.
+     * </p>
+     * 
+     * @param removeAutoRegistration
+     *        If true, remove auto registration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCACertificateRequest withRemoveAutoRegistration(Boolean removeAutoRegistration) {
+        setRemoveAutoRegistration(removeAutoRegistration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, remove auto registration.
+     * </p>
+     * 
+     * @return If true, remove auto registration.
+     */
+
+    public Boolean isRemoveAutoRegistration() {
+        return this.removeAutoRegistration;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -274,7 +378,11 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
         if (getNewStatus() != null)
             sb.append("NewStatus: ").append(getNewStatus()).append(",");
         if (getNewAutoRegistrationStatus() != null)
-            sb.append("NewAutoRegistrationStatus: ").append(getNewAutoRegistrationStatus());
+            sb.append("NewAutoRegistrationStatus: ").append(getNewAutoRegistrationStatus()).append(",");
+        if (getRegistrationConfig() != null)
+            sb.append("RegistrationConfig: ").append(getRegistrationConfig()).append(",");
+        if (getRemoveAutoRegistration() != null)
+            sb.append("RemoveAutoRegistration: ").append(getRemoveAutoRegistration());
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +409,14 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNewAutoRegistrationStatus() != null && other.getNewAutoRegistrationStatus().equals(this.getNewAutoRegistrationStatus()) == false)
             return false;
+        if (other.getRegistrationConfig() == null ^ this.getRegistrationConfig() == null)
+            return false;
+        if (other.getRegistrationConfig() != null && other.getRegistrationConfig().equals(this.getRegistrationConfig()) == false)
+            return false;
+        if (other.getRemoveAutoRegistration() == null ^ this.getRemoveAutoRegistration() == null)
+            return false;
+        if (other.getRemoveAutoRegistration() != null && other.getRemoveAutoRegistration().equals(this.getRemoveAutoRegistration()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +428,8 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
         hashCode = prime * hashCode + ((getNewStatus() == null) ? 0 : getNewStatus().hashCode());
         hashCode = prime * hashCode + ((getNewAutoRegistrationStatus() == null) ? 0 : getNewAutoRegistrationStatus().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationConfig() == null) ? 0 : getRegistrationConfig().hashCode());
+        hashCode = prime * hashCode + ((getRemoveAutoRegistration() == null) ? 0 : getRemoveAutoRegistration().hashCode());
         return hashCode;
     }
 

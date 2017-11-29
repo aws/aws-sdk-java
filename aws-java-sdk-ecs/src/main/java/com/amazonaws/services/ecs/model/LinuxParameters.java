@@ -50,7 +50,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      */
@@ -213,7 +213,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -222,7 +222,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        parameter maps to the <code>--init</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log into your container instance and run the following command:
+     *        your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -235,7 +235,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -243,7 +243,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         parameter maps to the <code>--init</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *         your container instance, log into your container instance and run the following command:
+     *         your container instance, log in to your container instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
 
@@ -256,7 +256,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -265,7 +265,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        parameter maps to the <code>--init</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log into your container instance and run the following command:
+     *        your container instance, log in to your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -280,7 +280,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
      * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
      * command: <code>sudo docker version | grep "Server API version"</code>
      * </p>
      * 
@@ -288,7 +288,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         parameter maps to the <code>--init</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
      *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *         your container instance, log into your container instance and run the following command:
+     *         your container instance, log in to your container instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
 

@@ -37,6 +37,9 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
      * folder are exported.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      */
     private String sourcePath;
 
@@ -49,6 +52,9 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
      * folder are exported.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the container. If this parameter is empty,
@@ -56,7 +62,9 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      *        <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
      *        container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on
      *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
-     *        source path folder are exported.
+     *        source path folder are exported.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -72,13 +80,18 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
      * folder are exported.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      * 
      * @return The path on the host container instance that is presented to the container. If this parameter is empty,
      *         then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
      *         <code>sourcePath</code> file location, then the data volume persists at the specified location on the
      *         host container instance until you delete it manually. If the <code>sourcePath</code> value does not exist
      *         on the host container instance, the Docker daemon creates it. If the location does exist, the contents of
-     *         the source path folder are exported.
+     *         the source path folder are exported.</p>
+     *         <p>
+     *         If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
      */
 
     public String getSourcePath() {
@@ -94,6 +107,9 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
      * folder are exported.
      * </p>
+     * <p>
+     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * </p>
      * 
      * @param sourcePath
      *        The path on the host container instance that is presented to the container. If this parameter is empty,
@@ -101,7 +117,9 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      *        <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
      *        container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on
      *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
-     *        source path folder are exported.
+     *        source path folder are exported.</p>
+     *        <p>
+     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
