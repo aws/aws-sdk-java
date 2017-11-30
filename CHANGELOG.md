@@ -5,7 +5,7 @@
 
 ## __AWS Lambda__
   - ### Features
-    - AWS Lambda now supports the ability to set the concurrency limits for individual functions, and increasing memory to 3 GB.
+    - AWS Lambda now supports the ability to set the concurrency limits for individual functions, and increasing memory to 3008MB.
 
 ## __AWSServerlessApplicationRepository__
   - ### Features
