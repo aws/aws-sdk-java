@@ -76,9 +76,9 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
     private String authorizerUri;
     /**
      * <p>
-     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
-     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     * permissions on the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
+     * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
+     * the Lambda function, specify null.
      * </p>
      */
     private String authorizerCredentials;
@@ -106,9 +106,9 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
-     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * regular expression. API Gateway will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
+     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
      * <code>REQUEST</code> authorizer.
      * </p>
      */
@@ -505,15 +505,15 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
-     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     * permissions on the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
+     * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
+     * the Lambda function, specify null.
      * </p>
      * 
      * @param authorizerCredentials
-     *        Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To
-     *        specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
-     *        resource-based permissions on the Lambda function, specify null.
+     *        Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an
+     *        IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     *        permissions on the Lambda function, specify null.
      */
 
     public void setAuthorizerCredentials(String authorizerCredentials) {
@@ -522,14 +522,14 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
-     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     * permissions on the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
+     * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
+     * the Lambda function, specify null.
      * </p>
      * 
-     * @return Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To
-     *         specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
-     *         resource-based permissions on the Lambda function, specify null.
+     * @return Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an
+     *         IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     *         permissions on the Lambda function, specify null.
      */
 
     public String getAuthorizerCredentials() {
@@ -538,15 +538,15 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To specify an
-     * IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     * permissions on the Lambda function, specify null.
+     * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
+     * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
+     * the Lambda function, specify null.
      * </p>
      * 
      * @param authorizerCredentials
-     *        Specifies the required credentials as an IAM role for Amazon API Gateway to invoke the authorizer. To
-     *        specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource Name (ARN). To use
-     *        resource-based permissions on the Lambda function, specify null.
+     *        Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an
+     *        IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
+     *        permissions on the Lambda function, specify null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,18 +694,18 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
-     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * regular expression. API Gateway will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
+     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
      * <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @param identityValidationExpression
      *        A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is
-     *        a regular expression. Amazon API Gateway will match the incoming token from the client against the
-     *        specified regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise,
-     *        it will return a 401 Unauthorized response without calling the Lambda function. The validation expression
-     *        does not apply to the <code>REQUEST</code> authorizer.
+     *        a regular expression. API Gateway will match the incoming token from the client against the specified
+     *        regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will
+     *        return a 401 Unauthorized response without calling the Lambda function. The validation expression does not
+     *        apply to the <code>REQUEST</code> authorizer.
      */
 
     public void setIdentityValidationExpression(String identityValidationExpression) {
@@ -715,17 +715,17 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
-     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * regular expression. API Gateway will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
+     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
      * <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @return A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value
-     *         is a regular expression. Amazon API Gateway will match the incoming token from the client against the
-     *         specified regular expression. It will invoke the authorizer's Lambda function there is a match.
-     *         Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation
-     *         expression does not apply to the <code>REQUEST</code> authorizer.
+     *         is a regular expression. API Gateway will match the incoming token from the client against the specified
+     *         regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will
+     *         return a 401 Unauthorized response without calling the Lambda function. The validation expression does
+     *         not apply to the <code>REQUEST</code> authorizer.
      */
 
     public String getIdentityValidationExpression() {
@@ -735,18 +735,18 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. Amazon API Gateway will match the incoming token from the client against the specified
-     * regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a
-     * 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the
+     * regular expression. API Gateway will match the incoming token from the client against the specified regular
+     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
+     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
      * <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @param identityValidationExpression
      *        A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is
-     *        a regular expression. Amazon API Gateway will match the incoming token from the client against the
-     *        specified regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise,
-     *        it will return a 401 Unauthorized response without calling the Lambda function. The validation expression
-     *        does not apply to the <code>REQUEST</code> authorizer.
+     *        a regular expression. API Gateway will match the incoming token from the client against the specified
+     *        regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will
+     *        return a 401 Unauthorized response without calling the Lambda function. The validation expression does not
+     *        apply to the <code>REQUEST</code> authorizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

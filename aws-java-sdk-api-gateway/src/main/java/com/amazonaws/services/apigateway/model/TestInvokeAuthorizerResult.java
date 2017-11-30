@@ -31,7 +31,7 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
     private Integer clientStatus;
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      */
     private String log;
@@ -105,11 +105,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      * 
      * @param log
-     *        The Amazon API Gateway execution log for the test authorizer request.
+     *        The API Gateway execution log for the test authorizer request.
      */
 
     public void setLog(String log) {
@@ -118,10 +118,10 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      * 
-     * @return The Amazon API Gateway execution log for the test authorizer request.
+     * @return The API Gateway execution log for the test authorizer request.
      */
 
     public String getLog() {
@@ -130,11 +130,11 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test authorizer request.
+     * The API Gateway execution log for the test authorizer request.
      * </p>
      * 
      * @param log
-     *        The Amazon API Gateway execution log for the test authorizer request.
+     *        The API Gateway execution log for the test authorizer request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

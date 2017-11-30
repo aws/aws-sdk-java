@@ -366,6 +366,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use
      * <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering connection requests.
      * </p>
+     * <p>
+     * For an inter-region VPC peering connection request, you must accept the VPC peering connection in the region of
+     * the accepter VPC.
+     * </p>
      * 
      * @param acceptVpcPeeringConnectionRequest
      *        Contains the parameters for AcceptVpcPeeringConnection.
@@ -3167,13 +3171,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a placement group that you launch cluster instances into. Give the group a name that's unique within the
-     * scope of your account.
+     * Creates a placement group in which to launch instances. The strategy of the placement group determines how the
+     * instances are organized within the group.
      * </p>
      * <p>
-     * For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that
+     * benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances
+     * on distinct hardware.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createPlacementGroupRequest
@@ -4088,17 +4097,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to
-     * create the connection. The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have
-     * overlapping CIDR blocks.
+     * Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which
+     * to create the connection. The accepter VPC can belong to another AWS account and can be in a different region to
+     * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
      * </p>
      * <p>
-     * The owner of the peer VPC must accept the peering request to activate the peering connection. The VPC peering
+     * The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
      * </p>
      * <p>
-     * If you try to create a VPC peering connection between VPCs that have overlapping CIDR blocks, the VPC peering
-     * connection status goes to <code>failed</code>.
+     * If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering
+     * connection has a status of <code>failed</code>.
      * </p>
      * 
      * @param createVpcPeeringConnectionRequest
@@ -5029,9 +5038,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Deletes the specified placement group. You must terminate all instances in the placement group before you can
-     * delete the placement group. For more information about placement groups and cluster instances, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * delete the placement group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deletePlacementGroupRequest
@@ -5715,9 +5724,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete
-     * the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can delete a
-     * VPC peering connection in the <code>pending-acceptance</code> state.
+     * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
+     * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
+     * delete a VPC peering connection in the <code>pending-acceptance</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -8155,9 +8164,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information about placement groups and cluster
-     * instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Cluster
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Describes one or more of your placement groups. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describePlacementGroupsRequest

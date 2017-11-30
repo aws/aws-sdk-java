@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A POST request to import an API to Amazon API Gateway using an input of an API definition file.
+ * A POST request to import an API to API Gateway using an input of an API definition file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

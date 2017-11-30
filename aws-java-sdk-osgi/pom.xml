@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.240-SNAPSHOT</version>
+    <version>1.11.240</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,24 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-cloud9</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-serverlessapplicationrepository</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-alexaforbusiness</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-resourcegroups</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -872,6 +890,18 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Cloud9</title>
+                                  <packages>com.amazonaws.services.cloud9*</packages>
+                              </group>
+                              <group>
+                                  <title>AWSServerlessApplicationRepository</title>
+                                  <packages>com.amazonaws.services.serverlessapplicationrepository*</packages>
+                              </group>
+                              <group>
+                                  <title>Alexa For Business</title>
+                                  <packages>com.amazonaws.services.alexaforbusiness*</packages>
+                              </group>
                               <group>
                                   <title>AWS Resource Groups</title>
                                   <packages>com.amazonaws.services.resourcegroups*</packages>

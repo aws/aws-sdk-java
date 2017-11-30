@@ -46,7 +46,7 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Map<String, String> headers;
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test invoke request.
+     * The API Gateway execution log for the test invoke request.
      * </p>
      */
     private String log;
@@ -200,11 +200,11 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test invoke request.
+     * The API Gateway execution log for the test invoke request.
      * </p>
      * 
      * @param log
-     *        The Amazon API Gateway execution log for the test invoke request.
+     *        The API Gateway execution log for the test invoke request.
      */
 
     public void setLog(String log) {
@@ -213,10 +213,10 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test invoke request.
+     * The API Gateway execution log for the test invoke request.
      * </p>
      * 
-     * @return The Amazon API Gateway execution log for the test invoke request.
+     * @return The API Gateway execution log for the test invoke request.
      */
 
     public String getLog() {
@@ -225,11 +225,11 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon API Gateway execution log for the test invoke request.
+     * The API Gateway execution log for the test invoke request.
      * </p>
      * 
      * @param log
-     *        The Amazon API Gateway execution log for the test invoke request.
+     *        The API Gateway execution log for the test invoke request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

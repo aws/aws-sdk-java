@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to change information about a <a>Stage</a> resource.
+ * Requests API Gateway to change information about a <a>Stage</a> resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

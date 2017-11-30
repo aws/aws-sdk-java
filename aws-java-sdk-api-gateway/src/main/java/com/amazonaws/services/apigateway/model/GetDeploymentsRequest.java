@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to get information about a <a>Deployments</a> collection.
+ * Requests API Gateway to get information about a <a>Deployments</a> collection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -38,7 +38,7 @@ public class SpotPlacement implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      */
     private String groupName;
@@ -135,11 +135,11 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      * 
      * @param groupName
-     *        The name of the placement group (for cluster instances).
+     *        The name of the placement group.
      */
 
     public void setGroupName(String groupName) {
@@ -148,10 +148,10 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      * 
-     * @return The name of the placement group (for cluster instances).
+     * @return The name of the placement group.
      */
 
     public String getGroupName() {
@@ -160,11 +160,11 @@ public class SpotPlacement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group (for cluster instances).
+     * The name of the placement group.
      * </p>
      * 
      * @param groupName
-     *        The name of the placement group (for cluster instances).
+     *        The name of the placement group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -57,16 +57,16 @@ public class MethodResponse implements Serializable, Cloneable, StructuredPojo {
     private String statusCode;
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header and the value specifies whether the associated method response
-     * header is required or not. The expression of the key must match the pattern
-     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. Amazon API
-     * Gateway passes certain integration response data to the method response headers specified here according to the
-     * mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped
-     * include an integration response header expressed in <code>integration.response.header.{name}</code>, a static
-     * value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from
-     * the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where
-     * <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header and the value specifies whether the associated method response header is
+     * required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>,
+     * where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data
+     * to the method response headers specified here according to the mapping you prescribe in the API's
+     * <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response
+     * header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of
+     * single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in
+     * the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a
+     * valid JSON expression without the <code>$</code> prefix.)
      * </p>
      */
     private java.util.Map<String, Boolean> responseParameters;
@@ -120,23 +120,23 @@ public class MethodResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header and the value specifies whether the associated method response
-     * header is required or not. The expression of the key must match the pattern
-     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. Amazon API
-     * Gateway passes certain integration response data to the method response headers specified here according to the
-     * mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped
-     * include an integration response header expressed in <code>integration.response.header.{name}</code>, a static
-     * value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from
-     * the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where
-     * <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header and the value specifies whether the associated method response header is
+     * required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>,
+     * where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data
+     * to the method response headers specified here according to the mapping you prescribe in the API's
+     * <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response
+     * header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of
+     * single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in
+     * the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a
+     * valid JSON expression without the <code>$</code> prefix.)
      * </p>
      * 
-     * @return A key-value map specifying required or optional response parameters that Amazon API Gateway can send back
-     *         to the caller. A key defines a method response header and the value specifies whether the associated
-     *         method response header is required or not. The expression of the key must match the pattern
+     * @return A key-value map specifying required or optional response parameters that API Gateway can send back to the
+     *         caller. A key defines a method response header and the value specifies whether the associated method
+     *         response header is required or not. The expression of the key must match the pattern
      *         <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name.
-     *         Amazon API Gateway passes certain integration response data to the method response headers specified here
+     *         API Gateway passes certain integration response data to the method response headers specified here
      *         according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response
      *         data that can be mapped include an integration response header expressed in
      *         <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes
@@ -151,26 +151,26 @@ public class MethodResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header and the value specifies whether the associated method response
-     * header is required or not. The expression of the key must match the pattern
-     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. Amazon API
-     * Gateway passes certain integration response data to the method response headers specified here according to the
-     * mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped
-     * include an integration response header expressed in <code>integration.response.header.{name}</code>, a static
-     * value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from
-     * the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where
-     * <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header and the value specifies whether the associated method response header is
+     * required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>,
+     * where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data
+     * to the method response headers specified here according to the mapping you prescribe in the API's
+     * <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response
+     * header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of
+     * single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in
+     * the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a
+     * valid JSON expression without the <code>$</code> prefix.)
      * </p>
      * 
      * @param responseParameters
-     *        A key-value map specifying required or optional response parameters that Amazon API Gateway can send back
-     *        to the caller. A key defines a method response header and the value specifies whether the associated
-     *        method response header is required or not. The expression of the key must match the pattern
-     *        <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name.
-     *        Amazon API Gateway passes certain integration response data to the method response headers specified here
-     *        according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response
-     *        data that can be mapped include an integration response header expressed in
+     *        A key-value map specifying required or optional response parameters that API Gateway can send back to the
+     *        caller. A key defines a method response header and the value specifies whether the associated method
+     *        response header is required or not. The expression of the key must match the pattern
+     *        <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API
+     *        Gateway passes certain integration response data to the method response headers specified here according
+     *        to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that
+     *        can be mapped include an integration response header expressed in
      *        <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes
      *        (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the
      *        form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a
@@ -183,26 +183,26 @@ public class MethodResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value map specifying required or optional response parameters that Amazon API Gateway can send back to the
-     * caller. A key defines a method response header and the value specifies whether the associated method response
-     * header is required or not. The expression of the key must match the pattern
-     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. Amazon API
-     * Gateway passes certain integration response data to the method response headers specified here according to the
-     * mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped
-     * include an integration response header expressed in <code>integration.response.header.{name}</code>, a static
-     * value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from
-     * the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where
-     * <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)
+     * A key-value map specifying required or optional response parameters that API Gateway can send back to the caller.
+     * A key defines a method response header and the value specifies whether the associated method response header is
+     * required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>,
+     * where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data
+     * to the method response headers specified here according to the mapping you prescribe in the API's
+     * <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response
+     * header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of
+     * single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in
+     * the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a
+     * valid JSON expression without the <code>$</code> prefix.)
      * </p>
      * 
      * @param responseParameters
-     *        A key-value map specifying required or optional response parameters that Amazon API Gateway can send back
-     *        to the caller. A key defines a method response header and the value specifies whether the associated
-     *        method response header is required or not. The expression of the key must match the pattern
-     *        <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name.
-     *        Amazon API Gateway passes certain integration response data to the method response headers specified here
-     *        according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response
-     *        data that can be mapped include an integration response header expressed in
+     *        A key-value map specifying required or optional response parameters that API Gateway can send back to the
+     *        caller. A key defines a method response header and the value specifies whether the associated method
+     *        response header is required or not. The expression of the key must match the pattern
+     *        <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API
+     *        Gateway passes certain integration response data to the method response headers specified here according
+     *        to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that
+     *        can be mapped include an integration response header expressed in
      *        <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes
      *        (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the
      *        form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a

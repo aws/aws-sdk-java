@@ -21,10 +21,10 @@ import javax.annotation.Generated;
  * </p>
  * <div class="Remarks">
  * <p>
- * When you deploy an API, Amazon API Gateway creates a default host name for the API. This default API host name is of
- * the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access
- * the API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>
- * . When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same
+ * When you deploy an API, API Gateway creates a default host name for the API. This default API host name is of the
+ * <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access the
+ * API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>.
+ * When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same
  * resource using the URL of the <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the base path
  * mapping (<a>BasePathMapping</a>) of your API under the custom domain name.
  * </p>
@@ -64,7 +64,7 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
      * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
-     * returned by Amazon API Gateway when you create a regional endpoint.
+     * returned by API Gateway when you create a regional endpoint.
      * </p>
      */
     private String regionalDomainName;
@@ -291,13 +291,13 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
      * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
-     * returned by Amazon API Gateway when you create a regional endpoint.
+     * returned by API Gateway when you create a regional endpoint.
      * </p>
      * 
      * @param regionalDomainName
      *        The domain name associated with the regional endpoint for this custom domain name. You set up this
      *        association by adding a DNS record that points the custom domain name to this regional domain name. The
-     *        regional domain name is returned by Amazon API Gateway when you create a regional endpoint.
+     *        regional domain name is returned by API Gateway when you create a regional endpoint.
      */
 
     public void setRegionalDomainName(String regionalDomainName) {
@@ -308,12 +308,12 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
      * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
-     * returned by Amazon API Gateway when you create a regional endpoint.
+     * returned by API Gateway when you create a regional endpoint.
      * </p>
      * 
      * @return The domain name associated with the regional endpoint for this custom domain name. You set up this
      *         association by adding a DNS record that points the custom domain name to this regional domain name. The
-     *         regional domain name is returned by Amazon API Gateway when you create a regional endpoint.
+     *         regional domain name is returned by API Gateway when you create a regional endpoint.
      */
 
     public String getRegionalDomainName() {
@@ -324,13 +324,13 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The domain name associated with the regional endpoint for this custom domain name. You set up this association by
      * adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is
-     * returned by Amazon API Gateway when you create a regional endpoint.
+     * returned by API Gateway when you create a regional endpoint.
      * </p>
      * 
      * @param regionalDomainName
      *        The domain name associated with the regional endpoint for this custom domain name. You set up this
      *        association by adding a DNS record that points the custom domain name to this regional domain name. The
-     *        regional domain name is returned by Amazon API Gateway when you create a regional endpoint.
+     *        regional domain name is returned by API Gateway when you create a regional endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

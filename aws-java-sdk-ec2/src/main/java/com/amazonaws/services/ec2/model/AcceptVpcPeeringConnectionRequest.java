@@ -30,18 +30,18 @@ public class AcceptVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection. You must specify this parameter in the request.
      * </p>
      */
     private String vpcPeeringConnectionId;
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection. You must specify this parameter in the request.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     *        The ID of the VPC peering connection. You must specify this parameter in the request.
      */
 
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -50,10 +50,10 @@ public class AcceptVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection. You must specify this parameter in the request.
      * </p>
      * 
-     * @return The ID of the VPC peering connection.
+     * @return The ID of the VPC peering connection. You must specify this parameter in the request.
      */
 
     public String getVpcPeeringConnectionId() {
@@ -62,11 +62,11 @@ public class AcceptVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of the VPC peering connection. You must specify this parameter in the request.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     *        The ID of the VPC peering connection. You must specify this parameter in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -131,7 +131,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "PolicyLengthExceededException",
@@ -139,7 +139,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -182,11 +182,11 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -221,7 +221,7 @@
         "httpStatusCode" : 500
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceConflictException",
@@ -229,7 +229,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -268,7 +268,7 @@
         "httpStatusCode" : 500
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -280,7 +280,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "CodeStorageExceededException",
@@ -319,11 +319,11 @@
         "httpStatusCode" : 500
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -362,11 +362,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -405,11 +405,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceConflictException",
@@ -434,6 +434,49 @@
       },
       "syncReturnType" : "DeleteFunctionResult"
     },
+    "DeleteFunctionConcurrency" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteFunctionConcurrencyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteFunctionConcurrencyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteFunctionConcurrencyRequest, DeleteFunctionConcurrencyResult>",
+      "asyncReturnType" : "DeleteFunctionConcurrencyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Removes concurrent execution limits from this function.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "TooManyRequestsException",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
+        "httpStatusCode" : 400
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "DeleteFunctionConcurrencyRequest",
+        "variableName" : "deleteFunctionConcurrencyRequest",
+        "variableType" : "DeleteFunctionConcurrencyRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteFunctionConcurrencyRequest",
+        "variableSetterType" : "DeleteFunctionConcurrencyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteFunctionConcurrency",
+      "operationName" : "DeleteFunctionConcurrency",
+      "returnType" : {
+        "returnType" : "DeleteFunctionConcurrencyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteFunctionConcurrencyResult"
+    },
     "GetAccountSettings" : {
       "asyncCallableType" : "java.util.concurrent.Callable<GetAccountSettingsResult>",
       "asyncFutureType" : "java.util.concurrent.Future<GetAccountSettingsResult>",
@@ -444,7 +487,7 @@
       "documentation" : "<p>Returns a customer's account settings.</p> <p>You can use this operation to retrieve Lambda limits information, such as code size and concurrency limits. For more information about limits, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">AWS Lambda Limits</a>. You can also retrieve resource usage statistics, such as code storage usage and function count.</p>",
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ServiceException",
@@ -487,11 +530,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -530,11 +573,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -573,11 +616,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -616,11 +659,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -659,11 +702,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -714,11 +757,11 @@
         "httpStatusCode" : 415
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EC2UnexpectedException",
@@ -852,11 +895,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -895,11 +938,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -934,11 +977,11 @@
         "httpStatusCode" : 500
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -977,11 +1020,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1020,11 +1063,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1063,11 +1106,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "CodeStorageExceededException",
@@ -1092,6 +1135,49 @@
       },
       "syncReturnType" : "PublishVersionResult"
     },
+    "PutFunctionConcurrency" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<PutFunctionConcurrencyResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<PutFunctionConcurrencyResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResult>",
+      "asyncReturnType" : "PutFunctionConcurrencyResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you have a total of 900 available to allocate to individual functions.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ServiceException",
+        "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource (for example, a Lambda function or access policy statement) specified in the request does not exist.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "TooManyRequestsException",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "httpStatusCode" : 429
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "PutFunctionConcurrencyRequest",
+        "variableName" : "putFunctionConcurrencyRequest",
+        "variableType" : "PutFunctionConcurrencyRequest",
+        "documentation" : "",
+        "simpleType" : "PutFunctionConcurrencyRequest",
+        "variableSetterType" : "PutFunctionConcurrencyRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "putFunctionConcurrency",
+      "operationName" : "PutFunctionConcurrency",
+      "returnType" : {
+        "returnType" : "PutFunctionConcurrencyResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "PutFunctionConcurrencyResult"
+    },
     "RemovePermission" : {
       "asyncCallableType" : "java.util.concurrent.Callable<RemovePermissionResult>",
       "asyncFutureType" : "java.util.concurrent.Future<RemovePermissionResult>",
@@ -1110,11 +1196,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1153,11 +1239,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1196,11 +1282,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1239,11 +1325,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1282,11 +1368,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceConflictException",
@@ -1329,11 +1415,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "CodeStorageExceededException",
@@ -1376,11 +1462,11 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "InvalidParameterValueException",
-        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceConflictException",
@@ -1676,6 +1762,69 @@
           "variableSetterType" : "Integer"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "UnreservedConcurrentExecutions",
+        "c2jShape" : "UnreservedConcurrentExecutions",
+        "deprecated" : false,
+        "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUnreservedConcurrentExecutions",
+        "getterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@return The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+        "getterMethodName" : "getUnreservedConcurrentExecutions",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "UnreservedConcurrentExecutions",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "UnreservedConcurrentExecutions",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "UnreservedConcurrentExecutions",
+        "setterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+        "setterMethodName" : "setUnreservedConcurrentExecutions",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "unreservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "unreservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSizeUnzipped" : {
@@ -1931,6 +2080,70 @@
             "documentation" : "<p>Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB. </p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "UnreservedConcurrentExecutions" : {
+          "c2jName" : "UnreservedConcurrentExecutions",
+          "c2jShape" : "UnreservedConcurrentExecutions",
+          "deprecated" : false,
+          "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUnreservedConcurrentExecutions",
+          "getterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@return The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+          "getterMethodName" : "getUnreservedConcurrentExecutions",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "UnreservedConcurrentExecutions",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "UnreservedConcurrentExecutions",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "UnreservedConcurrentExecutions",
+          "setterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+          "setterMethodName" : "setUnreservedConcurrentExecutions",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "unreservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "unreservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "xmlNameSpaceUri" : null
         }
@@ -4635,6 +4848,173 @@
         "documentation" : null,
         "simpleType" : "CodeStorageExceededException",
         "variableSetterType" : "CodeStorageExceededException"
+      },
+      "wrapper" : false
+    },
+    "Concurrency" : {
+      "c2jName" : "Concurrency",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ReservedConcurrentExecutions",
+        "c2jShape" : "ReservedConcurrentExecutions",
+        "deprecated" : false,
+        "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withReservedConcurrentExecutions",
+        "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+        "getterMethodName" : "getReservedConcurrentExecutions",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ReservedConcurrentExecutions",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReservedConcurrentExecutions",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "ReservedConcurrentExecutions",
+        "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+        "setterMethodName" : "setReservedConcurrentExecutions",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "reservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "reservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ReservedConcurrentExecutions" : {
+          "c2jName" : "ReservedConcurrentExecutions",
+          "c2jShape" : "ReservedConcurrentExecutions",
+          "deprecated" : false,
+          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withReservedConcurrentExecutions",
+          "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+          "getterMethodName" : "getReservedConcurrentExecutions",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ReservedConcurrentExecutions",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReservedConcurrentExecutions",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "ReservedConcurrentExecutions",
+          "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+          "setterMethodName" : "setReservedConcurrentExecutions",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "reservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "reservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "Concurrency",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "Concurrency",
+        "variableName" : "concurrency",
+        "variableType" : "Concurrency",
+        "documentation" : null,
+        "simpleType" : "Concurrency",
+        "variableSetterType" : "Concurrency"
       },
       "wrapper" : false
     },
@@ -7945,11 +8325,11 @@
         "c2jName" : "Runtime",
         "c2jShape" : "Runtime",
         "deprecated" : false,
-        "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+        "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
         "enumType" : "Runtime",
-        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "fluentSetterMethodName" : "withRuntime",
-        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
         "getterMethodName" : "getRuntime",
         "getterModel" : {
           "returnType" : "String",
@@ -7981,7 +8361,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Runtime",
-        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
         "setterMethodName" : "setRuntime",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -7994,12 +8374,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "runtime",
           "variableType" : "String",
-          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9547,11 +9927,11 @@
           "c2jName" : "Runtime",
           "c2jShape" : "Runtime",
           "deprecated" : false,
-          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+          "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
           "enumType" : "Runtime",
-          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "fluentSetterMethodName" : "withRuntime",
-          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
           "getterMethodName" : "getRuntime",
           "getterModel" : {
             "returnType" : "String",
@@ -9583,7 +9963,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Runtime",
-          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
           "setterMethodName" : "setRuntime",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -9596,12 +9976,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
             "variableType" : "String",
-            "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+            "documentation" : "<p>The runtime environment for the Lambda function you are uploading.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parmaeter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14013,6 +14393,216 @@
         "documentation" : null,
         "simpleType" : "DeleteEventSourceMappingResult",
         "variableSetterType" : "DeleteEventSourceMappingResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteFunctionConcurrencyRequest" : {
+      "c2jName" : "DeleteFunctionConcurrencyRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteFunctionConcurrency",
+        "locationName" : null,
+        "requestUri" : "/2017-10-31/functions/{FunctionName}/concurrency",
+        "target" : null,
+        "verb" : "DELETE",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "FunctionName",
+        "c2jShape" : "FunctionName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFunctionName",
+        "getterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@return The name of the function you are removing concurrent execution limits from.*/",
+        "getterMethodName" : "getFunctionName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "FunctionName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FunctionName",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FunctionName",
+        "setterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.*/",
+        "setterMethodName" : "setFunctionName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "functionName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "functionName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "FunctionName" : {
+          "c2jName" : "FunctionName",
+          "c2jShape" : "FunctionName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFunctionName",
+          "getterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@return The name of the function you are removing concurrent execution limits from.*/",
+          "getterMethodName" : "getFunctionName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "FunctionName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FunctionName",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FunctionName",
+          "setterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.*/",
+          "setterMethodName" : "setFunctionName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "functionName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "functionName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "FunctionName" ],
+      "shapeName" : "DeleteFunctionConcurrencyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DeleteFunctionConcurrencyRequest",
+        "variableName" : "deleteFunctionConcurrencyRequest",
+        "variableType" : "DeleteFunctionConcurrencyRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteFunctionConcurrencyRequest",
+        "variableSetterType" : "DeleteFunctionConcurrencyRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteFunctionConcurrencyResult" : {
+      "c2jName" : "DeleteFunctionConcurrencyResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteFunctionConcurrencyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DeleteFunctionConcurrencyResult",
+        "variableName" : "deleteFunctionConcurrencyResult",
+        "variableType" : "DeleteFunctionConcurrencyResult",
+        "documentation" : null,
+        "simpleType" : "DeleteFunctionConcurrencyResult",
+        "variableSetterType" : "DeleteFunctionConcurrencyResult"
       },
       "wrapper" : false
     },
@@ -26260,6 +26850,69 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Concurrency",
+        "c2jShape" : "Concurrency",
+        "deprecated" : false,
+        "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withConcurrency",
+        "getterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@return The concurrent execution limit set for this function.*/",
+        "getterMethodName" : "getConcurrency",
+        "getterModel" : {
+          "returnType" : "Concurrency",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Concurrency",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Concurrency",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "Concurrency",
+        "setterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.*/",
+        "setterMethodName" : "setConcurrency",
+        "setterModel" : {
+          "variableDeclarationType" : "Concurrency",
+          "variableName" : "concurrency",
+          "variableType" : "Concurrency",
+          "documentation" : "",
+          "simpleType" : "Concurrency",
+          "variableSetterType" : "Concurrency"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Concurrency",
+          "variableName" : "concurrency",
+          "variableType" : "Concurrency",
+          "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+          "simpleType" : "Concurrency",
+          "variableSetterType" : "Concurrency"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Code" : {
@@ -26323,6 +26976,70 @@
             "documentation" : "",
             "simpleType" : "FunctionCodeLocation",
             "variableSetterType" : "FunctionCodeLocation"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Concurrency" : {
+          "c2jName" : "Concurrency",
+          "c2jShape" : "Concurrency",
+          "deprecated" : false,
+          "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withConcurrency",
+          "getterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@return The concurrent execution limit set for this function.*/",
+          "getterMethodName" : "getConcurrency",
+          "getterModel" : {
+            "returnType" : "Concurrency",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Concurrency",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Concurrency",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "Concurrency",
+          "setterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.*/",
+          "setterMethodName" : "setConcurrency",
+          "setterModel" : {
+            "variableDeclarationType" : "Concurrency",
+            "variableName" : "concurrency",
+            "variableType" : "Concurrency",
+            "documentation" : "",
+            "simpleType" : "Concurrency",
+            "variableSetterType" : "Concurrency"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Concurrency",
+            "variableName" : "concurrency",
+            "variableType" : "Concurrency",
+            "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+            "simpleType" : "Concurrency",
+            "variableSetterType" : "Concurrency"
           },
           "xmlNameSpaceUri" : null
         },
@@ -27027,7 +27744,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.</p>",
+      "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception.</p>",
       "enums" : null,
       "errorCode" : "InvalidParameterValueException",
       "hasHeaderMember" : false,
@@ -37987,6 +38704,471 @@
       },
       "wrapper" : false
     },
+    "PutFunctionConcurrencyRequest" : {
+      "c2jName" : "PutFunctionConcurrencyRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "PutFunctionConcurrency",
+        "locationName" : null,
+        "requestUri" : "/2017-10-31/functions/{FunctionName}/concurrency",
+        "target" : null,
+        "verb" : "PUT",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "FunctionName",
+        "c2jShape" : "FunctionName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFunctionName",
+        "getterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@return The name of the function you are setting concurrent execution limits on.*/",
+        "getterMethodName" : "getFunctionName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "FunctionName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FunctionName",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FunctionName",
+        "setterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.*/",
+        "setterMethodName" : "setFunctionName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "functionName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "functionName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ReservedConcurrentExecutions",
+        "c2jShape" : "ReservedConcurrentExecutions",
+        "deprecated" : false,
+        "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withReservedConcurrentExecutions",
+        "getterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@return The concurrent execution limit reserved for this function.*/",
+        "getterMethodName" : "getReservedConcurrentExecutions",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ReservedConcurrentExecutions",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReservedConcurrentExecutions",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "ReservedConcurrentExecutions",
+        "setterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.*/",
+        "setterMethodName" : "setReservedConcurrentExecutions",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "reservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "reservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "FunctionName" : {
+          "c2jName" : "FunctionName",
+          "c2jShape" : "FunctionName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFunctionName",
+          "getterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@return The name of the function you are setting concurrent execution limits on.*/",
+          "getterMethodName" : "getFunctionName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "FunctionName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FunctionName",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FunctionName",
+          "setterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.*/",
+          "setterMethodName" : "setFunctionName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "functionName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "functionName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ReservedConcurrentExecutions" : {
+          "c2jName" : "ReservedConcurrentExecutions",
+          "c2jShape" : "ReservedConcurrentExecutions",
+          "deprecated" : false,
+          "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withReservedConcurrentExecutions",
+          "getterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@return The concurrent execution limit reserved for this function.*/",
+          "getterMethodName" : "getReservedConcurrentExecutions",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ReservedConcurrentExecutions",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReservedConcurrentExecutions",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "ReservedConcurrentExecutions",
+          "setterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.*/",
+          "setterMethodName" : "setReservedConcurrentExecutions",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "reservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "reservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "FunctionName", "ReservedConcurrentExecutions" ],
+      "shapeName" : "PutFunctionConcurrencyRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "PutFunctionConcurrencyRequest",
+        "variableName" : "putFunctionConcurrencyRequest",
+        "variableType" : "PutFunctionConcurrencyRequest",
+        "documentation" : null,
+        "simpleType" : "PutFunctionConcurrencyRequest",
+        "variableSetterType" : "PutFunctionConcurrencyRequest"
+      },
+      "wrapper" : false
+    },
+    "PutFunctionConcurrencyResult" : {
+      "c2jName" : "Concurrency",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ReservedConcurrentExecutions",
+        "c2jShape" : "ReservedConcurrentExecutions",
+        "deprecated" : false,
+        "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withReservedConcurrentExecutions",
+        "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+        "getterMethodName" : "getReservedConcurrentExecutions",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ReservedConcurrentExecutions",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReservedConcurrentExecutions",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "ReservedConcurrentExecutions",
+        "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+        "setterMethodName" : "setReservedConcurrentExecutions",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "reservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "reservedConcurrentExecutions",
+          "variableType" : "Integer",
+          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ReservedConcurrentExecutions" : {
+          "c2jName" : "ReservedConcurrentExecutions",
+          "c2jShape" : "ReservedConcurrentExecutions",
+          "deprecated" : false,
+          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withReservedConcurrentExecutions",
+          "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+          "getterMethodName" : "getReservedConcurrentExecutions",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ReservedConcurrentExecutions",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReservedConcurrentExecutions",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "ReservedConcurrentExecutions",
+          "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+          "setterMethodName" : "setReservedConcurrentExecutions",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "reservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "reservedConcurrentExecutions",
+            "variableType" : "Integer",
+            "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PutFunctionConcurrencyResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "PutFunctionConcurrencyResult",
+        "variableName" : "putFunctionConcurrencyResult",
+        "variableType" : "PutFunctionConcurrencyResult",
+        "documentation" : null,
+        "simpleType" : "PutFunctionConcurrencyResult",
+        "variableSetterType" : "PutFunctionConcurrencyResult"
+      },
+      "wrapper" : false
+    },
     "RemovePermissionRequest" : {
       "c2jName" : "RemovePermissionRequest",
       "customization" : {
@@ -39844,6 +41026,12 @@
         "name" : "FunctionInvocationRateLimitExceeded",
         "value" : "FunctionInvocationRateLimitExceeded"
       }, {
+        "name" : "ReservedFunctionConcurrentInvocationLimitExceeded",
+        "value" : "ReservedFunctionConcurrentInvocationLimitExceeded"
+      }, {
+        "name" : "ReservedFunctionInvocationRateLimitExceeded",
+        "value" : "ReservedFunctionInvocationRateLimitExceeded"
+      }, {
         "name" : "CallerRateLimitExceeded",
         "value" : "CallerRateLimitExceeded"
       } ],
@@ -39884,7 +41072,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p/>",
+      "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
       "hasHeaderMember" : true,
@@ -48082,11 +49270,11 @@
         "c2jName" : "Runtime",
         "c2jShape" : "Runtime",
         "deprecated" : false,
-        "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+        "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
         "enumType" : "Runtime",
-        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "fluentSetterMethodName" : "withRuntime",
-        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
         "getterMethodName" : "getRuntime",
         "getterModel" : {
           "returnType" : "String",
@@ -48118,7 +49306,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Runtime",
-        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
         "setterMethodName" : "setRuntime",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -48131,12 +49319,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "runtime",
           "variableType" : "String",
-          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -48848,11 +50036,11 @@
           "c2jName" : "Runtime",
           "c2jShape" : "Runtime",
           "deprecated" : false,
-          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
           "enumType" : "Runtime",
-          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "fluentSetterMethodName" : "withRuntime",
-          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
           "getterMethodName" : "getRuntime",
           "getterModel" : {
             "returnType" : "String",
@@ -48884,7 +50072,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Runtime",
-          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
           "setterMethodName" : "setRuntime",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -48897,12 +50085,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
             "variableType" : "String",
-            "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+            "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

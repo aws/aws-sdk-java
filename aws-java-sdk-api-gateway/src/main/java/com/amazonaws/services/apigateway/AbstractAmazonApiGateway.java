@@ -108,6 +108,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +209,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public DeleteUsagePlanKeyResult deleteUsagePlanKey(DeleteUsagePlanKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -438,6 +448,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetVpcLinkResult getVpcLink(GetVpcLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVpcLinksResult getVpcLinks(GetVpcLinksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportApiKeysResult importApiKeys(ImportApiKeysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -594,6 +614,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateUsagePlanResult updateUsagePlan(UpdateUsagePlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -73,6 +73,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public DeleteFunctionConcurrencyResult deleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +155,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public PublishVersionResult publishVersion(PublishVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutFunctionConcurrencyResult putFunctionConcurrency(PutFunctionConcurrencyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

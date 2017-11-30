@@ -61,6 +61,10 @@ public class GetFunctionResultJsonUnmarshaller implements Unmarshaller<GetFuncti
                     getFunctionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("Concurrency", targetDepth)) {
+                    context.nextToken();
+                    getFunctionResult.setConcurrency(ConcurrencyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

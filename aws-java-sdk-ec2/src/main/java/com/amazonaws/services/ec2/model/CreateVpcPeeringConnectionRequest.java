@@ -30,7 +30,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID of the owner of the peer VPC.
+     * The AWS account ID of the owner of the accepter VPC.
      * </p>
      * <p>
      * Default: Your AWS account ID
@@ -39,27 +39,38 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
     private String peerOwnerId;
     /**
      * <p>
-     * The ID of the VPC with which you are creating the VPC peering connection.
+     * The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the
+     * request.
      * </p>
      */
     private String peerVpcId;
     /**
      * <p>
-     * The ID of the requester VPC.
+     * The ID of the requester VPC. You must specify this parameter in the request.
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in which
+     * you make the request.
+     * </p>
+     * <p>
+     * Default: The region in which you make the request.
+     * </p>
+     */
+    private String peerRegion;
 
     /**
      * <p>
-     * The AWS account ID of the owner of the peer VPC.
+     * The AWS account ID of the owner of the accepter VPC.
      * </p>
      * <p>
      * Default: Your AWS account ID
      * </p>
      * 
      * @param peerOwnerId
-     *        The AWS account ID of the owner of the peer VPC.</p>
+     *        The AWS account ID of the owner of the accepter VPC.</p>
      *        <p>
      *        Default: Your AWS account ID
      */
@@ -70,13 +81,13 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID of the owner of the peer VPC.
+     * The AWS account ID of the owner of the accepter VPC.
      * </p>
      * <p>
      * Default: Your AWS account ID
      * </p>
      * 
-     * @return The AWS account ID of the owner of the peer VPC.</p>
+     * @return The AWS account ID of the owner of the accepter VPC.</p>
      *         <p>
      *         Default: Your AWS account ID
      */
@@ -87,14 +98,14 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS account ID of the owner of the peer VPC.
+     * The AWS account ID of the owner of the accepter VPC.
      * </p>
      * <p>
      * Default: Your AWS account ID
      * </p>
      * 
      * @param peerOwnerId
-     *        The AWS account ID of the owner of the peer VPC.</p>
+     *        The AWS account ID of the owner of the accepter VPC.</p>
      *        <p>
      *        Default: Your AWS account ID
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -107,11 +118,13 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the VPC with which you are creating the VPC peering connection.
+     * The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the
+     * request.
      * </p>
      * 
      * @param peerVpcId
-     *        The ID of the VPC with which you are creating the VPC peering connection.
+     *        The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter
+     *        in the request.
      */
 
     public void setPeerVpcId(String peerVpcId) {
@@ -120,10 +133,12 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the VPC with which you are creating the VPC peering connection.
+     * The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the
+     * request.
      * </p>
      * 
-     * @return The ID of the VPC with which you are creating the VPC peering connection.
+     * @return The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter
+     *         in the request.
      */
 
     public String getPeerVpcId() {
@@ -132,11 +147,13 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the VPC with which you are creating the VPC peering connection.
+     * The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the
+     * request.
      * </p>
      * 
      * @param peerVpcId
-     *        The ID of the VPC with which you are creating the VPC peering connection.
+     *        The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter
+     *        in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +164,11 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the requester VPC.
+     * The ID of the requester VPC. You must specify this parameter in the request.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the requester VPC.
+     *        The ID of the requester VPC. You must specify this parameter in the request.
      */
 
     public void setVpcId(String vpcId) {
@@ -160,10 +177,10 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the requester VPC.
+     * The ID of the requester VPC. You must specify this parameter in the request.
      * </p>
      * 
-     * @return The ID of the requester VPC.
+     * @return The ID of the requester VPC. You must specify this parameter in the request.
      */
 
     public String getVpcId() {
@@ -172,16 +189,77 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the requester VPC.
+     * The ID of the requester VPC. You must specify this parameter in the request.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the requester VPC.
+     *        The ID of the requester VPC. You must specify this parameter in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateVpcPeeringConnectionRequest withVpcId(String vpcId) {
         setVpcId(vpcId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in which
+     * you make the request.
+     * </p>
+     * <p>
+     * Default: The region in which you make the request.
+     * </p>
+     * 
+     * @param peerRegion
+     *        The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in
+     *        which you make the request.</p>
+     *        <p>
+     *        Default: The region in which you make the request.
+     */
+
+    public void setPeerRegion(String peerRegion) {
+        this.peerRegion = peerRegion;
+    }
+
+    /**
+     * <p>
+     * The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in which
+     * you make the request.
+     * </p>
+     * <p>
+     * Default: The region in which you make the request.
+     * </p>
+     * 
+     * @return The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in
+     *         which you make the request.</p>
+     *         <p>
+     *         Default: The region in which you make the request.
+     */
+
+    public String getPeerRegion() {
+        return this.peerRegion;
+    }
+
+    /**
+     * <p>
+     * The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in which
+     * you make the request.
+     * </p>
+     * <p>
+     * Default: The region in which you make the request.
+     * </p>
+     * 
+     * @param peerRegion
+     *        The region code for the accepter VPC, if the accepter VPC is located in a region other than the region in
+     *        which you make the request.</p>
+     *        <p>
+     *        Default: The region in which you make the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcPeeringConnectionRequest withPeerRegion(String peerRegion) {
+        setPeerRegion(peerRegion);
         return this;
     }
 
@@ -212,7 +290,9 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         if (getPeerVpcId() != null)
             sb.append("PeerVpcId: ").append(getPeerVpcId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getPeerRegion() != null)
+            sb.append("PeerRegion: ").append(getPeerRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +319,10 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getPeerRegion() == null ^ this.getPeerRegion() == null)
+            return false;
+        if (other.getPeerRegion() != null && other.getPeerRegion().equals(this.getPeerRegion()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +334,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPeerOwnerId() == null) ? 0 : getPeerOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getPeerRegion() == null) ? 0 : getPeerRegion().hashCode());
         return hashCode;
     }
 

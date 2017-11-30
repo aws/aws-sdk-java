@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
- * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
- * <a>GatewayResponses</a> collection for the supported response types.
+ * definitions for gateway responses, the result will be the API Gateway-generated default <a>GatewayResponses</a>
+ * collection for the supported response types.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

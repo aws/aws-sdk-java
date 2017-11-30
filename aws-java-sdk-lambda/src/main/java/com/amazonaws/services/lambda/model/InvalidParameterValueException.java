@@ -18,8 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in
  * the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to
- * assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such
- * as Node v0.10.42 or if you point to an additional version when the version specified is <code>$LATEST</code>.
+ * assume you will get this exception.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -60,6 +60,14 @@ public class UpdateIntegrationResultJsonUnmarshaller implements Unmarshaller<Upd
                     context.nextToken();
                     updateIntegrationResult.setUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectionType", targetDepth)) {
+                    context.nextToken();
+                    updateIntegrationResult.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("connectionId", targetDepth)) {
+                    context.nextToken();
+                    updateIntegrationResult.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("credentials", targetDepth)) {
                     context.nextToken();
                     updateIntegrationResult.setCredentials(context.getUnmarshaller(String.class).unmarshall(context));

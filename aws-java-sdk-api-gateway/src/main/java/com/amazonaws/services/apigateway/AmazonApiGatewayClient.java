@@ -50,9 +50,9 @@ import com.amazonaws.services.apigateway.model.transform.*;
  * <p>
  * <fullname>Amazon API Gateway</fullname>
  * <p>
- * Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. Amazon
- * API Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon
- * EC2, or other publicly addressable web services that are hosted outside of AWS.
+ * Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. API
+ * Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2,
+ * or other publicly addressable web services that are hosted outside of AWS.
  * </p>
  */
 @ThreadSafe
@@ -409,7 +409,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createBasePathMappingRequest
-     *        Requests Amazon API Gateway to create a new <a>BasePathMapping</a> resource.
+     *        Requests API Gateway to create a new <a>BasePathMapping</a> resource.
      * @return Result of the CreateBasePathMapping operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -468,7 +468,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Requests Amazon API Gateway to create a <a>Deployment</a> resource.
+     *        Requests API Gateway to create a <a>Deployment</a> resource.
      * @return Result of the CreateDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -822,7 +822,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createResourceRequest
-     *        Requests Amazon API Gateway to create a <a>Resource</a> resource.
+     *        Requests API Gateway to create a <a>Resource</a> resource.
      * @return Result of the CreateResource operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -938,7 +938,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createStageRequest
-     *        Requests Amazon API Gateway to create a <a>Stage</a> resource.
+     *        Requests API Gateway to create a <a>Stage</a> resource.
      * @return Result of the CreateStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -1102,6 +1102,64 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUsagePlanKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUsagePlanKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically
+     * takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC
+     * Endpoint services.
+     * </p>
+     * 
+     * @param createVpcLinkRequest
+     *        Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that
+     *        typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create
+     *        and update VPC Endpoint services.
+     * @return Result of the CreateVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.CreateVpcLink
+     */
+    @Override
+    public CreateVpcLinkResult createVpcLink(CreateVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcLinkResult executeCreateVpcLink(CreateVpcLinkRequest createVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcLinkRequest> request = null;
+        Response<CreateVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVpcLinkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1349,7 +1407,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param deleteDeploymentRequest
-     *        Requests Amazon API Gateway to delete a <a>Deployment</a> resource.
+     *        Requests API Gateway to delete a <a>Deployment</a> resource.
      * @return Result of the DeleteDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2090,7 +2148,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param deleteStageRequest
-     *        Requests Amazon API Gateway to delete a <a>Stage</a> resource.
+     *        Requests API Gateway to delete a <a>Stage</a> resource.
      * @return Result of the DeleteStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2257,6 +2315,62 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes an existing <a>VpcLink</a> of a specified identifier.
+     * </p>
+     * 
+     * @param deleteVpcLinkRequest
+     *        Deletes an existing <a>VpcLink</a> of a specified identifier.
+     * @return Result of the DeleteVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @sample AmazonApiGateway.DeleteVpcLink
+     */
+    @Override
+    public DeleteVpcLinkResult deleteVpcLink(DeleteVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVpcLinkResult executeDeleteVpcLink(DeleteVpcLinkRequest deleteVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcLinkRequest> request = null;
+        Response<DeleteVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVpcLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Flushes all authorizer cache entries on a stage.
      * </p>
      * 
@@ -2319,7 +2433,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param flushStageCacheRequest
-     *        Requests Amazon API Gateway to flush a stage's cache.
+     *        Requests API Gateway to flush a stage's cache.
      * @return Result of the FlushStageCache operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2430,7 +2544,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getAccountRequest
-     *        Requests Amazon API Gateway to get information about the current <a>Account</a> resource.
+     *        Requests API Gateway to get information about the current <a>Account</a> resource.
      * @return Result of the GetAccount operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2917,7 +3031,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getDeploymentRequest
-     *        Requests Amazon API Gateway to get information about a <a>Deployment</a> resource.
+     *        Requests API Gateway to get information about a <a>Deployment</a> resource.
      * @return Result of the GetDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -2973,7 +3087,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getDeploymentsRequest
-     *        Requests Amazon API Gateway to get information about a <a>Deployments</a> collection.
+     *        Requests API Gateway to get information about a <a>Deployments</a> collection.
      * @return Result of the GetDeployments operation returned by the service.
      * @throws BadRequestException
      *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
@@ -3456,13 +3570,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
-     * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
-     * <a>GatewayResponses</a> collection for the supported response types.
+     * definitions for gateway responses, the result will be the API Gateway-generated default <a>GatewayResponses</a>
+     * collection for the supported response types.
      * </p>
      * 
      * @param getGatewayResponsesRequest
      *        Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added
-     *        any definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     *        any definitions for gateway responses, the result will be the API Gateway-generated default
      *        <a>GatewayResponses</a> collection for the supported response types.
      * @return Result of the GetGatewayResponses operation returned by the service.
      * @throws BadRequestException
@@ -4376,7 +4490,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getStageRequest
-     *        Requests Amazon API Gateway to get information about a <a>Stage</a> resource.
+     *        Requests API Gateway to get information about a <a>Stage</a> resource.
      * @return Result of the GetStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -4429,7 +4543,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getStagesRequest
-     *        Requests Amazon API Gateway to get information about one or more <a>Stage</a> resources.
+     *        Requests API Gateway to get information about one or more <a>Stage</a> resources.
      * @return Result of the GetStages operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -4760,6 +4874,113 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a specified VPC link under the caller's account in a region.
+     * </p>
+     * 
+     * @param getVpcLinkRequest
+     *        Gets a specified VPC link under the caller's account in a region.
+     * @return Result of the GetVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetVpcLink
+     */
+    @Override
+    public GetVpcLinkResult getVpcLink(GetVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final GetVpcLinkResult executeGetVpcLink(GetVpcLinkRequest getVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVpcLinkRequest> request = null;
+        Response<GetVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVpcLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+     * </p>
+     * 
+     * @param getVpcLinksRequest
+     *        Gets the <a>VpcLinks</a> collection under the caller's account in a selected region.
+     * @return Result of the GetVpcLinks operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetVpcLinks
+     */
+    @Override
+    public GetVpcLinksResult getVpcLinks(GetVpcLinksRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVpcLinks(request);
+    }
+
+    @SdkInternalApi
+    final GetVpcLinksResult executeGetVpcLinks(GetVpcLinksRequest getVpcLinksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVpcLinksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVpcLinksRequest> request = null;
+        Response<GetVpcLinksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVpcLinksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVpcLinksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVpcLinksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVpcLinksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Import API keys from an external source, such as a CSV-formatted file.
      * </p>
      * 
@@ -4876,11 +5097,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * A feature of the Amazon API Gateway control service for creating a new API from an external API definition file.
+     * A feature of the API Gateway control service for creating a new API from an external API definition file.
      * </p>
      * 
      * @param importRestApiRequest
-     *        A POST request to import an API to Amazon API Gateway using an input of an API definition file.
+     *        A POST request to import an API to API Gateway using an input of an API definition file.
      * @return Result of the ImportRestApi operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -5233,7 +5454,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * A feature of the Amazon API Gateway control service for updating an existing API with an input of external API
+     * A feature of the API Gateway control service for updating an existing API with an input of external API
      * definitions. The update can take the form of merging the supplied definition into the existing API or overwriting
      * the existing API.
      * </p>
@@ -5416,7 +5637,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param updateAccountRequest
-     *        Requests Amazon API Gateway to change information about the current <a>Account</a> resource.
+     *        Requests API Gateway to change information about the current <a>Account</a> resource.
      * @return Result of the UpdateAccount operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -5705,7 +5926,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param updateDeploymentRequest
-     *        Requests Amazon API Gateway to change information about a <a>Deployment</a> resource.
+     *        Requests API Gateway to change information about a <a>Deployment</a> resource.
      * @return Result of the UpdateDeployment operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -6460,7 +6681,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param updateStageRequest
-     *        Requests Amazon API Gateway to change information about a <a>Stage</a> resource.
+     *        Requests API Gateway to change information about a <a>Stage</a> resource.
      * @return Result of the UpdateStage operation returned by the service.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
@@ -6617,6 +6838,64 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateUsagePlanResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUsagePlanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing <a>VpcLink</a> of a specified identifier.
+     * </p>
+     * 
+     * @param updateVpcLinkRequest
+     *        Updates an existing <a>VpcLink</a> of a specified identifier.
+     * @return Result of the UpdateVpcLink operation returned by the service.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.UpdateVpcLink
+     */
+    @Override
+    public UpdateVpcLinkResult updateVpcLink(UpdateVpcLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVpcLink(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVpcLinkResult executeUpdateVpcLink(UpdateVpcLinkRequest updateVpcLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVpcLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVpcLinkRequest> request = null;
+        Response<UpdateVpcLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVpcLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVpcLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVpcLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVpcLinkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

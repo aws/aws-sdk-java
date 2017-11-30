@@ -53,6 +53,10 @@ public class CreateVpcPeeringConnectionRequestMarshaller implements Marshaller<R
             request.addParameter("VpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getVpcId()));
         }
 
+        if (createVpcPeeringConnectionRequest.getPeerRegion() != null) {
+            request.addParameter("PeerRegion", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerRegion()));
+        }
+
         return request;
     }
 

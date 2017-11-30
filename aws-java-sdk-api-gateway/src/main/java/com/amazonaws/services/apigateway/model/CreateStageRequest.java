@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to create a <a>Stage</a> resource.
+ * Requests API Gateway to create a <a>Stage</a> resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -33,7 +33,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String restApiId;
     /**
      * <p>
-     * {Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource.
      * </p>
      */
     private String stageName;
@@ -123,11 +123,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * {Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource.
      * </p>
      * 
      * @param stageName
-     *        {Required] The name for the <a>Stage</a> resource.
+     *        [Required] The name for the <a>Stage</a> resource.
      */
 
     public void setStageName(String stageName) {
@@ -136,10 +136,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * {Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource.
      * </p>
      * 
-     * @return {Required] The name for the <a>Stage</a> resource.
+     * @return [Required] The name for the <a>Stage</a> resource.
      */
 
     public String getStageName() {
@@ -148,11 +148,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * {Required] The name for the <a>Stage</a> resource.
+     * [Required] The name for the <a>Stage</a> resource.
      * </p>
      * 
      * @param stageName
-     *        {Required] The name for the <a>Stage</a> resource.
+     *        [Required] The name for the <a>Stage</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

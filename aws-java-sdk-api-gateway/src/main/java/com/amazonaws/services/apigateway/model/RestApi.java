@@ -29,7 +29,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      */
     private String id;
@@ -79,11 +79,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      * 
      * @param id
-     *        The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     *        The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      */
 
     public void setId(String id) {
@@ -92,10 +92,10 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      * 
-     * @return The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * @return The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      */
 
     public String getId() {
@@ -104,11 +104,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     * The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * </p>
      * 
      * @param id
-     *        The API's identifier. This identifier is unique across all of your APIs in Amazon API Gateway.
+     *        The API's identifier. This identifier is unique across all of your APIs in API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,6 +64,10 @@ public class AccountLimitJsonUnmarshaller implements Unmarshaller<AccountLimit, 
                     context.nextToken();
                     accountLimit.setConcurrentExecutions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("UnreservedConcurrentExecutions", targetDepth)) {
+                    context.nextToken();
+                    accountLimit.setUnreservedConcurrentExecutions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

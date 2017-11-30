@@ -84,6 +84,11 @@ public class VpcPeeringConnectionVpcInfoStaxUnmarshaller implements Unmarshaller
                     vpcPeeringConnectionVpcInfo.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("region", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo.setRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcPeeringConnectionVpcInfo;

@@ -41,6 +41,10 @@ public class PutIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpMethod").build();
     private static final MarshallingInfo<String> URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("uri").build();
+    private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionType").build();
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
     private static final MarshallingInfo<String> CREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("credentials").build();
     private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -80,6 +84,8 @@ public class PutIntegrationRequestMarshaller {
             protocolMarshaller.marshall(putIntegrationRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getIntegrationHttpMethod(), INTEGRATIONHTTPMETHOD_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getUri(), URI_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getConnectionType(), CONNECTIONTYPE_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getConnectionId(), CONNECTIONID_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getCredentials(), CREDENTIALS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getRequestTemplates(), REQUESTTEMPLATES_BINDING);

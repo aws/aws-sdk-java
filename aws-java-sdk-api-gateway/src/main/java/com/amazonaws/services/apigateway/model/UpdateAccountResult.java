@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents an AWS account that is associated with Amazon API Gateway.
+ * Represents an AWS account that is associated with API Gateway.
  * </p>
  * <div class="remarks">
  * <p>

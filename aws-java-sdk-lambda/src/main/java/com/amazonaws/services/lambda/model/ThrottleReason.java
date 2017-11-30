@@ -22,6 +22,8 @@ public enum ThrottleReason {
 
     ConcurrentInvocationLimitExceeded("ConcurrentInvocationLimitExceeded"),
     FunctionInvocationRateLimitExceeded("FunctionInvocationRateLimitExceeded"),
+    ReservedFunctionConcurrentInvocationLimitExceeded("ReservedFunctionConcurrentInvocationLimitExceeded"),
+    ReservedFunctionInvocationRateLimitExceeded("ReservedFunctionInvocationRateLimitExceeded"),
     CallerRateLimitExceeded("CallerRateLimitExceeded");
 
     private String value;

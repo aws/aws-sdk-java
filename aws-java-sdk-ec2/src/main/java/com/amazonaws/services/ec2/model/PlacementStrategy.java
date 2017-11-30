@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PlacementStrategy {
 
-    Cluster("cluster");
+    Cluster("cluster"),
+    Spread("spread");
 
     private String value;
 

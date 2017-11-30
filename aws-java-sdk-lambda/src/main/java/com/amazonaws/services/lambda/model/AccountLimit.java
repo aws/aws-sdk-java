@@ -57,6 +57,12 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer concurrentExecutions;
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set.
+     * </p>
+     */
+    private Integer unreservedConcurrentExecutions;
 
     /**
      * <p>
@@ -249,6 +255,46 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set.
+     * </p>
+     * 
+     * @param unreservedConcurrentExecutions
+     *        The number of concurrent executions available to functions that do not have concurrency limits set.
+     */
+
+    public void setUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
+        this.unreservedConcurrentExecutions = unreservedConcurrentExecutions;
+    }
+
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set.
+     * </p>
+     * 
+     * @return The number of concurrent executions available to functions that do not have concurrency limits set.
+     */
+
+    public Integer getUnreservedConcurrentExecutions() {
+        return this.unreservedConcurrentExecutions;
+    }
+
+    /**
+     * <p>
+     * The number of concurrent executions available to functions that do not have concurrency limits set.
+     * </p>
+     * 
+     * @param unreservedConcurrentExecutions
+     *        The number of concurrent executions available to functions that do not have concurrency limits set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountLimit withUnreservedConcurrentExecutions(Integer unreservedConcurrentExecutions) {
+        setUnreservedConcurrentExecutions(unreservedConcurrentExecutions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -266,7 +312,9 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
         if (getCodeSizeZipped() != null)
             sb.append("CodeSizeZipped: ").append(getCodeSizeZipped()).append(",");
         if (getConcurrentExecutions() != null)
-            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions());
+            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions()).append(",");
+        if (getUnreservedConcurrentExecutions() != null)
+            sb.append("UnreservedConcurrentExecutions: ").append(getUnreservedConcurrentExecutions());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +345,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConcurrentExecutions() != null && other.getConcurrentExecutions().equals(this.getConcurrentExecutions()) == false)
             return false;
+        if (other.getUnreservedConcurrentExecutions() == null ^ this.getUnreservedConcurrentExecutions() == null)
+            return false;
+        if (other.getUnreservedConcurrentExecutions() != null
+                && other.getUnreservedConcurrentExecutions().equals(this.getUnreservedConcurrentExecutions()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +362,7 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCodeSizeUnzipped() == null) ? 0 : getCodeSizeUnzipped().hashCode());
         hashCode = prime * hashCode + ((getCodeSizeZipped() == null) ? 0 : getCodeSizeZipped().hashCode());
         hashCode = prime * hashCode + ((getConcurrentExecutions() == null) ? 0 : getConcurrentExecutions().hashCode());
+        hashCode = prime * hashCode + ((getUnreservedConcurrentExecutions() == null) ? 0 : getUnreservedConcurrentExecutions().hashCode());
         return hashCode;
     }
 

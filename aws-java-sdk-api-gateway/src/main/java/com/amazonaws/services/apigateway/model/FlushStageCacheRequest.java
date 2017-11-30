@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to flush a stage's cache.
+ * Requests API Gateway to flush a stage's cache.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

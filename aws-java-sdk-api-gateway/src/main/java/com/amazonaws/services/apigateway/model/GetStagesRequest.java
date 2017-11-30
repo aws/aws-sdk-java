@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests Amazon API Gateway to get information about one or more <a>Stage</a> resources.
+ * Requests API Gateway to get information about one or more <a>Stage</a> resources.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

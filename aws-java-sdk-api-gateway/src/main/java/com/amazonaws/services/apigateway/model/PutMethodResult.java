@@ -104,13 +104,13 @@ public class PutMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String operationName;
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      */
     private java.util.Map<String, Boolean> requestParameters;
@@ -464,17 +464,17 @@ public class PutMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
-     * @return A key-value map defining required or optional method request parameters that can be accepted by Amazon
-     *         API Gateway. A key is a method request parameter name matching the pattern of
+     * @return A key-value map defining required or optional method request parameters that can be accepted by API
+     *         Gateway. A key is a method request parameter name matching the pattern of
      *         <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *         <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
      *         value associated with the key is a Boolean flag indicating whether the parameter is required (
@@ -488,17 +488,17 @@ public class PutMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        A key-value map defining required or optional method request parameters that can be accepted by API
      *        Gateway. A key is a method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The
@@ -513,17 +513,17 @@ public class PutMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
-     * Gateway. A key is a method request parameter name matching the pattern of
-     * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
-     * <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value
-     * associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or
-     * optional (<code>false</code>). The method request parameter names defined here are available in
-     * <a>Integration</a> to be mapped to integration request parameters or templates.
+     * A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A
+     * key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag
+     * indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method
+     * request parameter names defined here are available in <a>Integration</a> to be mapped to integration request
+     * parameters or templates.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map defining required or optional method request parameters that can be accepted by Amazon API
+     *        A key-value map defining required or optional method request parameters that can be accepted by API
      *        Gateway. A key is a method request parameter name matching the pattern of
      *        <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
      *        <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The

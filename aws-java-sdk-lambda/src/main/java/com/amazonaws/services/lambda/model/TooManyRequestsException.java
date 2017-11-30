@@ -15,7 +15,15 @@ package com.amazonaws.services.lambda.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if
+ * you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function
+ * without reserved concurrency exceeds the account's unreserved concurrency limit.
+ * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency
+ * exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
+ * exceeded and you have not reserved concurrency on any function. For more information, see
+ * <a>concurrent-executions</a>
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRequestsException extends com.amazonaws.services.lambda.model.AWSLambdaException {

@@ -41,7 +41,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private String clientCertificateId;
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      */
@@ -198,13 +198,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *        Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *        Gateway.
      */
 
     public void setStageName(String stageName) {
@@ -213,12 +213,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      * 
-     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *         Amazon API Gateway.
+     * @return The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *         Gateway.
      */
 
     public String getStageName() {
@@ -227,13 +227,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to Amazon API
+     * The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
      * Gateway.
      * </p>
      * 
      * @param stageName
-     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to
-     *        Amazon API Gateway.
+     *        The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API
+     *        Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -365,12 +365,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws PolicyLengthExceededException
      *         Lambda function access policy is limited to 20 KB.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.AddPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
      *      Documentation</a>
@@ -433,10 +438,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.CreateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -518,12 +528,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws ResourceNotFoundException
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
@@ -593,15 +608,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws ResourceNotFoundException
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
@@ -662,10 +682,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias" target="_top">AWS API
      *      Documentation</a>
@@ -726,10 +751,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.DeleteEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
      *      target="_top">AWS API Documentation</a>
@@ -801,12 +831,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.DeleteFunction
@@ -852,6 +887,73 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
+     * Removes concurrent execution limits from this function.
+     * </p>
+     * 
+     * @param deleteFunctionConcurrencyRequest
+     * @return Result of the DeleteFunctionConcurrency operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @sample AWSLambda.DeleteFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFunctionConcurrencyResult deleteFunctionConcurrency(DeleteFunctionConcurrencyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFunctionConcurrency(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFunctionConcurrencyResult executeDeleteFunctionConcurrency(DeleteFunctionConcurrencyRequest deleteFunctionConcurrencyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFunctionConcurrencyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFunctionConcurrencyRequest> request = null;
+        Response<DeleteFunctionConcurrencyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFunctionConcurrencyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionConcurrencyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFunctionConcurrencyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a customer's account settings.
      * </p>
      * <p>
@@ -863,6 +965,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getAccountSettingsRequest
      * @return Result of the GetAccountSettings operation returned by the service.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @sample AWSLambda.GetAccountSettings
@@ -926,10 +1035,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.GetAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
      *      Documentation</a>
@@ -989,10 +1103,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.GetEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping" target="_top">AWS
      *      API Documentation</a>
@@ -1061,12 +1180,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1133,12 +1257,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1205,12 +1334,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The resource (for example, a Lambda function or access policy statement) specified in the request does
      *         not exist.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.GetPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -1286,12 +1420,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws UnsupportedMediaTypeException
      *         The content type of the <code>Invoke</code> request body is not JSON.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws EC2UnexpectedException
      *         AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda function.
      * @throws SubnetIPAddressLimitReachedException
@@ -1452,10 +1591,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.ListAliases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases" target="_top">AWS API
      *      Documentation</a>
@@ -1526,10 +1670,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.ListEventSourceMappings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings" target="_top">AWS
      *      API Documentation</a>
@@ -1598,12 +1747,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @sample AWSLambda.ListFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
      *      Documentation</a>
@@ -1665,10 +1819,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
      *      Documentation</a>
@@ -1727,10 +1886,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.ListVersionsByFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction" target="_top">AWS
      *      API Documentation</a>
@@ -1792,10 +1956,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
@@ -1842,6 +2011,75 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
+     * Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's
+     * total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent
+     * executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you
+     * have a total of 900 available to allocate to individual functions.
+     * </p>
+     * 
+     * @param putFunctionConcurrencyRequest
+     * @return Result of the PutFunctionConcurrency operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
+     * @sample AWSLambda.PutFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutFunctionConcurrencyResult putFunctionConcurrency(PutFunctionConcurrencyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFunctionConcurrency(request);
+    }
+
+    @SdkInternalApi
+    final PutFunctionConcurrencyResult executePutFunctionConcurrency(PutFunctionConcurrencyRequest putFunctionConcurrencyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFunctionConcurrencyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFunctionConcurrencyRequest> request = null;
+        Response<PutFunctionConcurrencyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFunctionConcurrencyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFunctionConcurrencyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutFunctionConcurrencyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * You can remove individual permissions from an resource policy associated with a Lambda function by providing a
      * statement ID that you provided when you added the permission.
      * </p>
@@ -1868,10 +2106,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -1930,10 +2173,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1990,10 +2238,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -2055,10 +2308,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @sample AWSLambda.UpdateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -2131,10 +2389,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.UpdateEventSourceMapping
@@ -2205,10 +2468,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
@@ -2279,10 +2547,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
-     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
-     *         selected a deprecated runtime, such as Node v0.10.42 or if you point to an additional version when the
-     *         version specified is <code>$LATEST</code>.
+     *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     *         You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is
+     *         returned if you have no functions with reserved-concurrency and have exceeded your account concurrent
+     *         limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit.
+     *         <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved
+     *         concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned
+     *         when your account limit is exceeded and you have not reserved concurrency on any function. For more
+     *         information, see <a>concurrent-executions</a>
      * @throws ResourceConflictException
      *         The resource already exists.
      * @sample AWSLambda.UpdateFunctionConfiguration

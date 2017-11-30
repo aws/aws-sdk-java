@@ -16,10 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The integration type. The valid value is <code>HTTP</code> for integrating with an HTTP back end, <code>AWS</code>
- * for any AWS service endpoints, <code>MOCK</code> for testing without actually invoking the back end,
- * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration, or <code>AWS_PROXY</code> for integrating
- * with the Lambda proxy integration type.
+ * The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend;
+ * <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend;
+ * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with
+ * the Lambda proxy integration.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

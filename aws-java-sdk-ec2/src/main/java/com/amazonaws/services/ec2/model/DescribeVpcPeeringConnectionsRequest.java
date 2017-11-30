@@ -35,17 +35,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -72,7 +72,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <p>
      * <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      * <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     * <code>deleted</code> | <code>rejected</code>).
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
@@ -128,17 +128,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -165,7 +165,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <p>
      * <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      * <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     * <code>deleted</code> | <code>rejected</code>).
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
@@ -207,17 +207,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     *         <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     *         <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     *         <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      *         </p>
      *         </li>
      *         <li>
@@ -244,7 +244,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *         <p>
      *         <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      *         <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     *         <code>deleted</code> | <code>rejected</code>).
+     *         <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -297,17 +297,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -334,7 +334,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <p>
      * <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      * <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     * <code>deleted</code> | <code>rejected</code>).
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
@@ -377,17 +377,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     *        <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -414,7 +414,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <p>
      *        <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      *        <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     *        <code>deleted</code> | <code>rejected</code>).
+     *        <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -469,17 +469,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -506,7 +506,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <p>
      * <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      * <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     * <code>deleted</code> | <code>rejected</code>).
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
@@ -554,17 +554,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     *        <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -591,7 +591,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <p>
      *        <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      *        <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     *        <code>deleted</code> | <code>rejected</code>).
+     *        <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -648,17 +648,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     * <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      * </p>
      * </li>
      * <li>
@@ -685,7 +685,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <p>
      * <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      * <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     * <code>deleted</code> | <code>rejected</code>).
+     * <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
@@ -728,17 +728,17 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
+     *        <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the peer VPC.
+     *        <code>accepter-vpc-info.owner-id</code> - The AWS account ID of the owner of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>accepter-vpc-info.vpc-id</code> - The ID of the peer VPC.
+     *        <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.
      *        </p>
      *        </li>
      *        <li>
@@ -765,7 +765,7 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      *        <p>
      *        <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> |
      *        <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> |
-     *        <code>deleted</code> | <code>rejected</code>).
+     *        <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).
      *        </p>
      *        </li>
      *        <li>

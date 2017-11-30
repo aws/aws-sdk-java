@@ -23,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  * <div class="remarks"> For more information about valid gateway response types, see <a
  * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
- * Response Types Supported by Amazon API Gateway</a> <div class="example"> <h4>Example: Get the collection of gateway
+ * Response Types Supported by API Gateway</a> <div class="example"> <h4>Example: Get the collection of gateway
  * responses of an API</h4> <h5>Request</h5>
  * <p>
  * This example request shows how to retrieve the <a>GatewayResponses</a> collection from an API.

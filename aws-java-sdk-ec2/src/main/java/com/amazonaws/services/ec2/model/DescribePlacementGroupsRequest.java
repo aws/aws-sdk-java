@@ -46,7 +46,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      * </p>
      * </li>
      * </ul>
@@ -80,7 +80,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      * </p>
      * </li>
      * </ul>
@@ -100,7 +100,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *         <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      *         </p>
      *         </li>
      */
@@ -130,7 +130,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      * </p>
      * </li>
      * </ul>
@@ -151,7 +151,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      *        </p>
      *        </li>
      */
@@ -183,7 +183,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      * </p>
      * </li>
      * </ul>
@@ -209,7 +209,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -243,7 +243,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     * <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      * </p>
      * </li>
      * </ul>
@@ -264,7 +264,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code>).
+     *        <code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
