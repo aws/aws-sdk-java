@@ -21,7 +21,12 @@ import javax.annotation.Generated;
 public enum AutomationExecutionFilterKey {
 
     DocumentNamePrefix("DocumentNamePrefix"),
-    ExecutionStatus("ExecutionStatus");
+    ExecutionStatus("ExecutionStatus"),
+    ExecutionId("ExecutionId"),
+    ParentExecutionId("ParentExecutionId"),
+    CurrentAction("CurrentAction"),
+    StartTimeBefore("StartTimeBefore"),
+    StartTimeAfter("StartTimeAfter");
 
     private String value;
 

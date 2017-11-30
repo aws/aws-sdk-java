@@ -938,6 +938,87 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Creates a <code>RuleGroup</code>. A rule group is a collection of predefined rules that you add to a web ACL. You
+     * use <a>UpdateRuleGroup</a> to add rules to the rule group.
+     * </p>
+     * <p>
+     * Rule groups are subject to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Three rule groups per account. You can request an increase to this limit by contacting customer support.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One rule group per web ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ten rules per rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRuleGroupRequest
+     * @return A Java Future containing the result of the CreateRuleGroup operation returned by the service.
+     * @sample AWSWAFAsync.CreateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest createRuleGroupRequest);
+
+    /**
+     * <p>
+     * Creates a <code>RuleGroup</code>. A rule group is a collection of predefined rules that you add to a web ACL. You
+     * use <a>UpdateRuleGroup</a> to add rules to the rule group.
+     * </p>
+     * <p>
+     * Rule groups are subject to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Three rule groups per account. You can request an increase to this limit by contacting customer support.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One rule group per web ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ten rules per rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRuleGroup operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest createRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRuleGroupRequest, CreateRuleGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a <code>SizeConstraintSet</code>. You then use <a>UpdateSizeConstraintSet</a> to identify the part of a
      * web request that you want AWS WAF to check for length, such as the length of the <code>User-Agent</code> header
      * or the length of the query string. For example, you can create a <code>SizeConstraintSet</code> that matches any
@@ -1907,6 +1988,87 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes a <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used in any
+     * <code>WebACL</code> objects or if it still includes any rules.
+     * </p>
+     * <p>
+     * If you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RuleGroup</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RuleGroup</code> to remove rules, if any. For more information, see <a>UpdateRuleGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRuleGroupRequest
+     * @return A Java Future containing the result of the DeleteRuleGroup operation returned by the service.
+     * @sample AWSWAFAsync.DeleteRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest deleteRuleGroupRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used in any
+     * <code>WebACL</code> objects or if it still includes any rules.
+     * </p>
+     * <p>
+     * If you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RuleGroup</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RuleGroup</code> to remove rules, if any. For more information, see <a>UpdateRuleGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRuleGroup operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest deleteRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupRequest, DeleteRuleGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if it's still
      * used in any <code>Rules</code> or if it still includes any <a>SizeConstraint</a> objects (any filters).
      * </p>
@@ -2623,6 +2785,45 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you included in the
+     * <code>GetRuleGroup</code> request.
+     * </p>
+     * <p>
+     * To view the rules in a rule group, use <a>ListActivatedRulesInRuleGroup</a>.
+     * </p>
+     * 
+     * @param getRuleGroupRequest
+     * @return A Java Future containing the result of the GetRuleGroup operation returned by the service.
+     * @sample AWSWAFAsync.GetRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest getRuleGroupRequest);
+
+    /**
+     * <p>
+     * Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you included in the
+     * <code>GetRuleGroup</code> request.
+     * </p>
+     * <p>
+     * To view the rules in a rule group, use <a>ListActivatedRulesInRuleGroup</a>.
+     * </p>
+     * 
+     * @param getRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRuleGroup operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest getRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRuleGroupRequest, GetRuleGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
      * specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.
@@ -2795,6 +2996,41 @@ public interface AWSWAFAsync extends AWSWAF {
      */
     java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(GetXssMatchSetRequest getXssMatchSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>ActivatedRule</a> objects.
+     * </p>
+     * 
+     * @param listActivatedRulesInRuleGroupRequest
+     * @return A Java Future containing the result of the ListActivatedRulesInRuleGroup operation returned by the
+     *         service.
+     * @sample AWSWAFAsync.ListActivatedRulesInRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListActivatedRulesInRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListActivatedRulesInRuleGroupResult> listActivatedRulesInRuleGroupAsync(
+            ListActivatedRulesInRuleGroupRequest listActivatedRulesInRuleGroupRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>ActivatedRule</a> objects.
+     * </p>
+     * 
+     * @param listActivatedRulesInRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListActivatedRulesInRuleGroup operation returned by the
+     *         service.
+     * @sample AWSWAFAsyncHandler.ListActivatedRulesInRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListActivatedRulesInRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListActivatedRulesInRuleGroupResult> listActivatedRulesInRuleGroupAsync(
+            ListActivatedRulesInRuleGroupRequest listActivatedRulesInRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListActivatedRulesInRuleGroupRequest, ListActivatedRulesInRuleGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -2984,6 +3220,37 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns an array of <a>RuleGroup</a> objects.
+     * </p>
+     * 
+     * @param listRuleGroupsRequest
+     * @return A Java Future containing the result of the ListRuleGroups operation returned by the service.
+     * @sample AWSWAFAsync.ListRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRuleGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest listRuleGroupsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleGroup</a> objects.
+     * </p>
+     * 
+     * @param listRuleGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRuleGroups operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRuleGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest listRuleGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRuleGroupsRequest, ListRuleGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
      * 
@@ -3078,6 +3345,37 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(
             ListSqlInjectionMatchSetsRequest listSqlInjectionMatchSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSqlInjectionMatchSetsRequest, ListSqlInjectionMatchSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleGroup</a> objects that you are subscribed to.
+     * </p>
+     * 
+     * @param listSubscribedRuleGroupsRequest
+     * @return A Java Future containing the result of the ListSubscribedRuleGroups operation returned by the service.
+     * @sample AWSWAFAsync.ListSubscribedRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSubscribedRuleGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest listSubscribedRuleGroupsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleGroup</a> objects that you are subscribed to.
+     * </p>
+     * 
+     * @param listSubscribedRuleGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSubscribedRuleGroups operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListSubscribedRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSubscribedRuleGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest listSubscribedRuleGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSubscribedRuleGroupsRequest, ListSubscribedRuleGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -3789,7 +4087,7 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>. For each
+     * Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
      * <code>RegexMatchSetUpdate</code> object, you specify the following values:
      * </p>
      * <ul>
@@ -3801,7 +4099,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * The part of a web request that you want AWS WAF to inspectupdate, such as a query string or the value of the
      * <code>User-Agent</code> header.
      * </p>
      * </li>
@@ -3861,7 +4159,7 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>. For each
+     * Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
      * <code>RegexMatchSetUpdate</code> object, you specify the following values:
      * </p>
      * <ul>
@@ -3873,7 +4171,7 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * The part of a web request that you want AWS WAF to inspectupdate, such as a query string or the value of the
      * <code>User-Agent</code> header.
      * </p>
      * </li>
@@ -3938,19 +4236,18 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>. For each
-     * <code>RegexPatternSet</code> object, you specify the following values:
+     * Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
+     * <code>RegexPatternString</code> object, you specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
-     * object, you delete the existing object and add a new one.
+     * Whether to insert or delete the <code>RegexPatternString</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The regular expression pattern that you want AWS WAF to look for. For more information, see
+     * The regular expression pattern that you want to insert or delete. For more information, see
      * <a>RegexPatternSet</a>.
      * </p>
      * </li>
@@ -4018,19 +4315,18 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>. For each
-     * <code>RegexPatternSet</code> object, you specify the following values:
+     * Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
+     * <code>RegexPatternString</code> object, you specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
-     * object, you delete the existing object and add a new one.
+     * Whether to insert or delete the <code>RegexPatternString</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The regular expression pattern that you want AWS WAF to look for. For more information, see
+     * The regular expression pattern that you want to insert or delete. For more information, see
      * <a>RegexPatternSet</a>.
      * </p>
      * </li>
@@ -4251,6 +4547,117 @@ public interface AWSWAFAsync extends AWSWAF {
      */
     java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest updateRuleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * You can only insert <code>REGULAR</code> rules into a rule group.
+     * </p>
+     * <p>
+     * You can have a maximum of ten rules per rule group.
+     * </p>
+     * <p>
+     * To create and configure a <code>RuleGroup</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See
+     * <a>CreateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRuleGroup</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to replace one <code>Rule</code> with another, you delete the existing one and add the new one.
+     * </p>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRuleGroupRequest
+     * @return A Java Future containing the result of the UpdateRuleGroup operation returned by the service.
+     * @sample AWSWAFAsync.UpdateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest updateRuleGroupRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * You can only insert <code>REGULAR</code> rules into a rule group.
+     * </p>
+     * <p>
+     * You can have a maximum of ten rules per rule group.
+     * </p>
+     * <p>
+     * To create and configure a <code>RuleGroup</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See
+     * <a>CreateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRuleGroup</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to replace one <code>Rule</code> with another, you delete the existing one and add the new one.
+     * </p>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRuleGroup operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest updateRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRuleGroupRequest, UpdateRuleGroupResult> asyncHandler);
 
     /**
      * <p>

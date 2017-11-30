@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.239-SNAPSHOT</version>
+    <version>1.11.239</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-resourcegroups</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-comprehend</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -866,6 +872,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Resource Groups</title>
+                                  <packages>com.amazonaws.services.resourcegroups*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Comprehend</title>
                                   <packages>com.amazonaws.services.comprehend*</packages>

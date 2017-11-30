@@ -175,6 +175,75 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Attaches one or more Lightsail instances to a load balancer.
+     * </p>
+     * 
+     * @param attachInstancesToLoadBalancerRequest
+     * @return Result of the AttachInstancesToLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachInstancesToLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AttachInstancesToLoadBalancerResult attachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest attachInstancesToLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+     * </p>
+     * <p>
+     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * 
+     * @param attachLoadBalancerTlsCertificateRequest
+     * @return Result of the AttachLoadBalancerTlsCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachLoadBalancerTlsCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AttachLoadBalancerTlsCertificateResult attachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest attachLoadBalancerTlsCertificateRequest);
+
+    /**
+     * <p>
      * Attaches a static IP address to a specific Amazon Lightsail instance.
      * </p>
      * 
@@ -559,6 +628,79 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Creates a Lightsail load balancer.
+     * </p>
+     * <p>
+     * When you create a load balancer, you can specify certificates and port settings. You can create up to 5 load
+     * balancers per AWS Region in your account.
+     * </p>
+     * 
+     * @param createLoadBalancerRequest
+     * @return Result of the CreateLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Creates a Lightsail load balancer TLS certificate.
+     * </p>
+     * <p>
+     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * 
+     * @param createLoadBalancerTlsCertificateRequest
+     * @return Result of the CreateLoadBalancerTlsCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateLoadBalancerTlsCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLoadBalancerTlsCertificateResult createLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest createLoadBalancerTlsCertificateRequest);
+
+    /**
+     * <p>
      * Deletes the specified block storage disk. The disk must be in the <code>available</code> state (not attached to a
      * Lightsail instance).
      * </p>
@@ -802,6 +944,72 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Deletes a Lightsail load balancer.
+     * </p>
+     * 
+     * @param deleteLoadBalancerRequest
+     * @return Result of the DeleteLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+     * </p>
+     * 
+     * @param deleteLoadBalancerTlsCertificateRequest
+     * @return Result of the DeleteLoadBalancerTlsCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteLoadBalancerTlsCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLoadBalancerTlsCertificateResult deleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest deleteLoadBalancerTlsCertificateRequest);
+
+    /**
+     * <p>
      * Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the
      * device within your operating system before stopping the instance and detaching the disk.
      * </p>
@@ -833,6 +1041,39 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     DetachDiskResult detachDisk(DetachDiskRequest detachDiskRequest);
+
+    /**
+     * <p>
+     * Detaches the specified instances from a Lightsail load balancer.
+     * </p>
+     * 
+     * @param detachInstancesFromLoadBalancerRequest
+     * @return Result of the DetachInstancesFromLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DetachInstancesFromLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DetachInstancesFromLoadBalancerResult detachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest detachInstancesFromLoadBalancerRequest);
 
     /**
      * <p>
@@ -1540,6 +1781,145 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Returns information about the specified Lightsail load balancer.
+     * </p>
+     * 
+     * @param getLoadBalancerRequest
+     * @return Result of the GetLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLoadBalancerResult getLoadBalancer(GetLoadBalancerRequest getLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Returns information about health metrics for your Lightsail load balancer.
+     * </p>
+     * 
+     * @param getLoadBalancerMetricDataRequest
+     * @return Result of the GetLoadBalancerMetricData operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancerMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLoadBalancerMetricDataResult getLoadBalancerMetricData(GetLoadBalancerMetricDataRequest getLoadBalancerMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns information about the TLS certificates that are associated with the specified Lightsail load balancer.
+     * </p>
+     * <p>
+     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * 
+     * @param getLoadBalancerTlsCertificatesRequest
+     * @return Result of the GetLoadBalancerTlsCertificates operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancerTlsCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLoadBalancerTlsCertificatesResult getLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest getLoadBalancerTlsCertificatesRequest);
+
+    /**
+     * <p>
+     * Returns information about all load balancers in an account.
+     * </p>
+     * <p>
+     * If you are describing a long list of load balancers, you can paginate the output to make the list more
+     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
+     * </p>
+     * 
+     * @param getLoadBalancersRequest
+     * @return Result of the GetLoadBalancers operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLoadBalancersResult getLoadBalancers(GetLoadBalancersRequest getLoadBalancersRequest);
+
+    /**
+     * <p>
      * Returns information about a specific operation. Operations include events such as when you create an instance,
      * allocate a static IP, attach a static IP, and so on.
      * </p>
@@ -2109,6 +2489,39 @@ public interface AmazonLightsail {
      *      API Documentation</a>
      */
     UpdateDomainEntryResult updateDomainEntry(UpdateDomainEntryRequest updateDomainEntryRequest);
+
+    /**
+     * <p>
+     * Updates the specified attribute for a load balancer.
+     * </p>
+     * 
+     * @param updateLoadBalancerAttributeRequest
+     * @return Result of the UpdateLoadBalancerAttribute operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateLoadBalancerAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLoadBalancerAttributeResult updateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest updateLoadBalancerAttributeRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

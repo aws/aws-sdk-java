@@ -33,6 +33,12 @@ public class StepExecutionMarshaller {
             .marshallLocationName("StepName").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Action").build();
+    private static final MarshallingInfo<Long> TIMEOUTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutSeconds").build();
+    private static final MarshallingInfo<String> ONFAILURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OnFailure").build();
+    private static final MarshallingInfo<Integer> MAXATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxAttempts").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionStartTime").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -51,6 +57,10 @@ public class StepExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureMessage").build();
     private static final MarshallingInfo<StructuredPojo> FAILUREDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureDetails").build();
+    private static final MarshallingInfo<String> STEPEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepExecutionId").build();
+    private static final MarshallingInfo<Map> OVERRIDDENPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverriddenParameters").build();
 
     private static final StepExecutionMarshaller instance = new StepExecutionMarshaller();
 
@@ -70,6 +80,9 @@ public class StepExecutionMarshaller {
         try {
             protocolMarshaller.marshall(stepExecution.getStepName(), STEPNAME_BINDING);
             protocolMarshaller.marshall(stepExecution.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(stepExecution.getTimeoutSeconds(), TIMEOUTSECONDS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getOnFailure(), ONFAILURE_BINDING);
+            protocolMarshaller.marshall(stepExecution.getMaxAttempts(), MAXATTEMPTS_BINDING);
             protocolMarshaller.marshall(stepExecution.getExecutionStartTime(), EXECUTIONSTARTTIME_BINDING);
             protocolMarshaller.marshall(stepExecution.getExecutionEndTime(), EXECUTIONENDTIME_BINDING);
             protocolMarshaller.marshall(stepExecution.getStepStatus(), STEPSTATUS_BINDING);
@@ -79,6 +92,8 @@ public class StepExecutionMarshaller {
             protocolMarshaller.marshall(stepExecution.getResponse(), RESPONSE_BINDING);
             protocolMarshaller.marshall(stepExecution.getFailureMessage(), FAILUREMESSAGE_BINDING);
             protocolMarshaller.marshall(stepExecution.getFailureDetails(), FAILUREDETAILS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getStepExecutionId(), STEPEXECUTIONID_BINDING);
+            protocolMarshaller.marshall(stepExecution.getOverriddenParameters(), OVERRIDDENPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

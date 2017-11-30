@@ -26,6 +26,8 @@ public enum ResourceType {
     InstanceSnapshot("InstanceSnapshot"),
     Domain("Domain"),
     PeeredVpc("PeeredVpc"),
+    LoadBalancer("LoadBalancer"),
+    LoadBalancerTlsCertificate("LoadBalancerTlsCertificate"),
     Disk("Disk"),
     DiskSnapshot("DiskSnapshot");
 

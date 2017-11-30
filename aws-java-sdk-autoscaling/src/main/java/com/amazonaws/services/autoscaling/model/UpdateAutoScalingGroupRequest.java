@@ -33,10 +33,16 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String autoScalingGroupName;
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. You must specify either a launch configuration or a launch template.
      * </p>
      */
     private String launchConfigurationName;
+    /**
+     * <p>
+     * The launch template to use to specify the updates. You must specify a launch configuration or a launch template.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
      * The minimum size of the Auto Scaling group.
@@ -175,11 +181,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. You must specify either a launch configuration or a launch template.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration.
+     *        The name of the launch configuration. You must specify either a launch configuration or a launch template.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -188,10 +194,11 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. You must specify either a launch configuration or a launch template.
      * </p>
      * 
-     * @return The name of the launch configuration.
+     * @return The name of the launch configuration. You must specify either a launch configuration or a launch
+     *         template.
      */
 
     public String getLaunchConfigurationName() {
@@ -200,16 +207,59 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration.
+     * The name of the launch configuration. You must specify either a launch configuration or a launch template.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration.
+     *        The name of the launch configuration. You must specify either a launch configuration or a launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAutoScalingGroupRequest withLaunchConfigurationName(String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to specify the updates. You must specify a launch configuration or a launch template.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to specify the updates. You must specify a launch configuration or a launch
+     *        template.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to specify the updates. You must specify a launch configuration or a launch template.
+     * </p>
+     * 
+     * @return The launch template to use to specify the updates. You must specify a launch configuration or a launch
+     *         template.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to specify the updates. You must specify a launch configuration or a launch template.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to specify the updates. You must specify a launch configuration or a launch
+     *        template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAutoScalingGroupRequest withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
         return this;
     }
 
@@ -927,6 +977,8 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLaunchConfigurationName() != null)
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getMinSize() != null)
             sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
@@ -970,6 +1022,10 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
         if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
+            return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
         if (other.getMinSize() == null ^ this.getMinSize() == null)
             return false;
@@ -1026,6 +1082,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());

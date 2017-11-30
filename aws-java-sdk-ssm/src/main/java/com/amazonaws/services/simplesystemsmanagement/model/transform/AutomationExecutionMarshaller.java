@@ -43,12 +43,36 @@ public class AutomationExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationExecutionStatus").build();
     private static final MarshallingInfo<List> STEPEXECUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepExecutions").build();
+    private static final MarshallingInfo<Boolean> STEPEXECUTIONSTRUNCATED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepExecutionsTruncated").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<Map> OUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Outputs").build();
     private static final MarshallingInfo<String> FAILUREMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureMessage").build();
+    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Mode").build();
+    private static final MarshallingInfo<String> PARENTAUTOMATIONEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParentAutomationExecutionId").build();
+    private static final MarshallingInfo<String> EXECUTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutedBy").build();
+    private static final MarshallingInfo<String> CURRENTSTEPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentStepName").build();
+    private static final MarshallingInfo<String> CURRENTACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentAction").build();
+    private static final MarshallingInfo<String> TARGETPARAMETERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetParameterName").build();
+    private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<StructuredPojo> RESOLVEDTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolvedTargets").build();
+    private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
+    private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxErrors").build();
+    private static final MarshallingInfo<String> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Target").build();
 
     private static final AutomationExecutionMarshaller instance = new AutomationExecutionMarshaller();
 
@@ -73,9 +97,21 @@ public class AutomationExecutionMarshaller {
             protocolMarshaller.marshall(automationExecution.getExecutionEndTime(), EXECUTIONENDTIME_BINDING);
             protocolMarshaller.marshall(automationExecution.getAutomationExecutionStatus(), AUTOMATIONEXECUTIONSTATUS_BINDING);
             protocolMarshaller.marshall(automationExecution.getStepExecutions(), STEPEXECUTIONS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getStepExecutionsTruncated(), STEPEXECUTIONSTRUNCATED_BINDING);
             protocolMarshaller.marshall(automationExecution.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(automationExecution.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(automationExecution.getFailureMessage(), FAILUREMESSAGE_BINDING);
+            protocolMarshaller.marshall(automationExecution.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(automationExecution.getParentAutomationExecutionId(), PARENTAUTOMATIONEXECUTIONID_BINDING);
+            protocolMarshaller.marshall(automationExecution.getExecutedBy(), EXECUTEDBY_BINDING);
+            protocolMarshaller.marshall(automationExecution.getCurrentStepName(), CURRENTSTEPNAME_BINDING);
+            protocolMarshaller.marshall(automationExecution.getCurrentAction(), CURRENTACTION_BINDING);
+            protocolMarshaller.marshall(automationExecution.getTargetParameterName(), TARGETPARAMETERNAME_BINDING);
+            protocolMarshaller.marshall(automationExecution.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getResolvedTargets(), RESOLVEDTARGETS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
+            protocolMarshaller.marshall(automationExecution.getMaxErrors(), MAXERRORS_BINDING);
+            protocolMarshaller.marshall(automationExecution.getTarget(), TARGET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

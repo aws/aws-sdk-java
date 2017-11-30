@@ -56,6 +56,18 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     context.nextToken();
                     stepExecution.setAction(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TimeoutSeconds", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setTimeoutSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("OnFailure", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setOnFailure(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxAttempts", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setMaxAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ExecutionStartTime", targetDepth)) {
                     context.nextToken();
                     stepExecution.setExecutionStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
@@ -93,6 +105,15 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                 if (context.testExpression("FailureDetails", targetDepth)) {
                     context.nextToken();
                     stepExecution.setFailureDetails(FailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StepExecutionId", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setStepExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OverriddenParameters", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setOverriddenParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

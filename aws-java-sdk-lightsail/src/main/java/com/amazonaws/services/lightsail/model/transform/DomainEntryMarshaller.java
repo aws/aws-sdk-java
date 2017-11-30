@@ -35,6 +35,8 @@ public class DomainEntryMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("target").build();
+    private static final MarshallingInfo<Boolean> ISALIAS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("isAlias").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
     private static final MarshallingInfo<Map> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class DomainEntryMarshaller {
             protocolMarshaller.marshall(domainEntry.getId(), ID_BINDING);
             protocolMarshaller.marshall(domainEntry.getName(), NAME_BINDING);
             protocolMarshaller.marshall(domainEntry.getTarget(), TARGET_BINDING);
+            protocolMarshaller.marshall(domainEntry.getIsAlias(), ISALIAS_BINDING);
             protocolMarshaller.marshall(domainEntry.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(domainEntry.getOptions(), OPTIONS_BINDING);
         } catch (Exception e) {

@@ -34,7 +34,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      */
     private String autoScalingGroupName;
@@ -66,6 +66,12 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * </p>
      */
     private String launchConfigurationName;
+    /**
+     * <p>
+     * The launch template for the instance.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
      * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
@@ -115,11 +121,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group associated with the instance.
+     *        The name of the Auto Scaling group for the instance.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -128,10 +134,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      * 
-     * @return The name of the Auto Scaling group associated with the instance.
+     * @return The name of the Auto Scaling group for the instance.
      */
 
     public String getAutoScalingGroupName() {
@@ -140,11 +146,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Auto Scaling group associated with the instance.
+     * The name of the Auto Scaling group for the instance.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group associated with the instance.
+     *        The name of the Auto Scaling group for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,6 +348,46 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The launch template for the instance.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template for the instance.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template for the instance.
+     * </p>
+     * 
+     * @return The launch template for the instance.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template for the instance.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingInstanceDetails withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates whether the instance is protected from termination by Auto Scaling when scaling in.
      * </p>
      * 
@@ -415,6 +461,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
             sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getLaunchConfigurationName() != null)
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getProtectedFromScaleIn() != null)
             sb.append("ProtectedFromScaleIn: ").append(getProtectedFromScaleIn());
         sb.append("}");
@@ -455,6 +503,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
             return false;
         if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
             return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
         if (other.getProtectedFromScaleIn() == null ^ this.getProtectedFromScaleIn() == null)
             return false;
         if (other.getProtectedFromScaleIn() != null && other.getProtectedFromScaleIn().equals(this.getProtectedFromScaleIn()) == false)
@@ -473,6 +525,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLifecycleState() == null) ? 0 : getLifecycleState().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getProtectedFromScaleIn() == null) ? 0 : getProtectedFromScaleIn().hashCode());
         return hashCode;
     }

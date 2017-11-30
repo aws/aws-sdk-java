@@ -48,6 +48,22 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("LaunchConfigurationName", StringUtils.fromString(updateAutoScalingGroupRequest.getLaunchConfigurationName()));
         }
 
+        LaunchTemplateSpecification launchTemplate = updateAutoScalingGroupRequest.getLaunchTemplate();
+        if (launchTemplate != null) {
+
+            if (launchTemplate.getLaunchTemplateId() != null) {
+                request.addParameter("LaunchTemplate.LaunchTemplateId", StringUtils.fromString(launchTemplate.getLaunchTemplateId()));
+            }
+
+            if (launchTemplate.getLaunchTemplateName() != null) {
+                request.addParameter("LaunchTemplate.LaunchTemplateName", StringUtils.fromString(launchTemplate.getLaunchTemplateName()));
+            }
+
+            if (launchTemplate.getVersion() != null) {
+                request.addParameter("LaunchTemplate.Version", StringUtils.fromString(launchTemplate.getVersion()));
+            }
+        }
+
         if (updateAutoScalingGroupRequest.getMinSize() != null) {
             request.addParameter("MinSize", StringUtils.fromInteger(updateAutoScalingGroupRequest.getMinSize()));
         }

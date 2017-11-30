@@ -73,6 +73,11 @@ public class AutoScalingInstanceDetailsStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("LaunchTemplate", targetDepth)) {
+                    autoScalingInstanceDetails.setLaunchTemplate(LaunchTemplateSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ProtectedFromScaleIn", targetDepth)) {
                     autoScalingInstanceDetails.setProtectedFromScaleIn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -26,17 +26,17 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * {@link com.amazonaws.services.simplesystemsmanagement.AbstractAWSSimpleSystemsManagement} instead.
  * </p>
  * <p>
- * <fullname>Amazon EC2 Systems Manager</fullname>
+ * <fullname>AWS Systems Manager</fullname>
  * <p>
- * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
- * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
- * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting
+ * system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs),
+ * and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
+ * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
  * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
@@ -762,6 +762,10 @@ public interface AWSSimpleSystemsManagement {
      * 
      * @param describeAutomationExecutionsRequest
      * @return Result of the DescribeAutomationExecutions operation returned by the service.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidFilterValueException
+     *         The filter value is not valid. Verify the value and try again.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @throws InternalServerErrorException
@@ -771,6 +775,29 @@ public interface AWSSimpleSystemsManagement {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest);
+
+    /**
+     * <p>
+     * Information about all active and terminated step executions in an Automation workflow.
+     * </p>
+     * 
+     * @param describeAutomationStepExecutionsRequest
+     * @return Result of the DescribeAutomationStepExecutions operation returned by the service.
+     * @throws AutomationExecutionNotFoundException
+     *         There is no automation execution information for the requested automation execution ID.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidFilterValueException
+     *         The filter value is not valid. Verify the value and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeAutomationStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAutomationStepExecutionsResult describeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest describeAutomationStepExecutionsRequest);
 
     /**
      * <p>
@@ -2168,6 +2195,8 @@ public interface AWSSimpleSystemsManagement {
      * @return Result of the SendAutomationSignal operation returned by the service.
      * @throws AutomationExecutionNotFoundException
      *         There is no automation execution information for the requested automation execution ID.
+     * @throws AutomationStepNotFoundException
+     *         The specified step name and execution ID don't exist. Verify the information and try again.
      * @throws InvalidAutomationSignalException
      *         The signal is not valid for the current Automation execution.
      * @throws InternalServerErrorException
@@ -2222,7 +2251,7 @@ public interface AWSSimpleSystemsManagement {
      *         notifications that includes the required trust policy. For information about configuring the IAM role for
      *         Run Command notifications, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-     *         Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
+     *         Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws InvalidNotificationConfigException
      *         One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided
      *         for an Amazon SNS topic.
@@ -2251,6 +2280,9 @@ public interface AWSSimpleSystemsManagement {
      * @throws IdempotentParameterMismatchException
      *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
+     * @throws InvalidTargetException
+     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
+     *         might not have permission to perform the operation.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartAutomationExecution
@@ -2268,6 +2300,8 @@ public interface AWSSimpleSystemsManagement {
      * @return Result of the StopAutomationExecution operation returned by the service.
      * @throws AutomationExecutionNotFoundException
      *         There is no automation execution information for the requested automation execution ID.
+     * @throws InvalidAutomationStatusUpdateException
+     *         The specified update status operation is not valid.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StopAutomationExecution

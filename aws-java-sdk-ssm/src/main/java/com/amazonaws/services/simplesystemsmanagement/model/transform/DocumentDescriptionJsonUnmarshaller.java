@@ -109,6 +109,14 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentDescription.setDefaultVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentFormat", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetType", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));

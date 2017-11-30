@@ -58,6 +58,10 @@ public class DocumentDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestVersion").build();
     private static final MarshallingInfo<String> DEFAULTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultVersion").build();
+    private static final MarshallingInfo<String> DOCUMENTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentFormat").build();
+    private static final MarshallingInfo<String> TARGETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetType").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -92,6 +96,8 @@ public class DocumentDescriptionMarshaller {
             protocolMarshaller.marshall(documentDescription.getSchemaVersion(), SCHEMAVERSION_BINDING);
             protocolMarshaller.marshall(documentDescription.getLatestVersion(), LATESTVERSION_BINDING);
             protocolMarshaller.marshall(documentDescription.getDefaultVersion(), DEFAULTVERSION_BINDING);
+            protocolMarshaller.marshall(documentDescription.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
+            protocolMarshaller.marshall(documentDescription.getTargetType(), TARGETTYPE_BINDING);
             protocolMarshaller.marshall(documentDescription.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

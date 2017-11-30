@@ -7402,6 +7402,75 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes the credit option for CPU usage of one or more of your T2 instances. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with the <code>unlimited</code>
+     * credit option. If you specify one or more instance IDs, Amazon EC2 returns the credit option (
+     * <code>standard</code> or <code>unlimited</code>) of those instances. If you specify an instance ID that is not
+     * valid, such as an instance that is not a T2 instance, an error is returned.
+     * </p>
+     * <p>
+     * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+     * </p>
+     * <p>
+     * If an Availability Zone is experiencing a service disruption and you specify instance IDs in the affected zone,
+     * or do not specify any instance IDs at all, the call fails. If you specify only instance IDs in an unaffected
+     * zone, the call works normally.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceCreditSpecificationsRequest
+     * @return Result of the DescribeInstanceCreditSpecifications operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceCreditSpecifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInstanceCreditSpecificationsResult describeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceCreditSpecifications(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceCreditSpecificationsResult executeDescribeInstanceCreditSpecifications(
+            DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceCreditSpecificationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceCreditSpecificationsRequest> request = null;
+        Response<DescribeInstanceCreditSpecificationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceCreditSpecificationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeInstanceCreditSpecificationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeInstanceCreditSpecificationsResult> responseHandler = new StaxResponseHandler<DescribeInstanceCreditSpecificationsResult>(
+                    new DescribeInstanceCreditSpecificationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the status of one or more instances. By default, only running instances are described, unless you
      * specifically indicate to return the status of all instances.
      * </p>
@@ -12283,6 +12352,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceAttributeResult> responseHandler = new StaxResponseHandler<ModifyInstanceAttributeResult>(
                     new ModifyInstanceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the credit option for CPU usage on a running or stopped T2 instance. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyInstanceCreditSpecificationRequest
+     * @return Result of the ModifyInstanceCreditSpecification operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyInstanceCreditSpecificationResult modifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyInstanceCreditSpecification(request);
+    }
+
+    @SdkInternalApi
+    final ModifyInstanceCreditSpecificationResult executeModifyInstanceCreditSpecification(
+            ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyInstanceCreditSpecificationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyInstanceCreditSpecificationRequest> request = null;
+        Response<ModifyInstanceCreditSpecificationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyInstanceCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceCreditSpecificationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyInstanceCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyInstanceCreditSpecificationResult>(
+                    new ModifyInstanceCreditSpecificationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

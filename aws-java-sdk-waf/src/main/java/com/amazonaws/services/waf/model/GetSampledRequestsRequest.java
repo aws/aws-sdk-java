@@ -34,13 +34,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     private String webAclId;
     /**
      * <p>
-     * <code>RuleId</code> is one of two values:
+     * <code>RuleId</code> is one of three values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
-     * sample of requests.
+     * The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code>
+     * for which you want <code>GetSampledRequests</code> to return a sample of requests.
      * </p>
      * </li>
      * <li>
@@ -117,13 +117,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * <code>RuleId</code> is one of two values:
+     * <code>RuleId</code> is one of three values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
-     * sample of requests.
+     * The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code>
+     * for which you want <code>GetSampledRequests</code> to return a sample of requests.
      * </p>
      * </li>
      * <li>
@@ -135,12 +135,12 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param ruleId
-     *        <code>RuleId</code> is one of two values:</p>
+     *        <code>RuleId</code> is one of three values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
-     *        return a sample of requests.
+     *        The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the
+     *        <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.
      *        </p>
      *        </li>
      *        <li>
@@ -157,13 +157,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * <code>RuleId</code> is one of two values:
+     * <code>RuleId</code> is one of three values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
-     * sample of requests.
+     * The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code>
+     * for which you want <code>GetSampledRequests</code> to return a sample of requests.
      * </p>
      * </li>
      * <li>
@@ -174,12 +174,12 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return <code>RuleId</code> is one of two values:</p>
+     * @return <code>RuleId</code> is one of three values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
-     *         return a sample of requests.
+     *         The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the
+     *         <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.
      *         </p>
      *         </li>
      *         <li>
@@ -196,13 +196,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * <code>RuleId</code> is one of two values:
+     * <code>RuleId</code> is one of three values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to return a
-     * sample of requests.
+     * The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code>
+     * for which you want <code>GetSampledRequests</code> to return a sample of requests.
      * </p>
      * </li>
      * <li>
@@ -214,12 +214,12 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param ruleId
-     *        <code>RuleId</code> is one of two values:</p>
+     *        <code>RuleId</code> is one of three values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code> to
-     *        return a sample of requests.
+     *        The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the
+     *        <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.
      *        </p>
      *        </li>
      *        <li>

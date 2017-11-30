@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum SignalType {
 
     Approve("Approve"),
-    Reject("Reject");
+    Reject("Reject"),
+    StartStep("StartStep"),
+    StopStep("StopStep"),
+    Resume("Resume");
 
     private String value;
 

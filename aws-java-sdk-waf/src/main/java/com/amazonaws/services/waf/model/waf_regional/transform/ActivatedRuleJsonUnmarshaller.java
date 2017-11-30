@@ -60,6 +60,10 @@ public class ActivatedRuleJsonUnmarshaller implements Unmarshaller<ActivatedRule
                     context.nextToken();
                     activatedRule.setAction(WafActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OverrideAction", targetDepth)) {
+                    context.nextToken();
+                    activatedRule.setOverrideAction(WafOverrideActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     activatedRule.setType(context.getUnmarshaller(String.class).unmarshall(context));

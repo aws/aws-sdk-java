@@ -31,6 +31,12 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String automationExecutionId;
+    /**
+     * <p>
+     * The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -73,6 +79,66 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * </p>
+     * 
+     * @param type
+     *        The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * @see StopType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * </p>
+     * 
+     * @return The stop request type. Valid types include the following: Cancel and Complete. The default type is
+     *         Cancel.
+     * @see StopType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * </p>
+     * 
+     * @param type
+     *        The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StopType
+     */
+
+    public StopAutomationExecutionRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * </p>
+     * 
+     * @param type
+     *        The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StopType
+     */
+
+    public StopAutomationExecutionRequest withType(StopType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +150,9 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecutionId() != null)
-            sb.append("AutomationExecutionId: ").append(getAutomationExecutionId());
+            sb.append("AutomationExecutionId: ").append(getAutomationExecutionId()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +171,10 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getAutomationExecutionId() != null && other.getAutomationExecutionId().equals(this.getAutomationExecutionId()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +184,7 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAutomationExecutionId() == null) ? 0 : getAutomationExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

@@ -43,6 +43,19 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String documentVersion;
+    /**
+     * <p>
+     * Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON
+     * is the default format.
+     * </p>
+     */
+    private String documentFormat;
+    /**
+     * <p>
+     * Specify a new target type for the document.
+     * </p>
+     */
+    private String targetType;
 
     /**
      * <p>
@@ -165,6 +178,113 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON
+     * is the default format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the new document version. Systems Manager supports JSON and YAML
+     *        documents. JSON is the default format.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(String documentFormat) {
+        this.documentFormat = documentFormat;
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON
+     * is the default format.
+     * </p>
+     * 
+     * @return Specify the document format for the new document version. Systems Manager supports JSON and YAML
+     *         documents. JSON is the default format.
+     * @see DocumentFormat
+     */
+
+    public String getDocumentFormat() {
+        return this.documentFormat;
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON
+     * is the default format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the new document version. Systems Manager supports JSON and YAML
+     *        documents. JSON is the default format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public UpdateDocumentRequest withDocumentFormat(String documentFormat) {
+        setDocumentFormat(documentFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON
+     * is the default format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Specify the document format for the new document version. Systems Manager supports JSON and YAML
+     *        documents. JSON is the default format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public UpdateDocumentRequest withDocumentFormat(DocumentFormat documentFormat) {
+        this.documentFormat = documentFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a new target type for the document.
+     * </p>
+     * 
+     * @param targetType
+     *        Specify a new target type for the document.
+     */
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    /**
+     * <p>
+     * Specify a new target type for the document.
+     * </p>
+     * 
+     * @return Specify a new target type for the document.
+     */
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    /**
+     * <p>
+     * Specify a new target type for the document.
+     * </p>
+     * 
+     * @param targetType
+     *        Specify a new target type for the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDocumentRequest withTargetType(String targetType) {
+        setTargetType(targetType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -180,7 +300,11 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: ").append(getDocumentVersion());
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getDocumentFormat() != null)
+            sb.append("DocumentFormat: ").append(getDocumentFormat()).append(",");
+        if (getTargetType() != null)
+            sb.append("TargetType: ").append(getTargetType());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +331,14 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
+        if (other.getDocumentFormat() == null ^ this.getDocumentFormat() == null)
+            return false;
+        if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
+            return false;
+        if (other.getTargetType() == null ^ this.getTargetType() == null)
+            return false;
+        if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +350,8 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
+        hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         return hashCode;
     }
 

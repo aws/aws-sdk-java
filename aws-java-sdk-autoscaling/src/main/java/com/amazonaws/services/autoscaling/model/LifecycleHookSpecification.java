@@ -61,8 +61,7 @@ public class LifecycleHookSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      * </p>
      */
     private String defaultResult;
@@ -264,14 +263,12 @@ public class LifecycleHookSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      * </p>
      * 
      * @param defaultResult
      *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-     *        unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
-     *        default value is <code>CONTINUE</code>.
+     *        unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      */
 
     public void setDefaultResult(String defaultResult) {
@@ -281,13 +278,11 @@ public class LifecycleHookSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      * </p>
      * 
      * @return Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-     *         unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
-     *         default value is <code>CONTINUE</code>.
+     *         unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      */
 
     public String getDefaultResult() {
@@ -297,14 +292,12 @@ public class LifecycleHookSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected
-     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.
+     * failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      * </p>
      * 
      * @param defaultResult
      *        Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an
-     *        unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>. The
-     *        default value is <code>CONTINUE</code>.
+     *        unexpected failure occurs. The valid values are <code>CONTINUE</code> and <code>ABANDON</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

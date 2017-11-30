@@ -281,6 +281,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private InstanceMarketOptionsRequest instanceMarketOptions;
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     */
+    private CreditSpecificationRequest creditSpecification;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -2338,6 +2350,82 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param creditSpecification
+     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *        <code>unlimited</code>. To change this attribute after launch, use
+     *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>standard</code>
+     */
+
+    public void setCreditSpecification(CreditSpecificationRequest creditSpecification) {
+        this.creditSpecification = creditSpecification;
+    }
+
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @return The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *         <code>unlimited</code>. To change this attribute after launch, use
+     *         <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
+     *         <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         <p>
+     *         Default: <code>standard</code>
+     */
+
+    public CreditSpecificationRequest getCreditSpecification() {
+        return this.creditSpecification;
+    }
+
+    /**
+     * <p>
+     * The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     * <code>unlimited</code>. To change this attribute after launch, use <a>ModifyInstanceCreditSpecification</a>. For
+     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param creditSpecification
+     *        The credit option for CPU usage of the instance. Valid values are <code>standard</code> and
+     *        <code>unlimited</code>. To change this attribute after launch, use
+     *        <a>ModifyInstanceCreditSpecification</a>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2 Instances</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        <p>
+     *        Default: <code>standard</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withCreditSpecification(CreditSpecificationRequest creditSpecification) {
+        setCreditSpecification(creditSpecification);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2414,7 +2502,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getInstanceMarketOptions() != null)
-            sb.append("InstanceMarketOptions: ").append(getInstanceMarketOptions());
+            sb.append("InstanceMarketOptions: ").append(getInstanceMarketOptions()).append(",");
+        if (getCreditSpecification() != null)
+            sb.append("CreditSpecification: ").append(getCreditSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -2542,6 +2632,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getInstanceMarketOptions() != null && other.getInstanceMarketOptions().equals(this.getInstanceMarketOptions()) == false)
             return false;
+        if (other.getCreditSpecification() == null ^ this.getCreditSpecification() == null)
+            return false;
+        if (other.getCreditSpecification() != null && other.getCreditSpecification().equals(this.getCreditSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -2578,6 +2672,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
+        hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
         return hashCode;
     }
 

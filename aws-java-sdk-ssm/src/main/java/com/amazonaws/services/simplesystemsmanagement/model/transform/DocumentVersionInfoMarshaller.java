@@ -35,6 +35,8 @@ public class DocumentVersionInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").build();
     private static final MarshallingInfo<Boolean> ISDEFAULTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsDefaultVersion").build();
+    private static final MarshallingInfo<String> DOCUMENTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentFormat").build();
 
     private static final DocumentVersionInfoMarshaller instance = new DocumentVersionInfoMarshaller();
 
@@ -56,6 +58,7 @@ public class DocumentVersionInfoMarshaller {
             protocolMarshaller.marshall(documentVersionInfo.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getIsDefaultVersion(), ISDEFAULTVERSION_BINDING);
+            protocolMarshaller.marshall(documentVersionInfo.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

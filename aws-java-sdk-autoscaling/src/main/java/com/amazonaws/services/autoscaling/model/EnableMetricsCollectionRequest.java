@@ -27,7 +27,7 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ARN of the Auto Scaling group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String autoScalingGroupName;
@@ -88,11 +88,11 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ARN of the Auto Scaling group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name or ARN of the Auto Scaling group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -101,10 +101,10 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ARN of the Auto Scaling group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name or ARN of the Auto Scaling group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getAutoScalingGroupName() {
@@ -113,11 +113,11 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ARN of the Auto Scaling group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name or ARN of the Auto Scaling group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

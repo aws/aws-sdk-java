@@ -48,15 +48,28 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
     private String target;
     /**
      * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer.
+     * </p>
+     */
+    private Boolean isAlias;
+    /**
+     * <p>
      * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      */
+    @Deprecated
     private java.util.Map<String, String> options;
 
     /**
@@ -181,6 +194,62 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer.
+     * </p>
+     * 
+     * @param isAlias
+     *        When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *        balancer.
+     */
+
+    public void setIsAlias(Boolean isAlias) {
+        this.isAlias = isAlias;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer.
+     * </p>
+     * 
+     * @return When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *         balancer.
+     */
+
+    public Boolean getIsAlias() {
+        return this.isAlias;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer.
+     * </p>
+     * 
+     * @param isAlias
+     *        When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *        balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainEntry withIsAlias(Boolean isAlias) {
+        setIsAlias(isAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer.
+     * </p>
+     * 
+     * @return When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
+     *         balancer.
+     */
+
+    public Boolean isAlias() {
+        return this.isAlias;
+    }
+
+    /**
+     * <p>
      * The type of domain entry (e.g., <code>SOA</code> or <code>NS</code>).
      * </p>
      * 
@@ -221,44 +290,75 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      * 
-     * @return The options for the domain entry.
+     * @return (Deprecated) The options for the domain entry.</p> <note>
+     *         <p>
+     *         In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     *         deprecated.
+     *         </p>
      */
-
+    @Deprecated
     public java.util.Map<String, String> getOptions() {
         return options;
     }
 
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      * 
      * @param options
-     *        The options for the domain entry.
+     *        (Deprecated) The options for the domain entry.</p> <note>
+     *        <p>
+     *        In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     *        deprecated.
+     *        </p>
      */
-
+    @Deprecated
     public void setOptions(java.util.Map<String, String> options) {
         this.options = options;
     }
 
     /**
      * <p>
-     * The options for the domain entry.
+     * (Deprecated) The options for the domain entry.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     * deprecated.
+     * </p>
+     * </note>
      * 
      * @param options
-     *        The options for the domain entry.
+     *        (Deprecated) The options for the domain entry.</p> <note>
+     *        <p>
+     *        In releases prior to November 29, 2017, this parameter was not included in the API response. It is now
+     *        deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DomainEntry withOptions(java.util.Map<String, String> options) {
         setOptions(options);
         return this;
     }
 
+    @Deprecated
     public DomainEntry addOptionsEntry(String key, String value) {
         if (null == this.options) {
             this.options = new java.util.HashMap<String, String>();
@@ -274,7 +374,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DomainEntry clearOptionsEntries() {
         this.options = null;
         return this;
@@ -297,6 +397,8 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getTarget() != null)
             sb.append("Target: ").append(getTarget()).append(",");
+        if (getIsAlias() != null)
+            sb.append("IsAlias: ").append(getIsAlias()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getOptions() != null)
@@ -327,6 +429,10 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
+        if (other.getIsAlias() == null ^ this.getIsAlias() == null)
+            return false;
+        if (other.getIsAlias() != null && other.getIsAlias().equals(this.getIsAlias()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -346,6 +452,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getIsAlias() == null) ? 0 : getIsAlias().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;

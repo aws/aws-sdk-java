@@ -25,17 +25,17 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      */
     private java.util.List<Operation> operations;
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * 
-     * @return An object describing the API operation.
+     * @return An object describing the API operations.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -44,11 +44,11 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * 
      * @param operations
-     *        An object describing the API operation.
+     *        An object describing the API operations.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -62,7 +62,7 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param operations
-     *        An object describing the API operation.
+     *        An object describing the API operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class AttachDiskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object describing the API operation.
+     * An object describing the API operations.
      * </p>
      * 
      * @param operations
-     *        An object describing the API operation.
+     *        An object describing the API operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

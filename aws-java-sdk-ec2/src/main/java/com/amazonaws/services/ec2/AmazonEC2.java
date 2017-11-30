@@ -2913,6 +2913,39 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes the credit option for CPU usage of one or more of your T2 instances. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * If you do not specify an instance ID, Amazon EC2 returns only the T2 instances with the <code>unlimited</code>
+     * credit option. If you specify one or more instance IDs, Amazon EC2 returns the credit option (
+     * <code>standard</code> or <code>unlimited</code>) of those instances. If you specify an instance ID that is not
+     * valid, such as an instance that is not a T2 instance, an error is returned.
+     * </p>
+     * <p>
+     * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+     * </p>
+     * <p>
+     * If an Availability Zone is experiencing a service disruption and you specify instance IDs in the affected zone,
+     * or do not specify any instance IDs at all, the call fails. If you specify only instance IDs in an unaffected
+     * zone, the call works normally.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceCreditSpecificationsRequest
+     * @return Result of the DescribeInstanceCreditSpecifications operation returned by the service.
+     * @sample AmazonEC2.DescribeInstanceCreditSpecifications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInstanceCreditSpecificationsResult describeInstanceCreditSpecifications(
+            DescribeInstanceCreditSpecificationsRequest describeInstanceCreditSpecificationsRequest);
+
+    /**
+     * <p>
      * Describes the status of one or more instances. By default, only running instances are described, unless you
      * specifically indicate to return the status of all instances.
      * </p>
@@ -4852,6 +4885,24 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     ModifyInstanceAttributeResult modifyInstanceAttribute(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest);
+
+    /**
+     * <p>
+     * Modifies the credit option for CPU usage on a running or stopped T2 instance. The credit options are
+     * <code>standard</code> and <code>unlimited</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
+     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param modifyInstanceCreditSpecificationRequest
+     * @return Result of the ModifyInstanceCreditSpecification operation returned by the service.
+     * @sample AmazonEC2.ModifyInstanceCreditSpecification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyInstanceCreditSpecificationResult modifyInstanceCreditSpecification(ModifyInstanceCreditSpecificationRequest modifyInstanceCreditSpecificationRequest);
 
     /**
      * <p>

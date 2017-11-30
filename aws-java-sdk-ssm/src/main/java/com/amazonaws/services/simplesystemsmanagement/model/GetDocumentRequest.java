@@ -37,6 +37,13 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String documentVersion;
+    /**
+     * <p>
+     * Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     */
+    private String documentFormat;
 
     /**
      * <p>
@@ -119,6 +126,73 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(String documentFormat) {
+        this.documentFormat = documentFormat;
+    }
+
+    /**
+     * <p>
+     * Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @return Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the
+     *         default format.
+     * @see DocumentFormat
+     */
+
+    public String getDocumentFormat() {
+        return this.documentFormat;
+    }
+
+    /**
+     * <p>
+     * Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public GetDocumentRequest withDocumentFormat(String documentFormat) {
+        setDocumentFormat(documentFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default
+     * format.
+     * </p>
+     * 
+     * @param documentFormat
+     *        Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the
+     *        default format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public GetDocumentRequest withDocumentFormat(DocumentFormat documentFormat) {
+        this.documentFormat = documentFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -132,7 +206,9 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: ").append(getDocumentVersion());
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getDocumentFormat() != null)
+            sb.append("DocumentFormat: ").append(getDocumentFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +231,10 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
+        if (other.getDocumentFormat() == null ^ this.getDocumentFormat() == null)
+            return false;
+        if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +245,7 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         return hashCode;
     }
 

@@ -27,7 +27,7 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroupNames;
@@ -46,10 +46,10 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public java.util.List<String> getAutoScalingGroupNames() {
@@ -61,11 +61,11 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
@@ -79,7 +79,7 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param autoScalingGroupNames
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

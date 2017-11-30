@@ -35,6 +35,8 @@ public class SampledHTTPRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
     private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Action").build();
+    private static final MarshallingInfo<String> RULEWITHINRULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleWithinRuleGroup").build();
 
     private static final SampledHTTPRequestMarshaller instance = new SampledHTTPRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class SampledHTTPRequestMarshaller {
             protocolMarshaller.marshall(sampledHTTPRequest.getWeight(), WEIGHT_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getTimestamp(), TIMESTAMP_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(sampledHTTPRequest.getRuleWithinRuleGroup(), RULEWITHINRULEGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

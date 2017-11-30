@@ -76,6 +76,10 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                     context.nextToken();
                     automationExecution.setStepExecutions(new ListUnmarshaller<StepExecution>(StepExecutionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("StepExecutionsTruncated", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setStepExecutionsTruncated(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     automationExecution.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
@@ -89,6 +93,50 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 if (context.testExpression("FailureMessage", targetDepth)) {
                     context.nextToken();
                     automationExecution.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Mode", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ParentAutomationExecutionId", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setParentAutomationExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExecutedBy", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setExecutedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CurrentStepName", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setCurrentStepName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CurrentAction", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setCurrentAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetParameterName", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Targets", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ResolvedTargets", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setResolvedTargets(ResolvedTargetsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxErrors", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Target", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

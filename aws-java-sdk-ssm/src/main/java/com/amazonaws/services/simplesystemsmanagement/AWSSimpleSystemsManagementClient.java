@@ -48,17 +48,17 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * Client for accessing Amazon SSM. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * <fullname>Amazon EC2 Systems Manager</fullname>
+ * <fullname>AWS Systems Manager</fullname>
  * <p>
- * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
- * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
- * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting
+ * system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs),
+ * and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
+ * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
  * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
@@ -200,6 +200,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTarget").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationStepNotFoundException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidFilterValue").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterValueException.class))
                     .addErrorMetadata(
@@ -331,6 +334,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTypeNameException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutomationStatusUpdateException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DoesNotExistException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException.class))
@@ -2007,6 +2013,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * 
      * @param describeAutomationExecutionsRequest
      * @return Result of the DescribeAutomationExecutions operation returned by the service.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidFilterValueException
+     *         The filter value is not valid. Verify the value and try again.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
      * @throws InternalServerErrorException
@@ -2044,6 +2054,67 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAutomationExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeAutomationExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Information about all active and terminated step executions in an Automation workflow.
+     * </p>
+     * 
+     * @param describeAutomationStepExecutionsRequest
+     * @return Result of the DescribeAutomationStepExecutions operation returned by the service.
+     * @throws AutomationExecutionNotFoundException
+     *         There is no automation execution information for the requested automation execution ID.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidFilterValueException
+     *         The filter value is not valid. Verify the value and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeAutomationStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAutomationStepExecutionsResult describeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAutomationStepExecutions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAutomationStepExecutionsResult executeDescribeAutomationStepExecutions(
+            DescribeAutomationStepExecutionsRequest describeAutomationStepExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAutomationStepExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAutomationStepExecutionsRequest> request = null;
+        Response<DescribeAutomationStepExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAutomationStepExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAutomationStepExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAutomationStepExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAutomationStepExecutionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5585,6 +5656,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @return Result of the SendAutomationSignal operation returned by the service.
      * @throws AutomationExecutionNotFoundException
      *         There is no automation execution information for the requested automation execution ID.
+     * @throws AutomationStepNotFoundException
+     *         The specified step name and execution ID don't exist. Verify the information and try again.
      * @throws InvalidAutomationSignalException
      *         The signal is not valid for the current Automation execution.
      * @throws InternalServerErrorException
@@ -5674,7 +5747,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         notifications that includes the required trust policy. For information about configuring the IAM role for
      *         Run Command notifications, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-     *         Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
+     *         Amazon SNS Notifications for Run Command</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws InvalidNotificationConfigException
      *         One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided
      *         for an Amazon SNS topic.
@@ -5738,6 +5811,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws IdempotentParameterMismatchException
      *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
+     * @throws InvalidTargetException
+     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
+     *         might not have permission to perform the operation.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartAutomationExecution
@@ -5792,6 +5868,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @return Result of the StopAutomationExecution operation returned by the service.
      * @throws AutomationExecutionNotFoundException
      *         There is no automation execution information for the requested automation execution ID.
+     * @throws InvalidAutomationStatusUpdateException
+     *         The specified update status operation is not valid.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StopAutomationExecution

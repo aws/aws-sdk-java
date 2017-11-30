@@ -70,7 +70,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A launch script you can create that configures a server with additional user data. For example, you might want to
-     * run <code>apt-get –y update</code>.
+     * run <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -388,7 +388,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A launch script you can create that configures a server with additional user data. For example, you might want to
-     * run <code>apt-get –y update</code>.
+     * run <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -402,7 +402,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param userData
      *        A launch script you can create that configures a server with additional user data. For example, you might
-     *        want to run <code>apt-get –y update</code>.</p> <note>
+     *        want to run <code>apt-get -y update</code>.</p> <note>
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
@@ -419,7 +419,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A launch script you can create that configures a server with additional user data. For example, you might want to
-     * run <code>apt-get –y update</code>.
+     * run <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -432,7 +432,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      * 
      * @return A launch script you can create that configures a server with additional user data. For example, you might
-     *         want to run <code>apt-get –y update</code>.</p> <note>
+     *         want to run <code>apt-get -y update</code>.</p> <note>
      *         <p>
      *         Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *         Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
@@ -449,7 +449,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A launch script you can create that configures a server with additional user data. For example, you might want to
-     * run <code>apt-get –y update</code>.
+     * run <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -463,7 +463,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param userData
      *        A launch script you can create that configures a server with additional user data. For example, you might
-     *        want to run <code>apt-get –y update</code>.</p> <note>
+     *        want to run <code>apt-get -y update</code>.</p> <note>
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses

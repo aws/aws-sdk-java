@@ -85,14 +85,17 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationFailureException").withModeledClass(
+                                    com.amazonaws.services.lightsail.model.OperationFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthenticatedException").withModeledClass(
+                                    com.amazonaws.services.lightsail.model.UnauthenticatedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
                                     com.amazonaws.services.lightsail.model.ServiceException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
                                     com.amazonaws.services.lightsail.model.NotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationFailureException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.OperationFailureException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
                                     com.amazonaws.services.lightsail.model.AccessDeniedException.class))
@@ -102,9 +105,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccountSetupInProgressException").withModeledClass(
                                     com.amazonaws.services.lightsail.model.AccountSetupInProgressException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthenticatedException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.UnauthenticatedException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.lightsail.model.AmazonLightsailException.class));
 
     /**
@@ -417,6 +417,150 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<AttachDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new AttachDiskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches one or more Lightsail instances to a load balancer.
+     * </p>
+     * 
+     * @param attachInstancesToLoadBalancerRequest
+     * @return Result of the AttachInstancesToLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachInstancesToLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AttachInstancesToLoadBalancerResult attachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachInstancesToLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final AttachInstancesToLoadBalancerResult executeAttachInstancesToLoadBalancer(AttachInstancesToLoadBalancerRequest attachInstancesToLoadBalancerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(attachInstancesToLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AttachInstancesToLoadBalancerRequest> request = null;
+        Response<AttachInstancesToLoadBalancerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachInstancesToLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(attachInstancesToLoadBalancerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AttachInstancesToLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AttachInstancesToLoadBalancerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+     * </p>
+     * <p>
+     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * 
+     * @param attachLoadBalancerTlsCertificateRequest
+     * @return Result of the AttachLoadBalancerTlsCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachLoadBalancerTlsCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AttachLoadBalancerTlsCertificateResult attachLoadBalancerTlsCertificate(AttachLoadBalancerTlsCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachLoadBalancerTlsCertificate(request);
+    }
+
+    @SdkInternalApi
+    final AttachLoadBalancerTlsCertificateResult executeAttachLoadBalancerTlsCertificate(
+            AttachLoadBalancerTlsCertificateRequest attachLoadBalancerTlsCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(attachLoadBalancerTlsCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AttachLoadBalancerTlsCertificateRequest> request = null;
+        Response<AttachLoadBalancerTlsCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachLoadBalancerTlsCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(attachLoadBalancerTlsCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AttachLoadBalancerTlsCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AttachLoadBalancerTlsCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1204,6 +1348,152 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a Lightsail load balancer.
+     * </p>
+     * <p>
+     * When you create a load balancer, you can specify certificates and port settings. You can create up to 5 load
+     * balancers per AWS Region in your account.
+     * </p>
+     * 
+     * @param createLoadBalancerRequest
+     * @return Result of the CreateLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final CreateLoadBalancerResult executeCreateLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLoadBalancerRequest> request = null;
+        Response<CreateLoadBalancerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLoadBalancerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLoadBalancerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Lightsail load balancer TLS certificate.
+     * </p>
+     * <p>
+     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * 
+     * @param createLoadBalancerTlsCertificateRequest
+     * @return Result of the CreateLoadBalancerTlsCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateLoadBalancerTlsCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLoadBalancerTlsCertificateResult createLoadBalancerTlsCertificate(CreateLoadBalancerTlsCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLoadBalancerTlsCertificate(request);
+    }
+
+    @SdkInternalApi
+    final CreateLoadBalancerTlsCertificateResult executeCreateLoadBalancerTlsCertificate(
+            CreateLoadBalancerTlsCertificateRequest createLoadBalancerTlsCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLoadBalancerTlsCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLoadBalancerTlsCertificateRequest> request = null;
+        Response<CreateLoadBalancerTlsCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLoadBalancerTlsCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLoadBalancerTlsCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLoadBalancerTlsCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLoadBalancerTlsCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified block storage disk. The disk must be in the <code>available</code> state (not attached to a
      * Lightsail instance).
      * </p>
@@ -1693,6 +1983,145 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes a Lightsail load balancer.
+     * </p>
+     * 
+     * @param deleteLoadBalancerRequest
+     * @return Result of the DeleteLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoadBalancerResult executeDeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLoadBalancerRequest> request = null;
+        Response<DeleteLoadBalancerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLoadBalancerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLoadBalancerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+     * </p>
+     * 
+     * @param deleteLoadBalancerTlsCertificateRequest
+     * @return Result of the DeleteLoadBalancerTlsCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteLoadBalancerTlsCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLoadBalancerTlsCertificateResult deleteLoadBalancerTlsCertificate(DeleteLoadBalancerTlsCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoadBalancerTlsCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoadBalancerTlsCertificateResult executeDeleteLoadBalancerTlsCertificate(
+            DeleteLoadBalancerTlsCertificateRequest deleteLoadBalancerTlsCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLoadBalancerTlsCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLoadBalancerTlsCertificateRequest> request = null;
+        Response<DeleteLoadBalancerTlsCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLoadBalancerTlsCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLoadBalancerTlsCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLoadBalancerTlsCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLoadBalancerTlsCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the
      * device within your operating system before stopping the instance and detaching the disk.
      * </p>
@@ -1750,6 +2179,77 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DetachDiskResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetachDiskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detaches the specified instances from a Lightsail load balancer.
+     * </p>
+     * 
+     * @param detachInstancesFromLoadBalancerRequest
+     * @return Result of the DetachInstancesFromLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DetachInstancesFromLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetachInstancesFromLoadBalancerResult detachInstancesFromLoadBalancer(DetachInstancesFromLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachInstancesFromLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final DetachInstancesFromLoadBalancerResult executeDetachInstancesFromLoadBalancer(
+            DetachInstancesFromLoadBalancerRequest detachInstancesFromLoadBalancerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detachInstancesFromLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetachInstancesFromLoadBalancerRequest> request = null;
+        Response<DetachInstancesFromLoadBalancerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachInstancesFromLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(detachInstancesFromLoadBalancerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetachInstancesFromLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DetachInstancesFromLoadBalancerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3206,6 +3706,289 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns information about the specified Lightsail load balancer.
+     * </p>
+     * 
+     * @param getLoadBalancerRequest
+     * @return Result of the GetLoadBalancer operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLoadBalancerResult getLoadBalancer(GetLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final GetLoadBalancerResult executeGetLoadBalancer(GetLoadBalancerRequest getLoadBalancerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoadBalancerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoadBalancerRequest> request = null;
+        Response<GetLoadBalancerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoadBalancerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLoadBalancerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about health metrics for your Lightsail load balancer.
+     * </p>
+     * 
+     * @param getLoadBalancerMetricDataRequest
+     * @return Result of the GetLoadBalancerMetricData operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancerMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLoadBalancerMetricDataResult getLoadBalancerMetricData(GetLoadBalancerMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoadBalancerMetricData(request);
+    }
+
+    @SdkInternalApi
+    final GetLoadBalancerMetricDataResult executeGetLoadBalancerMetricData(GetLoadBalancerMetricDataRequest getLoadBalancerMetricDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoadBalancerMetricDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoadBalancerMetricDataRequest> request = null;
+        Response<GetLoadBalancerMetricDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoadBalancerMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLoadBalancerMetricDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancerMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLoadBalancerMetricDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the TLS certificates that are associated with the specified Lightsail load balancer.
+     * </p>
+     * <p>
+     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * 
+     * @param getLoadBalancerTlsCertificatesRequest
+     * @return Result of the GetLoadBalancerTlsCertificates operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancerTlsCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancerTlsCertificates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLoadBalancerTlsCertificatesResult getLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoadBalancerTlsCertificates(request);
+    }
+
+    @SdkInternalApi
+    final GetLoadBalancerTlsCertificatesResult executeGetLoadBalancerTlsCertificates(GetLoadBalancerTlsCertificatesRequest getLoadBalancerTlsCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoadBalancerTlsCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoadBalancerTlsCertificatesRequest> request = null;
+        Response<GetLoadBalancerTlsCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoadBalancerTlsCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLoadBalancerTlsCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancerTlsCertificatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLoadBalancerTlsCertificatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about all load balancers in an account.
+     * </p>
+     * <p>
+     * If you are describing a long list of load balancers, you can paginate the output to make the list more
+     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
+     * </p>
+     * 
+     * @param getLoadBalancersRequest
+     * @return Result of the GetLoadBalancers operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetLoadBalancers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLoadBalancersResult getLoadBalancers(GetLoadBalancersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoadBalancers(request);
+    }
+
+    @SdkInternalApi
+    final GetLoadBalancersResult executeGetLoadBalancers(GetLoadBalancersRequest getLoadBalancersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoadBalancersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoadBalancersRequest> request = null;
+        Response<GetLoadBalancersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoadBalancersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoadBalancersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoadBalancersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLoadBalancersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a specific operation. Operations include events such as when you create an instance,
      * allocate a static IP, attach a static IP, and so on.
      * </p>
@@ -4366,6 +5149,76 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainEntryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDomainEntryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified attribute for a load balancer.
+     * </p>
+     * 
+     * @param updateLoadBalancerAttributeRequest
+     * @return Result of the UpdateLoadBalancerAttribute operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateLoadBalancerAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLoadBalancerAttributeResult updateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLoadBalancerAttribute(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLoadBalancerAttributeResult executeUpdateLoadBalancerAttribute(UpdateLoadBalancerAttributeRequest updateLoadBalancerAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLoadBalancerAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLoadBalancerAttributeRequest> request = null;
+        Response<UpdateLoadBalancerAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLoadBalancerAttributeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLoadBalancerAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLoadBalancerAttributeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLoadBalancerAttributeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

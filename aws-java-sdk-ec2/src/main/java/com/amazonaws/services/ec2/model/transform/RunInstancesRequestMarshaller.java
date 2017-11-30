@@ -459,6 +459,14 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        CreditSpecificationRequest creditSpecification = runInstancesRequest.getCreditSpecification();
+        if (creditSpecification != null) {
+
+            if (creditSpecification.getCpuCredits() != null) {
+                request.addParameter("CreditSpecification.CpuCredits", StringUtils.fromString(creditSpecification.getCpuCredits()));
+            }
+        }
+
         return request;
     }
 

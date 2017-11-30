@@ -1,3 +1,32 @@
+# __1.11.239__ __2017-11-30__
+## __AWS Resource Groups__
+  - ### Features
+    - AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.
+
+## __AWS WAF__
+  - ### Features
+    - This release adds support for rule group and managed rule group. Rule group is a container of rules that customers can create, put rules in it and associate the rule group to a WebACL. All rules in a rule group will function identically as they would if each rule was individually associated to the WebACL. Managed rule group is a pre-configured rule group composed by our security partners and made available via the AWS Marketplace. Customers can subscribe to these managed rule groups, associate the managed rule group to their WebACL and start using them immediately to protect their resources.
+
+## __AWS WAF Regional__
+  - ### Features
+    - This release adds support for rule group and managed rule group. Rule group is a container of rules that customers can create, put rules in it and associate the rule group to a WebACL. All rules in a rule group will function identically as they would if each rule was individually associated to the WebACL. Managed rule group is a pre-configured rule group composed by our security partners and made available via the AWS Marketplace. Customers can subscribe to these managed rule groups, associate the managed rule group to their WebACL and start using them immediately to protect their resources.
+
+## __Amazon EC2__
+  - ### Features
+    - Adds the following updates: 1. T2 Unlimited enables high CPU performance for any period of time whenever required 2. You are now able to create and launch EC2 m5 and h1 instances
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds support for load balancer and TLS/SSL certificate management. This set of APIs allows customers to create, manage, and scale secure load balanced applications on Lightsail infrastructure. To provide support for customers who manage their DNS on Lightsail, we've added the ability create an Alias A type record which can point to a load balancer DNS name via the CreateDomainEntry API http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomainEntry.html.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates AWS Systems Manager APIs to enable executing automations at controlled rate, target resources in a resource groups and execute entire automation at once or single step at a time. It is now also possible to use YAML, in addition to JSON, when creating Systems Manager documents.
+
+## __Auto Scaling__
+  - ### Features
+    - You can now use Auto Scaling with EC2 Launch Templates via the CreateAutoScalingGroup and UpdateAutoScalingGroup APIs.
+
 # __1.11.238__ __2017-11-29__
 ## __AWS Greengrass__
   - ### Features
@@ -44,6 +73,9 @@
     - This release introduces Amazon Rekognition support for video analysis.
 
 ## __Amazon S3__
+  - ### Features
+    - This release includes support for Glacier Select, a new feature that allows you to filter and analyze your Glacier archives and store the results in a user-specified S3 location.
+
   - ### Deprecations
     - Deprecating AmazonS3#restoreObject in favor of the newly introduced AmazonS3#restoreObjectV2. The new method returns `RestoreObjectResult` as response.
 

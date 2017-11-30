@@ -63,7 +63,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -366,7 +366,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -379,7 +379,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * 
      * @param userData
      *        You can create a launch script that configures a server with additional user data. For example,
-     *        <code>apt-get –y update</code>.</p> <note>
+     *        <code>apt-get -y update</code>.</p> <note>
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
@@ -395,7 +395,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -407,7 +407,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * </note>
      * 
      * @return You can create a launch script that configures a server with additional user data. For example,
-     *         <code>apt-get –y update</code>.</p> <note>
+     *         <code>apt-get -y update</code>.</p> <note>
      *         <p>
      *         Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *         Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses
@@ -423,7 +423,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * You can create a launch script that configures a server with additional user data. For example,
-     * <code>apt-get –y update</code>.
+     * <code>apt-get -y update</code>.
      * </p>
      * <note>
      * <p>
@@ -436,7 +436,7 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * 
      * @param userData
      *        You can create a launch script that configures a server with additional user data. For example,
-     *        <code>apt-get –y update</code>.</p> <note>
+     *        <code>apt-get -y update</code>.</p> <note>
      *        <p>
      *        Depending on the machine image you choose, the command to get software on your instance varies. Amazon
      *        Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses

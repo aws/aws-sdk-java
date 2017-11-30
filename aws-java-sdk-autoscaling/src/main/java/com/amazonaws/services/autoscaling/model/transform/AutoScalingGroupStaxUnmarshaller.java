@@ -60,6 +60,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     continue;
                 }
 
+                if (context.testExpression("LaunchTemplate", targetDepth)) {
+                    autoScalingGroup.setLaunchTemplate(LaunchTemplateSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("MinSize", targetDepth)) {
                     autoScalingGroup.setMinSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

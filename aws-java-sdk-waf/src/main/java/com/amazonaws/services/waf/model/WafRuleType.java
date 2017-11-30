@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum WafRuleType {
 
     REGULAR("REGULAR"),
-    RATE_BASED("RATE_BASED");
+    RATE_BASED("RATE_BASED"),
+    GROUP("GROUP");
 
     private String value;
 

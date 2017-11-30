@@ -41,6 +41,8 @@ public enum WafRegionalActions implements Action {
     CreateRegexPatternSet("waf-regional:CreateRegexPatternSet"),
     /** Action for the CreateRule operation. */
     CreateRule("waf-regional:CreateRule"),
+    /** Action for the CreateRuleGroup operation. */
+    CreateRuleGroup("waf-regional:CreateRuleGroup"),
     /** Action for the CreateSizeConstraintSet operation. */
     CreateSizeConstraintSet("waf-regional:CreateSizeConstraintSet"),
     /** Action for the CreateSqlInjectionMatchSet operation. */
@@ -63,6 +65,8 @@ public enum WafRegionalActions implements Action {
     DeleteRegexPatternSet("waf-regional:DeleteRegexPatternSet"),
     /** Action for the DeleteRule operation. */
     DeleteRule("waf-regional:DeleteRule"),
+    /** Action for the DeleteRuleGroup operation. */
+    DeleteRuleGroup("waf-regional:DeleteRuleGroup"),
     /** Action for the DeleteSizeConstraintSet operation. */
     DeleteSizeConstraintSet("waf-regional:DeleteSizeConstraintSet"),
     /** Action for the DeleteSqlInjectionMatchSet operation. */
@@ -93,6 +97,8 @@ public enum WafRegionalActions implements Action {
     GetRegexPatternSet("waf-regional:GetRegexPatternSet"),
     /** Action for the GetRule operation. */
     GetRule("waf-regional:GetRule"),
+    /** Action for the GetRuleGroup operation. */
+    GetRuleGroup("waf-regional:GetRuleGroup"),
     /** Action for the GetSampledRequests operation. */
     GetSampledRequests("waf-regional:GetSampledRequests"),
     /** Action for the GetSizeConstraintSet operation. */
@@ -105,6 +111,8 @@ public enum WafRegionalActions implements Action {
     GetWebACLForResource("waf-regional:GetWebACLForResource"),
     /** Action for the GetXssMatchSet operation. */
     GetXssMatchSet("waf-regional:GetXssMatchSet"),
+    /** Action for the ListActivatedRulesInRuleGroup operation. */
+    ListActivatedRulesInRuleGroup("waf-regional:ListActivatedRulesInRuleGroup"),
     /** Action for the ListByteMatchSets operation. */
     ListByteMatchSets("waf-regional:ListByteMatchSets"),
     /** Action for the ListGeoMatchSets operation. */
@@ -119,12 +127,16 @@ public enum WafRegionalActions implements Action {
     ListRegexPatternSets("waf-regional:ListRegexPatternSets"),
     /** Action for the ListResourcesForWebACL operation. */
     ListResourcesForWebACL("waf-regional:ListResourcesForWebACL"),
+    /** Action for the ListRuleGroups operation. */
+    ListRuleGroups("waf-regional:ListRuleGroups"),
     /** Action for the ListRules operation. */
     ListRules("waf-regional:ListRules"),
     /** Action for the ListSizeConstraintSets operation. */
     ListSizeConstraintSets("waf-regional:ListSizeConstraintSets"),
     /** Action for the ListSqlInjectionMatchSets operation. */
     ListSqlInjectionMatchSets("waf-regional:ListSqlInjectionMatchSets"),
+    /** Action for the ListSubscribedRuleGroups operation. */
+    ListSubscribedRuleGroups("waf-regional:ListSubscribedRuleGroups"),
     /** Action for the ListWebACLs operation. */
     ListWebACLs("waf-regional:ListWebACLs"),
     /** Action for the ListXssMatchSets operation. */
@@ -143,6 +155,8 @@ public enum WafRegionalActions implements Action {
     UpdateRegexPatternSet("waf-regional:UpdateRegexPatternSet"),
     /** Action for the UpdateRule operation. */
     UpdateRule("waf-regional:UpdateRule"),
+    /** Action for the UpdateRuleGroup operation. */
+    UpdateRuleGroup("waf-regional:UpdateRuleGroup"),
     /** Action for the UpdateSizeConstraintSet operation. */
     UpdateSizeConstraintSet("waf-regional:UpdateSizeConstraintSet"),
     /** Action for the UpdateSqlInjectionMatchSet operation. */

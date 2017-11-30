@@ -52,6 +52,12 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Boolean isDefaultVersion;
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     */
+    private String documentFormat;
 
     /**
      * <p>
@@ -226,6 +232,65 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public void setDocumentFormat(String documentFormat) {
+        this.documentFormat = documentFormat;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @return The document format, either JSON or YAML.
+     * @see DocumentFormat
+     */
+
+    public String getDocumentFormat() {
+        return this.documentFormat;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public DocumentVersionInfo withDocumentFormat(String documentFormat) {
+        setDocumentFormat(documentFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The document format, either JSON or YAML.
+     * </p>
+     * 
+     * @param documentFormat
+     *        The document format, either JSON or YAML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentFormat
+     */
+
+    public DocumentVersionInfo withDocumentFormat(DocumentFormat documentFormat) {
+        this.documentFormat = documentFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -243,7 +308,9 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getIsDefaultVersion() != null)
-            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion());
+            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion()).append(",");
+        if (getDocumentFormat() != null)
+            sb.append("DocumentFormat: ").append(getDocumentFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +341,10 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getIsDefaultVersion() != null && other.getIsDefaultVersion().equals(this.getIsDefaultVersion()) == false)
             return false;
+        if (other.getDocumentFormat() == null ^ this.getDocumentFormat() == null)
+            return false;
+        if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +357,7 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getIsDefaultVersion() == null) ? 0 : getIsDefaultVersion().hashCode());
+        hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         return hashCode;
     }
 

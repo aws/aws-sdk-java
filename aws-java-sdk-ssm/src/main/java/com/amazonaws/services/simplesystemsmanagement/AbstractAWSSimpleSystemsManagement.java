@@ -158,6 +158,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeAutomationStepExecutionsResult describeAutomationStepExecutions(DescribeAutomationStepExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -29,6 +29,8 @@ public class StopAutomationExecutionRequestMarshaller {
 
     private static final MarshallingInfo<String> AUTOMATIONEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationExecutionId").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
     private static final StopAutomationExecutionRequestMarshaller instance = new StopAutomationExecutionRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class StopAutomationExecutionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(stopAutomationExecutionRequest.getAutomationExecutionId(), AUTOMATIONEXECUTIONID_BINDING);
+            protocolMarshaller.marshall(stopAutomationExecutionRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

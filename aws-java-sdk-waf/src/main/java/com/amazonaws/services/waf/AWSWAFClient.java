@@ -77,14 +77,23 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFReferencedItemException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFReferencedItemException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFLimitsExceededException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFStaleDataException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFStaleDataException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFSubscriptionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonEmptyEntityException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFReferencedItemException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFReferencedItemException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
@@ -101,17 +110,11 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                             new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFInvalidOperationException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFInvalidRegexPatternException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFInvalidRegexPatternException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentContainerException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFNonEmptyEntityException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.waf.model.AWSWAFException.class));
 
     /**
@@ -1330,6 +1333,91 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a <code>RuleGroup</code>. A rule group is a collection of predefined rules that you add to a web ACL. You
+     * use <a>UpdateRuleGroup</a> to add rules to the rule group.
+     * </p>
+     * <p>
+     * Rule groups are subject to the following limits:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Three rule groups per account. You can request an increase to this limit by contacting customer support.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * One rule group per web ACL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ten rules per rule group.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRuleGroupRequest
+     * @return Result of the CreateRuleGroup operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @sample AWSWAF.CreateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateRuleGroupResult createRuleGroup(CreateRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateRuleGroupResult executeCreateRuleGroup(CreateRuleGroupRequest createRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRuleGroupRequest> request = null;
+        Response<CreateRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRuleGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2804,6 +2892,124 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes a <a>RuleGroup</a>. You can't delete a <code>RuleGroup</code> if it's still used in any
+     * <code>WebACL</code> objects or if it still includes any rules.
+     * </p>
+     * <p>
+     * If you just want to remove a <code>RuleGroup</code> from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RuleGroup</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RuleGroup</code> to remove rules, if any. For more information, see <a>UpdateRuleGroup</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRuleGroup</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRuleGroupRequest
+     * @return Result of the DeleteRuleGroup operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that is still in use. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that isn't empty. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
+     *         or other predicates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+     *         objects.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+     *         </p>
+     *         </li>
+     * @sample AWSWAF.DeleteRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteRuleGroupResult deleteRuleGroup(DeleteRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleGroupResult executeDeleteRuleGroup(DeleteRuleGroupRequest deleteRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRuleGroupRequest> request = null;
+        Response<DeleteRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a <code>SizeConstraintSet</code> if it's still
      * used in any <code>Rules</code> or if it still includes any <a>SizeConstraint</a> objects (any filters).
      * </p>
@@ -3930,6 +4136,62 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
+     * Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that you included in the
+     * <code>GetRuleGroup</code> request.
+     * </p>
+     * <p>
+     * To view the rules in a rule group, use <a>ListActivatedRulesInRuleGroup</a>.
+     * </p>
+     * 
+     * @param getRuleGroupRequest
+     * @return Result of the GetRuleGroup operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetRuleGroupResult getRuleGroup(GetRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetRuleGroupResult executeGetRuleGroup(GetRuleGroupRequest getRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRuleGroupRequest> request = null;
+        Response<GetRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
      * specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.
@@ -4202,6 +4464,115 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetXssMatchSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetXssMatchSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <a>ActivatedRule</a> objects.
+     * </p>
+     * 
+     * @param listActivatedRulesInRuleGroupRequest
+     * @return Result of the ListActivatedRulesInRuleGroup operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAF.ListActivatedRulesInRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListActivatedRulesInRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListActivatedRulesInRuleGroupResult listActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListActivatedRulesInRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListActivatedRulesInRuleGroupResult executeListActivatedRulesInRuleGroup(ListActivatedRulesInRuleGroupRequest listActivatedRulesInRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listActivatedRulesInRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListActivatedRulesInRuleGroupRequest> request = null;
+        Response<ListActivatedRulesInRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListActivatedRulesInRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listActivatedRulesInRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListActivatedRulesInRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListActivatedRulesInRuleGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4532,6 +4903,56 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
+     * Returns an array of <a>RuleGroup</a> objects.
+     * </p>
+     * 
+     * @param listRuleGroupsRequest
+     * @return Result of the ListRuleGroups operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSWAF.ListRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRuleGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListRuleGroupsResult listRuleGroups(ListRuleGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRuleGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListRuleGroupsResult executeListRuleGroups(ListRuleGroupsRequest listRuleGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRuleGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRuleGroupsRequest> request = null;
+        Response<ListRuleGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRuleGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRuleGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRuleGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of <a>RuleSummary</a> objects.
      * </p>
      * 
@@ -4683,6 +5104,60 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
             HttpResponseHandler<AmazonWebServiceResponse<ListSqlInjectionMatchSetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListSqlInjectionMatchSetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleGroup</a> objects that you are subscribed to.
+     * </p>
+     * 
+     * @param listSubscribedRuleGroupsRequest
+     * @return Result of the ListSubscribedRuleGroups operation returned by the service.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSWAF.ListSubscribedRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSubscribedRuleGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSubscribedRuleGroupsResult listSubscribedRuleGroups(ListSubscribedRuleGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSubscribedRuleGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListSubscribedRuleGroupsResult executeListSubscribedRuleGroups(ListSubscribedRuleGroupsRequest listSubscribedRuleGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSubscribedRuleGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSubscribedRuleGroupsRequest> request = null;
+        Response<ListSubscribedRuleGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSubscribedRuleGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSubscribedRuleGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSubscribedRuleGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSubscribedRuleGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5837,7 +6312,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexMatchSet</a>. For each
+     * Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>. For each
      * <code>RegexMatchSetUpdate</code> object, you specify the following values:
      * </p>
      * <ul>
@@ -5849,7 +6324,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the
+     * The part of a web request that you want AWS WAF to inspectupdate, such as a query string or the value of the
      * <code>User-Agent</code> header.
      * </p>
      * </li>
@@ -6027,19 +6502,18 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
-     * Inserts or deletes <a>RegexMatchSetUpdate</a> objects (filters) in a <a>RegexPatternSet</a>. For each
-     * <code>RegexPatternSet</code> object, you specify the following values:
+     * Inserts or deletes <code>RegexPatternString</code> objects in a <a>RegexPatternSet</a>. For each
+     * <code>RegexPatternString</code> object, you specify the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Whether to insert or delete the object from the array. If you want to change a <code>RegexPatternSet</code>
-     * object, you delete the existing object and add a new one.
+     * Whether to insert or delete the <code>RegexPatternString</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The regular expression pattern that you want AWS WAF to look for. For more information, see
+     * The regular expression pattern that you want to insert or delete. For more information, see
      * <a>RegexPatternSet</a>.
      * </p>
      * </li>
@@ -6109,6 +6583,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         that you can create for an AWS account. For more information, see <a
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
      * @throws WAFNonexistentContainerException
      *         The operation failed because you tried to add an object to or delete an object from another object that
      *         doesn't exist. For example:</p>
@@ -6469,6 +6945,227 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inserts or deletes <a>ActivatedRule</a> objects in a <code>RuleGroup</code>.
+     * </p>
+     * <p>
+     * You can only insert <code>REGULAR</code> rules into a rule group.
+     * </p>
+     * <p>
+     * You can have a maximum of ten rules per rule group.
+     * </p>
+     * <p>
+     * To create and configure a <code>RuleGroup</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the <code>Rules</code> that you want to include in the <code>RuleGroup</code>. See
+     * <a>CreateRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRuleGroup</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRuleGroup</code> request to add <code>Rules</code> to the <code>RuleGroup</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RuleGroup</code>. See <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * If you want to replace one <code>Rule</code> with another, you delete the existing one and add the new one.
+     * </p>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateRuleGroupRequest
+     * @return Result of the UpdateRuleGroup operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or delete an object from another object that
+     *         doesn't exist. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that
+     *         doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a
+     *         <code>Rule</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in
+     *         the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified
+     *         <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
+     *         in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
+     *         specified <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAF.UpdateRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateRuleGroupResult updateRuleGroup(UpdateRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRuleGroupResult executeUpdateRuleGroup(UpdateRuleGroupRequest updateRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRuleGroupRequest> request = null;
+        Response<UpdateRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRuleGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7218,6 +7915,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         that you can create for an AWS account. For more information, see <a
      *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
+     * @throws WAFSubscriptionNotFoundException
+     *         The specified subscription does not exist.
      * @sample AWSWAF.UpdateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL" target="_top">AWS API
      *      Documentation</a>

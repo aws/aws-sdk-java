@@ -27,20 +27,28 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the group. This name must be unique within the scope of your AWS account.
+     * The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      * </p>
      */
     private String autoScalingGroupName;
     /**
      * <p>
-     * The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch configuration.
+     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
+     * template, or an EC2 instance.
      * </p>
      */
     private String launchConfigurationName;
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. Alternatively, specify a launch
-     * configuration instead of an EC2 instance.
+     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
+     * launch configuration, or an EC2 instance.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
+    /**
+     * <p>
+     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     * following: an EC2 instance, a launch configuration, or a launch template.
      * </p>
      * <p>
      * When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it with the
@@ -197,11 +205,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the group. This name must be unique within the scope of your AWS account.
+     * The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group. This name must be unique within the scope of your AWS account.
+     *        The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -210,10 +218,10 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the group. This name must be unique within the scope of your AWS account.
+     * The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      * </p>
      * 
-     * @return The name of the group. This name must be unique within the scope of your AWS account.
+     * @return The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      */
 
     public String getAutoScalingGroupName() {
@@ -222,11 +230,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the group. This name must be unique within the scope of your AWS account.
+     * The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      * </p>
      * 
      * @param autoScalingGroupName
-     *        The name of the group. This name must be unique within the scope of your AWS account.
+     *        The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,12 +245,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch configuration.
+     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
+     * template, or an EC2 instance.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch
-     *        configuration.
+     *        The name of the launch configuration. You must specify one of the following: a launch configuration, a
+     *        launch template, or an EC2 instance.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -251,11 +260,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch configuration.
+     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
+     * template, or an EC2 instance.
      * </p>
      * 
-     * @return The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch
-     *         configuration.
+     * @return The name of the launch configuration. You must specify one of the following: a launch configuration, a
+     *         launch template, or an EC2 instance.
      */
 
     public String getLaunchConfigurationName() {
@@ -264,12 +274,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch configuration.
+     * The name of the launch configuration. You must specify one of the following: a launch configuration, a launch
+     * template, or an EC2 instance.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The name of the launch configuration. Alternatively, specify an EC2 instance instead of a launch
-     *        configuration.
+     *        The name of the launch configuration. You must specify one of the following: a launch configuration, a
+     *        launch template, or an EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,8 +291,54 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. Alternatively, specify a launch
-     * configuration instead of an EC2 instance.
+     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
+     * launch configuration, or an EC2 instance.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to launch instances. You must specify one of the following: a launch template,
+     *        a launch configuration, or an EC2 instance.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
+     * launch configuration, or an EC2 instance.
+     * </p>
+     * 
+     * @return The launch template to use to launch instances. You must specify one of the following: a launch template,
+     *         a launch configuration, or an EC2 instance.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use to launch instances. You must specify one of the following: a launch template, a
+     * launch configuration, or an EC2 instance.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use to launch instances. You must specify one of the following: a launch template,
+     *        a launch configuration, or an EC2 instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     * following: an EC2 instance, a launch configuration, or a launch template.
      * </p>
      * <p>
      * When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it with the
@@ -295,8 +352,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance used to create a launch configuration for the group. Alternatively, specify a
-     *        launch configuration instead of an EC2 instance.</p>
+     *        The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     *        following: an EC2 instance, a launch configuration, or a launch template.</p>
      *        <p>
      *        When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it
      *        with the group. This launch configuration derives its attributes from the specified instance, with the
@@ -314,8 +371,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. Alternatively, specify a launch
-     * configuration instead of an EC2 instance.
+     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     * following: an EC2 instance, a launch configuration, or a launch template.
      * </p>
      * <p>
      * When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it with the
@@ -328,8 +385,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The ID of the instance used to create a launch configuration for the group. Alternatively, specify a
-     *         launch configuration instead of an EC2 instance.</p>
+     * @return The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     *         following: an EC2 instance, a launch configuration, or a launch template.</p>
      *         <p>
      *         When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it
      *         with the group. This launch configuration derives its attributes from the specified instance, with the
@@ -347,8 +404,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the instance used to create a launch configuration for the group. Alternatively, specify a launch
-     * configuration instead of an EC2 instance.
+     * The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     * following: an EC2 instance, a launch configuration, or a launch template.
      * </p>
      * <p>
      * When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it with the
@@ -362,8 +419,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance used to create a launch configuration for the group. Alternatively, specify a
-     *        launch configuration instead of an EC2 instance.</p>
+     *        The ID of the instance used to create a launch configuration for the group. You must specify one of the
+     *        following: an EC2 instance, a launch configuration, or a launch template.</p>
      *        <p>
      *        When you specify an ID of an instance, Auto Scaling creates a new launch configuration and associates it
      *        with the group. This launch configuration derives its attributes from the specified instance, with the
@@ -1528,6 +1585,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLaunchConfigurationName() != null)
             sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getMinSize() != null)
@@ -1581,6 +1640,10 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null)
             return false;
         if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false)
+            return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
@@ -1658,6 +1721,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());

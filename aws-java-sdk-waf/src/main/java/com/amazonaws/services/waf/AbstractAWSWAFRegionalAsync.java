@@ -132,6 +132,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest request) {
+
+        return createRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleGroupResult> createRuleGroupAsync(CreateRuleGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRuleGroupRequest, CreateRuleGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(CreateSizeConstraintSetRequest request) {
 
         return createSizeConstraintSetAsync(request, null);
@@ -270,6 +283,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest request) {
+
+        return deleteRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleGroupResult> deleteRuleGroupAsync(DeleteRuleGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleGroupRequest, DeleteRuleGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -470,6 +496,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest request) {
+
+        return getRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRuleGroupResult> getRuleGroupAsync(GetRuleGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRuleGroupRequest, GetRuleGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSampledRequestsResult> getSampledRequestsAsync(GetSampledRequestsRequest request) {
 
         return getSampledRequestsAsync(request, null);
@@ -543,6 +582,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     @Override
     public java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(GetXssMatchSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActivatedRulesInRuleGroupResult> listActivatedRulesInRuleGroupAsync(ListActivatedRulesInRuleGroupRequest request) {
+
+        return listActivatedRulesInRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActivatedRulesInRuleGroupResult> listActivatedRulesInRuleGroupAsync(ListActivatedRulesInRuleGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListActivatedRulesInRuleGroupRequest, ListActivatedRulesInRuleGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -639,6 +691,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest request) {
+
+        return listRuleGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleGroupsResult> listRuleGroupsAsync(ListRuleGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRuleGroupsRequest, ListRuleGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest request) {
 
         return listRulesAsync(request, null);
@@ -673,6 +738,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     @Override
     public java.util.concurrent.Future<ListSqlInjectionMatchSetsResult> listSqlInjectionMatchSetsAsync(ListSqlInjectionMatchSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSqlInjectionMatchSetsRequest, ListSqlInjectionMatchSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest request) {
+
+        return listSubscribedRuleGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubscribedRuleGroupsResult> listSubscribedRuleGroupsAsync(ListSubscribedRuleGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSubscribedRuleGroupsRequest, ListSubscribedRuleGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -790,6 +868,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     @Override
     public java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest request) {
+
+        return updateRuleGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuleGroupResult> updateRuleGroupAsync(UpdateRuleGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRuleGroupRequest, UpdateRuleGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

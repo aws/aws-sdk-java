@@ -60,6 +60,10 @@ public class DomainEntryJsonUnmarshaller implements Unmarshaller<DomainEntry, Js
                     context.nextToken();
                     domainEntry.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("isAlias", targetDepth)) {
+                    context.nextToken();
+                    domainEntry.setIsAlias(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     domainEntry.setType(context.getUnmarshaller(String.class).unmarshall(context));

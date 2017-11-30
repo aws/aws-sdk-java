@@ -25,17 +25,17 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * {@link com.amazonaws.services.simplesystemsmanagement.AbstractAWSSimpleSystemsManagementAsync} instead.
  * </p>
  * <p>
- * <fullname>Amazon EC2 Systems Manager</fullname>
+ * <fullname>AWS Systems Manager</fullname>
  * <p>
- * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
- * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
- * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting
+ * system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs),
+ * and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely
+ * manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
  * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
@@ -955,6 +955,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(
             DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAutomationExecutionsRequest, DescribeAutomationExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Information about all active and terminated step executions in an Automation workflow.
+     * </p>
+     * 
+     * @param describeAutomationStepExecutionsRequest
+     * @return A Java Future containing the result of the DescribeAutomationStepExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeAutomationStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAutomationStepExecutionsResult> describeAutomationStepExecutionsAsync(
+            DescribeAutomationStepExecutionsRequest describeAutomationStepExecutionsRequest);
+
+    /**
+     * <p>
+     * Information about all active and terminated step executions in an Automation workflow.
+     * </p>
+     * 
+     * @param describeAutomationStepExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAutomationStepExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAutomationStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAutomationStepExecutionsResult> describeAutomationStepExecutionsAsync(
+            DescribeAutomationStepExecutionsRequest describeAutomationStepExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAutomationStepExecutionsRequest, DescribeAutomationStepExecutionsResult> asyncHandler);
 
     /**
      * <p>

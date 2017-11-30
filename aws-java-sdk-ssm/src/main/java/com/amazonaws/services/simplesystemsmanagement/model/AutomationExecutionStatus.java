@@ -25,6 +25,7 @@ public enum AutomationExecutionStatus {
     Waiting("Waiting"),
     Success("Success"),
     TimedOut("TimedOut"),
+    Cancelling("Cancelling"),
     Cancelled("Cancelled"),
     Failed("Failed");
 

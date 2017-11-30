@@ -64,6 +64,10 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                     context.nextToken();
                     getDocumentResult.setDocumentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentFormat", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setDocumentFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
