@@ -1,3 +1,8 @@
+# __1.11.241__ __2017-12-01__
+## __Amazon SageMaker Service__
+  - ### Features
+    - Preparing to release updated waiters week of December 4, 2017 for all supported SDKs.
+
 # __1.11.240__ __2017-11-30__
 ## __AWS Cloud9__
   - ### Features
@@ -7,7 +12,7 @@
   - ### Features
     - AWS Lambda now supports the ability to set the concurrency limits for individual functions, and increasing memory to 3008MB.
 
-## __AWSServerlessApplicationRepository__
+## __AWS Serverless Application Repository__
   - ### Features
     - First release of the AWS Serverless Application Repository SDK
 
