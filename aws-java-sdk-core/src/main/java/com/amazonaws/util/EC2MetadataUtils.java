@@ -579,7 +579,7 @@ public class EC2MetadataUtils {
     }
 
     /**
-     * All of the metada associated with a network interface on the instance.
+     * All of the metadata associated with a network interface on the instance.
      */
     public static class NetworkInterface {
         private String path;
