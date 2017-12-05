@@ -33,6 +33,18 @@ public class CostTypesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeSubscription").build();
     private static final MarshallingInfo<Boolean> USEBLENDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseBlended").build();
+    private static final MarshallingInfo<Boolean> INCLUDEREFUND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeRefund").build();
+    private static final MarshallingInfo<Boolean> INCLUDECREDIT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeCredit").build();
+    private static final MarshallingInfo<Boolean> INCLUDEUPFRONT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeUpfront").build();
+    private static final MarshallingInfo<Boolean> INCLUDERECURRING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeRecurring").build();
+    private static final MarshallingInfo<Boolean> INCLUDEOTHERSUBSCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeOtherSubscription").build();
+    private static final MarshallingInfo<Boolean> INCLUDESUPPORT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeSupport").build();
 
     private static final CostTypesMarshaller instance = new CostTypesMarshaller();
 
@@ -53,6 +65,12 @@ public class CostTypesMarshaller {
             protocolMarshaller.marshall(costTypes.getIncludeTax(), INCLUDETAX_BINDING);
             protocolMarshaller.marshall(costTypes.getIncludeSubscription(), INCLUDESUBSCRIPTION_BINDING);
             protocolMarshaller.marshall(costTypes.getUseBlended(), USEBLENDED_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeRefund(), INCLUDEREFUND_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeCredit(), INCLUDECREDIT_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeUpfront(), INCLUDEUPFRONT_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeRecurring(), INCLUDERECURRING_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeOtherSubscription(), INCLUDEOTHERSUBSCRIPTION_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeSupport(), INCLUDESUPPORT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

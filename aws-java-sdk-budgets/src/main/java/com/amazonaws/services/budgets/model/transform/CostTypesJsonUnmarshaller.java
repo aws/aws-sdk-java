@@ -60,6 +60,30 @@ public class CostTypesJsonUnmarshaller implements Unmarshaller<CostTypes, JsonUn
                     context.nextToken();
                     costTypes.setUseBlended(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IncludeRefund", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeRefund(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeCredit", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeCredit(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeUpfront", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeUpfront(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeRecurring", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeRecurring(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeOtherSubscription", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeOtherSubscription(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeSupport", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeSupport(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

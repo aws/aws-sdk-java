@@ -1,3 +1,12 @@
+# __1.11.242__ __2017-12-04__
+## __AWS Budgets__
+  - ### Features
+    - Add additional costTypes to support finer control for different charges included in a cost budget.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates for ecs
+
 # __1.11.241__ __2017-12-01__
 ## __Amazon SageMaker Service__
   - ### Features

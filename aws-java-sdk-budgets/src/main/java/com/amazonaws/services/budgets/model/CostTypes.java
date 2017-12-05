@@ -23,14 +23,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
+    /** A boolean value whether to include tax in the cost budget. */
     private Boolean includeTax;
-
+    /** A boolean value whether to include subscriptions in the cost budget. */
     private Boolean includeSubscription;
-
+    /** A boolean value whether to use blended costs in the cost budget. */
     private Boolean useBlended;
+    /** A boolean value whether to include refunds in the cost budget. */
+    private Boolean includeRefund;
+    /** A boolean value whether to include credits in the cost budget. */
+    private Boolean includeCredit;
+    /** A boolean value whether to include upfront costs in the cost budget. */
+    private Boolean includeUpfront;
+    /** A boolean value whether to include recurring costs in the cost budget. */
+    private Boolean includeRecurring;
+    /** A boolean value whether to include other subscription costs in the cost budget. */
+    private Boolean includeOtherSubscription;
+    /** A boolean value whether to include support costs in the cost budget. */
+    private Boolean includeSupport;
 
     /**
+     * A boolean value whether to include tax in the cost budget.
+     * 
      * @param includeTax
+     *        A boolean value whether to include tax in the cost budget.
      */
 
     public void setIncludeTax(Boolean includeTax) {
@@ -38,7 +54,9 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A boolean value whether to include tax in the cost budget.
+     * 
+     * @return A boolean value whether to include tax in the cost budget.
      */
 
     public Boolean getIncludeTax() {
@@ -46,7 +64,10 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A boolean value whether to include tax in the cost budget.
+     * 
      * @param includeTax
+     *        A boolean value whether to include tax in the cost budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +77,9 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A boolean value whether to include tax in the cost budget.
+     * 
+     * @return A boolean value whether to include tax in the cost budget.
      */
 
     public Boolean isIncludeTax() {
@@ -64,7 +87,10 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A boolean value whether to include subscriptions in the cost budget.
+     * 
      * @param includeSubscription
+     *        A boolean value whether to include subscriptions in the cost budget.
      */
 
     public void setIncludeSubscription(Boolean includeSubscription) {
@@ -72,7 +98,9 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A boolean value whether to include subscriptions in the cost budget.
+     * 
+     * @return A boolean value whether to include subscriptions in the cost budget.
      */
 
     public Boolean getIncludeSubscription() {
@@ -80,7 +108,10 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A boolean value whether to include subscriptions in the cost budget.
+     * 
      * @param includeSubscription
+     *        A boolean value whether to include subscriptions in the cost budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +121,9 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A boolean value whether to include subscriptions in the cost budget.
+     * 
+     * @return A boolean value whether to include subscriptions in the cost budget.
      */
 
     public Boolean isIncludeSubscription() {
@@ -98,7 +131,10 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A boolean value whether to use blended costs in the cost budget.
+     * 
      * @param useBlended
+     *        A boolean value whether to use blended costs in the cost budget.
      */
 
     public void setUseBlended(Boolean useBlended) {
@@ -106,7 +142,9 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A boolean value whether to use blended costs in the cost budget.
+     * 
+     * @return A boolean value whether to use blended costs in the cost budget.
      */
 
     public Boolean getUseBlended() {
@@ -114,7 +152,10 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A boolean value whether to use blended costs in the cost budget.
+     * 
      * @param useBlended
+     *        A boolean value whether to use blended costs in the cost budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +165,277 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * A boolean value whether to use blended costs in the cost budget.
+     * 
+     * @return A boolean value whether to use blended costs in the cost budget.
      */
 
     public Boolean isUseBlended() {
         return this.useBlended;
+    }
+
+    /**
+     * A boolean value whether to include refunds in the cost budget.
+     * 
+     * @param includeRefund
+     *        A boolean value whether to include refunds in the cost budget.
+     */
+
+    public void setIncludeRefund(Boolean includeRefund) {
+        this.includeRefund = includeRefund;
+    }
+
+    /**
+     * A boolean value whether to include refunds in the cost budget.
+     * 
+     * @return A boolean value whether to include refunds in the cost budget.
+     */
+
+    public Boolean getIncludeRefund() {
+        return this.includeRefund;
+    }
+
+    /**
+     * A boolean value whether to include refunds in the cost budget.
+     * 
+     * @param includeRefund
+     *        A boolean value whether to include refunds in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeRefund(Boolean includeRefund) {
+        setIncludeRefund(includeRefund);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include refunds in the cost budget.
+     * 
+     * @return A boolean value whether to include refunds in the cost budget.
+     */
+
+    public Boolean isIncludeRefund() {
+        return this.includeRefund;
+    }
+
+    /**
+     * A boolean value whether to include credits in the cost budget.
+     * 
+     * @param includeCredit
+     *        A boolean value whether to include credits in the cost budget.
+     */
+
+    public void setIncludeCredit(Boolean includeCredit) {
+        this.includeCredit = includeCredit;
+    }
+
+    /**
+     * A boolean value whether to include credits in the cost budget.
+     * 
+     * @return A boolean value whether to include credits in the cost budget.
+     */
+
+    public Boolean getIncludeCredit() {
+        return this.includeCredit;
+    }
+
+    /**
+     * A boolean value whether to include credits in the cost budget.
+     * 
+     * @param includeCredit
+     *        A boolean value whether to include credits in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeCredit(Boolean includeCredit) {
+        setIncludeCredit(includeCredit);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include credits in the cost budget.
+     * 
+     * @return A boolean value whether to include credits in the cost budget.
+     */
+
+    public Boolean isIncludeCredit() {
+        return this.includeCredit;
+    }
+
+    /**
+     * A boolean value whether to include upfront costs in the cost budget.
+     * 
+     * @param includeUpfront
+     *        A boolean value whether to include upfront costs in the cost budget.
+     */
+
+    public void setIncludeUpfront(Boolean includeUpfront) {
+        this.includeUpfront = includeUpfront;
+    }
+
+    /**
+     * A boolean value whether to include upfront costs in the cost budget.
+     * 
+     * @return A boolean value whether to include upfront costs in the cost budget.
+     */
+
+    public Boolean getIncludeUpfront() {
+        return this.includeUpfront;
+    }
+
+    /**
+     * A boolean value whether to include upfront costs in the cost budget.
+     * 
+     * @param includeUpfront
+     *        A boolean value whether to include upfront costs in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeUpfront(Boolean includeUpfront) {
+        setIncludeUpfront(includeUpfront);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include upfront costs in the cost budget.
+     * 
+     * @return A boolean value whether to include upfront costs in the cost budget.
+     */
+
+    public Boolean isIncludeUpfront() {
+        return this.includeUpfront;
+    }
+
+    /**
+     * A boolean value whether to include recurring costs in the cost budget.
+     * 
+     * @param includeRecurring
+     *        A boolean value whether to include recurring costs in the cost budget.
+     */
+
+    public void setIncludeRecurring(Boolean includeRecurring) {
+        this.includeRecurring = includeRecurring;
+    }
+
+    /**
+     * A boolean value whether to include recurring costs in the cost budget.
+     * 
+     * @return A boolean value whether to include recurring costs in the cost budget.
+     */
+
+    public Boolean getIncludeRecurring() {
+        return this.includeRecurring;
+    }
+
+    /**
+     * A boolean value whether to include recurring costs in the cost budget.
+     * 
+     * @param includeRecurring
+     *        A boolean value whether to include recurring costs in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeRecurring(Boolean includeRecurring) {
+        setIncludeRecurring(includeRecurring);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include recurring costs in the cost budget.
+     * 
+     * @return A boolean value whether to include recurring costs in the cost budget.
+     */
+
+    public Boolean isIncludeRecurring() {
+        return this.includeRecurring;
+    }
+
+    /**
+     * A boolean value whether to include other subscription costs in the cost budget.
+     * 
+     * @param includeOtherSubscription
+     *        A boolean value whether to include other subscription costs in the cost budget.
+     */
+
+    public void setIncludeOtherSubscription(Boolean includeOtherSubscription) {
+        this.includeOtherSubscription = includeOtherSubscription;
+    }
+
+    /**
+     * A boolean value whether to include other subscription costs in the cost budget.
+     * 
+     * @return A boolean value whether to include other subscription costs in the cost budget.
+     */
+
+    public Boolean getIncludeOtherSubscription() {
+        return this.includeOtherSubscription;
+    }
+
+    /**
+     * A boolean value whether to include other subscription costs in the cost budget.
+     * 
+     * @param includeOtherSubscription
+     *        A boolean value whether to include other subscription costs in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeOtherSubscription(Boolean includeOtherSubscription) {
+        setIncludeOtherSubscription(includeOtherSubscription);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include other subscription costs in the cost budget.
+     * 
+     * @return A boolean value whether to include other subscription costs in the cost budget.
+     */
+
+    public Boolean isIncludeOtherSubscription() {
+        return this.includeOtherSubscription;
+    }
+
+    /**
+     * A boolean value whether to include support costs in the cost budget.
+     * 
+     * @param includeSupport
+     *        A boolean value whether to include support costs in the cost budget.
+     */
+
+    public void setIncludeSupport(Boolean includeSupport) {
+        this.includeSupport = includeSupport;
+    }
+
+    /**
+     * A boolean value whether to include support costs in the cost budget.
+     * 
+     * @return A boolean value whether to include support costs in the cost budget.
+     */
+
+    public Boolean getIncludeSupport() {
+        return this.includeSupport;
+    }
+
+    /**
+     * A boolean value whether to include support costs in the cost budget.
+     * 
+     * @param includeSupport
+     *        A boolean value whether to include support costs in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeSupport(Boolean includeSupport) {
+        setIncludeSupport(includeSupport);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include support costs in the cost budget.
+     * 
+     * @return A boolean value whether to include support costs in the cost budget.
+     */
+
+    public Boolean isIncludeSupport() {
+        return this.includeSupport;
     }
 
     /**
@@ -147,7 +454,19 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
         if (getIncludeSubscription() != null)
             sb.append("IncludeSubscription: ").append(getIncludeSubscription()).append(",");
         if (getUseBlended() != null)
-            sb.append("UseBlended: ").append(getUseBlended());
+            sb.append("UseBlended: ").append(getUseBlended()).append(",");
+        if (getIncludeRefund() != null)
+            sb.append("IncludeRefund: ").append(getIncludeRefund()).append(",");
+        if (getIncludeCredit() != null)
+            sb.append("IncludeCredit: ").append(getIncludeCredit()).append(",");
+        if (getIncludeUpfront() != null)
+            sb.append("IncludeUpfront: ").append(getIncludeUpfront()).append(",");
+        if (getIncludeRecurring() != null)
+            sb.append("IncludeRecurring: ").append(getIncludeRecurring()).append(",");
+        if (getIncludeOtherSubscription() != null)
+            sb.append("IncludeOtherSubscription: ").append(getIncludeOtherSubscription()).append(",");
+        if (getIncludeSupport() != null)
+            sb.append("IncludeSupport: ").append(getIncludeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -174,6 +493,30 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUseBlended() != null && other.getUseBlended().equals(this.getUseBlended()) == false)
             return false;
+        if (other.getIncludeRefund() == null ^ this.getIncludeRefund() == null)
+            return false;
+        if (other.getIncludeRefund() != null && other.getIncludeRefund().equals(this.getIncludeRefund()) == false)
+            return false;
+        if (other.getIncludeCredit() == null ^ this.getIncludeCredit() == null)
+            return false;
+        if (other.getIncludeCredit() != null && other.getIncludeCredit().equals(this.getIncludeCredit()) == false)
+            return false;
+        if (other.getIncludeUpfront() == null ^ this.getIncludeUpfront() == null)
+            return false;
+        if (other.getIncludeUpfront() != null && other.getIncludeUpfront().equals(this.getIncludeUpfront()) == false)
+            return false;
+        if (other.getIncludeRecurring() == null ^ this.getIncludeRecurring() == null)
+            return false;
+        if (other.getIncludeRecurring() != null && other.getIncludeRecurring().equals(this.getIncludeRecurring()) == false)
+            return false;
+        if (other.getIncludeOtherSubscription() == null ^ this.getIncludeOtherSubscription() == null)
+            return false;
+        if (other.getIncludeOtherSubscription() != null && other.getIncludeOtherSubscription().equals(this.getIncludeOtherSubscription()) == false)
+            return false;
+        if (other.getIncludeSupport() == null ^ this.getIncludeSupport() == null)
+            return false;
+        if (other.getIncludeSupport() != null && other.getIncludeSupport().equals(this.getIncludeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -185,6 +528,12 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIncludeTax() == null) ? 0 : getIncludeTax().hashCode());
         hashCode = prime * hashCode + ((getIncludeSubscription() == null) ? 0 : getIncludeSubscription().hashCode());
         hashCode = prime * hashCode + ((getUseBlended() == null) ? 0 : getUseBlended().hashCode());
+        hashCode = prime * hashCode + ((getIncludeRefund() == null) ? 0 : getIncludeRefund().hashCode());
+        hashCode = prime * hashCode + ((getIncludeCredit() == null) ? 0 : getIncludeCredit().hashCode());
+        hashCode = prime * hashCode + ((getIncludeUpfront() == null) ? 0 : getIncludeUpfront().hashCode());
+        hashCode = prime * hashCode + ((getIncludeRecurring() == null) ? 0 : getIncludeRecurring().hashCode());
+        hashCode = prime * hashCode + ((getIncludeOtherSubscription() == null) ? 0 : getIncludeOtherSubscription().hashCode());
+        hashCode = prime * hashCode + ((getIncludeSupport() == null) ? 0 : getIncludeSupport().hashCode());
         return hashCode;
     }
 

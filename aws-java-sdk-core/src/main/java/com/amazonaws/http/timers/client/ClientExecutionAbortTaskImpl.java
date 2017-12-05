@@ -25,7 +25,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ClientExecutionAbortTaskImpl implements ClientExecutionAbortTask {
 
-    private boolean hasTaskExecuted;
+    private volatile boolean hasTaskExecuted;
     private HttpRequestBase currentHttpRequest;
     private final Thread thread;
 
