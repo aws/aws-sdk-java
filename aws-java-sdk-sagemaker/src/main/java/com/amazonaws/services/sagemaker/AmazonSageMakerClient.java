@@ -38,6 +38,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.services.sagemaker.AmazonSageMakerClientBuilder;
+import com.amazonaws.services.sagemaker.waiters.AmazonSageMakerWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -60,6 +61,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "sagemaker";
+
+    private volatile AmazonSageMakerWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -1832,6 +1835,26 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AmazonSageMakerWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonSageMakerWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

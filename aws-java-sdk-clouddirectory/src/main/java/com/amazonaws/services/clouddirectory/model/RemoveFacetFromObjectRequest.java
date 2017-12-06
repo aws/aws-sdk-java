@@ -33,7 +33,7 @@ public class RemoveFacetFromObjectRequest extends com.amazonaws.AmazonWebService
     private String directoryArn;
     /**
      * <p>
-     * The facet to remove.
+     * The facet to remove. See <a>SchemaFacet</a> for details.
      * </p>
      */
     private SchemaFacet schemaFacet;
@@ -86,11 +86,11 @@ public class RemoveFacetFromObjectRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The facet to remove.
+     * The facet to remove. See <a>SchemaFacet</a> for details.
      * </p>
      * 
      * @param schemaFacet
-     *        The facet to remove.
+     *        The facet to remove. See <a>SchemaFacet</a> for details.
      */
 
     public void setSchemaFacet(SchemaFacet schemaFacet) {
@@ -99,10 +99,10 @@ public class RemoveFacetFromObjectRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The facet to remove.
+     * The facet to remove. See <a>SchemaFacet</a> for details.
      * </p>
      * 
-     * @return The facet to remove.
+     * @return The facet to remove. See <a>SchemaFacet</a> for details.
      */
 
     public SchemaFacet getSchemaFacet() {
@@ -111,11 +111,11 @@ public class RemoveFacetFromObjectRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The facet to remove.
+     * The facet to remove. See <a>SchemaFacet</a> for details.
      * </p>
      * 
      * @param schemaFacet
-     *        The facet to remove.
+     *        The facet to remove. See <a>SchemaFacet</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

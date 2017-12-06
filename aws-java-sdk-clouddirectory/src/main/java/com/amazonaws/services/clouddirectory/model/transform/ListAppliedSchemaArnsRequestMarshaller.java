@@ -29,6 +29,8 @@ public class ListAppliedSchemaArnsRequestMarshaller {
 
     private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryArn").build();
+    private static final MarshallingInfo<String> SCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SchemaArn").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -51,6 +53,7 @@ public class ListAppliedSchemaArnsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listAppliedSchemaArnsRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+            protocolMarshaller.marshall(listAppliedSchemaArnsRequest.getSchemaArn(), SCHEMAARN_BINDING);
             protocolMarshaller.marshall(listAppliedSchemaArnsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAppliedSchemaArnsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

@@ -1,3 +1,16 @@
+# __1.11.244__ __2017-12-06__
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Documentation updates for AWS Elastic Beanstalk.
+
+## __Amazon CloudDirectory__
+  - ### Features
+    - Amazon Cloud Directory makes it easier for you to apply schema changes across your directories with in-place schema upgrades. Your directories now remain available while backward-compatible schema changes are being applied, such as the addition of new fields. You also can view the history of your schema changes in Cloud Directory by using both major and minor version identifiers, which can help you track and audit schema versions across directories.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Initial waiters for common SageMaker workflows.
+
 # __1.11.243__ __2017-12-05__
 ## __AWS IoT__
   - ### Features

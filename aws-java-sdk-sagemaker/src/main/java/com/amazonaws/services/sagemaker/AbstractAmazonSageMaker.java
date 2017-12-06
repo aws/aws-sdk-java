@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.sagemaker.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.sagemaker.waiters.AmazonSageMakerWaiters;
 
 /**
  * Abstract implementation of {@code AmazonSageMaker}. Convenient method forms pass through to the corresponding
@@ -179,6 +180,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonSageMakerWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

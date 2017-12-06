@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.sagemaker.model.*;
+import com.amazonaws.services.sagemaker.waiters.AmazonSageMakerWaiters;
 
 /**
  * Interface for accessing SageMaker.
@@ -699,5 +700,7 @@ public interface AmazonSageMaker {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonSageMakerWaiters waiters();
 
 }

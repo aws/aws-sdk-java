@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detaches the specified policy from the specified directory inside a <a>BatchRead</a> operation. For more information,
- * see <a>DetachPolicy</a> and <a>BatchReadRequest$Operations</a>.
+ * Detaches the specified policy from the specified directory inside a <a>BatchWrite</a> operation. For more
+ * information, see <a>DetachPolicy</a> and <a>BatchWriteRequest$Operations</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachPolicy" target="_top">AWS

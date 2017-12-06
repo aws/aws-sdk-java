@@ -34,10 +34,18 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String developmentSchemaArn;
     /**
      * <p>
-     * The version under which the schema will be published.
+     * The major version under which the schema will be published. Schemas have both a major and minor version
+     * associated with them.
      * </p>
      */
     private String version;
+    /**
+     * <p>
+     * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a
+     * major and minor version associated with them.
+     * </p>
+     */
+    private String minorVersion;
     /**
      * <p>
      * The new name under which the schema will be published. If this is not provided, the development schema is
@@ -94,11 +102,13 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version under which the schema will be published.
+     * The major version under which the schema will be published. Schemas have both a major and minor version
+     * associated with them.
      * </p>
      * 
      * @param version
-     *        The version under which the schema will be published.
+     *        The major version under which the schema will be published. Schemas have both a major and minor version
+     *        associated with them.
      */
 
     public void setVersion(String version) {
@@ -107,10 +117,12 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version under which the schema will be published.
+     * The major version under which the schema will be published. Schemas have both a major and minor version
+     * associated with them.
      * </p>
      * 
-     * @return The version under which the schema will be published.
+     * @return The major version under which the schema will be published. Schemas have both a major and minor version
+     *         associated with them.
      */
 
     public String getVersion() {
@@ -119,16 +131,64 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version under which the schema will be published.
+     * The major version under which the schema will be published. Schemas have both a major and minor version
+     * associated with them.
      * </p>
      * 
      * @param version
-     *        The version under which the schema will be published.
+     *        The major version under which the schema will be published. Schemas have both a major and minor version
+     *        associated with them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PublishSchemaRequest withVersion(String version) {
         setVersion(version);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a
+     * major and minor version associated with them.
+     * </p>
+     * 
+     * @param minorVersion
+     *        The minor version under which the schema will be published. This parameter is recommended. Schemas have
+     *        both a major and minor version associated with them.
+     */
+
+    public void setMinorVersion(String minorVersion) {
+        this.minorVersion = minorVersion;
+    }
+
+    /**
+     * <p>
+     * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a
+     * major and minor version associated with them.
+     * </p>
+     * 
+     * @return The minor version under which the schema will be published. This parameter is recommended. Schemas have
+     *         both a major and minor version associated with them.
+     */
+
+    public String getMinorVersion() {
+        return this.minorVersion;
+    }
+
+    /**
+     * <p>
+     * The minor version under which the schema will be published. This parameter is recommended. Schemas have both a
+     * major and minor version associated with them.
+     * </p>
+     * 
+     * @param minorVersion
+     *        The minor version under which the schema will be published. This parameter is recommended. Schemas have
+     *        both a major and minor version associated with them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishSchemaRequest withMinorVersion(String minorVersion) {
+        setMinorVersion(minorVersion);
         return this;
     }
 
@@ -193,6 +253,8 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("DevelopmentSchemaArn: ").append(getDevelopmentSchemaArn()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
+        if (getMinorVersion() != null)
+            sb.append("MinorVersion: ").append(getMinorVersion()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName());
         sb.append("}");
@@ -217,6 +279,10 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getMinorVersion() == null ^ this.getMinorVersion() == null)
+            return false;
+        if (other.getMinorVersion() != null && other.getMinorVersion().equals(this.getMinorVersion()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -231,6 +297,7 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getDevelopmentSchemaArn() == null) ? 0 : getDevelopmentSchemaArn().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getMinorVersion() == null) ? 0 : getMinorVersion().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }

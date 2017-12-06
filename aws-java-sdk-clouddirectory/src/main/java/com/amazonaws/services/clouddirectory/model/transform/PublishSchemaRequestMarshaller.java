@@ -31,6 +31,8 @@ public class PublishSchemaRequestMarshaller {
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
+    private static final MarshallingInfo<String> MINORVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinorVersion").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
 
@@ -52,6 +54,7 @@ public class PublishSchemaRequestMarshaller {
         try {
             protocolMarshaller.marshall(publishSchemaRequest.getDevelopmentSchemaArn(), DEVELOPMENTSCHEMAARN_BINDING);
             protocolMarshaller.marshall(publishSchemaRequest.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(publishSchemaRequest.getMinorVersion(), MINORVERSION_BINDING);
             protocolMarshaller.marshall(publishSchemaRequest.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

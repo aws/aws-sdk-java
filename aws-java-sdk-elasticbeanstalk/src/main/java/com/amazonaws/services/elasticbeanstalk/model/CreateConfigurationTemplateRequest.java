@@ -69,7 +69,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
     private String solutionStackName;
     /**
      * <p>
-     * The ARN of the custome platform.
+     * The ARN of the custom platform.
      * </p>
      */
     private String platformArn;
@@ -382,11 +382,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the custome platform.
+     * The ARN of the custom platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custome platform.
+     *        The ARN of the custom platform.
      */
 
     public void setPlatformArn(String platformArn) {
@@ -395,10 +395,10 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the custome platform.
+     * The ARN of the custom platform.
      * </p>
      * 
-     * @return The ARN of the custome platform.
+     * @return The ARN of the custom platform.
      */
 
     public String getPlatformArn() {
@@ -407,11 +407,11 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the custome platform.
+     * The ARN of the custom platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custome platform.
+     *        The ARN of the custom platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

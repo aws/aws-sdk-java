@@ -25,7 +25,9 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The facets attached to the specified object.
+     * The facets attached to the specified object. Although the response does not include minor version information,
+     * the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for
+     * details.
      * </p>
      */
     private java.util.List<SchemaFacet> schemaFacets;
@@ -38,10 +40,14 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The facets attached to the specified object.
+     * The facets attached to the specified object. Although the response does not include minor version information,
+     * the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for
+     * details.
      * </p>
      * 
-     * @return The facets attached to the specified object.
+     * @return The facets attached to the specified object. Although the response does not include minor version
+     *         information, the most recently applied minor version of each Facet is in effect. See
+     *         <a>GetAppliedSchemaVersion</a> for details.
      */
 
     public java.util.List<SchemaFacet> getSchemaFacets() {
@@ -50,11 +56,15 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The facets attached to the specified object.
+     * The facets attached to the specified object. Although the response does not include minor version information,
+     * the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for
+     * details.
      * </p>
      * 
      * @param schemaFacets
-     *        The facets attached to the specified object.
+     *        The facets attached to the specified object. Although the response does not include minor version
+     *        information, the most recently applied minor version of each Facet is in effect. See
+     *        <a>GetAppliedSchemaVersion</a> for details.
      */
 
     public void setSchemaFacets(java.util.Collection<SchemaFacet> schemaFacets) {
@@ -68,7 +78,9 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The facets attached to the specified object.
+     * The facets attached to the specified object. Although the response does not include minor version information,
+     * the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for
+     * details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +89,9 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param schemaFacets
-     *        The facets attached to the specified object.
+     *        The facets attached to the specified object. Although the response does not include minor version
+     *        information, the most recently applied minor version of each Facet is in effect. See
+     *        <a>GetAppliedSchemaVersion</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +107,15 @@ public class GetObjectInformationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The facets attached to the specified object.
+     * The facets attached to the specified object. Although the response does not include minor version information,
+     * the most recently applied minor version of each Facet is in effect. See <a>GetAppliedSchemaVersion</a> for
+     * details.
      * </p>
      * 
      * @param schemaFacets
-     *        The facets attached to the specified object.
+     *        The facets attached to the specified object. Although the response does not include minor version
+     *        information, the most recently applied minor version of each Facet is in effect. See
+     *        <a>GetAppliedSchemaVersion</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

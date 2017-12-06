@@ -347,10 +347,10 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Creates the Amazon S3 storage location for the account.
-     * </p>
-     * <p>
-     * This location is used to store user log files.
+     * Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic Beanstalk
+     * environments. The Elastic Beanstalk console and EB CLI call this API the first time you create an environment in
+     * a region. If the storage location already exists, <code>CreateStorageLocation</code> still returns the bucket
+     * name but does not create a new bucket.
      * </p>
      * 
      * @param createStorageLocationRequest
@@ -801,7 +801,10 @@ public interface AWSElasticBeanstalk {
      * pairs.
      * </p>
      * <p>
-     * Currently, Elastic Beanstalk only supports tagging Elastic Beanstalk environments.
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1067,7 +1070,35 @@ public interface AWSElasticBeanstalk {
      * <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
      * </p>
      * <p>
-     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments.
+     * Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about
+     * environment tagging, see <a
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging Resources in
+     * Your Elastic Beanstalk Environment</a>.
+     * </p>
+     * <p>
+     * If you create a custom IAM user policy to control permission to this operation, specify one of the following two
+     * virtual actions (or both) instead of the API operation name:
+     * </p>
+     * <dl>
+     * <dt>elasticbeanstalk:AddTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+     * <code>TagsToAdd</code> parameter.
+     * </p>
+     * </dd>
+     * <dt>elasticbeanstalk:RemoveTags</dt>
+     * <dd>
+     * <p>
+     * Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tag keys to remove in the
+     * <code>TagsToRemove</code> parameter.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * For details about creating a custom user policy, see <a href=
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies"
+     * >Creating a Custom User Policy</a>.
      * </p>
      * 
      * @param updateTagsForResourceRequest

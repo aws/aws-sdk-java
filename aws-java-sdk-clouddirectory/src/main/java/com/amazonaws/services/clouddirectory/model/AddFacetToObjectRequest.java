@@ -34,7 +34,7 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
     private String directoryArn;
     /**
      * <p>
-     * Identifiers for the facet that you are adding to the object.
+     * Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      * </p>
      */
     private SchemaFacet schemaFacet;
@@ -99,11 +99,11 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Identifiers for the facet that you are adding to the object.
+     * Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      * </p>
      * 
      * @param schemaFacet
-     *        Identifiers for the facet that you are adding to the object.
+     *        Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      */
 
     public void setSchemaFacet(SchemaFacet schemaFacet) {
@@ -112,10 +112,10 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Identifiers for the facet that you are adding to the object.
+     * Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      * </p>
      * 
-     * @return Identifiers for the facet that you are adding to the object.
+     * @return Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      */
 
     public SchemaFacet getSchemaFacet() {
@@ -124,11 +124,11 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Identifiers for the facet that you are adding to the object.
+     * Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      * </p>
      * 
      * @param schemaFacet
-     *        Identifiers for the facet that you are adding to the object.
+     *        Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

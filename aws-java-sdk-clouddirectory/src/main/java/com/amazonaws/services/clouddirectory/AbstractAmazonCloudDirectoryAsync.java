@@ -353,6 +353,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request) {
+
+        return getAppliedSchemaVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAppliedSchemaVersionRequest, GetAppliedSchemaVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDirectoryResult> getDirectoryAsync(GetDirectoryRequest request) {
 
         return getDirectoryAsync(request, null);
@@ -790,6 +803,32 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     @Override
     public java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTypedLinkFacetRequest, UpdateTypedLinkFacetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request) {
+
+        return upgradeAppliedSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpgradeAppliedSchemaRequest, UpgradeAppliedSchemaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request) {
+
+        return upgradePublishedSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpgradePublishedSchemaRequest, UpgradePublishedSchemaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

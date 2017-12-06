@@ -91,6 +91,9 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                             new JsonErrorShapeMetadata().withErrorCode("IndexedAttributeMissingException").withModeledClass(
                                     com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncompatibleSchemaException").withModeledClass(
+                                    com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.clouddirectory.model.InvalidNextTokenException.class))
                     .addErrorMetadata(
@@ -442,8 +445,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Copies the input published schema into the <a>Directory</a> with the same name and version as that of the
-     * published schema .
+     * Copies the input published schema, at the specified version, into the <a>Directory</a> with the same name and
+     * version as that of the published schema.
      * </p>
      * 
      * @param applySchemaRequest
@@ -923,8 +926,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Performs all the write operations in a batch. Either all the operations succeed or none. Batch writes supports
-     * only object-related operations.
+     * Performs all the write operations in a batch. Either all the operations succeed or none.
      * </p>
      * 
      * @param batchWriteRequest
@@ -2323,6 +2325,79 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Returns current applied schema version ARN, including the minor version in use.
+     * </p>
+     * 
+     * @param getAppliedSchemaVersionRequest
+     * @return Result of the GetAppliedSchemaVersion operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @sample AmazonCloudDirectory.GetAppliedSchemaVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAppliedSchemaVersionResult getAppliedSchemaVersion(GetAppliedSchemaVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAppliedSchemaVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetAppliedSchemaVersionResult executeGetAppliedSchemaVersion(GetAppliedSchemaVersionRequest getAppliedSchemaVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAppliedSchemaVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAppliedSchemaVersionRequest> request = null;
+        Response<GetAppliedSchemaVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAppliedSchemaVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAppliedSchemaVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAppliedSchemaVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAppliedSchemaVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves metadata about a directory.
      * </p>
      * 
@@ -2693,7 +2768,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Lists schemas applied to a directory.
+     * Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor
+     * version.
      * </p>
      * 
      * @param listAppliedSchemaArnsRequest
@@ -2767,7 +2843,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Lists indices attached to an object.
+     * Lists indices attached to the specified object.
      * </p>
      * 
      * @param listAttachedIndicesRequest
@@ -3215,7 +3291,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Lists objects attached to the specified index.
+     * Lists objects and indexed values attached to the index.
      * </p>
      * 
      * @param listIndexRequest
@@ -3850,7 +3926,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Retrieves each published schema Amazon Resource Name (ARN).
+     * Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided, lists the minor
+     * version.
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -4239,9 +4316,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Publishes a development schema with a version. If description and attributes are specified,
-     * <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development
-     * schema description and attributes are used.
+     * Publishes a development schema with a major version and a recommended minor version.
      * </p>
      * 
      * @param publishSchemaRequest
@@ -4923,6 +4998,162 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTypedLinkFacetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTypedLinkFacetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in
+     * <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers
+     * on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given
+     * directory per call. To upgrade multiple directories from one schema, you would need to call this API on each
+     * directory.
+     * </p>
+     * 
+     * @param upgradeAppliedSchemaRequest
+     * @return Result of the UpgradeAppliedSchema operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws IncompatibleSchemaException
+     *         Indicates a failure occurred while performing a check for backward compatibility between the specified
+     *         schema and the schema that is currently applied to the directory.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidAttachmentException
+     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
+     *         name has occurred. Rename the link or the schema and then try again.
+     * @sample AmazonCloudDirectory.UpgradeAppliedSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpgradeAppliedSchemaResult upgradeAppliedSchema(UpgradeAppliedSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpgradeAppliedSchema(request);
+    }
+
+    @SdkInternalApi
+    final UpgradeAppliedSchemaResult executeUpgradeAppliedSchema(UpgradeAppliedSchemaRequest upgradeAppliedSchemaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(upgradeAppliedSchemaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpgradeAppliedSchemaRequest> request = null;
+        Response<UpgradeAppliedSchemaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpgradeAppliedSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(upgradeAppliedSchemaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpgradeAppliedSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpgradeAppliedSchemaResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Upgrades a published schema under a new minor version revision using the current contents of
+     * <code>DevelopmentSchemaArn</code>.
+     * </p>
+     * 
+     * @param upgradePublishedSchemaRequest
+     * @return Result of the UpgradePublishedSchema operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws IncompatibleSchemaException
+     *         Indicates a failure occurred while performing a check for backward compatibility between the specified
+     *         schema and the schema that is currently applied to the directory.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidAttachmentException
+     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
+     *         name has occurred. Rename the link or the schema and then try again.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @sample AmazonCloudDirectory.UpgradePublishedSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpgradePublishedSchemaResult upgradePublishedSchema(UpgradePublishedSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpgradePublishedSchema(request);
+    }
+
+    @SdkInternalApi
+    final UpgradePublishedSchemaResult executeUpgradePublishedSchema(UpgradePublishedSchemaRequest upgradePublishedSchemaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(upgradePublishedSchemaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpgradePublishedSchemaRequest> request = null;
+        Response<UpgradePublishedSchemaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpgradePublishedSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(upgradePublishedSchemaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpgradePublishedSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpgradePublishedSchemaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
