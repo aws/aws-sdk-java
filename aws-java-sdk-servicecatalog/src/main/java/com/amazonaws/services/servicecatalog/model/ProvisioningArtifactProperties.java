@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provisioning artifact properties. For example request JSON, see <a>CreateProvisioningArtifact</a>.
+ * Information about a provisioning artifact (also known as a version) for a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactProperties"
@@ -30,44 +30,56 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Additional information about the provisioning artifact properties. When using this element in a request, you must
-     * specify <code>LoadTemplateFromURL</code>. For more information, see <a>CreateProvisioningArtifact</a>.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      */
     private java.util.Map<String, String> info;
     /**
      * <p>
-     * The type of the provisioning artifact properties. The following provisioning artifact property types are used by
-     * AWS Marketplace products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact properties.
+     *        The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      */
 
     public void setName(String name) {
@@ -76,10 +88,10 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      * 
-     * @return The name assigned to the provisioning artifact properties.
+     * @return The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      */
 
     public String getName() {
@@ -88,11 +100,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The name assigned to the provisioning artifact properties.
+     * The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * </p>
      * 
      * @param name
-     *        The name assigned to the provisioning artifact properties.
+     *        The name of the provisioning artifact (for example, v1 v2beta). No spaces are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +115,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact properties.
+     *        The description of the provisioning artifact, including how it differs from the previous provisioning
+     *        artifact.
      */
 
     public void setDescription(String description) {
@@ -116,10 +129,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      * 
-     * @return The text description of the provisioning artifact properties.
+     * @return The description of the provisioning artifact, including how it differs from the previous provisioning
+     *         artifact.
      */
 
     public String getDescription() {
@@ -128,11 +142,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The text description of the provisioning artifact properties.
+     * The description of the provisioning artifact, including how it differs from the previous provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the provisioning artifact properties.
+     *        The description of the provisioning artifact, including how it differs from the previous provisioning
+     *        artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,13 +158,15 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Additional information about the provisioning artifact properties. When using this element in a request, you must
-     * specify <code>LoadTemplateFromURL</code>. For more information, see <a>CreateProvisioningArtifact</a>.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      * 
-     * @return Additional information about the provisioning artifact properties. When using this element in a request,
-     *         you must specify <code>LoadTemplateFromURL</code>. For more information, see
-     *         <a>CreateProvisioningArtifact</a>.
+     * @return The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *         <p>
+     *         <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -158,14 +175,16 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Additional information about the provisioning artifact properties. When using this element in a request, you must
-     * specify <code>LoadTemplateFromURL</code>. For more information, see <a>CreateProvisioningArtifact</a>.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact properties. When using this element in a request,
-     *        you must specify <code>LoadTemplateFromURL</code>. For more information, see
-     *        <a>CreateProvisioningArtifact</a>.
+     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *        <p>
+     *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -174,14 +193,16 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Additional information about the provisioning artifact properties. When using this element in a request, you must
-     * specify <code>LoadTemplateFromURL</code>. For more information, see <a>CreateProvisioningArtifact</a>.
+     * The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:
+     * </p>
+     * <p>
+     * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact properties. When using this element in a request,
-     *        you must specify <code>LoadTemplateFromURL</code>. For more information, see
-     *        <a>CreateProvisioningArtifact</a>.
+     *        The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format as follows:</p>
+     *        <p>
+     *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,24 +234,44 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of the provisioning artifact properties. The following provisioning artifact property types are used by
-     * AWS Marketplace products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties. The following provisioning artifact property types are
-     *        used by AWS Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -240,23 +281,43 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of the provisioning artifact properties. The following provisioning artifact property types are used by
-     * AWS Marketplace products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the provisioning artifact properties. The following provisioning artifact property types are
-     *         used by AWS Marketplace products:</p>
+     * @return The type of provisioning artifact.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         <code>MARKETPLACE_AMI</code> - AMI products.
+     *         <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *         <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *         </p>
+     *         </li>
      * @see ProvisioningArtifactType
      */
 
@@ -266,24 +327,44 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of the provisioning artifact properties. The following provisioning artifact property types are used by
-     * AWS Marketplace products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties. The following provisioning artifact property types are
-     *        used by AWS Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -295,24 +376,44 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of the provisioning artifact properties. The following provisioning artifact property types are used by
-     * AWS Marketplace products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties. The following provisioning artifact property types are
-     *        used by AWS Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -322,24 +423,44 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The type of the provisioning artifact properties. The following provisioning artifact property types are used by
-     * AWS Marketplace products:
+     * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     * <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the provisioning artifact properties. The following provisioning artifact property types are
-     *        used by AWS Marketplace products:</p>
+     *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
+     *        <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */

@@ -25,24 +25,24 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of account IDs associated with access to the portfolio.
+     * Information about the AWS accounts with access to the portfolio.
      * </p>
      */
     private java.util.List<String> accountIds;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * List of account IDs associated with access to the portfolio.
+     * Information about the AWS accounts with access to the portfolio.
      * </p>
      * 
-     * @return List of account IDs associated with access to the portfolio.
+     * @return Information about the AWS accounts with access to the portfolio.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -51,11 +51,11 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of account IDs associated with access to the portfolio.
+     * Information about the AWS accounts with access to the portfolio.
      * </p>
      * 
      * @param accountIds
-     *        List of account IDs associated with access to the portfolio.
+     *        Information about the AWS accounts with access to the portfolio.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -69,7 +69,7 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of account IDs associated with access to the portfolio.
+     * Information about the AWS accounts with access to the portfolio.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param accountIds
-     *        List of account IDs associated with access to the portfolio.
+     *        Information about the AWS accounts with access to the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of account IDs associated with access to the portfolio.
+     * Information about the AWS accounts with access to the portfolio.
      * </p>
      * 
      * @param accountIds
-     *        List of account IDs associated with access to the portfolio.
+     *        Information about the AWS accounts with access to the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -124,12 +124,12 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -138,13 +138,13 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

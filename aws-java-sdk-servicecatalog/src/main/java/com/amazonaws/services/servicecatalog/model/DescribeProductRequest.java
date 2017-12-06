@@ -50,7 +50,7 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
     private String acceptLanguage;
     /**
      * <p>
-     * The <code>ProductId</code> of the product to describe.
+     * The product identifier.
      * </p>
      */
     private String id;
@@ -196,11 +196,11 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>ProductId</code> of the product to describe.
+     * The product identifier.
      * </p>
      * 
      * @param id
-     *        The <code>ProductId</code> of the product to describe.
+     *        The product identifier.
      */
 
     public void setId(String id) {
@@ -209,10 +209,10 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>ProductId</code> of the product to describe.
+     * The product identifier.
      * </p>
      * 
-     * @return The <code>ProductId</code> of the product to describe.
+     * @return The product identifier.
      */
 
     public String getId() {
@@ -221,11 +221,11 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>ProductId</code> of the product to describe.
+     * The product identifier.
      * </p>
      * 
      * @param id
-     *        The <code>ProductId</code> of the product to describe.
+     *        The product identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An output for the specified Product object created as the result of a request. For example, a CloudFormation-backed
- * product that creates an S3 bucket would have an output for the S3 bucket URL.
+ * The output for the product created as the result of a request. For example, the output for a CloudFormation-backed
+ * product that creates an S3 bucket would include the S3 bucket URL.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordOutput" target="_top">AWS API
@@ -43,7 +43,7 @@ public class RecordOutput implements Serializable, Cloneable, StructuredPojo {
     private String outputValue;
     /**
      * <p>
-     * The text description of the output.
+     * The description of the output.
      * </p>
      */
     private String description;
@@ -130,11 +130,11 @@ public class RecordOutput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text description of the output.
+     * The description of the output.
      * </p>
      * 
      * @param description
-     *        The text description of the output.
+     *        The description of the output.
      */
 
     public void setDescription(String description) {
@@ -143,10 +143,10 @@ public class RecordOutput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text description of the output.
+     * The description of the output.
      * </p>
      * 
-     * @return The text description of the output.
+     * @return The description of the output.
      */
 
     public String getDescription() {
@@ -155,11 +155,11 @@ public class RecordOutput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text description of the output.
+     * The description of the output.
      * </p>
      * 
      * @param description
-     *        The text description of the output.
+     *        The description of the output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

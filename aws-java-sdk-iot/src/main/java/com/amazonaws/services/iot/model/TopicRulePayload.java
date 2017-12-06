@@ -57,6 +57,12 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String awsIotSqlVersion;
+    /**
+     * <p>
+     * The action to take when an error occurs.
+     * </p>
+     */
+    private Action errorAction;
 
     /**
      * <p>
@@ -313,6 +319,46 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The action to take when an error occurs.
+     * </p>
+     * 
+     * @param errorAction
+     *        The action to take when an error occurs.
+     */
+
+    public void setErrorAction(Action errorAction) {
+        this.errorAction = errorAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when an error occurs.
+     * </p>
+     * 
+     * @return The action to take when an error occurs.
+     */
+
+    public Action getErrorAction() {
+        return this.errorAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when an error occurs.
+     * </p>
+     * 
+     * @param errorAction
+     *        The action to take when an error occurs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicRulePayload withErrorAction(Action errorAction) {
+        setErrorAction(errorAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -332,7 +378,9 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
         if (getRuleDisabled() != null)
             sb.append("RuleDisabled: ").append(getRuleDisabled()).append(",");
         if (getAwsIotSqlVersion() != null)
-            sb.append("AwsIotSqlVersion: ").append(getAwsIotSqlVersion());
+            sb.append("AwsIotSqlVersion: ").append(getAwsIotSqlVersion()).append(",");
+        if (getErrorAction() != null)
+            sb.append("ErrorAction: ").append(getErrorAction());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +415,10 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAwsIotSqlVersion() != null && other.getAwsIotSqlVersion().equals(this.getAwsIotSqlVersion()) == false)
             return false;
+        if (other.getErrorAction() == null ^ this.getErrorAction() == null)
+            return false;
+        if (other.getErrorAction() != null && other.getErrorAction().equals(this.getErrorAction()) == false)
+            return false;
         return true;
     }
 
@@ -380,6 +432,7 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getRuleDisabled() == null) ? 0 : getRuleDisabled().hashCode());
         hashCode = prime * hashCode + ((getAwsIotSqlVersion() == null) ? 0 : getAwsIotSqlVersion().hashCode());
+        hashCode = prime * hashCode + ((getErrorAction() == null) ? 0 : getErrorAction().hashCode());
         return hashCode;
     }
 

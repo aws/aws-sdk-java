@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameter key-value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code> is set to
- * true, <code>Value</code> is ignored and the value for <code>Key</code> is kept as previously set (current value).
+ * The parameter key-value pair used to update a provisioned product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningParameter"
@@ -31,33 +30,30 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     * <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     * The parameter value.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.
+     * If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      * </p>
      */
     private Boolean usePreviousValue;
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The parameter key.
      */
 
     public void setKey(String key) {
@@ -66,11 +62,10 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      * 
-     * @return The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     *         <a>DescribeProvisioningParameters</a>.
+     * @return The parameter key.
      */
 
     public String getKey() {
@@ -79,12 +74,11 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The parameter key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,13 +89,11 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     * <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     * The parameter value.
      * </p>
      * 
      * @param value
-     *        The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     *        <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     *        The parameter value.
      */
 
     public void setValue(String value) {
@@ -110,12 +102,10 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     * <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     * The parameter value.
      * </p>
      * 
-     * @return The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     *         <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     * @return The parameter value.
      */
 
     public String getValue() {
@@ -124,13 +114,11 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     * <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     * The parameter value.
      * </p>
      * 
      * @param value
-     *        The value to use for updating the product provisioning. Any constraints on this value can be found in the
-     *        <code>ProvisioningArtifactParameter</code> parameter for <code>Key</code>.
+     *        The parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,13 +129,11 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.
+     * If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      * </p>
      * 
      * @param usePreviousValue
-     *        If true, uses the currently set value for <code>Key</code>, ignoring
-     *        <code>UpdateProvisioningParameter.Value</code>.
+     *        If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      */
 
     public void setUsePreviousValue(Boolean usePreviousValue) {
@@ -156,12 +142,10 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.
+     * If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      * </p>
      * 
-     * @return If true, uses the currently set value for <code>Key</code>, ignoring
-     *         <code>UpdateProvisioningParameter.Value</code>.
+     * @return If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      */
 
     public Boolean getUsePreviousValue() {
@@ -170,13 +154,11 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.
+     * If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      * </p>
      * 
      * @param usePreviousValue
-     *        If true, uses the currently set value for <code>Key</code>, ignoring
-     *        <code>UpdateProvisioningParameter.Value</code>.
+     *        If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,12 +169,10 @@ public class UpdateProvisioningParameter implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * If true, uses the currently set value for <code>Key</code>, ignoring
-     * <code>UpdateProvisioningParameter.Value</code>.
+     * If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      * </p>
      * 
-     * @return If true, uses the currently set value for <code>Key</code>, ignoring
-     *         <code>UpdateProvisioningParameter.Value</code>.
+     * @return If set to true, <code>Value</code> is ignored and the previous parameter value is kept.
      */
 
     public Boolean isUsePreviousValue() {

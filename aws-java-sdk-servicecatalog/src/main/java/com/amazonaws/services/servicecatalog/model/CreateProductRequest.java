@@ -62,7 +62,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String owner;
     /**
      * <p>
-     * The text description of the product.
+     * The description of the product.
      * </p>
      */
     private String description;
@@ -74,44 +74,44 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String distributor;
     /**
      * <p>
-     * Support information about the product.
+     * The support information about the product.
      * </p>
      */
     private String supportDescription;
     /**
      * <p>
-     * Contact email for product support.
+     * The contact email for product support.
      * </p>
      */
     private String supportEmail;
     /**
      * <p>
-     * Contact URL for product support.
+     * The contact URL for product support.
      * </p>
      */
     private String supportUrl;
     /**
      * <p>
-     * The type of the product to create.
+     * The type of product.
      * </p>
      */
     private String productType;
     /**
      * <p>
-     * Tags to associate with the new product.
+     * The tags to associate with the product.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Parameters for the provisioning artifact.
+     * The configuration of the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactProperties provisioningArtifactParameters;
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      */
     private String idempotencyToken;
@@ -337,11 +337,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text description of the product.
+     * The description of the product.
      * </p>
      * 
      * @param description
-     *        The text description of the product.
+     *        The description of the product.
      */
 
     public void setDescription(String description) {
@@ -350,10 +350,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text description of the product.
+     * The description of the product.
      * </p>
      * 
-     * @return The text description of the product.
+     * @return The description of the product.
      */
 
     public String getDescription() {
@@ -362,11 +362,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text description of the product.
+     * The description of the product.
      * </p>
      * 
      * @param description
-     *        The text description of the product.
+     *        The description of the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,11 +417,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Support information about the product.
+     * The support information about the product.
      * </p>
      * 
      * @param supportDescription
-     *        Support information about the product.
+     *        The support information about the product.
      */
 
     public void setSupportDescription(String supportDescription) {
@@ -430,10 +430,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Support information about the product.
+     * The support information about the product.
      * </p>
      * 
-     * @return Support information about the product.
+     * @return The support information about the product.
      */
 
     public String getSupportDescription() {
@@ -442,11 +442,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Support information about the product.
+     * The support information about the product.
      * </p>
      * 
      * @param supportDescription
-     *        Support information about the product.
+     *        The support information about the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,11 +457,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Contact email for product support.
+     * The contact email for product support.
      * </p>
      * 
      * @param supportEmail
-     *        Contact email for product support.
+     *        The contact email for product support.
      */
 
     public void setSupportEmail(String supportEmail) {
@@ -470,10 +470,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Contact email for product support.
+     * The contact email for product support.
      * </p>
      * 
-     * @return Contact email for product support.
+     * @return The contact email for product support.
      */
 
     public String getSupportEmail() {
@@ -482,11 +482,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Contact email for product support.
+     * The contact email for product support.
      * </p>
      * 
      * @param supportEmail
-     *        Contact email for product support.
+     *        The contact email for product support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,11 +497,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Contact URL for product support.
+     * The contact URL for product support.
      * </p>
      * 
      * @param supportUrl
-     *        Contact URL for product support.
+     *        The contact URL for product support.
      */
 
     public void setSupportUrl(String supportUrl) {
@@ -510,10 +510,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Contact URL for product support.
+     * The contact URL for product support.
      * </p>
      * 
-     * @return Contact URL for product support.
+     * @return The contact URL for product support.
      */
 
     public String getSupportUrl() {
@@ -522,11 +522,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Contact URL for product support.
+     * The contact URL for product support.
      * </p>
      * 
      * @param supportUrl
-     *        Contact URL for product support.
+     *        The contact URL for product support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,11 +537,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the product to create.
+     * The type of product.
      * </p>
      * 
      * @param productType
-     *        The type of the product to create.
+     *        The type of product.
      * @see ProductType
      */
 
@@ -551,10 +551,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the product to create.
+     * The type of product.
      * </p>
      * 
-     * @return The type of the product to create.
+     * @return The type of product.
      * @see ProductType
      */
 
@@ -564,11 +564,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the product to create.
+     * The type of product.
      * </p>
      * 
      * @param productType
-     *        The type of the product to create.
+     *        The type of product.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductType
      */
@@ -580,11 +580,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the product to create.
+     * The type of product.
      * </p>
      * 
      * @param productType
-     *        The type of the product to create.
+     *        The type of product.
      * @see ProductType
      */
 
@@ -594,11 +594,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of the product to create.
+     * The type of product.
      * </p>
      * 
      * @param productType
-     *        The type of the product to create.
+     *        The type of product.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductType
      */
@@ -610,10 +610,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to associate with the new product.
+     * The tags to associate with the product.
      * </p>
      * 
-     * @return Tags to associate with the new product.
+     * @return The tags to associate with the product.
      */
 
     public java.util.List<Tag> getTags() {
@@ -622,11 +622,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to associate with the new product.
+     * The tags to associate with the product.
      * </p>
      * 
      * @param tags
-     *        Tags to associate with the new product.
+     *        The tags to associate with the product.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -640,7 +640,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to associate with the new product.
+     * The tags to associate with the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -649,7 +649,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        Tags to associate with the new product.
+     *        The tags to associate with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,11 +665,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tags to associate with the new product.
+     * The tags to associate with the product.
      * </p>
      * 
      * @param tags
-     *        Tags to associate with the new product.
+     *        The tags to associate with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -680,11 +680,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Parameters for the provisioning artifact.
+     * The configuration of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        Parameters for the provisioning artifact.
+     *        The configuration of the provisioning artifact.
      */
 
     public void setProvisioningArtifactParameters(ProvisioningArtifactProperties provisioningArtifactParameters) {
@@ -693,10 +693,10 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Parameters for the provisioning artifact.
+     * The configuration of the provisioning artifact.
      * </p>
      * 
-     * @return Parameters for the provisioning artifact.
+     * @return The configuration of the provisioning artifact.
      */
 
     public ProvisioningArtifactProperties getProvisioningArtifactParameters() {
@@ -705,11 +705,11 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Parameters for the provisioning artifact.
+     * The configuration of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        Parameters for the provisioning artifact.
+     *        The configuration of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,13 +720,13 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -735,12 +735,12 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
-     * @return A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided
-     *         that you also specify a different idempotency token for each request.
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *         idempotency token, the same response is returned for each repeated request.
      */
 
     public String getIdempotencyToken() {
@@ -749,13 +749,13 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

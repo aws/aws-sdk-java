@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An attempt was made to modify a resource that is in an invalid state. Inspect the resource you are using for this
- * operation to ensure that all resource states are valid before retrying the operation.
+ * An attempt was made to modify a resource that is in a state that is not valid. Check your resources to ensure that
+ * they are in valid states before retrying the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

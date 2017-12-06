@@ -25,30 +25,30 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      */
     private PortfolioDetail portfolioDetail;
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * TagOptions associated with the portfolio.
+     * Information about the TagOptions associated with the portfolio.
      * </p>
      */
     private java.util.List<TagOptionDetail> tagOptions;
 
     /**
      * <p>
-     * Detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
      * @param portfolioDetail
-     *        Detailed portfolio information.
+     *        Information about the portfolio.
      */
 
     public void setPortfolioDetail(PortfolioDetail portfolioDetail) {
@@ -57,10 +57,10 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
-     * @return Detailed portfolio information.
+     * @return Information about the portfolio.
      */
 
     public PortfolioDetail getPortfolioDetail() {
@@ -69,11 +69,11 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
      * @param portfolioDetail
-     *        Detailed portfolio information.
+     *        Information about the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
-     * @return Tags associated with the portfolio.
+     * @return Information about the tags associated with the portfolio.
      */
 
     public java.util.List<Tag> getTags() {
@@ -96,11 +96,11 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the portfolio.
+     *        Information about the tags associated with the portfolio.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -114,7 +114,7 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param tags
-     *        Tags associated with the portfolio.
+     *        Information about the tags associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Tags associated with the portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
      * @param tags
-     *        Tags associated with the portfolio.
+     *        Information about the tags associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,10 +154,10 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * TagOptions associated with the portfolio.
+     * Information about the TagOptions associated with the portfolio.
      * </p>
      * 
-     * @return TagOptions associated with the portfolio.
+     * @return Information about the TagOptions associated with the portfolio.
      */
 
     public java.util.List<TagOptionDetail> getTagOptions() {
@@ -166,11 +166,11 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * TagOptions associated with the portfolio.
+     * Information about the TagOptions associated with the portfolio.
      * </p>
      * 
      * @param tagOptions
-     *        TagOptions associated with the portfolio.
+     *        Information about the TagOptions associated with the portfolio.
      */
 
     public void setTagOptions(java.util.Collection<TagOptionDetail> tagOptions) {
@@ -184,7 +184,7 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * TagOptions associated with the portfolio.
+     * Information about the TagOptions associated with the portfolio.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,7 +193,7 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param tagOptions
-     *        TagOptions associated with the portfolio.
+     *        Information about the TagOptions associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * TagOptions associated with the portfolio.
+     * Information about the TagOptions associated with the portfolio.
      * </p>
      * 
      * @param tagOptions
-     *        TagOptions associated with the portfolio.
+     *        Information about the TagOptions associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

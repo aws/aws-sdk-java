@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An administrator-specified constraint to apply when provisioning a product.
+ * Summary information about a constraint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintSummary" target="_top">AWS
@@ -30,24 +30,74 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the constraint.
+     *        The type of constraint.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAUNCH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPLATE</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -56,10 +106,43 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the constraint.
+     * @return The type of constraint.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>LAUNCH</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOTIFICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TEMPLATE</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -68,11 +151,44 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the constraint.
+     *        The type of constraint.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAUNCH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPLATE</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +199,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      * 
      * @param description
-     *        The text description of the constraint.
+     *        The description of the constraint.
      */
 
     public void setDescription(String description) {
@@ -96,10 +212,10 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      * 
-     * @return The text description of the constraint.
+     * @return The description of the constraint.
      */
 
     public String getDescription() {
@@ -108,11 +224,11 @@ public class ConstraintSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      * 
      * @param description
-     *        The text description of the constraint.
+     *        The description of the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

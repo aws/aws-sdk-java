@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Key-value pairs to associate with this provisioning. These tags are entirely discretionary and are propagated to the
- * resources created in the provisioning.
+ * Information about a tag. A tag is a key-value pair. Tags are entirely discretionary and are propagated to the
+ * resources created when provisioning a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag" target="_top">AWS API
@@ -31,25 +31,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The desired value for this key.
+     * The value for this key.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The tag key.
      */
 
     public void setKey(String key) {
@@ -58,11 +57,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      * 
-     * @return The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     *         <a>DescribeProvisioningParameters</a>.
+     * @return The tag key.
      */
 
     public String getKey() {
@@ -71,12 +69,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The tag key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.TagKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +84,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The desired value for this key.
+     * The value for this key.
      * </p>
      * 
      * @param value
-     *        The desired value for this key.
+     *        The value for this key.
      */
 
     public void setValue(String value) {
@@ -100,10 +97,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The desired value for this key.
+     * The value for this key.
      * </p>
      * 
-     * @return The desired value for this key.
+     * @return The value for this key.
      */
 
     public String getValue() {
@@ -112,11 +109,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The desired value for this key.
+     * The value for this key.
      * </p>
      * 
      * @param value
-     *        The desired value for this key.
+     *        The value for this key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

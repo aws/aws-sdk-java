@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The current limits of the service would have been exceeded by this operation. Reduce the resource use or increase the
- * service limits and retry the operation.
+ * The current limits of the service would have been exceeded by this operation. Decrease your resource use or increase
+ * your service limits and retry the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

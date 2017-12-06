@@ -25,18 +25,18 @@ public class CreateTagOptionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      */
     private TagOptionDetail tagOptionDetail;
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      * 
      * @param tagOptionDetail
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOption.
      */
 
     public void setTagOptionDetail(TagOptionDetail tagOptionDetail) {
@@ -45,10 +45,10 @@ public class CreateTagOptionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      * 
-     * @return The resulting detailed TagOption information.
+     * @return Information about the TagOption.
      */
 
     public TagOptionDetail getTagOptionDetail() {
@@ -57,11 +57,11 @@ public class CreateTagOptionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed TagOption information.
+     * Information about the TagOption.
      * </p>
      * 
      * @param tagOptionDetail
-     *        The resulting detailed TagOption information.
+     *        Information about the TagOption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

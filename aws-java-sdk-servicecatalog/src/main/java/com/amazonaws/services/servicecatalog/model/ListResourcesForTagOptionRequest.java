@@ -27,37 +27,48 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      */
     private String tagOptionId;
     /**
      * <p>
-     * Resource type.
+     * The resource type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Portfolio</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Product</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      */
     private Integer pageSize;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * Identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      * 
      * @param tagOptionId
-     *        Identifier of the TagOption.
+     *        The TagOption identifier.
      */
 
     public void setTagOptionId(String tagOptionId) {
@@ -66,10 +77,10 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      * 
-     * @return Identifier of the TagOption.
+     * @return The TagOption identifier.
      */
 
     public String getTagOptionId() {
@@ -78,11 +89,11 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      * 
      * @param tagOptionId
-     *        Identifier of the TagOption.
+     *        The TagOption identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +104,34 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Resource type.
+     * The resource type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Portfolio</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Product</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
-     *        Resource type.
+     *        The resource type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Portfolio</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Product</code>
+     *        </p>
+     *        </li>
      */
 
     public void setResourceType(String resourceType) {
@@ -106,10 +140,33 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Resource type.
+     * The resource type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Portfolio</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Product</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Resource type.
+     * @return The resource type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Portfolio</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Product</code>
+     *         </p>
+     *         </li>
      */
 
     public String getResourceType() {
@@ -118,11 +175,34 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Resource type.
+     * The resource type.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Portfolio</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Product</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
-     *        Resource type.
+     *        The resource type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Portfolio</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Product</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,13 +213,11 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -148,12 +226,10 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
-     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return The maximum number of items to return with this call.
      */
 
     public Integer getPageSize() {
@@ -162,13 +238,11 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,12 +253,11 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -193,11 +266,10 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -206,12 +278,11 @@ public class ListResourcesForTagOptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information about a path for a user to have access to a specified product.
+ * Summary information about a product path for a user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/LaunchPathSummary" target="_top">AWS
@@ -30,36 +30,36 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the product path.
+     * The identifier of the product path.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * List of constraints on the portfolio-product relationship.
+     * The constraints on the portfolio-product relationship.
      * </p>
      */
     private java.util.List<ConstraintSummary> constraintSummaries;
     /**
      * <p>
-     * List of tags used by this launch path.
+     * The tags associated with this product path.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Corresponds to the name of the portfolio to which the user was assigned.
+     * The name of the portfolio to which the user was assigned.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The unique identifier of the product path.
+     * The identifier of the product path.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the product path.
+     *        The identifier of the product path.
      */
 
     public void setId(String id) {
@@ -68,10 +68,10 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the product path.
+     * The identifier of the product path.
      * </p>
      * 
-     * @return The unique identifier of the product path.
+     * @return The identifier of the product path.
      */
 
     public String getId() {
@@ -80,11 +80,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the product path.
+     * The identifier of the product path.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the product path.
+     *        The identifier of the product path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,10 +95,10 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of constraints on the portfolio-product relationship.
+     * The constraints on the portfolio-product relationship.
      * </p>
      * 
-     * @return List of constraints on the portfolio-product relationship.
+     * @return The constraints on the portfolio-product relationship.
      */
 
     public java.util.List<ConstraintSummary> getConstraintSummaries() {
@@ -107,11 +107,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of constraints on the portfolio-product relationship.
+     * The constraints on the portfolio-product relationship.
      * </p>
      * 
      * @param constraintSummaries
-     *        List of constraints on the portfolio-product relationship.
+     *        The constraints on the portfolio-product relationship.
      */
 
     public void setConstraintSummaries(java.util.Collection<ConstraintSummary> constraintSummaries) {
@@ -125,7 +125,7 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of constraints on the portfolio-product relationship.
+     * The constraints on the portfolio-product relationship.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +134,7 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param constraintSummaries
-     *        List of constraints on the portfolio-product relationship.
+     *        The constraints on the portfolio-product relationship.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +150,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of constraints on the portfolio-product relationship.
+     * The constraints on the portfolio-product relationship.
      * </p>
      * 
      * @param constraintSummaries
-     *        List of constraints on the portfolio-product relationship.
+     *        The constraints on the portfolio-product relationship.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,10 +165,10 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of tags used by this launch path.
+     * The tags associated with this product path.
      * </p>
      * 
-     * @return List of tags used by this launch path.
+     * @return The tags associated with this product path.
      */
 
     public java.util.List<Tag> getTags() {
@@ -177,11 +177,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of tags used by this launch path.
+     * The tags associated with this product path.
      * </p>
      * 
      * @param tags
-     *        List of tags used by this launch path.
+     *        The tags associated with this product path.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -195,7 +195,7 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of tags used by this launch path.
+     * The tags associated with this product path.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,7 +204,7 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param tags
-     *        List of tags used by this launch path.
+     *        The tags associated with this product path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of tags used by this launch path.
+     * The tags associated with this product path.
      * </p>
      * 
      * @param tags
-     *        List of tags used by this launch path.
+     *        The tags associated with this product path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +235,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Corresponds to the name of the portfolio to which the user was assigned.
+     * The name of the portfolio to which the user was assigned.
      * </p>
      * 
      * @param name
-     *        Corresponds to the name of the portfolio to which the user was assigned.
+     *        The name of the portfolio to which the user was assigned.
      */
 
     public void setName(String name) {
@@ -248,10 +248,10 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Corresponds to the name of the portfolio to which the user was assigned.
+     * The name of the portfolio to which the user was assigned.
      * </p>
      * 
-     * @return Corresponds to the name of the portfolio to which the user was assigned.
+     * @return The name of the portfolio to which the user was assigned.
      */
 
     public String getName() {
@@ -260,11 +260,11 @@ public class LaunchPathSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Corresponds to the name of the portfolio to which the user was assigned.
+     * The name of the portfolio to which the user was assigned.
      * </p>
      * 
      * @param name
-     *        Corresponds to the name of the portfolio to which the user was assigned.
+     *        The name of the portfolio to which the user was assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,24 +25,24 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of detailed constraint information objects.
+     * Information about the constraints.
      * </p>
      */
     private java.util.List<ConstraintDetail> constraintDetails;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * List of detailed constraint information objects.
+     * Information about the constraints.
      * </p>
      * 
-     * @return List of detailed constraint information objects.
+     * @return Information about the constraints.
      */
 
     public java.util.List<ConstraintDetail> getConstraintDetails() {
@@ -51,11 +51,11 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of detailed constraint information objects.
+     * Information about the constraints.
      * </p>
      * 
      * @param constraintDetails
-     *        List of detailed constraint information objects.
+     *        Information about the constraints.
      */
 
     public void setConstraintDetails(java.util.Collection<ConstraintDetail> constraintDetails) {
@@ -69,7 +69,7 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of detailed constraint information objects.
+     * Information about the constraints.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param constraintDetails
-     *        List of detailed constraint information objects.
+     *        Information about the constraints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of detailed constraint information objects.
+     * Information about the constraints.
      * </p>
      * 
      * @param constraintDetails
-     *        List of detailed constraint information objects.
+     *        Information about the constraints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -124,12 +124,12 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -138,13 +138,13 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

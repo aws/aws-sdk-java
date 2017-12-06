@@ -56,7 +56,7 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
     private String portfolioId;
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      */
     private String principalARN;
@@ -242,11 +242,11 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
      * @param principalARN
-     *        The ARN representing the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group).
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -255,10 +255,10 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
-     * @return The ARN representing the principal (IAM user, role, or group).
+     * @return The ARN of the principal (IAM user, role, or group).
      */
 
     public String getPrincipalARN() {
@@ -267,11 +267,11 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
      * @param principalARN
-     *        The ARN representing the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

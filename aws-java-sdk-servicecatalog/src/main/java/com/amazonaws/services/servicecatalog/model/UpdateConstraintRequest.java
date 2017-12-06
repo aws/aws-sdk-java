@@ -50,13 +50,13 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The identifier of the constraint.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The updated text description of the constraint.
+     * The updated description of the constraint.
      * </p>
      */
     private String description;
@@ -202,11 +202,11 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The identifier of the constraint.
      * </p>
      * 
      * @param id
-     *        The identifier of the constraint to update.
+     *        The identifier of the constraint.
      */
 
     public void setId(String id) {
@@ -215,10 +215,10 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The identifier of the constraint.
      * </p>
      * 
-     * @return The identifier of the constraint to update.
+     * @return The identifier of the constraint.
      */
 
     public String getId() {
@@ -227,11 +227,11 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the constraint to update.
+     * The identifier of the constraint.
      * </p>
      * 
      * @param id
-     *        The identifier of the constraint to update.
+     *        The identifier of the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +242,11 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The updated text description of the constraint.
+     * The updated description of the constraint.
      * </p>
      * 
      * @param description
-     *        The updated text description of the constraint.
+     *        The updated description of the constraint.
      */
 
     public void setDescription(String description) {
@@ -255,10 +255,10 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The updated text description of the constraint.
+     * The updated description of the constraint.
      * </p>
      * 
-     * @return The updated text description of the constraint.
+     * @return The updated description of the constraint.
      */
 
     public String getDescription() {
@@ -267,11 +267,11 @@ public class UpdateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The updated text description of the constraint.
+     * The updated description of the constraint.
      * </p>
      * 
      * @param description
-     *        The updated text description of the constraint.
+     *        The updated description of the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

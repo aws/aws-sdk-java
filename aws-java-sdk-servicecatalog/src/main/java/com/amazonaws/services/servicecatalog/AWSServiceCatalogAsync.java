@@ -27,39 +27,19 @@ import com.amazonaws.services.servicecatalog.model.*;
  * <p>
  * <fullname>AWS Service Catalog</fullname>
  * <p>
- * <b>Overview</b>
- * </p>
- * <p>
- * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS
- * Service Catalog end user API. To get the most out of this documentation, be familiar with the terminology discussed
- * in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
+ * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
+ * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
+ * familiar with the terminology discussed in <a
+ * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
- * <p>
- * <i>Additional Resources</i>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">AWS Service Catalog
- * Administrator Guide</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/introduction.html">AWS Service Catalog User
- * Guide</a>
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Accepts an offer to share a portfolio.
+     * Accepts an offer to share the specified portfolio.
      * </p>
      * 
      * @param acceptPortfolioShareRequest
@@ -72,7 +52,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Accepts an offer to share a portfolio.
+     * Accepts an offer to share the specified portfolio.
      * </p>
      * 
      * @param acceptPortfolioShareRequest
@@ -125,7 +105,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Associates a product with a portfolio.
+     * Associates the specified product with the specified portfolio.
      * </p>
      * 
      * @param associateProductWithPortfolioRequest
@@ -140,7 +120,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Associates a product with a portfolio.
+     * Associates the specified product with the specified portfolio.
      * </p>
      * 
      * @param associateProductWithPortfolioRequest
@@ -160,7 +140,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Associate a TagOption identifier with a resource identifier.
+     * Associate the specified TagOption with the specified portfolio or product.
      * </p>
      * 
      * @param associateTagOptionWithResourceRequest
@@ -175,7 +155,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Associate a TagOption identifier with a resource identifier.
+     * Associate the specified TagOption with the specified portfolio or product.
      * </p>
      * 
      * @param associateTagOptionWithResourceRequest
@@ -198,7 +178,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Copies the specified source product to the specified target product or a new product.
      * </p>
      * <p>
-     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * You can copy a product to the same account or another account. You can copy a product to the same region or
      * another region.
      * </p>
      * <p>
@@ -219,7 +199,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Copies the specified source product to the specified target product or a new product.
      * </p>
      * <p>
-     * You can copy the product to the same account or another account. You can copy the product to the same region or
+     * You can copy a product to the same account or another account. You can copy a product to the same region or
      * another region.
      * </p>
      * <p>
@@ -242,8 +222,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
+     * Creates a constraint.
      * </p>
      * 
      * @param createConstraintRequest
@@ -256,8 +235,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
+     * Creates a constraint.
      * </p>
      * 
      * @param createConstraintRequest
@@ -275,7 +253,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new portfolio.
+     * Creates a portfolio.
      * </p>
      * 
      * @param createPortfolioRequest
@@ -288,7 +266,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new portfolio.
+     * Creates a portfolio.
      * </p>
      * 
      * @param createPortfolioRequest
@@ -306,7 +284,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new portfolio share.
+     * Shares the specified portfolio with the specified account.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -319,7 +297,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new portfolio share.
+     * Shares the specified portfolio with the specified account.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -337,7 +315,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new product.
+     * Creates a product.
      * </p>
      * 
      * @param createProductRequest
@@ -350,7 +328,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new product.
+     * Creates a product.
      * </p>
      * 
      * @param createProductRequest
@@ -368,8 +346,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new provisioning artifact for the specified product. This operation does not work with a product that
-     * has been shared with you.
+     * Creates a provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot create a provisioning artifact for a product that was shared with you.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -383,8 +363,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new provisioning artifact for the specified product. This operation does not work with a product that
-     * has been shared with you.
+     * Creates a provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot create a provisioning artifact for a product that was shared with you.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -403,7 +385,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new TagOption.
+     * Creates a TagOption.
      * </p>
      * 
      * @param createTagOptionRequest
@@ -416,7 +398,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new TagOption.
+     * Creates a TagOption.
      * </p>
      * 
      * @param createTagOptionRequest
@@ -465,8 +447,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or
-     * if it has products, users, constraints, or shared accounts associated with it.
+     * Deletes the specified portfolio.
+     * </p>
+     * <p>
+     * You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or
+     * shared accounts.
      * </p>
      * 
      * @param deletePortfolioRequest
@@ -479,8 +464,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or
-     * if it has products, users, constraints, or shared accounts associated with it.
+     * Deletes the specified portfolio.
+     * </p>
+     * <p>
+     * You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or
+     * shared accounts.
      * </p>
      * 
      * @param deletePortfolioRequest
@@ -498,7 +486,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio share.
+     * Stops sharing the specified portfolio with the specified account.
      * </p>
      * 
      * @param deletePortfolioShareRequest
@@ -511,7 +499,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio share.
+     * Stops sharing the specified portfolio with the specified account.
      * </p>
      * 
      * @param deletePortfolioShareRequest
@@ -529,8 +517,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified product. This operation does not work with a product that has been shared with you or is
-     * associated with a portfolio.
+     * Deletes the specified product.
+     * </p>
+     * <p>
+     * You cannot delete a product if it was shared with you or is associated with a portfolio.
      * </p>
      * 
      * @param deleteProductRequest
@@ -543,8 +533,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified product. This operation does not work with a product that has been shared with you or is
-     * associated with a portfolio.
+     * Deletes the specified product.
+     * </p>
+     * <p>
+     * You cannot delete a product if it was shared with you or is associated with a portfolio.
      * </p>
      * 
      * @param deleteProductRequest
@@ -562,9 +554,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated
-     * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
-     * product must have at least one provisioning artifact).
+     * Deletes the specified provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete
+     * the last provisioning artifact for a product, because a product must have at least one provisioning artifact.
      * </p>
      * 
      * @param deleteProvisioningArtifactRequest
@@ -578,9 +572,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated
-     * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
-     * product must have at least one provisioning artifact).
+     * Deletes the specified provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete
+     * the last provisioning artifact for a product, because a product must have at least one provisioning artifact.
      * </p>
      * 
      * @param deleteProvisioningArtifactRequest
@@ -599,7 +595,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information for a specified constraint.
+     * Gets information about the specified constraint.
      * </p>
      * 
      * @param describeConstraintRequest
@@ -612,7 +608,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information for a specified constraint.
+     * Gets information about the specified constraint.
      * </p>
      * 
      * @param describeConstraintRequest
@@ -630,7 +626,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Describes the status of the specified copy product operation.
+     * Gets the status of the specified copy product operation.
      * </p>
      * 
      * @param describeCopyProductStatusRequest
@@ -644,7 +640,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Describes the status of the specified copy product operation.
+     * Gets the status of the specified copy product operation.
      * </p>
      * 
      * @param describeCopyProductStatusRequest
@@ -663,7 +659,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information and any tags associated with the specified portfolio.
+     * Gets information about the specified portfolio.
      * </p>
      * 
      * @param describePortfolioRequest
@@ -676,7 +672,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information and any tags associated with the specified portfolio.
+     * Gets information about the specified portfolio.
      * </p>
      * 
      * @param describePortfolioRequest
@@ -694,11 +690,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product.
-     * </p>
-     * <p>
-     * This operation is functionally identical to <a>DescribeProductView</a> except that it takes as input
-     * <code>ProductId</code> instead of <code>ProductViewId</code>.
+     * Gets information about the specified product.
      * </p>
      * 
      * @param describeProductRequest
@@ -711,11 +703,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product.
-     * </p>
-     * <p>
-     * This operation is functionally identical to <a>DescribeProductView</a> except that it takes as input
-     * <code>ProductId</code> instead of <code>ProductViewId</code>.
+     * Gets information about the specified product.
      * </p>
      * 
      * @param describeProductRequest
@@ -733,7 +721,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product, run with administrator access.
+     * Gets information about the specified product. This operation is run with administrator access.
      * </p>
      * 
      * @param describeProductAsAdminRequest
@@ -746,7 +734,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product, run with administrator access.
+     * Gets information about the specified product. This operation is run with administrator access.
      * </p>
      * 
      * @param describeProductAsAdminRequest
@@ -764,11 +752,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product.
-     * </p>
-     * <p>
-     * This operation is functionally identical to <a>DescribeProduct</a> except that it takes as input
-     * <code>ProductViewId</code> instead of <code>ProductId</code>.
+     * Gets information about the specified product.
      * </p>
      * 
      * @param describeProductViewRequest
@@ -781,11 +765,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves information about a specified product.
-     * </p>
-     * <p>
-     * This operation is functionally identical to <a>DescribeProduct</a> except that it takes as input
-     * <code>ProductViewId</code> instead of <code>ProductId</code>.
+     * Gets information about the specified product.
      * </p>
      * 
      * @param describeProductViewRequest
@@ -803,7 +783,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieve detailed information about the provisioned product.
+     * Gets information about the specified provisioned product.
      * </p>
      * 
      * @param describeProvisionedProductRequest
@@ -817,7 +797,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieve detailed information about the provisioned product.
+     * Gets information about the specified provisioned product.
      * </p>
      * 
      * @param describeProvisionedProductRequest
@@ -836,7 +816,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information about the specified provisioning artifact.
+     * Gets information about the specified provisioning artifact (also known as a version) for the specified product.
      * </p>
      * 
      * @param describeProvisioningArtifactRequest
@@ -851,7 +831,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed information about the specified provisioning artifact.
+     * Gets information about the specified provisioning artifact (also known as a version) for the specified product.
      * </p>
      * 
      * @param describeProvisioningArtifactRequest
@@ -871,18 +851,15 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Provides information about parameters required to provision a specified product in a specified manner. Use this
-     * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
-     * <a>ProvisionProduct</a> operation for the specified product.
+     * Gets information about the configuration required to provision the specified product using the specified
+     * provisioning artifact.
      * </p>
      * <p>
      * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
-     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
-     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
-     * <code>ProvisionProduct</code> with empty TagOption values cause the error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
-     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
-     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to
+     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this will cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
+     * product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
      * </p>
      * 
      * @param describeProvisioningParametersRequest
@@ -897,18 +874,15 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Provides information about parameters required to provision a specified product in a specified manner. Use this
-     * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
-     * <a>ProvisionProduct</a> operation for the specified product.
+     * Gets information about the configuration required to provision the specified product using the specified
+     * provisioning artifact.
      * </p>
      * <p>
      * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
-     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
-     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
-     * <code>ProvisionProduct</code> with empty TagOption values cause the error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
-     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
-     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to
+     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this will cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
+     * product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
      * </p>
      * 
      * @param describeProvisioningParametersRequest
@@ -928,8 +902,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves a paginated list of the full details of a specific request. Use this operation after calling a request
-     * operation (<a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
+     * Gets information about the specified request operation.
+     * </p>
+     * <p>
+     * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
+     * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
      * 
      * @param describeRecordRequest
@@ -942,8 +919,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves a paginated list of the full details of a specific request. Use this operation after calling a request
-     * operation (<a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
+     * Gets information about the specified request operation.
+     * </p>
+     * <p>
+     * Use this operation after calling a request operation (for example, <a>ProvisionProduct</a>,
+     * <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>).
      * </p>
      * 
      * @param describeRecordRequest
@@ -961,7 +941,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Describes a TagOption.
+     * Gets information about the specified TagOption.
      * </p>
      * 
      * @param describeTagOptionRequest
@@ -974,7 +954,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Describes a TagOption.
+     * Gets information about the specified TagOption.
      * </p>
      * 
      * @param describeTagOptionRequest
@@ -1064,7 +1044,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Disassociates a TagOption from a resource.
+     * Disassociates the specified TagOption from the specified resource.
      * </p>
      * 
      * @param disassociateTagOptionFromResourceRequest
@@ -1079,7 +1059,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Disassociates a TagOption from a resource.
+     * Disassociates the specified TagOption from the specified resource.
      * </p>
      * 
      * @param disassociateTagOptionFromResourceRequest
@@ -1099,7 +1079,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists details of all portfolios for which sharing was accepted by this account.
+     * Lists all portfolios for which sharing was accepted by this account.
      * </p>
      * 
      * @param listAcceptedPortfolioSharesRequest
@@ -1113,7 +1093,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists details of all portfolios for which sharing was accepted by this account.
+     * Lists all portfolios for which sharing was accepted by this account.
      * </p>
      * 
      * @param listAcceptedPortfolioSharesRequest
@@ -1132,7 +1112,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed constraint information for the specified portfolio and product.
+     * Lists the constraints for the specified portfolio and product.
      * </p>
      * 
      * @param listConstraintsForPortfolioRequest
@@ -1146,7 +1126,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves detailed constraint information for the specified portfolio and product.
+     * Lists the constraints for the specified portfolio and product.
      * </p>
      * 
      * @param listConstraintsForPortfolioRequest
@@ -1165,8 +1145,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all paths to a specified product. A path is how the user has access to a specified
-     * product, and is necessary when provisioning a product. A path also determines the constraints put on the product.
+     * Lists the paths to the specified product. A path is how the user has access to a specified product, and is
+     * necessary when provisioning a product. A path also determines the constraints put on the product.
      * </p>
      * 
      * @param listLaunchPathsRequest
@@ -1179,8 +1159,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all paths to a specified product. A path is how the user has access to a specified
-     * product, and is necessary when provisioning a product. A path also determines the constraints put on the product.
+     * Lists the paths to the specified product. A path is how the user has access to a specified product, and is
+     * necessary when provisioning a product. A path also determines the constraints put on the product.
      * </p>
      * 
      * @param listLaunchPathsRequest
@@ -1198,7 +1178,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the account IDs that have been authorized sharing of the specified portfolio.
+     * Lists the account IDs that have access to the specified portfolio.
      * </p>
      * 
      * @param listPortfolioAccessRequest
@@ -1211,7 +1191,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the account IDs that have been authorized sharing of the specified portfolio.
+     * Lists the account IDs that have access to the specified portfolio.
      * </p>
      * 
      * @param listPortfolioAccessRequest
@@ -1324,7 +1304,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists all provisioning artifacts associated with the specified product.
+     * Lists all provisioning artifacts (also known as versions) for the specified product.
      * </p>
      * 
      * @param listProvisioningArtifactsRequest
@@ -1338,7 +1318,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists all provisioning artifacts associated with the specified product.
+     * Lists all provisioning artifacts (also known as versions) for the specified product.
      * </p>
      * 
      * @param listProvisioningArtifactsRequest
@@ -1357,8 +1337,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all performed requests, in the form of RecordDetails objects that are filtered as
-     * specified.
+     * Lists the specified requests or all performed requests.
      * </p>
      * 
      * @param listRecordHistoryRequest
@@ -1371,8 +1350,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all performed requests, in the form of RecordDetails objects that are filtered as
-     * specified.
+     * Lists the specified requests or all performed requests.
      * </p>
      * 
      * @param listRecordHistoryRequest
@@ -1390,7 +1368,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists resources associated with a TagOption.
+     * Lists the resources associated with the specified TagOption.
      * </p>
      * 
      * @param listResourcesForTagOptionRequest
@@ -1404,7 +1382,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists resources associated with a TagOption.
+     * Lists the resources associated with the specified TagOption.
      * </p>
      * 
      * @param listResourcesForTagOptionRequest
@@ -1423,7 +1401,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists detailed TagOptions information.
+     * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 
      * @param listTagOptionsRequest
@@ -1436,7 +1414,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists detailed TagOptions information.
+     * Lists the specified TagOptions or all TagOptions.
      * </p>
      * 
      * @param listTagOptionsRequest
@@ -1454,17 +1432,17 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
-     * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
-     * stack and all the underlying resources that come with it.
+     * Provisions the specified product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
-     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
-     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
-     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
-     * <a>DescribeProvisioningParameters</a>.
+     * A provisioned product is a resourced instance of a product. For example, provisioning a product based on a
+     * CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of
+     * this request using <a>DescribeRecord</a>.
+     * </p>
+     * <p>
+     * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
+     * include conflicted keys as tags, or this will cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
      * 
      * @param provisionProductRequest
@@ -1477,17 +1455,17 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
-     * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
-     * stack and all the underlying resources that come with it.
+     * Provisions the specified product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
-     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
-     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
-     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
-     * <a>DescribeProvisioningParameters</a>.
+     * A provisioned product is a resourced instance of a product. For example, provisioning a product based on a
+     * CloudFormation template launches a CloudFormation stack and its underlying resources. You can check the status of
+     * this request using <a>DescribeRecord</a>.
+     * </p>
+     * <p>
+     * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
+     * include conflicted keys as tags, or this will cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
      * 
      * @param provisionProductRequest
@@ -1505,7 +1483,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Rejects an offer to share a portfolio.
+     * Rejects an offer to share the specified portfolio.
      * </p>
      * 
      * @param rejectPortfolioShareRequest
@@ -1518,7 +1496,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Rejects an offer to share a portfolio.
+     * Rejects an offer to share the specified portfolio.
      * </p>
      * 
      * @param rejectPortfolioShareRequest
@@ -1536,7 +1514,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all the ProvisionedProduct objects that are currently available (not terminated).
+     * Lists the provisioned products that are available (not terminated).
      * </p>
      * 
      * @param scanProvisionedProductsRequest
@@ -1549,7 +1527,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list of all the ProvisionedProduct objects that are currently available (not terminated).
+     * Lists the provisioned products that are available (not terminated).
      * </p>
      * 
      * @param scanProvisionedProductsRequest
@@ -1567,10 +1545,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list all of the <code>Products</code> objects to which the caller has access.
-     * </p>
-     * <p>
-     * The output of this operation can be used as input for other operations, such as <a>DescribeProductView</a>.
+     * Gets information about the products to which the caller has access.
      * </p>
      * 
      * @param searchProductsRequest
@@ -1583,10 +1558,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Returns a paginated list all of the <code>Products</code> objects to which the caller has access.
-     * </p>
-     * <p>
-     * The output of this operation can be used as input for other operations, such as <a>DescribeProductView</a>.
+     * Gets information about the products to which the caller has access.
      * </p>
      * 
      * @param searchProductsRequest
@@ -1604,9 +1576,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves summary and status information about all products created within the caller's account. If a portfolio
-     * ID is provided, this operation retrieves information for only those products that are associated with the
-     * specified portfolio.
+     * Gets information about the products for the specified portfolio or all products.
      * </p>
      * 
      * @param searchProductsAsAdminRequest
@@ -1619,9 +1589,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Retrieves summary and status information about all products created within the caller's account. If a portfolio
-     * ID is provided, this operation retrieves information for only those products that are associated with the
-     * specified portfolio.
+     * Gets information about the products for the specified portfolio or all products.
      * </p>
      * 
      * @param searchProductsAsAdminRequest
@@ -1639,14 +1607,13 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code> associated with the
-     * object, they are terminated when the ProvisionedProduct object is terminated.
+     * Terminates the specified provisioned product.
      * </p>
      * <p>
-     * This operation does not delete any records associated with the ProvisionedProduct object.
+     * This operation does not delete any records associated with the provisioned product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using <a>DescribeRecord</a>.
      * </p>
      * 
      * @param terminateProvisionedProductRequest
@@ -1660,14 +1627,13 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code> associated with the
-     * object, they are terminated when the ProvisionedProduct object is terminated.
+     * Terminates the specified provisioned product.
      * </p>
      * <p>
-     * This operation does not delete any records associated with the ProvisionedProduct object.
+     * This operation does not delete any records associated with the provisioned product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using <a>DescribeRecord</a>.
      * </p>
      * 
      * @param terminateProvisionedProductRequest
@@ -1686,7 +1652,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing constraint.
+     * Updates the specified constraint.
      * </p>
      * 
      * @param updateConstraintRequest
@@ -1699,7 +1665,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing constraint.
+     * Updates the specified constraint.
      * </p>
      * 
      * @param updateConstraintRequest
@@ -1717,8 +1683,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio's details. This operation does not work with a product that has been shared with
-     * you.
+     * Updates the specified portfolio.
+     * </p>
+     * <p>
+     * You cannot update a product that was shared with you.
      * </p>
      * 
      * @param updatePortfolioRequest
@@ -1731,8 +1699,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio's details. This operation does not work with a product that has been shared with
-     * you.
+     * Updates the specified portfolio.
+     * </p>
+     * <p>
+     * You cannot update a product that was shared with you.
      * </p>
      * 
      * @param updatePortfolioRequest
@@ -1750,7 +1720,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing product.
+     * Updates the specified product.
      * </p>
      * 
      * @param updateProductRequest
@@ -1763,7 +1733,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing product.
+     * Updates the specified product.
      * </p>
      * 
      * @param updateProductRequest
@@ -1781,13 +1751,15 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests updates to the configuration of an existing ProvisionedProduct object. If there are tags associated with
-     * the object, they cannot be updated or added with this operation. Depending on the specific updates requested,
-     * this operation may update with no interruption, with some interruption, or replace the ProvisionedProduct object
-     * entirely.
+     * Requests updates to the configuration of the specified provisioned product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates
+     * requested, this operation can update with no interruption, with some interruption, or replace the provisioned
+     * product entirely.
+     * </p>
+     * <p>
+     * You can check the status of this request using <a>DescribeRecord</a>.
      * </p>
      * 
      * @param updateProvisionedProductRequest
@@ -1800,13 +1772,15 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests updates to the configuration of an existing ProvisionedProduct object. If there are tags associated with
-     * the object, they cannot be updated or added with this operation. Depending on the specific updates requested,
-     * this operation may update with no interruption, with some interruption, or replace the ProvisionedProduct object
-     * entirely.
+     * Requests updates to the configuration of the specified provisioned product.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * If there are tags associated with the object, they cannot be updated or added. Depending on the specific updates
+     * requested, this operation can update with no interruption, with some interruption, or replace the provisioned
+     * product entirely.
+     * </p>
+     * <p>
+     * You can check the status of this request using <a>DescribeRecord</a>.
      * </p>
      * 
      * @param updateProvisionedProductRequest
@@ -1824,8 +1798,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact
-     * associated with a product that has been shared with you.
+     * Updates the specified provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot update a provisioning artifact for a product that was shared with you.
      * </p>
      * 
      * @param updateProvisioningArtifactRequest
@@ -1839,8 +1815,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact
-     * associated with a product that has been shared with you.
+     * Updates the specified provisioning artifact (also known as a version) for the specified product.
+     * </p>
+     * <p>
+     * You cannot update a provisioning artifact for a product that was shared with you.
      * </p>
      * 
      * @param updateProvisioningArtifactRequest
@@ -1859,7 +1837,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing TagOption.
+     * Updates the specified TagOption.
      * </p>
      * 
      * @param updateTagOptionRequest
@@ -1872,7 +1850,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing TagOption.
+     * Updates the specified TagOption.
      * </p>
      * 
      * @param updateTagOptionRequest

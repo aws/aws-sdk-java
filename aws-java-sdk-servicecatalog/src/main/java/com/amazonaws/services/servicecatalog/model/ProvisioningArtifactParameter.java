@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A parameter used to successfully provision the product. This value includes a list of allowable values and additional
- * metadata.
+ * Information about a parameter used to provision a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifactParameter"
@@ -37,7 +36,7 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
     private String parameterKey;
     /**
      * <p>
-     * The default value for this parameter.
+     * The default value.
      * </p>
      */
     private String defaultValue;
@@ -56,13 +55,13 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
     private Boolean isNoEcho;
     /**
      * <p>
-     * The text description of the parameter.
+     * The description of the parameter.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The list of constraints that the administrator has put on the parameter.
+     * Constraints that the administrator has put on a parameter.
      * </p>
      */
     private ParameterConstraints parameterConstraints;
@@ -109,11 +108,11 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The default value for this parameter.
+     * The default value.
      * </p>
      * 
      * @param defaultValue
-     *        The default value for this parameter.
+     *        The default value.
      */
 
     public void setDefaultValue(String defaultValue) {
@@ -122,10 +121,10 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The default value for this parameter.
+     * The default value.
      * </p>
      * 
-     * @return The default value for this parameter.
+     * @return The default value.
      */
 
     public String getDefaultValue() {
@@ -134,11 +133,11 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The default value for this parameter.
+     * The default value.
      * </p>
      * 
      * @param defaultValue
-     *        The default value for this parameter.
+     *        The default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +248,11 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The text description of the parameter.
+     * The description of the parameter.
      * </p>
      * 
      * @param description
-     *        The text description of the parameter.
+     *        The description of the parameter.
      */
 
     public void setDescription(String description) {
@@ -262,10 +261,10 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The text description of the parameter.
+     * The description of the parameter.
      * </p>
      * 
-     * @return The text description of the parameter.
+     * @return The description of the parameter.
      */
 
     public String getDescription() {
@@ -274,11 +273,11 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The text description of the parameter.
+     * The description of the parameter.
      * </p>
      * 
      * @param description
-     *        The text description of the parameter.
+     *        The description of the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,11 +288,11 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The list of constraints that the administrator has put on the parameter.
+     * Constraints that the administrator has put on a parameter.
      * </p>
      * 
      * @param parameterConstraints
-     *        The list of constraints that the administrator has put on the parameter.
+     *        Constraints that the administrator has put on a parameter.
      */
 
     public void setParameterConstraints(ParameterConstraints parameterConstraints) {
@@ -302,10 +301,10 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The list of constraints that the administrator has put on the parameter.
+     * Constraints that the administrator has put on a parameter.
      * </p>
      * 
-     * @return The list of constraints that the administrator has put on the parameter.
+     * @return Constraints that the administrator has put on a parameter.
      */
 
     public ParameterConstraints getParameterConstraints() {
@@ -314,11 +313,11 @@ public class ProvisioningArtifactParameter implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The list of constraints that the administrator has put on the parameter.
+     * Constraints that the administrator has put on a parameter.
      * </p>
      * 
      * @param parameterConstraints
-     *        The list of constraints that the administrator has put on the parameter.
+     *        Constraints that the administrator has put on a parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

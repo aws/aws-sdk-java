@@ -56,33 +56,32 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
     private String portfolioId;
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the administrator has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the
+     * administrator has access.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> filters;
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      */
     private String sortBy;
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      */
     private Integer pageSize;
@@ -274,12 +273,12 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the administrator has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the
+     * administrator has access.
      * </p>
      * 
-     * @return The list of filters with which to limit search results. If no search filters are specified, the output is
-     *         all the products to which the administrator has access.
+     * @return The search filters. If no search filters are specified, the output includes all products to which the
+     *         administrator has access.
      */
 
     public java.util.Map<String, java.util.List<String>> getFilters() {
@@ -288,13 +287,13 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the administrator has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the
+     * administrator has access.
      * </p>
      * 
      * @param filters
-     *        The list of filters with which to limit search results. If no search filters are specified, the output is
-     *        all the products to which the administrator has access.
+     *        The search filters. If no search filters are specified, the output includes all products to which the
+     *        administrator has access.
      */
 
     public void setFilters(java.util.Map<String, java.util.List<String>> filters) {
@@ -303,13 +302,13 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The list of filters with which to limit search results. If no search filters are specified, the output is all the
-     * products to which the administrator has access.
+     * The search filters. If no search filters are specified, the output includes all products to which the
+     * administrator has access.
      * </p>
      * 
      * @param filters
-     *        The list of filters with which to limit search results. If no search filters are specified, the output is
-     *        all the products to which the administrator has access.
+     *        The search filters. If no search filters are specified, the output includes all products to which the
+     *        administrator has access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,11 +340,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @see ProductViewSortBy
      */
 
@@ -355,10 +354,10 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
-     * @return The sort field specifier. If no value is specified, results are not sorted.
+     * @return The sort field. If no value is specified, the results are not sorted.
      * @see ProductViewSortBy
      */
 
@@ -368,11 +367,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductViewSortBy
      */
@@ -384,11 +383,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @see ProductViewSortBy
      */
 
@@ -398,11 +397,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort field specifier. If no value is specified, results are not sorted.
+     * The sort field. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortBy
-     *        The sort field specifier. If no value is specified, results are not sorted.
+     *        The sort field. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductViewSortBy
      */
@@ -414,11 +413,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @see SortOrder
      */
 
@@ -428,10 +427,10 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
-     * @return The sort order specifier. If no value is specified, results are not sorted.
+     * @return The sort order. If no value is specified, the results are not sorted.
      * @see SortOrder
      */
 
@@ -441,11 +440,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -457,11 +456,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @see SortOrder
      */
 
@@ -471,11 +470,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sort order specifier. If no value is specified, results are not sorted.
+     * The sort order. If no value is specified, the results are not sorted.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order specifier. If no value is specified, results are not sorted.
+     *        The sort order. If no value is specified, the results are not sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -487,12 +486,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -501,11 +499,10 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -514,12 +511,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,13 +526,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -545,12 +539,10 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
-     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return The maximum number of items to return with this call.
      */
 
     public Integer getPageSize() {
@@ -559,13 +551,11 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

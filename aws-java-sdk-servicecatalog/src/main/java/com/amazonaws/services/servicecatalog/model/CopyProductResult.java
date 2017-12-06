@@ -25,18 +25,18 @@ public class CopyProductResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     * The token to use to track the progress of the operation.
      * </p>
      */
     private String copyProductToken;
 
     /**
      * <p>
-     * A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     * The token to use to track the progress of the operation.
      * </p>
      * 
      * @param copyProductToken
-     *        A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     *        The token to use to track the progress of the operation.
      */
 
     public void setCopyProductToken(String copyProductToken) {
@@ -45,10 +45,10 @@ public class CopyProductResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     * The token to use to track the progress of the operation.
      * </p>
      * 
-     * @return A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     * @return The token to use to track the progress of the operation.
      */
 
     public String getCopyProductToken() {
@@ -57,11 +57,11 @@ public class CopyProductResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     * The token to use to track the progress of the operation.
      * </p>
      * 
      * @param copyProductToken
-     *        A unique token to pass to <code>DescribeCopyProductStatus</code> to track the progress of the operation.
+     *        The token to use to track the progress of the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

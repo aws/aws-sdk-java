@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation was requested against a resource that is currently in use. Free the resource from use and retry the
- * operation.
+ * A resource that is currently in use. Ensure the resource is not in use and retry the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

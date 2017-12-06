@@ -50,21 +50,19 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
     private String acceptLanguage;
     /**
      * <p>
-     * The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     * information.
+     * The product identifier.
      * </p>
      */
     private String productId;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      */
     private Integer pageSize;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
@@ -210,13 +208,11 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     * information.
+     * The product identifier.
      * </p>
      * 
      * @param productId
-     *        The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     *        information.
+     *        The product identifier.
      */
 
     public void setProductId(String productId) {
@@ -225,12 +221,10 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     * information.
+     * The product identifier.
      * </p>
      * 
-     * @return The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     *         information.
+     * @return The product identifier.
      */
 
     public String getProductId() {
@@ -239,13 +233,11 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     * information.
+     * The product identifier.
      * </p>
      * 
      * @param productId
-     *        The product identifier. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
-     *        information.
+     *        The product identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,13 +248,11 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -271,12 +261,10 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
-     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return The maximum number of items to return with this call.
      */
 
     public Integer getPageSize() {
@@ -285,13 +273,11 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,12 +288,11 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -316,11 +301,10 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -329,12 +313,11 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,13 +25,13 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting detailed constraint information.
+     * Information about the constraint.
      * </p>
      */
     private ConstraintDetail constraintDetail;
     /**
      * <p>
-     * The resulting constraint parameters.
+     * The constraint parameters.
      * </p>
      */
     private String constraintParameters;
@@ -44,11 +44,11 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting detailed constraint information.
+     * Information about the constraint.
      * </p>
      * 
      * @param constraintDetail
-     *        The resulting detailed constraint information.
+     *        Information about the constraint.
      */
 
     public void setConstraintDetail(ConstraintDetail constraintDetail) {
@@ -57,10 +57,10 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting detailed constraint information.
+     * Information about the constraint.
      * </p>
      * 
-     * @return The resulting detailed constraint information.
+     * @return Information about the constraint.
      */
 
     public ConstraintDetail getConstraintDetail() {
@@ -69,11 +69,11 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting detailed constraint information.
+     * Information about the constraint.
      * </p>
      * 
      * @param constraintDetail
-     *        The resulting detailed constraint information.
+     *        Information about the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting constraint parameters.
+     * The constraint parameters.
      * </p>
      * 
      * @param constraintParameters
-     *        The resulting constraint parameters.
+     *        The constraint parameters.
      */
 
     public void setConstraintParameters(String constraintParameters) {
@@ -97,10 +97,10 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting constraint parameters.
+     * The constraint parameters.
      * </p>
      * 
-     * @return The resulting constraint parameters.
+     * @return The constraint parameters.
      */
 
     public String getConstraintParameters() {
@@ -109,11 +109,11 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resulting constraint parameters.
+     * The constraint parameters.
      * </p>
      * 
      * @param constraintParameters
-     *        The resulting constraint parameters.
+     *        The constraint parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

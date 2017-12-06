@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameter key-value pairs used to provision a product.
+ * Information about a parameter used to provision a product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningParameter"
@@ -30,26 +30,24 @@ public class ProvisioningParameter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be found in
-     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The parameter value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The parameter key.
      */
 
     public void setKey(String key) {
@@ -58,11 +56,10 @@ public class ProvisioningParameter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      * 
-     * @return The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     *         <a>DescribeProvisioningParameters</a>.
+     * @return The parameter key.
      */
 
     public String getKey() {
@@ -71,12 +68,11 @@ public class ProvisioningParameter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+     * The parameter key.
      * </p>
      * 
      * @param key
-     *        The <code>ProvisioningArtifactParameter.ParameterKey</code> parameter from
-     *        <a>DescribeProvisioningParameters</a>.
+     *        The parameter key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,13 +83,11 @@ public class ProvisioningParameter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be found in
-     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The parameter value.
      * </p>
      * 
      * @param value
-     *        The value to use for provisioning. Any constraints on this value can be found in
-     *        <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     *        The parameter value.
      */
 
     public void setValue(String value) {
@@ -102,12 +96,10 @@ public class ProvisioningParameter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be found in
-     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The parameter value.
      * </p>
      * 
-     * @return The value to use for provisioning. Any constraints on this value can be found in
-     *         <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * @return The parameter value.
      */
 
     public String getValue() {
@@ -116,13 +108,11 @@ public class ProvisioningParameter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The value to use for provisioning. Any constraints on this value can be found in
-     * <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     * The parameter value.
      * </p>
      * 
      * @param value
-     *        The value to use for provisioning. Any constraints on this value can be found in
-     *        <code>ProvisioningArtifactParameter</code> for <code>Key</code>.
+     *        The parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

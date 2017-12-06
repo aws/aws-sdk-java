@@ -25,24 +25,24 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of launch path information summaries for the specified <code>PageToken</code>.
+     * Information about the launch path.
      * </p>
      */
     private java.util.List<LaunchPathSummary> launchPathSummaries;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * List of launch path information summaries for the specified <code>PageToken</code>.
+     * Information about the launch path.
      * </p>
      * 
-     * @return List of launch path information summaries for the specified <code>PageToken</code>.
+     * @return Information about the launch path.
      */
 
     public java.util.List<LaunchPathSummary> getLaunchPathSummaries() {
@@ -51,11 +51,11 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of launch path information summaries for the specified <code>PageToken</code>.
+     * Information about the launch path.
      * </p>
      * 
      * @param launchPathSummaries
-     *        List of launch path information summaries for the specified <code>PageToken</code>.
+     *        Information about the launch path.
      */
 
     public void setLaunchPathSummaries(java.util.Collection<LaunchPathSummary> launchPathSummaries) {
@@ -69,7 +69,7 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of launch path information summaries for the specified <code>PageToken</code>.
+     * Information about the launch path.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param launchPathSummaries
-     *        List of launch path information summaries for the specified <code>PageToken</code>.
+     *        Information about the launch path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * List of launch path information summaries for the specified <code>PageToken</code>.
+     * Information about the launch path.
      * </p>
      * 
      * @param launchPathSummaries
-     *        List of launch path information summaries for the specified <code>PageToken</code>.
+     *        Information about the launch path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -124,12 +124,12 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -138,13 +138,13 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

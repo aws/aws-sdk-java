@@ -68,6 +68,10 @@ public class TopicRulePayloadJsonUnmarshaller implements Unmarshaller<TopicRuleP
                     context.nextToken();
                     topicRulePayload.setAwsIotSqlVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("errorAction", targetDepth)) {
+                    context.nextToken();
+                    topicRulePayload.setErrorAction(ActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -56,14 +56,14 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
     private String productId;
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String provisioningArtifactId;
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      */
     private String pathId;
@@ -249,12 +249,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *        version.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -263,11 +262,10 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *         version.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getProvisioningArtifactId() {
@@ -276,12 +274,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *        version.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,13 +289,13 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning. This value is optional if the product has a
-     *        default path, and is required if there is more than one path for the specified product.
+     *        The path identifier of the product. This value is optional if the product has a default path, and required
+     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      */
 
     public void setPathId(String pathId) {
@@ -307,12 +304,13 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      * 
-     * @return The identifier of the path for this product's provisioning. This value is optional if the product has a
-     *         default path, and is required if there is more than one path for the specified product.
+     * @return The path identifier of the product. This value is optional if the product has a default path, and
+     *         required if the product has more than one path. To list the paths for a product, use
+     *         <a>ListLaunchPaths</a>.
      */
 
     public String getPathId() {
@@ -321,13 +319,13 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the path for this product's provisioning. This value is optional if the product has a default
-     * path, and is required if there is more than one path for the specified product.
+     * The path identifier of the product. This value is optional if the product has a default path, and required if the
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path for this product's provisioning. This value is optional if the product has a
-     *        default path, and is required if there is more than one path for the specified product.
+     *        The path identifier of the product. This value is optional if the product has a default path, and required
+     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

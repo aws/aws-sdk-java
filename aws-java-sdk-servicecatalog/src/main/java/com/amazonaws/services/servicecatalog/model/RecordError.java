@@ -36,7 +36,7 @@ public class RecordError implements Serializable, Cloneable, StructuredPojo {
     private String code;
     /**
      * <p>
-     * The text description of the error.
+     * The description of the error.
      * </p>
      */
     private String description;
@@ -83,11 +83,11 @@ public class RecordError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text description of the error.
+     * The description of the error.
      * </p>
      * 
      * @param description
-     *        The text description of the error.
+     *        The description of the error.
      */
 
     public void setDescription(String description) {
@@ -96,10 +96,10 @@ public class RecordError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text description of the error.
+     * The description of the error.
      * </p>
      * 
-     * @return The text description of the error.
+     * @return The description of the error.
      */
 
     public String getDescription() {
@@ -108,11 +108,11 @@ public class RecordError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text description of the error.
+     * The description of the error.
      * </p>
      * 
      * @param description
-     *        The text description of the error.
+     *        The description of the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

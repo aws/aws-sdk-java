@@ -26,14 +26,13 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of parameters used to successfully provision the product. Each parameter includes a list of allowable
-     * values and additional metadata about each parameter.
+     * Information about the parameters used to provision the product.
      * </p>
      */
     private java.util.List<ProvisioningArtifactParameter> provisioningArtifactParameters;
     /**
      * <p>
-     * The list of constraint summaries that apply to provisioning this product.
+     * Information about the constraints used to provision the product.
      * </p>
      */
     private java.util.List<ConstraintSummary> constraintSummaries;
@@ -46,19 +45,17 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
     private java.util.List<UsageInstruction> usageInstructions;
     /**
      * <p>
-     * List of TagOptions associated with the provisioned provisioning parameters.
+     * Information about the TagOptions associated with the resource.
      * </p>
      */
     private java.util.List<TagOptionSummary> tagOptions;
 
     /**
      * <p>
-     * The list of parameters used to successfully provision the product. Each parameter includes a list of allowable
-     * values and additional metadata about each parameter.
+     * Information about the parameters used to provision the product.
      * </p>
      * 
-     * @return The list of parameters used to successfully provision the product. Each parameter includes a list of
-     *         allowable values and additional metadata about each parameter.
+     * @return Information about the parameters used to provision the product.
      */
 
     public java.util.List<ProvisioningArtifactParameter> getProvisioningArtifactParameters() {
@@ -67,13 +64,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of parameters used to successfully provision the product. Each parameter includes a list of allowable
-     * values and additional metadata about each parameter.
+     * Information about the parameters used to provision the product.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The list of parameters used to successfully provision the product. Each parameter includes a list of
-     *        allowable values and additional metadata about each parameter.
+     *        Information about the parameters used to provision the product.
      */
 
     public void setProvisioningArtifactParameters(java.util.Collection<ProvisioningArtifactParameter> provisioningArtifactParameters) {
@@ -87,8 +82,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of parameters used to successfully provision the product. Each parameter includes a list of allowable
-     * values and additional metadata about each parameter.
+     * Information about the parameters used to provision the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +91,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The list of parameters used to successfully provision the product. Each parameter includes a list of
-     *        allowable values and additional metadata about each parameter.
+     *        Information about the parameters used to provision the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +107,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of parameters used to successfully provision the product. Each parameter includes a list of allowable
-     * values and additional metadata about each parameter.
+     * Information about the parameters used to provision the product.
      * </p>
      * 
      * @param provisioningArtifactParameters
-     *        The list of parameters used to successfully provision the product. Each parameter includes a list of
-     *        allowable values and additional metadata about each parameter.
+     *        Information about the parameters used to provision the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +123,10 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of constraint summaries that apply to provisioning this product.
+     * Information about the constraints used to provision the product.
      * </p>
      * 
-     * @return The list of constraint summaries that apply to provisioning this product.
+     * @return Information about the constraints used to provision the product.
      */
 
     public java.util.List<ConstraintSummary> getConstraintSummaries() {
@@ -144,11 +135,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of constraint summaries that apply to provisioning this product.
+     * Information about the constraints used to provision the product.
      * </p>
      * 
      * @param constraintSummaries
-     *        The list of constraint summaries that apply to provisioning this product.
+     *        Information about the constraints used to provision the product.
      */
 
     public void setConstraintSummaries(java.util.Collection<ConstraintSummary> constraintSummaries) {
@@ -162,7 +153,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of constraint summaries that apply to provisioning this product.
+     * Information about the constraints used to provision the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +162,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param constraintSummaries
-     *        The list of constraint summaries that apply to provisioning this product.
+     *        Information about the constraints used to provision the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +178,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of constraint summaries that apply to provisioning this product.
+     * Information about the constraints used to provision the product.
      * </p>
      * 
      * @param constraintSummaries
-     *        The list of constraint summaries that apply to provisioning this product.
+     *        Information about the constraints used to provision the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,10 +271,10 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * List of TagOptions associated with the provisioned provisioning parameters.
+     * Information about the TagOptions associated with the resource.
      * </p>
      * 
-     * @return List of TagOptions associated with the provisioned provisioning parameters.
+     * @return Information about the TagOptions associated with the resource.
      */
 
     public java.util.List<TagOptionSummary> getTagOptions() {
@@ -292,11 +283,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * List of TagOptions associated with the provisioned provisioning parameters.
+     * Information about the TagOptions associated with the resource.
      * </p>
      * 
      * @param tagOptions
-     *        List of TagOptions associated with the provisioned provisioning parameters.
+     *        Information about the TagOptions associated with the resource.
      */
 
     public void setTagOptions(java.util.Collection<TagOptionSummary> tagOptions) {
@@ -310,7 +301,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * List of TagOptions associated with the provisioned provisioning parameters.
+     * Information about the TagOptions associated with the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -319,7 +310,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param tagOptions
-     *        List of TagOptions associated with the provisioned provisioning parameters.
+     *        Information about the TagOptions associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +326,11 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * List of TagOptions associated with the provisioned provisioning parameters.
+     * Information about the TagOptions associated with the resource.
      * </p>
      * 
      * @param tagOptions
-     *        List of TagOptions associated with the provisioned provisioning parameters.
+     *        Information about the TagOptions associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

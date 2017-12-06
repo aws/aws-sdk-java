@@ -25,23 +25,23 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resulting detailed resource information.
+     * Information about the resources.
      * </p>
      */
     private java.util.List<ResourceDetail> resourceDetails;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
 
     /**
      * <p>
-     * The resulting detailed resource information.
+     * Information about the resources.
      * </p>
      * 
-     * @return The resulting detailed resource information.
+     * @return Information about the resources.
      */
 
     public java.util.List<ResourceDetail> getResourceDetails() {
@@ -50,11 +50,11 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resulting detailed resource information.
+     * Information about the resources.
      * </p>
      * 
      * @param resourceDetails
-     *        The resulting detailed resource information.
+     *        Information about the resources.
      */
 
     public void setResourceDetails(java.util.Collection<ResourceDetail> resourceDetails) {
@@ -68,7 +68,7 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resulting detailed resource information.
+     * Information about the resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param resourceDetails
-     *        The resulting detailed resource information.
+     *        Information about the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The resulting detailed resource information.
+     * Information about the resources.
      * </p>
      * 
      * @param resourceDetails
-     *        The resulting detailed resource information.
+     *        Information about the resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,12 +108,11 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -122,11 +121,10 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -135,12 +133,11 @@ public class ListResourcesForTagOptionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

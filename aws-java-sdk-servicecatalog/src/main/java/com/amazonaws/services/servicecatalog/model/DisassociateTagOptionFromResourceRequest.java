@@ -27,24 +27,24 @@ public class DisassociateTagOptionFromResourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Identifier of the resource from which to disassociate the TagOption.
+     * The resource identifier.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Identifier of the TagOption to disassociate from the resource.
+     * The TagOption identifier.
      * </p>
      */
     private String tagOptionId;
 
     /**
      * <p>
-     * Identifier of the resource from which to disassociate the TagOption.
+     * The resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Identifier of the resource from which to disassociate the TagOption.
+     *        The resource identifier.
      */
 
     public void setResourceId(String resourceId) {
@@ -53,10 +53,10 @@ public class DisassociateTagOptionFromResourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Identifier of the resource from which to disassociate the TagOption.
+     * The resource identifier.
      * </p>
      * 
-     * @return Identifier of the resource from which to disassociate the TagOption.
+     * @return The resource identifier.
      */
 
     public String getResourceId() {
@@ -65,11 +65,11 @@ public class DisassociateTagOptionFromResourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Identifier of the resource from which to disassociate the TagOption.
+     * The resource identifier.
      * </p>
      * 
      * @param resourceId
-     *        Identifier of the resource from which to disassociate the TagOption.
+     *        The resource identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DisassociateTagOptionFromResourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Identifier of the TagOption to disassociate from the resource.
+     * The TagOption identifier.
      * </p>
      * 
      * @param tagOptionId
-     *        Identifier of the TagOption to disassociate from the resource.
+     *        The TagOption identifier.
      */
 
     public void setTagOptionId(String tagOptionId) {
@@ -93,10 +93,10 @@ public class DisassociateTagOptionFromResourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Identifier of the TagOption to disassociate from the resource.
+     * The TagOption identifier.
      * </p>
      * 
-     * @return Identifier of the TagOption to disassociate from the resource.
+     * @return The TagOption identifier.
      */
 
     public String getTagOptionId() {
@@ -105,11 +105,11 @@ public class DisassociateTagOptionFromResourceRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Identifier of the TagOption to disassociate from the resource.
+     * The TagOption identifier.
      * </p>
      * 
      * @param tagOptionId
-     *        Identifier of the TagOption to disassociate from the resource.
+     *        The TagOption identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

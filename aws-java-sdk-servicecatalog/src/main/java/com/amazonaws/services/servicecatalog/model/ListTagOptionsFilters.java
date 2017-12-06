@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The ListTagOptions filters.
+ * Filters to use when listing TagOptions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptionsFilters"
@@ -30,30 +30,30 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters key.
+     * The TagOption key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The ListTagOptionsFilters value.
+     * The TagOption value.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The ListTagOptionsFilters active state.
+     * The active state.
      * </p>
      */
     private Boolean active;
 
     /**
      * <p>
-     * The ListTagOptionsFilters key.
+     * The TagOption key.
      * </p>
      * 
      * @param key
-     *        The ListTagOptionsFilters key.
+     *        The TagOption key.
      */
 
     public void setKey(String key) {
@@ -62,10 +62,10 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters key.
+     * The TagOption key.
      * </p>
      * 
-     * @return The ListTagOptionsFilters key.
+     * @return The TagOption key.
      */
 
     public String getKey() {
@@ -74,11 +74,11 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters key.
+     * The TagOption key.
      * </p>
      * 
      * @param key
-     *        The ListTagOptionsFilters key.
+     *        The TagOption key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters value.
+     * The TagOption value.
      * </p>
      * 
      * @param value
-     *        The ListTagOptionsFilters value.
+     *        The TagOption value.
      */
 
     public void setValue(String value) {
@@ -102,10 +102,10 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters value.
+     * The TagOption value.
      * </p>
      * 
-     * @return The ListTagOptionsFilters value.
+     * @return The TagOption value.
      */
 
     public String getValue() {
@@ -114,11 +114,11 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters value.
+     * The TagOption value.
      * </p>
      * 
      * @param value
-     *        The ListTagOptionsFilters value.
+     *        The TagOption value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters active state.
+     * The active state.
      * </p>
      * 
      * @param active
-     *        The ListTagOptionsFilters active state.
+     *        The active state.
      */
 
     public void setActive(Boolean active) {
@@ -142,10 +142,10 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters active state.
+     * The active state.
      * </p>
      * 
-     * @return The ListTagOptionsFilters active state.
+     * @return The active state.
      */
 
     public Boolean getActive() {
@@ -154,11 +154,11 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters active state.
+     * The active state.
      * </p>
      * 
      * @param active
-     *        The ListTagOptionsFilters active state.
+     *        The active state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,10 +169,10 @@ public class ListTagOptionsFilters implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ListTagOptionsFilters active state.
+     * The active state.
      * </p>
      * 
-     * @return The ListTagOptionsFilters active state.
+     * @return The active state.
      */
 
     public Boolean isActive() {

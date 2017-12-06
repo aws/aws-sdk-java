@@ -56,7 +56,7 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     private String portfolioId;
     /**
      * <p>
-     * The account ID with which to share the portfolio.
+     * The AWS account ID.
      * </p>
      */
     private String accountId;
@@ -242,11 +242,11 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID with which to share the portfolio.
+     * The AWS account ID.
      * </p>
      * 
      * @param accountId
-     *        The account ID with which to share the portfolio.
+     *        The AWS account ID.
      */
 
     public void setAccountId(String accountId) {
@@ -255,10 +255,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID with which to share the portfolio.
+     * The AWS account ID.
      * </p>
      * 
-     * @return The account ID with which to share the portfolio.
+     * @return The AWS account ID.
      */
 
     public String getAccountId() {
@@ -267,11 +267,11 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The account ID with which to share the portfolio.
+     * The AWS account ID.
      * </p>
      * 
      * @param accountId
-     *        The account ID with which to share the portfolio.
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

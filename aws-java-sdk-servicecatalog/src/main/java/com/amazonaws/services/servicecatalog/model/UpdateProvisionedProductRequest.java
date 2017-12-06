@@ -50,46 +50,46 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String acceptLanguage;
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      */
     private String provisionedProductName;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      */
     private String provisionedProductId;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      */
     private String productId;
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String provisioningArtifactId;
     /**
      * <p>
-     * The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the product
-     * has a default path, and is required if there is more than one path for the specified product.
+     * The new path identifier. This value is optional if the product has a default path, and required if the product
+     * has more than one path.
      * </p>
      */
     private String pathId;
     /**
      * <p>
-     * A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     * The new parameters.
      * </p>
      */
     private java.util.List<UpdateProvisioningParameter> provisioningParameters;
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update request.
+     * The idempotency token that uniquely identifies the provisioning update rquest.
      * </p>
      */
     private String updateToken;
@@ -235,13 +235,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     *        <code>ProvisionedProductId</code>, but not both.
+     *        The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+     *        and <code>ProvisionedProductId</code>.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -250,12 +250,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
-     * @return The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     *         <code>ProvisionedProductId</code>, but not both.
+     * @return The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+     *         and <code>ProvisionedProductId</code>.
      */
 
     public String getProvisionedProductName() {
@@ -264,13 +264,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
-     *        <code>ProvisionedProductId</code>, but not both.
+     *        The updated name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+     *        and <code>ProvisionedProductId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,13 +281,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to update. Specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      */
 
     public void setProvisionedProductId(String provisionedProductId) {
@@ -296,12 +296,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object to update. Specify either
-     *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * @return The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+     *         and <code>ProvisionedProductId</code>.
      */
 
     public String getProvisionedProductId() {
@@ -310,13 +310,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to update. Specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +327,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
      * @param productId
-     *        The identifier of the ProvisionedProduct object.
+     *        The identifier of the provisioned product.
      */
 
     public void setProductId(String productId) {
@@ -340,10 +340,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object.
+     * @return The identifier of the provisioned product.
      */
 
     public String getProductId() {
@@ -352,11 +352,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object.
+     * The identifier of the provisioned product.
      * </p>
      * 
      * @param productId
-     *        The identifier of the ProvisionedProduct object.
+     *        The identifier of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,12 +367,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *        version.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -381,11 +380,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *         version.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getProvisioningArtifactId() {
@@ -394,12 +392,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
-     *        version.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,13 +407,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the product
-     * has a default path, and is required if there is more than one path for the specified product.
+     * The new path identifier. This value is optional if the product has a default path, and required if the product
+     * has more than one path.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the
-     *        product has a default path, and is required if there is more than one path for the specified product.
+     *        The new path identifier. This value is optional if the product has a default path, and required if the
+     *        product has more than one path.
      */
 
     public void setPathId(String pathId) {
@@ -425,12 +422,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the product
-     * has a default path, and is required if there is more than one path for the specified product.
+     * The new path identifier. This value is optional if the product has a default path, and required if the product
+     * has more than one path.
      * </p>
      * 
-     * @return The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the
-     *         product has a default path, and is required if there is more than one path for the specified product.
+     * @return The new path identifier. This value is optional if the product has a default path, and required if the
+     *         product has more than one path.
      */
 
     public String getPathId() {
@@ -439,13 +436,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the product
-     * has a default path, and is required if there is more than one path for the specified product.
+     * The new path identifier. This value is optional if the product has a default path, and required if the product
+     * has more than one path.
      * </p>
      * 
      * @param pathId
-     *        The identifier of the path to use in the updated ProvisionedProduct object. This value is optional if the
-     *        product has a default path, and is required if there is more than one path for the specified product.
+     *        The new path identifier. This value is optional if the product has a default path, and required if the
+     *        product has more than one path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,10 +453,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     * The new parameters.
      * </p>
      * 
-     * @return A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     * @return The new parameters.
      */
 
     public java.util.List<UpdateProvisioningParameter> getProvisioningParameters() {
@@ -468,11 +465,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     * The new parameters.
      * </p>
      * 
      * @param provisioningParameters
-     *        A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     *        The new parameters.
      */
 
     public void setProvisioningParameters(java.util.Collection<UpdateProvisioningParameter> provisioningParameters) {
@@ -486,7 +483,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     * The new parameters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -495,7 +492,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param provisioningParameters
-     *        A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     *        The new parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,11 +508,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     * The new parameters.
      * </p>
      * 
      * @param provisioningParameters
-     *        A list of <code>ProvisioningParameter</code> objects used to update the ProvisionedProduct object.
+     *        The new parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,11 +523,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update request.
+     * The idempotency token that uniquely identifies the provisioning update rquest.
      * </p>
      * 
      * @param updateToken
-     *        The idempotency token that uniquely identifies the provisioning update request.
+     *        The idempotency token that uniquely identifies the provisioning update rquest.
      */
 
     public void setUpdateToken(String updateToken) {
@@ -539,10 +536,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update request.
+     * The idempotency token that uniquely identifies the provisioning update rquest.
      * </p>
      * 
-     * @return The idempotency token that uniquely identifies the provisioning update request.
+     * @return The idempotency token that uniquely identifies the provisioning update rquest.
      */
 
     public String getUpdateToken() {
@@ -551,11 +548,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update request.
+     * The idempotency token that uniquely identifies the provisioning update rquest.
      * </p>
      * 
      * @param updateToken
-     *        The idempotency token that uniquely identifies the provisioning update request.
+     *        The idempotency token that uniquely identifies the provisioning update rquest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

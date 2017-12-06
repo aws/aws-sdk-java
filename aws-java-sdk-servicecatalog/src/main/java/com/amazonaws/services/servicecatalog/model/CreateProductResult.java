@@ -25,30 +25,30 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      */
     private ProductViewDetail productViewDetail;
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
-     * Tags successfully associated with the new product.
+     * Information about the tags associated with the product.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      * 
      * @param productViewDetail
-     *        The resulting detailed product view information.
+     *        Information about the product view.
      */
 
     public void setProductViewDetail(ProductViewDetail productViewDetail) {
@@ -57,10 +57,10 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      * 
-     * @return The resulting detailed product view information.
+     * @return Information about the product view.
      */
 
     public ProductViewDetail getProductViewDetail() {
@@ -69,11 +69,11 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed product view information.
+     * Information about the product view.
      * </p>
      * 
      * @param productViewDetail
-     *        The resulting detailed product view information.
+     *        Information about the product view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      */
 
     public void setProvisioningArtifactDetail(ProvisioningArtifactDetail provisioningArtifactDetail) {
@@ -97,10 +97,10 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
-     * @return The resulting detailed provisioning artifact information.
+     * @return Information about the provisioning artifact.
      */
 
     public ProvisioningArtifactDetail getProvisioningArtifactDetail() {
@@ -109,11 +109,11 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,10 +124,10 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags successfully associated with the new product.
+     * Information about the tags associated with the product.
      * </p>
      * 
-     * @return Tags successfully associated with the new product.
+     * @return Information about the tags associated with the product.
      */
 
     public java.util.List<Tag> getTags() {
@@ -136,11 +136,11 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags successfully associated with the new product.
+     * Information about the tags associated with the product.
      * </p>
      * 
      * @param tags
-     *        Tags successfully associated with the new product.
+     *        Information about the tags associated with the product.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -154,7 +154,7 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags successfully associated with the new product.
+     * Information about the tags associated with the product.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param tags
-     *        Tags successfully associated with the new product.
+     *        Information about the tags associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Tags successfully associated with the new product.
+     * Information about the tags associated with the product.
      * </p>
      * 
      * @param tags
-     *        Tags successfully associated with the new product.
+     *        Information about the tags associated with the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed portfolio information.
+ * Information about a portfolio.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/PortfolioDetail" target="_top">AWS API
@@ -30,7 +30,7 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      */
     private String id;
@@ -48,7 +48,7 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
     private String displayName;
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      */
     private String description;
@@ -67,11 +67,11 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier for the portfolio.
+     *        The portfolio identifier.
      */
 
     public void setId(String id) {
@@ -80,10 +80,10 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      * 
-     * @return The identifier for the portfolio.
+     * @return The portfolio identifier.
      */
 
     public String getId() {
@@ -92,11 +92,11 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The identifier for the portfolio.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier for the portfolio.
+     *        The portfolio identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      * 
      * @param description
-     *        The text description of the portfolio.
+     *        The description of the portfolio.
      */
 
     public void setDescription(String description) {
@@ -200,10 +200,10 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      * 
-     * @return The text description of the portfolio.
+     * @return The description of the portfolio.
      */
 
     public String getDescription() {
@@ -212,11 +212,11 @@ public class PortfolioDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The text description of the portfolio.
+     * The description of the portfolio.
      * </p>
      * 
      * @param description
-     *        The text description of the portfolio.
+     *        The description of the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

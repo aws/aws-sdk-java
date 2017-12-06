@@ -50,7 +50,7 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
     private String acceptLanguage;
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      */
     private String copyProductToken;
@@ -196,11 +196,11 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      * 
      * @param copyProductToken
-     *        The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     *        The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      */
 
     public void setCopyProductToken(String copyProductToken) {
@@ -209,10 +209,10 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      * 
-     * @return The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * @return The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      */
 
     public String getCopyProductToken() {
@@ -221,11 +221,11 @@ public class DescribeCopyProductStatusRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     * The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * </p>
      * 
      * @param copyProductToken
-     *        The token returned from the call to <code>CopyProduct</code> that initiated the operation.
+     *        The token for the copy product operation. This token is returned by <a>CopyProduct</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

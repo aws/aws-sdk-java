@@ -25,24 +25,24 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      */
     private PortfolioDetail portfolioDetail;
     /**
      * <p>
-     * Tags successfully associated with the new portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
      * @param portfolioDetail
-     *        The resulting detailed portfolio information.
+     *        Information about the portfolio.
      */
 
     public void setPortfolioDetail(PortfolioDetail portfolioDetail) {
@@ -51,10 +51,10 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
-     * @return The resulting detailed portfolio information.
+     * @return Information about the portfolio.
      */
 
     public PortfolioDetail getPortfolioDetail() {
@@ -63,11 +63,11 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The resulting detailed portfolio information.
+     * Information about the portfolio.
      * </p>
      * 
      * @param portfolioDetail
-     *        The resulting detailed portfolio information.
+     *        Information about the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags successfully associated with the new portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
-     * @return Tags successfully associated with the new portfolio.
+     * @return Information about the tags associated with the portfolio.
      */
 
     public java.util.List<Tag> getTags() {
@@ -90,11 +90,11 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags successfully associated with the new portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
      * @param tags
-     *        Tags successfully associated with the new portfolio.
+     *        Information about the tags associated with the portfolio.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -108,7 +108,7 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags successfully associated with the new portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param tags
-     *        Tags successfully associated with the new portfolio.
+     *        Information about the tags associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class CreatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Tags successfully associated with the new portfolio.
+     * Information about the tags associated with the portfolio.
      * </p>
      * 
      * @param tags
-     *        Tags successfully associated with the new portfolio.
+     *        Information about the tags associated with the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

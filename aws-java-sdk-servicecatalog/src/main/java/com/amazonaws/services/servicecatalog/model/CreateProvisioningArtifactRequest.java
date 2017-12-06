@@ -56,14 +56,14 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     private String productId;
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactProperties parameters;
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      */
     private String idempotencyToken;
@@ -249,11 +249,11 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      * 
      * @param parameters
-     *        The parameters to use when creating the new provisioning artifact.
+     *        The configuration for the provisioning artifact.
      */
 
     public void setParameters(ProvisioningArtifactProperties parameters) {
@@ -262,10 +262,10 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      * 
-     * @return The parameters to use when creating the new provisioning artifact.
+     * @return The configuration for the provisioning artifact.
      */
 
     public ProvisioningArtifactProperties getParameters() {
@@ -274,11 +274,11 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameters to use when creating the new provisioning artifact.
+     * The configuration for the provisioning artifact.
      * </p>
      * 
      * @param parameters
-     *        The parameters to use when creating the new provisioning artifact.
+     *        The configuration for the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,13 +289,13 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -304,12 +304,12 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
-     * @return A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided
-     *         that you also specify a different idempotency token for each request.
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *         idempotency token, the same response is returned for each repeated request.
      */
 
     public String getIdempotencyToken() {
@@ -318,13 +318,13 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

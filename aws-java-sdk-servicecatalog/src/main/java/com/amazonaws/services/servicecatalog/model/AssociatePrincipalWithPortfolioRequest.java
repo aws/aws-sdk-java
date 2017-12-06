@@ -56,13 +56,13 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
     private String portfolioId;
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      */
     private String principalARN;
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      */
     private String principalType;
@@ -248,11 +248,11 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
      * @param principalARN
-     *        The ARN representing the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group).
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -261,10 +261,10 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
-     * @return The ARN representing the principal (IAM user, role, or group).
+     * @return The ARN of the principal (IAM user, role, or group).
      */
 
     public String getPrincipalARN() {
@@ -273,11 +273,11 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN representing the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group).
      * </p>
      * 
      * @param principalARN
-     *        The ARN representing the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +288,11 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @see PrincipalType
      */
 
@@ -302,10 +302,10 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
-     * @return The principal type. Must be <code>IAM</code>
+     * @return The principal type. The supported value is <code>IAM</code>.
      * @see PrincipalType
      */
 
@@ -315,11 +315,11 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
@@ -331,11 +331,11 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @see PrincipalType
      */
 
@@ -345,11 +345,11 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. Must be <code>IAM</code>
+     * The principal type. The supported value is <code>IAM</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. Must be <code>IAM</code>
+     *        The principal type. The supported value is <code>IAM</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */

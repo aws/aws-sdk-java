@@ -50,7 +50,7 @@ public class DeleteConstraintRequest extends com.amazonaws.AmazonWebServiceReque
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the constraint to delete.
+     * The identifier of the constraint.
      * </p>
      */
     private String id;
@@ -196,11 +196,11 @@ public class DeleteConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the constraint to delete.
+     * The identifier of the constraint.
      * </p>
      * 
      * @param id
-     *        The identifier of the constraint to delete.
+     *        The identifier of the constraint.
      */
 
     public void setId(String id) {
@@ -209,10 +209,10 @@ public class DeleteConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the constraint to delete.
+     * The identifier of the constraint.
      * </p>
      * 
-     * @return The identifier of the constraint to delete.
+     * @return The identifier of the constraint.
      */
 
     public String getId() {
@@ -221,11 +221,11 @@ public class DeleteConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the constraint to delete.
+     * The identifier of the constraint.
      * </p>
      * 
      * @param id
-     *        The identifier of the constraint to delete.
+     *        The identifier of the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

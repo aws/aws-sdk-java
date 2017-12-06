@@ -25,24 +25,18 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      */
     private RecordDetail recordDetail;
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      * 
      * @param recordDetail
-     *        The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that
-     *        request, the current state of the request, a pointer to the ProvisionedProduct object that the request is
-     *        modifying, and a list of any errors that the request encountered.
+     *        Information about the result of the request.
      */
 
     public void setRecordDetail(RecordDetail recordDetail) {
@@ -51,14 +45,10 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      * 
-     * @return The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that
-     *         request, the current state of the request, a pointer to the ProvisionedProduct object that the request is
-     *         modifying, and a list of any errors that the request encountered.
+     * @return Information about the result of the request.
      */
 
     public RecordDetail getRecordDetail() {
@@ -67,15 +57,11 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that request,
-     * the current state of the request, a pointer to the ProvisionedProduct object that the request is modifying, and a
-     * list of any errors that the request encountered.
+     * Information about the result of the request.
      * </p>
      * 
      * @param recordDetail
-     *        The detailed result of the <a>UpdateProvisionedProduct</a> request, containing the inputs made to that
-     *        request, the current state of the request, a pointer to the ProvisionedProduct object that the request is
-     *        modifying, and a list of any errors that the request encountered.
+     *        Information about the result of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

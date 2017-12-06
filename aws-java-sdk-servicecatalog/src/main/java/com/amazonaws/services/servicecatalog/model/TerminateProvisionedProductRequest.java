@@ -27,31 +27,30 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      */
     private String provisionedProductName;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      */
     private String provisionedProductId;
     /**
      * <p>
      * An idempotency token that uniquely identifies the termination request. This token is only valid during the
-     * termination process. After the ProvisionedProduct object is terminated, further requests to terminate the same
-     * ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.
+     * termination process. After the provisioned product is terminated, subsequent requests to terminate the same
+     * provisioned product always return <b>ResourceNotFound</b>.
      * </p>
      */
     private String terminateToken;
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it cannot
-     * delete the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * underlying resources.
      * </p>
      */
     private Boolean ignoreErrors;
@@ -81,13 +80,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-     *        or <code>ProvisionedProductId</code>, but not both.
+     *        The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -96,12 +95,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
-     * @return The name of the ProvisionedProduct object to terminate. Specify either
-     *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * @return The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *         <code>ProvisionedProductId</code>.
      */
 
     public String getProvisionedProductName() {
@@ -110,13 +109,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
-     * <code>ProvisionedProductId</code>, but not both.
+     * The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductName
-     *        The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-     *        or <code>ProvisionedProductId</code>, but not both.
+     *        The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +126,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to terminate. Specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      */
 
     public void setProvisionedProductId(String provisionedProductId) {
@@ -142,12 +141,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object to terminate. Specify either
-     *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * @return The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
+     *         and <code>ProvisionedProductId</code>.
      */
 
     public String getProvisionedProductId() {
@@ -156,13 +155,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     * <code>ProvisionedProductId</code>.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to terminate. Specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
+     *        <code>ProvisionedProductId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,16 +173,14 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * An idempotency token that uniquely identifies the termination request. This token is only valid during the
-     * termination process. After the ProvisionedProduct object is terminated, further requests to terminate the same
-     * ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.
+     * termination process. After the provisioned product is terminated, subsequent requests to terminate the same
+     * provisioned product always return <b>ResourceNotFound</b>.
      * </p>
      * 
      * @param terminateToken
      *        An idempotency token that uniquely identifies the termination request. This token is only valid during the
-     *        termination process. After the ProvisionedProduct object is terminated, further requests to terminate the
-     *        same ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     *        <code>TerminateToken</code>.
+     *        termination process. After the provisioned product is terminated, subsequent requests to terminate the
+     *        same provisioned product always return <b>ResourceNotFound</b>.
      */
 
     public void setTerminateToken(String terminateToken) {
@@ -193,15 +190,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * An idempotency token that uniquely identifies the termination request. This token is only valid during the
-     * termination process. After the ProvisionedProduct object is terminated, further requests to terminate the same
-     * ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.
+     * termination process. After the provisioned product is terminated, subsequent requests to terminate the same
+     * provisioned product always return <b>ResourceNotFound</b>.
      * </p>
      * 
      * @return An idempotency token that uniquely identifies the termination request. This token is only valid during
-     *         the termination process. After the ProvisionedProduct object is terminated, further requests to terminate
-     *         the same ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     *         <code>TerminateToken</code>.
+     *         the termination process. After the provisioned product is terminated, subsequent requests to terminate
+     *         the same provisioned product always return <b>ResourceNotFound</b>.
      */
 
     public String getTerminateToken() {
@@ -211,16 +206,14 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * An idempotency token that uniquely identifies the termination request. This token is only valid during the
-     * termination process. After the ProvisionedProduct object is terminated, further requests to terminate the same
-     * ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     * <code>TerminateToken</code>.
+     * termination process. After the provisioned product is terminated, subsequent requests to terminate the same
+     * provisioned product always return <b>ResourceNotFound</b>.
      * </p>
      * 
      * @param terminateToken
      *        An idempotency token that uniquely identifies the termination request. This token is only valid during the
-     *        termination process. After the ProvisionedProduct object is terminated, further requests to terminate the
-     *        same ProvisionedProduct object always return <b>ResourceNotFound</b> regardless of the value of
-     *        <code>TerminateToken</code>.
+     *        termination process. After the provisioned product is terminated, subsequent requests to terminate the
+     *        same provisioned product always return <b>ResourceNotFound</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,13 +224,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it cannot
-     * delete the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * underlying resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it
-     *        cannot delete the underlying resources.
+     *        If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
+     *        delete the underlying resources.
      */
 
     public void setIgnoreErrors(Boolean ignoreErrors) {
@@ -246,12 +239,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it cannot
-     * delete the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * underlying resources.
      * </p>
      * 
-     * @return If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it
-     *         cannot delete the underlying resources.
+     * @return If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
+     *         delete the underlying resources.
      */
 
     public Boolean getIgnoreErrors() {
@@ -260,13 +253,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it cannot
-     * delete the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * underlying resources.
      * </p>
      * 
      * @param ignoreErrors
-     *        If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it
-     *        cannot delete the underlying resources.
+     *        If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
+     *        delete the underlying resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,12 +270,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it cannot
-     * delete the underlying resources.
+     * If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot delete the
+     * underlying resources.
      * </p>
      * 
-     * @return If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct object even if it
-     *         cannot delete the underlying resources.
+     * @return If set to true, AWS Service Catalog stops managing the specified provisioned product even if it cannot
+     *         delete the underlying resources.
      */
 
     public Boolean isIgnoreErrors() {

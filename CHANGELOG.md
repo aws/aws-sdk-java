@@ -1,3 +1,16 @@
+# __1.11.243__ __2017-12-05__
+## __AWS IoT__
+  - ### Features
+    - Add error action API for RulesEngine. 
+
+## __AWS Service Catalog__
+  - ### Features
+    - ServiceCatalog has two distinct personas for its use, an "admin" persona (who creates sets of products with different versions and prescribes who has access to them) and an "end-user" persona (who can launch cloud resources based on the configuration data their admins have given them access to).  This API update will allow admin users to deactivate/activate product versions, end-user will only be able to access and launch active product versions. 
+
+## __Amazon Route 53 Auto Naming__
+  - ### Features
+    - Amazon Route 53 Auto Naming lets you configure public or private namespaces that your microservice applications run in. When instances of the service become available, you can call the Auto Naming API to register the instance, and Amazon Route 53 automatically creates up to five DNS records and an optional health check. Clients that submit DNS queries for the service receive an answer that contains up to eight healthy records.
+
 # __1.11.242__ __2017-12-04__
 ## __AWS Budgets__
   - ### Features

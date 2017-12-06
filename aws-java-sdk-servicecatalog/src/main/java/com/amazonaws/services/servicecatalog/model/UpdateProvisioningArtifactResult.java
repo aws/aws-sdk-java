@@ -25,13 +25,13 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      */
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -44,11 +44,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      */
 
     public void setProvisioningArtifactDetail(ProvisioningArtifactDetail provisioningArtifactDetail) {
@@ -57,10 +57,10 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
-     * @return The resulting detailed provisioning artifact information.
+     * @return Information about the provisioning artifact.
      */
 
     public ProvisioningArtifactDetail getProvisioningArtifactDetail() {
@@ -69,11 +69,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The resulting detailed provisioning artifact information.
+     * Information about the provisioning artifact.
      * </p>
      * 
      * @param provisioningArtifactDetail
-     *        The resulting detailed provisioning artifact information.
+     *        Information about the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      * 
-     * @return Additional information about the provisioning artifact update request.
+     * @return The URL of the CloudFormation template in Amazon S3.
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -96,11 +96,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact update request.
+     *        The URL of the CloudFormation template in Amazon S3.
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -109,11 +109,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact update request.
+     * The URL of the CloudFormation template in Amazon S3.
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact update request.
+     *        The URL of the CloudFormation template in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class DescribeTagOptionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the TagOption.
+     *        The TagOption identifier.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class DescribeTagOptionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      * 
-     * @return The identifier of the TagOption.
+     * @return The TagOption identifier.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class DescribeTagOptionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the TagOption.
+     * The TagOption identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the TagOption.
+     *        The TagOption identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,21 +50,19 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
     private String acceptLanguage;
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      */
     private String pageToken;
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      */
     private Integer pageSize;
@@ -210,13 +208,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      * 
      * @param id
-     *        The record identifier of the ProvisionedProduct object for which to retrieve output information. This is
-     *        the <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     *        The record identifier of the provisioned product. This identifier is returned by the request operation.
      */
 
     public void setId(String id) {
@@ -225,12 +221,10 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      * 
-     * @return The record identifier of the ProvisionedProduct object for which to retrieve output information. This is
-     *         the <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * @return The record identifier of the provisioned product. This identifier is returned by the request operation.
      */
 
     public String getId() {
@@ -239,13 +233,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The record identifier of the ProvisionedProduct object for which to retrieve output information. This is the
-     * <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     * The record identifier of the provisioned product. This identifier is returned by the request operation.
      * </p>
      * 
      * @param id
-     *        The record identifier of the ProvisionedProduct object for which to retrieve output information. This is
-     *        the <code>RecordDetail.RecordId</code> obtained from the request operation's response.
+     *        The record identifier of the provisioned product. This identifier is returned by the request operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,12 +248,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public void setPageToken(String pageToken) {
@@ -270,11 +261,10 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
-     * @return The page token of the first page retrieved. If null, this retrieves the first page of size
-     *         <code>PageSize</code>.
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
      */
 
     public String getPageToken() {
@@ -283,12 +273,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The page token of the first page retrieved. If null, this retrieves the first page of size <code>PageSize</code>.
+     * The page token for the next set of results. To retrieve the first set of results, use null.
      * </p>
      * 
      * @param pageToken
-     *        The page token of the first page retrieved. If null, this retrieves the first page of size
-     *        <code>PageSize</code>.
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,13 +288,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      */
 
     public void setPageSize(Integer pageSize) {
@@ -314,12 +301,10 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
-     * @return The maximum number of items to return in the results. If more results exist than fit in the specified
-     *         <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * @return The maximum number of items to return with this call.
      */
 
     public Integer getPageSize() {
@@ -328,13 +313,11 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items to return in the results. If more results exist than fit in the specified
-     * <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     * The maximum number of items to return with this call.
      * </p>
      * 
      * @param pageSize
-     *        The maximum number of items to return in the results. If more results exist than fit in the specified
-     *        <code>PageSize</code>, the value of <code>NextPageToken</code> in the response is non-null.
+     *        The maximum number of items to return with this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

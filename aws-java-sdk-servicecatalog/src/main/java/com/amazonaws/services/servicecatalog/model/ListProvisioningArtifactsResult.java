@@ -25,24 +25,24 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of detailed provisioning artifact information objects.
+     * Information about the provisioning artifacts.
      * </p>
      */
     private java.util.List<ProvisioningArtifactDetail> provisioningArtifactDetails;
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * List of detailed provisioning artifact information objects.
+     * Information about the provisioning artifacts.
      * </p>
      * 
-     * @return List of detailed provisioning artifact information objects.
+     * @return Information about the provisioning artifacts.
      */
 
     public java.util.List<ProvisioningArtifactDetail> getProvisioningArtifactDetails() {
@@ -51,11 +51,11 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of detailed provisioning artifact information objects.
+     * Information about the provisioning artifacts.
      * </p>
      * 
      * @param provisioningArtifactDetails
-     *        List of detailed provisioning artifact information objects.
+     *        Information about the provisioning artifacts.
      */
 
     public void setProvisioningArtifactDetails(java.util.Collection<ProvisioningArtifactDetail> provisioningArtifactDetails) {
@@ -69,7 +69,7 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of detailed provisioning artifact information objects.
+     * Information about the provisioning artifacts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param provisioningArtifactDetails
-     *        List of detailed provisioning artifact information objects.
+     *        Information about the provisioning artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of detailed provisioning artifact information objects.
+     * Information about the provisioning artifacts.
      * </p>
      * 
      * @param provisioningArtifactDetails
-     *        List of detailed provisioning artifact information objects.
+     *        Information about the provisioning artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -124,12 +124,12 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
-     * @return The page token to use to retrieve the next page of results for this operation. If there are no more
-     *         pages, this value is null.
+     * @return The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *         is null.
      */
 
     public String getNextPageToken() {
@@ -138,13 +138,13 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The page token to use to retrieve the next page of results for this operation. If there are no more pages, this
-     * value is null.
+     * The page token to use to retrieve the next set of results. If there are no additional results, this value is
+     * null.
      * </p>
      * 
      * @param nextPageToken
-     *        The page token to use to retrieve the next page of results for this operation. If there are no more pages,
-     *        this value is null.
+     *        The page token to use to retrieve the next set of results. If there are no additional results, this value
+     *        is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

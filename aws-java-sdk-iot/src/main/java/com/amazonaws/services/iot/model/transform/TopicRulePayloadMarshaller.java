@@ -38,6 +38,8 @@ public class TopicRulePayloadMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ruleDisabled").build();
     private static final MarshallingInfo<String> AWSIOTSQLVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsIotSqlVersion").build();
+    private static final MarshallingInfo<StructuredPojo> ERRORACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorAction").build();
 
     private static final TopicRulePayloadMarshaller instance = new TopicRulePayloadMarshaller();
 
@@ -60,6 +62,7 @@ public class TopicRulePayloadMarshaller {
             protocolMarshaller.marshall(topicRulePayload.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(topicRulePayload.getRuleDisabled(), RULEDISABLED_BINDING);
             protocolMarshaller.marshall(topicRulePayload.getAwsIotSqlVersion(), AWSIOTSQLVERSION_BINDING);
+            protocolMarshaller.marshall(topicRulePayload.getErrorAction(), ERRORACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

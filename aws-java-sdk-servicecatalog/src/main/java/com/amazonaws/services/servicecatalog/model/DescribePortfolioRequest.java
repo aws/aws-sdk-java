@@ -50,7 +50,7 @@ public class DescribePortfolioRequest extends com.amazonaws.AmazonWebServiceRequ
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the portfolio for which to retrieve information.
+     * The portfolio identifier.
      * </p>
      */
     private String id;
@@ -196,11 +196,11 @@ public class DescribePortfolioRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the portfolio for which to retrieve information.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the portfolio for which to retrieve information.
+     *        The portfolio identifier.
      */
 
     public void setId(String id) {
@@ -209,10 +209,10 @@ public class DescribePortfolioRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the portfolio for which to retrieve information.
+     * The portfolio identifier.
      * </p>
      * 
-     * @return The identifier of the portfolio for which to retrieve information.
+     * @return The portfolio identifier.
      */
 
     public String getId() {
@@ -221,11 +221,11 @@ public class DescribePortfolioRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the portfolio for which to retrieve information.
+     * The portfolio identifier.
      * </p>
      * 
      * @param id
-     *        The identifier of the portfolio for which to retrieve information.
+     *        The portfolio identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

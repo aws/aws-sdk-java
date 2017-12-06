@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information indicating the ways in which a product can be provisioned.
+ * Information about a provisioning artifact. A provisioning artifact is also known as a product version.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifact"
@@ -30,19 +30,19 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      */
     private String description;
@@ -55,11 +55,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param id
-     *        The identifier for the artifact. This is sometimes referred to as the product version.
+     *        The identifier of the provisioning artifact.
      */
 
     public void setId(String id) {
@@ -68,10 +68,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
-     * @return The identifier for the artifact. This is sometimes referred to as the product version.
+     * @return The identifier of the provisioning artifact.
      */
 
     public String getId() {
@@ -80,11 +80,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact. This is sometimes referred to as the product version.
+     * The identifier of the provisioning artifact.
      * </p>
      * 
      * @param id
-     *        The identifier for the artifact. This is sometimes referred to as the product version.
+     *        The identifier of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name of the artifact.
+     *        The name of the provisioning artifact.
      */
 
     public void setName(String name) {
@@ -108,10 +108,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
-     * @return The name of the artifact.
+     * @return The name of the provisioning artifact.
      */
 
     public String getName() {
@@ -120,11 +120,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the artifact.
+     * The name of the provisioning artifact.
      * </p>
      * 
      * @param name
-     *        The name of the artifact.
+     *        The name of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the artifact.
+     *        The description of the provisioning artifact.
      */
 
     public void setDescription(String description) {
@@ -148,10 +148,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
-     * @return The text description of the artifact.
+     * @return The description of the provisioning artifact.
      */
 
     public String getDescription() {
@@ -160,11 +160,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The text description of the artifact.
+     * The description of the provisioning artifact.
      * </p>
      * 
      * @param description
-     *        The text description of the artifact.
+     *        The description of the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -62,37 +62,71 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
     private String productId;
     /**
      * <p>
-     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     * information, see the Examples section.
+     * The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:
+     * </p>
+     * <dl>
+     * <dt>LAUNCH</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * </p>
+     * </dd>
+     * <dt>NOTIFICATION</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
      * </p>
+     * </dd>
+     * <dt>TEMPLATE</dt>
+     * <dd>
      * <p>
-     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     * Specify the <code>Rules</code> property. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     * >Template Constraint Rules</a>.
      * </p>
+     * </dd>
+     * </dl>
      */
     private String parameters;
     /**
      * <p>
-     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
-     * <code>TEMPLATE</code>.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      */
     private String idempotencyToken;
@@ -318,30 +352,66 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     * information, see the Examples section.
+     * The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:
+     * </p>
+     * <dl>
+     * <dt>LAUNCH</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * </p>
+     * </dd>
+     * <dt>NOTIFICATION</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
      * </p>
+     * </dd>
+     * <dt>TEMPLATE</dt>
+     * <dd>
      * <p>
-     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     * Specify the <code>Rules</code> property. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     * >Template Constraint Rules</a>.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param parameters
-     *        The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     *        information, see the Examples section.</p>
+     *        The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+     *        <dl>
+     *        <dt>LAUNCH</dt>
+     *        <dd>
      *        <p>
-     *        For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     *        Specify the <code>RoleArn</code> property as follows:
      *        </p>
      *        <p>
-     *        For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     *        \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     *        </p>
+     *        </dd>
+     *        <dt>NOTIFICATION</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>NotificationArns</code> property as follows:
      *        </p>
      *        <p>
-     *        For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     *        \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     *        </p>
+     *        </dd>
+     *        <dt>TEMPLATE</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>Rules</code> property. For more information, see <a
+     *        href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     *        >Template Constraint Rules</a>.
+     *        </p>
+     *        </dd>
      */
 
     public void setParameters(String parameters) {
@@ -350,29 +420,65 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     * information, see the Examples section.
+     * The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:
+     * </p>
+     * <dl>
+     * <dt>LAUNCH</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * </p>
+     * </dd>
+     * <dt>NOTIFICATION</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
      * </p>
+     * </dd>
+     * <dt>TEMPLATE</dt>
+     * <dd>
      * <p>
-     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     * Specify the <code>Rules</code> property. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     * >Template Constraint Rules</a>.
      * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     *         information, see the Examples section.</p>
+     * @return The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+     *         <dl>
+     *         <dt>LAUNCH</dt>
+     *         <dd>
      *         <p>
-     *         For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     *         Specify the <code>RoleArn</code> property as follows:
      *         </p>
      *         <p>
-     *         For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     *         \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     *         </p>
+     *         </dd>
+     *         <dt>NOTIFICATION</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the <code>NotificationArns</code> property as follows:
      *         </p>
      *         <p>
-     *         For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     *         \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     *         </p>
+     *         </dd>
+     *         <dt>TEMPLATE</dt>
+     *         <dd>
+     *         <p>
+     *         Specify the <code>Rules</code> property. For more information, see <a
+     *         href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     *         >Template Constraint Rules</a>.
+     *         </p>
+     *         </dd>
      */
 
     public String getParameters() {
@@ -381,30 +487,66 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     * information, see the Examples section.
+     * The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:
+     * </p>
+     * <dl>
+     * <dt>LAUNCH</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>RoleArn</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     * </p>
+     * </dd>
+     * <dt>NOTIFICATION</dt>
+     * <dd>
+     * <p>
+     * Specify the <code>NotificationArns</code> property as follows:
      * </p>
      * <p>
-     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
      * </p>
+     * </dd>
+     * <dt>TEMPLATE</dt>
+     * <dd>
      * <p>
-     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     * Specify the <code>Rules</code> property. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     * >Template Constraint Rules</a>.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param parameters
-     *        The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For more
-     *        information, see the Examples section.</p>
+     *        The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>
+     *        <dl>
+     *        <dt>LAUNCH</dt>
+     *        <dd>
      *        <p>
-     *        For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     *        Specify the <code>RoleArn</code> property as follows:
      *        </p>
      *        <p>
-     *        For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     *        \"RoleArn\" : \"arn:aws:iam::123456789012:role/LaunchRole\"
+     *        </p>
+     *        </dd>
+     *        <dt>NOTIFICATION</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>NotificationArns</code> property as follows:
      *        </p>
      *        <p>
-     *        For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
+     *        \"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]
+     *        </p>
+     *        </dd>
+     *        <dt>TEMPLATE</dt>
+     *        <dd>
+     *        <p>
+     *        Specify the <code>Rules</code> property. For more information, see <a
+     *        href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html"
+     *        >Template Constraint Rules</a>.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,13 +557,44 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
-     * <code>TEMPLATE</code>.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
-     *        <code>NOTIFICATION</code>, or <code>TEMPLATE</code>.
+     *        The type of constraint.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAUNCH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPLATE</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -430,12 +603,43 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
-     * <code>TEMPLATE</code>.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
-     *         <code>NOTIFICATION</code>, or <code>TEMPLATE</code>.
+     * @return The type of constraint.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>LAUNCH</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOTIFICATION</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TEMPLATE</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -444,13 +648,44 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
-     * <code>TEMPLATE</code>.
+     * The type of constraint.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAUNCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTIFICATION</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TEMPLATE</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
-     *        <code>NOTIFICATION</code>, or <code>TEMPLATE</code>.
+     *        The type of constraint.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAUNCH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTIFICATION</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TEMPLATE</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,11 +696,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      * 
      * @param description
-     *        The text description of the constraint.
+     *        The description of the constraint.
      */
 
     public void setDescription(String description) {
@@ -474,10 +709,10 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      * 
-     * @return The text description of the constraint.
+     * @return The description of the constraint.
      */
 
     public String getDescription() {
@@ -486,11 +721,11 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The text description of the constraint.
+     * The description of the constraint.
      * </p>
      * 
      * @param description
-     *        The text description of the constraint.
+     *        The description of the constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,13 +736,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -516,12 +751,12 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
-     * @return A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided
-     *         that you also specify a different idempotency token for each request.
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *         idempotency token, the same response is returned for each repeated request.
      */
 
     public String getIdempotencyToken() {
@@ -530,13 +765,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that you
-     * also specify a different idempotency token for each request.
+     * A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency
+     * token, the same response is returned for each repeated request.
      * </p>
      * 
      * @param idempotencyToken
-     *        A token to disambiguate duplicate requests. You can use the same input in multiple requests, provided that
-     *        you also specify a different idempotency token for each request.
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the
+     *        idempotency token, the same response is returned for each repeated request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
