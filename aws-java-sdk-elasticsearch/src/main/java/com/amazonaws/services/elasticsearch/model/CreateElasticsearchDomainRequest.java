@@ -72,6 +72,12 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     private VPCOptions vPCOptions;
     /**
      * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     */
+    private EncryptionAtRestOptions encryptionAtRestOptions;
+    /**
+     * <p>
      * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
      * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
@@ -420,6 +426,46 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the Encryption At Rest Options.
+     */
+
+    public void setEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
+        this.encryptionAtRestOptions = encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     * 
+     * @return Specifies the Encryption At Rest Options.
+     */
+
+    public EncryptionAtRestOptions getEncryptionAtRestOptions() {
+        return this.encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the Encryption At Rest Options.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the Encryption At Rest Options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
+        setEncryptionAtRestOptions(encryptionAtRestOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
      * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
@@ -589,6 +635,8 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
             sb.append("VPCOptions: ").append(getVPCOptions()).append(",");
+        if (getEncryptionAtRestOptions() != null)
+            sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
@@ -635,6 +683,10 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getVPCOptions() != null && other.getVPCOptions().equals(this.getVPCOptions()) == false)
             return false;
+        if (other.getEncryptionAtRestOptions() == null ^ this.getEncryptionAtRestOptions() == null)
+            return false;
+        if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -658,6 +710,7 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;

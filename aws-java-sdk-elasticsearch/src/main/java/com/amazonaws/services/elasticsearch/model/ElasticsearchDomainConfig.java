@@ -65,6 +65,12 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     private VPCDerivedInfoStatus vPCOptions;
     /**
      * <p>
+     * Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     * </p>
+     */
+    private EncryptionAtRestOptionsStatus encryptionAtRestOptions;
+    /**
+     * <p>
      * Specifies the <code>AdvancedOptions</code> for the domain. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.
@@ -332,6 +338,46 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     */
+
+    public void setEncryptionAtRestOptions(EncryptionAtRestOptionsStatus encryptionAtRestOptions) {
+        this.encryptionAtRestOptions = encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @return Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     */
+
+    public EncryptionAtRestOptionsStatus getEncryptionAtRestOptions() {
+        return this.encryptionAtRestOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     * </p>
+     * 
+     * @param encryptionAtRestOptions
+     *        Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withEncryptionAtRestOptions(EncryptionAtRestOptionsStatus encryptionAtRestOptions) {
+        setEncryptionAtRestOptions(encryptionAtRestOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the <code>AdvancedOptions</code> for the domain. See <a href=
      * "http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.
@@ -445,6 +491,8 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
             sb.append("VPCOptions: ").append(getVPCOptions()).append(",");
+        if (getEncryptionAtRestOptions() != null)
+            sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
@@ -487,6 +535,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getVPCOptions() != null && other.getVPCOptions().equals(this.getVPCOptions()) == false)
             return false;
+        if (other.getEncryptionAtRestOptions() == null ^ this.getEncryptionAtRestOptions() == null)
+            return false;
+        if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -509,6 +561,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         return hashCode;

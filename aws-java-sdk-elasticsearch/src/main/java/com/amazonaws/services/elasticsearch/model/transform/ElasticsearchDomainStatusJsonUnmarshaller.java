@@ -105,6 +105,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setVPCOptions(VPCDerivedInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EncryptionAtRestOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setEncryptionAtRestOptions(EncryptionAtRestOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

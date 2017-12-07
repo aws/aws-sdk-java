@@ -84,6 +84,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
+            CreateCustomVerificationEmailTemplateRequest request) {
+
+        return createCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
+            CreateCustomVerificationEmailTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomVerificationEmailTemplateRequest, CreateCustomVerificationEmailTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReceiptFilterResult> createReceiptFilterAsync(CreateReceiptFilterRequest request) {
 
         return createReceiptFilterAsync(request, null);
@@ -174,6 +189,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     public java.util.concurrent.Future<DeleteConfigurationSetTrackingOptionsResult> deleteConfigurationSetTrackingOptionsAsync(
             DeleteConfigurationSetTrackingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConfigurationSetTrackingOptionsRequest, DeleteConfigurationSetTrackingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomVerificationEmailTemplateResult> deleteCustomVerificationEmailTemplateAsync(
+            DeleteCustomVerificationEmailTemplateRequest request) {
+
+        return deleteCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomVerificationEmailTemplateResult> deleteCustomVerificationEmailTemplateAsync(
+            DeleteCustomVerificationEmailTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomVerificationEmailTemplateRequest, DeleteCustomVerificationEmailTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -330,6 +360,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     @Override
     public java.util.concurrent.Future<GetAccountSendingEnabledResult> getAccountSendingEnabledAsync(GetAccountSendingEnabledRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccountSendingEnabledRequest, GetAccountSendingEnabledResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomVerificationEmailTemplateResult> getCustomVerificationEmailTemplateAsync(
+            GetCustomVerificationEmailTemplateRequest request) {
+
+        return getCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomVerificationEmailTemplateResult> getCustomVerificationEmailTemplateAsync(
+            GetCustomVerificationEmailTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCustomVerificationEmailTemplateRequest, GetCustomVerificationEmailTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -499,6 +544,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     @Override
     public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomVerificationEmailTemplatesResult> listCustomVerificationEmailTemplatesAsync(
+            ListCustomVerificationEmailTemplatesRequest request) {
+
+        return listCustomVerificationEmailTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomVerificationEmailTemplatesResult> listCustomVerificationEmailTemplatesAsync(
+            ListCustomVerificationEmailTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -675,6 +735,19 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     @Override
     public java.util.concurrent.Future<SendBulkTemplatedEmailResult> sendBulkTemplatedEmailAsync(SendBulkTemplatedEmailRequest request,
             com.amazonaws.handlers.AsyncHandler<SendBulkTemplatedEmailRequest, SendBulkTemplatedEmailResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCustomVerificationEmailResult> sendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request) {
+
+        return sendCustomVerificationEmailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCustomVerificationEmailResult> sendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendCustomVerificationEmailRequest, SendCustomVerificationEmailResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -895,6 +968,21 @@ public class AbstractAmazonSimpleEmailServiceAsync extends AbstractAmazonSimpleE
     public java.util.concurrent.Future<UpdateConfigurationSetTrackingOptionsResult> updateConfigurationSetTrackingOptionsAsync(
             UpdateConfigurationSetTrackingOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetTrackingOptionsRequest, UpdateConfigurationSetTrackingOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomVerificationEmailTemplateResult> updateCustomVerificationEmailTemplateAsync(
+            UpdateCustomVerificationEmailTemplateRequest request) {
+
+        return updateCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomVerificationEmailTemplateResult> updateCustomVerificationEmailTemplateAsync(
+            UpdateCustomVerificationEmailTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCustomVerificationEmailTemplateRequest, UpdateCustomVerificationEmailTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

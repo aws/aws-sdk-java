@@ -1,3 +1,12 @@
+# __1.11.245__ __2017-12-07__
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Added support for encryption of data at rest on Amazon Elasticsearch Service using AWS KMS
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Customers can customize the emails that Amazon SES sends when verifying new identities. This feature is helpful for developers whose applications send email through Amazon SES on behalf of their customers.
+
 # __1.11.244__ __2017-12-06__
 ## __AWS Elastic Beanstalk__
   - ### Features

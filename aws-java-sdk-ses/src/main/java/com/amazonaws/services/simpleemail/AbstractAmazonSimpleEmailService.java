@@ -59,6 +59,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public CreateCustomVerificationEmailTemplateResult createCustomVerificationEmailTemplate(CreateCustomVerificationEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +95,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public DeleteConfigurationSetTrackingOptionsResult deleteConfigurationSetTrackingOptions(DeleteConfigurationSetTrackingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCustomVerificationEmailTemplateResult deleteCustomVerificationEmailTemplate(DeleteCustomVerificationEmailTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +164,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
     }
 
     @Override
+    public GetCustomVerificationEmailTemplateResult getCustomVerificationEmailTemplate(GetCustomVerificationEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIdentityDkimAttributesResult getIdentityDkimAttributes(GetIdentityDkimAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,6 +220,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCustomVerificationEmailTemplatesResult listCustomVerificationEmailTemplates(ListCustomVerificationEmailTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,6 +285,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public SendBulkTemplatedEmailResult sendBulkTemplatedEmail(SendBulkTemplatedEmailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendCustomVerificationEmailResult sendCustomVerificationEmail(SendCustomVerificationEmailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -346,6 +371,11 @@ public class AbstractAmazonSimpleEmailService implements AmazonSimpleEmailServic
 
     @Override
     public UpdateConfigurationSetTrackingOptionsResult updateConfigurationSetTrackingOptions(UpdateConfigurationSetTrackingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCustomVerificationEmailTemplateResult updateCustomVerificationEmailTemplate(UpdateCustomVerificationEmailTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
