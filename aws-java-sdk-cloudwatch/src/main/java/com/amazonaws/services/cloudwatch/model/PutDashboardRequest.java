@@ -29,14 +29,14 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      * </p>
      */
     private String dashboardName;
     /**
      * <p>
      * The detailed information about the dashboard in JSON format, including the widgets to include and their location
-     * on the dashboard.
+     * on the dashboard. This parameter is required.
      * </p>
      * <p>
      * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
@@ -48,13 +48,13 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      * </p>
      * 
      * @param dashboardName
      *        The name of the dashboard. If a dashboard with this name already exists, this call modifies that
      *        dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is
-     *        255, and valid characters are A-Z, a-z, 0-9, "-", and "_".
+     *        255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      */
 
     public void setDashboardName(String dashboardName) {
@@ -65,12 +65,12 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      * </p>
      * 
      * @return The name of the dashboard. If a dashboard with this name already exists, this call modifies that
      *         dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is
-     *         255, and valid characters are A-Z, a-z, 0-9, "-", and "_".
+     *         255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      */
 
     public String getDashboardName() {
@@ -81,13 +81,13 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      * </p>
      * 
      * @param dashboardName
      *        The name of the dashboard. If a dashboard with this name already exists, this call modifies that
      *        dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is
-     *        255, and valid characters are A-Z, a-z, 0-9, "-", and "_".
+     *        255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,7 +99,7 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The detailed information about the dashboard in JSON format, including the widgets to include and their location
-     * on the dashboard.
+     * on the dashboard. This parameter is required.
      * </p>
      * <p>
      * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
@@ -107,7 +107,7 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param dashboardBody
      *        The detailed information about the dashboard in JSON format, including the widgets to include and their
-     *        location on the dashboard.</p>
+     *        location on the dashboard. This parameter is required.</p>
      *        <p>
      *        For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
      */
@@ -119,14 +119,14 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The detailed information about the dashboard in JSON format, including the widgets to include and their location
-     * on the dashboard.
+     * on the dashboard. This parameter is required.
      * </p>
      * <p>
      * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
      * </p>
      * 
      * @return The detailed information about the dashboard in JSON format, including the widgets to include and their
-     *         location on the dashboard.</p>
+     *         location on the dashboard. This parameter is required.</p>
      *         <p>
      *         For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
      */
@@ -138,7 +138,7 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The detailed information about the dashboard in JSON format, including the widgets to include and their location
-     * on the dashboard.
+     * on the dashboard. This parameter is required.
      * </p>
      * <p>
      * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
@@ -146,7 +146,7 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param dashboardBody
      *        The detailed information about the dashboard in JSON format, including the widgets to include and their
-     *        location on the dashboard.</p>
+     *        location on the dashboard. This parameter is required.</p>
      *        <p>
      *        For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

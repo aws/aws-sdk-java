@@ -50,13 +50,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> oKActions;
@@ -67,13 +69,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmActions;
@@ -84,13 +88,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
@@ -109,13 +115,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.
+     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      */
     private String statistic;
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
+     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     * <code>ExtendedStatistic,</code> but not both.
      * </p>
      */
     private String extendedStatistic;
@@ -166,6 +175,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Integer evaluationPeriods;
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     */
+    private Integer datapointsToAlarm;
     /**
      * <p>
      * The value against which the specified statistic is compared.
@@ -345,26 +360,31 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @return The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
      *         action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
      *         Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *         arn:aws:automate:<i>region</i>:ec2:recover
+     *         arn:aws:automate:<i>region</i>:ec2:recover |
+     *         arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *         arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *         autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *         </p>
      *         <p>
      *         Valid Values (for use with IAM roles):
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      */
 
     public java.util.List<String> getOKActions() {
@@ -381,13 +401,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @param oKActions
@@ -395,13 +417,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      */
 
     public void setOKActions(java.util.Collection<String> oKActions) {
@@ -420,13 +445,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -439,13 +466,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,13 +496,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @param oKActions
@@ -480,13 +512,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,26 +537,31 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @return The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
      *         Each action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
      *         Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *         arn:aws:automate:<i>region</i>:ec2:recover
+     *         arn:aws:automate:<i>region</i>:ec2:recover |
+     *         arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *         arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *         autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *         </p>
      *         <p>
      *         Valid Values (for use with IAM roles):
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      */
 
     public java.util.List<String> getAlarmActions() {
@@ -538,13 +578,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @param alarmActions
@@ -552,13 +594,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      */
 
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
@@ -577,13 +622,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -596,13 +643,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,13 +673,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @param alarmActions
@@ -637,13 +689,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,26 +714,31 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @return The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
      *         other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *         <p>
      *         Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *         arn:aws:automate:<i>region</i>:ec2:recover
+     *         arn:aws:automate:<i>region</i>:ec2:recover |
+     *         arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *         arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *         autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *         </p>
      *         <p>
      *         Valid Values (for use with IAM roles):
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *         arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *         arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      */
 
     public java.util.List<String> getInsufficientDataActions() {
@@ -695,13 +755,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @param insufficientDataActions
@@ -709,13 +771,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      */
 
     public void setInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
@@ -734,13 +799,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -753,13 +820,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -780,13 +850,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover
+     * arn:aws:automate:<i>region</i>:ec2:recover | arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     * arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * </p>
      * 
      * @param insufficientDataActions
@@ -794,13 +866,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
      *        <p>
      *        Valid Values: arn:aws:automate:<i>region</i>:ec2:stop | arn:aws:automate:<i>region</i>:ec2:terminate |
-     *        arn:aws:automate:<i>region</i>:ec2:recover
+     *        arn:aws:automate:<i>region</i>:ec2:recover |
+     *        arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
+     *        arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
+     *        autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
-     *        arn:aws:swf:us-east-1:{<i>customer-account</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0 |
+     *        arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -892,12 +967,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.
+     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param statistic
      *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>.
+     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * @see Statistic
      */
 
@@ -908,11 +985,13 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.
+     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @return The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *         use <code>ExtendedStatistic</code>.
+     *         use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     *         <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * @see Statistic
      */
 
@@ -923,12 +1002,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.
+     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param statistic
      *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>.
+     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -941,12 +1022,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.
+     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param statistic
      *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>.
+     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * @see Statistic
      */
 
@@ -957,12 +1040,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use
-     * <code>ExtendedStatistic</code>.
+     * <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param statistic
      *        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics,
-     *        use <code>ExtendedStatistic</code>.
+     *        use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must specify either
+     *        <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Statistic
      */
@@ -974,11 +1059,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
+     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     * <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param extendedStatistic
      *        The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     *        When you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     *        <code>ExtendedStatistic,</code> but not both.
      */
 
     public void setExtendedStatistic(String extendedStatistic) {
@@ -987,10 +1076,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
+     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     * <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @return The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     *         When you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     *         <code>ExtendedStatistic,</code> but not both.
      */
 
     public String getExtendedStatistic() {
@@ -999,11 +1092,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     * The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100. When
+     * you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     * <code>ExtendedStatistic,</code> but not both.
      * </p>
      * 
      * @param extendedStatistic
      *        The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+     *        When you call <code>PutMetricAlarm</code>, you must specify either <code>Statistic</code> or
+     *        <code>ExtendedStatistic,</code> but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1399,6 +1496,46 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @param datapointsToAlarm
+     *        The number of datapoints that must be breaching to trigger the alarm.
+     */
+
+    public void setDatapointsToAlarm(Integer datapointsToAlarm) {
+        this.datapointsToAlarm = datapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @return The number of datapoints that must be breaching to trigger the alarm.
+     */
+
+    public Integer getDatapointsToAlarm() {
+        return this.datapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @param datapointsToAlarm
+     *        The number of datapoints that must be breaching to trigger the alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutMetricAlarmRequest withDatapointsToAlarm(Integer datapointsToAlarm) {
+        setDatapointsToAlarm(datapointsToAlarm);
+        return this;
+    }
+
+    /**
+     * <p>
      * The value against which the specified statistic is compared.
      * </p>
      * 
@@ -1717,6 +1854,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Unit: ").append(getUnit()).append(",");
         if (getEvaluationPeriods() != null)
             sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
+        if (getDatapointsToAlarm() != null)
+            sb.append("DatapointsToAlarm: ").append(getDatapointsToAlarm()).append(",");
         if (getThreshold() != null)
             sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
@@ -1795,6 +1934,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEvaluationPeriods() != null && other.getEvaluationPeriods().equals(this.getEvaluationPeriods()) == false)
             return false;
+        if (other.getDatapointsToAlarm() == null ^ this.getDatapointsToAlarm() == null)
+            return false;
+        if (other.getDatapointsToAlarm() != null && other.getDatapointsToAlarm().equals(this.getDatapointsToAlarm()) == false)
+            return false;
         if (other.getThreshold() == null ^ this.getThreshold() == null)
             return false;
         if (other.getThreshold() != null && other.getThreshold().equals(this.getThreshold()) == false)
@@ -1834,6 +1977,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode());
+        hashCode = prime * hashCode + ((getDatapointsToAlarm() == null) ? 0 : getDatapointsToAlarm().hashCode());
         hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
         hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());

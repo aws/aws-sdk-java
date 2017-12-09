@@ -165,6 +165,13 @@ public interface AmazonAppStream {
     CreateFleetResult createFleet(CreateFleetRequest createFleetRequest);
 
     /**
+     * <p>
+     * Creates an image builder.
+     * </p>
+     * <p>
+     * The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.
+     * </p>
+     * 
      * @param createImageBuilderRequest
      * @return Result of the CreateImageBuilder operation returned by the service.
      * @throws LimitExceededException
@@ -190,6 +197,10 @@ public interface AmazonAppStream {
     CreateImageBuilderResult createImageBuilder(CreateImageBuilderRequest createImageBuilderRequest);
 
     /**
+     * <p>
+     * Creates a URL to start an image builder streaming session.
+     * </p>
+     * 
      * @param createImageBuilderStreamingURLRequest
      * @return Result of the CreateImageBuilderStreamingURL operation returned by the service.
      * @throws OperationNotPermittedException
@@ -230,9 +241,6 @@ public interface AmazonAppStream {
     /**
      * <p>
      * Creates a URL to start a streaming session for the specified user.
-     * </p>
-     * <p>
-     * By default, the URL is valid only for one minute from the time that it is generated.
      * </p>
      * 
      * @param createStreamingURLRequest
@@ -288,6 +296,11 @@ public interface AmazonAppStream {
     DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest);
 
     /**
+     * <p>
+     * Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you
+     * cannot provision new capacity using the image.
+     * </p>
+     * 
      * @param deleteImageRequest
      * @return Result of the DeleteImage operation returned by the service.
      * @throws ResourceInUseException
@@ -305,6 +318,10 @@ public interface AmazonAppStream {
     DeleteImageResult deleteImage(DeleteImageRequest deleteImageRequest);
 
     /**
+     * <p>
+     * Deletes the specified image builder and releases the capacity.
+     * </p>
+     * 
      * @param deleteImageBuilderRequest
      * @return Result of the DeleteImageBuilder operation returned by the service.
      * @throws ResourceNotFoundException
@@ -370,6 +387,10 @@ public interface AmazonAppStream {
     DescribeFleetsResult describeFleets(DescribeFleetsRequest describeFleetsRequest);
 
     /**
+     * <p>
+     * Describes the specified image builders or all image builders in the account.
+     * </p>
+     * 
      * @param describeImageBuildersRequest
      * @return Result of the DescribeImageBuilders operation returned by the service.
      * @throws ResourceNotFoundException
@@ -507,6 +528,10 @@ public interface AmazonAppStream {
     StartFleetResult startFleet(StartFleetRequest startFleetRequest);
 
     /**
+     * <p>
+     * Starts the specified image builder.
+     * </p>
+     * 
      * @param startImageBuilderRequest
      * @return Result of the StartImageBuilder operation returned by the service.
      * @throws ResourceNotAvailableException
@@ -515,6 +540,8 @@ public interface AmazonAppStream {
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.StartImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -539,6 +566,10 @@ public interface AmazonAppStream {
     StopFleetResult stopFleet(StopFleetRequest stopFleetRequest);
 
     /**
+     * <p>
+     * Stops the specified image builder.
+     * </p>
+     * 
      * @param stopImageBuilderRequest
      * @return Result of the StopImageBuilder operation returned by the service.
      * @throws ResourceNotFoundException

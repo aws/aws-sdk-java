@@ -76,6 +76,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * container instance when port mappings are used.
      * </p>
      * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
+     * </p>
+     * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.
      * </p>
@@ -363,6 +367,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * container instance when port mappings are used.
      * </p>
      * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
+     * </p>
+     * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.
      * </p>
@@ -392,6 +400,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -430,6 +442,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * container instance when port mappings are used.
      * </p>
      * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
+     * </p>
+     * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.
      * </p>
@@ -458,6 +474,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *         single container instance when port mappings are used.
+     *         </p>
+     *         <p>
+     *         Docker for Windows uses different network modes than Docker for Linux. When you register a task
+     *         definition with Windows containers, you must not specify a network mode.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -497,6 +517,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * container instance when port mappings are used.
      * </p>
      * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
+     * </p>
+     * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.
      * </p>
@@ -526,6 +550,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -566,6 +594,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * container instance when port mappings are used.
      * </p>
      * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
+     * </p>
+     * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.
      * </p>
@@ -595,6 +627,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -633,6 +669,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * container instance when port mappings are used.
      * </p>
      * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode.
+     * </p>
+     * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
      * settings</a> in the <i>Docker run reference</i>.
      * </p>
@@ -662,6 +702,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network

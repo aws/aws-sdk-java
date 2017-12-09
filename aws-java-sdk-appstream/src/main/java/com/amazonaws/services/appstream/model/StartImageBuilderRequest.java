@@ -25,10 +25,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StartImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     */
     private String name;
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     */
+    private String appstreamAgentVersion;
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      */
 
     public void setName(String name) {
@@ -36,7 +53,11 @@ public class StartImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
+     * @return The name of the image builder.
      */
 
     public String getName() {
@@ -44,12 +65,63 @@ public class StartImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartImageBuilderRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the
+     *        AppStream 2.0 agent, specify [LATEST].
+     */
+
+    public void setAppstreamAgentVersion(String appstreamAgentVersion) {
+        this.appstreamAgentVersion = appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     * 
+     * @return The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the
+     *         AppStream 2.0 agent, specify [LATEST].
+     */
+
+    public String getAppstreamAgentVersion() {
+        return this.appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream
+     * 2.0 agent, specify [LATEST].
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the
+     *        AppStream 2.0 agent, specify [LATEST].
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartImageBuilderRequest withAppstreamAgentVersion(String appstreamAgentVersion) {
+        setAppstreamAgentVersion(appstreamAgentVersion);
         return this;
     }
 
@@ -65,7 +137,9 @@ public class StartImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getAppstreamAgentVersion() != null)
+            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -84,6 +158,10 @@ public class StartImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getAppstreamAgentVersion() == null ^ this.getAppstreamAgentVersion() == null)
+            return false;
+        if (other.getAppstreamAgentVersion() != null && other.getAppstreamAgentVersion().equals(this.getAppstreamAgentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -93,6 +171,7 @@ public class StartImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         return hashCode;
     }
 

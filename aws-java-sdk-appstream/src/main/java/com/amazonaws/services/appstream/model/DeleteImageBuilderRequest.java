@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteImageBuilderRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     */
     private String name;
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      */
 
     public void setName(String name) {
@@ -36,7 +46,11 @@ public class DeleteImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
+     * @return The name of the image builder.
      */
 
     public String getName() {
@@ -44,7 +58,12 @@ public class DeleteImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

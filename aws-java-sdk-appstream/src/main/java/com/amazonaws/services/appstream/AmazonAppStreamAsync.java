@@ -128,6 +128,13 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult> asyncHandler);
 
     /**
+     * <p>
+     * Creates an image builder.
+     * </p>
+     * <p>
+     * The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.
+     * </p>
+     * 
      * @param createImageBuilderRequest
      * @return A Java Future containing the result of the CreateImageBuilder operation returned by the service.
      * @sample AmazonAppStreamAsync.CreateImageBuilder
@@ -137,6 +144,13 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     java.util.concurrent.Future<CreateImageBuilderResult> createImageBuilderAsync(CreateImageBuilderRequest createImageBuilderRequest);
 
     /**
+     * <p>
+     * Creates an image builder.
+     * </p>
+     * <p>
+     * The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.
+     * </p>
+     * 
      * @param createImageBuilderRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -151,6 +165,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<CreateImageBuilderRequest, CreateImageBuilderResult> asyncHandler);
 
     /**
+     * <p>
+     * Creates a URL to start an image builder streaming session.
+     * </p>
+     * 
      * @param createImageBuilderStreamingURLRequest
      * @return A Java Future containing the result of the CreateImageBuilderStreamingURL operation returned by the
      *         service.
@@ -162,6 +180,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             CreateImageBuilderStreamingURLRequest createImageBuilderStreamingURLRequest);
 
     /**
+     * <p>
+     * Creates a URL to start an image builder streaming session.
+     * </p>
+     * 
      * @param createImageBuilderStreamingURLRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -212,9 +234,6 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * <p>
      * Creates a URL to start a streaming session for the specified user.
      * </p>
-     * <p>
-     * By default, the URL is valid only for one minute from the time that it is generated.
-     * </p>
      * 
      * @param createStreamingURLRequest
      * @return A Java Future containing the result of the CreateStreamingURL operation returned by the service.
@@ -227,9 +246,6 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * Creates a URL to start a streaming session for the specified user.
-     * </p>
-     * <p>
-     * By default, the URL is valid only for one minute from the time that it is generated.
      * </p>
      * 
      * @param createStreamingURLRequest
@@ -308,6 +324,11 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you
+     * cannot provision new capacity using the image.
+     * </p>
+     * 
      * @param deleteImageRequest
      * @return A Java Future containing the result of the DeleteImage operation returned by the service.
      * @sample AmazonAppStreamAsync.DeleteImage
@@ -317,6 +338,11 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     java.util.concurrent.Future<DeleteImageResult> deleteImageAsync(DeleteImageRequest deleteImageRequest);
 
     /**
+     * <p>
+     * Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you
+     * cannot provision new capacity using the image.
+     * </p>
+     * 
      * @param deleteImageRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -331,6 +357,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<DeleteImageRequest, DeleteImageResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes the specified image builder and releases the capacity.
+     * </p>
+     * 
      * @param deleteImageBuilderRequest
      * @return A Java Future containing the result of the DeleteImageBuilder operation returned by the service.
      * @sample AmazonAppStreamAsync.DeleteImageBuilder
@@ -340,6 +370,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     java.util.concurrent.Future<DeleteImageBuilderResult> deleteImageBuilderAsync(DeleteImageBuilderRequest deleteImageBuilderRequest);
 
     /**
+     * <p>
+     * Deletes the specified image builder and releases the capacity.
+     * </p>
+     * 
      * @param deleteImageBuilderRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -449,6 +483,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<DescribeFleetsRequest, DescribeFleetsResult> asyncHandler);
 
     /**
+     * <p>
+     * Describes the specified image builders or all image builders in the account.
+     * </p>
+     * 
      * @param describeImageBuildersRequest
      * @return A Java Future containing the result of the DescribeImageBuilders operation returned by the service.
      * @sample AmazonAppStreamAsync.DescribeImageBuilders
@@ -458,6 +496,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     java.util.concurrent.Future<DescribeImageBuildersResult> describeImageBuildersAsync(DescribeImageBuildersRequest describeImageBuildersRequest);
 
     /**
+     * <p>
+     * Describes the specified image builders or all image builders in the account.
+     * </p>
+     * 
      * @param describeImageBuildersRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -724,6 +766,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<StartFleetRequest, StartFleetResult> asyncHandler);
 
     /**
+     * <p>
+     * Starts the specified image builder.
+     * </p>
+     * 
      * @param startImageBuilderRequest
      * @return A Java Future containing the result of the StartImageBuilder operation returned by the service.
      * @sample AmazonAppStreamAsync.StartImageBuilder
@@ -733,6 +779,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     java.util.concurrent.Future<StartImageBuilderResult> startImageBuilderAsync(StartImageBuilderRequest startImageBuilderRequest);
 
     /**
+     * <p>
+     * Starts the specified image builder.
+     * </p>
+     * 
      * @param startImageBuilderRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -778,6 +828,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
             com.amazonaws.handlers.AsyncHandler<StopFleetRequest, StopFleetResult> asyncHandler);
 
     /**
+     * <p>
+     * Stops the specified image builder.
+     * </p>
+     * 
      * @param stopImageBuilderRequest
      * @return A Java Future containing the result of the StopImageBuilder operation returned by the service.
      * @sample AmazonAppStreamAsync.StopImageBuilder
@@ -787,6 +841,10 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     java.util.concurrent.Future<StopImageBuilderResult> stopImageBuilderAsync(StopImageBuilderRequest stopImageBuilderRequest);
 
     /**
+     * <p>
+     * Stops the specified image builder.
+     * </p>
+     * 
      * @param stopImageBuilderRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an

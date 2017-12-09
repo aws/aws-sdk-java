@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes a resource error.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ResourceError" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceError implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The error code.
+     * </p>
+     */
     private String errorCode;
-
+    /**
+     * <p>
+     * The error message.
+     * </p>
+     */
     private String errorMessage;
-
+    /**
+     * <p>
+     * The time the error occurred.
+     * </p>
+     */
     private java.util.Date errorTimestamp;
 
     /**
+     * <p>
+     * The error code.
+     * </p>
+     * 
      * @param errorCode
+     *        The error code.
      * @see FleetErrorCode
      */
 
@@ -41,7 +62,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The error code.
+     * </p>
+     * 
+     * @return The error code.
      * @see FleetErrorCode
      */
 
@@ -50,7 +75,12 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The error code.
+     * </p>
+     * 
      * @param errorCode
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetErrorCode
      */
@@ -61,7 +91,12 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The error code.
+     * </p>
+     * 
      * @param errorCode
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetErrorCode
      */
@@ -72,7 +107,12 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The error message.
+     * </p>
+     * 
      * @param errorMessage
+     *        The error message.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -80,7 +120,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The error message.
+     * </p>
+     * 
+     * @return The error message.
      */
 
     public String getErrorMessage() {
@@ -88,7 +132,12 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The error message.
+     * </p>
+     * 
      * @param errorMessage
+     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +147,12 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time the error occurred.
+     * </p>
+     * 
      * @param errorTimestamp
+     *        The time the error occurred.
      */
 
     public void setErrorTimestamp(java.util.Date errorTimestamp) {
@@ -106,7 +160,11 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The time the error occurred.
+     * </p>
+     * 
+     * @return The time the error occurred.
      */
 
     public java.util.Date getErrorTimestamp() {
@@ -114,7 +172,12 @@ public class ResourceError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time the error occurred.
+     * </p>
+     * 
      * @param errorTimestamp
+     *        The time the error occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

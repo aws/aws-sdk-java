@@ -42,7 +42,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      */
     private HostVolumeProperties host;
@@ -106,7 +109,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      * 
      * @param host
@@ -115,7 +121,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *        a host path for your data volume, but the data is not guaranteed to persist after the containers
      *        associated with it stop running.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
+     *        example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *        <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      */
 
     public void setHost(HostVolumeProperties host) {
@@ -129,7 +138,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      * 
      * @return The contents of the <code>host</code> parameter determine whether your data volume persists on the host
@@ -137,7 +149,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *         a host path for your data volume, but the data is not guaranteed to persist after the containers
      *         associated with it stop running.</p>
      *         <p>
-     *         If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     *         Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
+     *         Windows containers cannot mount directories on a different drive, and mount point cannot be across
+     *         drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *         <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      */
 
     public HostVolumeProperties getHost() {
@@ -151,7 +166,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     * containers cannot mount directories on a different drive, and mount point cannot be across drives. For example,
+     * you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * </p>
      * 
      * @param host
@@ -160,7 +178,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      *        a host path for your data volume, but the data is not guaranteed to persist after the containers
      *        associated with it stop running.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     *        Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>. Windows
+     *        containers cannot mount directories on a different drive, and mount point cannot be across drives. For
+     *        example, you can mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     *        <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

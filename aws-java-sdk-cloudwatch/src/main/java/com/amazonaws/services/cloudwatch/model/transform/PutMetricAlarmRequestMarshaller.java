@@ -137,6 +137,10 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             request.addParameter("EvaluationPeriods", StringUtils.fromInteger(putMetricAlarmRequest.getEvaluationPeriods()));
         }
 
+        if (putMetricAlarmRequest.getDatapointsToAlarm() != null) {
+            request.addParameter("DatapointsToAlarm", StringUtils.fromInteger(putMetricAlarmRequest.getDatapointsToAlarm()));
+        }
+
         if (putMetricAlarmRequest.getThreshold() != null) {
             request.addParameter("Threshold", StringUtils.fromDouble(putMetricAlarmRequest.getThreshold()));
         }

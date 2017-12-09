@@ -27,13 +27,13 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      */
     private String description;
@@ -58,11 +58,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      * 
      * @param displayName
-     *        The stack name displayed to end users.
+     *        The stack name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -71,10 +71,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      * 
-     * @return The stack name displayed to end users.
+     * @return The stack name for display.
      */
 
     public String getDisplayName() {
@@ -83,11 +83,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name displayed to end users.
+     * The stack name for display.
      * </p>
      * 
      * @param displayName
-     *        The stack name displayed to end users.
+     *        The stack name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      */
 
     public void setDescription(String description) {
@@ -111,10 +111,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
-     * @return The description displayed to end users.
+     * @return The description for display.
      */
 
     public String getDescription() {
@@ -123,11 +123,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

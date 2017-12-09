@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes a streaming instance used for editing an image. New images are created from a snapshot through an image
+ * builder.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageBuilder" target="_top">AWS API
  *      Documentation</a>
@@ -25,36 +29,104 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The ARN for the image builder.
+     * </p>
+     */
     private String arn;
-
+    /**
+     * <p>
+     * The ARN of the image from which this builder was created.
+     * </p>
+     */
     private String imageArn;
-
+    /**
+     * <p>
+     * The description for display.
+     * </p>
+     */
     private String description;
-
+    /**
+     * <p>
+     * The image builder name for display.
+     * </p>
+     */
     private String displayName;
-
+    /**
+     * <p>
+     * The VPC configuration of the image builder.
+     * </p>
+     */
     private VpcConfig vpcConfig;
-
+    /**
+     * <p>
+     * The instance type for the image builder.
+     * </p>
+     */
     private String instanceType;
-
+    /**
+     * <p>
+     * The operating system platform of the image builder.
+     * </p>
+     */
     private String platform;
-
+    /**
+     * <p>
+     * The state of the image builder.
+     * </p>
+     */
     private String state;
-
+    /**
+     * <p>
+     * The reason why the last state change occurred.
+     * </p>
+     */
     private ImageBuilderStateChangeReason stateChangeReason;
-
+    /**
+     * <p>
+     * The time stamp when the image builder was created.
+     * </p>
+     */
     private java.util.Date createdTime;
-
+    /**
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     */
     private Boolean enableDefaultInternetAccess;
-
+    /**
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     */
     private DomainJoinInfo domainJoinInfo;
-
+    /**
+     * <p>
+     * The image builder errors.
+     * </p>
+     */
     private java.util.List<ResourceError> imageBuilderErrors;
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * </p>
+     */
+    private String appstreamAgentVersion;
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      */
 
     public void setName(String name) {
@@ -62,7 +134,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
+     * @return The name of the image builder.
      */
 
     public String getName() {
@@ -70,7 +146,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the image builder.
+     * </p>
+     * 
      * @param name
+     *        The name of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +161,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN for the image builder.
+     * </p>
+     * 
      * @param arn
+     *        The ARN for the image builder.
      */
 
     public void setArn(String arn) {
@@ -88,7 +174,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN for the image builder.
+     * </p>
+     * 
+     * @return The ARN for the image builder.
      */
 
     public String getArn() {
@@ -96,7 +186,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN for the image builder.
+     * </p>
+     * 
      * @param arn
+     *        The ARN for the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,7 +201,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the image from which this builder was created.
+     * </p>
+     * 
      * @param imageArn
+     *        The ARN of the image from which this builder was created.
      */
 
     public void setImageArn(String imageArn) {
@@ -114,7 +214,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the image from which this builder was created.
+     * </p>
+     * 
+     * @return The ARN of the image from which this builder was created.
      */
 
     public String getImageArn() {
@@ -122,7 +226,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the image from which this builder was created.
+     * </p>
+     * 
      * @param imageArn
+     *        The ARN of the image from which this builder was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,7 +241,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The description for display.
+     * </p>
+     * 
      * @param description
+     *        The description for display.
      */
 
     public void setDescription(String description) {
@@ -140,7 +254,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The description for display.
+     * </p>
+     * 
+     * @return The description for display.
      */
 
     public String getDescription() {
@@ -148,7 +266,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The description for display.
+     * </p>
+     * 
      * @param description
+     *        The description for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,7 +281,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The image builder name for display.
+     * </p>
+     * 
      * @param displayName
+     *        The image builder name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -166,7 +294,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The image builder name for display.
+     * </p>
+     * 
+     * @return The image builder name for display.
      */
 
     public String getDisplayName() {
@@ -174,7 +306,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The image builder name for display.
+     * </p>
+     * 
      * @param displayName
+     *        The image builder name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,7 +321,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC configuration of the image builder.
+     * </p>
+     * 
      * @param vpcConfig
+     *        The VPC configuration of the image builder.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -192,7 +334,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The VPC configuration of the image builder.
+     * </p>
+     * 
+     * @return The VPC configuration of the image builder.
      */
 
     public VpcConfig getVpcConfig() {
@@ -200,7 +346,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The VPC configuration of the image builder.
+     * </p>
+     * 
      * @param vpcConfig
+     *        The VPC configuration of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +361,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The instance type for the image builder.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type for the image builder.
      */
 
     public void setInstanceType(String instanceType) {
@@ -218,7 +374,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The instance type for the image builder.
+     * </p>
+     * 
+     * @return The instance type for the image builder.
      */
 
     public String getInstanceType() {
@@ -226,7 +386,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The instance type for the image builder.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type for the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,7 +401,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operating system platform of the image builder.
+     * </p>
+     * 
      * @param platform
+     *        The operating system platform of the image builder.
      * @see PlatformType
      */
 
@@ -245,7 +415,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The operating system platform of the image builder.
+     * </p>
+     * 
+     * @return The operating system platform of the image builder.
      * @see PlatformType
      */
 
@@ -254,7 +428,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operating system platform of the image builder.
+     * </p>
+     * 
      * @param platform
+     *        The operating system platform of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
@@ -265,7 +444,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operating system platform of the image builder.
+     * </p>
+     * 
      * @param platform
+     *        The operating system platform of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformType
      */
@@ -276,7 +460,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the image builder.
+     * </p>
+     * 
      * @param state
+     *        The state of the image builder.
      * @see ImageBuilderState
      */
 
@@ -285,7 +474,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The state of the image builder.
+     * </p>
+     * 
+     * @return The state of the image builder.
      * @see ImageBuilderState
      */
 
@@ -294,7 +487,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the image builder.
+     * </p>
+     * 
      * @param state
+     *        The state of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageBuilderState
      */
@@ -305,7 +503,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the image builder.
+     * </p>
+     * 
      * @param state
+     *        The state of the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageBuilderState
      */
@@ -316,7 +519,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The reason why the last state change occurred.
+     * </p>
+     * 
      * @param stateChangeReason
+     *        The reason why the last state change occurred.
      */
 
     public void setStateChangeReason(ImageBuilderStateChangeReason stateChangeReason) {
@@ -324,7 +532,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The reason why the last state change occurred.
+     * </p>
+     * 
+     * @return The reason why the last state change occurred.
      */
 
     public ImageBuilderStateChangeReason getStateChangeReason() {
@@ -332,7 +544,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The reason why the last state change occurred.
+     * </p>
+     * 
      * @param stateChangeReason
+     *        The reason why the last state change occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,7 +559,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time stamp when the image builder was created.
+     * </p>
+     * 
      * @param createdTime
+     *        The time stamp when the image builder was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -350,7 +572,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The time stamp when the image builder was created.
+     * </p>
+     * 
+     * @return The time stamp when the image builder was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -358,7 +584,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time stamp when the image builder was created.
+     * </p>
+     * 
      * @param createdTime
+     *        The time stamp when the image builder was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,7 +599,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
      * @param enableDefaultInternetAccess
+     *        Enables or disables default internet access for the image builder.
      */
 
     public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
@@ -376,7 +612,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
+     * @return Enables or disables default internet access for the image builder.
      */
 
     public Boolean getEnableDefaultInternetAccess() {
@@ -384,7 +624,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
      * @param enableDefaultInternetAccess
+     *        Enables or disables default internet access for the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,7 +639,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Enables or disables default internet access for the image builder.
+     * </p>
+     * 
+     * @return Enables or disables default internet access for the image builder.
      */
 
     public Boolean isEnableDefaultInternetAccess() {
@@ -402,7 +651,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     * 
      * @param domainJoinInfo
+     *        The information needed to join a Microsoft Active Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -410,7 +664,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     * 
+     * @return The information needed to join a Microsoft Active Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -418,7 +676,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The information needed to join a Microsoft Active Directory domain.
+     * </p>
+     * 
      * @param domainJoinInfo
+     *        The information needed to join a Microsoft Active Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,7 +691,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The image builder errors.
+     * </p>
+     * 
+     * @return The image builder errors.
      */
 
     public java.util.List<ResourceError> getImageBuilderErrors() {
@@ -436,7 +703,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The image builder errors.
+     * </p>
+     * 
      * @param imageBuilderErrors
+     *        The image builder errors.
      */
 
     public void setImageBuilderErrors(java.util.Collection<ResourceError> imageBuilderErrors) {
@@ -450,12 +722,16 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The image builder errors.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setImageBuilderErrors(java.util.Collection)} or {@link #withImageBuilderErrors(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param imageBuilderErrors
+     *        The image builder errors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,12 +746,57 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The image builder errors.
+     * </p>
+     * 
      * @param imageBuilderErrors
+     *        The image builder errors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ImageBuilder withImageBuilderErrors(java.util.Collection<ResourceError> imageBuilderErrors) {
         setImageBuilderErrors(imageBuilderErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     */
+
+    public void setAppstreamAgentVersion(String appstreamAgentVersion) {
+        this.appstreamAgentVersion = appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * </p>
+     * 
+     * @return The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     */
+
+    public String getAppstreamAgentVersion() {
+        return this.appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageBuilder withAppstreamAgentVersion(String appstreamAgentVersion) {
+        setAppstreamAgentVersion(appstreamAgentVersion);
         return this;
     }
 
@@ -517,7 +838,9 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
         if (getDomainJoinInfo() != null)
             sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
         if (getImageBuilderErrors() != null)
-            sb.append("ImageBuilderErrors: ").append(getImageBuilderErrors());
+            sb.append("ImageBuilderErrors: ").append(getImageBuilderErrors()).append(",");
+        if (getAppstreamAgentVersion() != null)
+            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -588,6 +911,10 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageBuilderErrors() != null && other.getImageBuilderErrors().equals(this.getImageBuilderErrors()) == false)
             return false;
+        if (other.getAppstreamAgentVersion() == null ^ this.getAppstreamAgentVersion() == null)
+            return false;
+        if (other.getAppstreamAgentVersion() != null && other.getAppstreamAgentVersion().equals(this.getAppstreamAgentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -610,6 +937,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getImageBuilderErrors() == null) ? 0 : getImageBuilderErrors().hashCode());
+        hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         return hashCode;
     }
 

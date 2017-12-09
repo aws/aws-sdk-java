@@ -165,6 +165,11 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     continue;
                 }
 
+                if (context.testExpression("DatapointsToAlarm", targetDepth)) {
+                    metricAlarm.setDatapointsToAlarm(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Threshold", targetDepth)) {
                     metricAlarm.setThreshold(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

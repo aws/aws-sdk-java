@@ -152,6 +152,12 @@ public class MetricAlarm implements Serializable, Cloneable {
     private Integer evaluationPeriods;
     /**
      * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     */
+    private Integer datapointsToAlarm;
+    /**
+     * <p>
      * The value to compare with the specified statistic.
      * </p>
      */
@@ -1258,6 +1264,46 @@ public class MetricAlarm implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @param datapointsToAlarm
+     *        The number of datapoints that must be breaching to trigger the alarm.
+     */
+
+    public void setDatapointsToAlarm(Integer datapointsToAlarm) {
+        this.datapointsToAlarm = datapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @return The number of datapoints that must be breaching to trigger the alarm.
+     */
+
+    public Integer getDatapointsToAlarm() {
+        return this.datapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * The number of datapoints that must be breaching to trigger the alarm.
+     * </p>
+     * 
+     * @param datapointsToAlarm
+     *        The number of datapoints that must be breaching to trigger the alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricAlarm withDatapointsToAlarm(Integer datapointsToAlarm) {
+        setDatapointsToAlarm(datapointsToAlarm);
+        return this;
+    }
+
+    /**
+     * <p>
      * The value to compare with the specified statistic.
      * </p>
      * 
@@ -1531,6 +1577,8 @@ public class MetricAlarm implements Serializable, Cloneable {
             sb.append("Unit: ").append(getUnit()).append(",");
         if (getEvaluationPeriods() != null)
             sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
+        if (getDatapointsToAlarm() != null)
+            sb.append("DatapointsToAlarm: ").append(getDatapointsToAlarm()).append(",");
         if (getThreshold() != null)
             sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
@@ -1634,6 +1682,10 @@ public class MetricAlarm implements Serializable, Cloneable {
             return false;
         if (other.getEvaluationPeriods() != null && other.getEvaluationPeriods().equals(this.getEvaluationPeriods()) == false)
             return false;
+        if (other.getDatapointsToAlarm() == null ^ this.getDatapointsToAlarm() == null)
+            return false;
+        if (other.getDatapointsToAlarm() != null && other.getDatapointsToAlarm().equals(this.getDatapointsToAlarm()) == false)
+            return false;
         if (other.getThreshold() == null ^ this.getThreshold() == null)
             return false;
         if (other.getThreshold() != null && other.getThreshold().equals(this.getThreshold()) == false)
@@ -1679,6 +1731,7 @@ public class MetricAlarm implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode());
+        hashCode = prime * hashCode + ((getDatapointsToAlarm() == null) ? 0 : getDatapointsToAlarm().hashCode());
         hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
         hashCode = prime * hashCode + ((getTreatMissingData() == null) ? 0 : getTreatMissingData().hashCode());

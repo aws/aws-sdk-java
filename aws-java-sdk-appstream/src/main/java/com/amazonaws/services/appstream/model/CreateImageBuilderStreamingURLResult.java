@@ -24,12 +24,26 @@ import javax.annotation.Generated;
 public class CreateImageBuilderStreamingURLResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * The URL to start the AppStream 2.0 streaming session.
+     * </p>
+     */
     private String streamingURL;
-
+    /**
+     * <p>
+     * The elapsed time, in seconds after the Unix epoch, when this URL expires.
+     * </p>
+     */
     private java.util.Date expires;
 
     /**
+     * <p>
+     * The URL to start the AppStream 2.0 streaming session.
+     * </p>
+     * 
      * @param streamingURL
+     *        The URL to start the AppStream 2.0 streaming session.
      */
 
     public void setStreamingURL(String streamingURL) {
@@ -37,7 +51,11 @@ public class CreateImageBuilderStreamingURLResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The URL to start the AppStream 2.0 streaming session.
+     * </p>
+     * 
+     * @return The URL to start the AppStream 2.0 streaming session.
      */
 
     public String getStreamingURL() {
@@ -45,7 +63,12 @@ public class CreateImageBuilderStreamingURLResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The URL to start the AppStream 2.0 streaming session.
+     * </p>
+     * 
      * @param streamingURL
+     *        The URL to start the AppStream 2.0 streaming session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +78,12 @@ public class CreateImageBuilderStreamingURLResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The elapsed time, in seconds after the Unix epoch, when this URL expires.
+     * </p>
+     * 
      * @param expires
+     *        The elapsed time, in seconds after the Unix epoch, when this URL expires.
      */
 
     public void setExpires(java.util.Date expires) {
@@ -63,7 +91,11 @@ public class CreateImageBuilderStreamingURLResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The elapsed time, in seconds after the Unix epoch, when this URL expires.
+     * </p>
+     * 
+     * @return The elapsed time, in seconds after the Unix epoch, when this URL expires.
      */
 
     public java.util.Date getExpires() {
@@ -71,7 +103,12 @@ public class CreateImageBuilderStreamingURLResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The elapsed time, in seconds after the Unix epoch, when this URL expires.
+     * </p>
+     * 
      * @param expires
+     *        The elapsed time, in seconds after the Unix epoch, when this URL expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

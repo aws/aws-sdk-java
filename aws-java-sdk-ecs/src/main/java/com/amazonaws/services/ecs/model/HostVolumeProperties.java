@@ -38,7 +38,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * folder are exported.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      */
     private String sourcePath;
@@ -53,7 +53,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * folder are exported.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      * 
      * @param sourcePath
@@ -64,7 +64,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
      *        source path folder are exported.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     *        If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -81,7 +81,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * folder are exported.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      * 
      * @return The path on the host container instance that is presented to the container. If this parameter is empty,
@@ -91,7 +91,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      *         on the host container instance, the Docker daemon creates it. If the location does exist, the contents of
      *         the source path folder are exported.</p>
      *         <p>
-     *         If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     *         If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      */
 
     public String getSourcePath() {
@@ -108,7 +108,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      * folder are exported.
      * </p>
      * <p>
-     * If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      * 
      * @param sourcePath
@@ -119,7 +119,7 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
      *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
      *        source path folder are exported.</p>
      *        <p>
-     *        If you are using the Fargate launch type, the <code>host</code> parameter is not supported.
+     *        If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

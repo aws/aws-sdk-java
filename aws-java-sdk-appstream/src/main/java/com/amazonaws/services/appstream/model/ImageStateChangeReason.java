@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the reason why the last state change occurred.
+ * Describes the reason why the last image state change occurred.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason" target="_top">AWS

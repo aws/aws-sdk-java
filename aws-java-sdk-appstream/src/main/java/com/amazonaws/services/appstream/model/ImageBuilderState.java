@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ImageBuilderState {
 
     PENDING("PENDING"),
+    UPDATING_AGENT("UPDATING_AGENT"),
     RUNNING("RUNNING"),
     STOPPING("STOPPING"),
     STOPPED("STOPPED"),

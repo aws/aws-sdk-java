@@ -29,6 +29,8 @@ public class StartImageBuilderRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> APPSTREAMAGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppstreamAgentVersion").build();
 
     private static final StartImageBuilderRequestMarshaller instance = new StartImageBuilderRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class StartImageBuilderRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startImageBuilderRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(startImageBuilderRequest.getAppstreamAgentVersion(), APPSTREAMAGENTVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

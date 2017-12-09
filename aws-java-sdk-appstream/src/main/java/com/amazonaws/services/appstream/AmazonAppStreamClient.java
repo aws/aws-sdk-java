@@ -467,6 +467,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Creates an image builder.
+     * </p>
+     * <p>
+     * The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.
+     * </p>
+     * 
      * @param createImageBuilderRequest
      * @return Result of the CreateImageBuilder operation returned by the service.
      * @throws LimitExceededException
@@ -527,6 +534,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Creates a URL to start an image builder streaming session.
+     * </p>
+     * 
      * @param createImageBuilderStreamingURLRequest
      * @return Result of the CreateImageBuilderStreamingURL operation returned by the service.
      * @throws OperationNotPermittedException
@@ -639,9 +650,6 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Creates a URL to start a streaming session for the specified user.
-     * </p>
-     * <p>
-     * By default, the URL is valid only for one minute from the time that it is generated.
      * </p>
      * 
      * @param createStreamingURLRequest
@@ -803,6 +811,11 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you
+     * cannot provision new capacity using the image.
+     * </p>
+     * 
      * @param deleteImageRequest
      * @return Result of the DeleteImage operation returned by the service.
      * @throws ResourceInUseException
@@ -855,6 +868,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Deletes the specified image builder and releases the capacity.
+     * </p>
+     * 
      * @param deleteImageBuilderRequest
      * @return Result of the DeleteImageBuilder operation returned by the service.
      * @throws ResourceNotFoundException
@@ -1062,6 +1079,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Describes the specified image builders or all image builders in the account.
+     * </p>
+     * 
      * @param describeImageBuildersRequest
      * @return Result of the DescribeImageBuilders operation returned by the service.
      * @throws ResourceNotFoundException
@@ -1515,6 +1536,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Starts the specified image builder.
+     * </p>
+     * 
      * @param startImageBuilderRequest
      * @return Result of the StartImageBuilder operation returned by the service.
      * @throws ResourceNotAvailableException
@@ -1523,6 +1548,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.StartImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -1617,6 +1644,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     }
 
     /**
+     * <p>
+     * Stops the specified image builder.
+     * </p>
+     * 
      * @param stopImageBuilderRequest
      * @return Result of the StopImageBuilder operation returned by the service.
      * @throws ResourceNotFoundException

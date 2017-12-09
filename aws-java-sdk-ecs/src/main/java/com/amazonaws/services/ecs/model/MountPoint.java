@@ -30,8 +30,7 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.
+     * The name of the volume to mount.
      * </p>
      */
     private String sourceVolume;
@@ -51,13 +50,11 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.
+     * The name of the volume to mount.
      * </p>
      * 
      * @param sourceVolume
-     *        The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter
-     *        is not supported.
+     *        The name of the volume to mount.
      */
 
     public void setSourceVolume(String sourceVolume) {
@@ -66,12 +63,10 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.
+     * The name of the volume to mount.
      * </p>
      * 
-     * @return The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code>
-     *         parameter is not supported.
+     * @return The name of the volume to mount.
      */
 
     public String getSourceVolume() {
@@ -80,13 +75,11 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter is not
-     * supported.
+     * The name of the volume to mount.
      * </p>
      * 
      * @param sourceVolume
-     *        The name of the volume to mount. If using the Fargate launch type, the <code>sourceVolume</code> parameter
-     *        is not supported.
+     *        The name of the volume to mount.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

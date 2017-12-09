@@ -54,6 +54,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role.
      * </p>
+     * <p>
+     * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
+     * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
+     * advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      */
     private String taskRoleArn;
     /**
@@ -85,9 +92,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code> package,
+     * or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
      * <p>
      * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -406,10 +424,23 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role.
      * </p>
+     * <p>
+     * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
+     * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
+     * advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
      * @param taskRoleArn
      *        The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
-     *        the permissions that are specified in this role.
+     *        the permissions that are specified in this role.</p>
+     *        <p>
+     *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
+     *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
+     *        order to take advantage of the feature. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
+     *        Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setTaskRoleArn(String taskRoleArn) {
@@ -421,9 +452,22 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role.
      * </p>
+     * <p>
+     * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
+     * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
+     * advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
      * @return The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
-     *         the permissions that are specified in this role.
+     *         the permissions that are specified in this role.</p>
+     *         <p>
+     *         IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
+     *         launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
+     *         order to take advantage of the feature. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
+     *         Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getTaskRoleArn() {
@@ -435,10 +479,23 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role.
      * </p>
+     * <p>
+     * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
+     * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
+     * advantage of the feature. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
      * @param taskRoleArn
      *        The ARN of the IAM role that containers in this task can assume. All containers in this task are granted
-     *        the permissions that are specified in this role.
+     *        the permissions that are specified in this role.</p>
+     *        <p>
+     *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
+     *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
+     *        order to take advantage of the feature. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
+     *        Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,9 +572,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code> package,
+     * or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
      * <p>
      * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -546,9 +614,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
+     *        <p>
+     *        Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -582,9 +661,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code> package,
+     * or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
      * <p>
      * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -612,9 +702,21 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
+     *         <note>
+     *         <p>
+     *         Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code>
+     *         package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *         </p>
+     *         </note>
      *         <p>
      *         If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *         single container instance when port mappings are used.
+     *         </p>
+     *         <p>
+     *         Docker for Windows uses different network modes than Docker for Linux. When you register a task
+     *         definition with Windows containers, you must not specify a network mode. If you use the console to
+     *         register a task definition with Windows containers, you must choose the <code>&lt;default&gt;</code>
+     *         network mode object.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -649,9 +751,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code> package,
+     * or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
      * <p>
      * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -680,9 +793,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
+     *        <p>
+     *        Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -718,9 +842,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code> package,
+     * or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
      * <p>
      * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -749,9 +884,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
+     *        <p>
+     *        Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -785,9 +931,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code> package,
+     * or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     * </p>
+     * </note>
      * <p>
      * If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a single
      * container instance when port mappings are used.
+     * </p>
+     * <p>
+     * Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with
+     * Windows containers, you must not specify a network mode. If you use the console to register a task definition
+     * with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
@@ -816,9 +973,20 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
+     *        <note>
+     *        <p>
+     *        Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the <code>ecs-init</code>
+     *        package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </note>
      *        <p>
      *        If the network mode is <code>host</code>, you can't run multiple instantiations of the same task on a
      *        single container instance when port mappings are used.
+     *        </p>
+     *        <p>
+     *        Docker for Windows uses different network modes than Docker for Linux. When you register a task definition
+     *        with Windows containers, you must not specify a network mode. If you use the console to register a task
+     *        definition with Windows containers, you must choose the <code>&lt;default&gt;</code> network mode object.
      *        </p>
      *        <p>
      *        For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network

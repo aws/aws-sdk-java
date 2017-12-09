@@ -48,7 +48,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String baseImageArn;
     /**
      * <p>
-     * The image name displayed to end users.
+     * The image name for display.
      * </p>
      */
     private String displayName;
@@ -79,7 +79,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      */
     private String description;
@@ -108,6 +108,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date publicBaseImageReleasedDate;
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     * </p>
+     */
+    private String appstreamAgentVersion;
 
     /**
      * <p>
@@ -231,11 +237,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image name displayed to end users.
+     * The image name for display.
      * </p>
      * 
      * @param displayName
-     *        The image name displayed to end users.
+     *        The image name for display.
      */
 
     public void setDisplayName(String displayName) {
@@ -244,10 +250,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image name displayed to end users.
+     * The image name for display.
      * </p>
      * 
-     * @return The image name displayed to end users.
+     * @return The image name for display.
      */
 
     public String getDisplayName() {
@@ -256,11 +262,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image name displayed to end users.
+     * The image name for display.
      * </p>
      * 
      * @param displayName
-     *        The image name displayed to end users.
+     *        The image name for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,11 +558,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      */
 
     public void setDescription(String description) {
@@ -565,10 +571,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
-     * @return The description displayed to end users.
+     * @return The description for display.
      */
 
     public String getDescription() {
@@ -577,11 +583,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description displayed to end users.
+     * The description for display.
      * </p>
      * 
      * @param description
-     *        The description displayed to end users.
+     *        The description for display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -787,6 +793,46 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     */
+
+    public void setAppstreamAgentVersion(String appstreamAgentVersion) {
+        this.appstreamAgentVersion = appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     * </p>
+     * 
+     * @return The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     */
+
+    public String getAppstreamAgentVersion() {
+        return this.appstreamAgentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     * </p>
+     * 
+     * @param appstreamAgentVersion
+     *        The version of the AppStream 2.0 agent to use for instances that are launched from this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withAppstreamAgentVersion(String appstreamAgentVersion) {
+        setAppstreamAgentVersion(appstreamAgentVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -822,7 +868,9 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getPublicBaseImageReleasedDate() != null)
-            sb.append("PublicBaseImageReleasedDate: ").append(getPublicBaseImageReleasedDate());
+            sb.append("PublicBaseImageReleasedDate: ").append(getPublicBaseImageReleasedDate()).append(",");
+        if (getAppstreamAgentVersion() != null)
+            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -889,6 +937,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPublicBaseImageReleasedDate() != null && other.getPublicBaseImageReleasedDate().equals(this.getPublicBaseImageReleasedDate()) == false)
             return false;
+        if (other.getAppstreamAgentVersion() == null ^ this.getAppstreamAgentVersion() == null)
+            return false;
+        if (other.getAppstreamAgentVersion() != null && other.getAppstreamAgentVersion().equals(this.getAppstreamAgentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -910,6 +962,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getPublicBaseImageReleasedDate() == null) ? 0 : getPublicBaseImageReleasedDate().hashCode());
+        hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         return hashCode;
     }
 

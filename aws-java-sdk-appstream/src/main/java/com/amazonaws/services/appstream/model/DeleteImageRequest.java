@@ -25,10 +25,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteImageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the image.
+     * </p>
+     */
     private String name;
 
     /**
+     * <p>
+     * The name of the image.
+     * </p>
+     * 
      * @param name
+     *        The name of the image.
      */
 
     public void setName(String name) {
@@ -36,7 +46,11 @@ public class DeleteImageRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the image.
+     * </p>
+     * 
+     * @return The name of the image.
      */
 
     public String getName() {
@@ -44,7 +58,12 @@ public class DeleteImageRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the image.
+     * </p>
+     * 
      * @param name
+     *        The name of the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
