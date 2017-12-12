@@ -20404,15 +20404,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "customAuthorizers" : {
-    "authorization_strategy" : {
-      "authTokenLocation" : "header",
-      "documentation" : null,
-      "interfaceName" : "AuthorizationStrategy",
-      "name" : "authorization_strategy",
-      "tokenName" : "Authorization"
-    }
-  },
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : null

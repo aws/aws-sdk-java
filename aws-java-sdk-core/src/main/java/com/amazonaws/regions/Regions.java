@@ -40,8 +40,8 @@ public enum Regions {
     AP_NORTHEAST_2("ap-northeast-2"),
     SA_EAST_1("sa-east-1"),
     CN_NORTH_1("cn-north-1"),
-    CA_CENTRAL_1("ca-central-1")
-    ;
+    CN_NORTHWEST_1("cn-northwest-1"),
+    CA_CENTRAL_1("ca-central-1");
 
     /**
      * The default region that new customers in the US are encouraged to use

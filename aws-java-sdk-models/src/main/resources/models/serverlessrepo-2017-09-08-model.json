@@ -1487,15 +1487,5 @@
       "type" : "timestamp"
     }
   },
-  "authorizers" : {
-    "authorization_strategy" : {
-      "name" : "authorization_strategy",
-      "type" : "provided",
-      "placement" : {
-        "location" : "header",
-        "name" : "Authorization"
-      }
-    }
-  },
   "documentation" : "AWS Serverless Repository"
 }

@@ -194,6 +194,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String emailConfigurationFailure;
     /**
      * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
      * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      */
@@ -1645,6 +1651,46 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @param domain
+     *        Holds the domain prefix if the user pool has a domain associated with it.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @return Holds the domain prefix if the user pool has a domain associated with it.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * Holds the domain prefix if the user pool has a domain associated with it.
+     * </p>
+     * 
+     * @param domain
+     *        Holds the domain prefix if the user pool has a domain associated with it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
@@ -1782,6 +1828,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             sb.append("SmsConfigurationFailure: ").append(getSmsConfigurationFailure()).append(",");
         if (getEmailConfigurationFailure() != null)
             sb.append("EmailConfigurationFailure: ").append(getEmailConfigurationFailure()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getAdminCreateUserConfig() != null)
             sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
         if (getUserPoolAddOns() != null)
@@ -1896,6 +1944,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEmailConfigurationFailure() != null && other.getEmailConfigurationFailure().equals(this.getEmailConfigurationFailure()) == false)
             return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
         if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
@@ -1936,6 +1988,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
         hashCode = prime * hashCode + ((getSmsConfigurationFailure() == null) ? 0 : getSmsConfigurationFailure().hashCode());
         hashCode = prime * hashCode + ((getEmailConfigurationFailure() == null) ? 0 : getEmailConfigurationFailure().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         return hashCode;

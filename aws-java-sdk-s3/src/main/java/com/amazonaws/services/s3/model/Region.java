@@ -223,7 +223,17 @@ public enum Region {
      * <code>s3.cn-north-1.amazonaws.com.cn</code>.
      * </p>
      */
-    CN_Beijing("cn-north-1");
+    CN_Beijing("cn-north-1"),
+
+    /**
+     * The China (Ningxia) Region. This region uses Amazon S3 servers
+     * located in Ningxia.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.cn-northwest-1.amazonaws.com.cn</code>.
+     * </p>
+     */
+    CN_Northwest_1("cn-northwest-1");
 
    /**
     * Used to extract the S3 regional id from an S3 end point.

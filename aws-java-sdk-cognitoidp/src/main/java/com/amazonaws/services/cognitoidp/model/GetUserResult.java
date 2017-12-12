@@ -47,9 +47,17 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
-
+    /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     */
     private String preferredMfaSetting;
-
+    /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     */
     private java.util.List<String> userMFASettingList;
 
     /**
@@ -253,7 +261,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
      * @param preferredMfaSetting
+     *        The user's preferred MFA setting.
      */
 
     public void setPreferredMfaSetting(String preferredMfaSetting) {
@@ -261,7 +274,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * @return
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
+     * @return The user's preferred MFA setting.
      */
 
     public String getPreferredMfaSetting() {
@@ -269,7 +286,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The user's preferred MFA setting.
+     * </p>
+     * 
      * @param preferredMfaSetting
+     *        The user's preferred MFA setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,7 +301,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * @return
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
+     * @return The list of the user's MFA settings.
      */
 
     public java.util.List<String> getUserMFASettingList() {
@@ -287,7 +313,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
      * @param userMFASettingList
+     *        The list of the user's MFA settings.
      */
 
     public void setUserMFASettingList(java.util.Collection<String> userMFASettingList) {
@@ -301,12 +332,16 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUserMFASettingList(java.util.Collection)} or {@link #withUserMFASettingList(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param userMFASettingList
+     *        The list of the user's MFA settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,7 +356,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The list of the user's MFA settings.
+     * </p>
+     * 
      * @param userMFASettingList
+     *        The list of the user's MFA settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

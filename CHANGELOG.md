@@ -1,3 +1,16 @@
+# __1.11.247__ __2017-12-11__
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Exposing the hosted UI domain name for a user pool that has a domain configured.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - The GetBotChannelAssociation API now returns the status and failure reason, if any, for a bot channel.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - CreateModel API Update:  The request parameter 'ExecutionRoleArn' has changed from optional to required.
+
 # __1.11.246__ __2017-12-08__
 ## __Amazon AppStream__
   - ### Features
