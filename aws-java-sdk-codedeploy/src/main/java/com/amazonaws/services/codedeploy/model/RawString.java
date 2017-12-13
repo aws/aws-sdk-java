@@ -31,7 +31,7 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function to
+     * The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to
      * update and optional Lambda functions that validate deployment lifecycle events.
      * </p>
      */
@@ -45,12 +45,12 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function to
+     * The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to
      * update and optional Lambda functions that validate deployment lifecycle events.
      * </p>
      * 
      * @param content
-     *        The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function
+     *        The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function
      *        to update and optional Lambda functions that validate deployment lifecycle events.
      */
 
@@ -60,11 +60,11 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function to
+     * The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to
      * update and optional Lambda functions that validate deployment lifecycle events.
      * </p>
      * 
-     * @return The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function
+     * @return The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function
      *         to update and optional Lambda functions that validate deployment lifecycle events.
      */
 
@@ -74,12 +74,12 @@ public class RawString implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function to
+     * The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to
      * update and optional Lambda functions that validate deployment lifecycle events.
      * </p>
      * 
      * @param content
-     *        The YAML-formatted or JSON-formatted revision string. It includes information about what Lambda function
+     *        The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function
      *        to update and optional Lambda functions that validate deployment lifecycle events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

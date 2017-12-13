@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.247</version>
+    <version>1.11.248</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.247</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.248</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.247</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.248</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon WorkMail</title>
+                      <packages>com.amazonaws.services.workmail*</packages>
+                    </group>
                     <group>
                       <title>Amazon Route 53 Auto Naming</title>
                       <packages>com.amazonaws.services.servicediscovery*</packages>
@@ -731,10 +735,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.247</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.248</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.247</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.248</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -748,6 +752,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon WorkMail</title>
+                      <packages>com.amazonaws.services.workmail*</packages>
+                    </group>
                     <group>
                       <title>Amazon Route 53 Auto Naming</title>
                       <packages>com.amazonaws.services.servicediscovery*</packages>
@@ -1344,10 +1352,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.247</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.248</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.247</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.248</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1361,6 +1369,10 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>Amazon WorkMail</title>
+                  <packages>com.amazonaws.services.workmail*</packages>
+                </group>
                 <group>
                   <title>Amazon Route 53 Auto Naming</title>
                   <packages>com.amazonaws.services.servicediscovery*</packages>
@@ -2170,7 +2182,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.247-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.248-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

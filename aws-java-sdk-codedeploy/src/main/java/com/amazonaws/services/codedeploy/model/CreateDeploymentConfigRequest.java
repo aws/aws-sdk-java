@@ -66,7 +66,7 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
     private MinimumHealthyHosts minimumHealthyHosts;
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed.
+     * The configuration that specifies how the deployment traffic will be routed.
      * </p>
      */
     private TrafficRoutingConfig trafficRoutingConfig;
@@ -303,11 +303,11 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed.
+     * The configuration that specifies how the deployment traffic will be routed.
      * </p>
      * 
      * @param trafficRoutingConfig
-     *        The configuration specifying how the deployment traffic will be routed.
+     *        The configuration that specifies how the deployment traffic will be routed.
      */
 
     public void setTrafficRoutingConfig(TrafficRoutingConfig trafficRoutingConfig) {
@@ -316,10 +316,10 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed.
+     * The configuration that specifies how the deployment traffic will be routed.
      * </p>
      * 
-     * @return The configuration specifying how the deployment traffic will be routed.
+     * @return The configuration that specifies how the deployment traffic will be routed.
      */
 
     public TrafficRoutingConfig getTrafficRoutingConfig() {
@@ -328,11 +328,11 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed.
+     * The configuration that specifies how the deployment traffic will be routed.
      * </p>
      * 
      * @param trafficRoutingConfig
-     *        The configuration specifying how the deployment traffic will be routed.
+     *        The configuration that specifies how the deployment traffic will be routed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure the lifecycle
- * events and <code>hooks</code> functions are valide.
+ * events and <code>hooks</code> functions are valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

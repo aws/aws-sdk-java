@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The configuration that specifies how traffic routes during a deployment is invalid.
+ * The configuration that specifies how traffic is routed during a deployment is invalid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

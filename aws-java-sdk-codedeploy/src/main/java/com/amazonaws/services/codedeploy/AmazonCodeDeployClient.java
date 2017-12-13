@@ -94,18 +94,18 @@ import com.amazonaws.services.codedeploy.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <b>Deployment</b>: The process, and the components involved in the process, of updating a Lambda function or of
- * installing content on one or more instances.
+ * <b>Deployment</b>: The process and the components used in the process of updating a Lambda function or of installing
+ * content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Application revisions</b>: For an AWS Lambda deployment this is an AppSpec file that specifies the Lambda function
- * to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises deployment, this
- * is an archive file containing source content—source code, web pages, executable files, and deployment scripts—along
- * with an application specification file (AppSpec file). Revisions are stored in Amazon S3 buckets or GitHub
- * repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or
- * both. For GitHub, a revision is uniquely identified by its commit ID.
+ * <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that specifies the Lambda
+ * function to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises
+ * deployment, this is an archive file containing source content—source code, web pages, executable files, and
+ * deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For
+ * Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
+ * a revision is uniquely identified by its commit ID.
  * </p>
  * </li>
  * </ul>
@@ -1318,7 +1318,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidComputePlatformException
      *         The computePlatform is invalid. The computePlatform should be <code>Lambda</code> or <code>Server</code>.
      * @throws InvalidTrafficRoutingConfigurationException
-     *         The configuration that specifies how traffic routes during a deployment is invalid.
+     *         The configuration that specifies how traffic is routed during a deployment is invalid.
      * @sample AmazonCodeDeploy.CreateDeploymentConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2656,9 +2656,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      *         <code>Succeeded</code> or <code>Failed</code>.
      * @throws InvalidLifecycleEventHookExecutionIdException
      *         A lifecycle event hook is invalid. Review the <code>hooks</code> section in your AppSpec file to ensure
-     *         the lifecycle events and <code>hooks</code> functions are valide.
+     *         the lifecycle events and <code>hooks</code> functions are valid.
      * @throws LifecycleEventAlreadyCompletedException
-     *         An attempt to return the status of a lifecycle event that already completed occurred.
+     *         An attempt to return the status of an already completed lifecycle event occurred.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
      * @throws DeploymentDoesNotExistException

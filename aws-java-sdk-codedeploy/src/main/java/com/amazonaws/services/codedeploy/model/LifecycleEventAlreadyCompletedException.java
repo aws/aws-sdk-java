@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An attempt to return the status of a lifecycle event that already completed occurred.
+ * An attempt to return the status of an already completed lifecycle event occurred.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

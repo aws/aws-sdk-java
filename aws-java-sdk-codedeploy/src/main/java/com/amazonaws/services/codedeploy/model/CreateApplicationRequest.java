@@ -36,7 +36,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationName;
     /**
      * <p>
-     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * </p>
      */
     private String computePlatform;
@@ -83,11 +83,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * @see ComputePlatform
      */
 
@@ -97,10 +97,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * </p>
      * 
-     * @return The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * @return The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * @see ComputePlatform
      */
 
@@ -110,11 +110,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */
@@ -126,11 +126,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     * The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * </p>
      * 
      * @param computePlatform
-     *        The destination platform type for the deployment <code>Lambda</code> or <code>Server</code>).
+     *        The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputePlatform
      */

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration specifying how traffic is shifted from one version of a Lambda function to another version during
- * an AWS Lambda deployment.
+ * The configuration that specifies how traffic is shifted from one version of a Lambda function to another version
+ * during an AWS Lambda deployment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TrafficRoutingConfig" target="_top">AWS
@@ -31,8 +31,8 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     * <code>TimeBasedLinear</code>).
+     * The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment
+     * configuration .
      * </p>
      */
     private String type;
@@ -54,13 +54,13 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     * <code>TimeBasedLinear</code>).
+     * The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment
+     * configuration .
      * </p>
      * 
      * @param type
-     *        The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     *        <code>TimeBasedLinear</code>).
+     *        The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a
+     *        deployment configuration .
      * @see TrafficRoutingType
      */
 
@@ -70,12 +70,12 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     * <code>TimeBasedLinear</code>).
+     * The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment
+     * configuration .
      * </p>
      * 
-     * @return The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     *         <code>TimeBasedLinear</code>).
+     * @return The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a
+     *         deployment configuration .
      * @see TrafficRoutingType
      */
 
@@ -85,13 +85,13 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     * <code>TimeBasedLinear</code>).
+     * The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment
+     * configuration .
      * </p>
      * 
      * @param type
-     *        The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     *        <code>TimeBasedLinear</code>).
+     *        The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a
+     *        deployment configuration .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficRoutingType
      */
@@ -103,13 +103,13 @@ public class TrafficRoutingConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     * <code>TimeBasedLinear</code>).
+     * The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment
+     * configuration .
      * </p>
      * 
      * @param type
-     *        The type of traffic shifting a deployment configuration uses (<code>TimeBasedCanary</code> or
-     *        <code>TimeBasedLinear</code>).
+     *        The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a
+     *        deployment configuration .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficRoutingType
      */
