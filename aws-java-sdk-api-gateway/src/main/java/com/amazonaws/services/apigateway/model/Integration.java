@@ -99,7 +99,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for
      * connections through the public routable internet or <code>VPC_LINK</code> for private connections between API
-     * Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     * Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * </p>
      */
     private String connectionType;
@@ -768,13 +768,13 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for
      * connections through the public routable internet or <code>VPC_LINK</code> for private connections between API
-     * Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     * Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * </p>
      * 
      * @param connectionType
      *        The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code>
      *        for connections through the public routable internet or <code>VPC_LINK</code> for private connections
-     *        between API Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     *        between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * @see ConnectionType
      */
 
@@ -786,12 +786,12 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for
      * connections through the public routable internet or <code>VPC_LINK</code> for private connections between API
-     * Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     * Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * </p>
      * 
      * @return The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code>
      *         for connections through the public routable internet or <code>VPC_LINK</code> for private connections
-     *         between API Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     *         between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * @see ConnectionType
      */
 
@@ -803,13 +803,13 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for
      * connections through the public routable internet or <code>VPC_LINK</code> for private connections between API
-     * Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     * Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * </p>
      * 
      * @param connectionType
      *        The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code>
      *        for connections through the public routable internet or <code>VPC_LINK</code> for private connections
-     *        between API Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     *        between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -823,13 +823,13 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for
      * connections through the public routable internet or <code>VPC_LINK</code> for private connections between API
-     * Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     * Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * </p>
      * 
      * @param connectionType
      *        The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code>
      *        for connections through the public routable internet or <code>VPC_LINK</code> for private connections
-     *        between API Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     *        between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * @see ConnectionType
      */
 
@@ -841,13 +841,13 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for
      * connections through the public routable internet or <code>VPC_LINK</code> for private connections between API
-     * Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     * Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * </p>
      * 
      * @param connectionType
      *        The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code>
      *        for connections through the public routable internet or <code>VPC_LINK</code> for private connections
-     *        between API Gateway and an network load balancer in a VPC. The default value is <code>INTERNET</code>.
+     *        between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

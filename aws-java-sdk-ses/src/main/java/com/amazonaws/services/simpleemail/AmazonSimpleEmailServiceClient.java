@@ -3289,13 +3289,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Sends a custom verification email to a specified recipient. Verification emails sent using this operation are
-     * counted against your 24-hour sending quota and per-second sending rate.
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
+     * result of executing this operation, a customized verification email is sent to the specified address.
      * </p>
      * <p>
-     * For more information about custom verification email templates, see <a
+     * To use this operation, you must first create a custom verification email template. For more information about
+     * creating and using custom verification email templates, see <a
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
      * </p>
      * 
      * @param sendCustomVerificationEmailRequest
@@ -5012,8 +5016,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. This
-     * operation causes a confirmation email message to be sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
+     * result of executing this operation, a verification email is sent to the specified address.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

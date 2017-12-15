@@ -39,7 +39,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -70,7 +70,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -90,7 +90,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -116,7 +116,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -135,7 +135,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
@@ -161,7 +161,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -181,7 +181,7 @@ public class ReceiptFilter implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-).
+     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>

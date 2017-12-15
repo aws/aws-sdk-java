@@ -105,8 +105,7 @@ public class S3Action implements Serializable, Cloneable {
      * to use your AWS KMS keys for decryption. This encryption client is currently available with the <a
      * href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS
      * Ruby SDK</a> only. For more information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      * </p>
      * </important>
      */
@@ -294,8 +293,7 @@ public class S3Action implements Serializable, Cloneable {
      * to use your AWS KMS keys for decryption. This encryption client is currently available with the <a
      * href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS
      * Ruby SDK</a> only. For more information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      * </p>
      * </important>
      * 
@@ -338,8 +336,7 @@ public class S3Action implements Serializable, Cloneable {
      *        available with the <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      *        href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more information about client-side
      *        encryption using AWS KMS master keys, see the <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     *        Guide</a>.
+     *        href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      *        </p>
      */
 
@@ -385,8 +382,7 @@ public class S3Action implements Serializable, Cloneable {
      * to use your AWS KMS keys for decryption. This encryption client is currently available with the <a
      * href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS
      * Ruby SDK</a> only. For more information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      * </p>
      * </important>
      * 
@@ -428,8 +424,7 @@ public class S3Action implements Serializable, Cloneable {
      *         available with the <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      *         href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more information about client-side
      *         encryption using AWS KMS master keys, see the <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     *         Guide</a>.
+     *         href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      *         </p>
      */
 
@@ -475,8 +470,7 @@ public class S3Action implements Serializable, Cloneable {
      * to use your AWS KMS keys for decryption. This encryption client is currently available with the <a
      * href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a href="http://aws.amazon.com/sdk-for-ruby/">AWS
      * Ruby SDK</a> only. For more information about client-side encryption using AWS KMS master keys, see the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     * Guide</a>.
+     * href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      * </p>
      * </important>
      * 
@@ -519,8 +513,7 @@ public class S3Action implements Serializable, Cloneable {
      *        available with the <a href="http://aws.amazon.com/sdk-for-java/">AWS Java SDK</a> and <a
      *        href="http://aws.amazon.com/sdk-for-ruby/">AWS Ruby SDK</a> only. For more information about client-side
      *        encryption using AWS KMS master keys, see the <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer
-     *        Guide</a>.
+     *        href="AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 Developer Guide</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

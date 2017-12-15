@@ -1,3 +1,12 @@
+# __1.11.249__ __2017-12-14__
+## __Amazon API Gateway__
+  - ### Features
+    - Adds support for Cognito Authorizer scopes at the API method level.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Added information about the maximum number of transactions per second for the SendCustomVerificationEmail operation.
+
 # __1.11.248__ __2017-12-12__
 ## __AWS CodeDeploy__
   - ### Features

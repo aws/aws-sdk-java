@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  * Response Types Supported by API Gateway</a> <div class="example"> <h4>Example: Get a Gateway Response of a given
  * response type</h4> <h5>Request</h5>
  * <p>
- * This example shows how to get a gateway response of the <code>MISSING_AUTHNETICATION_TOKEN</code> type.
+ * This example shows how to get a gateway response of the <code>MISSING_AUTHENTICATION_TOKEN</code> type.
  * </p>
  * 
  * <pre>

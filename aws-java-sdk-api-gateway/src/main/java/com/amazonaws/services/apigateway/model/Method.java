@@ -181,6 +181,16 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
      * href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a> </div>
      */
     private Integration methodIntegration;
+    /**
+     * <p>
+     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
+     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
+     * access token instead of an identity token for authorizatinon purposes.
+     * </p>
+     */
+    private java.util.List<String> authorizationScopes;
 
     /**
      * <p>
@@ -1012,6 +1022,109 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
+     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
+     * access token instead of an identity token for authorizatinon purposes.
+     * </p>
+     * 
+     * @return A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code>
+     *         authorizer to authorize the method invocation by matching them against the scopes parsed from the access
+     *         token in the incoming request. The method invocation is authorized if any method scopes matches a claimed
+     *         scope in the access token. Otherwise, the invocation is not authorized. When the method scope is
+     *         configured, the client must provide an access token instead of an identity token for authorizatinon
+     *         purposes.
+     */
+
+    public java.util.List<String> getAuthorizationScopes() {
+        return authorizationScopes;
+    }
+
+    /**
+     * <p>
+     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
+     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
+     * access token instead of an identity token for authorizatinon purposes.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer
+     *        to authorize the method invocation by matching them against the scopes parsed from the access token in the
+     *        incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the
+     *        access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
+     *        must provide an access token instead of an identity token for authorizatinon purposes.
+     */
+
+    public void setAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
+        if (authorizationScopes == null) {
+            this.authorizationScopes = null;
+            return;
+        }
+
+        this.authorizationScopes = new java.util.ArrayList<String>(authorizationScopes);
+    }
+
+    /**
+     * <p>
+     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
+     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
+     * access token instead of an identity token for authorizatinon purposes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAuthorizationScopes(java.util.Collection)} or {@link #withAuthorizationScopes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer
+     *        to authorize the method invocation by matching them against the scopes parsed from the access token in the
+     *        incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the
+     *        access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
+     *        must provide an access token instead of an identity token for authorizatinon purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Method withAuthorizationScopes(String... authorizationScopes) {
+        if (this.authorizationScopes == null) {
+            setAuthorizationScopes(new java.util.ArrayList<String>(authorizationScopes.length));
+        }
+        for (String ele : authorizationScopes) {
+            this.authorizationScopes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
+     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
+     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
+     * access token instead of an identity token for authorizatinon purposes.
+     * </p>
+     * 
+     * @param authorizationScopes
+     *        A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer
+     *        to authorize the method invocation by matching them against the scopes parsed from the access token in the
+     *        incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the
+     *        access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
+     *        must provide an access token instead of an identity token for authorizatinon purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Method withAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
+        setAuthorizationScopes(authorizationScopes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1041,7 +1154,9 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
         if (getMethodResponses() != null)
             sb.append("MethodResponses: ").append(getMethodResponses()).append(",");
         if (getMethodIntegration() != null)
-            sb.append("MethodIntegration: ").append(getMethodIntegration());
+            sb.append("MethodIntegration: ").append(getMethodIntegration()).append(",");
+        if (getAuthorizationScopes() != null)
+            sb.append("AuthorizationScopes: ").append(getAuthorizationScopes());
         sb.append("}");
         return sb.toString();
     }
@@ -1096,6 +1211,10 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMethodIntegration() != null && other.getMethodIntegration().equals(this.getMethodIntegration()) == false)
             return false;
+        if (other.getAuthorizationScopes() == null ^ this.getAuthorizationScopes() == null)
+            return false;
+        if (other.getAuthorizationScopes() != null && other.getAuthorizationScopes().equals(this.getAuthorizationScopes()) == false)
+            return false;
         return true;
     }
 
@@ -1114,6 +1233,7 @@ public class Method implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());
         hashCode = prime * hashCode + ((getMethodResponses() == null) ? 0 : getMethodResponses().hashCode());
         hashCode = prime * hashCode + ((getMethodIntegration() == null) ? 0 : getMethodIntegration().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizationScopes() == null) ? 0 : getAuthorizationScopes().hashCode());
         return hashCode;
     }
 

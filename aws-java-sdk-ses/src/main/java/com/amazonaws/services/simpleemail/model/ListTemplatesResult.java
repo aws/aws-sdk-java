@@ -25,23 +25,24 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     * An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TemplateMetadata> templatesMetadata;
     /**
      * <p>
-     * The token to use for pagination.
+     * A token indicating that there are additional email templates available to be listed. Pass this token to a
+     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     * An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * </p>
      * 
-     * @return An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     * @return An array the contains the name and creation time stamp for each template in your Amazon SES account.
      */
 
     public java.util.List<TemplateMetadata> getTemplatesMetadata() {
@@ -53,11 +54,11 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     * An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * </p>
      * 
      * @param templatesMetadata
-     *        An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     *        An array the contains the name and creation time stamp for each template in your Amazon SES account.
      */
 
     public void setTemplatesMetadata(java.util.Collection<TemplateMetadata> templatesMetadata) {
@@ -71,7 +72,7 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     * An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +81,7 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param templatesMetadata
-     *        An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     *        An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +97,11 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     * An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * </p>
      * 
      * @param templatesMetadata
-     *        An array the contains the name of creation time stamp for each template in your Amazon SES account.
+     *        An array the contains the name and creation time stamp for each template in your Amazon SES account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +112,13 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token indicating that there are additional email templates available to be listed. Pass this token to a
+     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      * </p>
      * 
      * @param nextToken
-     *        The token to use for pagination.
+     *        A token indicating that there are additional email templates available to be listed. Pass this token to a
+     *        subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +127,12 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token indicating that there are additional email templates available to be listed. Pass this token to a
+     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      * </p>
      * 
-     * @return The token to use for pagination.
+     * @return A token indicating that there are additional email templates available to be listed. Pass this token to a
+     *         subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      */
 
     public String getNextToken() {
@@ -136,11 +141,13 @@ public class ListTemplatesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token indicating that there are additional email templates available to be listed. Pass this token to a
+     * subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      * </p>
      * 
      * @param nextToken
-     *        The token to use for pagination.
+     *        A token indicating that there are additional email templates available to be listed. Pass this token to a
+     *        subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

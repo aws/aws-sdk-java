@@ -36,8 +36,8 @@ public class ListCustomVerificationEmailTemplatesResult extends com.amazonaws.Am
     /**
      * <p>
      * A token indicating that there are additional custom verification email templates available to be listed. Pass
-     * this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50
-     * custom verification email templates.
+     * this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email
+     * templates.
      * </p>
      */
     private String nextToken;
@@ -120,14 +120,14 @@ public class ListCustomVerificationEmailTemplatesResult extends com.amazonaws.Am
     /**
      * <p>
      * A token indicating that there are additional custom verification email templates available to be listed. Pass
-     * this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50
-     * custom verification email templates.
+     * this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email
+     * templates.
      * </p>
      * 
      * @param nextToken
      *        A token indicating that there are additional custom verification email templates available to be listed.
-     *        Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the
-     *        next 50 custom verification email templates.
+     *        Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom
+     *        verification email templates.
      */
 
     public void setNextToken(String nextToken) {
@@ -137,13 +137,13 @@ public class ListCustomVerificationEmailTemplatesResult extends com.amazonaws.Am
     /**
      * <p>
      * A token indicating that there are additional custom verification email templates available to be listed. Pass
-     * this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50
-     * custom verification email templates.
+     * this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email
+     * templates.
      * </p>
      * 
      * @return A token indicating that there are additional custom verification email templates available to be listed.
-     *         Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the
-     *         next 50 custom verification email templates.
+     *         Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom
+     *         verification email templates.
      */
 
     public String getNextToken() {
@@ -153,14 +153,14 @@ public class ListCustomVerificationEmailTemplatesResult extends com.amazonaws.Am
     /**
      * <p>
      * A token indicating that there are additional custom verification email templates available to be listed. Pass
-     * this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the next 50
-     * custom verification email templates.
+     * this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email
+     * templates.
      * </p>
      * 
      * @param nextToken
      *        A token indicating that there are additional custom verification email templates available to be listed.
-     *        Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code> to retrieve the
-     *        next 50 custom verification email templates.
+     *        Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom
+     *        verification email templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

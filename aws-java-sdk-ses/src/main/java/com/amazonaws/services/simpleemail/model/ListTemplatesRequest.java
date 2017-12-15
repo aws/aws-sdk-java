@@ -27,7 +27,8 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email
+     * templates.
      * </p>
      */
     private String nextToken;
@@ -42,11 +43,13 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email
+     * templates.
      * </p>
      * 
      * @param nextToken
-     *        The token to use for pagination.
+     *        A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list
+     *        of email templates.
      */
 
     public void setNextToken(String nextToken) {
@@ -55,10 +58,12 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email
+     * templates.
      * </p>
      * 
-     * @return The token to use for pagination.
+     * @return A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list
+     *         of email templates.
      */
 
     public String getNextToken() {
@@ -67,11 +72,13 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token to use for pagination.
+     * A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list of email
+     * templates.
      * </p>
      * 
      * @param nextToken
-     *        The token to use for pagination.
+     *        A token returned from a previous call to <code>ListTemplates</code> to indicate the position in the list
+     *        of email templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
