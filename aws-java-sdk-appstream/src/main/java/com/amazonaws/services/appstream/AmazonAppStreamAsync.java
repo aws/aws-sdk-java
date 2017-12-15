@@ -736,6 +736,49 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images,
+     * fleets, and stacks.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonAppStreamAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images,
+     * fleets, and stacks.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the specified fleet.
      * </p>
      * 
@@ -857,6 +900,112 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<StopImageBuilderResult> stopImageBuilderAsync(StopImageBuilderRequest stopImageBuilderRequest,
             com.amazonaws.handlers.AsyncHandler<StopImageBuilderRequest, StopImageBuilderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image
+     * builders, images, fleets, and stacks.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this
+     * operation updates its value.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>. To disassociate tags from your
+     * resources, use <a>UntagResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonAppStreamAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image
+     * builders, images, fleets, and stacks.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this
+     * operation updates its value.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>. To disassociate tags from your
+     * resources, use <a>UntagResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates the specified tags from the specified AppStream 2.0 resource.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonAppStreamAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified tags from the specified AppStream 2.0 resource.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

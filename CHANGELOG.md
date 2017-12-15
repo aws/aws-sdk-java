@@ -1,3 +1,8 @@
+# __1.11.250__ __2017-12-15__
+## __Amazon AppStream__
+  - ### Features
+    - This API update is to enable customers to add tags to their Amazon AppStream 2.0 resources
+
 # __1.11.249__ __2017-12-14__
 ## __Amazon API Gateway__
   - ### Features

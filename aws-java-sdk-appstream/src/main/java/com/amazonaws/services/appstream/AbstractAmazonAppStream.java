@@ -149,6 +149,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartFleetResult startFleet(StartFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -165,6 +170,16 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
 
     @Override
     public StopImageBuilderResult stopImageBuilder(StopImageBuilderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

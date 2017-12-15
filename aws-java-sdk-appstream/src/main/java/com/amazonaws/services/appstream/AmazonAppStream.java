@@ -508,6 +508,27 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images,
+     * fleets, and stacks.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Starts the specified fleet.
      * </p>
      * 
@@ -583,6 +604,60 @@ public interface AmazonAppStream {
      *      Documentation</a>
      */
     StopImageBuilderResult stopImageBuilder(StopImageBuilderRequest stopImageBuilderRequest);
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image
+     * builders, images, fleets, and stacks.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this
+     * operation updates its value.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>. To disassociate tags from your
+     * resources, use <a>UntagResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified tags from the specified AppStream 2.0 resource.
+     * </p>
+     * <p>
+     * To list the current tags for your resources, use <a>ListTagsForResource</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
+     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
