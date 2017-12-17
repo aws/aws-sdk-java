@@ -299,4 +299,24 @@ public class StringUtils {
     public static boolean beginsWithIgnoreCase(final String data, final String seq) {
       return data.regionMatches(true, 0, seq, 0, seq.length());
     }
+    
+     /**
+     * Checks if a CharSequence is whitespace, empty ("") or null.
+     *
+     * @param cs the CharSequence to check, may be null
+     * @return if the CharSequence is null, empty or whitespace
+     */
+    @SuppressWarnings("checkstyle:innerassignment")
+    public static boolean isBlank(final CharSequence cs) {
+        int strLen;
+        if (cs == null || (strLen = cs.length()) == 0) {
+            return true;
+        }
+        for (int i = 0; i < strLen; i++) {
+            if (!Character.isWhitespace(cs.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
