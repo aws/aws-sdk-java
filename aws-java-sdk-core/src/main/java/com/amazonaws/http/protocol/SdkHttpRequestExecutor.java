@@ -37,12 +37,12 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 public class SdkHttpRequestExecutor extends HttpRequestExecutor {
     @Override
     protected HttpResponse doSendRequest(
-            final HttpRequest request,
-            final HttpClientConnection conn,
-            final HttpContext context)
-                throws IOException, HttpException {
+        final HttpRequest request,
+        final HttpClientConnection conn,
+        final HttpContext context)
+        throws IOException, HttpException {
         AWSRequestMetrics awsRequestMetrics = (AWSRequestMetrics) context
-                .getAttribute(AWSRequestMetrics.class.getSimpleName());
+            .getAttribute(AWSRequestMetrics.SIMPLE_NAME);
 
         if (awsRequestMetrics == null) {
             return super.doSendRequest(request, conn, context);
@@ -68,12 +68,12 @@ public class SdkHttpRequestExecutor extends HttpRequestExecutor {
 
     @Override
     protected HttpResponse doReceiveResponse(
-            final HttpRequest          request,
-            final HttpClientConnection conn,
-            final HttpContext          context)
-                throws HttpException, IOException {
+        final HttpRequest          request,
+        final HttpClientConnection conn,
+        final HttpContext          context)
+        throws HttpException, IOException {
         AWSRequestMetrics awsRequestMetrics = (AWSRequestMetrics) context
-                .getAttribute(AWSRequestMetrics.class.getSimpleName());
+            .getAttribute(AWSRequestMetrics.SIMPLE_NAME);
         if (awsRequestMetrics == null) {
             return super.doReceiveResponse(request, conn, context);
         }

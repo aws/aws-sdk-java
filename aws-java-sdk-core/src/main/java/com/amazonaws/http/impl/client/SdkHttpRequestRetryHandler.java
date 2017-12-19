@@ -35,7 +35,7 @@ public class SdkHttpRequestRetryHandler extends DefaultHttpRequestRetryHandler {
         boolean retry = super.retryRequest(exception, executionCount, context);
         if (retry) {
             AWSRequestMetrics awsRequestMetrics = (AWSRequestMetrics) context
-                    .getAttribute(AWSRequestMetrics.class.getSimpleName());
+                    .getAttribute(AWSRequestMetrics.SIMPLE_NAME);
             if (awsRequestMetrics != null) {
                 awsRequestMetrics.incrementCounter(Field.HttpClientRetryCount);
             }

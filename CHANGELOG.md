@@ -1,3 +1,8 @@
+# __1.11.251__ __2017-12-19__
+## __Amazon CloudWatch__
+  - ### Features
+    - Documentation updates for monitoring
+
 # __1.11.250__ __2017-12-15__
 ## __Amazon AppStream__
   - ### Features

@@ -448,6 +448,11 @@ public interface AmazonCloudWatch {
      * <ul>
      * <li>
      * <p>
+     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance
      * status metrics
      * </p>

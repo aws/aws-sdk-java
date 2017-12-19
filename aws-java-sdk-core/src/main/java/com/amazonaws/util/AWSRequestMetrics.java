@@ -40,6 +40,12 @@ import java.util.List;
 @NotThreadSafe
 public class AWSRequestMetrics {
     /**
+     *  If the class name is required for logging and metrics we should use this
+     *  constant version instead of the expensive function call.
+     */
+    public static final String SIMPLE_NAME = AWSRequestMetrics.class.getSimpleName();
+
+    /**
      * Predefined AWS SDK metric types general across all AWS clients. Client
      * specific predefined metrics like S3 or DynamoDB are defined in the client
      * specific packages.

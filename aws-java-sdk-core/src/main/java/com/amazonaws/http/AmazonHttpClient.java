@@ -1220,7 +1220,7 @@ public class AmazonHttpClient {
 
             final HttpClientContext localRequestContext =
                     ApacheUtils.newClientContext(httpClientSettings, ImmutableMapParameter.of
-                            (AWSRequestMetrics.class.getSimpleName(), awsRequestMetrics));
+                            (AWSRequestMetrics.SIMPLE_NAME, awsRequestMetrics));
 
             execOneParams.resetBeforeHttpRequest();
             publishProgress(listener, ProgressEventType.HTTP_REQUEST_STARTED_EVENT);

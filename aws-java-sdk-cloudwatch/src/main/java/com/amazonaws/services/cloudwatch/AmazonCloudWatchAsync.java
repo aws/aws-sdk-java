@@ -696,6 +696,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * <ul>
      * <li>
      * <p>
+     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance
      * status metrics
      * </p>
@@ -762,6 +767,11 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * If you are an IAM user, you must have Amazon EC2 permissions for some operations:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance

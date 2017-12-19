@@ -111,6 +111,12 @@ public enum Region {
     EU_London("eu-west-2"),
 
     /**
+     * The EU (Paris) Amazon S3 Region. This region uses Amazon S3 servers located
+     * in Paris.
+     */
+    EU_Paris("eu-west-3"),
+
+    /**
      * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers
      * located in Frankfurt.
      * <p>
