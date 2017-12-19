@@ -1,4 +1,4 @@
-package com.amazonaws.mobileconnectors.cognitoidentityprovider;
+package com.amazonaws.connectors.cognitoidp;
 
 /**
  * Represents user MFA settings in Cognito.

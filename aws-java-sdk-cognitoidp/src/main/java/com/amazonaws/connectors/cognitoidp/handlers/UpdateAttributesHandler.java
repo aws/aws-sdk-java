@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.handlers;
+package com.amazonaws.connectors.cognitoidp.handlers;
 
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserCodeDeliveryDetails;
+import com.amazonaws.connectors.cognitoidp.CognitoUserCodeDeliveryDetails;
 
 import java.util.List;
 

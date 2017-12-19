@@ -15,11 +15,11 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.ForgotPasswordHandler;
-import com.math.pro.ak.util.cognito.CognitoUserCodeDeliveryDetails;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.handlers.ForgotPasswordHandler;
+import com.amazonaws.connectors.cognitoidp.CognitoUserCodeDeliveryDetails;
 
 /**
  * This is a Continuation to set the password in the forgot password processing.

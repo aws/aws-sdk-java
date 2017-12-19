@@ -15,9 +15,9 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.handlers;
+package com.amazonaws.connectors.cognitoidp.handlers;
 
-import com.math.pro.ak.util.cognito.continuations.ForgotPasswordContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.ForgotPasswordContinuation;
 
 
 /**

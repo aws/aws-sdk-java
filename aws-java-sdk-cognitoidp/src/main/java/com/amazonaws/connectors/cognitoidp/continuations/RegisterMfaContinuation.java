@@ -1,12 +1,11 @@
-package com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import android.content.Context;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
-import com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
+import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeResult;
 import com.amazonaws.util.StringUtils;
 
 import java.util.Arrays;
@@ -23,7 +22,7 @@ import java.util.List;
  * </p>
  */
 public class RegisterMfaContinuation extends ChallengeContinuation {
-    /**
+   /**
      * MFA's available to a user to continue authentication.
      */
     private List<String> mfaOptions;
@@ -31,7 +30,6 @@ public class RegisterMfaContinuation extends ChallengeContinuation {
     /**
      * Constructs a new continuation for multiple user MFA's.
      * @param user                  REQUIRED: Reference to the {@link CognitoUser} object.
-     * @param context               REQUIRED: The android context.
      * @param username              REQUIRED: The username.
      * @param clientId              REQUIRED: The clientId.
      * @param secretHash            REQUIRED: The secret hash.
@@ -41,14 +39,13 @@ public class RegisterMfaContinuation extends ChallengeContinuation {
      */
     public RegisterMfaContinuation(
             CognitoUser user,
-            Context context,
             String username,
             String clientId,
             String secretHash,
             RespondToAuthChallengeResult challengeResult,
             boolean runInBackground,
             AuthenticationHandler callback) {
-        super(user, context, username, clientId, secretHash, challengeResult, runInBackground,
+        super(user, username, clientId, secretHash, challengeResult, runInBackground,
                 callback);
         mfaOptions = getListFromString(getParameters().get(CognitoServiceConstants.CHLG_PARAM_MFAS_CAN_SETUP));
     }

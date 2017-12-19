@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito;
+package com.amazonaws.connectors.cognitoidp;
 
 /**
  * Wraps user attributes {@link CognitoUserAttributes} and user settings {@link CognitoUserSettings} objects.

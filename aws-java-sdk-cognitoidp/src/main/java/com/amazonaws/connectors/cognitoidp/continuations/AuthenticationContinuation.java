@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
 import javafx.application.Platform;
 
 /**

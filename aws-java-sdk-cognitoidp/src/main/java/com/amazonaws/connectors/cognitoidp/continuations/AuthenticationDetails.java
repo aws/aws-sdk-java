@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
 import com.amazonaws.services.cognitoidp.model.AttributeType;
 
 import java.util.ArrayList;

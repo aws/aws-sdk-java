@@ -15,16 +15,15 @@
  *  limitations under the License.
  */
 
-package com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import android.content.Context;
-import android.os.Handler;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserCodeDeliveryDetails;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
-import com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.CognitoUserCodeDeliveryDetails;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
+import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeResult;
+import javafx.application.Platform;
 
 /**
  * This is a Continuation for multi-factor authentication.
@@ -42,7 +41,6 @@ public class MultiFactorAuthenticationContinuation implements CognitoIdentityPro
     public static final boolean RUN_IN_CURRENT = false;
 
     private final CognitoUser user;
-    private final Context context;
     private final RespondToAuthChallengeResult challenge;
     private final boolean runInBackground;
     private final AuthenticationHandler callback;
@@ -55,15 +53,12 @@ public class MultiFactorAuthenticationContinuation implements CognitoIdentityPro
      * @param challenge             REQUIRED: Contains the MFA Challenge.
      * @param runInBackground       REQUIRED: Represents where this continuation has to run.
      * @param callback              REQUIRED: Callback to interact with the app.
-     * @param context               REQUIRED: The android context.
      */
     public MultiFactorAuthenticationContinuation(CognitoUser user,
-                                                 Context context,
                                                  RespondToAuthChallengeResult challenge,
                                                  boolean runInBackground,
                                                  AuthenticationHandler callback) {
         this.user = user;
-        this.context = context;
         this.callback = callback;
         this.runInBackground = runInBackground;
         this.challenge = challenge;
@@ -100,7 +95,6 @@ public class MultiFactorAuthenticationContinuation implements CognitoIdentityPro
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    final Handler handler = new Handler(context.getMainLooper());
                     Runnable nextStep;
                     try {
 
@@ -114,7 +108,7 @@ public class MultiFactorAuthenticationContinuation implements CognitoIdentityPro
                             }
                         };
                     }
-                    handler.post(nextStep);
+                    Platform.runLater(nextStep);
                 }
             }).start();
         } else {

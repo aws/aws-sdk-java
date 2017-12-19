@@ -15,13 +15,13 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.handlers;
+package com.amazonaws.connectors.cognitoidp.handlers;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserSession;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.ChallengeContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.MultiFactorAuthenticationContinuation;
+import com.amazonaws.connectors.cognitoidp.CognitoDevice;
+import com.amazonaws.connectors.cognitoidp.CognitoUserSession;
+import com.amazonaws.connectors.cognitoidp.continuations.AuthenticationContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.ChallengeContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.MultiFactorAuthenticationContinuation;
 
 /**
  * Callback handler for user authentication process.

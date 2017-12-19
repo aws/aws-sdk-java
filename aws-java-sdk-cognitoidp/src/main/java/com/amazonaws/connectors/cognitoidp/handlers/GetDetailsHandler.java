@@ -15,9 +15,9 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.handlers;
+package com.amazonaws.connectors.cognitoidp.handlers;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
+import com.amazonaws.connectors.cognitoidp.CognitoUserDetails;
 
 /**
  * Callback to get user attributes.

@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions;
+package com.amazonaws.connectors.cognitoidp.exceptions;
 
 /**
  * Lambda validation excaption

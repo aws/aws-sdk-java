@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.math.pro.ak.util.cognito;
+package com.amazonaws.connectors.cognitoidp;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.connectors.cognitoidp.util.Hkdf;
 import com.amazonaws.util.StringUtils;
 import java.math.BigInteger;
 import java.security.MessageDigest;

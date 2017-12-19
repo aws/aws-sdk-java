@@ -15,24 +15,23 @@
  *  limitations under the License.
  */
 
-package com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import android.content.Context;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
-import com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
+import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeResult;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * Defines continuation for new user set-up. This is used to set the password and user attributes
@@ -42,7 +41,7 @@ import java.util.Map;
  * set by the admin.
  */
 public class NewPasswordContinuation extends ChallengeContinuation {
-    /**
+   /**
      * Required attributes to complete first sign-in.
      */
     private List<String> requiredAttributes;
@@ -62,21 +61,19 @@ public class NewPasswordContinuation extends ChallengeContinuation {
      * @param user                  REQUIRED: Reference to the {@link CognitoUser} object.
      * @param runInBackground       REQUIRED: Represents where this continuation has to run.
      * @param callback              REQUIRED: Callback to interact with the app.
-     * @param context               REQUIRED: The android context.
      * @param username              REQUIRED: the username.
      * @param clientId              REQUIRED: the clientId.
      * @param secretHash            REQUIRED: the secreth hash.
      * @param challengeResult       REQUIRED: The response to respond to the authentication challenge.
      */
     public NewPasswordContinuation(CognitoUser user,
-            Context context,
             String username,
             String clientId,
             String secretHash,
             RespondToAuthChallengeResult challengeResult,
             boolean runInBackground,
             AuthenticationHandler callback) {
-        super(user, context, username, clientId, secretHash, challengeResult, runInBackground,
+        super(user, username, clientId, secretHash, challengeResult, runInBackground,
                 callback);
         this.callback = callback;
 

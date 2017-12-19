@@ -15,88 +15,85 @@
  *  limitations under the License.
  */
 
-package com.amazonaws.mobileconnectors.cognitoidentityprovider;
+package com.amazonaws.connectors.cognitoidp;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Handler;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationDetails;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.ChallengeContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.ChooseMfaContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.ForgotPasswordContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.MultiFactorAuthenticationContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.NewPasswordContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.RegisterMfaContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.VerifyMfaContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoInternalErrorException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoNotAuthorizedException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.DevicesHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.ForgotPasswordHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GenericHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.RegisterMfaHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.UpdateAttributesHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.VerificationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.tokens.CognitoAccessToken;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.tokens.CognitoIdToken;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.tokens.CognitoRefreshToken;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoDeviceHelper;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.Hkdf;
-import com.amazonaws.services.cognitoidentityprovider.AmazonCognitoIdentityProvider;
-import com.amazonaws.services.cognitoidentityprovider.model.AnalyticsMetadataType;
-import com.amazonaws.services.cognitoidentityprovider.model.AssociateSoftwareTokenRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.AssociateSoftwareTokenResult;
-import com.amazonaws.services.cognitoidentityprovider.model.AttributeType;
-import com.amazonaws.services.cognitoidentityprovider.model.AuthenticationResultType;
-import com.amazonaws.services.cognitoidentityprovider.model.ChangePasswordRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.CodeDeliveryDetailsType;
-import com.amazonaws.services.cognitoidentityprovider.model.ConfirmDeviceRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.ConfirmDeviceResult;
-import com.amazonaws.services.cognitoidentityprovider.model.ConfirmForgotPasswordRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.ConfirmSignUpRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.DeleteUserAttributesRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.DeleteUserRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.DeviceSecretVerifierConfigType;
-import com.amazonaws.services.cognitoidentityprovider.model.DeviceType;
-import com.amazonaws.services.cognitoidentityprovider.model.ForgotPasswordRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.ForgotPasswordResult;
-import com.amazonaws.services.cognitoidentityprovider.model.GetUserAttributeVerificationCodeRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.GetUserAttributeVerificationCodeResult;
-import com.amazonaws.services.cognitoidentityprovider.model.GetUserRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.GetUserResult;
-import com.amazonaws.services.cognitoidentityprovider.model.GlobalSignOutRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.InitiateAuthRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.InitiateAuthResult;
-import com.amazonaws.services.cognitoidentityprovider.model.InvalidParameterException;
-import com.amazonaws.services.cognitoidentityprovider.model.ListDevicesRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.ListDevicesResult;
-import com.amazonaws.services.cognitoidentityprovider.model.NewDeviceMetadataType;
-import com.amazonaws.services.cognitoidentityprovider.model.NotAuthorizedException;
-import com.amazonaws.services.cognitoidentityprovider.model.ResendConfirmationCodeRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.ResendConfirmationCodeResult;
-import com.amazonaws.services.cognitoidentityprovider.model.ResourceNotFoundException;
-import com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.RespondToAuthChallengeResult;
-import com.amazonaws.services.cognitoidentityprovider.model.SMSMfaSettingsType;
-import com.amazonaws.services.cognitoidentityprovider.model.SetUserMFAPreferenceRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.SetUserMFAPreferenceResult;
-import com.amazonaws.services.cognitoidentityprovider.model.SetUserSettingsRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.SetUserSettingsResult;
-import com.amazonaws.services.cognitoidentityprovider.model.SoftwareTokenMfaSettingsType;
-import com.amazonaws.services.cognitoidentityprovider.model.UpdateUserAttributesRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.UpdateUserAttributesResult;
-import com.amazonaws.services.cognitoidentityprovider.model.UserContextDataType;
-import com.amazonaws.services.cognitoidentityprovider.model.VerifySoftwareTokenRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.VerifySoftwareTokenResponseType;
-import com.amazonaws.services.cognitoidentityprovider.model.VerifySoftwareTokenResult;
-import com.amazonaws.services.cognitoidentityprovider.model.VerifyUserAttributeRequest;
-import com.amazonaws.services.cognitoidentityprovider.model.VerifyUserAttributeResult;
+import com.amazonaws.connectors.cognitoidp.continuations.AuthenticationContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.AuthenticationDetails;
+import com.amazonaws.connectors.cognitoidp.continuations.ChallengeContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.ChooseMfaContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.ForgotPasswordContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.MultiFactorAuthenticationContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.NewPasswordContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.RegisterMfaContinuation;
+import com.amazonaws.connectors.cognitoidp.continuations.VerifyMfaContinuation;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoInternalErrorException;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoNotAuthorizedException;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.DevicesHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.ForgotPasswordHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.GenericHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.GetDetailsHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.RegisterMfaHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.UpdateAttributesHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.VerificationHandler;
+import com.amazonaws.connectors.cognitoidp.tokens.CognitoAccessToken;
+import com.amazonaws.connectors.cognitoidp.tokens.CognitoIdToken;
+import com.amazonaws.connectors.cognitoidp.tokens.CognitoRefreshToken;
+import com.amazonaws.connectors.cognitoidp.util.CognitoDeviceHelper;
+import com.amazonaws.connectors.cognitoidp.util.CognitoSecretHash;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
+import com.amazonaws.connectors.cognitoidp.util.Hkdf;
+import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
+import com.amazonaws.services.cognitoidp.model.AnalyticsMetadataType;
+import com.amazonaws.services.cognitoidp.model.AssociateSoftwareTokenRequest;
+import com.amazonaws.services.cognitoidp.model.AssociateSoftwareTokenResult;
+import com.amazonaws.services.cognitoidp.model.AttributeType;
+import com.amazonaws.services.cognitoidp.model.AuthenticationResultType;
+import com.amazonaws.services.cognitoidp.model.ChangePasswordRequest;
+import com.amazonaws.services.cognitoidp.model.CodeDeliveryDetailsType;
+import com.amazonaws.services.cognitoidp.model.ConfirmDeviceRequest;
+import com.amazonaws.services.cognitoidp.model.ConfirmDeviceResult;
+import com.amazonaws.services.cognitoidp.model.ConfirmForgotPasswordRequest;
+import com.amazonaws.services.cognitoidp.model.ConfirmSignUpRequest;
+import com.amazonaws.services.cognitoidp.model.DeleteUserAttributesRequest;
+import com.amazonaws.services.cognitoidp.model.DeleteUserRequest;
+import com.amazonaws.services.cognitoidp.model.DeviceSecretVerifierConfigType;
+import com.amazonaws.services.cognitoidp.model.DeviceType;
+import com.amazonaws.services.cognitoidp.model.ForgotPasswordRequest;
+import com.amazonaws.services.cognitoidp.model.ForgotPasswordResult;
+import com.amazonaws.services.cognitoidp.model.GetUserAttributeVerificationCodeRequest;
+import com.amazonaws.services.cognitoidp.model.GetUserAttributeVerificationCodeResult;
+import com.amazonaws.services.cognitoidp.model.GetUserRequest;
+import com.amazonaws.services.cognitoidp.model.GetUserResult;
+import com.amazonaws.services.cognitoidp.model.GlobalSignOutRequest;
+import com.amazonaws.services.cognitoidp.model.InitiateAuthRequest;
+import com.amazonaws.services.cognitoidp.model.InitiateAuthResult;
+import com.amazonaws.services.cognitoidp.model.InvalidParameterException;
+import com.amazonaws.services.cognitoidp.model.ListDevicesRequest;
+import com.amazonaws.services.cognitoidp.model.ListDevicesResult;
+import com.amazonaws.services.cognitoidp.model.NewDeviceMetadataType;
+import com.amazonaws.services.cognitoidp.model.NotAuthorizedException;
+import com.amazonaws.services.cognitoidp.model.ResendConfirmationCodeRequest;
+import com.amazonaws.services.cognitoidp.model.ResendConfirmationCodeResult;
+import com.amazonaws.services.cognitoidp.model.ResourceNotFoundException;
+import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeRequest;
+import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeResult;
+import com.amazonaws.services.cognitoidp.model.SMSMfaSettingsType;
+import com.amazonaws.services.cognitoidp.model.SetUserMFAPreferenceRequest;
+import com.amazonaws.services.cognitoidp.model.SetUserMFAPreferenceResult;
+import com.amazonaws.services.cognitoidp.model.SetUserSettingsRequest;
+import com.amazonaws.services.cognitoidp.model.SetUserSettingsResult;
+import com.amazonaws.services.cognitoidp.model.SoftwareTokenMfaSettingsType;
+import com.amazonaws.services.cognitoidp.model.UpdateUserAttributesRequest;
+import com.amazonaws.services.cognitoidp.model.UpdateUserAttributesResult;
+import com.amazonaws.services.cognitoidp.model.UserContextDataType;
+import com.amazonaws.services.cognitoidp.model.VerifySoftwareTokenRequest;
+import com.amazonaws.services.cognitoidp.model.VerifySoftwareTokenResponseType;
+import com.amazonaws.services.cognitoidp.model.VerifySoftwareTokenResult;
+import com.amazonaws.services.cognitoidp.model.VerifyUserAttributeRequest;
+import com.amazonaws.services.cognitoidp.model.VerifyUserAttributeResult;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.StringUtils;
 
@@ -115,6 +112,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
+import java.util.prefs.Preferences;
+import javafx.application.Platform;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -134,14 +133,9 @@ public class CognitoUser {
     private static final int SRP_RADIX = 16;
 
     /**
-     * Application context.
-     */
-    private final Context context;
-
-    /**
      * CIP low-level client.
      */
-    private final AmazonCognitoIdentityProvider cognitoIdentityProviderClient;
+    private final AWSCognitoIdentityProvider cognitoIdentityProviderClient;
 
     /**
      * Client ID for Your Identity Pool.
@@ -199,13 +193,11 @@ public class CognitoUser {
      * @param clientSecret REQUIRED: Client secret assigned for this Client-Id.
      * @param secretHash REQUIRED: Secret-Hash, calculated for this android app.
      * @param client REQUIRED: Low level android client.
-     * @param context REQUIRED: Application context.
      */
     protected CognitoUser(CognitoUserPool pool, String userId,
             String clientId, String clientSecret, String secretHash,
-            AmazonCognitoIdentityProvider client, Context context) {
+            AWSCognitoIdentityProvider client) {
         this.pool = pool;
-        this.context = context;
         this.userId = userId;
         this.cognitoIdentityProviderClient = client;
         this.clientId = clientId;
@@ -238,7 +230,7 @@ public class CognitoUser {
      *
      * @return
      */
-    protected AmazonCognitoIdentityProvider getCognitoIdentityProviderClient() {
+    protected AWSCognitoIdentityProvider getCognitoIdentityProviderClient() {
         return cognitoIdentityProviderClient;
     }
 
@@ -267,7 +259,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     confirmSignUpInternal(confirmationCode, forcedAliasCreation);
@@ -285,7 +276,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -336,7 +327,7 @@ public class CognitoUser {
         confirmUserRegistrationRequest.setUsername(userId);
         confirmUserRegistrationRequest.setConfirmationCode(confirmationCode);
         confirmUserRegistrationRequest.setForceAliasCreation(forcedAliasCreation);
-        confirmUserRegistrationRequest.setUserContextData(getUserContextData());
+//        confirmUserRegistrationRequest.setUserContextData(getUserContextData());
         final String pinpointEndpointId = pool.getPinpointEndpointId();
         if (pinpointEndpointId != null) {
             final AnalyticsMetadataType amd = new AnalyticsMetadataType();
@@ -359,7 +350,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final ResendConfirmationCodeResult resendConfirmationCodeResult = resendConfirmationCodeInternal();
@@ -378,7 +368,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -416,7 +406,7 @@ public class CognitoUser {
         resendConfirmationCodeRequest.setClientId(clientId);
         resendConfirmationCodeRequest.setSecretHash(secretHash);
         final String pinpointEndpointId = pool.getPinpointEndpointId();
-        resendConfirmationCodeRequest.setUserContextData(getUserContextData());
+//        resendConfirmationCodeRequest.setUserContextData(getUserContextData());
         if (pinpointEndpointId != null) {
             AnalyticsMetadataType amd = new AnalyticsMetadataType();
             amd.setAnalyticsEndpointId(pinpointEndpointId);
@@ -452,7 +442,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final ForgotPasswordResult forgotPasswordResult = forgotPasswordInternal();
@@ -475,7 +464,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -527,7 +516,7 @@ public class CognitoUser {
         resetPasswordRequest.setClientId(clientId);
         resetPasswordRequest.setSecretHash(secretHash);
         resetPasswordRequest.setUsername(userId);
-        resetPasswordRequest.setUserContextData(getUserContextData());
+        //resetPasswordRequest.setUserContextData(getUserContextData());
         final String pinpointEndpointId = pool.getPinpointEndpointId();
         if (pinpointEndpointId != null) {
             AnalyticsMetadataType amd = new AnalyticsMetadataType();
@@ -562,7 +551,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     confirmPasswordInternal(verificationCode, newPassword);
@@ -580,7 +568,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -629,7 +617,7 @@ public class CognitoUser {
         confirmResetPasswordRequest.setSecretHash(secretHash);
         confirmResetPasswordRequest.setConfirmationCode(verificationCode);
         confirmResetPasswordRequest.setPassword(newPassword);
-        confirmResetPasswordRequest.setUserContextData(getUserContextData());
+//        confirmResetPasswordRequest.setUserContextData(getUserContextData());
         final String pinpointEndpointId = pool.getPinpointEndpointId();
         if (pinpointEndpointId != null) {
             AnalyticsMetadataType amd = new AnalyticsMetadataType();
@@ -655,7 +643,7 @@ public class CognitoUser {
      * This method uses the callback to interact with application at different
      * stages of the authentication process. Continuation objects are used when
      * the authentication process requires more data to continue. See
-     * {@link com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.CognitoIdentityProviderContinuation}
+     * {@link com.math.pro.ak.util.cognito.continuations.CognitoIdentityProviderContinuation}
      * for details on continuation objects.
      * </p>
      *
@@ -671,7 +659,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     getCachedSession();
@@ -686,7 +673,7 @@ public class CognitoUser {
                         @Override
                         public void run() {
                             final AuthenticationContinuation authenticationContinuation = new AuthenticationContinuation(
-                                    cognitoUser, context,
+                                    cognitoUser,
                                     AuthenticationContinuation.RUN_IN_BACKGROUND, callback);
                             callback.getAuthenticationDetails(authenticationContinuation,
                                     cognitoUser.getUserId());
@@ -700,7 +687,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -720,7 +707,7 @@ public class CognitoUser {
      * This method uses the callback to interact with application at different
      * stages of the authentication process. Continuation objects are used when
      * the authentication process requires more data to continue. See
-     * {@link com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.CognitoIdentityProviderContinuation}
+     * {@link com.math.pro.ak.util.cognito.continuations.CognitoIdentityProviderContinuation}
      * for details on continuation objects. <b>Note:</b> This method will
      * perform network operations. Calling this method in applications' main
      * thread will cause Android to throw NetworkOnMainThreadException.
@@ -740,7 +727,7 @@ public class CognitoUser {
             callback.onFailure(e);
         } catch (final CognitoNotAuthorizedException e) {
             final AuthenticationContinuation authenticationContinuation = new AuthenticationContinuation(
-                    this, context, AuthenticationContinuation.RUN_IN_CURRENT, callback);
+                    this, AuthenticationContinuation.RUN_IN_CURRENT, callback);
             callback.getAuthenticationDetails(authenticationContinuation, getUserId());
         } catch (final Exception e) {
             callback.onFailure(e);
@@ -810,7 +797,7 @@ public class CognitoUser {
         challengeResponse.setSession(challenge.getSession());
         challengeResponse.setChallengeName(challenge.getChallengeName());
         challengeResponse.setChallengeResponses(mfaParameters);
-        challengeResponse.setUserContextData(getUserContextData());
+//        challengeResponse.setUserContextData(getUserContextData());
         return respondToChallenge(challengeResponse, callback, runInBackground);
     }
 
@@ -877,7 +864,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -896,7 +882,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -968,7 +954,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -987,7 +972,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1062,7 +1047,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -1084,7 +1068,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1170,7 +1154,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -1189,7 +1172,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1262,7 +1245,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 boolean useSessionToken;
                 try {
@@ -1283,14 +1265,14 @@ public class CognitoUser {
                         returnCallback = new Runnable() {
                             @Override
                             public void run() {
-                                callback.onVerify(new VerifyMfaContinuation(context, clientId, user, callback, parameters, true, nextSessionToken, VerifyMfaContinuation.RUN_IN_BACKGROUND));
+                                callback.onVerify(new VerifyMfaContinuation(clientId, user, callback, parameters, true, nextSessionToken, VerifyMfaContinuation.RUN_IN_BACKGROUND));
                             }
                         };
                     } else {
                         returnCallback = new Runnable() {
                             @Override
                             public void run() {
-                                callback.onVerify(new VerifyMfaContinuation(context, clientId, user, callback, parameters, false, nextSessionToken, VerifyMfaContinuation.RUN_IN_BACKGROUND));
+                                callback.onVerify(new VerifyMfaContinuation(clientId, user, callback, parameters, false, nextSessionToken, VerifyMfaContinuation.RUN_IN_BACKGROUND));
                             }
                         };
                     }
@@ -1302,7 +1284,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1332,7 +1314,7 @@ public class CognitoUser {
             final Map<String, String> parameters = new HashMap<String, String>();
             parameters.put("type", CognitoServiceConstants.CHLG_TYPE_SOFTWARE_TOKEN_MFA);
             parameters.put("secretKey", result.getSecretCode());
-            callback.onVerify(new VerifyMfaContinuation(context, clientId, user, callback, parameters, useSessionToken, nextSessionToken, VerifyMfaContinuation.RUN_IN_CURRENT));
+            callback.onVerify(new VerifyMfaContinuation(clientId, user, callback, parameters, useSessionToken, nextSessionToken, VerifyMfaContinuation.RUN_IN_CURRENT));
         } catch (Exception e) {
             callback.onFailure(e);
         }
@@ -1396,7 +1378,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession cognitoTokens = user.getCachedSession();
@@ -1436,7 +1417,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1548,7 +1529,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -1578,7 +1558,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1656,7 +1636,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -1675,7 +1654,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1764,7 +1743,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -1784,7 +1762,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1848,7 +1826,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final CognitoUserSession session = user.getCachedSession();
@@ -1867,7 +1844,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -1934,7 +1911,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     setUserSettingsInternal(cognitoUserSettings, session);
@@ -1952,7 +1928,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -2021,7 +1997,6 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     setUserMfaSettingsInternal(mfaSettings, session);
@@ -2039,7 +2014,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -2084,21 +2059,18 @@ public class CognitoUser {
     private void clearCachedTokens() {
         try {
             // Clear all cached tokens.
-            final SharedPreferences csiCachedTokens = context
-                    .getSharedPreferences("CognitoIdentityProviderCache", 0);
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences csiCachedTokens = prefsRoot
+                    .node("com.aws.cognito" + "/" + clientId + "/" + userId);
 
             // Format "key" strings
-            final String csiIdTokenKey = String.format("CognitoIdentityProvider.%s.%s.idToken",
-                    clientId, userId);
-            final String csiAccessTokenKey = String
-                    .format("CognitoIdentityProvider.%s.%s.accessToken", clientId, userId);
-            final String csiRefreshTokenKey = String
-                    .format("CognitoIdentityProvider.%s.%s.refreshToken", clientId, userId);
+            final String csiIdTokenKey = "idToken";
+            final String csiAccessTokenKey = "accessToken";
+            final String csiRefreshTokenKey = "refreshToken";
 
-            final SharedPreferences.Editor cacheEdit = csiCachedTokens.edit();
-            cacheEdit.remove(csiIdTokenKey);
-            cacheEdit.remove(csiAccessTokenKey);
-            cacheEdit.remove(csiRefreshTokenKey).apply();
+            csiCachedTokens.remove(csiIdTokenKey);
+            csiCachedTokens.remove(csiAccessTokenKey);
+            csiCachedTokens.remove(csiRefreshTokenKey);
         } catch (final Exception e) {
             // Logging exception, this is not a fatal error
             LOGGER.error("Error while deleting from SharedPreferences", e);
@@ -2114,30 +2086,28 @@ public class CognitoUser {
         CognitoUserSession userSession = new CognitoUserSession(null, null, null);
 
         try {
-            final SharedPreferences csiCachedTokens = context
-                    .getSharedPreferences("CognitoIdentityProviderCache", 0);
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences csiCachedTokens = prefsRoot
+                    .node("com.aws.cognito" + "/" + clientId + "/" + userId);
 
             // Format "key" strings
-            final String csiIdTokenKey = "CognitoIdentityProvider." + clientId + "." + userId
-                    + ".idToken";
-            final String csiAccessTokenKey = "CognitoIdentityProvider." + clientId + "." + userId
-                    + ".accessToken";
-            final String csiRefreshTokenKey = "CognitoIdentityProvider." + clientId + "." + userId
-                    + ".refreshToken";
+            final String csiIdTokenKey = "idToken";
+            final String csiAccessTokenKey = "accessToken";
+            final String csiRefreshTokenKey = "refreshToken";
 
-            if (csiCachedTokens.contains(csiIdTokenKey)) {
+            if (!csiCachedTokens.get(csiIdTokenKey, "").equals("")) {
                 final CognitoIdToken csiCachedIdToken = new CognitoIdToken(
-                        csiCachedTokens.getString(csiIdTokenKey, null));
+                        csiCachedTokens.get(csiIdTokenKey, null));
                 final CognitoAccessToken csiCachedAccessToken = new CognitoAccessToken(
-                        csiCachedTokens.getString(csiAccessTokenKey, null));
+                        csiCachedTokens.get(csiAccessTokenKey, null));
                 final CognitoRefreshToken csiCachedRefreshToken = new CognitoRefreshToken(
-                        csiCachedTokens.getString(csiRefreshTokenKey, null));
+                        csiCachedTokens.get(csiRefreshTokenKey, null));
                 userSession = new CognitoUserSession(csiCachedIdToken, csiCachedAccessToken,
                         csiCachedRefreshToken);
             }
         } catch (final Exception e) {
             // Logging exception, this is not a fatal error
-            LOGGER.error("Error while reading SharedPreferences", e);
+            LOGGER.error("Error while reading Preferences", e);
         }
         return userSession;
     }
@@ -2149,26 +2119,23 @@ public class CognitoUser {
      */
     private void cacheTokens(CognitoUserSession session) {
         try {
-            final SharedPreferences csiCachedTokens = context
-                    .getSharedPreferences("CognitoIdentityProviderCache", 0);
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences csiCachedTokens = prefsRoot
+                    .node("com.aws.cognito" + "/" + clientId + "/" + userId);
 
             final String csiUserPoolId = pool.getUserPoolId();
 
             // Create keys to look for cached tokens
-            final String csiIdTokenKey = "CognitoIdentityProvider." + clientId + "." + userId
-                    + ".idToken";
-            final String csiAccessTokenKey = "CognitoIdentityProvider." + clientId + "." + userId
-                    + ".accessToken";
-            final String csiRefreshTokenKey = "CognitoIdentityProvider." + clientId + "." + userId
-                    + ".refreshToken";
-            final String csiLastUserKey = "CognitoIdentityProvider." + clientId + ".LastAuthUser";
+            final String csiIdTokenKey = "idToken";
+            final String csiAccessTokenKey = "accessToken";
+            final String csiRefreshTokenKey = "refreshToken";
+            final String csiLastUserKey = "LastAuthUser";
 
             // Store the data in Shared Preferences
-            final SharedPreferences.Editor cacheEdit = csiCachedTokens.edit();
-            cacheEdit.putString(csiIdTokenKey, session.getIdToken().getJWTToken());
-            cacheEdit.putString(csiAccessTokenKey, session.getAccessToken().getJWTToken());
-            cacheEdit.putString(csiRefreshTokenKey, session.getRefreshToken().getToken());
-            cacheEdit.putString(csiLastUserKey, userId).apply();
+            csiCachedTokens.put(csiIdTokenKey, session.getIdToken().getJWTToken());
+            csiCachedTokens.put(csiAccessTokenKey, session.getAccessToken().getJWTToken());
+            csiCachedTokens.put(csiRefreshTokenKey, session.getRefreshToken().getToken());
+            csiCachedTokens.put(csiLastUserKey, userId);
 
         } catch (final Exception e) {
             // Logging exception, this is not a fatal error
@@ -2265,13 +2232,12 @@ public class CognitoUser {
         } catch (final ResourceNotFoundException rna) {
             final CognitoUser cognitoUser = this;
             if (rna.getMessage().contains("Device")) {
-                CognitoDeviceHelper.clearCachedDevice(usernameInternal, pool.getUserPoolId(),
-                        context);
+                CognitoDeviceHelper.clearCachedDevice(usernameInternal, pool.getUserPoolId());
                 return new Runnable() {
                     @Override
                     public void run() {
                         final AuthenticationContinuation authenticationContinuation = new AuthenticationContinuation(
-                                cognitoUser, context, runInBackground, callback);
+                                cognitoUser, runInBackground, callback);
                         callback.getAuthenticationDetails(authenticationContinuation,
                                 cognitoUser.getUserId());
                     }
@@ -2328,13 +2294,12 @@ public class CognitoUser {
         } catch (final ResourceNotFoundException rna) {
             final CognitoUser cognitoUser = this;
             if (rna.getMessage().contains("Device")) {
-                CognitoDeviceHelper.clearCachedDevice(usernameInternal, pool.getUserPoolId(),
-                        context);
+                CognitoDeviceHelper.clearCachedDevice(usernameInternal, pool.getUserPoolId());
                 return new Runnable() {
                     @Override
                     public void run() {
                         final AuthenticationContinuation authenticationContinuation = new AuthenticationContinuation(
-                                cognitoUser, context, runInBackground, callback);
+                                cognitoUser, runInBackground, callback);
                         callback.getAuthenticationDetails(authenticationContinuation,
                                 cognitoUser.getUserId());
                     }
@@ -2438,13 +2403,12 @@ public class CognitoUser {
                         callback.onSuccess(cognitoUserSession, null);
                     }
                 };
-            } else {
+            } else { 
                 final ConfirmDeviceResult confirmDeviceResult = confirmDevice(newDeviceMetadata);
                 if (confirmDeviceResult != null
                         && confirmDeviceResult.isUserConfirmationNecessary()) {
                     final CognitoDevice newDevice = new CognitoDevice(
-                            newDeviceMetadata.getDeviceKey(), null, null, null, null, cognitoUser,
-                            context);
+                            newDeviceMetadata.getDeviceKey(), null, null, null, null, cognitoUser);
                     nextTask = new Runnable() {
                         @Override
                         public void run() {
@@ -2465,7 +2429,7 @@ public class CognitoUser {
         } else if (CognitoServiceConstants.CHLG_TYPE_SMS_MFA.equals(challengeName)
                 || CognitoServiceConstants.CHLG_TYPE_SOFTWARE_TOKEN_MFA.equals(challengeName)) {
             final MultiFactorAuthenticationContinuation multiFactorAuthenticationContinuation = new MultiFactorAuthenticationContinuation(
-                    cognitoUser, context, challenge, runInBackground, callback);
+                    cognitoUser, challenge, runInBackground, callback);
             nextTask = new Runnable() {
                 @Override
                 public void run() {
@@ -2474,7 +2438,7 @@ public class CognitoUser {
             };
         } else if (CognitoServiceConstants.CHLG_TYPE_SELECT_MFA_TYPE.equals(challengeName)) {
             final ChooseMfaContinuation continuation = new ChooseMfaContinuation(
-                    cognitoUser, context, usernameInternal, clientId, secretHash, challenge, runInBackground, callback);
+                    cognitoUser, usernameInternal, clientId, secretHash, challenge, runInBackground, callback);
             nextTask = new Runnable() {
                 @Override
                 public void run() {
@@ -2483,7 +2447,7 @@ public class CognitoUser {
             };
         } else if (CognitoServiceConstants.CHLG_TYPE_MFA_SETUP.equals(challengeName)) {
             final RegisterMfaContinuation continuation = new RegisterMfaContinuation(
-                    cognitoUser, context, usernameInternal, clientId, secretHash, challenge, runInBackground, callback);
+                    cognitoUser, usernameInternal, clientId, secretHash, challenge, runInBackground, callback);
             nextTask = new Runnable() {
                 @Override
                 public void run() {
@@ -2494,7 +2458,7 @@ public class CognitoUser {
             nextTask = deviceSrpAuthentication(challenge, callback, runInBackground);
         } else if (CognitoServiceConstants.CHLG_TYPE_NEW_PASSWORD_REQUIRED.equals(challengeName)) {
             final NewPasswordContinuation newPasswordContinuation = new NewPasswordContinuation(
-                    cognitoUser, context, usernameInternal, clientId, secretHash, challenge,
+                    cognitoUser, usernameInternal, clientId, secretHash, challenge,
                     runInBackground, callback);
             nextTask = new Runnable() {
                 @Override
@@ -2504,7 +2468,7 @@ public class CognitoUser {
             };
         } else {
             final ChallengeContinuation challengeContinuation = new ChallengeContinuation(
-                    cognitoUser, context, usernameInternal, clientId, secretHash, challenge,
+                    cognitoUser, usernameInternal, clientId, secretHash, challenge,
                     runInBackground, callback);
             nextTask = new Runnable() {
                 @Override
@@ -2563,9 +2527,9 @@ public class CognitoUser {
     private Runnable deviceSrpAuthentication(final RespondToAuthChallengeResult challenge,
             final AuthenticationHandler callback, final boolean runInBackground) {
         final String deviceSecret = CognitoDeviceHelper.getDeviceSecret(usernameInternal,
-                pool.getUserPoolId(), context);
+                pool.getUserPoolId());
         final String deviceGroupKey = CognitoDeviceHelper.getDeviceGroupKey(usernameInternal,
-                pool.getUserPoolId(), context);
+                pool.getUserPoolId());
         final AuthenticationHelper authenticationHelper = new AuthenticationHelper(deviceGroupKey);
         final RespondToAuthChallengeRequest devicesAuthRequest = initiateDevicesAuthRequest(
                 authenticationHelper);
@@ -2585,12 +2549,12 @@ public class CognitoUser {
             }
         } catch (final NotAuthorizedException na) {
             final CognitoUser cognitoUser = this;
-            CognitoDeviceHelper.clearCachedDevice(usernameInternal, pool.getUserPoolId(), context);
+            CognitoDeviceHelper.clearCachedDevice(usernameInternal, pool.getUserPoolId());
             return new Runnable() {
                 @Override
                 public void run() {
                     final AuthenticationContinuation authenticationContinuation = new AuthenticationContinuation(
-                            cognitoUser, context, runInBackground, callback);
+                            cognitoUser, runInBackground, callback);
                     callback.getAuthenticationDetails(authenticationContinuation,
                             cognitoUser.getUserId());
                 }
@@ -2632,7 +2596,7 @@ public class CognitoUser {
         if (deviceKey == null) {
             initiateAuthRequest.addAuthParametersEntry(
                     CognitoServiceConstants.AUTH_PARAM_DEVICE_KEY, CognitoDeviceHelper.getDeviceKey(
-                            authenticationDetails.getUserId(), pool.getUserPoolId(), context));
+                            authenticationDetails.getUserId(), pool.getUserPoolId()));
         } else {
             initiateAuthRequest.addAuthParametersEntry(
                     CognitoServiceConstants.AUTH_PARAM_DEVICE_KEY, deviceKey);
@@ -2651,7 +2615,7 @@ public class CognitoUser {
             amd.setAnalyticsEndpointId(pinpointEndpointId);
             initiateAuthRequest.setAnalyticsMetadata(amd);
         }
-        initiateAuthRequest.setUserContextData(getUserContextData());
+//        initiateAuthRequest.setUserContextData(getUserContextData());
         return initiateAuthRequest;
     }
 
@@ -2679,7 +2643,7 @@ public class CognitoUser {
             }
             authRequest.setClientMetadata(userValidationData);
         }
-        authRequest.setUserContextData(getUserContextData());
+//        authRequest.setUserContextData(getUserContextData());
         return authRequest;
     }
 
@@ -2708,7 +2672,7 @@ public class CognitoUser {
         initiateDevicesAuthRequest.addChallengeResponsesEntry(
                 CognitoServiceConstants.CHLG_RESP_SECRET_HASH, secretHash);
 
-        initiateDevicesAuthRequest.setUserContextData(getUserContextData());
+//        initiateDevicesAuthRequest.setUserContextData(getUserContextData());
         return initiateDevicesAuthRequest;
     }
 
@@ -2724,11 +2688,10 @@ public class CognitoUser {
                 currSession.getRefreshToken().getToken());
         if (deviceKey == null) {
             if (usernameInternal != null) {
-                deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId(),
-                        context);
+                deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId());
             } else {
                 deviceKey = CognitoDeviceHelper.getDeviceKey(currSession.getUsername(), 
-                        pool.getUserPoolId(), context);
+                        pool.getUserPoolId());
             }
         }
         initiateAuthRequest.addAuthParametersEntry(CognitoServiceConstants.AUTH_PARAM_DEVICE_KEY,
@@ -2743,7 +2706,7 @@ public class CognitoUser {
             amd.setAnalyticsEndpointId(pinpointEndpointId);
             initiateAuthRequest.setAnalyticsMetadata(amd);
         }
-        initiateAuthRequest.setUserContextData(getUserContextData());
+//        initiateAuthRequest.setUserContextData(getUserContextData());
         return initiateAuthRequest;
     }
 
@@ -2765,8 +2728,7 @@ public class CognitoUser {
                 .get(CognitoServiceConstants.CHLG_PARAM_USER_ID_FOR_SRP);
         this.usernameInternal = challenge.getChallengeParameters()
                 .get(CognitoServiceConstants.CHLG_PARAM_USERNAME);
-        this.deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId(),
-                context);
+        this.deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId());
         secretHash = CognitoSecretHash.getSecretHash(usernameInternal, clientId, clientSecret);
 
         final BigInteger srpB = new BigInteger(challenge.getChallengeParameters().get("SRP_B"), 16);
@@ -2824,7 +2786,7 @@ public class CognitoUser {
             amd.setAnalyticsEndpointId(pinpointEndpointId);
             authChallengeRequest.setAnalyticsMetadata(amd);
         }
-        authChallengeRequest.setUserContextData(getUserContextData());
+//        authChallengeRequest.setUserContextData(getUserContextData());
         return authChallengeRequest;
     }
 
@@ -2898,7 +2860,7 @@ public class CognitoUser {
         authChallengeRequest.setClientId(clientId);
         authChallengeRequest.setSession(challenge.getSession());
         authChallengeRequest.setChallengeResponses(srpAuthResponses);
-        authChallengeRequest.setUserContextData(getUserContextData());
+//        authChallengeRequest.setUserContextData(getUserContextData());
         return authChallengeRequest;
     }
 
@@ -2921,14 +2883,13 @@ public class CognitoUser {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                final Handler handler = new Handler(context.getMainLooper());
                 Runnable returnCallback;
                 try {
                     final ListDevicesResult listDevicesResult = listDevicesInternal(
                             user.getCachedSession(), limit, paginationToken);
                     final List<CognitoDevice> devicesList = new ArrayList<CognitoDevice>();
                     for (final DeviceType device : listDevicesResult.getDevices()) {
-                        devicesList.add(new CognitoDevice(device, user, context));
+                        devicesList.add(new CognitoDevice(device, user));
                     }
                     returnCallback = new Runnable() {
                         @Override
@@ -2945,7 +2906,7 @@ public class CognitoUser {
                         }
                     };
                 }
-                handler.post(returnCallback);
+                Platform.runLater(returnCallback);
             }
         }).start();
     }
@@ -2969,7 +2930,7 @@ public class CognitoUser {
                     limit, paginationToken);
             final List<CognitoDevice> devicesList = new ArrayList<CognitoDevice>();
             for (final DeviceType device : listDevicesResult.getDevices()) {
-                devicesList.add(new CognitoDevice(device, this, context));
+                devicesList.add(new CognitoDevice(device, this));
             }
             callback.onSuccess(devicesList);
         } catch (final Exception e) {
@@ -2986,19 +2947,18 @@ public class CognitoUser {
     public CognitoDevice thisDevice() {
         if (deviceKey == null) {
             if (usernameInternal != null) {
-                deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId(),
-                        context);
+                deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId());
             } else if (userId != null) {
-                deviceKey = CognitoDeviceHelper.getDeviceKey(userId, pool.getUserPoolId(), context);
+                deviceKey = CognitoDeviceHelper.getDeviceKey(userId, pool.getUserPoolId());
                 if (deviceKey == null) {
                     CognitoUserSession currSession = this.readCachedTokens();
                     deviceKey = CognitoDeviceHelper.getDeviceKey(currSession.getUsername(), 
-                            this.pool.getUserPoolId(), this.context);
+                            this.pool.getUserPoolId());
                 }
             }
         }
         if (deviceKey != null) {
-            return new CognitoDevice(deviceKey, null, null, null, null, this, context);
+            return new CognitoDevice(deviceKey, null, null, null, null, this);
         } else {
             return null;
         }
@@ -3030,11 +2990,11 @@ public class CognitoUser {
             return null;
         }
         CognitoDeviceHelper.cacheDeviceKey(usernameInternal, pool.getUserPoolId(),
-                deviceMetadata.getDeviceKey(), context);
+                deviceMetadata.getDeviceKey());
         CognitoDeviceHelper.cacheDeviceVerifier(usernameInternal, pool.getUserPoolId(),
-                deviceSrpVerifiers.get("secret"), context);
+                deviceSrpVerifiers.get("secret"));
         CognitoDeviceHelper.cacheDeviceGroupKey(usernameInternal, pool.getUserPoolId(),
-                deviceMetadata.getDeviceGroupKey(), context);
+                deviceMetadata.getDeviceGroupKey());
         return confirmDeviceResult;
     }
 
@@ -3114,8 +3074,7 @@ public class CognitoUser {
                     .containsKey(CognitoServiceConstants.CHLG_PARAM_USERNAME)) {
                 usernameInternal = challengeParameters
                         .get(CognitoServiceConstants.CHLG_PARAM_USERNAME);
-                deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId(),
-                        context);
+                deviceKey = CognitoDeviceHelper.getDeviceKey(usernameInternal, pool.getUserPoolId());
                 if (secretHash == null) {
                     secretHash = CognitoSecretHash.getSecretHash(usernameInternal, clientId,
                             clientSecret);
@@ -3128,9 +3087,9 @@ public class CognitoUser {
      * Fetches the encoded user context.
      * @return user context.
      */
-    private UserContextDataType getUserContextData() {
-        return pool.getUserContextData(userId);
-    }
+//    private UserContextDataType getUserContextData() {
+//        return pool.getUserContextData(userId);
+//    }
 
     /**
      * Private class for SRP client side math.

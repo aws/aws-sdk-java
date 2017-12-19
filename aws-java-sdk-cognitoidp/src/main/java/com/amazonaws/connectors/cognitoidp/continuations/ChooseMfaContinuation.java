@@ -1,10 +1,10 @@
-package com.math.pro.ak.util.cognito.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
 import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeResult;
 
 import java.util.Arrays;

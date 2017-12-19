@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.tokens;
+package com.amazonaws.connectors.cognitoidp.tokens;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoInternalErrorException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoJWTParser;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoInternalErrorException;
+import com.amazonaws.connectors.cognitoidp.util.CognitoJWTParser;
 
 import java.util.Date;
 

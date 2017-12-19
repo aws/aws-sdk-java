@@ -15,13 +15,13 @@
  *  limitations under the License.
  */
 
-package com.amazonaws.mobileconnectors.cognitoidentityprovider;
+package com.amazonaws.connectors.cognitoidp;
 
 import com.amazonaws.SDKGlobalConfiguration;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.tokens.CognitoAccessToken;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.tokens.CognitoIdToken;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.tokens.CognitoRefreshToken;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoIdentityProviderClientConfig;
+import com.amazonaws.connectors.cognitoidp.tokens.CognitoAccessToken;
+import com.amazonaws.connectors.cognitoidp.tokens.CognitoIdToken;
+import com.amazonaws.connectors.cognitoidp.tokens.CognitoRefreshToken;
+import com.amazonaws.connectors.cognitoidp.util.CognitoIdentityProviderClientConfig;
 
 import java.util.Date;
 

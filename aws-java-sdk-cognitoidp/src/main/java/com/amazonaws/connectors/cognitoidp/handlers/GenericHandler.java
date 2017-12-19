@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.handlers;
+package com.amazonaws.connectors.cognitoidp.handlers;
 
 /**
  * Callback used for calls which do not return data and only indicate success or failure.

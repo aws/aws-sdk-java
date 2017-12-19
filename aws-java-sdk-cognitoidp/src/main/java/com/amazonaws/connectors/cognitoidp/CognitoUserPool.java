@@ -15,31 +15,27 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito;
+package com.amazonaws.connectors.cognitoidp;
 
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AnonymousAWSCredentials;
-import com.amazonaws.cognito.clientcontext.data.UserContextDataProvider;
-import com.amazonaws.mobile.config.AWSConfiguration;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.SignUpHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoPinpointSharedContext;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoSecretHash;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.handlers.SignUpHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoPinpointSharedContext;
+import com.amazonaws.connectors.cognitoidp.util.CognitoSecretHash;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.cognitoidentityprovider.AmazonCognitoIdentityProvider;
-import com.amazonaws.services.cognitoidentityprovider.AmazonCognitoIdentityProviderClient;
+import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProvider;
+import com.amazonaws.services.cognitoidp.AWSCognitoIdentityProviderClient;
 import com.amazonaws.services.cognitoidp.model.AnalyticsMetadataType;
 import com.amazonaws.services.cognitoidp.model.AttributeType;
 import com.amazonaws.services.cognitoidp.model.SignUpRequest;
 import com.amazonaws.services.cognitoidp.model.SignUpResult;
-import com.amazonaws.services.cognitoidp.model.UserContextDataType;
-
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.prefs.Preferences;
 import javafx.application.Platform;
 
 /**
@@ -65,7 +61,7 @@ import javafx.application.Platform;
  * On a user-pool new user's can sign-up and create new {@link CognitoUser}.
  */
 public class CognitoUserPool {
-    /**
+     /**
      * Cognito Your Identity Pool ID
      */
     private final String userPoolId;
@@ -84,7 +80,7 @@ public class CognitoUserPool {
     /**
      * CIP low-level client.
      */
-    private final AmazonCognitoIdentityProvider client;
+    private final AWSCognitoIdentityProvider client;
 
     /**
      * Calculated with {@code userId}, {@code clientId} and {@code clientSecret}
@@ -107,7 +103,6 @@ public class CognitoUserPool {
      * Constructs a user-pool with a developer specified {@link ClientConfiguration} and default AWS region {@link Regions}.
      * Region defaults to US-EAST-1.
      * </p>
-     * @param context               REQUIRED: Android application context
      * @param userPoolId            REQUIRED: User-pool-Id of the user-pool
      * @param clientId              REQUIRED: Client-Id generated for this app and user-pool at the
      *                              Cognito Identity Provider developer console
@@ -129,7 +124,6 @@ public class CognitoUserPool {
      * Constructs a user-pool with default {@link ClientConfiguration} and default AWS region {@link Regions}.
      * Region defaults to US-EAST-1.
      * </p>
-     * @param context               REQUIRED: Android application context.
      * @param userPoolId            REQUIRED: User-pool-Id of the user-pool.
      * @param clientId              REQUIRED: Client-Id generated for this app and user-pool at the
      *                              Cognito Identity Provider developer console.
@@ -144,32 +138,6 @@ public class CognitoUserPool {
     /**
      * Constructs a user-pool with default {@link ClientConfiguration}.
      *
-     * @param context               REQUIRED: Android application context.
-     * @param awsConfiguration      REQUIRED: Holds the configuration read from awsconfiguration.json
-     */
-    public CognitoUserPool(AWSConfiguration awsConfiguration) {
-        try {
-            final JSONObject userPoolConfiguration = awsConfiguration.optJsonObject("CognitoUserPool");
-            this.userPoolId = userPoolConfiguration.getString("PoolId");
-            this.clientId = userPoolConfiguration.getString("AppClientId");
-            this.clientSecret = userPoolConfiguration.optString("AppClientSecret");
-            this.pinpointEndpointId = CognitoPinpointSharedContext.getPinpointEndpoint(userPoolConfiguration.optString("PinpointAppId"));
-
-            final ClientConfiguration clientConfig = new ClientConfiguration();
-            clientConfig.setUserAgent(awsConfiguration.getUserAgent());
-            this.client = new AmazonCognitoIdentityProviderClient(new AnonymousAWSCredentials(), clientConfig);
-            this.client.setRegion(com.amazonaws.regions.Region.getRegion(Regions.fromName(userPoolConfiguration.getString("Region"))));
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to read PoolId, AppClientId, "
-                    + "AppClientSecret, or Region from AWSConfiguration please check your setup "
-                    + "or awsconfiguration.json file", e);
-        }
-    }
-
-    /**
-     * Constructs a user-pool with default {@link ClientConfiguration}.
-     *
-     * @param context               REQUIRED: Android application context.
      * @param userPoolId            REQUIRED: User-pool-Id of the user-pool.
      * @param clientId              REQUIRED: Client-Id generated for this app and user-pool at the
      *                              Cognito Identity Provider developer console.
@@ -184,7 +152,6 @@ public class CognitoUserPool {
     /**
      * Constructs a user-pool with default {@link ClientConfiguration}.
      *
-     * @param context               REQUIRED: Android application context.
      * @param userPoolId            REQUIRED: User-pool-Id of the user-pool.
      * @param clientId              REQUIRED: Client-Id generated for this app and user-pool at the
      *                              Cognito Identity Provider developer console.
@@ -200,7 +167,6 @@ public class CognitoUserPool {
     /**
      * Constructs a user-pool.
      *
-     * @param context               REQUIRED: Android application context.
      * @param userPoolId            REQUIRED: User-pool-Id of the user-pool.
      * @param clientId              REQUIRED: Client-Id generated for this app and user-pool at the
      *                              Cognito Identity Provider developer console.
@@ -218,7 +184,6 @@ public class CognitoUserPool {
     /**
      * Constructs a user-pool with integrated Pinpoint analytics.
      *
-     * @param context               REQUIRED: Android application context.
      * @param userPoolId            REQUIRED: User-pool-Id of the user-pool.
      * @param clientId              REQUIRED: Client-Id generated for this app and user-pool at the
      *                              Cognito Identity Provider developer console.
@@ -234,7 +199,7 @@ public class CognitoUserPool {
         this.userPoolId = userPoolId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
-        this.client = new AmazonCognitoIdentityProviderClient(new AnonymousAWSCredentials(), clientConfiguration);
+        this.client = new AWSCognitoIdentityProviderClient(new AnonymousAWSCredentials(), clientConfiguration);
         this.client.setRegion(com.amazonaws.regions.Region.getRegion(region));
         this.pinpointEndpointId = CognitoPinpointSharedContext.getPinpointEndpoint(pinpointAppId);
     }
@@ -250,7 +215,7 @@ public class CognitoUserPool {
      *                              the Cognito Identity Provider developer console.
      * @param client                REQUIRED: AWS low-level Cognito Identity Provider Client.
      */
-    public CognitoUserPool(String userPoolId, String clientId, String clientSecret, AmazonCognitoIdentityProvider client) {
+    public CognitoUserPool(String userPoolId, String clientId, String clientSecret, AWSCognitoIdentityProvider client) {
         this(userPoolId, clientId, clientSecret, client, null);
     }
     
@@ -265,7 +230,7 @@ public class CognitoUserPool {
      * @param client                REQUIRED: AWS low-level Cognito Identity Provider Client.
      * @param pinpointAppId         REQUIRED: AWS Pinpoint App Id for analytics.
      */
-    public CognitoUserPool(String userPoolId, String clientId, String clientSecret, AmazonCognitoIdentityProvider client, String pinpointAppId) {
+    public CognitoUserPool(String userPoolId, String clientId, String clientSecret, AWSCognitoIdentityProvider client, String pinpointAppId) {
         this.userPoolId = userPoolId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
@@ -410,7 +375,7 @@ public class CognitoUserPool {
         signUpUserRequest.setSecretHash(secretHash);
         signUpUserRequest.setUserAttributes(userAttributes.getAttributesList());
         signUpUserRequest.setValidationData(validationDataList);
-        signUpUserRequest.setUserContextData(getUserContextData(userId));
+        //signUpUserRequest.setUserContextData(getUserContextData(userId));
         String ppEndpoint = getPinpointEndpointId();
         if (ppEndpoint != null) {
             AnalyticsMetadataType amd = new AnalyticsMetadataType();
@@ -426,13 +391,14 @@ public class CognitoUserPool {
      * @return An instance of the {@link CognitoUser} for last authenticated, cached on this device
      */
     public CognitoUser getCurrentUser() {
-        final SharedPreferences csiCachedTokens = context
-                .getSharedPreferences("CognitoIdentityProviderCache", 0);
+        Preferences prefsRoot = Preferences.userRoot();
+            Preferences csiCachedTokens = prefsRoot
+                    .node("com.aws.cognito" + "/" + clientId + "/" + userPoolId);
 
-        final String csiLastUserKey = "CognitoIdentityProvider." + clientId + ".LastAuthUser";
+        final String csiLastUserKey = "LastAuthUser";
 
-        if (csiCachedTokens.contains(csiLastUserKey)) {
-            return getUser(csiCachedTokens.getString(csiLastUserKey, null));
+        if (!csiCachedTokens.get(csiLastUserKey, "").equals("")) {
+            return getUser(csiCachedTokens.get(csiLastUserKey, null));
         } else {
             return getUser();
         }
@@ -485,15 +451,15 @@ public class CognitoUserPool {
      * @param userId Required: The current user.
      * @return Encoded user context.
      */
-    protected UserContextDataType getUserContextData(String userId) {
-        UserContextDataType contextData = null;
-        if (this.advancedSecurityDataCollectionFlag) {
-            UserContextDataProvider provider = UserContextDataProvider.getInstance();
-            String encodedData = provider.getEncodedContextData(userId, this.getUserPoolId(), clientId);
-
-            contextData = new UserContextDataType();
-            contextData.setEncodedData(encodedData);
-        }
-        return contextData;
-    }
+//    protected UserContextDataType getUserContextData(String userId) {
+//        UserContextDataType contextData = null;
+//        if (this.advancedSecurityDataCollectionFlag) {
+//            UserContextDataProvider provider = UserContextDataProvider.getInstance();
+//            String encodedData = provider.getEncodedContextData(userId, this.getUserPoolId(), clientId);
+//
+//            contextData = new UserContextDataType();
+//            contextData.setEncodedData(encodedData);
+//        }
+//        return contextData;
+//    }
 }

@@ -1,11 +1,9 @@
-package com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import android.content.Context;
-
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.RegisterMfaHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.handlers.RegisterMfaHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
 import com.amazonaws.util.StringUtils;
 
 import java.util.Map;
@@ -27,7 +25,6 @@ public class VerifyMfaContinuation implements CognitoIdentityProviderContinuatio
      */
     public static final boolean RUN_IN_CURRENT = false;
 
-    private final Context context;
     private final String clientId;
     private final CognitoUser user;
     private final RegisterMfaHandler callback;
@@ -43,7 +40,6 @@ public class VerifyMfaContinuation implements CognitoIdentityProviderContinuatio
 
     /**
      * Constructs a new continuation for MFA verification.
-     * @param context               REQUIRED: The android context.
      * @param clientId              REQUIRED: The clientId.
      * @param user                  REQUIRED: Reference to the {@link CognitoUser} object.
      * @param callback              REQUIRED: Callback to interact with the app.
@@ -53,7 +49,6 @@ public class VerifyMfaContinuation implements CognitoIdentityProviderContinuatio
      * @param runInBackground       REQUIRED: Represents where this continuation has to run.
      */
     public VerifyMfaContinuation(
-            Context context,
             String clientId,
             CognitoUser user,
             RegisterMfaHandler callback,
@@ -61,7 +56,6 @@ public class VerifyMfaContinuation implements CognitoIdentityProviderContinuatio
             boolean useSessionToken,
             String sessionToken,
             boolean runInBackground) {
-        this.context = context;
         this.clientId = clientId;
         this.user = user;
         this.callback = callback;

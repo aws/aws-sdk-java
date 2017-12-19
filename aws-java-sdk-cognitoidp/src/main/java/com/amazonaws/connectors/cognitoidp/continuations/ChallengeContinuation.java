@@ -14,11 +14,11 @@
  *  for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.math.pro.ak.util.cognito.continuations;
+package com.amazonaws.connectors.cognitoidp.continuations;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.util.CognitoServiceConstants;
+import com.amazonaws.connectors.cognitoidp.CognitoUser;
+import com.amazonaws.connectors.cognitoidp.handlers.AuthenticationHandler;
+import com.amazonaws.connectors.cognitoidp.util.CognitoServiceConstants;
 import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeRequest;
 import com.amazonaws.services.cognitoidp.model.RespondToAuthChallengeResult;
 
@@ -55,7 +55,6 @@ public class ChallengeContinuation implements CognitoIdentityProviderContinuatio
      * Constructs a continuation for a challenge to be presented to the user.
      *
      * @param user REQUIRED: Reference to the user being authenticated.
-     * @param context REQUIRED: Android application context.
      * @param username REQUIRED: Username used for this auth attempt.
      * @param clientId REQUIRED: Cognito App Id
      * @param secretHash REQUIRED: Hash of the App Secret
@@ -73,7 +72,6 @@ public class ChallengeContinuation implements CognitoIdentityProviderContinuatio
             boolean runInBackground,
             AuthenticationHandler callback) {
         this.challengeResult = challengeResult;
-        this.context = context;
         this.clientId = clientId;
         this.secretHash = secretHash;
         this.user = user;

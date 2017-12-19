@@ -14,12 +14,12 @@
  *  for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.math.pro.ak.util.cognito;
+package com.amazonaws.connectors.cognitoidp;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoInternalErrorException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoNotAuthorizedException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GenericHandler;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoInternalErrorException;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoNotAuthorizedException;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.handlers.GenericHandler;
 import com.amazonaws.services.cognitoidp.model.DeviceType;
 import com.amazonaws.services.cognitoidp.model.ForgetDeviceRequest;
 import com.amazonaws.services.cognitoidp.model.GetDeviceRequest;
@@ -84,7 +84,6 @@ public class CognitoDevice {
      * @param lastAccessedDate REQUIRED: The date this device details were last
      * read.
      * @param user REQUIRED: The {@link CognitoUser} this device is linked to.
-     * @param context REQUIRED: App context.
      */
     public CognitoDevice(String deviceKey, CognitoUserAttributes deviceAttributes, Date createDate, Date lastModifiedDate, Date lastAccessedDate, CognitoUser user) {
         this.deviceKey = deviceKey;
@@ -100,7 +99,6 @@ public class CognitoDevice {
      *
      * @param device REQUIRED: A {@link DeviceType} object.
      * @param user REQUIRED: The {@link CognitoUser} this device is linked to.
-     * @param context REQUIRED: App context.
      */
     public CognitoDevice(DeviceType device, CognitoUser user) {
         this.deviceKey = device.getDeviceKey();

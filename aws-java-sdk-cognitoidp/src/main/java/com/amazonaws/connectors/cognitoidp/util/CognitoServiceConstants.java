@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.util;
+package com.amazonaws.connectors.cognitoidp.util;
 
 /**
  * All key-words for service calls.

@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.tokens;
+package com.amazonaws.connectors.cognitoidp.tokens;
 
 /**
  * Base class for Cognito tokens.

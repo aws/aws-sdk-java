@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.util;
+package com.amazonaws.connectors.cognitoidp.util;
 
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.StringUtils;
@@ -31,6 +31,7 @@ import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.prefs.Preferences;
 
 /**
  * A utility class for device operations.
@@ -41,6 +42,7 @@ public final class CognitoDeviceHelper {
     private static final String COGNITO_DEVICE_KEY = "DeviceKey";
     private static final String COGNITO_DEVICE_GROUP_KEY = "DeviceGroupKey";
     private static final String COGNITO_DEVICE_SECRET = "DeviceSecret";
+
     /**
      * Default pagination limit.
      */
@@ -55,23 +57,25 @@ public final class CognitoDeviceHelper {
      * @return Device model name, which is also the name of the device.
      */
     public static String getDeviceName() {
-        return Build.MODEL;
+        return System.getProperty("os.name");
     }
 
     /**
-     * Returns the cached key for this device. Device keys are stored in SharedPreferences and are
-     * used to track devices. Returns null if no device key was cached.
+     * Returns the cached key for this device. Device keys are stored in
+     * SharedPreferences and are used to track devices. Returns null if no
+     * device key was cached.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the application.
-     * @param context           REQUIRED: Application context.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the application.
      * @return device key as String, null if the device-key is not available.
      */
-    public static String getDeviceKey(String username, String userPoolId, Context context) {
+    public static String getDeviceKey(String username, String userPoolId) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            if (cipCachedDeviceDetails != null && cipCachedDeviceDetails.contains(COGNITO_DEVICE_KEY)) {
-                return cipCachedDeviceDetails.getString(COGNITO_DEVICE_KEY, null);
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            if (cipCachedDeviceDetails != null) {
+                return cipCachedDeviceDetails.get(COGNITO_DEVICE_KEY, null);
             }
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
@@ -80,19 +84,21 @@ public final class CognitoDeviceHelper {
     }
 
     /**
-     * Returns the cached device secret for this device. Device secret is generated when the device
-     * is confirmed and is used for device identification.
+     * Returns the cached device secret for this device. Device secret is
+     * generated when the device is confirmed and is used for device
+     * identification.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the application.
-     * @param context           REQUIRED: Application context.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the application.
      * @return device secret as String, null if the device-key is not available.
      */
-    public static String getDeviceSecret(String username, String userPoolId, Context context) {
+    public static String getDeviceSecret(String username, String userPoolId) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            if (cipCachedDeviceDetails != null && cipCachedDeviceDetails.contains(COGNITO_DEVICE_SECRET)) {
-                return cipCachedDeviceDetails.getString(COGNITO_DEVICE_SECRET, null);
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            if (cipCachedDeviceDetails != null) {
+                return cipCachedDeviceDetails.get(COGNITO_DEVICE_SECRET, null);
             }
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
@@ -101,19 +107,22 @@ public final class CognitoDeviceHelper {
     }
 
     /**
-     * Returns the cached device group key for this device. Device secret is generated when the device
-     * is confirmed and is used for device identification.
+     * Returns the cached device group key for this device. Device secret is
+     * generated when the device is confirmed and is used for device
+     * identification.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the application.
-     * @param context           REQUIRED: Application context.
-     * @return device group key as String, null if the device-key is not available.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the application.
+     * @return device group key as String, null if the device-key is not
+     * available.
      */
-    public static String getDeviceGroupKey(String username, String userPoolId, Context context) {
+    public static String getDeviceGroupKey(String username, String userPoolId) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            if (cipCachedDeviceDetails != null && cipCachedDeviceDetails.contains(COGNITO_DEVICE_GROUP_KEY)) {
-                return cipCachedDeviceDetails.getString(COGNITO_DEVICE_GROUP_KEY, null);
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            if (cipCachedDeviceDetails != null) {
+                return cipCachedDeviceDetails.get(COGNITO_DEVICE_GROUP_KEY, null);
             }
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
@@ -122,54 +131,59 @@ public final class CognitoDeviceHelper {
     }
 
     /**
-     * This method caches the device key. Device key is assigned by the Amazon Cognito service and is
-     * used as a device identifier.
+     * This method caches the device key. Device key is assigned by the Amazon
+     * Cognito service and is used as a device identifier.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the device.
-     * @param deviceKey         REQUIRED: Cognito assigned device key.
-     * @param context           REQUIRED: App context, needed to access device datastore.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the device.
+     * @param deviceKey REQUIRED: Cognito assigned device key.
      */
-    public static void cacheDeviceKey(String username, String userPoolId, String deviceKey, Context context) {
+    public static void cacheDeviceKey(String username, String userPoolId, String deviceKey) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            cipCachedDeviceDetails.edit().putString(COGNITO_DEVICE_KEY, deviceKey).apply();
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            cipCachedDeviceDetails.put(COGNITO_DEVICE_KEY, deviceKey);
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
         }
     }
 
     /**
-     * This method caches the device verifier. Device verifier is generated locally by the SDK and
-     * it is used to authenticate the device through device SRP authentication.
+     * This method caches the device verifier. Device verifier is generated
+     * locally by the SDK and it is used to authenticate the device through
+     * device SRP authentication.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the device.
-     * @param deviceSecret      REQUIRED: Cognito assigned device key.
-     * @param context           REQUIRED: App context, needed to access device datastore.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the device.
+     * @param deviceSecret REQUIRED: Cognito assigned device key.
      */
-    public static void cacheDeviceVerifier(String username, String userPoolId, String deviceSecret, Context context) {
+    public static void cacheDeviceVerifier(String username, String userPoolId, String deviceSecret) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            cipCachedDeviceDetails.edit().putString(COGNITO_DEVICE_SECRET, deviceSecret).apply();
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            cipCachedDeviceDetails.put(COGNITO_DEVICE_SECRET, deviceSecret);
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
         }
     }
 
     /**
-     * This method caches the device group key. Device verifier is generated locally by the SDK and
-     * it is used to authenticate the device through device SRP authentication.
+     * This method caches the device group key. Device verifier is generated
+     * locally by the SDK and it is used to authenticate the device through
+     * device SRP authentication.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the device.
-     * @param deviceGroupKey    REQUIRED: Cognito assigned device group key.
-     * @param context           REQUIRED: App context, needed to access device datastore.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the device.
+     * @param deviceGroupKey REQUIRED: Cognito assigned device group key.
      */
-    public static void cacheDeviceGroupKey(String username, String userPoolId, String deviceGroupKey, Context context) {
+    public static void cacheDeviceGroupKey(String username, String userPoolId, String deviceGroupKey) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            cipCachedDeviceDetails.edit().putString(COGNITO_DEVICE_GROUP_KEY, deviceGroupKey).apply();
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            cipCachedDeviceDetails.put(COGNITO_DEVICE_GROUP_KEY, deviceGroupKey);
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
         }
@@ -178,14 +192,15 @@ public final class CognitoDeviceHelper {
     /**
      * Clears cached device details for this user.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the device.
-     * @param context           REQUIRED: App context, needed to access device datastore.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the device.
      */
-    public static void clearCachedDevice(String username, String userPoolId, Context context) {
+    public static void clearCachedDevice(String username, String userPoolId) {
         try {
-            final SharedPreferences cipCachedDeviceDetails = context.getSharedPreferences(getDeviceDetailsCacheForUser(username, userPoolId), 0);
-            cipCachedDeviceDetails.edit().clear().apply();
+            Preferences prefsRoot = Preferences.userRoot();
+            Preferences cipCachedDeviceDetails = prefsRoot
+                    .node("com.aws.cognito" + "/" + userPoolId + "/" + username);
+            cipCachedDeviceDetails.clear();
         } catch (final Exception e) {
             LOGGER.error("Error accessing SharedPreferences", e);
         }
@@ -194,8 +209,9 @@ public final class CognitoDeviceHelper {
     /**
      * Generates SRP verification parameters for device verification.
      *
-     * @param deviceKey          REQUIRED: Username this device belongs to.
-     * @param deviceGroup        REQUIRED: This is the device group id returned by the service.
+     * @param deviceKey REQUIRED: Username this device belongs to.
+     * @param deviceGroup REQUIRED: This is the device group id returned by the
+     * service.
      * @return srp verification details for this device, as a {@link Map}.
      */
     public static Map<String, String> generateVerificationParameters(String deviceKey, String deviceGroup) {
@@ -211,14 +227,16 @@ public final class CognitoDeviceHelper {
     }
 
     /**
-     * Generates and returns the key to access device details from shared preferences.
+     * Generates and returns the key to access device details from shared
+     * preferences.
      *
-     * @param username          REQUIRED: The current user.
-     * @param userPoolId        REQUIRED: Client ID of the device.
-     * @return a string which is a key to access the device key from SharedPreferences.
+     * @param username REQUIRED: The current user.
+     * @param userPoolId REQUIRED: Client ID of the device.
+     * @return a string which is a key to access the device key from
+     * SharedPreferences.
      */
     private static String getDeviceDetailsCacheForUser(String username, String userPoolId) {
-        return COGNITO_DEVICE_CACHE + "." + userPoolId + "." + username;
+        return COGNITO_DEVICE_CACHE + "/" + userPoolId + "/" + username;
     }
 
     /**
@@ -226,21 +244,22 @@ public final class CognitoDeviceHelper {
      */
     @SuppressWarnings("checkstyle:typename")
     public static class deviceSRP {
+
         private final BigInteger salt;
         private final BigInteger verifier;
         private static final String HASH_ALGORITHM = "SHA-256";
 
-        private static final ThreadLocal<MessageDigest> THREAD_MESSAGE_DIGEST =
-            new ThreadLocal<MessageDigest>() {
-                @Override
-                protected MessageDigest initialValue() {
-                    try {
-                        return MessageDigest.getInstance(HASH_ALGORITHM);
-                    } catch (final NoSuchAlgorithmException e) {
-                        throw new ExceptionInInitializerError(e);
-                    }
+        private static final ThreadLocal<MessageDigest> THREAD_MESSAGE_DIGEST
+                = new ThreadLocal<MessageDigest>() {
+            @Override
+            protected MessageDigest initialValue() {
+                try {
+                    return MessageDigest.getInstance(HASH_ALGORITHM);
+                } catch (final NoSuchAlgorithmException e) {
+                    throw new ExceptionInInitializerError(e);
                 }
-            };
+            }
+        };
 
         private static final String HEX_N = "FFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD1"
                 + "29024E088A67CC74020BBEA63B139B22514A08798E3404DD"
@@ -283,6 +302,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Returns the generated verifier.
+         *
          * @return verifier.
          */
         public BigInteger getVerifier() {
@@ -291,8 +311,9 @@ public final class CognitoDeviceHelper {
 
         /**
          * Helps to start the SRP validation of the device.
+         *
          * @param deviceGroupKey REQUIRED: Group assigned to the device.
-         * @param deviceKey REQUIRED: Unique identifier assigned to the device. 
+         * @param deviceKey REQUIRED: Unique identifier assigned to the device.
          * @param password REQUIRED: The device password.
          */
         public deviceSRP(String deviceGroupKey, String deviceKey, String password) {
@@ -304,6 +325,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Generates the SRP verifier.
+         *
          * @param salt REQUIRED: The random salt created by the service.
          * @param userIdHash REQIURED: Username hash.
          * @return verifier as a BigInteger.
@@ -320,6 +342,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Computes the user hash.
+         *
          * @param poolName REQUIRED: The pool-id of the user.
          * @param userName REQUIRED: The internal username of the user.
          * @param password REQUIRED: The password intered by the user.
@@ -341,6 +364,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Complete digest.
+         *
          * @return the digest as a byte array.
          */
         public static byte[] end() {
@@ -350,6 +374,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Adds a series of strings to the digest.
+         *
          * @param strings REQUIRED: Strings to add.
          */
         public static void update(String... strings) {
@@ -363,6 +388,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Adds a string to the digest.
+         *
          * @param s REQUIRED: String to add.
          */
         public static void update(String s) {
@@ -374,6 +400,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Adds a series of BigIntegers to the digest.
+         *
          * @param bigInts REQUIRED: Numbers to add.
          */
         public static void update(BigInteger... bigInts) {
@@ -387,6 +414,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Adds a BigInteger to the digest.
+         *
          * @param n REQUIRED: The number to add.
          */
         public static void update(BigInteger n) {
@@ -398,6 +426,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Adds the contents of a byte-buffer to the digest.
+         *
          * @param b REQUIRED: bytes to add.
          */
         public static void update(ByteBuffer b) {
@@ -409,6 +438,7 @@ public final class CognitoDeviceHelper {
 
         /**
          * Adds a byte array to the digest.
+         *
          * @param b REQUIRED: bytes to add.
          */
         public static void update(byte[] b) {

@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.util;
+package com.amazonaws.connectors.cognitoidp.util;
 
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
 
 /**
  * Maintains SDK configuration.

@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito;
+package com.amazonaws.connectors.cognitoidp;
 
 import com.amazonaws.services.cognitoidp.model.CodeDeliveryDetailsType;
 import com.amazonaws.services.cognitoidp.model.MFAOptionType;

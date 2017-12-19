@@ -15,10 +15,10 @@
  *  limitations under the License.
  */
 
-package com.math.pro.ak.util.cognito.util;
+package com.amazonaws.connectors.cognitoidp.util;
 
-
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions.CognitoParameterInvalidException;
+import com.amazonaws.util.Base64;
+import com.amazonaws.connectors.cognitoidp.exceptions.CognitoParameterInvalidException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +34,13 @@ public class CognitoJWTParser {
     private static final int SIGNATURE = 2;
     private static final int JWT_PARTS = 3;
     /**
+     * Encoder/decoder flag bit to indicate using the "URL and
+     * filename safe" variant of Base64 (see RFC 3548 section 4) where
+     * {@code -} and {@code _} are used in place of {@code +} and
+     * {@code /}.
+     */
+    public static final int URL_SAFE = 8;
+    /**
      * Returns header for a JWT as a JSON object.
      *
      * @param jwt       REQUIRED: valid JSON Web Token as String.
@@ -42,7 +49,7 @@ public class CognitoJWTParser {
     public static JSONObject getHeader(String jwt) {
         try {
             validateJWT(jwt);
-            final byte[] sectionDecoded = Base64.decode(jwt.split("\\.")[HEADER], Base64.URL_SAFE);
+            final byte[] sectionDecoded = Base64.decode(jwt.split("\\.")[HEADER]);
             final String jwtSection = new String(sectionDecoded, "UTF-8");
             return new JSONObject(jwtSection);
         } catch (final UnsupportedEncodingException e) {
@@ -64,7 +71,7 @@ public class CognitoJWTParser {
         try {
             validateJWT(jwt);
             final String payload = jwt.split("\\.")[PAYLOAD];
-            final byte[] sectionDecoded = Base64.decode(payload, Base64.URL_SAFE);
+            final byte[] sectionDecoded = Base64.decode(payload);
             final String jwtSection = new String(sectionDecoded, "UTF-8");
             return new JSONObject(jwtSection);
         } catch (final UnsupportedEncodingException e) {
@@ -85,7 +92,7 @@ public class CognitoJWTParser {
     public static String getSignature(String jwt) {
         try {
             validateJWT(jwt);
-            final byte[] sectionDecoded = Base64.decode(jwt.split("\\.")[SIGNATURE], Base64.URL_SAFE);
+            final byte[] sectionDecoded = Base64.decode(jwt.split("\\.")[SIGNATURE]);
             return new String(sectionDecoded, "UTF-8");
         } catch (final Exception e) {
             throw new CognitoParameterInvalidException("error in parsing JSON");

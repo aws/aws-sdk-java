@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-package com.amazonaws.mobileconnectors.cognitoidentityprovider.exceptions;
+package com.amazonaws.connectors.cognitoidp.exceptions;
 
 /**
  * Client exception issue when a parameter assigned an illegal value.
