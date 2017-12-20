@@ -76,6 +76,14 @@ public class RestApiJsonUnmarshaller implements Unmarshaller<RestApi, JsonUnmars
                     context.nextToken();
                     restApi.setBinaryMediaTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("minimumCompressionSize", targetDepth)) {
+                    context.nextToken();
+                    restApi.setMinimumCompressionSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("apiKeySource", targetDepth)) {
+                    context.nextToken();
+                    restApi.setApiKeySource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("endpointConfiguration", targetDepth)) {
                     context.nextToken();
                     restApi.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

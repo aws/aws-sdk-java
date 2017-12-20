@@ -66,7 +66,7 @@ public interface AWSMediaStoreDataAsync extends AWSMediaStoreData {
 
     /**
      * <p>
-     * Gets the header for an object at the specified path.
+     * Gets the headers for an object at the specified path.
      * </p>
      * 
      * @param describeObjectRequest
@@ -79,7 +79,7 @@ public interface AWSMediaStoreDataAsync extends AWSMediaStoreData {
 
     /**
      * <p>
-     * Gets the header for an object at the specified path.
+     * Gets the headers for an object at the specified path.
      * </p>
      * 
      * @param describeObjectRequest

@@ -39,7 +39,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the specified
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified
      * private hosted zone.
      * </p>
      * </li>
@@ -65,7 +65,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the specified
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified
      * private hosted zone.
      * </p>
      * </li>
@@ -81,7 +81,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the
+     *        <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the
      *        specified private hosted zone.
      *        </p>
      *        </li>
@@ -104,7 +104,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the specified
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified
      * private hosted zone.
      * </p>
      * </li>
@@ -120,7 +120,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the
+     *         <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the
      *         specified private hosted zone.
      *         </p>
      *         </li>
@@ -143,7 +143,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the specified
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified
      * private hosted zone.
      * </p>
      * </li>
@@ -159,7 +159,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the
+     *        <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the
      *        specified private hosted zone.
      *        </p>
      *        </li>
@@ -184,7 +184,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the specified
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified
      * private hosted zone.
      * </p>
      * </li>
@@ -200,7 +200,7 @@ public class HostedZoneLimit implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>MAX_VPCS_ASSOCIATED_BY_TYPE</b>: The maximum number of Amazon VPCs that you can associate with the
+     *        <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the
      *        specified private hosted zone.
      *        </p>
      *        </li>

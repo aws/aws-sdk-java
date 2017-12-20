@@ -24,7 +24,8 @@ import javax.annotation.Generated;
  * <b>Public hosted zone:</b> Two hosted zones that have the same name or that have a parent/child relationship
  * (example.com and test.example.com) can't have any common name servers. You tried to create a hosted zone that has the
  * same name as an existing hosted zone or that's the parent or child of an existing hosted zone, and you specified a
- * delegation set that shares one or more name servers with the existing hosted zone.
+ * delegation set that shares one or more name servers with the existing hosted zone. For more information, see
+ * <a>CreateReusableDelegationSet</a>.
  * </p>
  * </li>
  * <li>

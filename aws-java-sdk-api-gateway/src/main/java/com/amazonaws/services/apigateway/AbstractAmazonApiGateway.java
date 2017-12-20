@@ -423,6 +423,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetTagsResult getTags(GetTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUsageResult getUsage(GetUsageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -503,12 +508,22 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TestInvokeAuthorizerResult testInvokeAuthorizer(TestInvokeAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TestInvokeMethodResult testInvokeMethod(TestInvokeMethodRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

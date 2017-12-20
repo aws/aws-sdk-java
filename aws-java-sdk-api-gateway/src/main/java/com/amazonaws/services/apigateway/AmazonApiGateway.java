@@ -1683,6 +1683,29 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Gets the Tags collection for a given resource.
+     * </p>
+     * 
+     * @param getTagsRequest
+     *        Gets the Tags collection for a given resource.
+     * @return Result of the GetTags operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws LimitExceededException
+     *         The request exceeded the rate limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetTags
+     */
+    GetTagsResult getTags(GetTagsRequest getTagsRequest);
+
+    /**
+     * <p>
      * Gets the usage data of a usage plan in a specified time interval.
      * </p>
      * 
@@ -2044,6 +2067,31 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Adds or updates Tags on a gievn resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Adds or updates Tags on a gievn resource.
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws LimitExceededException
+     *         The request exceeded the rate limit. Retry after the specified time period.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @sample AmazonApiGateway.TagResource
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers, parameters, and an incoming
      * request body.
      * </p>
@@ -2088,6 +2136,29 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.TestInvokeMethod
      */
     TestInvokeMethodResult testInvokeMethod(TestInvokeMethodRequest testInvokeMethodRequest);
+
+    /**
+     * <p>
+     * Removes Tags from a given resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Removes Tags from a given resource.
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @sample AmazonApiGateway.UntagResource
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

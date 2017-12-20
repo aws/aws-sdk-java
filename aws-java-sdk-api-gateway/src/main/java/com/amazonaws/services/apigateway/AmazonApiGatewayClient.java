@@ -4592,6 +4592,64 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets the Tags collection for a given resource.
+     * </p>
+     * 
+     * @param getTagsRequest
+     *        Gets the Tags collection for a given resource.
+     * @return Result of the GetTags operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws LimitExceededException
+     *         The request exceeded the rate limit. Retry after the specified time period.
+     * @sample AmazonApiGateway.GetTags
+     */
+    @Override
+    public GetTagsResult getTags(GetTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTags(request);
+    }
+
+    @SdkInternalApi
+    final GetTagsResult executeGetTags(GetTagsRequest getTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTagsRequest> request = null;
+        Response<GetTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the usage data of a usage plan in a specified time interval.
      * </p>
      * 
@@ -5516,6 +5574,66 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Adds or updates Tags on a gievn resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Adds or updates Tags on a gievn resource.
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws LimitExceededException
+     *         The request exceeded the rate limit. Retry after the specified time period.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @sample AmazonApiGateway.TagResource
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers, parameters, and an incoming
      * request body.
      * </p>
@@ -5621,6 +5739,64 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<TestInvokeMethodResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestInvokeMethodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes Tags from a given resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Removes Tags from a given resource.
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
+     *         accompanying error message for details.
+     * @throws UnauthorizedException
+     *         The request is denied because the caller has insufficient permissions.
+     * @throws TooManyRequestsException
+     *         The request has reached its throttling limit. Retry after the specified time period.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
+     * @throws ConflictException
+     *         The request configuration has conflicts. For details, see the accompanying error message.
+     * @sample AmazonApiGateway.UntagResource
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

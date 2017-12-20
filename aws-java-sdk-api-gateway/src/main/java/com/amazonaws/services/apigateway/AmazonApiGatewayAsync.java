@@ -2250,6 +2250,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Gets the Tags collection for a given resource.
+     * </p>
+     * 
+     * @param getTagsRequest
+     *        Gets the Tags collection for a given resource.
+     * @return A Java Future containing the result of the GetTags operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetTags
+     */
+    java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest getTagsRequest);
+
+    /**
+     * <p>
+     * Gets the Tags collection for a given resource.
+     * </p>
+     * 
+     * @param getTagsRequest
+     *        Gets the Tags collection for a given resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTags operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetTags
+     */
+    java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest getTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the usage data of a usage plan in a specified time interval.
      * </p>
      * 
@@ -2714,6 +2743,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Adds or updates Tags on a gievn resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Adds or updates Tags on a gievn resource.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonApiGatewayAsync.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates Tags on a gievn resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     *        Adds or updates Tags on a gievn resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers, parameters, and an incoming
      * request body.
      * </p>
@@ -2779,6 +2837,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      */
     java.util.concurrent.Future<TestInvokeMethodResult> testInvokeMethodAsync(TestInvokeMethodRequest testInvokeMethodRequest,
             com.amazonaws.handlers.AsyncHandler<TestInvokeMethodRequest, TestInvokeMethodResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes Tags from a given resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Removes Tags from a given resource.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes Tags from a given resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     *        Removes Tags from a given resource.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

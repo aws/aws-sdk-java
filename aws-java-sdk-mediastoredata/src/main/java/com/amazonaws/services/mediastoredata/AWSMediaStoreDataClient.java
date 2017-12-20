@@ -174,7 +174,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the header for an object at the specified path.
+     * Gets the headers for an object at the specified path.
      * </p>
      * 
      * @param describeObjectRequest

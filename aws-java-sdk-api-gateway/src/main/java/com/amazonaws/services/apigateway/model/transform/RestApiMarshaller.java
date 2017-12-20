@@ -42,6 +42,10 @@ public class RestApiMarshaller {
             .marshallLocationName("warnings").build();
     private static final MarshallingInfo<List> BINARYMEDIATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("binaryMediaTypes").build();
+    private static final MarshallingInfo<Integer> MINIMUMCOMPRESSIONSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumCompressionSize").build();
+    private static final MarshallingInfo<String> APIKEYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySource").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
 
@@ -68,6 +72,8 @@ public class RestApiMarshaller {
             protocolMarshaller.marshall(restApi.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(restApi.getWarnings(), WARNINGS_BINDING);
             protocolMarshaller.marshall(restApi.getBinaryMediaTypes(), BINARYMEDIATYPES_BINDING);
+            protocolMarshaller.marshall(restApi.getMinimumCompressionSize(), MINIMUMCOMPRESSIONSIZE_BINDING);
+            protocolMarshaller.marshall(restApi.getApiKeySource(), APIKEYSOURCE_BINDING);
             protocolMarshaller.marshall(restApi.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

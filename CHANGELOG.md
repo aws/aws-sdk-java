@@ -1,3 +1,16 @@
+# __1.11.252__ __2017-12-19__
+## __AWS Elemental MediaStore Data Plane__
+  - ### Features
+    - Documentation updates for mediastore
+
+## __Amazon API Gateway__
+  - ### Features
+    - API Gateway now adds support for calling API with compressed payloads using one of the supported content codings, tagging an API stage for cost allocation, and returning API keys from a custom authorizer for use with a usage plan.
+
+## __Amazon Route 53__
+  - ### Features
+    - Route 53 added support for a new China (Ningxia) region, cn-northwest-1. You can now specify cn-northwest-1 as the region for latency-based or geoproximity routing. Route 53 also added support for a new EU (Paris) region, eu-west-3. You can now associate VPCs in eu-west-3 with private hosted zones and create alias records that route traffic to resources in eu-west-3.
+
 # __1.11.251__ __2017-12-19__
 ## __Amazon CloudWatch__
   - ### Features

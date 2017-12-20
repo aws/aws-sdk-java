@@ -28,6 +28,7 @@ public enum CloudWatchRegion {
     EuCentral1("eu-central-1"),
     EuWest1("eu-west-1"),
     EuWest2("eu-west-2"),
+    EuWest3("eu-west-3"),
     ApSouth1("ap-south-1"),
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),

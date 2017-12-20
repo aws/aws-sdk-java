@@ -80,6 +80,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private CanarySettings canarySettings;
+    /**
+     * <p>
+     * Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and must
+     * not start with "aws:". Tag value can be up to 256 characters.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -484,6 +491,73 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and must
+     * not start with "aws:". Tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @return Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and
+     *         must not start with "aws:". Tag value can be up to 256 characters.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and must
+     * not start with "aws:". Tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and
+     *        must not start with "aws:". Tag value can be up to 256 characters.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and must
+     * not start with "aws:". Tag value can be up to 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters and
+     *        must not start with "aws:". Tag value can be up to 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStageRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateStageRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStageRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -511,7 +585,9 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDocumentationVersion() != null)
             sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
         if (getCanarySettings() != null)
-            sb.append("CanarySettings: ").append(getCanarySettings());
+            sb.append("CanarySettings: ").append(getCanarySettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -562,6 +638,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getCanarySettings() != null && other.getCanarySettings().equals(this.getCanarySettings()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -579,6 +659,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getVariables() == null) ? 0 : getVariables().hashCode());
         hashCode = prime * hashCode + ((getDocumentationVersion() == null) ? 0 : getDocumentationVersion().hashCode());
         hashCode = prime * hashCode + ((getCanarySettings() == null) ? 0 : getCanarySettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

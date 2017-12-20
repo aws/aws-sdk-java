@@ -98,6 +98,11 @@ public class StageJsonUnmarshaller implements Unmarshaller<Stage, JsonUnmarshall
                     context.nextToken();
                     stage.setCanarySettings(CanarySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    stage.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     stage.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

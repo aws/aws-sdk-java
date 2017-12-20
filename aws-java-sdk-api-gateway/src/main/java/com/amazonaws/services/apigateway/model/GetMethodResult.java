@@ -181,11 +181,12 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private Integration methodIntegration;
     /**
      * <p>
-     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
-     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
-     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
-     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
-     * access token instead of an identity token for authorizatinon purposes.
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
      * </p>
      */
     private java.util.List<String> authorizationScopes;
@@ -1021,19 +1022,20 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
-     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
-     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
-     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
-     * access token instead of an identity token for authorizatinon purposes.
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
      * </p>
      * 
-     * @return A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code>
-     *         authorizer to authorize the method invocation by matching them against the scopes parsed from the access
-     *         token in the incoming request. The method invocation is authorized if any method scopes matches a claimed
-     *         scope in the access token. Otherwise, the invocation is not authorized. When the method scope is
-     *         configured, the client must provide an access token instead of an identity token for authorizatinon
-     *         purposes.
+     * @return A list of authorization scopes configured on the method. The scopes are used with a
+     *         <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *         matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *         method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *         Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *         an access token instead of an identity token for authorization purposes.
      */
 
     public java.util.List<String> getAuthorizationScopes() {
@@ -1042,19 +1044,21 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
-     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
-     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
-     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
-     * access token instead of an identity token for authorizatinon purposes.
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
      * </p>
      * 
      * @param authorizationScopes
-     *        A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer
-     *        to authorize the method invocation by matching them against the scopes parsed from the access token in the
-     *        incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the
-     *        access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
-     *        must provide an access token instead of an identity token for authorizatinon purposes.
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
      */
 
     public void setAuthorizationScopes(java.util.Collection<String> authorizationScopes) {
@@ -1068,11 +1072,12 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
-     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
-     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
-     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
-     * access token instead of an identity token for authorizatinon purposes.
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1081,11 +1086,12 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param authorizationScopes
-     *        A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer
-     *        to authorize the method invocation by matching them against the scopes parsed from the access token in the
-     *        incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the
-     *        access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
-     *        must provide an access token instead of an identity token for authorizatinon purposes.
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1101,19 +1107,21 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer to
-     * authorize the method invocation by matching them against the scopes parsed from the access token in the incoming
-     * request. The method invocation is authorized if any method scopes matches a claimed scope in the access token.
-     * Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an
-     * access token instead of an identity token for authorizatinon purposes.
+     * A list of authorization scopes configured on the method. The scopes are used with a
+     * <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by matching
+     * the method scopes against the scopes parsed from the access token in the incoming request. The method invocation
+     * is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not
+     * authorized. When the method scope is configured, the client must provide an access token instead of an identity
+     * token for authorization purposes.
      * </p>
      * 
      * @param authorizationScopes
-     *        A list authorization scopes configured on the method used with a <code>COGNITO_USER_POOL</code> authorizer
-     *        to authorize the method invocation by matching them against the scopes parsed from the access token in the
-     *        incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the
-     *        access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client
-     *        must provide an access token instead of an identity token for authorizatinon purposes.
+     *        A list of authorization scopes configured on the method. The scopes are used with a
+     *        <code>COGNITO_USER_POOL</code> authorizer to authorize the method invocation. The authorization works by
+     *        matching the method scopes against the scopes parsed from the access token in the incoming request. The
+     *        method invocation is authorized if any method scopes matches a claimed scope in the access token.
+     *        Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide
+     *        an access token instead of an identity token for authorization purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
