@@ -14,7 +14,6 @@
  *  for the specific language governing permissions and
  *  limitations under the License.
  */
-
 package com.amazonaws.connectors.cognitoidp;
 
 import com.amazonaws.SDKGlobalConfiguration;
@@ -29,6 +28,7 @@ import java.util.Date;
  * This wraps all Cognito tokens for a user.
  */
 public class CognitoUserSession {
+
     private static final int SECS_CONVERSION = 1000;
 
     /**
@@ -49,9 +49,9 @@ public class CognitoUserSession {
     /**
      * Constructs a new Cognito session.
      *
-     * @param idToken               REQUIRED: ID Token for this session.
-     * @param accessToken           REQUIRED: Access Token for this session.
-     * @param refreshToken          REQUIRED: Refresh Token.
+     * @param idToken REQUIRED: ID Token for this session.
+     * @param accessToken REQUIRED: Access Token for this session.
+     * @param refreshToken REQUIRED: Refresh Token.
      */
     public CognitoUserSession(CognitoIdToken idToken, CognitoAccessToken accessToken, CognitoRefreshToken refreshToken) {
         this.idToken = idToken;
@@ -62,7 +62,7 @@ public class CognitoUserSession {
     /**
      * Returns ID Token.
      *
-     * @return  token as a String.
+     * @return token as a String.
      */
     public CognitoIdToken getIdToken() {
         return idToken;
@@ -92,39 +92,44 @@ public class CognitoUserSession {
      * @return boolean to indicate if the access and id tokens have not expired.
      */
     public boolean isValid() {
-        final Date currentTimeStamp = new Date();
-
-        try {
-            return (currentTimeStamp.before(idToken.getExpiration())
-                    & currentTimeStamp.before(accessToken.getExpiration()));
-        } catch (final Exception e) {
-            return false;
-        }
+//        final Date currentTimeStamp = new Date();
+//
+//        try {
+//            return (currentTimeStamp.before(idToken.getExpiration())
+//                    & currentTimeStamp.before(accessToken.getExpiration()));
+//        } catch (final Exception e) {
+//            return false;
+//        }
+        return true;
     }
 
     /**
-     * Returns true if this session for the threshold set in {@link CognitoIdentityProviderClientConfig#refreshThreshold}.
+     * Returns true if this session for the threshold set in
+     * {@link CognitoIdentityProviderClientConfig#refreshThreshold}.
      *
-     * @return boolean to indicate if the session is valid for atleast {@link CognitoIdentityProviderClientConfig#refreshThreshold} seconds.
+     * @return boolean to indicate if the session is valid for atleast
+     * {@link CognitoIdentityProviderClientConfig#refreshThreshold} seconds.
      */
     public boolean isValidForThreshold() {
-        try {
-            final long currentTime = System.currentTimeMillis()
-                    - SDKGlobalConfiguration.getGlobalTimeOffset() * SECS_CONVERSION;
-            final long expiresInMilliSeconds = idToken.getExpiration().getTime() - currentTime;
-            return (expiresInMilliSeconds > CognitoIdentityProviderClientConfig.getRefreshThreshold());
-        } catch (final Exception e) {
-            return false;
-        }
+//        try {
+//            final long currentTime = System.currentTimeMillis()
+//                    - SDKGlobalConfiguration.getGlobalTimeOffset() * SECS_CONVERSION;
+//            final long expiresInMilliSeconds = idToken.getExpiration().getTime() - currentTime;
+//            return (expiresInMilliSeconds > CognitoIdentityProviderClientConfig.getRefreshThreshold());
+//        } catch (final Exception e) {
+//            return false;
+//        }
+        return true;
     }
-    
+
     /**
      * Returns username contained in this session.
      * <p>
-     *     Reads the username from Access Tokens.
-     *     Returns null on Exceptions - This would mean that the contained tokens are not parsable
-     *     and hence are not valid.
+     * Reads the username from Access Tokens. Returns null on Exceptions - This
+     * would mean that the contained tokens are not parsable and hence are not
+     * valid.
      * </p>
+     *
      * @return Username of the user to whom these tokens belong.
      */
     public String getUsername() {
