@@ -490,6 +490,31 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Creates an AWS IoT OTAUpdate on a target group of things or groups.
+     * </p>
+     * 
+     * @param createOTAUpdateRequest
+     * @return Result of the CreateOTAUpdate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.CreateOTAUpdate
+     */
+    CreateOTAUpdateResult createOTAUpdate(CreateOTAUpdateRequest createOTAUpdateRequest);
+
+    /**
+     * <p>
      * Creates an AWS IoT policy.
      * </p>
      * <p>
@@ -576,6 +601,35 @@ public interface AWSIot {
      * @sample AWSIot.CreateRoleAlias
      */
     CreateRoleAliasResult createRoleAlias(CreateRoleAliasRequest createRoleAliasRequest);
+
+    /**
+     * <p>
+     * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
+     * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
+     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
+     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
+     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * </p>
+     * 
+     * @param createStreamRequest
+     * @return Result of the CreateStream operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateStream
+     */
+    CreateStreamResult createStream(CreateStreamRequest createStreamRequest);
 
     /**
      * <p>
@@ -755,6 +809,29 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Delete an OTA update.
+     * </p>
+     * 
+     * @param deleteOTAUpdateRequest
+     * @return Result of the DeleteOTAUpdate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DeleteOTAUpdate
+     */
+    DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest deleteOTAUpdateRequest);
+
+    /**
+     * <p>
      * Deletes the specified policy.
      * </p>
      * <p>
@@ -864,6 +941,31 @@ public interface AWSIot {
      * @sample AWSIot.DeleteRoleAlias
      */
     DeleteRoleAliasResult deleteRoleAlias(DeleteRoleAliasRequest deleteRoleAliasRequest);
+
+    /**
+     * <p>
+     * Deletes a stream.
+     * </p>
+     * 
+     * @param deleteStreamRequest
+     * @return Result of the DeleteStream operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteStream
+     */
+    DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest);
 
     /**
      * <p>
@@ -1215,6 +1317,29 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about a stream.
+     * </p>
+     * 
+     * @param describeStreamRequest
+     * @return Result of the DescribeStream operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeStream
+     */
+    DescribeStreamResult describeStream(DescribeStreamRequest describeStreamRequest);
+
+    /**
+     * <p>
      * Gets information about the specified thing.
      * </p>
      * 
@@ -1498,6 +1623,29 @@ public interface AWSIot {
      * @sample AWSIot.GetLoggingOptions
      */
     GetLoggingOptionsResult getLoggingOptions(GetLoggingOptionsRequest getLoggingOptionsRequest);
+
+    /**
+     * <p>
+     * Gets an OTA update.
+     * </p>
+     * 
+     * @param getOTAUpdateRequest
+     * @return Result of the GetOTAUpdate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetOTAUpdate
+     */
+    GetOTAUpdateResult getOTAUpdate(GetOTAUpdateRequest getOTAUpdateRequest);
 
     /**
      * <p>
@@ -1806,6 +1954,27 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists OTA updates.
+     * </p>
+     * 
+     * @param listOTAUpdatesRequest
+     * @return Result of the ListOTAUpdates operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.ListOTAUpdates
+     */
+    ListOTAUpdatesResult listOTAUpdates(ListOTAUpdatesRequest listOTAUpdatesRequest);
+
+    /**
+     * <p>
      * Lists certificates that are being transferred but not yet accepted.
      * </p>
      * 
@@ -1975,6 +2144,27 @@ public interface AWSIot {
      * @sample AWSIot.ListRoleAliases
      */
     ListRoleAliasesResult listRoleAliases(ListRoleAliasesRequest listRoleAliasesRequest);
+
+    /**
+     * <p>
+     * Lists all of the streams in your AWS account.
+     * </p>
+     * 
+     * @param listStreamsRequest
+     * @return Result of the ListStreams operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListStreams
+     */
+    ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest);
 
     /**
      * <p>
@@ -2772,6 +2962,29 @@ public interface AWSIot {
      * @sample AWSIot.UpdateRoleAlias
      */
     UpdateRoleAliasResult updateRoleAlias(UpdateRoleAliasRequest updateRoleAliasRequest);
+
+    /**
+     * <p>
+     * Updates an existing stream. The stream version will be incremented by one.
+     * </p>
+     * 
+     * @param updateStreamRequest
+     * @return Result of the UpdateStream operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateStream
+     */
+    UpdateStreamResult updateStream(UpdateStreamRequest updateStreamRequest);
 
     /**
      * <p>

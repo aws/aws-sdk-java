@@ -684,6 +684,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest request) {
+
+        return createOTAUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(final CreateOTAUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateOTAUpdateRequest, CreateOTAUpdateResult> asyncHandler) {
+        final CreateOTAUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateOTAUpdateResult>() {
+            @Override
+            public CreateOTAUpdateResult call() throws Exception {
+                CreateOTAUpdateResult result = null;
+
+                try {
+                    result = executeCreateOTAUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePolicyResult> createPolicyAsync(CreatePolicyRequest request) {
 
         return createPolicyAsync(request, null);
@@ -767,6 +800,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeCreateRoleAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest request) {
+
+        return createStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(final CreateStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler) {
+        final CreateStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateStreamResult>() {
+            @Override
+            public CreateStreamResult call() throws Exception {
+                CreateStreamResult result = null;
+
+                try {
+                    result = executeCreateStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1014,6 +1080,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest request) {
+
+        return deleteOTAUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(final DeleteOTAUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler) {
+        final DeleteOTAUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOTAUpdateResult>() {
+            @Override
+            public DeleteOTAUpdateResult call() throws Exception {
+                DeleteOTAUpdateResult result = null;
+
+                try {
+                    result = executeDeleteOTAUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest request) {
 
         return deletePolicyAsync(request, null);
@@ -1130,6 +1229,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDeleteRoleAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest request) {
+
+        return deleteStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(final DeleteStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler) {
+        final DeleteStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStreamResult>() {
+            @Override
+            public DeleteStreamResult call() throws Exception {
+                DeleteStreamResult result = null;
+
+                try {
+                    result = executeDeleteStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1674,6 +1806,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest request) {
+
+        return describeStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(final DescribeStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler) {
+        final DescribeStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStreamResult>() {
+            @Override
+            public DescribeStreamResult call() throws Exception {
+                DescribeStreamResult result = null;
+
+                try {
+                    result = executeDescribeStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeThingResult> describeThingAsync(DescribeThingRequest request) {
 
         return describeThingAsync(request, null);
@@ -2090,6 +2255,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeGetLoggingOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest request) {
+
+        return getOTAUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(final GetOTAUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetOTAUpdateRequest, GetOTAUpdateResult> asyncHandler) {
+        final GetOTAUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetOTAUpdateResult>() {
+            @Override
+            public GetOTAUpdateResult call() throws Exception {
+                GetOTAUpdateResult result = null;
+
+                try {
+                    result = executeGetOTAUpdate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2568,6 +2766,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(ListOTAUpdatesRequest request) {
+
+        return listOTAUpdatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(final ListOTAUpdatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOTAUpdatesRequest, ListOTAUpdatesResult> asyncHandler) {
+        final ListOTAUpdatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOTAUpdatesResult>() {
+            @Override
+            public ListOTAUpdatesResult call() throws Exception {
+                ListOTAUpdatesResult result = null;
+
+                try {
+                    result = executeListOTAUpdates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOutgoingCertificatesResult> listOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request) {
 
         return listOutgoingCertificatesAsync(request, null);
@@ -2787,6 +3018,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListRoleAliases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest request) {
+
+        return listStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(final ListStreamsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
+        final ListStreamsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStreamsResult>() {
+            @Override
+            public ListStreamsResult call() throws Exception {
+                ListStreamsResult result = null;
+
+                try {
+                    result = executeListStreams(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3911,6 +4175,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeUpdateRoleAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(UpdateStreamRequest request) {
+
+        return updateStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(final UpdateStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStreamRequest, UpdateStreamResult> asyncHandler) {
+        final UpdateStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStreamResult>() {
+            @Override
+            public UpdateStreamResult call() throws Exception {
+                UpdateStreamResult result = null;
+
+                try {
+                    result = executeUpdateStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

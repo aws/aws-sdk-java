@@ -1,3 +1,12 @@
+# __1.11.253__ __2017-12-20__
+## __AWS Config__
+  - ### Features
+    - Update ResourceType enum with values for WAF, WAFRegional, and CloudFront resources
+
+## __AWS IoT__
+  - ### Features
+    - This release adds support for code signed Over-the-air update functionality for Amazon FreeRTOS. Users can now create and schedule Over-the-air updates to their Amazon FreeRTOS devices using these new APIs. 
+
 # __1.11.252__ __2017-12-19__
 ## __AWS Elemental MediaStore Data Plane__
   - ### Features

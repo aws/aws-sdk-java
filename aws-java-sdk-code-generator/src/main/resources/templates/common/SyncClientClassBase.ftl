@@ -265,7 +265,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
 <#list operations?values as operationModel>
     <#if !customizationConfig.skipClientMethodForOperations?seq_contains("${operationModel.operationName}")>
-        <@ClientMethodForOperation.content metadata operationModel/>
+        <@ClientMethodForOperation.content metadata operationModel customizationConfig/>
         <@ClientMethodForOperationWithSimpleForm.content operationModel />
     </#if>
 </#list>

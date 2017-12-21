@@ -582,6 +582,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Creates an AWS IoT OTAUpdate on a target group of things or groups.
+     * </p>
+     * 
+     * @param createOTAUpdateRequest
+     * @return A Java Future containing the result of the CreateOTAUpdate operation returned by the service.
+     * @sample AWSIotAsync.CreateOTAUpdate
+     */
+    java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest createOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Creates an AWS IoT OTAUpdate on a target group of things or groups.
+     * </p>
+     * 
+     * @param createOTAUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOTAUpdate operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateOTAUpdate
+     */
+    java.util.concurrent.Future<CreateOTAUpdateResult> createOTAUpdateAsync(CreateOTAUpdateRequest createOTAUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOTAUpdateRequest, CreateOTAUpdateResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an AWS IoT policy.
      * </p>
      * <p>
@@ -684,6 +711,41 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateRoleAliasResult> createRoleAliasAsync(CreateRoleAliasRequest createRoleAliasRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoleAliasRequest, CreateRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
+     * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
+     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
+     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
+     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * </p>
+     * 
+     * @param createStreamRequest
+     * @return A Java Future containing the result of the CreateStream operation returned by the service.
+     * @sample AWSIotAsync.CreateStream
+     */
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest createStreamRequest);
+
+    /**
+     * <p>
+     * Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in
+     * chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with
+     * a stream. The total size of a file associated with the stream cannot exceed more than 2 MB. The stream will be
+     * created with version 0. If a stream is created with the same streamID as a stream that existed and was deleted
+     * within last 90 days, we will resurrect that old stream by incrementing the version by 1.
+     * </p>
+     * 
+     * @param createStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateStream
+     */
+    java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest createStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStreamRequest, CreateStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -898,6 +960,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Delete an OTA update.
+     * </p>
+     * 
+     * @param deleteOTAUpdateRequest
+     * @return A Java Future containing the result of the DeleteOTAUpdate operation returned by the service.
+     * @sample AWSIotAsync.DeleteOTAUpdate
+     */
+    java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest deleteOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Delete an OTA update.
+     * </p>
+     * 
+     * @param deleteOTAUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOTAUpdate operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteOTAUpdate
+     */
+    java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest deleteOTAUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOTAUpdateRequest, DeleteOTAUpdateResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified policy.
      * </p>
      * <p>
@@ -1035,6 +1124,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteRoleAliasResult> deleteRoleAliasAsync(DeleteRoleAliasRequest deleteRoleAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRoleAliasRequest, DeleteRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a stream.
+     * </p>
+     * 
+     * @param deleteStreamRequest
+     * @return A Java Future containing the result of the DeleteStream operation returned by the service.
+     * @sample AWSIotAsync.DeleteStream
+     */
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest deleteStreamRequest);
+
+    /**
+     * <p>
+     * Deletes a stream.
+     * </p>
+     * 
+     * @param deleteStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteStream
+     */
+    java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest deleteStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -1494,6 +1610,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets information about a stream.
+     * </p>
+     * 
+     * @param describeStreamRequest
+     * @return A Java Future containing the result of the DescribeStream operation returned by the service.
+     * @sample AWSIotAsync.DescribeStream
+     */
+    java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest);
+
+    /**
+     * <p>
+     * Gets information about a stream.
+     * </p>
+     * 
+     * @param describeStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeStream
+     */
+    java.util.concurrent.Future<DescribeStreamResult> describeStreamAsync(DescribeStreamRequest describeStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStreamRequest, DescribeStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified thing.
      * </p>
      * 
@@ -1868,6 +2011,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<GetLoggingOptionsResult> getLoggingOptionsAsync(GetLoggingOptionsRequest getLoggingOptionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetLoggingOptionsRequest, GetLoggingOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an OTA update.
+     * </p>
+     * 
+     * @param getOTAUpdateRequest
+     * @return A Java Future containing the result of the GetOTAUpdate operation returned by the service.
+     * @sample AWSIotAsync.GetOTAUpdate
+     */
+    java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest getOTAUpdateRequest);
+
+    /**
+     * <p>
+     * Gets an OTA update.
+     * </p>
+     * 
+     * @param getOTAUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOTAUpdate operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetOTAUpdate
+     */
+    java.util.concurrent.Future<GetOTAUpdateResult> getOTAUpdateAsync(GetOTAUpdateRequest getOTAUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOTAUpdateRequest, GetOTAUpdateResult> asyncHandler);
 
     /**
      * <p>
@@ -2281,6 +2451,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists OTA updates.
+     * </p>
+     * 
+     * @param listOTAUpdatesRequest
+     * @return A Java Future containing the result of the ListOTAUpdates operation returned by the service.
+     * @sample AWSIotAsync.ListOTAUpdates
+     */
+    java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(ListOTAUpdatesRequest listOTAUpdatesRequest);
+
+    /**
+     * <p>
+     * Lists OTA updates.
+     * </p>
+     * 
+     * @param listOTAUpdatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOTAUpdates operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListOTAUpdates
+     */
+    java.util.concurrent.Future<ListOTAUpdatesResult> listOTAUpdatesAsync(ListOTAUpdatesRequest listOTAUpdatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOTAUpdatesRequest, ListOTAUpdatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists certificates that are being transferred but not yet accepted.
      * </p>
      * 
@@ -2501,6 +2698,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<ListRoleAliasesResult> listRoleAliasesAsync(ListRoleAliasesRequest listRoleAliasesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRoleAliasesRequest, ListRoleAliasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the streams in your AWS account.
+     * </p>
+     * 
+     * @param listStreamsRequest
+     * @return A Java Future containing the result of the ListStreams operation returned by the service.
+     * @sample AWSIotAsync.ListStreams
+     */
+    java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest);
+
+    /**
+     * <p>
+     * Lists all of the streams in your AWS account.
+     * </p>
+     * 
+     * @param listStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStreams operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListStreams
+     */
+    java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest listStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler);
 
     /**
      * <p>
@@ -3545,6 +3769,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<UpdateRoleAliasResult> updateRoleAliasAsync(UpdateRoleAliasRequest updateRoleAliasRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRoleAliasRequest, UpdateRoleAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing stream. The stream version will be incremented by one.
+     * </p>
+     * 
+     * @param updateStreamRequest
+     * @return A Java Future containing the result of the UpdateStream operation returned by the service.
+     * @sample AWSIotAsync.UpdateStream
+     */
+    java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(UpdateStreamRequest updateStreamRequest);
+
+    /**
+     * <p>
+     * Updates an existing stream. The stream version will be incremented by one.
+     * </p>
+     * 
+     * @param updateStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStream operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateStream
+     */
+    java.util.concurrent.Future<UpdateStreamResult> updateStreamAsync(UpdateStreamRequest updateStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStreamRequest, UpdateStreamResult> asyncHandler);
 
     /**
      * <p>

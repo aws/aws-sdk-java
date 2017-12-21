@@ -39,6 +39,7 @@ import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.services.kinesisvideo.AmazonKinesisVideoMediaClientBuilder;
 
+import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesisvideo.model.*;
@@ -206,6 +207,8 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
             HttpResponseHandler<AmazonWebServiceResponse<GetMediaResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(false).withHasStreamingSuccessResponse(true), new GetMediaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
+
+            response.getAwsResponse().setPayload(new com.amazonaws.util.ServiceClientHolderInputStream(response.getAwsResponse().getPayload(), this));
 
             return response.getAwsResponse();
 

@@ -1,4 +1,4 @@
-<#macro content metadata operationModel>
+<#macro content metadata operationModel customConfig>
 
     ${operationModel.getSyncDocumentation(metadata)!""}
     @Override
@@ -43,8 +43,15 @@
                 response = <@ClientInvokeMethodInvocation.content operationModel />
 
 
-                <#-- This macro is used in glacier for wrapping the response streams -->
+                <#if customConfig.serviceClientHoldInputStream
+                     && operationModel.outputShape??
+                     && operationModel.outputShape.hasStreamingMember>
+                    response.getAwsResponse().${operationModel.outputShape.payloadMember.setterMethodName}(
+                    new com.amazonaws.util.ServiceClientHolderInputStream(response.getAwsResponse().${operationModel.outputShape.payloadMember.getterMethodName}(),
+                                                     this));
 
+                </#if>
+                <#-- This macro is used in glacier for wrapping the response streams -->
                 <#if WrapResponseStreamMacro?has_content>
                     <@WrapResponseStreamMacro.content operationModel/>
                 </#if>

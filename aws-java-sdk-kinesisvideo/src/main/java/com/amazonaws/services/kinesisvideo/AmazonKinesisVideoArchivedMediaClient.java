@@ -39,6 +39,7 @@ import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.services.kinesisvideo.AmazonKinesisVideoArchivedMediaClientBuilder;
 
+import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesisvideo.model.*;
@@ -189,6 +190,8 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                     new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true),
                     new GetMediaForFragmentListResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
+
+            response.getAwsResponse().setPayload(new com.amazonaws.util.ServiceClientHolderInputStream(response.getAwsResponse().getPayload(), this));
 
             return response.getAwsResponse();
 

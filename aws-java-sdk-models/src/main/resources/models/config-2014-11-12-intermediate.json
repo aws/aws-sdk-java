@@ -35546,6 +35546,30 @@
       }, {
         "name" : "AWSCodeBuildProject",
         "value" : "AWS::CodeBuild::Project"
+      }, {
+        "name" : "AWSWAFRateBasedRule",
+        "value" : "AWS::WAF::RateBasedRule"
+      }, {
+        "name" : "AWSWAFRule",
+        "value" : "AWS::WAF::Rule"
+      }, {
+        "name" : "AWSWAFWebACL",
+        "value" : "AWS::WAF::WebACL"
+      }, {
+        "name" : "AWSWAFRegionalRateBasedRule",
+        "value" : "AWS::WAFRegional::RateBasedRule"
+      }, {
+        "name" : "AWSWAFRegionalRule",
+        "value" : "AWS::WAFRegional::Rule"
+      }, {
+        "name" : "AWSWAFRegionalWebACL",
+        "value" : "AWS::WAFRegional::WebACL"
+      }, {
+        "name" : "AWSCloudFrontDistribution",
+        "value" : "AWS::CloudFront::Distribution"
+      }, {
+        "name" : "AWSCloudFrontStreamingDistribution",
+        "value" : "AWS::CloudFront::StreamingDistribution"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

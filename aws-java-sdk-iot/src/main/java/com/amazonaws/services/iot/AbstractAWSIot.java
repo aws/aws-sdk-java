@@ -104,6 +104,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateOTAUpdateResult createOTAUpdate(CreateOTAUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePolicyResult createPolicy(CreatePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -115,6 +120,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public CreateRoleAliasResult createRoleAlias(CreateRoleAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStreamResult createStream(CreateStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +164,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -170,6 +185,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteRoleAliasResult deleteRoleAlias(DeleteRoleAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStreamResult deleteStream(DeleteStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -254,6 +274,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DescribeStreamResult describeStream(DescribeStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeThingResult describeThing(DescribeThingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -316,6 +341,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public GetLoggingOptionsResult getLoggingOptions(GetLoggingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetOTAUpdateResult getOTAUpdate(GetOTAUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -390,6 +420,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListOTAUpdatesResult listOTAUpdates(ListOTAUpdatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOutgoingCertificatesResult listOutgoingCertificates(ListOutgoingCertificatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -423,6 +458,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListRoleAliasesResult listRoleAliases(ListRoleAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStreamsResult listStreams(ListStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -593,6 +633,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateRoleAliasResult updateRoleAlias(UpdateRoleAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStreamResult updateStream(UpdateStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
