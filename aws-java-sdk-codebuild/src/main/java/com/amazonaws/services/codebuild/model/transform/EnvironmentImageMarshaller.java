@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class EnvironmentImageMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> VERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("versions").build();
 
     private static final EnvironmentImageMarshaller instance = new EnvironmentImageMarshaller();
 
@@ -50,6 +53,7 @@ public class EnvironmentImageMarshaller {
         try {
             protocolMarshaller.marshall(environmentImage.getName(), NAME_BINDING);
             protocolMarshaller.marshall(environmentImage.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(environmentImage.getVersions(), VERSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

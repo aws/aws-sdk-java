@@ -35,7 +35,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp
+     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp
      * that the customer issued.
      * </p>
      * </li>
@@ -61,7 +61,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp
+     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp
      * that the customer issued.
      * </p>
      * </li>
@@ -84,7 +84,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request
-     *        timestamp that the customer issued.
+     *        time stamp that the customer issued.
      *        </p>
      *        </li>
      *        <li>
@@ -113,7 +113,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp
+     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp
      * that the customer issued.
      * </p>
      * </li>
@@ -135,7 +135,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      *         <li>
      *         <p>
      *         <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request
-     *         timestamp that the customer issued.
+     *         time stamp that the customer issued.
      *         </p>
      *         </li>
      *         <li>
@@ -164,7 +164,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp
+     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp
      * that the customer issued.
      * </p>
      * </li>
@@ -187,7 +187,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request
-     *        timestamp that the customer issued.
+     *        time stamp that the customer issued.
      *        </p>
      *        </li>
      *        <li>
@@ -218,7 +218,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp
+     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp
      * that the customer issued.
      * </p>
      * </li>
@@ -241,7 +241,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request
-     *        timestamp that the customer issued.
+     *        time stamp that the customer issued.
      *        </p>
      *        </li>
      *        <li>
@@ -270,7 +270,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp
+     * <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request time stamp
      * that the customer issued.
      * </p>
      * </li>
@@ -293,7 +293,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request
-     *        timestamp that the customer issued.
+     *        time stamp that the customer issued.
      *        </p>
      *        </li>
      *        <li>

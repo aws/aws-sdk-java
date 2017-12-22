@@ -36,9 +36,21 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String tableName;
-
+    /**
+     * <p>
+     * Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis
+     * Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference
+     * data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data
+     * into your application.
+     * </p>
+     */
     private S3ReferenceDataSource s3ReferenceDataSource;
-
+    /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     */
     private SourceSchema referenceSchema;
 
     /**
@@ -82,7 +94,18 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis
+     * Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference
+     * data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data
+     * into your application.
+     * </p>
+     * 
      * @param s3ReferenceDataSource
+     *        Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon
+     *        Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application
+     *        loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to
+     *        trigger reloading of data into your application.
      */
 
     public void setS3ReferenceDataSource(S3ReferenceDataSource s3ReferenceDataSource) {
@@ -90,7 +113,17 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis
+     * Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference
+     * data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data
+     * into your application.
+     * </p>
+     * 
+     * @return Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon
+     *         Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application
+     *         loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to
+     *         trigger reloading of data into your application.
      */
 
     public S3ReferenceDataSource getS3ReferenceDataSource() {
@@ -98,7 +131,18 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon Kinesis
+     * Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application loads reference
+     * data only once. If the data changes, you call the <a>UpdateApplication</a> operation to trigger reloading of data
+     * into your application.
+     * </p>
+     * 
      * @param s3ReferenceDataSource
+     *        Identifies the S3 bucket and object that contains the reference data. Also identifies the IAM role Amazon
+     *        Kinesis Analytics can assume to read this object on your behalf. An Amazon Kinesis Analytics application
+     *        loads reference data only once. If the data changes, you call the <a>UpdateApplication</a> operation to
+     *        trigger reloading of data into your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,7 +152,14 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      */
 
     public void setReferenceSchema(SourceSchema referenceSchema) {
@@ -116,7 +167,13 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
+     * @return Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *         columns created in the in-application stream.
      */
 
     public SourceSchema getReferenceSchema() {
@@ -124,7 +181,14 @@ public class ReferenceDataSource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

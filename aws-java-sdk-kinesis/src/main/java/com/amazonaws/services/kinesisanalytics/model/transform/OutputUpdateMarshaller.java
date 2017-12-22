@@ -35,6 +35,8 @@ public class OutputUpdateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisStreamsOutputUpdate").build();
     private static final MarshallingInfo<StructuredPojo> KINESISFIREHOSEOUTPUTUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisFirehoseOutputUpdate").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDAOUTPUTUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LambdaOutputUpdate").build();
     private static final MarshallingInfo<StructuredPojo> DESTINATIONSCHEMAUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationSchemaUpdate").build();
 
@@ -58,6 +60,7 @@ public class OutputUpdateMarshaller {
             protocolMarshaller.marshall(outputUpdate.getNameUpdate(), NAMEUPDATE_BINDING);
             protocolMarshaller.marshall(outputUpdate.getKinesisStreamsOutputUpdate(), KINESISSTREAMSOUTPUTUPDATE_BINDING);
             protocolMarshaller.marshall(outputUpdate.getKinesisFirehoseOutputUpdate(), KINESISFIREHOSEOUTPUTUPDATE_BINDING);
+            protocolMarshaller.marshall(outputUpdate.getLambdaOutputUpdate(), LAMBDAOUTPUTUPDATE_BINDING);
             protocolMarshaller.marshall(outputUpdate.getDestinationSchemaUpdate(), DESTINATIONSCHEMAUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

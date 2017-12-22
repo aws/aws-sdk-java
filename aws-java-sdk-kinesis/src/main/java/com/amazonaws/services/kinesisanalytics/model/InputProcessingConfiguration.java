@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a description of a processor that is used to preprocess the records in the stream prior to being processed
- * by your application code. Currently, the only input processor available is <a
+ * Provides a description of a processor that is used to preprocess the records in the stream before being processed by
+ * your application code. Currently, the only input processor available is <a
  * href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
  * </p>
  * 
@@ -32,7 +32,7 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being processed by
+     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
      * your application code.
      * </p>
      */
@@ -40,12 +40,12 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being processed by
+     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
      * your application code.
      * </p>
      * 
      * @param inputLambdaProcessor
-     *        The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being
+     *        The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being
      *        processed by your application code.
      */
 
@@ -55,11 +55,11 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being processed by
+     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
      * your application code.
      * </p>
      * 
-     * @return The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being
+     * @return The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being
      *         processed by your application code.
      */
 
@@ -69,12 +69,12 @@ public class InputProcessingConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being processed by
+     * The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being processed by
      * your application code.
      * </p>
      * 
      * @param inputLambdaProcessor
-     *        The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream prior to being
+     *        The <a>InputLambdaProcessor</a> that is used to preprocess the records in the stream before being
      *        processed by your application code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

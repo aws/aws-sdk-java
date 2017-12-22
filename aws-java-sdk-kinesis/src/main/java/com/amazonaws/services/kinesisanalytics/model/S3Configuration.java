@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Provides a description of an Amazon S3 data source, including the Amazon Resource Name (ARN) of the S3 bucket, the
+ * ARN of the IAM role that is used to access the bucket, and the name of the S3 object that contains the data.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3Configuration" target="_top">AWS
  *      API Documentation</a>
@@ -25,14 +29,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3Configuration implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * IAM ARN of the role used to access the data.
+     * </p>
+     */
     private String roleARN;
-
+    /**
+     * <p>
+     * ARN of the S3 bucket that contains the data.
+     * </p>
+     */
     private String bucketARN;
-
+    /**
+     * <p>
+     * The name of the object that contains the data.
+     * </p>
+     */
     private String fileKey;
 
     /**
+     * <p>
+     * IAM ARN of the role used to access the data.
+     * </p>
+     * 
      * @param roleARN
+     *        IAM ARN of the role used to access the data.
      */
 
     public void setRoleARN(String roleARN) {
@@ -40,7 +62,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * IAM ARN of the role used to access the data.
+     * </p>
+     * 
+     * @return IAM ARN of the role used to access the data.
      */
 
     public String getRoleARN() {
@@ -48,7 +74,12 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * IAM ARN of the role used to access the data.
+     * </p>
+     * 
      * @param roleARN
+     *        IAM ARN of the role used to access the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +89,12 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * ARN of the S3 bucket that contains the data.
+     * </p>
+     * 
      * @param bucketARN
+     *        ARN of the S3 bucket that contains the data.
      */
 
     public void setBucketARN(String bucketARN) {
@@ -66,7 +102,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * ARN of the S3 bucket that contains the data.
+     * </p>
+     * 
+     * @return ARN of the S3 bucket that contains the data.
      */
 
     public String getBucketARN() {
@@ -74,7 +114,12 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * ARN of the S3 bucket that contains the data.
+     * </p>
+     * 
      * @param bucketARN
+     *        ARN of the S3 bucket that contains the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +129,12 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the object that contains the data.
+     * </p>
+     * 
      * @param fileKey
+     *        The name of the object that contains the data.
      */
 
     public void setFileKey(String fileKey) {
@@ -92,7 +142,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the object that contains the data.
+     * </p>
+     * 
+     * @return The name of the object that contains the data.
      */
 
     public String getFileKey() {
@@ -100,7 +154,12 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the object that contains the data.
+     * </p>
+     * 
      * @param fileKey
+     *        The name of the object that contains the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

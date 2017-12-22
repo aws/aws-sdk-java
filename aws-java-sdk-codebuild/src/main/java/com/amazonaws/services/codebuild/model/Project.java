@@ -124,9 +124,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private Webhook webhook;
     /**
      * <p>
-     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
-     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
-     * VPC. You must provide at least one security group and one subnet ID.
+     * Information about the VPC configuration that AWS CodeBuild will access.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -789,15 +787,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
-     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
-     * VPC. You must provide at least one security group and one subnet ID.
+     * Information about the VPC configuration that AWS CodeBuild will access.
      * </p>
      * 
      * @param vpcConfig
-     *        If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that
-     *        identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets
-     *        must belong to the same VPC. You must provide at least one security group and one subnet ID.
+     *        Information about the VPC configuration that AWS CodeBuild will access.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -806,14 +800,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
-     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
-     * VPC. You must provide at least one security group and one subnet ID.
+     * Information about the VPC configuration that AWS CodeBuild will access.
      * </p>
      * 
-     * @return If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that
-     *         identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets
-     *         must belong to the same VPC. You must provide at least one security group and one subnet ID.
+     * @return Information about the VPC configuration that AWS CodeBuild will access.
      */
 
     public VpcConfig getVpcConfig() {
@@ -822,15 +812,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the
-     * VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same
-     * VPC. You must provide at least one security group and one subnet ID.
+     * Information about the VPC configuration that AWS CodeBuild will access.
      * </p>
      * 
      * @param vpcConfig
-     *        If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that
-     *        identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets
-     *        must belong to the same VPC. You must provide at least one security group and one subnet ID.
+     *        Information about the VPC configuration that AWS CodeBuild will access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

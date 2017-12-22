@@ -49,7 +49,12 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
      * </p>
      */
     private S3ReferenceDataSourceDescription s3ReferenceDataSourceDescription;
-
+    /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     */
     private SourceSchema referenceSchema;
 
     /**
@@ -191,7 +196,14 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      */
 
     public void setReferenceSchema(SourceSchema referenceSchema) {
@@ -199,7 +211,13 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
+     * @return Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *         columns created in the in-application stream.
      */
 
     public SourceSchema getReferenceSchema() {
@@ -207,7 +225,14 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchema
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

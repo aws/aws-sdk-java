@@ -33,24 +33,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     * <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     * <code>Rejected</code> | <code>Failed</code>).
+     * <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
      * </p>
      * </li>
      * </ul>
@@ -78,24 +78,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     * <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     * <code>Rejected</code> | <code>Failed</code>).
+     * <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
      * </p>
      * </li>
      * </ul>
@@ -104,24 +104,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     *         <code>service-id</code> - The ID of the service.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     *         <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     *         <code>Rejected</code> | <code>Failed</code>).
+     *         <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *         <code>rejected</code> | <code>failed</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>vpc-endpoint-service-id</code> - The ID of the service.
      *         </p>
      *         </li>
      */
@@ -140,24 +140,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     * <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     * <code>Rejected</code> | <code>Failed</code>).
+     * <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
      * </p>
      * </li>
      * </ul>
@@ -167,24 +167,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     *        <code>service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     *        <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     *        <code>Rejected</code> | <code>Failed</code>).
+     *        <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>vpc-endpoint-service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      */
@@ -205,24 +205,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     * <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     * <code>Rejected</code> | <code>Failed</code>).
+     * <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
      * </p>
      * </li>
      * </ul>
@@ -237,24 +237,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     *        <code>service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     *        <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     *        <code>Rejected</code> | <code>Failed</code>).
+     *        <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>vpc-endpoint-service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -277,24 +277,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     * <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     * <code>Rejected</code> | <code>Failed</code>).
+     * <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
      * </p>
      * </li>
      * </ul>
@@ -304,24 +304,24 @@ public class DescribeVpcEndpointConnectionsRequest extends AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>customer-account-id</code> - The AWS account number of the owner of the endpoint.
+     *        <code>service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>endpoint-connection-state</code> - The state of the endpoint (<code>PendingAcceptance</code> |
-     *        <code>Pending</code> | <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> |
-     *        <code>Rejected</code> | <code>Failed</code>).
+     *        <code>vpc-endpoint-owner</code> - The AWS account number of the owner of the endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vpc-endpoint-id</code> - The ID of the endpoint.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>vpc-endpoint-service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

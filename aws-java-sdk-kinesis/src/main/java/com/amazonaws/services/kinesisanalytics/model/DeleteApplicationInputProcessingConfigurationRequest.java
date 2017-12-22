@@ -40,8 +40,8 @@ public class DeleteApplicationInputProcessingConfigurationRequest extends com.am
     private Long currentApplicationVersionId;
     /**
      * <p>
-     * The ID of the input configuration from which to delete the input configuration. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration from which to delete the input processing configuration. You can get a list of
+     * the input IDs for an application by using the <a>DescribeApplication</a> operation.
      * </p>
      */
     private String inputId;
@@ -128,13 +128,13 @@ public class DeleteApplicationInputProcessingConfigurationRequest extends com.am
 
     /**
      * <p>
-     * The ID of the input configuration from which to delete the input configuration. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration from which to delete the input processing configuration. You can get a list of
+     * the input IDs for an application by using the <a>DescribeApplication</a> operation.
      * </p>
      * 
      * @param inputId
-     *        The ID of the input configuration from which to delete the input configuration. You can get a list of the
-     *        input IDs for an application using the <a>DescribeApplication</a> operation.
+     *        The ID of the input configuration from which to delete the input processing configuration. You can get a
+     *        list of the input IDs for an application by using the <a>DescribeApplication</a> operation.
      */
 
     public void setInputId(String inputId) {
@@ -143,12 +143,12 @@ public class DeleteApplicationInputProcessingConfigurationRequest extends com.am
 
     /**
      * <p>
-     * The ID of the input configuration from which to delete the input configuration. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration from which to delete the input processing configuration. You can get a list of
+     * the input IDs for an application by using the <a>DescribeApplication</a> operation.
      * </p>
      * 
-     * @return The ID of the input configuration from which to delete the input configuration. You can get a list of the
-     *         input IDs for an application using the <a>DescribeApplication</a> operation.
+     * @return The ID of the input configuration from which to delete the input processing configuration. You can get a
+     *         list of the input IDs for an application by using the <a>DescribeApplication</a> operation.
      */
 
     public String getInputId() {
@@ -157,13 +157,13 @@ public class DeleteApplicationInputProcessingConfigurationRequest extends com.am
 
     /**
      * <p>
-     * The ID of the input configuration from which to delete the input configuration. You can get a list of the input
-     * IDs for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration from which to delete the input processing configuration. You can get a list of
+     * the input IDs for an application by using the <a>DescribeApplication</a> operation.
      * </p>
      * 
      * @param inputId
-     *        The ID of the input configuration from which to delete the input configuration. You can get a list of the
-     *        input IDs for an application using the <a>DescribeApplication</a> operation.
+     *        The ID of the input configuration from which to delete the input processing configuration. You can get a
+     *        list of the input IDs for an application by using the <a>DescribeApplication</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,7 +50,12 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
      * </p>
      */
     private S3ReferenceDataSourceUpdate s3ReferenceDataSourceUpdate;
-
+    /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     */
     private SourceSchema referenceSchemaUpdate;
 
     /**
@@ -186,7 +191,14 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchemaUpdate
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      */
 
     public void setReferenceSchemaUpdate(SourceSchema referenceSchemaUpdate) {
@@ -194,7 +206,13 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
+     * @return Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *         columns created in the in-application stream.
      */
 
     public SourceSchema getReferenceSchemaUpdate() {
@@ -202,7 +220,14 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Describes the format of the data in the streaming source, and how each data element maps to corresponding columns
+     * created in the in-application stream.
+     * </p>
+     * 
      * @param referenceSchemaUpdate
+     *        Describes the format of the data in the streaming source, and how each data element maps to corresponding
+     *        columns created in the in-application stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

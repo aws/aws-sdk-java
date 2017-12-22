@@ -57,16 +57,15 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
     private InputProcessingConfigurationDescription inputProcessingConfigurationDescription;
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
-     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource
+     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      */
     private KinesisStreamsInputDescription kinesisStreamsInputDescription;
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
-     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
-     * your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's
+     * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      */
     private KinesisFirehoseInputDescription kinesisFirehoseInputDescription;
@@ -291,13 +290,14 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
-     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource
+     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
      * @param kinesisStreamsInputDescription
-     *        If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an
-     *        IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *        If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon
+     *        Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your
+     *        behalf.
      */
 
     public void setKinesisStreamsInputDescription(KinesisStreamsInputDescription kinesisStreamsInputDescription) {
@@ -306,12 +306,13 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
-     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource
+     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
-     * @return If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and
-     *         an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * @return If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon
+     *         Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your
+     *         behalf.
      */
 
     public KinesisStreamsInputDescription getKinesisStreamsInputDescription() {
@@ -320,13 +321,14 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an IAM
-     * role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon Resource
+     * Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
      * @param kinesisStreamsInputDescription
-     *        If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's ARN and an
-     *        IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *        If an Amazon Kinesis stream is configured as streaming source, provides Amazon Kinesis stream's Amazon
+     *        Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on your
+     *        behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,15 +339,13 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
-     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
-     * your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's
+     * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
      * @param kinesisFirehoseInputDescription
-     *        If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose
-     *        delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     *        access the stream on your behalf.
+     *        If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery
+     *        stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      */
 
     public void setKinesisFirehoseInputDescription(KinesisFirehoseInputDescription kinesisFirehoseInputDescription) {
@@ -354,14 +354,12 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
-     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
-     * your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's
+     * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
-     * @return If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose
-     *         delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     *         access the stream on your behalf.
+     * @return If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery
+     *         stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      */
 
     public KinesisFirehoseInputDescription getKinesisFirehoseInputDescription() {
@@ -370,15 +368,13 @@ public class InputDescription implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose delivery
-     * stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to access the stream on
-     * your behalf.
+     * If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery stream's
+     * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
      * 
      * @param kinesisFirehoseInputDescription
-     *        If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the Firehose
-     *        delivery stream's Amazon Resource Name (ARN) and an IAM role that enables Amazon Kinesis Analytics to
-     *        access the stream on your behalf.
+     *        If an Amazon Kinesis Firehose delivery stream is configured as a streaming source, provides the delivery
+     *        stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,18 +39,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code> - The ARN of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     * <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     * <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      * </p>
      * </li>
      * </ul>
@@ -151,18 +151,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code> - The ARN of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     * <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     * <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      * </p>
      * </li>
      * </ul>
@@ -171,18 +171,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>service-name</code> - The ARN of the service.
+     *         <code>service-name</code> - The name of the service.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>vpc-endpoint-service-id</code> - The ID of the service.
+     *         <code>service-id</code> - The ID of the service.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> |
-     *         <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *         <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     *         <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      *         </p>
      *         </li>
      */
@@ -201,18 +201,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code> - The ARN of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     * <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     * <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      * </p>
      * </li>
      * </ul>
@@ -222,18 +222,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code> - The ARN of the service.
+     *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-service-id</code> - The ID of the service.
+     *        <code>service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> |
-     *        <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *        <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     *        <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      *        </p>
      *        </li>
      */
@@ -254,18 +254,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code> - The ARN of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     * <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     * <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      * </p>
      * </li>
      * </ul>
@@ -280,18 +280,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code> - The ARN of the service.
+     *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-service-id</code> - The ID of the service.
+     *        <code>service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> |
-     *        <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *        <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     *        <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -314,18 +314,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code> - The ARN of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-id</code> - The ID of the service.
+     * <code>service-id</code> - The ID of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code>
-     * | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     * <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     * <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      * </p>
      * </li>
      * </ul>
@@ -335,18 +335,18 @@ public class DescribeVpcEndpointServiceConfigurationsRequest extends AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code> - The ARN of the service.
+     *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-service-id</code> - The ID of the service.
+     *        <code>service-id</code> - The ID of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-service-state</code> - The state of the service (<code>Pending</code> |
-     *        <code>Available</code> | <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
+     *        <code>service-state</code> - The state of the service (<code>Pending</code> | <code>Available</code> |
+     *        <code>Deleting</code> | <code>Deleted</code> | <code>Failed</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -42,8 +42,8 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     private Long currentApplicationVersionId;
     /**
      * <p>
-     * The ID of the input configuration to which to add the input configuration. You can get a list of the input IDs
-     * for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
+     * IDs for an application using the <a>DescribeApplication</a> operation.
      * </p>
      */
     private String inputId;
@@ -148,13 +148,13 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the input configuration to which to add the input configuration. You can get a list of the input IDs
-     * for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
+     * IDs for an application using the <a>DescribeApplication</a> operation.
      * </p>
      * 
      * @param inputId
-     *        The ID of the input configuration to which to add the input configuration. You can get a list of the input
-     *        IDs for an application using the <a>DescribeApplication</a> operation.
+     *        The ID of the input configuration to add the input processing configuration to. You can get a list of the
+     *        input IDs for an application using the <a>DescribeApplication</a> operation.
      */
 
     public void setInputId(String inputId) {
@@ -163,11 +163,11 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the input configuration to which to add the input configuration. You can get a list of the input IDs
-     * for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
+     * IDs for an application using the <a>DescribeApplication</a> operation.
      * </p>
      * 
-     * @return The ID of the input configuration to which to add the input configuration. You can get a list of the
+     * @return The ID of the input configuration to add the input processing configuration to. You can get a list of the
      *         input IDs for an application using the <a>DescribeApplication</a> operation.
      */
 
@@ -177,13 +177,13 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The ID of the input configuration to which to add the input configuration. You can get a list of the input IDs
-     * for an application using the <a>DescribeApplication</a> operation.
+     * The ID of the input configuration to add the input processing configuration to. You can get a list of the input
+     * IDs for an application using the <a>DescribeApplication</a> operation.
      * </p>
      * 
      * @param inputId
-     *        The ID of the input configuration to which to add the input configuration. You can get a list of the input
-     *        IDs for an application using the <a>DescribeApplication</a> operation.
+     *        The ID of the input configuration to add the input processing configuration to. You can get a list of the
+     *        input IDs for an application using the <a>DescribeApplication</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

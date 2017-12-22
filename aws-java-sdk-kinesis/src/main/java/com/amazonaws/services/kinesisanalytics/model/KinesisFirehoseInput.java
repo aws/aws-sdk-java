@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the Firehose delivery
- * stream's Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on
- * your behalf.
+ * Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's
+ * Amazon Resource Name (ARN) and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your
+ * behalf.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseInput"
@@ -32,7 +32,7 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * ARN of the input Firehose delivery stream.
+     * ARN of the input delivery stream.
      * </p>
      */
     private String resourceARN;
@@ -46,11 +46,11 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * ARN of the input Firehose delivery stream.
+     * ARN of the input delivery stream.
      * </p>
      * 
      * @param resourceARN
-     *        ARN of the input Firehose delivery stream.
+     *        ARN of the input delivery stream.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -59,10 +59,10 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * ARN of the input Firehose delivery stream.
+     * ARN of the input delivery stream.
      * </p>
      * 
-     * @return ARN of the input Firehose delivery stream.
+     * @return ARN of the input delivery stream.
      */
 
     public String getResourceARN() {
@@ -71,11 +71,11 @@ public class KinesisFirehoseInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * ARN of the input Firehose delivery stream.
+     * ARN of the input delivery stream.
      * </p>
      * 
      * @param resourceARN
-     *        ARN of the input Firehose delivery stream.
+     *        ARN of the input delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

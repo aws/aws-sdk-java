@@ -55,13 +55,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationStatus;
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      */
     private java.util.Date createTimestamp;
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      */
     private java.util.Date lastUpdateTimestamp;
@@ -307,11 +307,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      * 
      * @param createTimestamp
-     *        Timestamp when the application version was created.
+     *        Time stamp when the application version was created.
      */
 
     public void setCreateTimestamp(java.util.Date createTimestamp) {
@@ -320,10 +320,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      * 
-     * @return Timestamp when the application version was created.
+     * @return Time stamp when the application version was created.
      */
 
     public java.util.Date getCreateTimestamp() {
@@ -332,11 +332,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Timestamp when the application version was created.
+     * Time stamp when the application version was created.
      * </p>
      * 
      * @param createTimestamp
-     *        Timestamp when the application version was created.
+     *        Time stamp when the application version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,11 +347,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      * 
      * @param lastUpdateTimestamp
-     *        Timestamp when the application was last updated.
+     *        Time stamp when the application was last updated.
      */
 
     public void setLastUpdateTimestamp(java.util.Date lastUpdateTimestamp) {
@@ -360,10 +360,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      * 
-     * @return Timestamp when the application was last updated.
+     * @return Time stamp when the application was last updated.
      */
 
     public java.util.Date getLastUpdateTimestamp() {
@@ -372,11 +372,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Timestamp when the application was last updated.
+     * Time stamp when the application was last updated.
      * </p>
      * 
      * @param lastUpdateTimestamp
-     *        Timestamp when the application was last updated.
+     *        Time stamp when the application was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

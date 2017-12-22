@@ -74,6 +74,12 @@ public class Address implements Serializable, Cloneable {
      * </p>
      */
     private String privateIpAddress;
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -439,6 +445,79 @@ public class Address implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * 
+     * @return Any tags assigned to the Elastic IP address.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Elastic IP address.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Elastic IP address.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -464,7 +543,9 @@ public class Address implements Serializable, Cloneable {
         if (getNetworkInterfaceOwnerId() != null)
             sb.append("NetworkInterfaceOwnerId: ").append(getNetworkInterfaceOwnerId()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +592,10 @@ public class Address implements Serializable, Cloneable {
             return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -527,6 +612,7 @@ public class Address implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceOwnerId() == null) ? 0 : getNetworkInterfaceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

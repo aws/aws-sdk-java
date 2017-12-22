@@ -60,6 +60,10 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                     context.nextToken();
                     output.setKinesisFirehoseOutput(KinesisFirehoseOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LambdaOutput", targetDepth)) {
+                    context.nextToken();
+                    output.setLambdaOutput(LambdaOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DestinationSchema", targetDepth)) {
                     context.nextToken();
                     output.setDestinationSchema(DestinationSchemaJsonUnmarshaller.getInstance().unmarshall(context));

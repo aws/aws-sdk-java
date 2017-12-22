@@ -56,7 +56,7 @@ public class IpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Ipv6Range> ipv6Ranges;
     /**
      * <p>
-     * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     * (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      * endpoint from instances associated with the security group.
@@ -300,13 +300,13 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     * (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      * endpoint from instances associated with the security group.
      * </p>
      * 
-     * @return (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     * @return (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      *         <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      *         <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a
      *         VPC endpoint from instances associated with the security group.
@@ -321,14 +321,14 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     * (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      * endpoint from instances associated with the security group.
      * </p>
      * 
      * @param prefixListIds
-     *        (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     *        (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      *        <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      *        <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      *        endpoint from instances associated with the security group.
@@ -345,7 +345,7 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     * (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      * endpoint from instances associated with the security group.
@@ -357,7 +357,7 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param prefixListIds
-     *        (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     *        (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      *        <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      *        <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      *        endpoint from instances associated with the security group.
@@ -376,14 +376,14 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     * (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      * <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      * <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      * endpoint from instances associated with the security group.
      * </p>
      * 
      * @param prefixListIds
-     *        (Valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
+     *        (EC2-VPC only; valid for <a>AuthorizeSecurityGroupEgress</a>, <a>RevokeSecurityGroupEgress</a> and
      *        <a>DescribeSecurityGroups</a> only) One or more prefix list IDs for an AWS service. In an
      *        <a>AuthorizeSecurityGroupEgress</a> request, this is the AWS service that you want to access through a VPC
      *        endpoint from instances associated with the security group.

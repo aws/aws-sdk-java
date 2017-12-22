@@ -1,3 +1,16 @@
+# __1.11.254__ __2017-12-21__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support allowing AWS CodeBuild customers to select specific curated image versions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Elastic IP tagging enables you to add key and value metadata to your Elastic IPs so that you can search, filter, and organize them according to your organization's needs.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Analytics now supports AWS Lambda functions as output.
+
 # __1.11.253__ __2017-12-20__
 ## __AWS Config__
   - ### Features

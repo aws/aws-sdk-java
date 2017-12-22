@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's ARN and an IAM role ARN that
- * enables Amazon Kinesis Analytics to access the stream on your behalf.
+ * Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN) and
+ * an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisStreamsInput"
