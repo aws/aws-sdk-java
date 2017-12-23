@@ -44,7 +44,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * RunningFargateTasksCount
+     * runningFargateTasksCount
      * </p>
      * </li>
      * <li>
@@ -174,7 +174,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * RunningFargateTasksCount
+     * runningFargateTasksCount
      * </p>
      * </li>
      * <li>
@@ -218,7 +218,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         RunningFargateTasksCount
+     *         runningFargateTasksCount
      *         </p>
      *         </li>
      *         <li>
@@ -273,7 +273,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * RunningFargateTasksCount
+     * runningFargateTasksCount
      * </p>
      * </li>
      * <li>
@@ -318,7 +318,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        RunningFargateTasksCount
+     *        runningFargateTasksCount
      *        </p>
      *        </li>
      *        <li>
@@ -375,7 +375,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * RunningFargateTasksCount
+     * runningFargateTasksCount
      * </p>
      * </li>
      * <li>
@@ -425,7 +425,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        RunningFargateTasksCount
+     *        runningFargateTasksCount
      *        </p>
      *        </li>
      *        <li>
@@ -484,7 +484,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * RunningFargateTasksCount
+     * runningFargateTasksCount
      * </p>
      * </li>
      * <li>
@@ -529,7 +529,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        RunningFargateTasksCount
+     *        runningFargateTasksCount
      *        </p>
      *        </li>
      *        <li>
@@ -583,7 +583,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * RunningFargateTasksCount
+     * runningFargateTasksCount
      * </p>
      * </li>
      * <li>
@@ -628,7 +628,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        RunningFargateTasksCount
+     *        runningFargateTasksCount
      *        </p>
      *        </li>
      *        <li>

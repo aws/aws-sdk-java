@@ -23,9 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * mappings are specified as part of the container definition.
  * </p>
  * <p>
- * If using containers in a task with the Fargate launch type, exposed ports should be specified using
- * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the
- * <code>containerPort</code>.
+ * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be
+ * specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value
+ * as the <code>containerPort</code>.
  * </p>
  * <p>
  * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are
@@ -43,13 +43,13 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     * <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
+     * should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type and you specify a container port and not a host port, your
-     * container automatically receives a host port in the ephemeral port range (for more information, see
-     * <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
+     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
+     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
+     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
      * reserved ports limit of a container instance.
      * </p>
      */
@@ -59,14 +59,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left blank or
-     * needs to be the same value as the <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     * container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying
-     * a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for
-     * your container instance operating system and Docker version.
+     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
+     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
+     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
@@ -103,13 +103,13 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     * <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
+     * should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type and you specify a container port and not a host port, your
-     * container automatically receives a host port in the ephemeral port range (for more information, see
-     * <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
+     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
+     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
+     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
      * reserved ports limit of a container instance.
      * </p>
      * 
@@ -117,14 +117,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        The port number on the container that is bound to the user-specified or automatically assigned host
      *        port.</p>
      *        <p>
-     *        If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     *        <code>containerPort</code>.
+     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     *        ports should be specified using <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the EC2 launch type and you specify a container port and not a host
-     *        port, your container automatically receives a host port in the ephemeral port range (for more information,
-     *        see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward
-     *        the 100 reserved ports limit of a container instance.
+     *        If using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     *        and not a host port, your container automatically receives a host port in the ephemeral port range (for
+     *        more information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way do
+     *        not count toward the 100 reserved ports limit of a container instance.
      */
 
     public void setContainerPort(Integer containerPort) {
@@ -136,27 +136,27 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     * <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
+     * should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type and you specify a container port and not a host port, your
-     * container automatically receives a host port in the ephemeral port range (for more information, see
-     * <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
+     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
+     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
+     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
      * reserved ports limit of a container instance.
      * </p>
      * 
      * @return The port number on the container that is bound to the user-specified or automatically assigned host
      *         port.</p>
      *         <p>
-     *         If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     *         <code>containerPort</code>.
+     *         If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     *         ports should be specified using <code>containerPort</code>.
      *         </p>
      *         <p>
-     *         If using containers in a task with the EC2 launch type and you specify a container port and not a host
-     *         port, your container automatically receives a host port in the ephemeral port range (for more
-     *         information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not
-     *         count toward the 100 reserved ports limit of a container instance.
+     *         If using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     *         and not a host port, your container automatically receives a host port in the ephemeral port range (for
+     *         more information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way
+     *         do not count toward the 100 reserved ports limit of a container instance.
      */
 
     public Integer getContainerPort() {
@@ -168,13 +168,13 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     * <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
+     * should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type and you specify a container port and not a host port, your
-     * container automatically receives a host port in the ephemeral port range (for more information, see
-     * <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
+     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
+     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
+     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
      * reserved ports limit of a container instance.
      * </p>
      * 
@@ -182,14 +182,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        The port number on the container that is bound to the user-specified or automatically assigned host
      *        port.</p>
      *        <p>
-     *        If using containers in a task with the Fargate launch type, exposed ports should be specified using
-     *        <code>containerPort</code>.
+     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     *        ports should be specified using <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the EC2 launch type and you specify a container port and not a host
-     *        port, your container automatically receives a host port in the ephemeral port range (for more information,
-     *        see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward
-     *        the 100 reserved ports limit of a container instance.
+     *        If using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     *        and not a host port, your container automatically receives a host port in the ephemeral port range (for
+     *        more information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way do
+     *        not count toward the 100 reserved ports limit of a container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,14 +203,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left blank or
-     * needs to be the same value as the <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     * container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying
-     * a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for
-     * your container instance operating system and Docker version.
+     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
+     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
+     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
@@ -236,14 +236,15 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * @param hostPort
      *        The port number on the container instance to reserve for your container.</p>
      *        <p>
-     *        If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left
-     *        blank or needs to be the same value as the <code>containerPort</code>.
+     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     *        <code>hostPort</code> can either be left blank or needs to be the same value as the
+     *        <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     *        container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     *        specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
-     *        port range for your container instance operating system and Docker version.
+     *        If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     *        host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to
+     *        <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
+     *        port in the ephemeral port range for your container instance operating system and Docker version.
      *        </p>
      *        <p>
      *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
@@ -275,14 +276,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left blank or
-     * needs to be the same value as the <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     * container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying
-     * a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for
-     * your container instance operating system and Docker version.
+     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
+     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
+     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
@@ -307,14 +308,15 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The port number on the container instance to reserve for your container.</p>
      *         <p>
-     *         If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left
-     *         blank or needs to be the same value as the <code>containerPort</code>.
+     *         If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     *         <code>hostPort</code> can either be left blank or needs to be the same value as the
+     *         <code>containerPort</code>.
      *         </p>
      *         <p>
-     *         If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     *         container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     *         specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
-     *         port range for your container instance operating system and Docker version.
+     *         If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     *         host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to
+     *         <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
+     *         port in the ephemeral port range for your container instance operating system and Docker version.
      *         </p>
      *         <p>
      *         The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
@@ -347,14 +349,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left blank or
-     * needs to be the same value as the <code>containerPort</code>.
+     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     * container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying
-     * a <code>containerPort</code> and your container automatically receives a port in the ephemeral port range for
-     * your container instance operating system and Docker version.
+     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
+     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
+     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
+     * range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
@@ -380,14 +382,15 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * @param hostPort
      *        The port number on the container instance to reserve for your container.</p>
      *        <p>
-     *        If using containers in a task with the Fargate launch type, the <code>hostPort</code> can either be left
-     *        blank or needs to be the same value as the <code>containerPort</code>.
+     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     *        <code>hostPort</code> can either be left blank or needs to be the same value as the
+     *        <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the EC2 launch type, you can specify a non-reserved host port for your
-     *        container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     *        specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
-     *        port range for your container instance operating system and Docker version.
+     *        If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     *        host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to
+     *        <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
+     *        port in the ephemeral port range for your container instance operating system and Docker version.
      *        </p>
      *        <p>
      *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under

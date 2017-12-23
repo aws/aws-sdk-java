@@ -27,21 +27,21 @@ public class RegisterCrossAccountAccessRoleRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or when
-     * you call the <a>PreviewAgents</a> action.
+     * The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     * assessments.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or when
-     * you call the <a>PreviewAgents</a> action.
+     * The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     * assessments.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or
-     *        when you call the <a>PreviewAgents</a> action.
+     *        The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     *        assessments.
      */
 
     public void setRoleArn(String roleArn) {
@@ -50,12 +50,12 @@ public class RegisterCrossAccountAccessRoleRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or when
-     * you call the <a>PreviewAgents</a> action.
+     * The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     * assessments.
      * </p>
      * 
-     * @return The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run
-     *         or when you call the <a>PreviewAgents</a> action.
+     * @return The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     *         assessments.
      */
 
     public String getRoleArn() {
@@ -64,13 +64,13 @@ public class RegisterCrossAccountAccessRoleRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or when
-     * you call the <a>PreviewAgents</a> action.
+     * The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     * assessments.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that Amazon Inspector uses to list your EC2 instances during the assessment run or
-     *        when you call the <a>PreviewAgents</a> action.
+     *        The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security
+     *        assessments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -329,9 +329,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment.
      * </p>
      * <p>
-     * In the <code>CreateModel</code> request, you must define at least one container with the
-     * <code>PrimaryContainer</code> parameter. You can optionally specify additional containers with the
-     * <code>SupplementalContainers</code> parameter.
+     * In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code>
+     * parameter.
      * </p>
      * <p>
      * In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and
@@ -1443,8 +1442,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
      * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
-     * <code>InService</code>. A notebook instance's status must be <code>InService</code> (is this same as "Running" in
-     * the console?) before you can connect to your Jupyter notebook.
+     * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
+     * your Jupyter notebook.
      * </p>
      * 
      * @param startNotebookInstanceRequest

@@ -33,7 +33,7 @@ import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
  * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
  * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
  * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidelaunch_types.html">Amazon ECS Launch Types</a>.
+ * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
  * </p>
  * <p>
  * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
@@ -912,6 +912,32 @@ public interface AmazonECS {
      * Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks manually on specific
      * container instances.
      * </p>
+     * <p>
+     * The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the system supporting
+     * the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be
+     * immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API
+     * command that immediately follows a previous API command.
+     * </p>
+     * <p>
+     * To manage eventual consistency, you can do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks command using an
+     * exponential backoff algorithm to ensure that you allow enough time for the previous command to propagate through
+     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time,
+     * and increasing gradually up to five minutes of wait time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add wait time between subsequent commands, even if the DescribeTasks command returns an accurate response. Apply
+     * an exponential backoff algorithm starting with a couple of seconds of wait time, and increase gradually up to
+     * about five minutes of wait time.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param runTaskRequest
      * @return Result of the RunTask operation returned by the service.

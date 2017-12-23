@@ -155,6 +155,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     */
+    private Integer healthCheckGracePeriodSeconds;
 
     /**
      * <p>
@@ -1190,6 +1197,52 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     * 
+     * @param healthCheckGracePeriodSeconds
+     *        The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *        Balancing target health checks after a task has first started.
+     */
+
+    public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
+        this.healthCheckGracePeriodSeconds = healthCheckGracePeriodSeconds;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     * 
+     * @return The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *         Balancing target health checks after a task has first started.
+     */
+
+    public Integer getHealthCheckGracePeriodSeconds() {
+        return this.healthCheckGracePeriodSeconds;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing
+     * target health checks after a task has first started.
+     * </p>
+     * 
+     * @param healthCheckGracePeriodSeconds
+     *        The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load
+     *        Balancing target health checks after a task has first started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
+        setHealthCheckGracePeriodSeconds(healthCheckGracePeriodSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1237,7 +1290,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getPlacementStrategy() != null)
             sb.append("PlacementStrategy: ").append(getPlacementStrategy()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getHealthCheckGracePeriodSeconds() != null)
+            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -1328,6 +1383,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getHealthCheckGracePeriodSeconds() == null ^ this.getHealthCheckGracePeriodSeconds() == null)
+            return false;
+        if (other.getHealthCheckGracePeriodSeconds() != null
+                && other.getHealthCheckGracePeriodSeconds().equals(this.getHealthCheckGracePeriodSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -1355,6 +1415,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlacementConstraints() == null) ? 0 : getPlacementConstraints().hashCode());
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         return hashCode;
     }
 

@@ -113,13 +113,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
-     * the following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * any value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -148,13 +157,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If you are using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -1055,13 +1073,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
-     * the following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * any value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -1088,13 +1115,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param cpu
      *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *        optional and any value can be used. If you are using the Fargate launch type, this field is required and
-     *        you must use one of the following values, which determines your range of valid values for the
-     *        <code>memory</code> parameter:</p>
+     *        optional and any value can be used.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of valid values for the <code>memory</code> parameter:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      *        </p>
      *        </li>
      *        <li>
@@ -1126,13 +1160,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
-     * the following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * any value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -1158,13 +1201,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *         optional and any value can be used. If you are using the Fargate launch type, this field is required and
-     *         you must use one of the following values, which determines your range of valid values for the
-     *         <code>memory</code> parameter:</p>
+     *         optional and any value can be used.</p> <note>
+     *         <p>
+     *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *         container-level resources for Windows containers.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         values, which determines your range of valid values for the <code>memory</code> parameter:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *         256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      *         </p>
      *         </li>
      *         <li>
@@ -1196,13 +1246,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used. If you are using the Fargate launch type, this field is required and you must use one of
-     * the following values, which determines your range of valid values for the <code>memory</code> parameter:
+     * any value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -1229,13 +1288,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param cpu
      *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *        optional and any value can be used. If you are using the Fargate launch type, this field is required and
-     *        you must use one of the following values, which determines your range of valid values for the
-     *        <code>memory</code> parameter:</p>
+     *        optional and any value can be used.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of valid values for the <code>memory</code> parameter:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      *        </p>
      *        </li>
      *        <li>
@@ -1269,13 +1335,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If you are using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -1302,13 +1377,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param memory
      *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used. If you are using the Fargate launch type, this field is required and you must use
-     *        one of the following values, which determines your range of valid values for the <code>cpu</code>
-     *        parameter:</p>
+     *        any value can be used.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of valid values for the <code>cpu</code> parameter:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>
@@ -1340,13 +1422,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If you are using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -1372,13 +1463,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *         any value can be used. If you are using the Fargate launch type, this field is required and you must use
-     *         one of the following values, which determines your range of valid values for the <code>cpu</code>
-     *         parameter:</p>
+     *         any value can be used.</p> <note>
+     *         <p>
+     *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *         container-level resources for Windows containers.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         values, which determines your range of valid values for the <code>cpu</code> parameter:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *         0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      *         </p>
      *         </li>
      *         <li>
@@ -1410,13 +1508,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If you are using the Fargate launch type, this field is required and you must use one of the
-     * following values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * value can be used.
+     * </p>
+     * <note>
+     * <p>
+     * Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying container-level
+     * resources for Windows containers.
+     * </p>
+     * </note>
+     * <p>
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -1443,13 +1550,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param memory
      *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used. If you are using the Fargate launch type, this field is required and you must use
-     *        one of the following values, which determines your range of valid values for the <code>cpu</code>
-     *        parameter:</p>
+     *        any value can be used.</p> <note>
+     *        <p>
+     *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
+     *        container-level resources for Windows containers.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of valid values for the <code>cpu</code> parameter:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>

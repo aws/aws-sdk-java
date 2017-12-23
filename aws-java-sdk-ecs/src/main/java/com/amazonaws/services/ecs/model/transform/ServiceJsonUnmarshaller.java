@@ -125,6 +125,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("healthCheckGracePeriodSeconds", targetDepth)) {
+                    context.nextToken();
+                    service.setHealthCheckGracePeriodSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

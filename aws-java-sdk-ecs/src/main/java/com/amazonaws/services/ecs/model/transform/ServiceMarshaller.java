@@ -66,6 +66,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementStrategy").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
+    private static final MarshallingInfo<Integer> HEALTHCHECKGRACEPERIODSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheckGracePeriodSeconds").build();
 
     private static final ServiceMarshaller instance = new ServiceMarshaller();
 
@@ -102,6 +104,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getPlacementConstraints(), PLACEMENTCONSTRAINTS_BINDING);
             protocolMarshaller.marshall(service.getPlacementStrategy(), PLACEMENTSTRATEGY_BINDING);
             protocolMarshaller.marshall(service.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(service.getHealthCheckGracePeriodSeconds(), HEALTHCHECKGRACEPERIODSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

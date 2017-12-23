@@ -78,7 +78,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -113,7 +113,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -540,7 +540,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -573,7 +573,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      *        </p>
      *        </li>
      *        <li>
@@ -611,7 +611,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -643,7 +643,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *         256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      *         </p>
      *         </li>
      *         <li>
@@ -681,7 +681,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      * </p>
      * </li>
      * <li>
@@ -714,7 +714,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 512MB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
      *        </p>
      *        </li>
      *        <li>
@@ -754,7 +754,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -786,7 +786,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>
@@ -824,7 +824,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -855,7 +855,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *         0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      *         </p>
      *         </li>
      *         <li>
@@ -893,7 +893,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
@@ -925,7 +925,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        512MB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>

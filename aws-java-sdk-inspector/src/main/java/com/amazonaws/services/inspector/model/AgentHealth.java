@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AgentHealth {
 
     HEALTHY("HEALTHY"),
-    UNHEALTHY("UNHEALTHY");
+    UNHEALTHY("UNHEALTHY"),
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

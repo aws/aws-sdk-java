@@ -1,3 +1,20 @@
+# __1.11.255__ __2017-12-22__
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon ECS users can now set a health check initialization wait period of their ECS services, the services that are associated with an Elastic Load Balancer (ELB) will wait for a period of time before the ELB become healthy. You can now configure this in Create and Update Service.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release fixes an issue with tags not showing in DescribeAddresses responses.
+
+## __Amazon Inspector__
+  - ### Features
+    - PreviewAgents API now returns additional fields within the AgentPreview data type. The API now shows the agent health and availability status for all instances included in the assessment target. This allows users to check the health status of Inspector Agents before running an assessment. In addition, it shows the instance ID, hostname, and IP address of the targeted instances.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker Models no longer support SupplementalContainers.  API's that have been affected are CreateModel and DescribeModel.
+
 # __1.11.254__ __2017-12-21__
 ## __AWS CodeBuild__
   - ### Features

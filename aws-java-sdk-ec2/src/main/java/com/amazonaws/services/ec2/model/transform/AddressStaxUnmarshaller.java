@@ -85,12 +85,12 @@ public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmars
                     continue;
                 }
 
-                if (context.testExpression("tags", targetDepth)) {
+                if (context.testExpression("tagSet", targetDepth)) {
                     address.withTags(new ArrayList<Tag>());
                     continue;
                 }
 
-                if (context.testExpression("tags/item", targetDepth)) {
+                if (context.testExpression("tagSet/item", targetDepth)) {
                     address.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

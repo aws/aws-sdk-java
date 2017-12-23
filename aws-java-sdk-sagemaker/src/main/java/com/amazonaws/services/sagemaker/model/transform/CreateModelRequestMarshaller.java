@@ -32,8 +32,6 @@ public class CreateModelRequestMarshaller {
             .marshallLocationName("ModelName").build();
     private static final MarshallingInfo<StructuredPojo> PRIMARYCONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryContainer").build();
-    private static final MarshallingInfo<List> SUPPLEMENTALCONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupplementalContainers").build();
     private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,7 +55,6 @@ public class CreateModelRequestMarshaller {
         try {
             protocolMarshaller.marshall(createModelRequest.getModelName(), MODELNAME_BINDING);
             protocolMarshaller.marshall(createModelRequest.getPrimaryContainer(), PRIMARYCONTAINER_BINDING);
-            protocolMarshaller.marshall(createModelRequest.getSupplementalContainers(), SUPPLEMENTALCONTAINERS_BINDING);
             protocolMarshaller.marshall(createModelRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(createModelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

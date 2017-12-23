@@ -204,6 +204,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * remaining resources on the container instance, but also allow the container to consume more memory resources when
      * needed.
      * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
+     * MiB of memory for your containers.
+     * </p>
      */
     private Integer memoryReservation;
     /**
@@ -1547,6 +1551,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * remaining resources on the container instance, but also allow the container to consume more memory resources when
      * needed.
      * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
+     * MiB of memory for your containers.
+     * </p>
      * 
      * @param memoryReservation
      *        The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
@@ -1572,6 +1580,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>memory</code> hard limit of 300 MiB. This configuration would allow the container to only reserve
      *        128 MiB of memory from the remaining resources on the container instance, but also allow the container to
      *        consume more memory resources when needed.
+     *        </p>
+     *        <p>
+     *        The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
+     *        than 4 MiB of memory for your containers.
      */
 
     public void setMemoryReservation(Integer memoryReservation) {
@@ -1605,6 +1617,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * remaining resources on the container instance, but also allow the container to consume more memory resources when
      * needed.
      * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
+     * MiB of memory for your containers.
+     * </p>
      * 
      * @return The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
      *         contention, Docker attempts to keep the container memory to this soft limit; however, your container can
@@ -1629,6 +1645,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>memory</code> hard limit of 300 MiB. This configuration would allow the container to only reserve
      *         128 MiB of memory from the remaining resources on the container instance, but also allow the container to
      *         consume more memory resources when needed.
+     *         </p>
+     *         <p>
+     *         The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
+     *         than 4 MiB of memory for your containers.
      */
 
     public Integer getMemoryReservation() {
@@ -1662,6 +1682,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * remaining resources on the container instance, but also allow the container to consume more memory resources when
      * needed.
      * </p>
+     * <p>
+     * The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer than 4
+     * MiB of memory for your containers.
+     * </p>
      * 
      * @param memoryReservation
      *        The soft limit (in MiB) of memory to reserve for the container. When system memory is under heavy
@@ -1687,6 +1711,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>memory</code> hard limit of 300 MiB. This configuration would allow the container to only reserve
      *        128 MiB of memory from the remaining resources on the container instance, but also allow the container to
      *        consume more memory resources when needed.
+     *        </p>
+     *        <p>
+     *        The Docker daemon reserves a minimum of 4 MiB of memory for a container, so you should not specify fewer
+     *        than 4 MiB of memory for your containers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

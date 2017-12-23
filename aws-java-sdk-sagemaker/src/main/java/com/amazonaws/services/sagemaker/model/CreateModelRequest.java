@@ -40,12 +40,6 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ContainerDefinition primaryContainer;
     /**
      * <p>
-     * The additional optional containers to deploy.
-     * </p>
-     */
-    private java.util.List<ContainerDefinition> supplementalContainers;
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
      * docker image for deployment on ML compute instances. Deploying on ML compute instances is part of model hosting.
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
@@ -145,76 +139,6 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public CreateModelRequest withPrimaryContainer(ContainerDefinition primaryContainer) {
         setPrimaryContainer(primaryContainer);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The additional optional containers to deploy.
-     * </p>
-     * 
-     * @return The additional optional containers to deploy.
-     */
-
-    public java.util.List<ContainerDefinition> getSupplementalContainers() {
-        return supplementalContainers;
-    }
-
-    /**
-     * <p>
-     * The additional optional containers to deploy.
-     * </p>
-     * 
-     * @param supplementalContainers
-     *        The additional optional containers to deploy.
-     */
-
-    public void setSupplementalContainers(java.util.Collection<ContainerDefinition> supplementalContainers) {
-        if (supplementalContainers == null) {
-            this.supplementalContainers = null;
-            return;
-        }
-
-        this.supplementalContainers = new java.util.ArrayList<ContainerDefinition>(supplementalContainers);
-    }
-
-    /**
-     * <p>
-     * The additional optional containers to deploy.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSupplementalContainers(java.util.Collection)} or
-     * {@link #withSupplementalContainers(java.util.Collection)} if you want to override the existing values.
-     * </p>
-     * 
-     * @param supplementalContainers
-     *        The additional optional containers to deploy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateModelRequest withSupplementalContainers(ContainerDefinition... supplementalContainers) {
-        if (this.supplementalContainers == null) {
-            setSupplementalContainers(new java.util.ArrayList<ContainerDefinition>(supplementalContainers.length));
-        }
-        for (ContainerDefinition ele : supplementalContainers) {
-            this.supplementalContainers.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The additional optional containers to deploy.
-     * </p>
-     * 
-     * @param supplementalContainers
-     *        The additional optional containers to deploy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateModelRequest withSupplementalContainers(java.util.Collection<ContainerDefinition> supplementalContainers) {
-        setSupplementalContainers(supplementalContainers);
         return this;
     }
 
@@ -377,8 +301,6 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("ModelName: ").append(getModelName()).append(",");
         if (getPrimaryContainer() != null)
             sb.append("PrimaryContainer: ").append(getPrimaryContainer()).append(",");
-        if (getSupplementalContainers() != null)
-            sb.append("SupplementalContainers: ").append(getSupplementalContainers()).append(",");
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getTags() != null)
@@ -405,10 +327,6 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getPrimaryContainer() != null && other.getPrimaryContainer().equals(this.getPrimaryContainer()) == false)
             return false;
-        if (other.getSupplementalContainers() == null ^ this.getSupplementalContainers() == null)
-            return false;
-        if (other.getSupplementalContainers() != null && other.getSupplementalContainers().equals(this.getSupplementalContainers()) == false)
-            return false;
         if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
             return false;
         if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
@@ -427,7 +345,6 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getPrimaryContainer() == null) ? 0 : getPrimaryContainer().hashCode());
-        hashCode = prime * hashCode + ((getSupplementalContainers() == null) ? 0 : getSupplementalContainers().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

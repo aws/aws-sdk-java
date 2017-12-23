@@ -38,12 +38,6 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     private ContainerDefinition primaryContainer;
     /**
      * <p>
-     * The description of additional optional containers that you defined when creating the model.
-     * </p>
-     */
-    private java.util.List<ContainerDefinition> supplementalContainers;
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that you specified for the model.
      * </p>
      */
@@ -144,76 +138,6 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeModelResult withPrimaryContainer(ContainerDefinition primaryContainer) {
         setPrimaryContainer(primaryContainer);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The description of additional optional containers that you defined when creating the model.
-     * </p>
-     * 
-     * @return The description of additional optional containers that you defined when creating the model.
-     */
-
-    public java.util.List<ContainerDefinition> getSupplementalContainers() {
-        return supplementalContainers;
-    }
-
-    /**
-     * <p>
-     * The description of additional optional containers that you defined when creating the model.
-     * </p>
-     * 
-     * @param supplementalContainers
-     *        The description of additional optional containers that you defined when creating the model.
-     */
-
-    public void setSupplementalContainers(java.util.Collection<ContainerDefinition> supplementalContainers) {
-        if (supplementalContainers == null) {
-            this.supplementalContainers = null;
-            return;
-        }
-
-        this.supplementalContainers = new java.util.ArrayList<ContainerDefinition>(supplementalContainers);
-    }
-
-    /**
-     * <p>
-     * The description of additional optional containers that you defined when creating the model.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSupplementalContainers(java.util.Collection)} or
-     * {@link #withSupplementalContainers(java.util.Collection)} if you want to override the existing values.
-     * </p>
-     * 
-     * @param supplementalContainers
-     *        The description of additional optional containers that you defined when creating the model.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeModelResult withSupplementalContainers(ContainerDefinition... supplementalContainers) {
-        if (this.supplementalContainers == null) {
-            setSupplementalContainers(new java.util.ArrayList<ContainerDefinition>(supplementalContainers.length));
-        }
-        for (ContainerDefinition ele : supplementalContainers) {
-            this.supplementalContainers.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The description of additional optional containers that you defined when creating the model.
-     * </p>
-     * 
-     * @param supplementalContainers
-     *        The description of additional optional containers that you defined when creating the model.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeModelResult withSupplementalContainers(java.util.Collection<ContainerDefinition> supplementalContainers) {
-        setSupplementalContainers(supplementalContainers);
         return this;
     }
 
@@ -352,8 +276,6 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("ModelName: ").append(getModelName()).append(",");
         if (getPrimaryContainer() != null)
             sb.append("PrimaryContainer: ").append(getPrimaryContainer()).append(",");
-        if (getSupplementalContainers() != null)
-            sb.append("SupplementalContainers: ").append(getSupplementalContainers()).append(",");
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getCreationTime() != null)
@@ -382,10 +304,6 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getPrimaryContainer() != null && other.getPrimaryContainer().equals(this.getPrimaryContainer()) == false)
             return false;
-        if (other.getSupplementalContainers() == null ^ this.getSupplementalContainers() == null)
-            return false;
-        if (other.getSupplementalContainers() != null && other.getSupplementalContainers().equals(this.getSupplementalContainers()) == false)
-            return false;
         if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
             return false;
         if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
@@ -408,7 +326,6 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getPrimaryContainer() == null) ? 0 : getPrimaryContainer().hashCode());
-        hashCode = prime * hashCode + ((getSupplementalContainers() == null) ? 0 : getSupplementalContainers().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getModelArn() == null) ? 0 : getModelArn().hashCode());

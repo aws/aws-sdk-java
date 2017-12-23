@@ -89,6 +89,17 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean forceNewDeployment;
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     * Balancing target health checks after a task has first started. This is only valid if your service is configured
+     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
+     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
+     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
+     * stopping them before they have time to come up.
+     * </p>
+     */
+    private Integer healthCheckGracePeriodSeconds;
 
     /**
      * <p>
@@ -516,6 +527,76 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     * Balancing target health checks after a task has first started. This is only valid if your service is configured
+     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
+     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
+     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
+     * stopping them before they have time to come up.
+     * </p>
+     * 
+     * @param healthCheckGracePeriodSeconds
+     *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     *        Balancing target health checks after a task has first started. This is only valid if your service is
+     *        configured to use a load balancer. If your service's tasks take a while to start and respond to ELB health
+     *        checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     *        scheduler will ignore ELB health check status. This grace period can prevent the ECS service scheduler
+     *        from marking tasks as unhealthy and stopping them before they have time to come up.
+     */
+
+    public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
+        this.healthCheckGracePeriodSeconds = healthCheckGracePeriodSeconds;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     * Balancing target health checks after a task has first started. This is only valid if your service is configured
+     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
+     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
+     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
+     * stopping them before they have time to come up.
+     * </p>
+     * 
+     * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
+     *         Load Balancing target health checks after a task has first started. This is only valid if your service is
+     *         configured to use a load balancer. If your service's tasks take a while to start and respond to ELB
+     *         health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS
+     *         service scheduler will ignore ELB health check status. This grace period can prevent the ECS service
+     *         scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     */
+
+    public Integer getHealthCheckGracePeriodSeconds() {
+        return this.healthCheckGracePeriodSeconds;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     * Balancing target health checks after a task has first started. This is only valid if your service is configured
+     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
+     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
+     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
+     * stopping them before they have time to come up.
+     * </p>
+     * 
+     * @param healthCheckGracePeriodSeconds
+     *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
+     *        Balancing target health checks after a task has first started. This is only valid if your service is
+     *        configured to use a load balancer. If your service's tasks take a while to start and respond to ELB health
+     *        checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     *        scheduler will ignore ELB health check status. This grace period can prevent the ECS service scheduler
+     *        from marking tasks as unhealthy and stopping them before they have time to come up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
+        setHealthCheckGracePeriodSeconds(healthCheckGracePeriodSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -541,7 +622,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPlatformVersion() != null)
             sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getForceNewDeployment() != null)
-            sb.append("ForceNewDeployment: ").append(getForceNewDeployment());
+            sb.append("ForceNewDeployment: ").append(getForceNewDeployment()).append(",");
+        if (getHealthCheckGracePeriodSeconds() != null)
+            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -588,6 +671,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getForceNewDeployment() != null && other.getForceNewDeployment().equals(this.getForceNewDeployment()) == false)
             return false;
+        if (other.getHealthCheckGracePeriodSeconds() == null ^ this.getHealthCheckGracePeriodSeconds() == null)
+            return false;
+        if (other.getHealthCheckGracePeriodSeconds() != null
+                && other.getHealthCheckGracePeriodSeconds().equals(this.getHealthCheckGracePeriodSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -604,6 +692,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getForceNewDeployment() == null) ? 0 : getForceNewDeployment().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
         return hashCode;
     }
 
