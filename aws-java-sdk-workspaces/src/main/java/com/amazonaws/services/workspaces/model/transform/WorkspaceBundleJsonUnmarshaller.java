@@ -64,6 +64,10 @@ public class WorkspaceBundleJsonUnmarshaller implements Unmarshaller<WorkspaceBu
                     context.nextToken();
                     workspaceBundle.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RootStorage", targetDepth)) {
+                    context.nextToken();
+                    workspaceBundle.setRootStorage(RootStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("UserStorage", targetDepth)) {
                     context.nextToken();
                     workspaceBundle.setUserStorage(UserStorageJsonUnmarshaller.getInstance().unmarshall(context));

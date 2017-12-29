@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * The request of the <a>DescribeTags</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags" target="_top">AWS API
  *      Documentation</a>
@@ -30,18 +27,18 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      */
     private String resourceId;
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The resource ID of the request.
+     *        The ID of the resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -50,10 +47,10 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      * 
-     * @return The resource ID of the request.
+     * @return The ID of the resource.
      */
 
     public String getResourceId() {
@@ -62,11 +59,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The resource ID of the request.
+     *        The ID of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,17 +25,17 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * 
-     * @return The failed requests.
+     * @return Information about the WorkSpaces that could not be started.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -47,11 +47,11 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be started.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -65,7 +65,7 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class StartWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The failed requests.
+     * Information about the WorkSpaces that could not be started.
      * </p>
      * 
      * @param failedRequests
-     *        The failed requests.
+     *        Information about the WorkSpaces that could not be started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

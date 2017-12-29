@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the compute type of a WorkSpace bundle.
+ * Information about the compute type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ComputeType" target="_top">AWS API
@@ -30,18 +30,18 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the compute type for the bundle.
+     * The compute type.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the compute type for the bundle.
+     * The compute type.
      * </p>
      * 
      * @param name
-     *        The name of the compute type for the bundle.
+     *        The compute type.
      * @see Compute
      */
 
@@ -51,10 +51,10 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the compute type for the bundle.
+     * The compute type.
      * </p>
      * 
-     * @return The name of the compute type for the bundle.
+     * @return The compute type.
      * @see Compute
      */
 
@@ -64,11 +64,11 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the compute type for the bundle.
+     * The compute type.
      * </p>
      * 
      * @param name
-     *        The name of the compute type for the bundle.
+     *        The compute type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compute
      */
@@ -80,11 +80,11 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the compute type for the bundle.
+     * The compute type.
      * </p>
      * 
      * @param name
-     *        The name of the compute type for the bundle.
+     *        The compute type.
      * @see Compute
      */
 
@@ -94,11 +94,11 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the compute type for the bundle.
+     * The compute type.
      * </p>
      * 
      * @param name
-     *        The name of the compute type for the bundle.
+     *        The compute type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compute
      */

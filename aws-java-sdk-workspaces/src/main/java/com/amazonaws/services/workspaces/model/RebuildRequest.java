@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information used with the <a>RebuildWorkspaces</a> operation to rebuild a WorkSpace.
+ * Information used to rebuild a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildRequest" target="_top">AWS API
@@ -30,18 +30,18 @@ public class RebuildRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace to rebuild.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The identifier of the WorkSpace to rebuild.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace to rebuild.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -50,10 +50,10 @@ public class RebuildRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace to rebuild.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the WorkSpace to rebuild.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -62,11 +62,11 @@ public class RebuildRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace to rebuild.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace to rebuild.
+     *        The identifier of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

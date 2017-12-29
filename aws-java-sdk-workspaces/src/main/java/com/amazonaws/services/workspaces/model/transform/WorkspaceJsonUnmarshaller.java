@@ -104,6 +104,11 @@ public class WorkspaceJsonUnmarshaller implements Unmarshaller<Workspace, JsonUn
                     context.nextToken();
                     workspace.setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModificationStates", targetDepth)) {
+                    context.nextToken();
+                    workspace.setModificationStates(new ListUnmarshaller<ModificationState>(ModificationStateJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the tag of the WorkSpace.
+ * Information about a tag.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Tag" target="_top">AWS API

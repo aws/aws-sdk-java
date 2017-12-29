@@ -36,7 +36,7 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
     private String workspaceId;
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      */
     private String connectionState;
@@ -95,11 +95,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @see ConnectionState
      */
 
@@ -109,10 +109,10 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
-     * @return The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * @return The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @see ConnectionState
      */
 
@@ -122,11 +122,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionState
      */
@@ -138,11 +138,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @see ConnectionState
      */
 
@@ -152,11 +152,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     * The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * </p>
      * 
      * @param connectionState
-     *        The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.
+     *        The connection state of the WorkSpace. The connection state is unknown if the WorkSpace is stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionState
      */

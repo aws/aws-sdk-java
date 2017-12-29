@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the stop request.
+ * Information used to stop a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopRequest" target="_top">AWS API

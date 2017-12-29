@@ -25,7 +25,7 @@ public class ResourceNotFoundException extends com.amazonaws.services.workspaces
 
     /**
      * <p>
-     * The resource could not be found.
+     * The ID of the resource that could not be found.
      * </p>
      */
     private String resourceId;
@@ -42,11 +42,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.workspaces
 
     /**
      * <p>
-     * The resource could not be found.
+     * The ID of the resource that could not be found.
      * </p>
      * 
      * @param resourceId
-     *        The resource could not be found.
+     *        The ID of the resource that could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -56,10 +56,10 @@ public class ResourceNotFoundException extends com.amazonaws.services.workspaces
 
     /**
      * <p>
-     * The resource could not be found.
+     * The ID of the resource that could not be found.
      * </p>
      * 
-     * @return The resource could not be found.
+     * @return The ID of the resource that could not be found.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -69,11 +69,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.workspaces
 
     /**
      * <p>
-     * The resource could not be found.
+     * The ID of the resource that could not be found.
      * </p>
      * 
      * @param resourceId
-     *        The resource could not be found.
+     *        The ID of the resource that could not be found.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

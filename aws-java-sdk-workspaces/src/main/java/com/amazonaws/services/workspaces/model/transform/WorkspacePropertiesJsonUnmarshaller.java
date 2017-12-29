@@ -56,6 +56,18 @@ public class WorkspacePropertiesJsonUnmarshaller implements Unmarshaller<Workspa
                     context.nextToken();
                     workspaceProperties.setRunningModeAutoStopTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("RootVolumeSizeGib", targetDepth)) {
+                    context.nextToken();
+                    workspaceProperties.setRootVolumeSizeGib(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("UserVolumeSizeGib", targetDepth)) {
+                    context.nextToken();
+                    workspaceProperties.setUserVolumeSizeGib(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ComputeTypeName", targetDepth)) {
+                    context.nextToken();
+                    workspaceProperties.setComputeTypeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

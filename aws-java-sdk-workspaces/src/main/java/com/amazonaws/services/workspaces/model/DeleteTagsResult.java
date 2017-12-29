@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The result of the <a>DeleteTags</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags" target="_top">AWS API
  *      Documentation</a>

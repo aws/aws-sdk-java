@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the results of the <a>DescribeWorkspaceBundles</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"
  *      target="_top">AWS API Documentation</a>
@@ -28,25 +25,24 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures that contain information about the bundles.
+     * Information about the bundles.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<WorkspaceBundle> bundles;
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of structures that contain information about the bundles.
+     * Information about the bundles.
      * </p>
      * 
-     * @return An array of structures that contain information about the bundles.
+     * @return Information about the bundles.
      */
 
     public java.util.List<WorkspaceBundle> getBundles() {
@@ -58,11 +54,11 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures that contain information about the bundles.
+     * Information about the bundles.
      * </p>
      * 
      * @param bundles
-     *        An array of structures that contain information about the bundles.
+     *        Information about the bundles.
      */
 
     public void setBundles(java.util.Collection<WorkspaceBundle> bundles) {
@@ -76,7 +72,7 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures that contain information about the bundles.
+     * Information about the bundles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +81,7 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param bundles
-     *        An array of structures that contain information about the bundles.
+     *        Information about the bundles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +97,11 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of structures that contain information about the bundles.
+     * Information about the bundles.
      * </p>
      * 
      * @param bundles
-     *        An array of structures that contain information about the bundles.
+     *        Information about the bundles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,15 +112,13 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *        subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *        must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
+     *        token is valid for one day and must be used within that time frame.
      */
 
     public void setNextToken(String nextToken) {
@@ -133,14 +127,12 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *         subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *         must be used within that time frame.
+     * @return The token to use to retrieve the next set of results, or null if there are no more results available.
+     *         This token is valid for one day and must be used within that time frame.
      */
 
     public String getNextToken() {
@@ -149,15 +141,13 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *        subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *        must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
+     *        token is valid for one day and must be used within that time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

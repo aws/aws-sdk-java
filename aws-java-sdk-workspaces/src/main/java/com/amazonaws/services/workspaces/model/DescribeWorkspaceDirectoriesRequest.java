@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories"
  *      target="_top">AWS API Documentation</a>
@@ -30,26 +27,23 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of strings that contains the directory identifiers to retrieve information for. If this member is null,
-     * all directories are retrieved.
+     * The identifiers of the directories. If the value is null, all directories are retrieved.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> directoryIds;
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of strings that contains the directory identifiers to retrieve information for. If this member is null,
-     * all directories are retrieved.
+     * The identifiers of the directories. If the value is null, all directories are retrieved.
      * </p>
      * 
-     * @return An array of strings that contains the directory identifiers to retrieve information for. If this member
-     *         is null, all directories are retrieved.
+     * @return The identifiers of the directories. If the value is null, all directories are retrieved.
      */
 
     public java.util.List<String> getDirectoryIds() {
@@ -61,13 +55,11 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of strings that contains the directory identifiers to retrieve information for. If this member is null,
-     * all directories are retrieved.
+     * The identifiers of the directories. If the value is null, all directories are retrieved.
      * </p>
      * 
      * @param directoryIds
-     *        An array of strings that contains the directory identifiers to retrieve information for. If this member is
-     *        null, all directories are retrieved.
+     *        The identifiers of the directories. If the value is null, all directories are retrieved.
      */
 
     public void setDirectoryIds(java.util.Collection<String> directoryIds) {
@@ -81,8 +73,7 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of strings that contains the directory identifiers to retrieve information for. If this member is null,
-     * all directories are retrieved.
+     * The identifiers of the directories. If the value is null, all directories are retrieved.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,8 +82,7 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param directoryIds
-     *        An array of strings that contains the directory identifiers to retrieve information for. If this member is
-     *        null, all directories are retrieved.
+     *        The identifiers of the directories. If the value is null, all directories are retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,13 +98,11 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An array of strings that contains the directory identifiers to retrieve information for. If this member is null,
-     * all directories are retrieved.
+     * The identifiers of the directories. If the value is null, all directories are retrieved.
      * </p>
      * 
      * @param directoryIds
-     *        An array of strings that contains the directory identifiers to retrieve information for. If this member is
-     *        null, all directories are retrieved.
+     *        The identifiers of the directories. If the value is null, all directories are retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,12 +113,11 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first
-     *        call.
+     *        The token for the next set of results. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -139,11 +126,10 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      * 
-     * @return The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first
-     *         call.
+     * @return The token for the next set of results. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -152,12 +138,11 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.
+     * The token for the next set of results. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first
-     *        call.
+     *        The token for the next set of results. (You received this token from a previous call.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

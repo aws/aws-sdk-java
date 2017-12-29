@@ -22,7 +22,9 @@ public enum Compute {
 
     VALUE("VALUE"),
     STANDARD("STANDARD"),
-    PERFORMANCE("PERFORMANCE");
+    PERFORMANCE("PERFORMANCE"),
+    POWER("POWER"),
+    GRAPHICS("GRAPHICS");
 
     private String value;
 

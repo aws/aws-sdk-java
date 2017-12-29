@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a WorkSpace creation request.
+ * Information used to create a WorkSpace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceRequest" target="_top">AWS API
@@ -30,22 +30,22 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     * <a>DescribeWorkspaceDirectories</a> to list the available directories.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
-     * specified by the <code>DirectoryId</code> member.
+     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * the WorkSpace.
      * </p>
      */
     private String userName;
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-     * operation to obtain a list of the bundles that are available.
+     * The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available
+     * bundles.
      * </p>
      */
     private String bundleId;
@@ -57,34 +57,38 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
     private String volumeEncryptionKey;
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      */
     private Boolean userVolumeEncryptionEnabled;
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      */
     private Boolean rootVolumeEncryptionEnabled;
-
+    /**
+     * <p>
+     * The WorkSpace properties.
+     * </p>
+     */
     private WorkspaceProperties workspaceProperties;
     /**
      * <p>
-     * The tags of the WorkSpace request.
+     * The tags for the WorkSpace.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     * <a>DescribeWorkspaceDirectories</a> to list the available directories.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     *        The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     *        <a>DescribeWorkspaceDirectories</a> to list the available directories.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -93,12 +97,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     * <a>DescribeWorkspaceDirectories</a> to list the available directories.
      * </p>
      * 
-     * @return The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     *         <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     * @return The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     *         <a>DescribeWorkspaceDirectories</a> to list the available directories.
      */
 
     public String getDirectoryId() {
@@ -107,13 +111,13 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     * <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     * The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     * <a>DescribeWorkspaceDirectories</a> to list the available directories.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the
-     *        <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.
+     *        The identifier of the AWS Directory Service directory for the WorkSpace. You can use
+     *        <a>DescribeWorkspaceDirectories</a> to list the available directories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,13 +128,13 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
-     * specified by the <code>DirectoryId</code> member.
+     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * the WorkSpace.
      * </p>
      * 
      * @param userName
-     *        The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service
-     *        directory specified by the <code>DirectoryId</code> member.
+     *        The username of the user for the WorkSpace. This username must exist in the AWS Directory Service
+     *        directory for the WorkSpace.
      */
 
     public void setUserName(String userName) {
@@ -139,12 +143,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
-     * specified by the <code>DirectoryId</code> member.
+     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * the WorkSpace.
      * </p>
      * 
-     * @return The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service
-     *         directory specified by the <code>DirectoryId</code> member.
+     * @return The username of the user for the WorkSpace. This username must exist in the AWS Directory Service
+     *         directory for the WorkSpace.
      */
 
     public String getUserName() {
@@ -153,13 +157,13 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory
-     * specified by the <code>DirectoryId</code> member.
+     * The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for
+     * the WorkSpace.
      * </p>
      * 
      * @param userName
-     *        The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service
-     *        directory specified by the <code>DirectoryId</code> member.
+     *        The username of the user for the WorkSpace. This username must exist in the AWS Directory Service
+     *        directory for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,13 +174,13 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-     * operation to obtain a list of the bundles that are available.
+     * The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available
+     * bundles.
      * </p>
      * 
      * @param bundleId
-     *        The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-     *        operation to obtain a list of the bundles that are available.
+     *        The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the
+     *        available bundles.
      */
 
     public void setBundleId(String bundleId) {
@@ -185,12 +189,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-     * operation to obtain a list of the bundles that are available.
+     * The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available
+     * bundles.
      * </p>
      * 
-     * @return The identifier of the bundle to create the WorkSpace from. You can use the
-     *         <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that are available.
+     * @return The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the
+     *         available bundles.
      */
 
     public String getBundleId() {
@@ -199,13 +203,13 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-     * operation to obtain a list of the bundles that are available.
+     * The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available
+     * bundles.
      * </p>
      * 
      * @param bundleId
-     *        The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a>
-     *        operation to obtain a list of the bundles that are available.
+     *        The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the
+     *        available bundles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +260,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     *        Indicates whether the data stored on the user volume is encrypted.
      */
 
     public void setUserVolumeEncryptionEnabled(Boolean userVolumeEncryptionEnabled) {
@@ -269,10 +273,10 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * @return Indicates whether the data stored on the user volume is encrypted.
      */
 
     public Boolean getUserVolumeEncryptionEnabled() {
@@ -281,11 +285,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
      * @param userVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     *        Indicates whether the data stored on the user volume is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,10 +300,10 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * Indicates whether the data stored on the user volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the user volume, or D: drive, is encrypted.
+     * @return Indicates whether the data stored on the user volume is encrypted.
      */
 
     public Boolean isUserVolumeEncryptionEnabled() {
@@ -308,11 +312,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     *        Indicates whether the data stored on the root volume is encrypted.
      */
 
     public void setRootVolumeEncryptionEnabled(Boolean rootVolumeEncryptionEnabled) {
@@ -321,10 +325,10 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * @return Indicates whether the data stored on the root volume is encrypted.
      */
 
     public Boolean getRootVolumeEncryptionEnabled() {
@@ -333,11 +337,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
      * @param rootVolumeEncryptionEnabled
-     *        Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     *        Indicates whether the data stored on the root volume is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,10 +352,10 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * Indicates whether the data stored on the root volume is encrypted.
      * </p>
      * 
-     * @return Specifies whether the data stored on the root volume, or C: drive, is encrypted.
+     * @return Indicates whether the data stored on the root volume is encrypted.
      */
 
     public Boolean isRootVolumeEncryptionEnabled() {
@@ -359,7 +363,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The WorkSpace properties.
+     * </p>
+     * 
      * @param workspaceProperties
+     *        The WorkSpace properties.
      */
 
     public void setWorkspaceProperties(WorkspaceProperties workspaceProperties) {
@@ -367,7 +376,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The WorkSpace properties.
+     * </p>
+     * 
+     * @return The WorkSpace properties.
      */
 
     public WorkspaceProperties getWorkspaceProperties() {
@@ -375,7 +388,12 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The WorkSpace properties.
+     * </p>
+     * 
      * @param workspaceProperties
+     *        The WorkSpace properties.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,10 +404,10 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags of the WorkSpace request.
+     * The tags for the WorkSpace.
      * </p>
      * 
-     * @return The tags of the WorkSpace request.
+     * @return The tags for the WorkSpace.
      */
 
     public java.util.List<Tag> getTags() {
@@ -401,11 +419,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags of the WorkSpace request.
+     * The tags for the WorkSpace.
      * </p>
      * 
      * @param tags
-     *        The tags of the WorkSpace request.
+     *        The tags for the WorkSpace.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -419,7 +437,7 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags of the WorkSpace request.
+     * The tags for the WorkSpace.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -428,7 +446,7 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param tags
-     *        The tags of the WorkSpace request.
+     *        The tags for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,11 +462,11 @@ public class WorkspaceRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags of the WorkSpace request.
+     * The tags for the WorkSpace.
      * </p>
      * 
      * @param tags
-     *        The tags of the WorkSpace request.
+     *        The tags for the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

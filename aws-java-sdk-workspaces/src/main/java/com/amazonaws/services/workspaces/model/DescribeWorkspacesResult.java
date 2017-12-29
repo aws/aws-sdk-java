@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Contains the results for the <a>DescribeWorkspaces</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces" target="_top">AWS API
  *      Documentation</a>
@@ -28,36 +25,35 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a
-     * newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Workspace> workspaces;
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a
-     * newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * 
-     * @return An array of structures that contain the information about the WorkSpaces.</p>
+     * @return Information about the WorkSpaces.</p>
      *         <p>
-     *         Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete
-     *         for a newly-created WorkSpace.
+     *         Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *         incomplete.
      */
 
     public java.util.List<Workspace> getWorkspaces() {
@@ -69,18 +65,18 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a
-     * newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that contain the information about the WorkSpaces.</p>
+     *        Information about the WorkSpaces.</p>
      *        <p>
-     *        Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete
-     *        for a newly-created WorkSpace.
+     *        Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *        incomplete.
      */
 
     public void setWorkspaces(java.util.Collection<Workspace> workspaces) {
@@ -94,11 +90,11 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a
-     * newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,10 +103,10 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that contain the information about the WorkSpaces.</p>
+     *        Information about the WorkSpaces.</p>
      *        <p>
-     *        Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete
-     *        for a newly-created WorkSpace.
+     *        Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *        incomplete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,18 +122,18 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of structures that contain the information about the WorkSpaces.
+     * Information about the WorkSpaces.
      * </p>
      * <p>
-     * Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a
-     * newly-created WorkSpace.
+     * Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     * incomplete.
      * </p>
      * 
      * @param workspaces
-     *        An array of structures that contain the information about the WorkSpaces.</p>
+     *        Information about the WorkSpaces.</p>
      *        <p>
-     *        Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete
-     *        for a newly-created WorkSpace.
+     *        Because <a>CreateWorkspaces</a> is an asynchronous operation, some of the returned information could be
+     *        incomplete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,15 +144,13 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *        subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *        must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
+     *        token is valid for one day and must be used within that time frame.
      */
 
     public void setNextToken(String nextToken) {
@@ -165,14 +159,12 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
-     * @return If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *         subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *         must be used within that time frame.
+     * @return The token to use to retrieve the next set of results, or null if there are no more results available.
+     *         This token is valid for one day and must be used within that time frame.
      */
 
     public String getNextToken() {
@@ -181,15 +173,13 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. This token is valid for one day and must be used within
-     * that time frame.
+     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
+     * is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a
-     *        subsequent call to this operation to retrieve the next set of items. This token is valid for one day and
-     *        must be used within that time frame.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
+     *        token is valid for one day and must be used within that time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

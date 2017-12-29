@@ -1,3 +1,32 @@
+# __1.11.256__ __2017-12-29__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support allowing AWS CodeBuild customers to select specific curated image versions.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon ECS users can now set a health check initialization wait period of their ECS services, the services that are associated with an Elastic Load Balancer (ELB) will wait for a period of time before the ELB become healthy. You can now configure this in Create and Update Service.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release fixes an issue with tags not showing in DescribeAddresses responses.
+
+## __Amazon Inspector__
+  - ### Features
+    - PreviewAgents API now returns additional fields within the AgentPreview data type. The API now shows the agent health and availability status for all instances included in the assessment target. This allows users to check the health status of Inspector Agents before running an assessment. In addition, it shows the instance ID, hostname, and IP address of the targeted instances.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Analytics now supports AWS Lambda functions as output.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker Models no longer support SupplementalContainers.  API's that have been affected are CreateModel and DescribeModel.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Modify WorkSpaces have been updated with flexible storage and switching of hardware bundles feature. The following configurations have been added to ModifyWorkSpacesProperties: storage and compute. This update provides the capability to configure the storage of a WorkSpace. It also adds the capability of switching hardware bundle of a WorkSpace by specifying an eligible compute (Value, Standard, Performance, Power).
+
 # __1.11.255__ __2017-12-22__
 ## __Amazon EC2 Container Service__
   - ### Features

@@ -32,7 +32,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This reference provides detailed information about the Amazon WorkSpaces operations.
+ * Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows desktops for your users.
  * </p>
  */
 @ThreadSafe

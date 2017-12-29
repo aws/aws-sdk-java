@@ -27,7 +27,7 @@ import com.amazonaws.services.workspaces.model.*;
  * <p>
  * <fullname>Amazon WorkSpaces Service</fullname>
  * <p>
- * This reference provides detailed information about the Amazon WorkSpaces operations.
+ * Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows desktops for your users.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,11 +35,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for a WorkSpace.
+     * Creates tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the <a>CreateTags</a> operation.
      * @return A Java Future containing the result of the CreateTags operation returned by the service.
      * @sample AmazonWorkspacesAsync.CreateTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags" target="_top">AWS API
@@ -49,11 +48,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for a WorkSpace.
+     * Creates tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
-     *        The request of the <a>CreateTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -70,14 +68,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * <p>
      * Creates one or more WorkSpaces.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
-     * </note>
      * 
      * @param createWorkspacesRequest
-     *        Contains the inputs for the <a>CreateWorkspaces</a> operation.
      * @return A Java Future containing the result of the CreateWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.CreateWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces" target="_top">AWS
@@ -89,14 +84,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * <p>
      * Creates one or more WorkSpaces.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
-     * </note>
      * 
      * @param createWorkspacesRequest
-     *        Contains the inputs for the <a>CreateWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -111,11 +103,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes tags from a WorkSpace.
+     * Deletes the specified tags from a WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the <a>DeleteTags</a> operation.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonWorkspacesAsync.DeleteTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags" target="_top">AWS API
@@ -125,11 +116,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes tags from a WorkSpace.
+     * Deletes the specified tags from a WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
-     *        The request of the <a>DeleteTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -144,11 +134,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes tags for a WorkSpace.
+     * Describes the tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the <a>DescribeTags</a> operation.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags" target="_top">AWS API
@@ -158,11 +147,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes tags for a WorkSpace.
+     * Describes the tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
-     *        The request of the <a>DescribeTags</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -177,20 +165,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the WorkSpace bundles that are available to your account in the specified region.
+     * Describes the available WorkSpace bundles.
      * </p>
      * <p>
-     * You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter,
-     * but not both.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results using either bundle ID or owner, but not both.
      * </p>
      * 
      * @param describeWorkspaceBundlesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaceBundles operation returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeWorkspaceBundles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles"
@@ -200,20 +181,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the WorkSpace bundles that are available to your account in the specified region.
+     * Describes the available WorkSpace bundles.
      * </p>
      * <p>
-     * You can filter the results with either the <code>BundleIds</code> parameter, or the <code>Owner</code> parameter,
-     * but not both.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results using either bundle ID or owner, but not both.
      * </p>
      * 
      * @param describeWorkspaceBundlesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceBundles</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -243,17 +217,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon
-     * WorkSpaces and are available to your account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.
      * </p>
      * 
      * @param describeWorkspaceDirectoriesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaceDirectories operation returned by the
      *         service.
      * @sample AmazonWorkspacesAsync.DescribeWorkspaceDirectories
@@ -265,17 +232,10 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Retrieves information about the AWS Directory Service directories in the region that are registered with Amazon
-     * WorkSpaces and are available to your account.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.
      * </p>
      * 
      * @param describeWorkspaceDirectoriesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaceDirectories</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -307,20 +267,14 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the specified WorkSpaces.
+     * Describes the specified WorkSpaces.
      * </p>
      * <p>
-     * Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-     * <code>WorkspaceIds</code>, can be specified at a time.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results using bundle ID, directory ID, or owner, but you can specify only one filter at a
+     * time.
      * </p>
      * 
      * @param describeWorkspacesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaces</a> operation.
      * @return A Java Future containing the result of the DescribeWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.DescribeWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces" target="_top">AWS
@@ -330,20 +284,14 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Obtains information about the specified WorkSpaces.
+     * Describes the specified WorkSpaces.
      * </p>
      * <p>
-     * Only one of the filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
-     * <code>WorkspaceIds</code>, can be specified at a time.
-     * </p>
-     * <p>
-     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
-     * more results are available, the <code>NextToken</code> response member contains a token that you pass in the next
-     * call to this operation to retrieve the next set of items.
+     * You can filter the results using bundle ID, directory ID, or owner, but you can specify only one filter at a
+     * time.
      * </p>
      * 
      * @param describeWorkspacesRequest
-     *        Contains the inputs for the <a>DescribeWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -373,7 +321,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the connection status of a specified WorkSpace.
+     * Describes the connection status of the specified WorkSpaces.
      * </p>
      * 
      * @param describeWorkspacesConnectionStatusRequest
@@ -388,7 +336,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the connection status of a specified WorkSpace.
+     * Describes the connection status of the specified WorkSpaces.
      * </p>
      * 
      * @param describeWorkspacesConnectionStatusRequest
@@ -408,7 +356,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the running mode and AutoStop time.
+     * Modifies the specified WorkSpace properties.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -422,7 +370,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the running mode and AutoStop time.
+     * Modifies the specified WorkSpace properties.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -444,17 +392,14 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-     * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
+     * <code>INOPERABLE</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
      * </p>
-     * </note>
      * 
      * @param rebootWorkspacesRequest
-     *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @return A Java Future containing the result of the RebootWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.RebootWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces" target="_top">AWS
@@ -467,17 +412,14 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * To be able to reboot a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
-     * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
+     * <code>INOPERABLE</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
      * </p>
-     * </note>
      * 
      * @param rebootWorkspacesRequest
-     *        Contains the inputs for the <a>RebootWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -495,36 +437,18 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Rebuilds the specified WorkSpaces.
      * </p>
      * <p>
-     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a
-     * WorkSpace causes the following to occur:
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have
-     * been installed, or system settings that have been made since the WorkSpace was created will be lost.
+     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
+     * information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild a
+     * WorkSpace</a>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current
-     * contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so
-     * the snapshot can be as much as 12 hours old.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or
-     * <code>ERROR</code>.
-     * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.
      * </p>
-     * </note>
      * 
      * @param rebuildWorkspacesRequest
-     *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @return A Java Future containing the result of the RebuildWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.RebuildWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces" target="_top">AWS
@@ -537,36 +461,18 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Rebuilds the specified WorkSpaces.
      * </p>
      * <p>
-     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. Rebuilding a
-     * WorkSpace causes the following to occur:
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * The system is restored to the image of the bundle that the WorkSpace is created from. Any applications that have
-     * been installed, or system settings that have been made since the WorkSpace was created will be lost.
+     * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
+     * information, see <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild a
+     * WorkSpace</a>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The data drive (D drive) is re-created from the last automatic snapshot taken of the data drive. The current
-     * contents of the data drive are overwritten. Automatic snapshots of the data drive are taken every 12 hours, so
-     * the snapshot can be as much as 12 hours old.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To be able to rebuild a WorkSpace, the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code> or
-     * <code>ERROR</code>.
-     * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.
      * </p>
-     * </note>
      * 
      * @param rebuildWorkspacesRequest
-     *        Contains the inputs for the <a>RebuildWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -581,7 +487,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of STOPPED.
+     * Starts the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>STOPPED</code>.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -594,7 +504,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of STOPPED.
+     * Starts the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>STOPPED</code>.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -612,8 +526,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of AVAILABLE,
-     * IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.
      * </p>
      * 
      * @param stopWorkspacesRequest
@@ -626,8 +543,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of AVAILABLE,
-     * IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces.
+     * </p>
+     * <p>
+     * You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of
+     * <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.
      * </p>
      * 
      * @param stopWorkspacesRequest
@@ -648,20 +568,17 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Terminates the specified WorkSpaces.
      * </p>
      * <p>
-     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be
-     * destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.
+     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to
+     * archive any user data, contact Amazon Web Services before terminating the WorkSpace.
      * </p>
      * <p>
      * You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely terminated.
      * </p>
-     * </note>
      * 
      * @param terminateWorkspacesRequest
-     *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @return A Java Future containing the result of the TerminateWorkspaces operation returned by the service.
      * @sample AmazonWorkspacesAsync.TerminateWorkspaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces" target="_top">AWS
@@ -674,20 +591,17 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Terminates the specified WorkSpaces.
      * </p>
      * <p>
-     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is not maintained and will be
-     * destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.
+     * Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to
+     * archive any user data, contact Amazon Web Services before terminating the WorkSpace.
      * </p>
      * <p>
      * You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
      * </p>
-     * <note>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have been completely terminated.
      * </p>
-     * </note>
      * 
      * @param terminateWorkspacesRequest
-     *        Contains the inputs for the <a>TerminateWorkspaces</a> operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

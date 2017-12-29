@@ -26,23 +26,23 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The connection status of the WorkSpace.
+     * Information about the connection status of the WorkSpace.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<WorkspaceConnectionStatus> workspacesConnectionStatus;
     /**
      * <p>
-     * The next token of the result.
+     * The token to use to retrieve the next set of results, or null if there are no more results available.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The connection status of the WorkSpace.
+     * Information about the connection status of the WorkSpace.
      * </p>
      * 
-     * @return The connection status of the WorkSpace.
+     * @return Information about the connection status of the WorkSpace.
      */
 
     public java.util.List<WorkspaceConnectionStatus> getWorkspacesConnectionStatus() {
@@ -54,11 +54,11 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The connection status of the WorkSpace.
+     * Information about the connection status of the WorkSpace.
      * </p>
      * 
      * @param workspacesConnectionStatus
-     *        The connection status of the WorkSpace.
+     *        Information about the connection status of the WorkSpace.
      */
 
     public void setWorkspacesConnectionStatus(java.util.Collection<WorkspaceConnectionStatus> workspacesConnectionStatus) {
@@ -72,7 +72,7 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The connection status of the WorkSpace.
+     * Information about the connection status of the WorkSpace.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param workspacesConnectionStatus
-     *        The connection status of the WorkSpace.
+     *        Information about the connection status of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The connection status of the WorkSpace.
+     * Information about the connection status of the WorkSpace.
      * </p>
      * 
      * @param workspacesConnectionStatus
-     *        The connection status of the WorkSpace.
+     *        Information about the connection status of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +112,11 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The next token of the result.
+     * The token to use to retrieve the next set of results, or null if there are no more results available.
      * </p>
      * 
      * @param nextToken
-     *        The next token of the result.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,10 +125,10 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The next token of the result.
+     * The token to use to retrieve the next set of results, or null if there are no more results available.
      * </p>
      * 
-     * @return The next token of the result.
+     * @return The token to use to retrieve the next set of results, or null if there are no more results available.
      */
 
     public String getNextToken() {
@@ -137,11 +137,11 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The next token of the result.
+     * The token to use to retrieve the next set of results, or null if there are no more results available.
      * </p>
      * 
      * @param nextToken
-     *        The next token of the result.
+     *        The token to use to retrieve the next set of results, or null if there are no more results available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

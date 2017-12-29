@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * The request of the <a>CreateTags</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags" target="_top">AWS API
  *      Documentation</a>
@@ -30,24 +27,24 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The tags of the request.
+     * The tags. Each resource can have a maximum of 50 tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The resource ID of the request.
+     *        The ID of the resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -56,10 +53,10 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      * 
-     * @return The resource ID of the request.
+     * @return The ID of the resource.
      */
 
     public String getResourceId() {
@@ -68,11 +65,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The resource ID of the request.
+     * The ID of the resource.
      * </p>
      * 
      * @param resourceId
-     *        The resource ID of the request.
+     *        The ID of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +80,10 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags of the request.
+     * The tags. Each resource can have a maximum of 50 tags.
      * </p>
      * 
-     * @return The tags of the request.
+     * @return The tags. Each resource can have a maximum of 50 tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -98,11 +95,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags of the request.
+     * The tags. Each resource can have a maximum of 50 tags.
      * </p>
      * 
      * @param tags
-     *        The tags of the request.
+     *        The tags. Each resource can have a maximum of 50 tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -116,7 +113,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags of the request.
+     * The tags. Each resource can have a maximum of 50 tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +122,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        The tags of the request.
+     *        The tags. Each resource can have a maximum of 50 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +138,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags of the request.
+     * The tags. Each resource can have a maximum of 50 tags.
      * </p>
      * 
      * @param tags
-     *        The tags of the request.
+     *        The tags. Each resource can have a maximum of 50 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

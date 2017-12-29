@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the user storage for a WorkSpace bundle.
+ * Information about the user storage for a WorkSpace bundle.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UserStorage" target="_top">AWS API
@@ -30,18 +30,18 @@ public class UserStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      */
     private String capacity;
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      * 
      * @param capacity
-     *        The amount of user storage for the bundle.
+     *        The size of the user storage.
      */
 
     public void setCapacity(String capacity) {
@@ -50,10 +50,10 @@ public class UserStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      * 
-     * @return The amount of user storage for the bundle.
+     * @return The size of the user storage.
      */
 
     public String getCapacity() {
@@ -62,11 +62,11 @@ public class UserStorage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of user storage for the bundle.
+     * The size of the user storage.
      * </p>
      * 
      * @param capacity
-     *        The amount of user storage for the bundle.
+     *        The size of the user storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the inputs for the <a>RebuildWorkspaces</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces" target="_top">AWS API
  *      Documentation</a>
@@ -30,17 +27,17 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to rebuild.
+     * The WorkSpaces to rebuild.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RebuildRequest> rebuildWorkspaceRequests;
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to rebuild.
+     * The WorkSpaces to rebuild.
      * </p>
      * 
-     * @return An array of structures that specify the WorkSpaces to rebuild.
+     * @return The WorkSpaces to rebuild.
      */
 
     public java.util.List<RebuildRequest> getRebuildWorkspaceRequests() {
@@ -52,11 +49,11 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to rebuild.
+     * The WorkSpaces to rebuild.
      * </p>
      * 
      * @param rebuildWorkspaceRequests
-     *        An array of structures that specify the WorkSpaces to rebuild.
+     *        The WorkSpaces to rebuild.
      */
 
     public void setRebuildWorkspaceRequests(java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
@@ -70,7 +67,7 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to rebuild.
+     * The WorkSpaces to rebuild.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +76,7 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param rebuildWorkspaceRequests
-     *        An array of structures that specify the WorkSpaces to rebuild.
+     *        The WorkSpaces to rebuild.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +92,11 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of structures that specify the WorkSpaces to rebuild.
+     * The WorkSpaces to rebuild.
      * </p>
      * 
      * @param rebuildWorkspaceRequests
-     *        An array of structures that specify the WorkSpaces to rebuild.
+     *        The WorkSpaces to rebuild.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
