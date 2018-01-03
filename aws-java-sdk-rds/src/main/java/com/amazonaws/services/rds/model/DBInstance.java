@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,7 +92,7 @@ public class DBInstance implements Serializable, Cloneable {
     private Endpoint endpoint;
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      */
     private Integer allocatedStorage;
@@ -809,11 +809,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gigabytes.
+     *        Specifies the allocated storage size specified in gibibytes.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -822,10 +822,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      * 
-     * @return Specifies the allocated storage size specified in gigabytes.
+     * @return Specifies the allocated storage size specified in gibibytes.
      */
 
     public Integer getAllocatedStorage() {
@@ -834,11 +834,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gigabytes.
+     * Specifies the allocated storage size specified in gibibytes.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gigabytes.
+     *        Specifies the allocated storage size specified in gibibytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -3796,21 +3796,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any
-     * modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a
-     * momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot is conducted through a failover. An Amazon RDS event is
-     * created when the reboot is completed.
+     * You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain
+     * modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the
+     * instance for the changes to take effect.
      * </p>
      * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other
-     * during the reboot. You might force a failover to test the availability of your DB instance deployment or to
-     * restore operations to the original AZ after a failover occurs.
+     * Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary
+     * outage, during which the DB instance status is set to rebooting.
      * </p>
      * <p>
-     * The time required to reboot is a function of the specific database engine's crash recovery process. To improve
-     * the reboot time, we recommend that you reduce database activities as much as possible during the reboot process
-     * to reduce rollback activity for in-transit transactions.
+     * For more information about rebooting, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB
+     * Instance</a>.
      * </p>
      * 
      * @param rebootDBInstanceRequest
@@ -3823,21 +3820,18 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any
-     * modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a
-     * momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is
-     * configured for MultiAZ, it is possible that the reboot is conducted through a failover. An Amazon RDS event is
-     * created when the reboot is completed.
+     * You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain
+     * modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the
+     * instance for the changes to take effect.
      * </p>
      * <p>
-     * If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other
-     * during the reboot. You might force a failover to test the availability of your DB instance deployment or to
-     * restore operations to the original AZ after a failover occurs.
+     * Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary
+     * outage, during which the DB instance status is set to rebooting.
      * </p>
      * <p>
-     * The time required to reboot is a function of the specific database engine's crash recovery process. To improve
-     * the reboot time, we recommend that you reduce database activities as much as possible during the reboot process
-     * to reduce rollback activity for in-transit transactions.
+     * For more information about rebooting, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_RebootInstance.html">Rebooting a DB
+     * Instance</a>.
      * </p>
      * 
      * @param rebootDBInstanceRequest

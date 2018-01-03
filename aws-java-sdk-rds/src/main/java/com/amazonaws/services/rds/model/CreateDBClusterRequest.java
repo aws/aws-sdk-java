@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -157,7 +157,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The port number on which the instances in the DB cluster accept connections.
      * </p>
      * <p>
-     * Default: <code>3306</code>
+     * Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      * </p>
      */
     private Integer port;
@@ -1231,13 +1231,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The port number on which the instances in the DB cluster accept connections.
      * </p>
      * <p>
-     * Default: <code>3306</code>
+     * Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      * </p>
      * 
      * @param port
      *        The port number on which the instances in the DB cluster accept connections.</p>
      *        <p>
-     *        Default: <code>3306</code>
+     *        Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      */
 
     public void setPort(Integer port) {
@@ -1249,12 +1249,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The port number on which the instances in the DB cluster accept connections.
      * </p>
      * <p>
-     * Default: <code>3306</code>
+     * Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      * </p>
      * 
      * @return The port number on which the instances in the DB cluster accept connections.</p>
      *         <p>
-     *         Default: <code>3306</code>
+     *         Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      */
 
     public Integer getPort() {
@@ -1266,13 +1266,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The port number on which the instances in the DB cluster accept connections.
      * </p>
      * <p>
-     * Default: <code>3306</code>
+     * Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      * </p>
      * 
      * @param port
      *        The port number on which the instances in the DB cluster accept connections.</p>
      *        <p>
-     *        Default: <code>3306</code>
+     *        Default: <code>3306</code> if engine is set as aurora or <code>5432</code> if set to aurora-postgresql.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

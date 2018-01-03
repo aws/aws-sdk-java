@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
-     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
      * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      */
@@ -260,14 +260,14 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
-     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
      * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      * 
      * @param allocatedStorage
      *        For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated
-     *        storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora
-     *        DB cluster storage size is not fixed, but instead automatically adjusts as needed.
+     *        storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because
+     *        Aurora DB cluster storage size is not fixed, but instead automatically adjusts as needed.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -277,12 +277,12 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
-     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
      * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      * 
      * @return For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated
-     *         storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because
+     *         storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because
      *         Aurora DB cluster storage size is not fixed, but instead automatically adjusts as needed.
      */
 
@@ -293,14 +293,14 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size
-     * in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
+     * in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage
      * size is not fixed, but instead automatically adjusts as needed.
      * </p>
      * 
      * @param allocatedStorage
      *        For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated
-     *        storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora
-     *        DB cluster storage size is not fixed, but instead automatically adjusts as needed.
+     *        storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because
+     *        Aurora DB cluster storage size is not fixed, but instead automatically adjusts as needed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
