@@ -15,12 +15,44 @@
 package com.amazonaws.http.conn.ssl;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 
 class TestSSLSocket extends SSLSocket {
+
+    @Override
+    public void setEnabledProtocols(String[] protocols) {
+        //The variable will be true if the method was called and the
+        //protocols are correct.
+        protocolsVerified = verifyEnabledProtocols(protocols);
+    }
+
+    private boolean protocolsVerified = false;
+
+    /**
+     * Tells whether the protocols enabled were verified and meet the assertion.
+     */
+    public boolean getProtocolsVerified() {
+        return protocolsVerified;
+    }
+
+    /**
+     * Evaluates if the given protocols meet certain assertion.
+     */
+    public boolean verifyEnabledProtocols(String[] protocols) {
+        return Arrays.equals(getExpectedEnabledProtocols(), protocols);
+    }
+
+    /**
+     * Gets the array with protocol names expected to be enabled by the socket
+     * factory.
+     */
+    public String[] getExpectedEnabledProtocols() {
+        return null;
+    }
 
     @Override
     public String[] getSupportedCipherSuites() {
@@ -44,10 +76,6 @@ class TestSSLSocket extends SSLSocket {
     @Override
     public String[] getEnabledProtocols() {
         return null;
-    }
-
-    @Override
-    public void setEnabledProtocols(String[] protocols) {
     }
 
     @Override

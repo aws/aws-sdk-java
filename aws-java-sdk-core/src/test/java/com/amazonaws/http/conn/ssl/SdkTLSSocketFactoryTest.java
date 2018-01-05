@@ -15,6 +15,7 @@
 package com.amazonaws.http.conn.ssl;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.fail;
 
 import java.security.NoSuchAlgorithmException;
@@ -34,7 +35,8 @@ public class SdkTLSSocketFactoryTest {
     @Test
     public void preparedSocket_NullProtocols() throws NoSuchAlgorithmException {
         SdkTLSSocketFactory f = new SdkTLSSocketFactory(SSLContext.getDefault(), null);
-        f.prepareSocket(new TestSSLSocket() {
+
+        TestSSLSocket socket = new TestSSLSocket() {
             @Override
             public String[] getSupportedProtocols() {
                 return null;
@@ -43,17 +45,15 @@ public class SdkTLSSocketFactoryTest {
             public String[] getEnabledProtocols() {
                 return null;
             }
-            @Override
-            public void setEnabledProtocols(String[] protocols) {
-                fail();
-            }
-        });
+        };
+        f.prepareSocket(socket);
+        assertFalse(socket.getProtocolsVerified());
     }
 
     @Test
     public void typical() throws NoSuchAlgorithmException {
         SdkTLSSocketFactory f = new SdkTLSSocketFactory(SSLContext.getDefault(), null);
-        f.prepareSocket(new TestSSLSocket() {
+        TestSSLSocket socket = new TestSSLSocket() {
             @Override
             public String[] getSupportedProtocols() {
                 return shuffle(new String[]{"SSLv2Hello", "SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"});
@@ -63,16 +63,18 @@ public class SdkTLSSocketFactoryTest {
                 return shuffle(new String[]{"SSLv3", "TLSv1"});
             }
             @Override
-            public void setEnabledProtocols(String[] protocols) {
-                assertTrue(Arrays.equals(protocols, new String[] {"TLSv1.2", "TLSv1.1", "TLSv1", "SSLv3" }));
+            public String[] getExpectedEnabledProtocols() {
+                return new String[] {"TLSv1.2", "TLSv1.1", "TLSv1", "SSLv3" };
             }
-        });
+        };
+        f.prepareSocket(socket);
+        assertTrue(socket.getProtocolsVerified());
     }
 
     @Test
     public void noTLS() throws NoSuchAlgorithmException {
         SdkTLSSocketFactory f = new SdkTLSSocketFactory(SSLContext.getDefault(), null);
-        f.prepareSocket(new TestSSLSocket() {
+        TestSSLSocket socket =  new TestSSLSocket() {
             @Override
             public String[] getSupportedProtocols() {
                 return shuffle(new String[]{"SSLv2Hello", "SSLv3" });
@@ -82,17 +84,19 @@ public class SdkTLSSocketFactoryTest {
                 return new String[]{"SSLv3"};
             }
             @Override
-            public void setEnabledProtocols(String[] protocols) {
+            public String[] getExpectedEnabledProtocols() {
                 // For backward compatibility
-                assertTrue(Arrays.equals(protocols, new String[] { "SSLv3" }));
+                return new String[] { "SSLv3" };
             }
-        });
+        };
+        f.prepareSocket(socket);
+        assertTrue(socket.getProtocolsVerified());
     }
 
     @Test
     public void notIdeal() throws NoSuchAlgorithmException {
         SdkTLSSocketFactory f = new SdkTLSSocketFactory(SSLContext.getDefault(), null);
-        f.prepareSocket(new TestSSLSocket() {
+        TestSSLSocket socket = new TestSSLSocket() {
             @Override
             public String[] getSupportedProtocols() {
                 return shuffle(new String[]{"SSLv2Hello", "SSLv3", "TLSv1", "TLSv1.1"});
@@ -102,10 +106,12 @@ public class SdkTLSSocketFactoryTest {
                 return shuffle(new String[]{"SSLv3", "TLSv1"});
             }
             @Override
-            public void setEnabledProtocols(String[] protocols) {
-                assertTrue(Arrays.equals(protocols, new String[] {"TLSv1.1", "TLSv1", "SSLv3" }));
+            public String[] getExpectedEnabledProtocols() {
+                return new String[] {"TLSv1.1", "TLSv1", "SSLv3" };
             }
-        });
+        };
+        f.prepareSocket(socket);
+        assertTrue(socket.getProtocolsVerified());
     }
 
     private String[] shuffle(String[] in) {
