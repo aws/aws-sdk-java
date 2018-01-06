@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
      * </p>
      * <p>
-     * Each resource can have a maximum of 10 tags.
+     * Each resource can have a maximum of 50 tags.
      * </p>
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
@@ -94,7 +94,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
      * </p>
      * <p>
-     * Each resource can have a maximum of 10 tags.
+     * Each resource can have a maximum of 50 tags.
      * </p>
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
@@ -359,6 +359,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system
+     * type, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+     * </p>
+     * </note>
      * 
      * @param createPatchBaselineRequest
      * @return A Java Future containing the result of the CreatePatchBaseline operation returned by the service.
@@ -372,6 +379,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system
+     * type, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+     * </p>
+     * </note>
      * 
      * @param createPatchBaselineRequest
      * @param asyncHandler
@@ -2193,6 +2207,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
      * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
      * </p>
+     * <note>
+     * <p>
+     * This API action doesn't support filtering by tags.
+     * </p>
+     * </note>
      * 
      * @param getParametersByPathRequest
      * @return A Java Future containing the result of the GetParametersByPath operation returned by the service.
@@ -2215,6 +2234,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
      * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
      * </p>
+     * <note>
+     * <p>
+     * This API action doesn't support filtering by tags.
+     * </p>
+     * </note>
      * 
      * @param getParametersByPathRequest
      * @param asyncHandler
@@ -2759,6 +2783,88 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * custom compliance details with a resource. This call overwrites existing compliance information on the resource,
      * so you must provide a full list of compliance items each time that you send the request.
      * </p>
+     * <p>
+     * ComplianceType can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionType: Specify patch, association, or Custom:<code>string</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionTime. The time the patch, association, or custom compliance item was applied to the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Id: The patch, association, or custom compliance ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Title: A title.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code>
+     * for associations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Severity: A patch severity. For example, <code>critical</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentVersion: An SSM document version number. For example, 4.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Classification: A patch classification. For example, <code>security updates</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchBaselineId: A patch baseline ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchSeverity: A patch severity. For example, <code>Critical</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchGroup: The name of a patch group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify
+     * the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putComplianceItemsRequest
      * @return A Java Future containing the result of the PutComplianceItems operation returned by the service.
@@ -2774,6 +2880,88 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * custom compliance details with a resource. This call overwrites existing compliance information on the resource,
      * so you must provide a full list of compliance items each time that you send the request.
      * </p>
+     * <p>
+     * ComplianceType can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionType: Specify patch, association, or Custom:<code>string</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecutionTime. The time the patch, association, or custom compliance item was applied to the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Id: The patch, association, or custom compliance ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Title: A title.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code>
+     * for associations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Severity: A patch severity. For example, <code>critical</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DocumentVersion: An SSM document version number. For example, 4.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Classification: A patch classification. For example, <code>security updates</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchBaselineId: A patch baseline ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchSeverity: A patch severity. For example, <code>Critical</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PatchGroup: The name of a patch group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify
+     * the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putComplianceItemsRequest
      * @param asyncHandler
@@ -3505,6 +3693,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Modifies an existing patch baseline. Fields not specified in the request are left unchanged.
      * </p>
+     * <note>
+     * <p>
+     * For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system
+     * type, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+     * </p>
+     * </note>
      * 
      * @param updatePatchBaselineRequest
      * @return A Java Future containing the result of the UpdatePatchBaseline operation returned by the service.
@@ -3518,6 +3713,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Modifies an existing patch baseline. Fields not specified in the request are left unchanged.
      * </p>
+     * <note>
+     * <p>
+     * For information about valid key and value pairs in <code>PatchFilters</code> for each supported operating system
+     * type, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.
+     * </p>
+     * </note>
      * 
      * @param updatePatchBaselineRequest
      * @param asyncHandler

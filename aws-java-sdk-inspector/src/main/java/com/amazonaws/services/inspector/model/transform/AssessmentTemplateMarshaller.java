@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class AssessmentTemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rulesPackageArns").build();
     private static final MarshallingInfo<List> USERATTRIBUTESFORFINDINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAttributesForFindings").build();
+    private static final MarshallingInfo<String> LASTASSESSMENTRUNARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAssessmentRunArn").build();
+    private static final MarshallingInfo<Integer> ASSESSMENTRUNCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentRunCount").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").build();
 
@@ -65,6 +69,8 @@ public class AssessmentTemplateMarshaller {
             protocolMarshaller.marshall(assessmentTemplate.getDurationInSeconds(), DURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(assessmentTemplate.getRulesPackageArns(), RULESPACKAGEARNS_BINDING);
             protocolMarshaller.marshall(assessmentTemplate.getUserAttributesForFindings(), USERATTRIBUTESFORFINDINGS_BINDING);
+            protocolMarshaller.marshall(assessmentTemplate.getLastAssessmentRunArn(), LASTASSESSMENTRUNARN_BINDING);
+            protocolMarshaller.marshall(assessmentTemplate.getAssessmentRunCount(), ASSESSMENTRUNCOUNT_BINDING);
             protocolMarshaller.marshall(assessmentTemplate.getCreatedAt(), CREATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

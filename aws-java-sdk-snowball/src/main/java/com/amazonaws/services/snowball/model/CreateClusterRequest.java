@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * The ID for the address that you want the cluster shipped to.&gt;
+     * The ID for the address that you want the cluster shipped to.
      * </p>
      */
     private String addressId;
@@ -286,11 +286,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the address that you want the cluster shipped to.&gt;
+     * The ID for the address that you want the cluster shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the cluster shipped to.&gt;
+     *        The ID for the address that you want the cluster shipped to.
      */
 
     public void setAddressId(String addressId) {
@@ -299,10 +299,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the address that you want the cluster shipped to.&gt;
+     * The ID for the address that you want the cluster shipped to.
      * </p>
      * 
-     * @return The ID for the address that you want the cluster shipped to.&gt;
+     * @return The ID for the address that you want the cluster shipped to.
      */
 
     public String getAddressId() {
@@ -311,11 +311,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the address that you want the cluster shipped to.&gt;
+     * The ID for the address that you want the cluster shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the cluster shipped to.&gt;
+     *        The ID for the address that you want the cluster shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

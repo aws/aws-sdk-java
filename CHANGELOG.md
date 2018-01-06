@@ -1,3 +1,16 @@
+# __1.11.258__ __2018-01-05__
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - Documentation updates for snowball
+
+## __Amazon Inspector__
+  - ### Features
+    - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation updates for ssm
+
 # __1.11.257__ __2018-01-02__
 ## __AWS CodeBuild__
   - ### Features
