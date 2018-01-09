@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,6 +190,8 @@ public interface AmazonCodeDeploy {
      * @return Result of the AddTagsToOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagException
@@ -706,6 +708,30 @@ public interface AmazonCodeDeploy {
 
     /**
      * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @return Result of the DeleteGitHubAccountToken operation returned by the service.
+     * @throws GitHubAccountTokenNameRequiredException
+     *         The call is missing a required GitHub account connection name.
+     * @throws GitHubAccountTokenDoesNotExistException
+     *         No GitHub account connection exists with the named specified in the call.
+     * @throws InvalidGitHubAccountTokenNameException
+     *         The format of the specified GitHub account connection name is invalid.
+     * @throws ResourceValidationException
+     *         The specified resource could not be validated.
+     * @throws OperationNotSupportedException
+     *         The API used does not support the deployment.
+     * @sample AmazonCodeDeploy.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteGitHubAccountTokenResult deleteGitHubAccountToken(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest);
+
+    /**
+     * <p>
      * Deregisters an on-premises instance.
      * </p>
      * 
@@ -1212,6 +1238,8 @@ public interface AmazonCodeDeploy {
      * @return Result of the RemoveTagsFromOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagException

@@ -146,6 +146,10 @@
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidInstanceNameException",
+        "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "TagRequiredException",
         "documentation" : "<p>A tag was not specified.</p>",
         "httpStatusCode" : null
@@ -985,6 +989,53 @@
         "documentation" : "<p>Represents the output of a DeleteDeploymentGroup operation.</p>"
       },
       "syncReturnType" : "DeleteDeploymentGroupResult"
+    },
+    "DeleteGitHubAccountToken" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteGitHubAccountTokenResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteGitHubAccountTokenResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteGitHubAccountTokenRequest, DeleteGitHubAccountTokenResult>",
+      "asyncReturnType" : "DeleteGitHubAccountTokenResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a GitHub account connection.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "GitHubAccountTokenNameRequiredException",
+        "documentation" : "<p>The call is missing a required GitHub account connection name.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "GitHubAccountTokenDoesNotExistException",
+        "documentation" : "<p>No GitHub account connection exists with the named specified in the call.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidGitHubAccountTokenNameException",
+        "documentation" : "<p>The format of the specified GitHub account connection name is invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceValidationException",
+        "documentation" : "<p>The specified resource could not be validated.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "OperationNotSupportedException",
+        "documentation" : "<p>The API used does not support the deployment.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "DeleteGitHubAccountTokenRequest",
+        "variableName" : "deleteGitHubAccountTokenRequest",
+        "variableType" : "DeleteGitHubAccountTokenRequest",
+        "documentation" : "<p>Represents the input of a DeleteGitHubAccount operation.</p>",
+        "simpleType" : "DeleteGitHubAccountTokenRequest",
+        "variableSetterType" : "DeleteGitHubAccountTokenRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteGitHubAccountToken",
+      "operationName" : "DeleteGitHubAccountToken",
+      "returnType" : {
+        "returnType" : "DeleteGitHubAccountTokenResult",
+        "documentation" : "<p>Represents the output of a DeleteGitHubAccountToken operation.</p>"
+      },
+      "syncReturnType" : "DeleteGitHubAccountTokenResult"
     },
     "DeregisterOnPremisesInstance" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DeregisterOnPremisesInstanceResult>",
@@ -1886,6 +1937,10 @@
       "exceptions" : [ {
         "exceptionName" : "InstanceNameRequiredException",
         "documentation" : "<p>An on-premises instance name was not specified.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidInstanceNameException",
+        "documentation" : "<p>The specified on-premises instance name was specified in an invalid format.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "TagRequiredException",
@@ -12298,7 +12353,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "deploymentConfigName", "minimumHealthyHosts" ],
+      "required" : [ "deploymentConfigName" ],
       "shapeName" : "CreateDeploymentConfigRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -17739,6 +17794,344 @@
         "documentation" : null,
         "simpleType" : "DeleteDeploymentGroupResult",
         "variableSetterType" : "DeleteDeploymentGroupResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteGitHubAccountTokenRequest" : {
+      "c2jName" : "DeleteGitHubAccountTokenInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a DeleteGitHubAccount operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteGitHubAccountToken",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "CodeDeploy_20141006.DeleteGitHubAccountToken",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "tokenName",
+        "c2jShape" : "GitHubAccountTokenName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the GitHub account connection to delete.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@param tokenName The name of the GitHub account connection to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTokenName",
+        "getterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@return The name of the GitHub account connection to delete.*/",
+        "getterMethodName" : "getTokenName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "tokenName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tokenName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "TokenName",
+        "setterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@param tokenName The name of the GitHub account connection to delete.*/",
+        "setterMethodName" : "setTokenName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tokenName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@param tokenName The name of the GitHub account connection to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tokenName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the GitHub account connection to delete.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "TokenName" : {
+          "c2jName" : "tokenName",
+          "c2jShape" : "GitHubAccountTokenName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the GitHub account connection to delete.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@param tokenName The name of the GitHub account connection to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTokenName",
+          "getterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@return The name of the GitHub account connection to delete.*/",
+          "getterMethodName" : "getTokenName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "tokenName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tokenName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "TokenName",
+          "setterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@param tokenName The name of the GitHub account connection to delete.*/",
+          "setterMethodName" : "setTokenName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tokenName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the GitHub account connection to delete.</p>\n@param tokenName The name of the GitHub account connection to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tokenName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the GitHub account connection to delete.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteGitHubAccountTokenRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DeleteGitHubAccountTokenRequest",
+        "variableName" : "deleteGitHubAccountTokenRequest",
+        "variableType" : "DeleteGitHubAccountTokenRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteGitHubAccountTokenRequest",
+        "variableSetterType" : "DeleteGitHubAccountTokenRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteGitHubAccountTokenResult" : {
+      "c2jName" : "DeleteGitHubAccountTokenOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a DeleteGitHubAccountToken operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "tokenName",
+        "c2jShape" : "GitHubAccountTokenName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the GitHub account connection that was deleted.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@param tokenName The name of the GitHub account connection that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTokenName",
+        "getterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@return The name of the GitHub account connection that was deleted.*/",
+        "getterMethodName" : "getTokenName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "tokenName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tokenName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "TokenName",
+        "setterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@param tokenName The name of the GitHub account connection that was deleted.*/",
+        "setterMethodName" : "setTokenName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tokenName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@param tokenName The name of the GitHub account connection that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tokenName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the GitHub account connection that was deleted.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "TokenName" : {
+          "c2jName" : "tokenName",
+          "c2jShape" : "GitHubAccountTokenName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the GitHub account connection that was deleted.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@param tokenName The name of the GitHub account connection that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTokenName",
+          "getterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@return The name of the GitHub account connection that was deleted.*/",
+          "getterMethodName" : "getTokenName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "tokenName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tokenName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "TokenName",
+          "setterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@param tokenName The name of the GitHub account connection that was deleted.*/",
+          "setterMethodName" : "setTokenName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tokenName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the GitHub account connection that was deleted.</p>\n@param tokenName The name of the GitHub account connection that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tokenName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the GitHub account connection that was deleted.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteGitHubAccountTokenResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DeleteGitHubAccountTokenResult",
+        "variableName" : "deleteGitHubAccountTokenResult",
+        "variableType" : "DeleteGitHubAccountTokenResult",
+        "documentation" : null,
+        "simpleType" : "DeleteGitHubAccountTokenResult",
+        "variableSetterType" : "DeleteGitHubAccountTokenResult"
       },
       "wrapper" : false
     },
@@ -33746,6 +34139,78 @@
       },
       "wrapper" : false
     },
+    "GitHubAccountTokenDoesNotExistException" : {
+      "c2jName" : "GitHubAccountTokenDoesNotExistException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>No GitHub account connection exists with the named specified in the call.</p>",
+      "enums" : null,
+      "errorCode" : "GitHubAccountTokenDoesNotExistException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "GitHubAccountTokenDoesNotExistException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "GitHubAccountTokenDoesNotExistException",
+        "variableName" : "gitHubAccountTokenDoesNotExistException",
+        "variableType" : "GitHubAccountTokenDoesNotExistException",
+        "documentation" : null,
+        "simpleType" : "GitHubAccountTokenDoesNotExistException",
+        "variableSetterType" : "GitHubAccountTokenDoesNotExistException"
+      },
+      "wrapper" : false
+    },
+    "GitHubAccountTokenNameRequiredException" : {
+      "c2jName" : "GitHubAccountTokenNameRequiredException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The call is missing a required GitHub account connection name.</p>",
+      "enums" : null,
+      "errorCode" : "GitHubAccountTokenNameRequiredException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "GitHubAccountTokenNameRequiredException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "GitHubAccountTokenNameRequiredException",
+        "variableName" : "gitHubAccountTokenNameRequiredException",
+        "variableType" : "GitHubAccountTokenNameRequiredException",
+        "documentation" : null,
+        "simpleType" : "GitHubAccountTokenNameRequiredException",
+        "variableSetterType" : "GitHubAccountTokenNameRequiredException"
+      },
+      "wrapper" : false
+    },
     "GitHubLocation" : {
       "c2jName" : "GitHubLocation",
       "customization" : {
@@ -37414,6 +37879,42 @@
         "documentation" : null,
         "simpleType" : "InvalidFileExistsBehaviorException",
         "variableSetterType" : "InvalidFileExistsBehaviorException"
+      },
+      "wrapper" : false
+    },
+    "InvalidGitHubAccountTokenNameException" : {
+      "c2jName" : "InvalidGitHubAccountTokenNameException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The format of the specified GitHub account connection name is invalid.</p>",
+      "enums" : null,
+      "errorCode" : "InvalidGitHubAccountTokenNameException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "InvalidGitHubAccountTokenNameException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "InvalidGitHubAccountTokenNameException",
+        "variableName" : "invalidGitHubAccountTokenNameException",
+        "variableType" : "InvalidGitHubAccountTokenNameException",
+        "documentation" : null,
+        "simpleType" : "InvalidGitHubAccountTokenNameException",
+        "variableSetterType" : "InvalidGitHubAccountTokenNameException"
       },
       "wrapper" : false
     },
@@ -61867,7 +62368,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : true,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCodeDeployException",

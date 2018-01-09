@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -686,6 +686,39 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      */
     java.util.concurrent.Future<DeleteDeploymentGroupResult> deleteDeploymentGroupAsync(DeleteDeploymentGroupRequest deleteDeploymentGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeploymentGroupRequest, DeleteDeploymentGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @return A Java Future containing the result of the DeleteGitHubAccountToken operation returned by the service.
+     * @sample AmazonCodeDeployAsync.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest);
+
+    /**
+     * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGitHubAccountToken operation returned by the service.
+     * @sample AmazonCodeDeployAsyncHandler.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGitHubAccountTokenRequest, DeleteGitHubAccountTokenResult> asyncHandler);
 
     /**
      * <p>

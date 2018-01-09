@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -245,6 +245,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     private void init() {
         exceptionUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTrafficPolicyVersionsForCurrentPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IncompatibleVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchTrafficPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrafficPoliciesExceptionUnmarshaller());
@@ -1464,6 +1465,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         No traffic policy exists with the specified ID.
      * @throws InvalidInputException
      *         The input is not valid.
+     * @throws TooManyTrafficPolicyVersionsForCurrentPolicyException
+     *         This traffic policy version can't be created because you've reached the limit of 1000 on the number of
+     *         versions that you can create for the current traffic policy.</p>
+     *         <p>
+     *         To create more traffic policy versions, you can use <a>GetTrafficPolicy</a> to get the traffic policy
+     *         document for a specified traffic policy version, and then use <a>CreateTrafficPolicy</a> to create a new
+     *         traffic policy using the traffic policy document.
      * @throws ConcurrentModificationException
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.

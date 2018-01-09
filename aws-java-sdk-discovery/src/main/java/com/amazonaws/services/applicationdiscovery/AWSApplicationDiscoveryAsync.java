@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,9 +76,8 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * </important>
  * <p>
  * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, sign up for AWS Application Discovery Service <a
- * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We send you information about how to get
- * started.
+ * is true for AWS partners and customers alike. To request access, <a
+ * href="http://aws.amazon.com/application-discovery/how-to-start/"> sign up for AWS Application Discovery Service</a>.
  * </p>
  * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
@@ -595,13 +594,13 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * Begins the export of discovered data to an S3 bucket.
      * </p>
      * <p>
-     * If you specify <code>agentId</code> in a filter, the task exports up to 72 hours of detailed data collected by
+     * If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by
      * the identified Application Discovery Agent, including network, process, and performance details. A time range for
      * exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent
      * data is limited to five concurrently running exports.
      * </p>
      * <p>
-     * If you do not include an <code>agentId</code> filter, summary data is exported that includes both AWS Agentless
+     * If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless
      * Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two
      * exports per day.
      * </p>
@@ -617,13 +616,13 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * Begins the export of discovered data to an S3 bucket.
      * </p>
      * <p>
-     * If you specify <code>agentId</code> in a filter, the task exports up to 72 hours of detailed data collected by
+     * If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected by
      * the identified Application Discovery Agent, including network, process, and performance details. A time range for
      * exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent
      * data is limited to five concurrently running exports.
      * </p>
      * <p>
-     * If you do not include an <code>agentId</code> filter, summary data is exported that includes both AWS Agentless
+     * If you do not include an <code>agentIds</code> filter, summary data is exported that includes both AWS Agentless
      * Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two
      * exports per day.
      * </p>
