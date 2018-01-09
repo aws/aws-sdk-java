@@ -1,3 +1,32 @@
+# __1.11.260__ __2018-01-09__
+## __AWS Application Discovery Service__
+  - ### Features
+    - Documentation updates for AWS Application Discovery Service.
+
+## __AWS CodeDeploy__
+  - ### Features
+    - The AWS CodeDeploy API was updated to support DeleteGitHubAccountToken, a new method that deletes a GitHub account connection.
+
+## __AWS Directory Service__
+  - ### Features
+    - On October 24 we introduced AWS Directory Service for Microsoft Active Directory (Standard Edition), also known as AWS Microsoft AD (Standard Edition), which is a managed Microsoft Active Directory (AD) that is optimized for small and midsize businesses (SMBs). With this SDK release, you can now create an AWS Microsoft AD directory using API. This enables you to run typical SMB workloads using a cost-effective, highly available, and managed Microsoft AD in the AWS Cloud.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - Documentation updates for snowball
+
+## __Amazon Inspector__
+  - ### Features
+    - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
+
+## __Amazon Route 53__
+  - ### Features
+    - This release adds an exception to the CreateTrafficPolicyVersion API operation.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation updates for ssm
+
 # __1.11.259__ __2018-01-08__
 ## __AWS Application Discovery Service__
   - ### Features

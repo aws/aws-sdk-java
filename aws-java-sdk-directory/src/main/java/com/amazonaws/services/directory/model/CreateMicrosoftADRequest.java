@@ -62,6 +62,12 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private DirectoryVpcSettings vpcSettings;
+    /**
+     * <p>
+     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * </p>
+     */
+    private String edition;
 
     /**
      * <p>
@@ -288,6 +294,65 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * </p>
+     * 
+     * @param edition
+     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * @see DirectoryEdition
+     */
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    /**
+     * <p>
+     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * </p>
+     * 
+     * @return AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * @see DirectoryEdition
+     */
+
+    public String getEdition() {
+        return this.edition;
+    }
+
+    /**
+     * <p>
+     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * </p>
+     * 
+     * @param edition
+     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectoryEdition
+     */
+
+    public CreateMicrosoftADRequest withEdition(String edition) {
+        setEdition(edition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * </p>
+     * 
+     * @param edition
+     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectoryEdition
+     */
+
+    public CreateMicrosoftADRequest withEdition(DirectoryEdition edition) {
+        this.edition = edition.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -307,7 +372,9 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getVpcSettings() != null)
-            sb.append("VpcSettings: ").append(getVpcSettings());
+            sb.append("VpcSettings: ").append(getVpcSettings()).append(",");
+        if (getEdition() != null)
+            sb.append("Edition: ").append(getEdition());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +409,10 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getVpcSettings() != null && other.getVpcSettings().equals(this.getVpcSettings()) == false)
             return false;
+        if (other.getEdition() == null ^ this.getEdition() == null)
+            return false;
+        if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +426,7 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVpcSettings() == null) ? 0 : getVpcSettings().hashCode());
+        hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
         return hashCode;
     }
 

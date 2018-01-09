@@ -9697,6 +9697,69 @@
           "variableSetterType" : "DirectoryVpcSettings"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Edition",
+        "c2jShape" : "DirectoryEdition",
+        "deprecated" : false,
+        "documentation" : "<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>",
+        "enumType" : "DirectoryEdition",
+        "fluentSetterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@param edition AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+        "fluentSetterMethodName" : "withEdition",
+        "getterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@return AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@see DirectoryEdition*/",
+        "getterMethodName" : "getEdition",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Edition",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Edition",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Edition",
+        "setterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@param edition AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@see DirectoryEdition*/",
+        "setterMethodName" : "setEdition",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "edition",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@param edition AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "edition",
+          "variableType" : "String",
+          "documentation" : "<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Description" : {
@@ -9758,6 +9821,70 @@
             "variableName" : "description",
             "variableType" : "String",
             "documentation" : "<p>A textual description for the directory. This label will appear on the AWS console <code>Directory Details</code> page after the directory is created.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Edition" : {
+          "c2jName" : "Edition",
+          "c2jShape" : "DirectoryEdition",
+          "deprecated" : false,
+          "documentation" : "<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>",
+          "enumType" : "DirectoryEdition",
+          "fluentSetterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@param edition AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+          "fluentSetterMethodName" : "withEdition",
+          "getterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@return AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@see DirectoryEdition*/",
+          "getterMethodName" : "getEdition",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Edition",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Edition",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Edition",
+          "setterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@param edition AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@see DirectoryEdition*/",
+          "setterMethodName" : "setEdition",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "edition",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>\n@param edition AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "edition",
+            "variableType" : "String",
+            "documentation" : "<p>AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -22072,6 +22199,69 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "Edition",
+        "c2jShape" : "DirectoryEdition",
+        "deprecated" : false,
+        "documentation" : "<p>The edition associated with this directory.</p>",
+        "enumType" : "DirectoryEdition",
+        "fluentSetterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@param edition The edition associated with this directory.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+        "fluentSetterMethodName" : "withEdition",
+        "getterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@return The edition associated with this directory.\n@see DirectoryEdition*/",
+        "getterMethodName" : "getEdition",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Edition",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Edition",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Edition",
+        "setterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@param edition The edition associated with this directory.\n@see DirectoryEdition*/",
+        "setterMethodName" : "setEdition",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "edition",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@param edition The edition associated with this directory.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "edition",
+          "variableType" : "String",
+          "documentation" : "<p>The edition associated with this directory.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Alias",
         "c2jShape" : "AliasName",
         "deprecated" : false,
@@ -23622,6 +23812,70 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "Edition" : {
+          "c2jName" : "Edition",
+          "c2jShape" : "DirectoryEdition",
+          "deprecated" : false,
+          "documentation" : "<p>The edition associated with this directory.</p>",
+          "enumType" : "DirectoryEdition",
+          "fluentSetterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@param edition The edition associated with this directory.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+          "fluentSetterMethodName" : "withEdition",
+          "getterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@return The edition associated with this directory.\n@see DirectoryEdition*/",
+          "getterMethodName" : "getEdition",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Edition",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Edition",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Edition",
+          "setterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@param edition The edition associated with this directory.\n@see DirectoryEdition*/",
+          "setterMethodName" : "setEdition",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "edition",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The edition associated with this directory.</p>\n@param edition The edition associated with this directory.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectoryEdition*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "edition",
+            "variableType" : "String",
+            "documentation" : "<p>The edition associated with this directory.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "LaunchTime" : {
           "c2jName" : "LaunchTime",
           "c2jShape" : "LaunchTime",
@@ -24408,6 +24662,51 @@
         "documentation" : null,
         "simpleType" : "DirectoryDescription",
         "variableSetterType" : "DirectoryDescription"
+      },
+      "wrapper" : false
+    },
+    "DirectoryEdition" : {
+      "c2jName" : "DirectoryEdition",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "Enterprise",
+        "value" : "Enterprise"
+      }, {
+        "name" : "Standard",
+        "value" : "Standard"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DirectoryEdition",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DirectoryEdition",
+        "variableName" : "directoryEdition",
+        "variableType" : "DirectoryEdition",
+        "documentation" : null,
+        "simpleType" : "DirectoryEdition",
+        "variableSetterType" : "DirectoryEdition"
       },
       "wrapper" : false
     },
@@ -26762,11 +27061,11 @@
         "c2jName" : "SecurityGroupId",
         "c2jShape" : "SecurityGroupId",
         "deprecated" : false,
-        "documentation" : "<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>",
+        "documentation" : "<p>The domain controller security group identifier for the directory.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@param securityGroupId The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@param securityGroupId The domain controller security group identifier for the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSecurityGroupId",
-        "getterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@return The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.*/",
+        "getterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@return The domain controller security group identifier for the directory.*/",
         "getterMethodName" : "getSecurityGroupId",
         "getterModel" : {
           "returnType" : "String",
@@ -26798,7 +27097,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "SecurityGroupId",
-        "setterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@param securityGroupId The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.*/",
+        "setterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@param securityGroupId The domain controller security group identifier for the directory.*/",
         "setterMethodName" : "setSecurityGroupId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -26811,12 +27110,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@param securityGroupId The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@param securityGroupId The domain controller security group identifier for the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "securityGroupId",
           "variableType" : "String",
-          "documentation" : "<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>",
+          "documentation" : "<p>The domain controller security group identifier for the directory.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -27110,11 +27409,11 @@
           "c2jName" : "SecurityGroupId",
           "c2jShape" : "SecurityGroupId",
           "deprecated" : false,
-          "documentation" : "<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>",
+          "documentation" : "<p>The domain controller security group identifier for the directory.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@param securityGroupId The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@param securityGroupId The domain controller security group identifier for the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSecurityGroupId",
-          "getterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@return The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.*/",
+          "getterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@return The domain controller security group identifier for the directory.*/",
           "getterMethodName" : "getSecurityGroupId",
           "getterModel" : {
             "returnType" : "String",
@@ -27146,7 +27445,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "SecurityGroupId",
-          "setterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@param securityGroupId The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.*/",
+          "setterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@param securityGroupId The domain controller security group identifier for the directory.*/",
           "setterMethodName" : "setSecurityGroupId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -27159,12 +27458,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>\n@param securityGroupId The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The domain controller security group identifier for the directory.</p>\n@param securityGroupId The domain controller security group identifier for the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "securityGroupId",
             "variableType" : "String",
-            "documentation" : "<p>The security group identifier for the directory. If the directory was created before 8/1/2014, this is the identifier of the directory members security group that was created when the directory was created. If the directory was created after this date, this value is null.</p>",
+            "documentation" : "<p>The domain controller security group identifier for the directory.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

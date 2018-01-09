@@ -36,6 +36,8 @@ public class DirectoryDescriptionMarshaller {
             .marshallLocationName("ShortName").build();
     private static final MarshallingInfo<String> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Size").build();
+    private static final MarshallingInfo<String> EDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Edition").build();
     private static final MarshallingInfo<String> ALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Alias").build();
     private static final MarshallingInfo<String> ACCESSURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -87,6 +89,7 @@ public class DirectoryDescriptionMarshaller {
             protocolMarshaller.marshall(directoryDescription.getName(), NAME_BINDING);
             protocolMarshaller.marshall(directoryDescription.getShortName(), SHORTNAME_BINDING);
             protocolMarshaller.marshall(directoryDescription.getSize(), SIZE_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getEdition(), EDITION_BINDING);
             protocolMarshaller.marshall(directoryDescription.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(directoryDescription.getAccessUrl(), ACCESSURL_BINDING);
             protocolMarshaller.marshall(directoryDescription.getDescription(), DESCRIPTION_BINDING);

@@ -37,6 +37,8 @@ public class CreateMicrosoftADRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<StructuredPojo> VPCSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcSettings").build();
+    private static final MarshallingInfo<String> EDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Edition").build();
 
     private static final CreateMicrosoftADRequestMarshaller instance = new CreateMicrosoftADRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class CreateMicrosoftADRequestMarshaller {
             protocolMarshaller.marshall(createMicrosoftADRequest.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(createMicrosoftADRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createMicrosoftADRequest.getVpcSettings(), VPCSETTINGS_BINDING);
+            protocolMarshaller.marshall(createMicrosoftADRequest.getEdition(), EDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

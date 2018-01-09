@@ -64,6 +64,10 @@ public class DirectoryDescriptionJsonUnmarshaller implements Unmarshaller<Direct
                     context.nextToken();
                     directoryDescription.setSize(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Edition", targetDepth)) {
+                    context.nextToken();
+                    directoryDescription.setEdition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Alias", targetDepth)) {
                     context.nextToken();
                     directoryDescription.setAlias(context.getUnmarshaller(String.class).unmarshall(context));

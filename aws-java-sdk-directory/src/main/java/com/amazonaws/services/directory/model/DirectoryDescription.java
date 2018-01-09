@@ -54,6 +54,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     private String size;
     /**
      * <p>
+     * The edition associated with this directory.
+     * </p>
+     */
+    private String edition;
+    /**
+     * <p>
      * The alias for the directory. If no alias has been created for the directory, the alias is the directory
      * identifier, such as <code>d-XXXXXXXXXX</code>.
      * </p>
@@ -342,6 +348,79 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
 
     public DirectoryDescription withSize(DirectorySize size) {
         this.size = size.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The edition associated with this directory.
+     * </p>
+     * 
+     * @param edition
+     *        The edition associated with this directory.
+     * @see DirectoryEdition
+     */
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    /**
+     * <p>
+     * The edition associated with this directory.
+     * </p>
+     * 
+     * @return The edition associated with this directory.
+     * @see DirectoryEdition
+     */
+
+    public String getEdition() {
+        return this.edition;
+    }
+
+    /**
+     * <p>
+     * The edition associated with this directory.
+     * </p>
+     * 
+     * @param edition
+     *        The edition associated with this directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectoryEdition
+     */
+
+    public DirectoryDescription withEdition(String edition) {
+        setEdition(edition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The edition associated with this directory.
+     * </p>
+     * 
+     * @param edition
+     *        The edition associated with this directory.
+     * @see DirectoryEdition
+     */
+
+    public void setEdition(DirectoryEdition edition) {
+        withEdition(edition);
+    }
+
+    /**
+     * <p>
+     * The edition associated with this directory.
+     * </p>
+     * 
+     * @param edition
+     *        The edition associated with this directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectoryEdition
+     */
+
+    public DirectoryDescription withEdition(DirectoryEdition edition) {
+        this.edition = edition.toString();
         return this;
     }
 
@@ -1173,6 +1252,8 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
             sb.append("ShortName: ").append(getShortName()).append(",");
         if (getSize() != null)
             sb.append("Size: ").append(getSize()).append(",");
+        if (getEdition() != null)
+            sb.append("Edition: ").append(getEdition()).append(",");
         if (getAlias() != null)
             sb.append("Alias: ").append(getAlias()).append(",");
         if (getAccessUrl() != null)
@@ -1232,6 +1313,10 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
         if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
+            return false;
+        if (other.getEdition() == null ^ this.getEdition() == null)
+            return false;
+        if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
             return false;
         if (other.getAlias() == null ^ this.getAlias() == null)
             return false;
@@ -1306,6 +1391,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getShortName() == null) ? 0 : getShortName().hashCode());
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         hashCode = prime * hashCode + ((getAccessUrl() == null) ? 0 : getAccessUrl().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
