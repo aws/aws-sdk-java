@@ -150,6 +150,7 @@ public class Principal {
      */
     static public enum Services {
 
+        AmazonApiGateway("apigateway.amazonaws.com"),
         AWSDataPipeline("datapipeline.amazonaws.com"),
         AmazonElasticTranscoder("elastictranscoder.amazonaws.com"),
         AmazonEC2("ec2.amazonaws.com"),
