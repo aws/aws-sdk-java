@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A policy document in JSON format.
+     * A key policy document in JSON format.
      * </p>
      */
     private String policy;
 
     /**
      * <p>
-     * A policy document in JSON format.
+     * A key policy document in JSON format.
      * </p>
      * 
      * @param policy
-     *        A policy document in JSON format.
+     *        A key policy document in JSON format.
      */
 
     public void setPolicy(String policy) {
@@ -45,10 +45,10 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A policy document in JSON format.
+     * A key policy document in JSON format.
      * </p>
      * 
-     * @return A policy document in JSON format.
+     * @return A key policy document in JSON format.
      */
 
     public String getPolicy() {
@@ -57,11 +57,11 @@ public class GetKeyPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A policy document in JSON format.
+     * A key policy document in JSON format.
      * </p>
      * 
      * @param policy
-     *        A policy document in JSON format.
+     *        A key policy document in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
