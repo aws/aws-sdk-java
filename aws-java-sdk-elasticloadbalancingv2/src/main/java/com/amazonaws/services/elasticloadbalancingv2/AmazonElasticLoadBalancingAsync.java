@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -201,13 +201,12 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates a listener for the specified Application Load Balancer or Network Load Balancer.
      * </p>
      * <p>
+     * You can create up to 10 listeners per load balancer.
+     * </p>
+     * <p>
      * To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using
      * <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both
      * using <a>DeleteLoadBalancer</a>.
-     * </p>
-     * <p>
-     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
-     * listeners with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -230,13 +229,12 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates a listener for the specified Application Load Balancer or Network Load Balancer.
      * </p>
      * <p>
+     * You can create up to 10 listeners per load balancer.
+     * </p>
+     * <p>
      * To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using
      * <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both
      * using <a>DeleteLoadBalancer</a>.
-     * </p>
-     * <p>
-     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
-     * listeners with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -274,15 +272,12 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
-     * For limit information, see <a
+     * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
+     * balancers for your account. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
-     * </p>
-     * <p>
-     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
-     * load balancers with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -315,15 +310,12 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
-     * For limit information, see <a
+     * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
+     * balancers for your account. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
-     * </p>
-     * <p>
-     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
-     * load balancers with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -416,10 +408,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * To delete a target group, use <a>DeleteTargetGroup</a>.
      * </p>
      * <p>
-     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
-     * target groups with the same settings, each call succeeds.
-     * </p>
-     * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
      * Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
@@ -450,10 +438,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * To delete a target group, use <a>DeleteTargetGroup</a>.
-     * </p>
-     * <p>
-     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
-     * target groups with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a

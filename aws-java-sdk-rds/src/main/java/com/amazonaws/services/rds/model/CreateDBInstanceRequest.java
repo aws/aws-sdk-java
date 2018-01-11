@@ -207,7 +207,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -230,7 +230,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -253,7 +253,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -276,7 +276,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -910,6 +910,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * <b>MariaDB</b>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.2.11</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
      * <ul>
      * <li>
      * <p>
@@ -1615,7 +1623,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1638,7 +1646,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1661,7 +1669,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -1684,7 +1692,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3005,7 +3013,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3028,7 +3036,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3051,7 +3059,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3074,7 +3082,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3169,7 +3177,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3192,7 +3200,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3215,7 +3223,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3238,7 +3246,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3339,7 +3347,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3362,7 +3370,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3385,7 +3393,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3408,7 +3416,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3502,7 +3510,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3525,7 +3533,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3548,7 +3556,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3571,7 +3579,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *         </p>
      *         </li>
      *         <li>
@@ -3672,7 +3680,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3695,7 +3703,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3718,7 +3726,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3741,7 +3749,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     * General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      * </p>
      * </li>
      * <li>
@@ -3836,7 +3844,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3859,7 +3867,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3882,7 +3890,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -3905,7 +3913,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 16384.
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.
      *        </p>
      *        </li>
      *        <li>
@@ -7379,6 +7387,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.11</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
@@ -7755,6 +7771,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.2.11</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
      *        <ul>
      *        <li>
      *        <p>
@@ -8152,6 +8176,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.11</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
@@ -8527,6 +8559,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         <b>MariaDB</b>
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>10.2.11</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p/>
      *         <ul>
      *         <li>
      *         <p>
@@ -8924,6 +8964,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.11</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
      * </p>
      * </li>
@@ -9300,6 +9348,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.2.11</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
      *        <ul>
      *        <li>
      *        <p>

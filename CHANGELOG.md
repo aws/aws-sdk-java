@@ -1,3 +1,44 @@
+# __1.11.262__ __2018-01-11__
+## __AWS Application Discovery Service__
+  - ### Features
+    - Documentation updates for AWS Application Discovery Service.
+
+## __AWS CodeDeploy__
+  - ### Features
+    - The AWS CodeDeploy API was updated to support DeleteGitHubAccountToken, a new method that deletes a GitHub account connection.
+
+## __AWS Directory Service__
+  - ### Features
+    - On October 24 we introduced AWS Directory Service for Microsoft Active Directory (Standard Edition), also known as AWS Microsoft AD (Standard Edition), which is a managed Microsoft Active Directory (AD) that is optimized for small and midsize businesses (SMBs). With this SDK release, you can now create an AWS Microsoft AD directory using API. This enables you to run typical SMB workloads using a cost-effective, highly available, and managed Microsoft AD in the AWS Cloud.
+
+## __AWS Key Management Service__
+  - ### Features
+    - Documentation updates for AWS KMS
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - Documentation updates for snowball
+
+## __Amazon Inspector__
+  - ### Features
+    - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Read Replicas for Amazon RDS for MySQL, MariaDB, and PostgreSQL now support Multi-AZ deployments.Amazon RDS Read Replicas enable you to create one or more read-only copies of your database instance within the same AWS Region or in a different AWS Region. Updates made to the source database are asynchronously copied to the Read Replicas. In addition to providing scalability for read-heavy workloads, you can choose to promote a Read Replica to become standalone a DB instance when needed.Amazon RDS Multi-AZ Deployments provide enhanced availability for database instances within a single AWS Region. With Multi-AZ, your data is synchronously replicated to a standby in a different Availability Zone (AZ). In case of an infrastructure failure, Amazon RDS performs an automatic failover to the standby, minimizing disruption to your applications.You can now combine Read Replicas with Multi-AZ as part of a disaster recovery strategy for your production databases. A well-designed and tested plan is critical for maintaining business continuity after a disaster. Since Read Replicas can also be created in different regions than the source database, your Read Replica can be promoted to become the new production database in case of a regional disruption.You can also combine Read Replicas with Multi-AZ for your database engine upgrade process. You can create a Read Replica of your production database instance and upgrade it to a new database engine version. When the upgrade is complete, you can stop applications, promote the Read Replica to a standalone database instance and switch over your applications. Since the database instance is already a Multi-AZ deployment, no additional steps are needed.For more information, see the Amazon RDS User Guide.
+
+## __Amazon Route 53__
+  - ### Features
+    - This release adds an exception to the CreateTrafficPolicyVersion API operation.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Updates documentation for the HierarchyLevelLimitExceededException error.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Added OperationNotPermittedException to indicate that you cannot create a load balancer while deleting the Elastic Load Balancing service-linked role.
+
 # __1.11.261__ __2018-01-09__
 ## __AWS Application Discovery Service__
   - ### Features

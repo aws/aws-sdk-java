@@ -10,26 +10,26 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancingv2.model;
+package com.amazonaws.services.elasticloadbalancing.model;
 
 import javax.annotation.Generated;
 
 /**
  * <p>
- * A listener with the specified port already exists.
+ * This operation is not allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateListenerException extends com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException {
+public class OperationNotPermittedException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {
     private static final long serialVersionUID = 1L;
 
     /**
-     * Constructs a new DuplicateListenerException with the specified error message.
+     * Constructs a new OperationNotPermittedException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
      */
-    public DuplicateListenerException(String message) {
+    public OperationNotPermittedException(String message) {
         super(message);
     }
 

@@ -62,6 +62,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("Port", StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getPort()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getMultiAZ()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getAutoMinorVersionUpgrade()));
         }

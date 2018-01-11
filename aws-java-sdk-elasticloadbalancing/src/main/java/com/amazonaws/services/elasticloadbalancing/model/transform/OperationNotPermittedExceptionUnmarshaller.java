@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancingv2.model.transform;
+package com.amazonaws.services.elasticloadbalancing.model.transform;
 
 import org.w3c.dom.Node;
 import javax.annotation.Generated;
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
-import com.amazonaws.services.elasticloadbalancingv2.model.OperationNotPermittedException;
+import com.amazonaws.services.elasticloadbalancing.model.OperationNotPermittedException;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OperationNotPermittedExceptionUnmarshaller extends StandardErrorUnmarshaller {

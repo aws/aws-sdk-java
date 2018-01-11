@@ -29,25 +29,21 @@ import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBala
  * <p>
  * <fullname>Elastic Load Balancing</fullname>
  * <p>
- * A load balancer distributes incoming traffic across your EC2 instances. This enables you to increase the availability
- * of your application. The load balancer also monitors the health of its registered instances and ensures that it
- * routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying
- * one or more listeners, which are configured with a protocol and port number for connections from clients to the load
- * balancer and a protocol and port number for connections from the load balancer to the instances.
+ * A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the
+ * availability of your application. The load balancer also monitors the health of its registered instances and ensures
+ * that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by
+ * specifying one or more listeners, which are configured with a protocol and port number for connections from clients
+ * to the load balancer and a protocol and port number for connections from the load balancer to the instances.
  * </p>
  * <p>
- * Elastic Load Balancing supports two types of load balancers: Classic Load Balancers and Application Load Balancers
- * (new). A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
- * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer makes
- * routing and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can
- * route requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC).
- * For more information, see the <a
- * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html">Elastic Load
- * Balancing User Guide</a>.
+ * Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers,
+ * and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see
+ * the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User
+ * Guide</a>.
  * </p>
  * <p>
  * This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports
- * Application Load Balancers.
+ * Application Load Balancers and Network Load Balancers.
  * </p>
  * <p>
  * To get started, create a load balancer with one or more listeners using <a>CreateLoadBalancer</a>. Register your
@@ -350,6 +346,8 @@ public interface AmazonElasticLoadBalancing {
      *         A tag key was specified more than once.
      * @throws UnsupportedProtocolException
      *         The specified protocol or signature version is not supported.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
      * @sample AmazonElasticLoadBalancing.CreateLoadBalancer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer"
      *      target="_top">AWS API Documentation</a>

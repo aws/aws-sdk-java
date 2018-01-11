@@ -16,13 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A hierarchy can have a maximum of five levels. For example:
- * </p>
- * <p>
- * /Finance/Prod/IAD/OS/WinServ2016/license15
- * </p>
- * <p>
- * For more information, see <a
+ * A hierarchy can have a maximum of 15 levels. For more information, see <a
  * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
  * Systems Manager Parameters</a>.
  * </p>

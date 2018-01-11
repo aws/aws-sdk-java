@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,12 +36,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait before
      * changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is
      * 0-3600 seconds. The default value is 300 seconds.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
      * </p>
      * </li>
      * <li>
@@ -88,12 +82,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
      * value is <code>true</code> or <code>false</code>.
      * </p>
@@ -122,12 +110,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait
      *        before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
      *        range is 0-3600 seconds. The default value is 300 seconds.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version
-     *        2 is enabled.
      *        </p>
      *        </li>
      *        <li>
@@ -170,12 +152,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
      * value is <code>true</code> or <code>false</code>.
      * </p>
@@ -203,12 +179,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait
      *         before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>.
      *         The range is 0-3600 seconds. The default value is 300 seconds.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol
-     *         version 2 is enabled.
      *         </p>
      *         </li>
      *         <li>
@@ -251,12 +221,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
      * value is <code>true</code> or <code>false</code>.
      * </p>
@@ -285,12 +249,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait
      *        before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
      *        range is 0-3600 seconds. The default value is 300 seconds.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version
-     *        2 is enabled.
      *        </p>
      *        </li>
      *        <li>

@@ -881,29 +881,23 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
-     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
+     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
+     * and MariaDB Read Replicas</a>.
      * </p>
-     * <note>
      * <p>
      * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
      * instance for an Aurora DB cluster.
      * </p>
-     * </note>
      * <p>
-     * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
-     * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
-     * except as specified below.
+     * All Read Replica DB instances are created with backups disabled. All other DB instance attributes (including DB
+     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified below.
      * </p>
      * <important>
      * <p>
-     * The source DB instance must have backup retention enabled.
+     * Your source DB instance must have backup retention enabled.
      * </p>
      * </important>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
-     * and MariaDB Read Replicas</a>.
-     * </p>
      * 
      * @param createDBInstanceReadReplicaRequest
      * @return A Java Future containing the result of the CreateDBInstanceReadReplica operation returned by the service.
@@ -916,29 +910,23 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
-     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL.
+     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
+     * and MariaDB Read Replicas</a>.
      * </p>
-     * <note>
      * <p>
      * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
      * instance for an Aurora DB cluster.
      * </p>
-     * </note>
      * <p>
-     * All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance
-     * attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance,
-     * except as specified below.
+     * All Read Replica DB instances are created with backups disabled. All other DB instance attributes (including DB
+     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified below.
      * </p>
      * <important>
      * <p>
-     * The source DB instance must have backup retention enabled.
+     * Your source DB instance must have backup retention enabled.
      * </p>
      * </important>
-     * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
-     * and MariaDB Read Replicas</a>.
-     * </p>
      * 
      * @param createDBInstanceReadReplicaRequest
      * @param asyncHandler
@@ -4422,6 +4410,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
      * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param startDBInstanceRequest
      * @return A Java Future containing the result of the StartDBInstance operation returned by the service.
@@ -4436,6 +4429,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
      * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param startDBInstanceRequest
      * @param asyncHandler
@@ -4457,6 +4455,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
      * AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param stopDBInstanceRequest
      * @return A Java Future containing the result of the StopDBInstance operation returned by the service.
@@ -4473,6 +4476,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
      * AWS RDS user guide.
      * </p>
+     * <note>
+     * <p>
+     * This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </note>
      * 
      * @param stopDBInstanceRequest
      * @param asyncHandler

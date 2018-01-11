@@ -118,6 +118,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Integer port;
     /**
      * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     */
+    private Boolean multiAZ;
+    /**
+     * <p>
      * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
@@ -1008,6 +1014,58 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     public CreateDBInstanceReadReplicaRequest withPort(Integer port) {
         setPort(port);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies whether the read replica is in a Multi-AZ deployment.
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @return Specifies whether the read replica is in a Multi-AZ deployment.
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @param multiAZ
+     *        Specifies whether the read replica is in a Multi-AZ deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @return Specifies whether the read replica is in a Multi-AZ deployment.
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
     }
 
     /**
@@ -2933,6 +2991,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
             sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getIops() != null)
@@ -2998,6 +3058,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
@@ -3077,6 +3141,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
