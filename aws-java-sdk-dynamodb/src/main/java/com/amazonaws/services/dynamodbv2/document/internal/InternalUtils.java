@@ -49,6 +49,16 @@ public enum InternalUtils {
     ;
 
     /**
+     * Returns an <code>Item</code> given the low level item information;
+     * or null if the input is null;
+     */
+    public static Item toItem(Map<String, AttributeValue> item) {
+        if (item == null)
+            return null;
+        return Item.fromMap(toSimpleMapValue(item));
+    }
+
+    /**
      * Returns a non-null list of <code>Item</code>'s given the low level
      * list of item information.
      */
