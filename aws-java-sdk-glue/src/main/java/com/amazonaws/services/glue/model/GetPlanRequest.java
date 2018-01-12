@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private Location location;
+    /**
+     * <p>
+     * The programming language of the code to perform the mapping.
+     * </p>
+     */
+    private String language;
 
     /**
      * <p>
@@ -270,6 +276,65 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * The programming language of the code to perform the mapping.
+     * </p>
+     * 
+     * @param language
+     *        The programming language of the code to perform the mapping.
+     * @see Language
+     */
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    /**
+     * <p>
+     * The programming language of the code to perform the mapping.
+     * </p>
+     * 
+     * @return The programming language of the code to perform the mapping.
+     * @see Language
+     */
+
+    public String getLanguage() {
+        return this.language;
+    }
+
+    /**
+     * <p>
+     * The programming language of the code to perform the mapping.
+     * </p>
+     * 
+     * @param language
+     *        The programming language of the code to perform the mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Language
+     */
+
+    public GetPlanRequest withLanguage(String language) {
+        setLanguage(language);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The programming language of the code to perform the mapping.
+     * </p>
+     * 
+     * @param language
+     *        The programming language of the code to perform the mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Language
+     */
+
+    public GetPlanRequest withLanguage(Language language) {
+        this.language = language.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -287,7 +352,9 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getSinks() != null)
             sb.append("Sinks: ").append(getSinks()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getLanguage() != null)
+            sb.append("Language: ").append(getLanguage());
         sb.append("}");
         return sb.toString();
     }
@@ -318,6 +385,10 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getLanguage() == null ^ this.getLanguage() == null)
+            return false;
+        if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +401,7 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getSinks() == null) ? 0 : getSinks().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         return hashCode;
     }
 

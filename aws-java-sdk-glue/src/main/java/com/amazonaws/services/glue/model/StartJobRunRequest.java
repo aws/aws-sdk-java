@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,19 +33,37 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String jobName;
     /**
      * <p>
-     * The ID of the job run to start.
+     * The ID of a previous JobRun to retry.
      * </p>
      */
     private String jobRunId;
     /**
      * <p>
-     * Specific arguments for this job run.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
+     * itself.
+     * </p>
+     * <p>
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
+     * itself consumes.
+     * </p>
+     * <p>
+     * For information about how to specify and consume your own Job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * in Python</a> topic in the developer guide.
+     * </p>
+     * <p>
+     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> arguments;
     /**
      * <p>
-     * The infrastructure capacity to allocate to this job.
+     * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      */
     private Integer allocatedCapacity;
@@ -92,11 +110,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the job run to start.
+     * The ID of a previous JobRun to retry.
      * </p>
      * 
      * @param jobRunId
-     *        The ID of the job run to start.
+     *        The ID of a previous JobRun to retry.
      */
 
     public void setJobRunId(String jobRunId) {
@@ -105,10 +123,10 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the job run to start.
+     * The ID of a previous JobRun to retry.
      * </p>
      * 
-     * @return The ID of the job run to start.
+     * @return The ID of a previous JobRun to retry.
      */
 
     public String getJobRunId() {
@@ -117,11 +135,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the job run to start.
+     * The ID of a previous JobRun to retry.
      * </p>
      * 
      * @param jobRunId
-     *        The ID of the job run to start.
+     *        The ID of a previous JobRun to retry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +150,39 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specific arguments for this job run.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
+     * itself.
+     * </p>
+     * <p>
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
+     * itself consumes.
+     * </p>
+     * <p>
+     * For information about how to specify and consume your own Job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * in Python</a> topic in the developer guide.
+     * </p>
+     * <p>
+     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
-     * @return Specific arguments for this job run.
+     * @return The job arguments specifically for this run. They override the equivalent default arguments set for the
+     *         job itself.</p>
+     *         <p>
+     *         You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
+     *         Glue itself consumes.
+     *         </p>
+     *         <p>
+     *         For information about how to specify and consume your own Job arguments, see the <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS
+     *         Glue APIs in Python</a> topic in the developer guide.
+     *         </p>
+     *         <p>
+     *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
     public java.util.Map<String, String> getArguments() {
@@ -144,11 +191,40 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specific arguments for this job run.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
+     * itself.
+     * </p>
+     * <p>
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
+     * itself consumes.
+     * </p>
+     * <p>
+     * For information about how to specify and consume your own Job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * in Python</a> topic in the developer guide.
+     * </p>
+     * <p>
+     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
-     *        Specific arguments for this job run.
+     *        The job arguments specifically for this run. They override the equivalent default arguments set for the
+     *        job itself.</p>
+     *        <p>
+     *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
+     *        Glue itself consumes.
+     *        </p>
+     *        <p>
+     *        For information about how to specify and consume your own Job arguments, see the <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue
+     *        APIs in Python</a> topic in the developer guide.
+     *        </p>
+     *        <p>
+     *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
     public void setArguments(java.util.Map<String, String> arguments) {
@@ -157,11 +233,40 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specific arguments for this job run.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
+     * itself.
+     * </p>
+     * <p>
+     * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
+     * itself consumes.
+     * </p>
+     * <p>
+     * For information about how to specify and consume your own Job arguments, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue APIs
+     * in Python</a> topic in the developer guide.
+     * </p>
+     * <p>
+     * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     * Parameters Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
-     *        Specific arguments for this job run.
+     *        The job arguments specifically for this run. They override the equivalent default arguments set for the
+     *        job itself.</p>
+     *        <p>
+     *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
+     *        Glue itself consumes.
+     *        </p>
+     *        <p>
+     *        For information about how to specify and consume your own Job arguments, see the <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling AWS Glue
+     *        APIs in Python</a> topic in the developer guide.
+     *        </p>
+     *        <p>
+     *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +298,17 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The infrastructure capacity to allocate to this job.
+     * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      * 
      * @param allocatedCapacity
-     *        The infrastructure capacity to allocate to this job.
+     *        The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     *        compute capacity and 16 GB of memory. For more information, see the <a
+     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
 
     public void setAllocatedCapacity(Integer allocatedCapacity) {
@@ -206,10 +317,16 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The infrastructure capacity to allocate to this job.
+     * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      * 
-     * @return The infrastructure capacity to allocate to this job.
+     * @return The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     *         allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     *         compute capacity and 16 GB of memory. For more information, see the <a
+     *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
 
     public Integer getAllocatedCapacity() {
@@ -218,11 +335,17 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The infrastructure capacity to allocate to this job.
+     * The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      * 
      * @param allocatedCapacity
-     *        The infrastructure capacity to allocate to this job.
+     *        The number of AWS Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be
+     *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
+     *        compute capacity and 16 GB of memory. For more information, see the <a
+     *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

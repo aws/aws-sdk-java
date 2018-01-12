@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name to assign to the new trigger.
+     * The name of the trigger.
      * </p>
      */
     private String name;
@@ -44,11 +44,17 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
+     * <p>
+     * This field is required when the trigger type is SCHEDULED.
+     * </p>
      */
     private String schedule;
     /**
      * <p>
      * A predicate to specify when the new trigger should fire.
+     * </p>
+     * <p>
+     * This field is required when the trigger type is CONDITIONAL.
      * </p>
      */
     private Predicate predicate;
@@ -67,11 +73,11 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name to assign to the new trigger.
+     * The name of the trigger.
      * </p>
      * 
      * @param name
-     *        The name to assign to the new trigger.
+     *        The name of the trigger.
      */
 
     public void setName(String name) {
@@ -80,10 +86,10 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name to assign to the new trigger.
+     * The name of the trigger.
      * </p>
      * 
-     * @return The name to assign to the new trigger.
+     * @return The name of the trigger.
      */
 
     public String getName() {
@@ -92,11 +98,11 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name to assign to the new trigger.
+     * The name of the trigger.
      * </p>
      * 
      * @param name
-     *        The name to assign to the new trigger.
+     *        The name of the trigger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,12 +177,17 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
+     * <p>
+     * This field is required when the trigger type is SCHEDULED.
+     * </p>
      * 
      * @param schedule
      *        A <code>cron</code> expression used to specify the schedule (see <a
      *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
      *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
-     *        <code>cron(15 12 * * ? *)</code>.
+     *        <code>cron(15 12 * * ? *)</code>.</p>
+     *        <p>
+     *        This field is required when the trigger type is SCHEDULED.
      */
 
     public void setSchedule(String schedule) {
@@ -190,11 +201,16 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
+     * <p>
+     * This field is required when the trigger type is SCHEDULED.
+     * </p>
      * 
      * @return A <code>cron</code> expression used to specify the schedule (see <a
      *         href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
      *         Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would
-     *         specify: <code>cron(15 12 * * ? *)</code>.
+     *         specify: <code>cron(15 12 * * ? *)</code>.</p>
+     *         <p>
+     *         This field is required when the trigger type is SCHEDULED.
      */
 
     public String getSchedule() {
@@ -208,12 +224,17 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
      * <code>cron(15 12 * * ? *)</code>.
      * </p>
+     * <p>
+     * This field is required when the trigger type is SCHEDULED.
+     * </p>
      * 
      * @param schedule
      *        A <code>cron</code> expression used to specify the schedule (see <a
      *        href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules
      *        for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify:
-     *        <code>cron(15 12 * * ? *)</code>.
+     *        <code>cron(15 12 * * ? *)</code>.</p>
+     *        <p>
+     *        This field is required when the trigger type is SCHEDULED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,9 +247,14 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A predicate to specify when the new trigger should fire.
      * </p>
+     * <p>
+     * This field is required when the trigger type is CONDITIONAL.
+     * </p>
      * 
      * @param predicate
-     *        A predicate to specify when the new trigger should fire.
+     *        A predicate to specify when the new trigger should fire.</p>
+     *        <p>
+     *        This field is required when the trigger type is CONDITIONAL.
      */
 
     public void setPredicate(Predicate predicate) {
@@ -239,8 +265,13 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A predicate to specify when the new trigger should fire.
      * </p>
+     * <p>
+     * This field is required when the trigger type is CONDITIONAL.
+     * </p>
      * 
-     * @return A predicate to specify when the new trigger should fire.
+     * @return A predicate to specify when the new trigger should fire.</p>
+     *         <p>
+     *         This field is required when the trigger type is CONDITIONAL.
      */
 
     public Predicate getPredicate() {
@@ -251,9 +282,14 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A predicate to specify when the new trigger should fire.
      * </p>
+     * <p>
+     * This field is required when the trigger type is CONDITIONAL.
+     * </p>
      * 
      * @param predicate
-     *        A predicate to specify when the new trigger should fire.
+     *        A predicate to specify when the new trigger should fire.</p>
+     *        <p>
+     *        This field is required when the trigger type is CONDITIONAL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

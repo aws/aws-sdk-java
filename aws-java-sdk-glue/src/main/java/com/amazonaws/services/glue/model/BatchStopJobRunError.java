@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the job run and the error that occurred while trying to submit it for stopping.
+ * Records an error that occurred when attempting to stop a specified JobRun.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRunError" target="_top">AWS API
@@ -30,30 +30,30 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the Job in question.
      * </p>
      */
     private String jobName;
     /**
      * <p>
-     * The job run Id.
+     * The JobRunId of the JobRun in question.
      * </p>
      */
     private String jobRunId;
     /**
      * <p>
-     * The details of the error that occurred.
+     * Specifies details about the error that was encountered.
      * </p>
      */
     private ErrorDetail errorDetail;
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the Job in question.
      * </p>
      * 
      * @param jobName
-     *        The name of the job.
+     *        The name of the Job in question.
      */
 
     public void setJobName(String jobName) {
@@ -62,10 +62,10 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the Job in question.
      * </p>
      * 
-     * @return The name of the job.
+     * @return The name of the Job in question.
      */
 
     public String getJobName() {
@@ -74,11 +74,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the job.
+     * The name of the Job in question.
      * </p>
      * 
      * @param jobName
-     *        The name of the job.
+     *        The name of the Job in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The job run Id.
+     * The JobRunId of the JobRun in question.
      * </p>
      * 
      * @param jobRunId
-     *        The job run Id.
+     *        The JobRunId of the JobRun in question.
      */
 
     public void setJobRunId(String jobRunId) {
@@ -102,10 +102,10 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The job run Id.
+     * The JobRunId of the JobRun in question.
      * </p>
      * 
-     * @return The job run Id.
+     * @return The JobRunId of the JobRun in question.
      */
 
     public String getJobRunId() {
@@ -114,11 +114,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The job run Id.
+     * The JobRunId of the JobRun in question.
      * </p>
      * 
      * @param jobRunId
-     *        The job run Id.
+     *        The JobRunId of the JobRun in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The details of the error that occurred.
+     * Specifies details about the error that was encountered.
      * </p>
      * 
      * @param errorDetail
-     *        The details of the error that occurred.
+     *        Specifies details about the error that was encountered.
      */
 
     public void setErrorDetail(ErrorDetail errorDetail) {
@@ -142,10 +142,10 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The details of the error that occurred.
+     * Specifies details about the error that was encountered.
      * </p>
      * 
-     * @return The details of the error that occurred.
+     * @return Specifies details about the error that was encountered.
      */
 
     public ErrorDetail getErrorDetail() {
@@ -154,11 +154,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The details of the error that occurred.
+     * Specifies details about the error that was encountered.
      * </p>
      * 
      * @param errorDetail
-     *        The details of the error that occurred.
+     *        Specifies details about the error that was encountered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

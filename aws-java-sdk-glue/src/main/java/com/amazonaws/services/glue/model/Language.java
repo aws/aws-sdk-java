@@ -18,15 +18,14 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum PrincipalType {
+public enum Language {
 
-    USER("USER"),
-    ROLE("ROLE"),
-    GROUP("GROUP");
+    PYTHON("PYTHON"),
+    SCALA("SCALA");
 
     private String value;
 
-    private PrincipalType(String value) {
+    private Language(String value) {
         this.value = value;
     }
 
@@ -40,17 +39,17 @@ public enum PrincipalType {
      *
      * @param value
      *        real value
-     * @return PrincipalType corresponding to the value
+     * @return Language corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static PrincipalType fromValue(String value) {
+    public static Language fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (PrincipalType enumEntry : PrincipalType.values()) {
+        for (Language enumEntry : Language.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      */
     private String pythonScript;
+    /**
+     * <p>
+     * Scala code to perform the mapping.
+     * </p>
+     */
+    private String scalaCode;
 
     /**
      * <p>
@@ -70,6 +76,46 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * Scala code to perform the mapping.
+     * </p>
+     * 
+     * @param scalaCode
+     *        Scala code to perform the mapping.
+     */
+
+    public void setScalaCode(String scalaCode) {
+        this.scalaCode = scalaCode;
+    }
+
+    /**
+     * <p>
+     * Scala code to perform the mapping.
+     * </p>
+     * 
+     * @return Scala code to perform the mapping.
+     */
+
+    public String getScalaCode() {
+        return this.scalaCode;
+    }
+
+    /**
+     * <p>
+     * Scala code to perform the mapping.
+     * </p>
+     * 
+     * @param scalaCode
+     *        Scala code to perform the mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlanResult withScalaCode(String scalaCode) {
+        setScalaCode(scalaCode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -81,7 +127,9 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPythonScript() != null)
-            sb.append("PythonScript: ").append(getPythonScript());
+            sb.append("PythonScript: ").append(getPythonScript()).append(",");
+        if (getScalaCode() != null)
+            sb.append("ScalaCode: ").append(getScalaCode());
         sb.append("}");
         return sb.toString();
     }
@@ -100,6 +148,10 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             return false;
         if (other.getPythonScript() != null && other.getPythonScript().equals(this.getPythonScript()) == false)
             return false;
+        if (other.getScalaCode() == null ^ this.getScalaCode() == null)
+            return false;
+        if (other.getScalaCode() != null && other.getScalaCode().equals(this.getScalaCode()) == false)
+            return false;
         return true;
     }
 
@@ -109,6 +161,7 @@ public class GetPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPythonScript() == null) ? 0 : getPythonScript().hashCode());
+        hashCode = prime * hashCode + ((getScalaCode() == null) ? 0 : getScalaCode().hashCode());
         return hashCode;
     }
 

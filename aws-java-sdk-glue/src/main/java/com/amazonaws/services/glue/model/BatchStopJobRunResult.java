@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of job runs which are successfully submitted for stopping.
+     * A list of the JobRuns that were successfully submitted for stopping.
      * </p>
      */
     private java.util.List<BatchStopJobRunSuccessfulSubmission> successfulSubmissions;
     /**
      * <p>
-     * A list containing the job run Ids and details of the error that occurred for each job run while submitting to
-     * stop.
+     * A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error
+     * was encountered and details about the error.
      * </p>
      */
     private java.util.List<BatchStopJobRunError> errors;
 
     /**
      * <p>
-     * A list of job runs which are successfully submitted for stopping.
+     * A list of the JobRuns that were successfully submitted for stopping.
      * </p>
      * 
-     * @return A list of job runs which are successfully submitted for stopping.
+     * @return A list of the JobRuns that were successfully submitted for stopping.
      */
 
     public java.util.List<BatchStopJobRunSuccessfulSubmission> getSuccessfulSubmissions() {
@@ -51,11 +51,11 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of job runs which are successfully submitted for stopping.
+     * A list of the JobRuns that were successfully submitted for stopping.
      * </p>
      * 
      * @param successfulSubmissions
-     *        A list of job runs which are successfully submitted for stopping.
+     *        A list of the JobRuns that were successfully submitted for stopping.
      */
 
     public void setSuccessfulSubmissions(java.util.Collection<BatchStopJobRunSuccessfulSubmission> successfulSubmissions) {
@@ -69,7 +69,7 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of job runs which are successfully submitted for stopping.
+     * A list of the JobRuns that were successfully submitted for stopping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param successfulSubmissions
-     *        A list of job runs which are successfully submitted for stopping.
+     *        A list of the JobRuns that were successfully submitted for stopping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of job runs which are successfully submitted for stopping.
+     * A list of the JobRuns that were successfully submitted for stopping.
      * </p>
      * 
      * @param successfulSubmissions
-     *        A list of job runs which are successfully submitted for stopping.
+     *        A list of the JobRuns that were successfully submitted for stopping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,12 +109,12 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list containing the job run Ids and details of the error that occurred for each job run while submitting to
-     * stop.
+     * A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error
+     * was encountered and details about the error.
      * </p>
      * 
-     * @return A list containing the job run Ids and details of the error that occurred for each job run while
-     *         submitting to stop.
+     * @return A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which
+     *         each error was encountered and details about the error.
      */
 
     public java.util.List<BatchStopJobRunError> getErrors() {
@@ -123,13 +123,13 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list containing the job run Ids and details of the error that occurred for each job run while submitting to
-     * stop.
+     * A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error
+     * was encountered and details about the error.
      * </p>
      * 
      * @param errors
-     *        A list containing the job run Ids and details of the error that occurred for each job run while submitting
-     *        to stop.
+     *        A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each
+     *        error was encountered and details about the error.
      */
 
     public void setErrors(java.util.Collection<BatchStopJobRunError> errors) {
@@ -143,8 +143,8 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list containing the job run Ids and details of the error that occurred for each job run while submitting to
-     * stop.
+     * A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error
+     * was encountered and details about the error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,8 +153,8 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param errors
-     *        A list containing the job run Ids and details of the error that occurred for each job run while submitting
-     *        to stop.
+     *        A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each
+     *        error was encountered and details about the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,13 +170,13 @@ public class BatchStopJobRunResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list containing the job run Ids and details of the error that occurred for each job run while submitting to
-     * stop.
+     * A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error
+     * was encountered and details about the error.
      * </p>
      * 
      * @param errors
-     *        A list containing the job run Ids and details of the error that occurred for each job run while submitting
-     *        to stop.
+     *        A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each
+     *        error was encountered and details about the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

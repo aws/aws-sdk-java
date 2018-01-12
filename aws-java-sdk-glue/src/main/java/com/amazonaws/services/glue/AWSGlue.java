@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,7 +149,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Stops a batch of job runs for a given job.
+     * Stops one or more job runs for a specified Job.
      * </p>
      * 
      * @param batchStopJobRunRequest
@@ -298,6 +298,8 @@ public interface AWSGlue {
      *         The operation timed out.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
      * @sample AWSGlue.CreateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob" target="_top">AWS API
      *      Documentation</a>
@@ -331,7 +333,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Transforms a directed acyclic graph (DAG) into a Python script.
+     * Transforms a directed acyclic graph (DAG) into code.
      * </p>
      * 
      * @param createScriptRequest
@@ -384,12 +386,16 @@ public interface AWSGlue {
      *         A resource to be created or added already exists.
      * @throws InvalidInputException
      *         The input provided was not valid.
+     * @throws IdempotentParameterMismatchException
+     *         The same unique identifier was associated with two different records.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
      * @sample AWSGlue.CreateTrigger
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger" target="_top">AWS API
      *      Documentation</a>
@@ -518,7 +524,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified job.
+     * Deletes a specified job. If the job is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteJobRequest
@@ -579,7 +585,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified trigger.
+     * Deletes a specified trigger. If the trigger is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteTriggerRequest
@@ -590,6 +596,8 @@ public interface AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
      * @sample AWSGlue.DeleteTrigger
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger" target="_top">AWS API
      *      Documentation</a>
@@ -997,7 +1005,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Gets a Python script to perform a specified mapping.
+     * Gets code to perform a specified mapping.
      * </p>
      * 
      * @param getPlanRequest
@@ -1270,7 +1278,8 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Starts an existing trigger.
+     * Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
+     * Jobs</a> for information about how different types of trigger are started.
      * </p>
      * 
      * @param startTriggerRequest
@@ -1351,6 +1360,8 @@ public interface AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
      * @sample AWSGlue.StopTrigger
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopTrigger" target="_top">AWS API
      *      Documentation</a>
@@ -1502,6 +1513,8 @@ public interface AWSGlue {
      *         An internal service error occurred.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
      * @sample AWSGlue.UpdateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob" target="_top">AWS API
      *      Documentation</a>
@@ -1567,6 +1580,8 @@ public interface AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
      * @sample AWSGlue.UpdateTrigger
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger" target="_top">AWS API
      *      Documentation</a>

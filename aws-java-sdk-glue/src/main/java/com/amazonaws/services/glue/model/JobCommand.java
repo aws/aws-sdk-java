@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of this job command.
+     * The name of the job command: this must be <code>glueetl</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Specifies the location of a script that executes a job.
+     * Specifies the S3 path to a script that executes a job (required).
      * </p>
      */
     private String scriptLocation;
 
     /**
      * <p>
-     * The name of this job command.
+     * The name of the job command: this must be <code>glueetl</code>.
      * </p>
      * 
      * @param name
-     *        The name of this job command.
+     *        The name of the job command: this must be <code>glueetl</code>.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of this job command.
+     * The name of the job command: this must be <code>glueetl</code>.
      * </p>
      * 
-     * @return The name of this job command.
+     * @return The name of the job command: this must be <code>glueetl</code>.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of this job command.
+     * The name of the job command: this must be <code>glueetl</code>.
      * </p>
      * 
      * @param name
-     *        The name of this job command.
+     *        The name of the job command: this must be <code>glueetl</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the location of a script that executes a job.
+     * Specifies the S3 path to a script that executes a job (required).
      * </p>
      * 
      * @param scriptLocation
-     *        Specifies the location of a script that executes a job.
+     *        Specifies the S3 path to a script that executes a job (required).
      */
 
     public void setScriptLocation(String scriptLocation) {
@@ -96,10 +96,10 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the location of a script that executes a job.
+     * Specifies the S3 path to a script that executes a job (required).
      * </p>
      * 
-     * @return Specifies the location of a script that executes a job.
+     * @return Specifies the S3 path to a script that executes a job (required).
      */
 
     public String getScriptLocation() {
@@ -108,11 +108,11 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the location of a script that executes a job.
+     * Specifies the S3 path to a script that executes a job (required).
      * </p>
      * 
      * @param scriptLocation
-     *        Specifies the location of a script that executes a job.
+     *        Specifies the S3 path to a script that executes a job (required).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

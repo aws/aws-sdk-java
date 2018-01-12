@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,10 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot be an empty element. It must contain child elements representing fields in the record.
+     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      */
     private String rowTag;
@@ -269,12 +272,18 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot be an empty element. It must contain child elements representing fields in the record.
+     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @param rowTag
      *        The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *        this cannot be an empty element. It must contain child elements representing fields in the record.
+     *        this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
+     *        contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *        <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     *        <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      */
 
     public void setRowTag(String rowTag) {
@@ -284,11 +293,17 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot be an empty element. It must contain child elements representing fields in the record.
+     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @return The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *         this cannot be an empty element. It must contain child elements representing fields in the record.
+     *         this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
+     *         contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *         <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     *         <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      */
 
     public String getRowTag() {
@@ -298,12 +313,18 @@ public class XMLClassifier implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The XML tag designating the element that contains each record in an XML document being parsed. Note that this
-     * cannot be an empty element. It must contain child elements representing fields in the record.
+     * cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * </p>
      * 
      * @param rowTag
      *        The XML tag designating the element that contains each record in an XML document being parsed. Note that
-     *        this cannot be an empty element. It must contain child elements representing fields in the record.
+     *        this cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that
+     *        contains only attributes can be parsed as long as it ends with a closing tag (for example,
+     *        <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     *        <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
