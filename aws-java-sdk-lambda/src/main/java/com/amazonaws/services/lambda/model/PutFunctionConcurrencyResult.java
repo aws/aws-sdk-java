@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,21 @@ public class PutFunctionConcurrencyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The number of concurrent executions reserved for this function.
+     * The number of concurrent executions reserved for this function. For more information, see
+     * <a>concurrent-executions</a>.
      * </p>
      */
     private Integer reservedConcurrentExecutions;
 
     /**
      * <p>
-     * The number of concurrent executions reserved for this function.
+     * The number of concurrent executions reserved for this function. For more information, see
+     * <a>concurrent-executions</a>.
      * </p>
      * 
      * @param reservedConcurrentExecutions
-     *        The number of concurrent executions reserved for this function.
+     *        The number of concurrent executions reserved for this function. For more information, see
+     *        <a>concurrent-executions</a>.
      */
 
     public void setReservedConcurrentExecutions(Integer reservedConcurrentExecutions) {
@@ -45,10 +48,12 @@ public class PutFunctionConcurrencyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The number of concurrent executions reserved for this function.
+     * The number of concurrent executions reserved for this function. For more information, see
+     * <a>concurrent-executions</a>.
      * </p>
      * 
-     * @return The number of concurrent executions reserved for this function.
+     * @return The number of concurrent executions reserved for this function. For more information, see
+     *         <a>concurrent-executions</a>.
      */
 
     public Integer getReservedConcurrentExecutions() {
@@ -57,11 +62,13 @@ public class PutFunctionConcurrencyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The number of concurrent executions reserved for this function.
+     * The number of concurrent executions reserved for this function. For more information, see
+     * <a>concurrent-executions</a>.
      * </p>
      * 
      * @param reservedConcurrentExecutions
-     *        The number of concurrent executions reserved for this function.
+     *        The number of concurrent executions reserved for this function. For more information, see
+     *        <a>concurrent-executions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

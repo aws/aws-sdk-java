@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,13 +16,6 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if
- * you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function
- * without reserved concurrency exceeds the account's unreserved concurrency limit.
- * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency
- * exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is
- * exceeded and you have not reserved concurrency on any function. For more information, see
- * <a>concurrent-executions</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

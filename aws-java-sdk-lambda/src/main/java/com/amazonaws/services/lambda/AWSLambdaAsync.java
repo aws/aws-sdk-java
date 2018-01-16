@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -423,7 +423,7 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Removes concurrent execution limits from this function.
+     * Removes concurrent execution limits from this function. For more information, see <a>concurrent-executions</a>.
      * </p>
      * 
      * @param deleteFunctionConcurrencyRequest
@@ -437,7 +437,7 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Removes concurrent execution limits from this function.
+     * Removes concurrent execution limits from this function. For more information, see <a>concurrent-executions</a>.
      * </p>
      * 
      * @param deleteFunctionConcurrencyRequest
@@ -754,6 +754,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TooManyRequestsException</code> noted below will return the following:
+     * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no functions with reserved
+     * concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds
+     * the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will
+     * be returned when a function with reserved concurrency exceeds its configured concurrency limit.
+     * </p>
+     * </note>
      * 
      * @param invokeRequest
      * @return A Java Future containing the result of the Invoke operation returned by the service.
@@ -781,6 +790,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * This operation requires permission for the <code>lambda:InvokeFunction</code> action.
      * </p>
+     * <note>
+     * <p>
+     * The <code>TooManyRequestsException</code> noted below will return the following:
+     * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no functions with reserved
+     * concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds
+     * the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will
+     * be returned when a function with reserved concurrency exceeds its configured concurrency limit.
+     * </p>
+     * </note>
      * 
      * @param invokeRequest
      * @param asyncHandler
@@ -1137,7 +1155,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's
      * total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent
      * executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you
-     * have a total of 900 available to allocate to individual functions.
+     * have a total of 900 available to allocate to individual functions. For more information, see
+     * <a>concurrent-executions</a>.
      * </p>
      * 
      * @param putFunctionConcurrencyRequest
@@ -1153,7 +1172,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's
      * total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent
      * executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you
-     * have a total of 900 available to allocate to individual functions.
+     * have a total of 900 available to allocate to individual functions. For more information, see
+     * <a>concurrent-executions</a>.
      * </p>
      * 
      * @param putFunctionConcurrencyRequest

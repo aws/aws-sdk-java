@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
     /**
      * <p>
-     * The concurrent execution limit set for this function.
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
      * </p>
      */
     private Concurrency concurrency;
@@ -160,11 +160,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The concurrent execution limit set for this function.
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
      * </p>
      * 
      * @param concurrency
-     *        The concurrent execution limit set for this function.
+     *        The concurrent execution limit set for this function. For more information, see
+     *        <a>concurrent-executions</a>.
      */
 
     public void setConcurrency(Concurrency concurrency) {
@@ -173,10 +174,11 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The concurrent execution limit set for this function.
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
      * </p>
      * 
-     * @return The concurrent execution limit set for this function.
+     * @return The concurrent execution limit set for this function. For more information, see
+     *         <a>concurrent-executions</a>.
      */
 
     public Concurrency getConcurrency() {
@@ -185,11 +187,12 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The concurrent execution limit set for this function.
+     * The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.
      * </p>
      * 
      * @param concurrency
-     *        The concurrent execution limit set for this function.
+     *        The concurrent execution limit set for this function. For more information, see
+     *        <a>concurrent-executions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
